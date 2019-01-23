@@ -30,7 +30,8 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.2",
+    "eslint-config-airbnb": "^17.1.0"
   },
   "repository": {
     "type": "git",

@@ -13,6 +13,8 @@
         "no-use-before-define": [
             "off"
         ],
+        "semi": "warn",
+        "quotes": "off",
         "func-names": [
             "error",
             "never"
