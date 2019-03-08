@@ -1,0 +1,72 @@
+{
+    "key": "group_5c4e58515c595",
+    "title": "Page Theme",
+    "fields": [
+        {
+            "key": "field_5c4e58515e51c",
+            "label": "Page Theme",
+            "name": "page_theme",
+            "type": "button_group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "brand": "Brand",
+                "alpha": "Alpha",
+                "beta": "Beta",
+                "gamma": "Gamma",
+                "delta": "Delta",
+                "psi": "Psi",
+                "omega": "Omega"
+            },
+            "allow_null": 0,
+            "default_value": "endo",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "team"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "services"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1550181069
+}
