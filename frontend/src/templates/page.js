@@ -4,8 +4,16 @@ import Layout from '../hoc/Layout/Layout';
 
 export default ({ pageContext }) => (
   <Layout>
-    <Aux>
-      <h1 className="heading-1" dangerouslySetInnerHTML={{ __html: pageContext.title }}/>
-    </Aux>
+    <section className="primary-main__section">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="flex">
+
+            <h1 className="heading-1" dangerouslySetInnerHTML={{ __html: pageContext.title }}/>
+
+          </div>
+        </div>
+      </div>
+    </section>
   </Layout>
 );

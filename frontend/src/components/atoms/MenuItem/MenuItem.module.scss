@@ -7,6 +7,8 @@
   padding: 1rem 2rem;
 
   &__link {
-    color: $color-brand;
+    color: $color-tint-alpha;
+    font-weight: bold;
+    font-size: 2rem;
   }
 }

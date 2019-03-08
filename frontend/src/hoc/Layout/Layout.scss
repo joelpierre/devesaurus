@@ -7,3 +7,14 @@ body {
   font-family: $font-default;
   color: $color-tint-omega;
 }
+
+.primary-main {
+  position: relative;
+  background-color: $color-tint-alpha;
+
+  .primary-main__section {
+    position: relative;
+    padding: 6rem 0;
+    background-color: $color-tint-alpha;
+  }
+}
