@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
-
 require('dotenv').config();
+const path = require('path');
 
 module.exports = {
   siteMetadata: {
@@ -38,14 +38,30 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
+        implementation: require('sass'),
         cssLoaderOptions: {
           camelCase: false,
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+      },
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src'),
+        components: path.join(__dirname, 'src/components'),
+        sass: path.join(__dirname, 'src/sass'),
+        icons: path.join(__dirname, 'src/icons'),
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -67,7 +83,7 @@ module.exports = {
         // Any additional create only fields (optional)
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: 'example.com',
+        cookieDomain: process.env.SITE_URL || 'devesaurus.com',
       },
     },
     {
@@ -77,19 +93,20 @@ module.exports = {
         protocol: process.env.PROTOCOL || 'https',
         hostingWPCOM: false,
         useACF: true,
-        verboseOutput: true,
+        verboseOutput: false,
         perPage: 100,
-        concurrentRequests: 10,
+        concurrentRequests: 20,
         includedRoutes: [
-          '**/categories',
-          '**/posts',
-          '**/word',
-          '**/team',
-          '**/pages',
-          '**/media',
-          '**/tags',
-          '**/taxonomies',
-          '**/users',
+          '**/*/*/categories',
+          '**/*/*/menus',
+          '**/*/*/team',
+          '**/*/*/word',
+          '**/*/*/posts',
+          '**/*/*/pages',
+          '**/*/*/media',
+          '**/*/*/tags',
+          '**/*/*/taxonomies',
+          '**/*/*/users',
         ],
         normalizer({ entities }) {
           return entities;

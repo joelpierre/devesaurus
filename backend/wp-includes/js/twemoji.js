@@ -301,7 +301,7 @@ var twemoji = (function (
         // collect them to process emoji later
         allText.push(subnode);
       }
-      // ignore all nodes that are not type 1, that are svg, or that
+      // ignore all nodes that are not type 1, that are icons, or that
       // should not be parsed as script, style, and others
       else if (nodeType === 1 && !('ownerSVGElement' in subnode) &&
           !shouldntBeParsed.test(subnode.nodeName.toLowerCase())) {

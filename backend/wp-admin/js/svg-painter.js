@@ -1,7 +1,7 @@
 /**
  * Attempt to re-color SVG icons used in the admin menu or the toolbar
  *
- * @output wp-admin/js/svg-painter.js
+ * @output wp-admin/js/icons-painter.js
  */
 
 window.wp = window.wp || {};
@@ -15,7 +15,7 @@ wp.svgPainter = ( function( $, window, document, undefined ) {
 	$(document).ready( function() {
 		// detection for browser SVG capability
 		if ( document.implementation.hasFeature( 'http://www.w3.org/TR/SVG11/feature#Image', '1.1' ) ) {
-			$( document.body ).removeClass( 'no-svg' ).addClass( 'svg' );
+			$( document.body ).removeClass( 'no-icons' ).addClass( 'svg' );
 			wp.svgPainter.init();
 		}
 	});
@@ -141,7 +141,7 @@ wp.svgPainter = ( function( $, window, document, undefined ) {
 			selector.each( function() {
 				var $this = $(this), bgImage = $this.css( 'background-image' );
 
-				if ( bgImage && bgImage.indexOf( 'data:image/svg+xml;base64' ) != -1 ) {
+				if ( bgImage && bgImage.indexOf( 'data:image/icons+xml;base64' ) != -1 ) {
 					elements.push( $this );
 				}
 			});
@@ -189,7 +189,7 @@ wp.svgPainter = ( function( $, window, document, undefined ) {
 				return;
 			}
 
-			xml = $element.data( 'wp-ui-svg-' + color );
+			xml = $element.data( 'wp-ui-icons-' + color );
 
 			if ( xml === 'none' ) {
 				return;
@@ -199,7 +199,7 @@ wp.svgPainter = ( function( $, window, document, undefined ) {
 				encoded = $element.css( 'background-image' ).match( /.+data:image\/svg\+xml;base64,([A-Za-z0-9\+\/\=]+)/ );
 
 				if ( ! encoded || ! encoded[1] ) {
-					$element.data( 'wp-ui-svg-' + color, 'none' );
+					$element.data( 'wp-ui-icons-' + color, 'none' );
 					return;
 				}
 
@@ -227,14 +227,14 @@ wp.svgPainter = ( function( $, window, document, undefined ) {
 						xml = base64.btoa( xml );
 					}
 
-					$element.data( 'wp-ui-svg-' + color, xml );
+					$element.data( 'wp-ui-icons-' + color, xml );
 				} else {
-					$element.data( 'wp-ui-svg-' + color, 'none' );
+					$element.data( 'wp-ui-icons-' + color, 'none' );
 					return;
 				}
 			}
 
-			$element.attr( 'style', 'background-image: url("data:image/svg+xml;base64,' + xml + '") !important;' );
+			$element.attr( 'style', 'background-image: url("data:image/icons+xml;base64,' + xml + '") !important;' );
 		}
 	};
 

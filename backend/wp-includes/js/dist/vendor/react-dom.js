@@ -6092,7 +6092,7 @@ function restoreControlledState$3(element, props) {
 
 var HTML_NAMESPACE$1 = 'http://www.w3.org/1999/xhtml';
 var MATH_NAMESPACE = 'http://www.w3.org/1998/Math/MathML';
-var SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
+var SVG_NAMESPACE = 'http://www.w3.org/2000/icons';
 
 var Namespaces = {
   html: HTML_NAMESPACE$1,
@@ -6159,7 +6159,7 @@ var setInnerHTML = createMicrosoftUnsafeLocalFunction(function (node, html) {
 
   if (node.namespaceURI === Namespaces.svg && !('innerHTML' in node)) {
     reusableSVGContainer = reusableSVGContainer || document.createElement('div');
-    reusableSVGContainer.innerHTML = '<svg>' + html + '</svg>';
+    reusableSVGContainer.innerHTML = '<icons>' + html + '</icons>';
     var svgNode = reusableSVGContainer.firstChild;
     while (node.firstChild) {
       node.removeChild(node.firstChild);

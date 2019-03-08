@@ -1821,7 +1821,7 @@ var paragraph_settings = {
   title: Object(external_this_wp_i18n_["__"])('Paragraph'),
   description: Object(external_this_wp_i18n_["__"])('Start with the building block of all narrative.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 24 24"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M11 5v7H9.5C7.6 12 6 10.4 6 8.5S7.6 5 9.5 5H11m8-2H9.5C6.5 3 4 5.5 4 8.5S6.5 14 9.5 14H11v7h2V5h2v16h2V5h2V3z"
@@ -2009,7 +2009,7 @@ var external_this_wp_viewport_ = __webpack_require__(37);
 
 var embedContentIcon = Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
   viewBox: "0 0 24 24",
-  xmlns: "http://www.w3.org/2000/svg"
+  xmlns: "http://www.w3.org/2000/icons"
 }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
   d: "M0,0h24v24H0V0z",
   fill: "none"
@@ -2018,7 +2018,7 @@ var embedContentIcon = Object(external_this_wp_element_["createElement"])(extern
 }));
 var embedAudioIcon = Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
   viewBox: "0 0 24 24",
-  xmlns: "http://www.w3.org/2000/svg"
+  xmlns: "http://www.w3.org/2000/icons"
 }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
   fill: "none",
   d: "M0 0h24v24H0V0z"
@@ -2027,7 +2027,7 @@ var embedAudioIcon = Object(external_this_wp_element_["createElement"])(external
 }));
 var embedPhotoIcon = Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
   viewBox: "0 0 24 24",
-  xmlns: "http://www.w3.org/2000/svg"
+  xmlns: "http://www.w3.org/2000/icons"
 }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
   d: "M0,0h24v24H0V0z",
   fill: "none"
@@ -2038,7 +2038,7 @@ var embedPhotoIcon = Object(external_this_wp_element_["createElement"])(external
 }));
 var embedVideoIcon = Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
   viewBox: "0 0 24 24",
-  xmlns: "http://www.w3.org/2000/svg"
+  xmlns: "http://www.w3.org/2000/icons"
 }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
   d: "M0,0h24v24H0V0z",
   fill: "none"
@@ -2048,7 +2048,7 @@ var embedVideoIcon = Object(external_this_wp_element_["createElement"])(external
 var embedTwitterIcon = {
   foreground: '#1da1f2',
   src: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 24 24"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["G"], null, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"
@@ -2099,7 +2099,7 @@ var embedFlickrIcon = Object(external_this_wp_element_["createElement"])(externa
 var embedVimeoIcon = {
   foreground: '#1ab7ea',
   src: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 24 24"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["G"], null, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M22.396 7.164c-.093 2.026-1.507 4.8-4.245 8.32C15.323 19.16 12.93 21 10.97 21c-1.214 0-2.24-1.12-3.08-3.36-.56-2.052-1.118-4.105-1.68-6.158-.622-2.24-1.29-3.36-2.004-3.36-.156 0-.7.328-1.634.98l-.978-1.26c1.027-.903 2.04-1.806 3.037-2.71C6 3.95 7.03 3.328 7.716 3.265c1.62-.156 2.616.95 2.99 3.32.404 2.558.685 4.148.84 4.77.468 2.12.982 3.18 1.543 3.18.435 0 1.09-.687 1.963-2.064.872-1.376 1.34-2.422 1.402-3.142.125-1.187-.343-1.782-1.4-1.782-.5 0-1.013.115-1.542.34 1.023-3.35 2.977-4.976 5.862-4.883 2.14.063 3.148 1.45 3.024 4.16z"
@@ -3662,7 +3662,7 @@ var image_settings = {
   description: Object(external_this_wp_i18n_["__"])('Insert an image to make a visual statement.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M0,0h24v24H0V0z",
     fill: "none"
@@ -4169,7 +4169,7 @@ var heading_settings = {
   title: Object(external_this_wp_i18n_["__"])('Heading'),
   description: Object(external_this_wp_i18n_["__"])('Introduce new sections and organize content to help visitors (and search engines) understand the structure of your content.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 24 24"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M5 4v3h5.5v12h3V7H19V4z"
@@ -4346,7 +4346,7 @@ var quote_settings = {
   description: Object(external_this_wp_i18n_["__"])('Give quoted text visual emphasis. "In quoting others, we cite ourselves." — Julio Cortázar'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
     d: "M0 0h24v24H0V0z"
@@ -4670,7 +4670,7 @@ var quote_settings = {
 // EXTERNAL MODULE: external {"this":["wp","keycodes"]}
 var external_this_wp_keycodes_ = __webpack_require__(16);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/block-library/build-module/gallery/gallery-image.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/block-library/build-module/gallery/gallery-Image.js
 
 
 
@@ -5285,7 +5285,7 @@ var gallery_settings = {
   description: Object(external_this_wp_i18n_["__"])('Display multiple images in a rich gallery.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
     d: "M0 0h24v24H0V0z"
@@ -5703,7 +5703,7 @@ var archives_settings = {
   description: Object(external_this_wp_i18n_["__"])('Display a monthly archive of your posts.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
     d: "M0 0h24v24H0V0z"
@@ -6012,7 +6012,7 @@ var audio_settings = {
   description: Object(external_this_wp_i18n_["__"])('Embed a simple audio player.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M0,0h24v24H0V0z",
     fill: "none"
@@ -6314,7 +6314,7 @@ var button_settings = {
   description: Object(external_this_wp_i18n_["__"])('Prompt visitors to take action with a custom button.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
     d: "M0 0h24v24H0V0z"
@@ -6714,7 +6714,7 @@ var categories_settings = {
   description: Object(external_this_wp_i18n_["__"])('Display a list of all categories.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M0,0h24v24H0V0z",
     fill: "none"
@@ -6811,7 +6811,7 @@ var code_settings = {
   description: Object(external_this_wp_i18n_["__"])('Display code snippets that respect your spacing and tabs.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M0,0h24v24H0V0z",
     fill: "none"
@@ -6960,7 +6960,7 @@ var columns_settings = {
   title: Object(external_this_wp_i18n_["__"])('Columns'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
     d: "M0 0h24v24H0V0z"
@@ -7081,7 +7081,7 @@ var column_settings = {
   title: Object(external_this_wp_i18n_["__"])('Column'),
   parent: ['core/columns'],
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 24 24"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
@@ -7172,7 +7172,7 @@ var cover_settings = {
   title: Object(external_this_wp_i18n_["__"])('Cover'),
   description: Object(external_this_wp_i18n_["__"])('Add an image or video with a text overlay — great for headers.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 24 24"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M4 4h7V2H4c-1.1 0-2 .9-2 2v7h2V4zm6 9l-4 5h12l-3-4-2.03 2.71L10 13zm7-4.5c0-.83-.67-1.5-1.5-1.5S14 7.67 14 8.5s.67 1.5 1.5 1.5S17 9.33 17 8.5zM20 2h-7v2h7v7h2V4c0-1.1-.9-2-2-2zm0 18h-7v2h7c1.1 0 2-.9 2-2v-7h-2v7zM4 13H2v7c0 1.1.9 2 2 2h7v-2H4v-7z"
@@ -8663,7 +8663,7 @@ var file_settings = {
   description: Object(external_this_wp_i18n_["__"])('Add a link to a downloadable file.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
     d: "M0 0h24v24H0V0z"
@@ -8882,7 +8882,7 @@ var html_settings = {
   description: Object(external_this_wp_i18n_["__"])('Add custom HTML code and preview it as you edit.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M4.5,11h-2V9H1v6h1.5v-2.5h2V15H6V9H4.5V11z M7,10.5h1.5V15H10v-4.5h1.5V9H7V10.5z M14.5,10l-1-1H12v6h1.5v-3.9  l1,1l1-1V15H17V9h-1.5L14.5,10z M19.5,13.5V9H18v6h5v-1.5H19.5z"
   })),
@@ -9422,7 +9422,7 @@ var media_text_settings = {
   title: Object(external_this_wp_i18n_["__"])('Media & Text'),
   description: Object(external_this_wp_i18n_["__"])('Set media and words side-by-side for a richer layout.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 24 24"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M13 17h8v-2h-8v2zM3 19h8V5H3v14zM13 9h8V7h-8v2zm0 4h8v-2h-8v2z"
@@ -9746,7 +9746,7 @@ var latest_comments_settings = {
   description: Object(external_this_wp_i18n_["__"])('Display a list of your most recent comments.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
     d: "M0 0h24v24H0V0z"
@@ -10045,7 +10045,7 @@ var latest_posts_settings = {
   description: Object(external_this_wp_i18n_["__"])('Display a list of your most recent posts.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M0,0h24v24H0V0z",
     fill: "none"
@@ -10161,7 +10161,7 @@ var list_settings = {
   description: Object(external_this_wp_i18n_["__"])('Create a bulleted or numbered list.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["G"], null, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M9 19h12v-2H9v2zm0-6h12v-2H9v2zm0-8v2h12V5H9zm-4-.5c-.828 0-1.5.672-1.5 1.5S4.172 7.5 5 7.5 6.5 6.828 6.5 6 5.828 4.5 5 4.5zm0 6c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5zm0 6c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z"
   }))),
@@ -10590,7 +10590,7 @@ var more_settings = {
   description: Object(external_this_wp_i18n_["__"])('Mark the excerpt of this content. Content before this block will be shown in the excerpt on your archives page.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
     d: "M0 0h24v24H0V0z"
@@ -10683,7 +10683,7 @@ var nextpage_settings = {
   title: Object(external_this_wp_i18n_["__"])('Page Break'),
   description: Object(external_this_wp_i18n_["__"])('Separate your content into a multi-page experience.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 24 24"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["G"], null, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M9 12h6v-2H9zm-7 0h5v-2H2zm15 0h5v-2h-5zm3 2v2l-6 6H6a2 2 0 0 1-2-2v-6h2v6h6v-4a2 2 0 0 1 2-2h6zM4 8V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4h-2V4H6v4z"
@@ -10734,7 +10734,7 @@ var preformatted_settings = {
   description: Object(external_this_wp_i18n_["__"])('Add text that respects your spacing and tabs, and also allows styling.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M0,0h24v24H0V0z",
     fill: "none"
@@ -11030,7 +11030,7 @@ var pullquote_settings = {
   description: Object(external_this_wp_i18n_["__"])('Give special visual emphasis to a quote from your text.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M0,0h24v24H0V0z",
     fill: "none"
@@ -11564,7 +11564,7 @@ var separator_settings = {
   description: Object(external_this_wp_i18n_["__"])('Create a break between ideas or sections with a horizontal separator.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
     d: "M0 0h24v24H0V0z"
@@ -11631,7 +11631,7 @@ var shortcode_settings = {
   description: Object(external_this_wp_i18n_["__"])('Insert additional custom elements with a WordPress shortcode.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M8.5,21.4l1.9,0.5l5.2-19.3l-1.9-0.5L8.5,21.4z M3,19h4v-2H5V7h2V5H3V19z M17,5v2h2v10h-2v2h4V5H17z"
   })),
@@ -11721,7 +11721,7 @@ var spacer_settings = {
   description: Object(external_this_wp_i18n_["__"])('Add white space between blocks and customize its height.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["G"], null, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M13 4v2h3.59L6 16.59V13H4v7h7v-2H7.41L18 7.41V11h2V4h-7"
   }))),
@@ -11817,7 +11817,7 @@ var subhead_settings = {
   title: Object(external_this_wp_i18n_["__"])('Subheading (deprecated)'),
   description: Object(external_this_wp_i18n_["__"])('This block is deprecated. Please use the Paragraph block instead.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 24 24"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M7.1 6l-.5 3h4.5L9.4 19h3l1.8-10h4.5l.5-3H7.1z"
@@ -12623,7 +12623,7 @@ var table_settings = {
   description: Object(external_this_wp_i18n_["__"])('Insert a table — perfect for sharing charts and data.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
     d: "M0 0h24v24H0V0z"
@@ -12730,7 +12730,7 @@ var template_settings = {
   category: 'reusable',
   description: Object(external_this_wp_i18n_["__"])('Template block used as a container.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 24 24"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Rect"], {
     x: "0",
@@ -12918,7 +12918,7 @@ var verse_settings = {
   description: Object(external_this_wp_i18n_["__"])('Insert poetry. Use special spacing formats. Or quote song lyrics.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
     d: "M0 0h24v24H0V0z"
@@ -13338,7 +13338,7 @@ var video_settings = {
   description: Object(external_this_wp_i18n_["__"])('Embed a video from your media library or upload a new one.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     fill: "none",
     d: "M0 0h24v24H0V0z"
@@ -13711,7 +13711,7 @@ var classic_settings = {
   description: Object(external_this_wp_i18n_["__"])('Use the classic WordPress editor.'),
   icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
     viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: "http://www.w3.org/2000/icons"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     d: "M0,0h24v24H0V0z M0,0h24v24H0V0z",
     fill: "none"

@@ -1,0 +1,9 @@
+@import "~sass/core";
+@import "~sass/typography";
+@import "~sass/overrides";
+
+body {
+  background-color: $color-tint-alpha;
+  font-family: $font-default;
+  color: $color-tint-omega;
+}

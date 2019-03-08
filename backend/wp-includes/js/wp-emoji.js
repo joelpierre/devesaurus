@@ -40,7 +40,7 @@
 		 * @see Modernizr
 		 * @link https://github.com/Modernizr/Modernizr/blob/master/feature-detects/svg/asimg.js
 		 *
-		 * @return {boolean} True if the browser supports svg, false if not.
+		 * @return {boolean} True if the browser supports icons, false if not.
 		 */
 		function browserSupportsSvgAsImage() {
 			if ( !! document.implementation.hasFeature ) {

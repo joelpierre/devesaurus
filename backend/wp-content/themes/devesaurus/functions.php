@@ -47,7 +47,6 @@ add_action('acf/init', 'acf_settings');
 
 add_filter('upload_mimes', 'custom_mime_types');
 add_filter('wpseo_primary_term_taxonomies', '__return_empty_array');
-add_filter('wp_terms_checklist_args', 'stop_reordering_my_categories');
 add_filter('acf/rest_api/field_settings/show_in_rest', '__return_true');
 add_filter('acf/rest_api/field_settings/edit_in_rest', '__return_true');
 add_filter('jpeg_quality', function ($arg) {
@@ -77,7 +76,7 @@ function my_deregister_scripts()
 
 function custom_mime_types($mimes)
 {
-  $mimes['svg'] = 'image/svg+xml';
+  $mimes['icons'] = 'image/icons+xml';
   return $mimes;
 }
 

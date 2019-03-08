@@ -126,7 +126,7 @@ class WPSEO_Help_Center {
 		$formatted_data['contactSupportParagraphs'] = array(
 			array(
 				'image'   => array(
-					'src'    => esc_url( plugin_dir_url( WPSEO_FILE ) . 'images/support-team.svg' ),
+					'src'    => esc_url( plugin_dir_url( WPSEO_FILE ) . 'images/support-team.icons' ),
 					'width'  => 100,
 					'height' => 100,
 					'alt'    => '',

@@ -126,10 +126,10 @@ function _wp_menu_output( $menu, $submenu, $submenu_as_parent = true ) {
 
 			if ( 'none' === $item[6] || 'div' === $item[6] ) {
 				$img = '<br />';
-			} elseif ( 0 === strpos( $item[6], 'data:image/svg+xml;base64,' ) ) {
+			} elseif ( 0 === strpos( $item[6], 'data:image/icons+xml;base64,' ) ) {
 				$img       = '<br />';
 				$img_style = ' style="background-image:url(\'' . esc_attr( $item[6] ) . '\')"';
-				$img_class = ' svg';
+				$img_class = ' icons';
 			} elseif ( 0 === strpos( $item[6], 'dashicons-' ) ) {
 				$img       = '<br />';
 				$img_class = ' dashicons-before ' . sanitize_html_class( $item[6] );

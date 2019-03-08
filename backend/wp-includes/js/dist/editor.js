@@ -6626,7 +6626,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  return n;
 	}
-	
+
 
 /***/ })
 /******/ ])
@@ -6710,7 +6710,7 @@ Traverse.prototype.reduce = function (cb, init) {
 Traverse.prototype.paths = function () {
     var acc = [];
     this.forEach(function (x) {
-        acc.push(this.path); 
+        acc.push(this.path);
     });
     return acc;
 };
@@ -6725,24 +6725,24 @@ Traverse.prototype.nodes = function () {
 
 Traverse.prototype.clone = function () {
     var parents = [], nodes = [];
-    
+
     return (function clone (src) {
         for (var i = 0; i < parents.length; i++) {
             if (parents[i] === src) {
                 return nodes[i];
             }
         }
-        
+
         if (typeof src === 'object' && src !== null) {
             var dst = copy(src);
-            
+
             parents.push(src);
             nodes.push(dst);
-            
+
             forEach(objectKeys(src), function (key) {
                 dst[key] = clone(src[key]);
             });
-            
+
             parents.pop();
             nodes.pop();
             return dst;
@@ -6757,13 +6757,13 @@ function walk (root, cb, immutable) {
     var path = [];
     var parents = [];
     var alive = true;
-    
+
     return (function walker (node_) {
         var node = immutable ? copy(node_) : node_;
         var modifiers = {};
-        
+
         var keepGoing = true;
-        
+
         var state = {
             node : node,
             node_ : node_,
@@ -6802,17 +6802,17 @@ function walk (root, cb, immutable) {
             stop : function () { alive = false },
             block : function () { keepGoing = false }
         };
-        
+
         if (!alive) return state;
-        
+
         function updateState() {
             if (typeof state.node === 'object' && state.node !== null) {
                 if (!state.keys || state.node_ !== state.node) {
                     state.keys = objectKeys(state.node)
                 }
-                
+
                 state.isLeaf = state.keys.length == 0;
-                
+
                 for (var i = 0; i < parents.length; i++) {
                     if (parents[i].node_ === node_) {
                         state.circular = parents[i];
@@ -6824,49 +6824,49 @@ function walk (root, cb, immutable) {
                 state.isLeaf = true;
                 state.keys = null;
             }
-            
+
             state.notLeaf = !state.isLeaf;
             state.notRoot = !state.isRoot;
         }
-        
+
         updateState();
-        
+
         // use return values to update if defined
         var ret = cb.call(state, state.node);
         if (ret !== undefined && state.update) state.update(ret);
-        
+
         if (modifiers.before) modifiers.before.call(state, state.node);
-        
+
         if (!keepGoing) return state;
-        
+
         if (typeof state.node == 'object'
         && state.node !== null && !state.circular) {
             parents.push(state);
-            
+
             updateState();
-            
+
             forEach(state.keys, function (key, i) {
                 path.push(key);
-                
+
                 if (modifiers.pre) modifiers.pre.call(state, state.node[key], key);
-                
+
                 var child = walker(state.node[key]);
                 if (immutable && hasOwnProperty.call(state.node, key)) {
                     state.node[key] = child.node;
                 }
-                
+
                 child.isLast = i == state.keys.length - 1;
                 child.isFirst = i == 0;
-                
+
                 if (modifiers.post) modifiers.post.call(state, child);
-                
+
                 path.pop();
             });
             parents.pop();
         }
-        
+
         if (modifiers.after) modifiers.after.call(state, state.node);
-        
+
         return state;
     })(root).node;
 }
@@ -6874,7 +6874,7 @@ function walk (root, cb, immutable) {
 function copy (src) {
     if (typeof src === 'object' && src !== null) {
         var dst;
-        
+
         if (isArray(src)) {
             dst = [];
         }
@@ -6912,7 +6912,7 @@ function copy (src) {
             T.prototype = proto;
             dst = new T;
         }
-        
+
         forEach(objectKeys(src), function (key) {
             dst[key] = src[key];
         });
@@ -7484,7 +7484,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 			// Using offsetHeight as a replacement for computed.height in IE, because IE does not account use of border-box
 			var actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(computed.height)) : ta.offsetHeight;
 
-			// The actual height not matching the style height (set via the resize method) indicates that 
+			// The actual height not matching the style height (set via the resize method) indicates that
 			// the max-height has been exceeded, in which case the overflow should be allowed.
 			if (actualHeight < styleHeight) {
 				if (computed.overflowY === 'hidden') {
@@ -14334,7 +14334,7 @@ function BlockIcon(_ref) {
   if (Object(external_lodash_["get"])(icon, ['src']) === 'block-default') {
     icon = {
       src: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-        xmlns: "http://www.w3.org/2000/svg",
+        xmlns: "http://www.w3.org/2000/icons",
         viewBox: "0 0 24 24"
       }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
         d: "M19 7h-1V5h-4v2h-4V5H6v2H5c-1.1 0-2 .9-2 2v10h18V9c0-1.1-.9-2-2-2zm0 10H5V9h14v8z"
@@ -15020,7 +15020,7 @@ function BlockNavigation(_ref2) {
 
 
 var MenuIcon = Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-  xmlns: "http://www.w3.org/2000/svg",
+  xmlns: "http://www.w3.org/2000/icons",
   viewBox: "0 0 24 24",
   width: "20",
   height: "20"
@@ -15710,7 +15710,7 @@ function getMultiBlockMoverDescription(selectedCount, firstIndex, isFirst, isLas
 var upArrow = Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
   width: "18",
   height: "18",
-  xmlns: "http://www.w3.org/2000/svg",
+  xmlns: "http://www.w3.org/2000/icons",
   viewBox: "0 0 18 18"
 }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Polygon"], {
   points: "9,4.5 3.3,10.1 4.8,11.5 9,7.3 13.2,11.5 14.7,10.1 "
@@ -15718,7 +15718,7 @@ var upArrow = Object(external_this_wp_element_["createElement"])(external_this_w
 var downArrow = Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
   width: "18",
   height: "18",
-  xmlns: "http://www.w3.org/2000/svg",
+  xmlns: "http://www.w3.org/2000/icons",
   viewBox: "0 0 18 18"
 }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Polygon"], {
   points: "9,13.5 14.7,7.9 13.2,6.5 9,10.7 4.8,6.5 3.3,7.9 "
@@ -15726,7 +15726,7 @@ var downArrow = Object(external_this_wp_element_["createElement"])(external_this
 var dragHandle = Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
   width: "18",
   height: "18",
-  xmlns: "http://www.w3.org/2000/svg",
+  xmlns: "http://www.w3.org/2000/icons",
   viewBox: "0 0 18 18"
 }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
   d: "M13,8c0.6,0,1-0.4,1-1s-0.4-1-1-1s-1,0.4-1,1S12.4,8,13,8z M5,6C4.4,6,4,6.4,4,7s0.4,1,1,1s1-0.4,1-1S5.6,6,5,6z M5,10 c-0.6,0-1,0.4-1,1s0.4,1,1,1s1-0.4,1-1S5.6,10,5,10z M13,10c-0.6,0-1,0.4-1,1s0.4,1,1,1s1-0.4,1-1S13.6,10,13,10z M9,6 C8.4,6,8,6.4,8,7s0.4,1,1,1s1-0.4,1-1S9.6,6,9,6z M9,10c-0.6,0-1,0.4-1,1s0.4,1,1,1s1-0.4,1-1S9.6,10,9,10z"
@@ -25333,7 +25333,7 @@ function writeInterstitialMessage(targetDocument) {
   var markup = Object(external_this_wp_element_["renderToString"])(Object(external_this_wp_element_["createElement"])("div", {
     className: "editor-post-preview-button__interstitial-message"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 96 96"
   }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
     className: "outer",
@@ -25344,7 +25344,7 @@ function writeInterstitialMessage(targetDocument) {
     d: "M69.5 46.4c0-3.9-1.4-6.7-2.6-8.8-1.6-2.6-3.1-4.9-3.1-7.5 0-2.9 2.2-5.7 5.4-5.7h.4C63.9 19.2 56.4 16 48 16c-11.2 0-21 5.7-26.7 14.4h2.1c3.3 0 8.5-.4 8.5-.4 1.7-.1 1.9 2.4.2 2.6 0 0-1.7.2-3.7.3L40 67.5l7-20.9L42 33c-1.7-.1-3.3-.3-3.3-.3-1.7-.1-1.5-2.7.2-2.6 0 0 5.3.4 8.4.4 3.3 0 8.5-.4 8.5-.4 1.7-.1 1.9 2.4.2 2.6 0 0-1.7.2-3.7.3l11.5 34.3 3.3-10.4c1.6-4.5 2.4-7.8 2.4-10.5zM16.1 48c0 12.6 7.3 23.5 18 28.7L18.8 35c-1.7 4-2.7 8.4-2.7 13zm32.5 2.8L39 78.6c2.9.8 5.9 1.3 9 1.3 3.7 0 7.3-.6 10.6-1.8-.1-.1-.2-.3-.2-.4l-9.8-26.9zM76.2 36c0 3.2-.6 6.9-2.4 11.4L64 75.6c9.5-5.5 15.9-15.8 15.9-27.6 0-5.5-1.4-10.8-3.9-15.3.1 1 .2 2.1.2 3.3z",
     fill: "none"
   })), Object(external_this_wp_element_["createElement"])("p", null, Object(external_this_wp_i18n_["__"])('Generating preview…'))));
-  markup += "\n\t\t<style>\n\t\t\tbody {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t\t.editor-post-preview-button__interstitial-message {\n\t\t\t\tdisplay: flex;\n\t\t\t\tflex-direction: column;\n\t\t\t\talign-items: center;\n\t\t\t\tjustify-content: center;\n\t\t\t\theight: 100vh;\n\t\t\t\twidth: 100vw;\n\t\t\t}\n\t\t\t@-webkit-keyframes paint {\n\t\t\t\t0% {\n\t\t\t\t\tstroke-dashoffset: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t@-moz-keyframes paint {\n\t\t\t\t0% {\n\t\t\t\t\tstroke-dashoffset: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t@-o-keyframes paint {\n\t\t\t\t0% {\n\t\t\t\t\tstroke-dashoffset: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t@keyframes paint {\n\t\t\t\t0% {\n\t\t\t\t\tstroke-dashoffset: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t.editor-post-preview-button__interstitial-message svg {\n\t\t\t\twidth: 192px;\n\t\t\t\theight: 192px;\n\t\t\t\tstroke: #555d66;\n\t\t\t\tstroke-width: 0.75;\n\t\t\t}\n\t\t\t.editor-post-preview-button__interstitial-message svg .outer,\n\t\t\t.editor-post-preview-button__interstitial-message svg .inner {\n\t\t\t\tstroke-dasharray: 280;\n\t\t\t\tstroke-dashoffset: 280;\n\t\t\t\t-webkit-animation: paint 1.5s ease infinite alternate;\n\t\t\t\t-moz-animation: paint 1.5s ease infinite alternate;\n\t\t\t\t-o-animation: paint 1.5s ease infinite alternate;\n\t\t\t\tanimation: paint 1.5s ease infinite alternate;\n\t\t\t}\n\t\t\tp {\n\t\t\t\ttext-align: center;\n\t\t\t\tfont-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif;\n\t\t\t}\n\t\t</style>\n\t";
+  markup += "\n\t\t<style>\n\t\t\tbody {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t\t.editor-post-preview-button__interstitial-message {\n\t\t\t\tdisplay: flex;\n\t\t\t\tflex-direction: column;\n\t\t\t\talign-items: center;\n\t\t\t\tjustify-content: center;\n\t\t\t\theight: 100vh;\n\t\t\t\twidth: 100vw;\n\t\t\t}\n\t\t\t@-webkit-keyframes paint {\n\t\t\t\t0% {\n\t\t\t\t\tstroke-dashoffset: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t@-moz-keyframes paint {\n\t\t\t\t0% {\n\t\t\t\t\tstroke-dashoffset: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t@-o-keyframes paint {\n\t\t\t\t0% {\n\t\t\t\t\tstroke-dashoffset: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t@keyframes paint {\n\t\t\t\t0% {\n\t\t\t\t\tstroke-dashoffset: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t.editor-post-preview-button__interstitial-message icons {\n\t\t\t\twidth: 192px;\n\t\t\t\theight: 192px;\n\t\t\t\tstroke: #555d66;\n\t\t\t\tstroke-width: 0.75;\n\t\t\t}\n\t\t\t.editor-post-preview-button__interstitial-message icons .outer,\n\t\t\t.editor-post-preview-button__interstitial-message icons .inner {\n\t\t\t\tstroke-dasharray: 280;\n\t\t\t\tstroke-dashoffset: 280;\n\t\t\t\t-webkit-animation: paint 1.5s ease infinite alternate;\n\t\t\t\t-moz-animation: paint 1.5s ease infinite alternate;\n\t\t\t\t-o-animation: paint 1.5s ease infinite alternate;\n\t\t\t\tanimation: paint 1.5s ease infinite alternate;\n\t\t\t}\n\t\t\tp {\n\t\t\t\ttext-align: center;\n\t\t\t\tfont-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif;\n\t\t\t}\n\t\t</style>\n\t";
   targetDocument.write(markup);
   targetDocument.title = Object(external_this_wp_i18n_["__"])('Generating preview…');
   targetDocument.close();
@@ -29482,7 +29482,7 @@ function MultiSelectionInspector(_ref) {
     className: "editor-multi-selection-inspector__card"
   }, Object(external_this_wp_element_["createElement"])(BlockIcon, {
     icon: Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
-      xmlns: "http://www.w3.org/2000/svg",
+      xmlns: "http://www.w3.org/2000/icons",
       viewBox: "0 0 24 24"
     }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
       d: "M3 5H1v16c0 1.1.9 2 2 2h16v-2H3V5zm18-4H7c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 16H7V3h14v14z"
@@ -30294,7 +30294,7 @@ function (_Component) {
             showColors: true
           }), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["SVG"], {
             className: "editor-block-switcher__transform",
-            xmlns: "http://www.w3.org/2000/svg",
+            xmlns: "http://www.w3.org/2000/icons",
             viewBox: "0 0 24 24"
           }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Path"], {
             d: "M6.5 8.9c.6-.6 1.4-.9 2.2-.9h6.9l-1.3 1.3 1.4 1.4L19.4 7l-3.7-3.7-1.4 1.4L15.6 6H8.7c-1.4 0-2.6.5-3.6 1.5l-2.8 2.8 1.4 1.4 2.8-2.8zm13.8 2.4l-2.8 2.8c-.6.6-1.3.9-2.1.9h-7l1.3-1.3-1.4-1.4L4.6 16l3.7 3.7 1.4-1.4L8.4 17h6.9c1.3 0 2.6-.5 3.5-1.5l2.8-2.8-1.3-1.4z"

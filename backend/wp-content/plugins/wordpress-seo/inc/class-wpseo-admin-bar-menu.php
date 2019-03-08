@@ -464,7 +464,7 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 	 * @return string Admin bar title markup.
 	 */
 	protected function get_title() {
-		return '<div id="yoast-ab-icon" class="ab-item yoast-logo svg"><span class="screen-reader-text">' . __( 'SEO', 'wordpress-seo' ) . '</span></div>';
+		return '<div id="yoast-ab-icon" class="ab-item yoast-logo icons"><span class="screen-reader-text">' . __( 'SEO', 'wordpress-seo' ) . '</span></div>';
 	}
 
 	/**

@@ -72,7 +72,7 @@ _wp_admin_html_begin();
 wp_enqueue_style( 'colors' );
 wp_enqueue_style( 'ie' );
 wp_enqueue_script( 'utils' );
-wp_enqueue_script( 'svg-painter' );
+wp_enqueue_script( 'icons-painter' );
 
 $admin_body_class = preg_replace( '/[^a-z0-9_-]+/i', '-', $hook_suffix );
 ?>
@@ -184,7 +184,7 @@ if ( is_network_admin() ) {
 	$admin_body_class .= ' network-admin';
 }
 
-$admin_body_class .= ' no-customize-support no-svg';
+$admin_body_class .= ' no-customize-support no-icons';
 
 if ( $current_screen->is_block_editor() ) {
 	// Default to is-fullscreen-mode to avoid jumps in the UI.

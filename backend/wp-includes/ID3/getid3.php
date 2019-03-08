@@ -973,11 +973,11 @@ class getID3
 
 
 				// SVG  - still image - Scalable Vector Graphics (SVG)
-				'svg'  => array(
-							'pattern'   => '(<!DOCTYPE svg PUBLIC |xmlns="http://www\\.w3\\.org/2000/svg")',
+				'icons'  => array(
+							'pattern'   => '(<!DOCTYPE icons PUBLIC |xmlns="http://www\\.w3\\.org/2000/icons")',
 							'group'     => 'graphic',
-							'module'    => 'svg',
-							'mime_type' => 'image/svg+xml',
+							'module'    => 'icons',
+							'mime_type' => 'image/icons+xml',
 							'fail_id3'  => 'ERROR',
 							'fail_ape'  => 'ERROR',
 						),

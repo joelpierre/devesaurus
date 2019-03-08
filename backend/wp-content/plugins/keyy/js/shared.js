@@ -635,8 +635,8 @@ var Keyy = function(send_command) {
 		}
 		
 		// Surround with a circle
-		var svg = $('svg.keyy-wave');
-		var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+		var svg = $('icons.keyy-wave');
+		var circle = document.createElementNS('http://www.w3.org/2000/icons', 'circle');
 		$(circle).attr('cx', '150');
 		$(circle).attr('cy', '100');
 		$(circle).attr('r', '200');
@@ -666,12 +666,12 @@ var Keyy = function(send_command) {
 		if ('wave' == Keyy.get_keyy_code_type()) {
 			setTimeout(function() {
 				$('.keyy_qrcode.keyy_wave_container')
-					.prepend('<object class="keyy-thumbs-up" type="image/svg+xml" data="'+keyy.keyy_thumbs_up+'"></object>');
+					.prepend('<object class="keyy-thumbs-up" type="image/icons+xml" data="'+keyy.keyy_thumbs_up+'"></object>');
 				$('.keyy-thumbs-up').css('animation', 'rotateIn 200ms').fadeIn("fast");
 			}, 1800);
 		} else {
 			$('.keyy_qrcode.keyy_wave_container img')
-				.replaceWith('<object class="keyy-thumbs-up" type="image/svg+xml" data="'+keyy.keyy_thumbs_up+'"></object>');
+				.replaceWith('<object class="keyy-thumbs-up" type="image/icons+xml" data="'+keyy.keyy_thumbs_up+'"></object>');
 			$('.keyy-thumbs-up').css('animation', 'rotateIn 200ms').css('left', '40px').fadeIn("fast");
 		}
 
@@ -698,7 +698,7 @@ var Keyy = function(send_command) {
 
 			console.log("Keyy Wave: " + wave);
 			$(selector).addClass('keyy_wave_container').data('wave', wave)
-				.empty().append('<svg class="keyy-wave"></svg>');
+				.empty().append('<icons class="keyy-wave"></icons>');
 
 			$(selector).find(".keyy-wave").each(function(index) {
 				JsBarcode(this, wave, {

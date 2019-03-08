@@ -1276,7 +1276,7 @@ function get_post_types( $args = array(), $output = 'names', $operator = 'and' )
  *                                              $show_in_menu must be true. Default null (at the bottom).
  *     @type string      $menu_icon             The url to the icon to be used for this menu. Pass a base64-encoded
  *                                              SVG using a data URI, which will be colored to match the color scheme
- *                                              -- this should begin with 'data:image/svg+xml;base64,'. Pass the name
+ *                                              -- this should begin with 'data:image/icons+xml;base64,'. Pass the name
  *                                              of a Dashicons helper class to use a font icon, e.g.
  *                                              'dashicons-chart-pie'. Pass 'none' to leave div.wp-menu-image empty
  *                                              so an icon can be added via CSS. Defaults to use the posts icon.

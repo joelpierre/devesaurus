@@ -6323,7 +6323,7 @@ copy(ValidationTypes, {
         "<paint>": "<paint-basic> | <uri> <paint-basic>?",
 
         // Helper definition for <paint> above.
-        "<paint-basic>": "none | currentColor | <color-svg> <icccolor>?",
+        "<paint-basic>": "none | currentColor | <color-icons> <icccolor>?",
 
         "<position>":
             // Because our `alt` combinator is ordered, we need to test these

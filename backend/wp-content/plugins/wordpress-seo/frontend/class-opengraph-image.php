@@ -174,7 +174,7 @@ class WPSEO_OpenGraph_Image {
 			return;
 		}
 
-		// If the URL ends in `.svg`, we need to return.
+		// If the URL ends in `.icons`, we need to return.
 		if ( ! $this->is_valid_image_url( $attachment['url'] ) ) {
 			return;
 		}

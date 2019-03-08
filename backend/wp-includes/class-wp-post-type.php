@@ -161,7 +161,7 @@ final class WP_Post_Type {
 	 * The URL to the icon to be used for this menu.
 	 *
 	 * Pass a base64-encoded SVG using a data URI, which will be colored to match the color scheme.
-	 * This should begin with 'data:image/svg+xml;base64,'. Pass the name of a Dashicons helper class
+	 * This should begin with 'data:image/icons+xml;base64,'. Pass the name of a Dashicons helper class
 	 * to use a font icon, e.g. 'dashicons-chart-pie'. Pass 'none' to leave div.wp-menu-image empty
 	 * so an icon can be added via CSS.
 	 *

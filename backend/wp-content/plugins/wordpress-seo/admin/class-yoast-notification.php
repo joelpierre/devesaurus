@@ -323,7 +323,7 @@ class Yoast_Notification {
 	private function wrap_yoast_seo_icon( $message ) {
 		$out  = sprintf(
 			'<img src="%1$s" height="%2$d" width="%3$d" class="yoast-seo-icon" />',
-			esc_url( plugin_dir_url( WPSEO_FILE ) . 'images/Yoast_SEO_Icon.svg' ),
+			esc_url( plugin_dir_url( WPSEO_FILE ) . 'images/Yoast_SEO_Icon.icons' ),
 			60,
 			60
 		);

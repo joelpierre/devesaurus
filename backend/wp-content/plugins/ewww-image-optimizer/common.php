@@ -7686,10 +7686,10 @@ function ewww_image_optimizer_options( $network = 'singlesite' ) {
 
 	$status_output .= '<li><div id="ewww-compress" class="ewww-status-detail">';
 	$compress_guage = '<div id="ewww-compress-guage" class="ewww-guage" data-score="' . $compress_score . '">' .
-		'<svg width="120" height="120">' .
+		'<icons width="120" height="120">' .
 		'<circle class="ewww-inactive" r="54" cy="60" cx="60" stroke-width="12"/>' .
 		'<circle class="ewww-active" r="54" cy="60" cx="60" stroke-width="12" style="stroke-dasharray: ' . $guage_stroke_dasharray . 'px; stroke-dashoffset: ' . $compress_stroke_dashoffset . 'px;"/>' .
-		'</svg>' .
+		'</icons>' .
 		'<div class="ewww-score">' . $compress_score . '%</div>' .
 		'</div><!-- end .ewww-guage -->';
 	$status_output .= $compress_guage;
@@ -7708,10 +7708,10 @@ function ewww_image_optimizer_options( $network = 'singlesite' ) {
 
 	$status_output .= '<li><div id="ewww-resize" class="ewww-status-detail">';
 	$resize_guage   = '<div id="ewww-resize-guage" class="ewww-guage" data-score="' . $resize_score . '">' .
-		'<svg width="120" height="120">' .
+		'<icons width="120" height="120">' .
 		'<circle class="ewww-inactive" r="54" cy="60" cx="60" stroke-width="12"/>' .
 		'<circle class="ewww-active" r="54" cy="60" cx="60" stroke-width="12" style="stroke-dasharray: ' . $guage_stroke_dasharray . 'px; stroke-dashoffset: ' . $resize_stroke_dashoffset . 'px;"/>' .
-		'</svg>' .
+		'</icons>' .
 		'<div class="ewww-score">' . $resize_score . '%</div>' .
 		'</div><!-- end .ewww-guage -->';
 	$status_output .= $resize_guage;
@@ -7735,11 +7735,11 @@ function ewww_image_optimizer_options( $network = 'singlesite' ) {
 
 		$status_output .= '<li><div id="ewww-compress" class="ewww-status-detail">';
 		$savings_guage  = '<div id="ewww-savings-guage" class="ewww-guage" data-score="' . $total_savings / $total_sizes[1] . '">' .
-			'<svg width="120" height="120">' .
+			'<icons width="120" height="120">' .
 			'<title>' . round( $total_savings / $total_sizes[1], 3 ) * 100 . '%</title>' .
 			'<circle class="ewww-inactive" r="54" cy="60" cx="60" stroke-width="12"/>' .
 			'<circle class="ewww-active" r="54" cy="60" cx="60" stroke-width="12" style="stroke-dasharray: ' . $guage_stroke_dasharray . 'px; stroke-dashoffset: ' . $savings_stroke_dashoffset . 'px;"/>' .
-			'</svg>' .
+			'</icons>' .
 			'<div class="ewww-score">' . ewww_image_optimizer_size_format( $total_savings, 2 ) . '</div>' .
 			'</div><!-- end .ewww-guage -->';
 		$status_output .= $savings_guage;

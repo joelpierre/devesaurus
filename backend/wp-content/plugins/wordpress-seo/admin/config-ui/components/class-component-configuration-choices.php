@@ -60,7 +60,7 @@ class WPSEO_Config_Component_Configuration_Choices implements WPSEO_Config_Compo
 			$title,
 			$intro_text,
 			$button,
-			plugin_dir_url( WPSEO_FILE ) . '/images/Yoast_SEO_Icon.svg'
+			plugin_dir_url( WPSEO_FILE ) . '/images/Yoast_SEO_Icon.icons'
 		);
 
 		/*
@@ -88,7 +88,7 @@ class WPSEO_Config_Component_Configuration_Choices implements WPSEO_Config_Compo
 			$title,
 			$plugin_training_text,
 			$button,
-			plugin_dir_url( WPSEO_FILE ) . 'images/yoast_seo_for_wp_2.svg'
+			plugin_dir_url( WPSEO_FILE ) . 'images/yoast_seo_for_wp_2.icons'
 		);
 
 		return $field;

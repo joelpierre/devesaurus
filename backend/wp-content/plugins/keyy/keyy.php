@@ -1040,7 +1040,7 @@ class Keyy_Login_Plugin {
 				'site_hash' => $this->get_site_hash(),
 				'wave_colour' => Keyy_Options::get_option('wave_colour', '#da521b'),
 				'keyy_logo_icon' => KEYY_URL.'/images/keyy-logo.png',
-				'keyy_thumbs_up' => KEYY_URL.'/images/thumbs-up.svg',
+				'keyy_thumbs_up' => KEYY_URL.'/images/thumbs-up.icons',
 				'learn_more_template' => $this->include_template('login-form-learn-more.php', true, $common_urls),
 			);
 

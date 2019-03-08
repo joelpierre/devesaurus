@@ -48,7 +48,7 @@ $new_tab_message      = WPSEO_Admin_Utils::get_new_tab_message();
 				<p>
 					<strong><?php echo esc_html_x( 'Free:', 'course', 'wordpress-seo' ); ?></strong>
 					<a href="<?php WPSEO_Shortlinker::show( 'https://yoa.st/2oi' ); ?>" target="_blank">
-						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/SEO_for_beginners.svg' ); ?>" alt="">
+						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/SEO_for_beginners.icons' ); ?>" alt="">
 						<strong><?php esc_html_e( 'SEO for Beginners course', 'wordpress-seo' ); ?></strong>
 						<?php echo $new_tab_message; ?>
 					</a><br>
@@ -58,7 +58,7 @@ $new_tab_message      = WPSEO_Admin_Utils::get_new_tab_message();
 			<div class="wp-clearfix">
 				<p>
 					<a href="<?php WPSEO_Shortlinker::show( 'https://yoa.st/jv' ); ?>" target="_blank">
-						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/yoast_seo_for_wp_2.svg' ); ?>" alt="">
+						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/yoast_seo_for_wp_2.icons' ); ?>" alt="">
 						<strong>
 							<?php
 								/* translators: %s expands to Yoast SEO */
@@ -73,7 +73,7 @@ $new_tab_message      = WPSEO_Admin_Utils::get_new_tab_message();
 			<div class="wp-clearfix">
 				<p>
 					<a href="<?php WPSEO_Shortlinker::show( 'https://yoa.st/ju' ); ?>" target="_blank">
-						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/BasicSEO.svg' ); ?>" alt="">
+						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/BasicSEO.icons' ); ?>" alt="">
 						<strong><?php esc_html_e( 'Basic SEO course', 'wordpress-seo' ); ?></strong>
 						<?php echo $new_tab_message; ?>
 					</a><br>
@@ -86,7 +86,7 @@ $new_tab_message      = WPSEO_Admin_Utils::get_new_tab_message();
 			<div class="wp-clearfix">
 				<p>
 					<a href="<?php WPSEO_Shortlinker::show( 'https://yoa.st/jq' ); ?>" target="_blank">
-						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/Local_SEO_Icon.svg' ); ?>" alt="">
+						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/Local_SEO_Icon.icons' ); ?>" alt="">
 						<strong>Local SEO</strong>
 						<?php echo $new_tab_message; ?>
 					</a><br>
@@ -96,7 +96,7 @@ $new_tab_message      = WPSEO_Admin_Utils::get_new_tab_message();
 			<div class="wp-clearfix">
 				<p>
 					<a href="<?php WPSEO_Shortlinker::show( 'https://yoa.st/jo' ); ?>" target="_blank">
-						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/Video_SEO_Icon.svg' ); ?>" alt="">
+						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/Video_SEO_Icon.icons' ); ?>" alt="">
 						<strong>Video SEO</strong>
 						<?php echo $new_tab_message; ?>
 					</a><br>
@@ -106,7 +106,7 @@ $new_tab_message      = WPSEO_Admin_Utils::get_new_tab_message();
 			<div class="wp-clearfix">
 				<p>
 					<a href="<?php WPSEO_Shortlinker::show( 'https://yoa.st/jp' ); ?>" target="_blank">
-						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/Woo_SEO_Icon.svg' ); ?>" alt="">
+						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/Woo_SEO_Icon.icons' ); ?>" alt="">
 						<strong>WooCommerce SEO</strong>
 						<?php echo $new_tab_message; ?>
 					</a><br>
@@ -116,7 +116,7 @@ $new_tab_message      = WPSEO_Admin_Utils::get_new_tab_message();
 			<div class="wp-clearfix">
 				<p>
 					<a href="<?php WPSEO_Shortlinker::show( 'https://yoa.st/jr' ); ?>" target="_blank">
-						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/News_SEO_Icon.svg' ); ?>" alt="">
+						<img src="<?php echo esc_url( $wpseo_plugin_dir_url . 'images/News_SEO_Icon.icons' ); ?>" alt="">
 						<strong>News SEO</strong>
 						<?php echo $new_tab_message; ?>
 					</a><br>

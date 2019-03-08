@@ -1631,9 +1631,9 @@ function readMenuTreeState(){
 
 /**
  * Losslessly compress the admin menu configuration.
- * 
+ *
  * This is a JS port of the ameMenu::compress() function defined in /includes/menu.php.
- * 
+ *
  * @param {Object} adminMenu
  * @returns {Object}
  */
@@ -2527,7 +2527,7 @@ function ameOnDomReady() {
 		} else {
 			currentDropdownOwnerMenu = currentDropdownOwner.closest('.ws_container').data('menu_item');
 		}
-		
+
 		capSelectorDropdown.focus();
 
 		capSuggestionFeature.show();
@@ -2876,7 +2876,7 @@ function ameOnDomReady() {
 	});
 
 	//Alternatively, use the WordPress media uploader to select a custom icon.
-	//This code is based on the header selection script in /wp-admin/js/custom-header.js.
+	//This code is based on the header selection script in /wp-admin/js/custom-Header.js.
 	$('#ws_choose_icon_from_media').click(function(event) {
 		event.preventDefault();
 		var frame = null;

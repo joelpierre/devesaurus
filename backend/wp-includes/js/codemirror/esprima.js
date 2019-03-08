@@ -433,7 +433,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var xhtml_entities_1 = __webpack_require__(14);
 	token_1.TokenName[100 /* Identifier */] = 'JSXIdentifier';
 	token_1.TokenName[101 /* Text */] = 'JSXText';
-	// Fully qualified element name, e.g. <svg:path> returns "svg:path"
+	// Fully qualified element name, e.g. <icons:path> returns "icons:path"
 	function getQualifiedElementName(elementName) {
 	    var qualifiedName;
 	    switch (elementName.type) {

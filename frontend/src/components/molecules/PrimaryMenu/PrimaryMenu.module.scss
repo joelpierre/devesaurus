@@ -1,0 +1,18 @@
+@import "~sass/core";
+
+.primary-menu {
+  $root: &;
+
+  display: inline-flex;
+  width: auto;
+
+  &__list {
+    list-style-type: none;
+    margin-bottom: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}

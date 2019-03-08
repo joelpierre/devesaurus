@@ -607,8 +607,8 @@ class WP_Plugin_Install_List_Table extends WP_List_Table {
 				__( 'More Details' )
 			);
 
-			if ( ! empty( $plugin['icons']['svg'] ) ) {
-				$plugin_icon_url = $plugin['icons']['svg'];
+			if ( ! empty( $plugin['icons']['icons'] ) ) {
+				$plugin_icon_url = $plugin['icons']['icons'];
 			} elseif ( ! empty( $plugin['icons']['2x'] ) ) {
 				$plugin_icon_url = $plugin['icons']['2x'];
 			} elseif ( ! empty( $plugin['icons']['1x'] ) ) {

@@ -2815,7 +2815,7 @@ function bytesToUuid(buf, offset) {
   var i = offset || 0;
   var bth = byteToHex;
   // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
-  return ([bth[buf[i++]], bth[buf[i++]], 
+  return ([bth[buf[i++]], bth[buf[i++]],
 	bth[buf[i++]], bth[buf[i++]], '-',
 	bth[buf[i++]], bth[buf[i++]], '-',
 	bth[buf[i++]], bth[buf[i++]], '-',
@@ -14143,7 +14143,7 @@ PortalWithState_PortalWithState.defaultProps = {
 /*!
  * clipboard.js v2.0.4
  * https://zenorocha.github.io/clipboard.js
- * 
+ *
  * Licensed MIT © Zeno Rocha
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -18268,7 +18268,7 @@ module.exports = function shimAssign() {
  * LICENSE file in the root directory of this source tree.
  *
  * @typechecks
- * 
+ *
  */
 
 /*eslint-disable no-self-compare */
@@ -23006,7 +23006,7 @@ var objectSpread = __webpack_require__(8);
 // EXTERNAL MODULE: external {"this":["wp","element"]}
 var external_this_wp_element_ = __webpack_require__(0);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/primitives/svg/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/primitives/icons/index.js
 
 
 /**
@@ -25120,7 +25120,7 @@ function (_Component) {
         role: "img",
         focusable: "false",
         className: iconClass,
-        xmlns: "http://www.w3.org/2000/svg",
+        xmlns: "http://www.w3.org/2000/icons",
         width: size,
         height: size,
         viewBox: "0 0 20 20"
@@ -31241,7 +31241,7 @@ function FormToggle(_ref) {
     className: "components-form-toggle__on",
     width: "2",
     height: "6",
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 2 6"
   }, Object(external_this_wp_element_["createElement"])(svg_Path, {
     d: "M0 0h2v6H0z"
@@ -31252,7 +31252,7 @@ function FormToggle(_ref) {
     "aria-hidden": "true",
     role: "img",
     focusable: "false",
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "http://www.w3.org/2000/icons",
     viewBox: "0 0 6 6"
   }, Object(external_this_wp_element_["createElement"])(svg_Path, {
     d: "M3 1.5c.8 0 1.5.7 1.5 1.5S3.8 4.5 3 4.5 1.5 3.8 1.5 3 2.2 1.5 3 1.5M3 0C1.3 0 0 1.3 0 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"
@@ -32654,7 +32654,7 @@ function (_Component) {
   keydown: 'handleKeyDown'
 })])(frame_ModalFrame));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/modal/header.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/modal/Header.js
 
 
 /**
@@ -33086,7 +33086,7 @@ function NoticeList(_ref) {
 
 /* harmony default export */ var list = (NoticeList);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/panel/header.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/panel/Header.js
 
 
 function PanelHeader(_ref) {
@@ -33217,7 +33217,7 @@ function (_Component) {
         width: "24px",
         height: "24px",
         viewBox: "0 0 24 24",
-        xmlns: "http://www.w3.org/2000/svg"
+        xmlns: "http://www.w3.org/2000/icons"
       }, Object(external_this_wp_element_["createElement"])(svg_G, null, Object(external_this_wp_element_["createElement"])(svg_Path, {
         fill: "none",
         d: "M0,0h24v24H0V0z"
@@ -33228,7 +33228,7 @@ function (_Component) {
         width: "24px",
         height: "24px",
         viewBox: "0 0 24 24",
-        xmlns: "http://www.w3.org/2000/svg"
+        xmlns: "http://www.w3.org/2000/icons"
       }, Object(external_this_wp_element_["createElement"])(svg_G, null, Object(external_this_wp_element_["createElement"])(svg_Path, {
         fill: "none",
         d: "M0,0h24v24H0V0z"

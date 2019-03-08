@@ -1,0 +1,52 @@
+@import "~sass/core";
+
+.primary-header {
+  $root: &;
+
+  height: auto;
+  align-items: center;
+  //position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100%;
+  background-color: transparent;
+  padding: 1rem 0;
+  transition: $transition-all-base;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-basis: 100%;
+    min-width: 0;
+    align-content: center;
+  }
+
+  &__brand {
+    width: auto;
+    height: auto;
+    flex: 1;
+    text-align: left;
+
+    @include tablet-landscape {
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include tablet-landscape {
+      display: flex;
+      flex: 1;
+      margin: 0 auto;
+    }
+  }
+
+  &__hamburger {
+    display: flex;
+
+    @include tablet-landscape {
+      display: none;
+    }
+  }
+}

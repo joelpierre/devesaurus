@@ -1,0 +1,12 @@
+@import "~sass/core";
+
+.menu-item {
+  $root: &;
+
+  position: relative;
+  padding: 1rem 2rem;
+
+  &__link {
+    color: $color-brand;
+  }
+}

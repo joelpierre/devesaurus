@@ -5467,18 +5467,18 @@ function _print_emoji_detection_script() {
 		 *
 		 * @since 4.6.0
 		 *
-		 * @param string The emoji base URL for svg images.
+		 * @param string The emoji base URL for icons images.
 		 */
-		'svgUrl'  => apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/11.2.0/svg/' ),
+		'svgUrl'  => apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/11.2.0/icons/' ),
 
 		/**
 		 * Filters the extension of the emoji SVG files.
 		 *
 		 * @since 4.6.0
 		 *
-		 * @param string The emoji extension for svg files. Default .svg.
+		 * @param string The emoji extension for icons files. Default .icons.
 		 */
-		'svgExt'  => apply_filters( 'emoji_svg_ext', '.svg' ),
+		'svgExt'  => apply_filters( 'emoji_svg_ext', '.icons' ),
 	);
 
 	$version = 'ver=' . get_bloginfo( 'version' );

@@ -1,5 +1,5 @@
 /**
- * @output wp-admin/js/custom-header.js
+ * @output wp-admin/js/custom-Header.js
  */
 
 /* global isRtl */
