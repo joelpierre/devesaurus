@@ -10,6 +10,7 @@
         "window": false
     },
     "rules": {
+        "import/no-extraneous-dependencies": "off",
         "no-use-before-define": [
             "off"
         ],

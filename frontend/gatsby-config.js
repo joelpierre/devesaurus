@@ -89,6 +89,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-graphql",
+      // options: {
+      //   typeName: "RMAPI",
+      //   fieldName: "rickAndMorty",
+      //   url: "https://rickandmortyapi-gql.now.sh/",
+      // },
+    },
+    {
       resolve: 'gatsby-source-wordpress',
       options: {
         baseUrl: process.env.GATSBY_BASE_URL || 'api.devesaurus.com',
