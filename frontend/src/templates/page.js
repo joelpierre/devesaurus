@@ -1,9 +1,8 @@
 import React from 'react';
-import Aux from '../hoc/Aux/Aux';
-import Layout from '../hoc/Layout/Layout';
+import CoreLayout from '../layouts/core';
 
 export default ({ pageContext }) => (
-  <Layout>
+  <CoreLayout>
     <section className="primary-main__section">
       <div className="container-fluid">
         <div className="row">
@@ -15,5 +14,5 @@ export default ({ pageContext }) => (
         </div>
       </div>
     </section>
-  </Layout>
+  </CoreLayout>
 );

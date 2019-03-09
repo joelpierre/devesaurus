@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
-require('dotenv').config();
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 const path = require('path');
 
 module.exports = {
@@ -83,14 +85,14 @@ module.exports = {
         // Any additional create only fields (optional)
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: process.env.SITE_URL || 'devesaurus.com',
+        cookieDomain: process.env.GATSBY_SITE_URL || 'devesaurus.com',
       },
     },
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: process.env.BASE_URL || 'api.devesaurus.com',
-        protocol: process.env.PROTOCOL || 'https',
+        baseUrl: process.env.GATSBY_BASE_URL || 'api.devesaurus.com',
+        protocol: process.env.GATSBY_PROTOCOL || 'https',
         hostingWPCOM: false,
         useACF: true,
         verboseOutput: false,
