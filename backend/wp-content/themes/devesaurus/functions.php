@@ -38,6 +38,7 @@ remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 remove_action('wp_print_styles', 'print_emoji_styles');
 
 //add_theme_support('woocommerce');
+add_theme_support('custom-logo');
 add_theme_support('post-thumbnails');
 
 add_action('admin_init', 'admin_settings');

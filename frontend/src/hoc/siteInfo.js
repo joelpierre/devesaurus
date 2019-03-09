@@ -18,12 +18,10 @@ const SiteInfo = () => (
   `}
     render={props => (
       <Aux>
-        <div>
-          {props.allWordpressSiteMetadata.edges[0].node.name}
-        </div>
-        <div>
+        {props.allWordpressSiteMetadata.edges[0].node.name}
+        <span>
           {props.allWordpressSiteMetadata.edges[0].node.description}
-        </div>
+        </span>
       </Aux>
     )}
   />
