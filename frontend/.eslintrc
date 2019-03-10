@@ -1,70 +1,71 @@
 {
-    "extends": "airbnb",
-    "parser": "babel-eslint",
-    "env": {
-        "browser": true,
-        "node": true
-    },
-    "globals": {
-        "document": false,
-        "window": false
-    },
-    "rules": {
-        "import/no-extraneous-dependencies": "off",
-        "no-use-before-define": [
-            "off"
-        ],
-        "global-require": "off",
-        "semi": "warn",
-        "quotes": "off",
-        "func-names": [
-            "error",
-            "never"
-        ],
-        "react/jsx-filename-extension": [
-            1,
-            {
-                "extensions": [
-                    ".js",
-                    ".jsx"
-                ]
-            }
-        ],
-        "react/prop-types": [
-            1,
-            {
-                "skipUndeclared": true
-            }
-        ],
-        "object-curly-spacing": [
-            "error",
-            "always"
-        ],
-        "class-methods-use-this": "off",
-        "space-before-function-paren": "off",
-        "no-shadow": "off",
-        "eol-last": "off",
-        "no-console": "off",
-        "react/jsx-tag-spacing": [
-            "off"
-        ],
-        "react/prefer-stateless-function": [
-            "off"
-        ],
-        "no-underscore-dangle": "off",
-        "array-callback-return": "off",
-        "react/no-array-index-key": "off",
-        "arrow-body-style": "off",
-        "prefer-template": "off",
-        "no-param-reassign": "off",
-        "import/prefer-default-export": "warn",
-        "no-unused-vars": "warn",
-        "no-mixed-operators": [
-            "off"
-        ],
-        "jsx-a11y/label-has-for": "warn",
-        "comma-dangle": "warn",
-        "arrow-parens": "warn",
-        "dot-notation": "warn"
-    }
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "document": false,
+    "window": false
+  },
+  "rules": {
+    "max-len": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-use-before-define": [
+      "off"
+    ],
+    "global-require": "off",
+    "semi": "warn",
+    "quotes": "off",
+    "func-names": [
+      "error",
+      "never"
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/prop-types": [
+      1,
+      {
+        "skipUndeclared": true
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "class-methods-use-this": "off",
+    "space-before-function-paren": "off",
+    "no-shadow": "off",
+    "eol-last": "off",
+    "no-console": "off",
+    "react/jsx-tag-spacing": [
+      "off"
+    ],
+    "react/prefer-stateless-function": [
+      "off"
+    ],
+    "no-underscore-dangle": "off",
+    "array-callback-return": "off",
+    "react/no-array-index-key": "off",
+    "arrow-body-style": "off",
+    "prefer-template": "off",
+    "no-param-reassign": "off",
+    "import/prefer-default-export": "warn",
+    "no-unused-vars": "warn",
+    "no-mixed-operators": [
+      "off"
+    ],
+    "jsx-a11y/label-has-for": "warn",
+    "comma-dangle": "warn",
+    "arrow-parens": "warn",
+    "dot-notation": "warn"
+  }
 }
