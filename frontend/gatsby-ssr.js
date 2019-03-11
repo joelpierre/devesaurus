@@ -4,5 +4,4 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 import withProvider from './src/hoc/withProvider';
-
 // export const wrapRootElement = withProvider;
