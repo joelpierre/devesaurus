@@ -21,7 +21,6 @@
     "gatsby-plugin-sharp": "~2.0.18",
     "gatsby-plugin-sitemap": "~2.0.4",
     "gatsby-source-filesystem": "~2.0.8",
-    "gatsby-source-firebase": "~1.0.0",
     "gatsby-source-wordpress": "~3.0.43",
     "gatsby-transformer-sharp": "~2.1.10",
     "lodash": "~4.17.11",
@@ -36,8 +35,7 @@
     "redux": "^4.0.1",
     "redux-immutable": "^4.0.0",
     "redux-saga": "^1.0.2",
-    "redux-thunk": "^2.3.0",
-    "stylelint-config-standard": "~18.2.0"
+    "redux-thunk": "^2.3.0"
   },
   "keywords": [
     "gatsby"
@@ -51,6 +49,7 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
+    "stylelint-config-standard": "~18.2.0",
     "eslint-config-airbnb": "~17.1.0",
     "prettier": "~1.16.4"
   },
