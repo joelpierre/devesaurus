@@ -1,4 +1,4 @@
-*.idea
+
 
 # misc
 /.sass-cache
@@ -264,3 +264,4 @@ yarn-error.log
 .pnp/
 .pnp.js
 # Yarn Integrity file
+/.gitignore

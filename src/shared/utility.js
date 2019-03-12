@@ -3,4 +3,9 @@ export const updateObject = (oldObject, updatedValues) => ({
   ...updatedValues,
 });
 
-export default updateObject;
+export const mapOverACFComponents = (components) => {
+  components.map((component) => {
+    component.__typename = component.__typename.replace('WordPressAcf_', '');
+  });
+  return components;
+};

@@ -1,37 +1,49 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as pageActions from '../store/actions/page.actions';
 
 import CoreLayout from '../layouts/core';
+import { mapOverACFComponents } from '../shared/utility';
+import AcfComponents from '../hoc/AcfComponents/AcfComponents';
 
-class PageTemplate extends Component {
-  componentDidMount() {
-    const { pageContext } = this.props;
-    this.props.onGetPage(pageContext);
-  }
 
-  render() {
-    const { pageContext } = this.props;
+function PageTemplate({ pageContext, onGetPage }) {
+  const acfFields = pageContext.acf;
+  const components = acfFields.components_page;
 
-    return (
-      <CoreLayout>
-        <section className="primary-main__section">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="flex">
-                <h1 className="heading-1" dangerouslySetInnerHTML={{ __html: pageContext.title }}/>
-              </div>
-            </div>
-          </div>
-        </section>
-      </CoreLayout>
-    );
-  }
+  /**
+   * React Hook - Replaces componentDidMount() we pass and empty array as the second
+   * argument in order to only fire it once.
+   */
+  useEffect(() => {
+    onGetPage(pageContext);
+  }, []);
+
+  /**
+   * React Hook - Fires when onGetPage has been executed. Once the store is updated we
+   * cycle over the components and rerender.
+   */
+  useEffect(() => {
+    if (components) {
+      mapOverACFComponents(components);
+    }
+  }, [onGetPage]);
+
+  return (
+    <CoreLayout>
+      {components ? components.map((component, index) => {
+        return (
+          <AcfComponents component={component} key={index}/>
+        );
+      }) : null}
+    </CoreLayout>
+  );
 }
 
 PageTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object).isRequired,
+  onGetPage: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

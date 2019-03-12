@@ -6,7 +6,10 @@ const slash = require(`slash`);
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
   createRedirect({
-    fromPath: '/', toPath: '/home', redirectInBrowser: true, isPermanent: true,
+    fromPath: '/',
+    toPath: '/home',
+    redirectInBrowser: true,
+    isPermanent: true,
   });
   return new Promise((resolve, reject) => {
     // The “graphql” function allows us to run arbitrary
@@ -127,21 +130,22 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           `,
-        ).then((result) => {
-          if (result.errors) {
-            console.log(result.errors);
-            reject(result.errors);
-          }
-          const postTemplate = path.resolve('./src/templates/post.js');
-          _.each(result.data.allWordpressPost.edges, (edge) => {
-            createPage({
-              path: `/post/${edge.node.slug}/`,
-              component: slash(postTemplate),
-              context: edge.node,
+        )
+          .then((result) => {
+            if (result.errors) {
+              console.log(result.errors);
+              reject(result.errors);
+            }
+            const postTemplate = path.resolve('./src/templates/post.js');
+            _.each(result.data.allWordpressPost.edges, (edge) => {
+              createPage({
+                path: `/post/${edge.node.slug}/`,
+                component: slash(postTemplate),
+                context: edge.node,
+              });
             });
+            resolve();
           });
-          resolve();
-        });
       })
       // ==== END POSTS ====
 
@@ -176,21 +180,22 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           `,
-        ).then((result) => {
-          if (result.errors) {
-            console.log(result.errors);
-            reject(result.errors);
-          }
-          const wordTemplate = path.resolve('./src/templates/word.js');
-          _.each(result.data.allWordpressWpWord.edges, (edge) => {
-            createPage({
-              path: `/word/${edge.node.slug}/`,
-              component: slash(wordTemplate),
-              context: edge.node,
+        )
+          .then((result) => {
+            if (result.errors) {
+              console.log(result.errors);
+              reject(result.errors);
+            }
+            const wordTemplate = path.resolve('./src/templates/word.js');
+            _.each(result.data.allWordpressWpWord.edges, (edge) => {
+              createPage({
+                path: `/word/${edge.node.slug}/`,
+                component: slash(wordTemplate),
+                context: edge.node,
+              });
             });
+            resolve();
           });
-          resolve();
-        });
       })
       // ==== END WORDS ====
 
@@ -218,21 +223,22 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         `,
-        ).then((result) => {
-          if (result.errors) {
-            console.log(result.errors);
-            reject(result.errors);
-          }
-          const personTemplate = path.resolve('./src/templates/person.js');
-          _.each(result.data.allWordpressWpTeam.edges, (edge) => {
-            createPage({
-              path: `/team/${edge.node.slug}/`,
-              component: slash(personTemplate),
-              context: edge.node,
+        )
+          .then((result) => {
+            if (result.errors) {
+              console.log(result.errors);
+              reject(result.errors);
+            }
+            const personTemplate = path.resolve('./src/templates/person.js');
+            _.each(result.data.allWordpressWpTeam.edges, (edge) => {
+              createPage({
+                path: `/team/${edge.node.slug}/`,
+                component: slash(personTemplate),
+                context: edge.node,
+              });
             });
+            resolve();
           });
-          resolve();
-        });
       });
     // ==== END PERSON ====
   });
