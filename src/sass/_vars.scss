@@ -1,0 +1,130 @@
+// Fonts
+$font-default: "Helvetica", Helvetica Neue, Arial, sans-serif;
+
+$font-heading-1: 4.8rem;
+$font-heading-2: 3.4rem;
+$font-heading-3: 2.6rem;
+$font-heading-4: 2rem;
+$font-heading-5: 1.6rem;
+$font-heading-6: 1.4rem;
+$font-body: 1.6rem;
+
+$font-weight-base: normal;
+
+$line-height-base: 1.6;
+
+$headings-margin-bottom: 2rem;
+$paragraph-margin-bottom: 2rem;
+$list-margin-bottom: 2rem;
+$label-margin-bottom: 1rem;
+
+$table-cell-padding: 1rem;
+
+// Colors
+$color-brand: #FF8F00;
+$color-brand-light: lighten($color-brand, 20%);
+$color-brand-dark: darken($color-brand, 5%);
+$color-alpha: #ff5c5c;
+$color-alpha-light: lighten($color-alpha, 20%);
+$color-alpha-dark: darken($color-alpha, 5%);
+$color-beta: #3F51B5;
+$color-beta-light: lighten($color-beta, 20%);
+$color-beta-dark: darken($color-beta, 5%);
+$color-gamma: #4CAF50;
+$color-gamma-light: lighten($color-gamma, 20%);
+$color-gamma-dark: darken($color-gamma, 5%);
+$color-delta: #FFEB3B;
+$color-delta-light: lighten($color-delta, 20%);
+$color-delta-dark: darken($color-delta, 5%);
+$color-psi: #B3E5FC;
+$color-psi-light: lighten($color-psi, 20%);
+$color-psi-dark: darken($color-psi, 5%);
+$color-omega: #CFD8DC;
+$color-omega-light: lighten($color-omega, 20%);
+$color-omega-dark: darken($color-omega, 5%);
+
+// Tint Colours
+$color-tint-alpha: white;
+$color-tint-beta: #F5F5F5;
+$color-tint-gamma: #BDBDBD;
+$color-tint-delta: #999999;
+$color-tint-psi: #424242;
+$color-tint-omega: black;
+
+$color-external-link: #007bff;
+$color-link: $color-alpha;
+
+// All Colors
+$colors: (
+  brand: $color-brand,
+  brand-light: $color-brand-light,
+  brand-dark: $color-brand-dark,
+  alpha: $color-alpha,
+  alpha-light: $color-alpha-light,
+  alpha-dark: $color-alpha-dark,
+  beta: $color-beta,
+  beta-light: $color-beta-light,
+  beta-dark: $color-beta-dark,
+  delta: $color-delta,
+  delta-light: $color-delta-light,
+  delta-dark: $color-delta-dark,
+  gamma: $color-gamma,
+  gamma-light: $color-gamma-light,
+  gamma-dark: $color-gamma-dark,
+  psi: $color-psi,
+  psi-light: $color-psi-light,
+  psi-dark: $color-psi-dark,
+  omega: $color-omega,
+  omega-light: $color-omega-light,
+  omega-dark: $color-omega-dark,
+  tint-alpha: $color-tint-alpha,
+  tint-beta: $color-tint-beta,
+  tint-delta: $color-tint-delta,
+  tint-gamma: $color-tint-gamma,
+  tint-psi: $color-tint-psi,
+  tint-omega: $color-tint-omega,
+);
+
+
+$link-hover-color: darken($color-link, 50%);
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+$table-caption-color: $color-tint-psi;
+
+// Borders
+$border-width: 2px;
+$border-style: solid;
+
+$radius-circle: 50%;
+$radius-rounded: 5px;
+
+$transition-slow: .8s ease;
+$transition-base: .4s ease;
+$transition-fast: .2s ease;
+
+$transition-all-small: .4s all;
+$transition-all-base: .4s all;
+$transition-all-fast: .4s all;
+
+// Gaps
+$spacing-small: 3rem;
+$spacing-base: 5rem;
+$spacing-large: 8rem;
+
+$grid-gap-small: 1rem;
+$grid-gap-base: 1.5rem;
+$grid-gap-large: 2rem;
+
+$main-gap: 7rem;
+
+// Media Query Values
+$mobile-only: 599px;
+$tablet-portrait: 600px;
+$tablet-landscape: 900px;
+$desktop: 1200px;
+$big-desktop: 1800px;
+
+$center: translate(-50%, -50%);
+$centerY: translateY(-50%);
+$centerX: translateX(-50%);

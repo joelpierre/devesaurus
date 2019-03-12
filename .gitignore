@@ -1,11 +1,4 @@
-# Created by https://www.gitignore.io/api/node,macos,bower,angular,webstorm,phpstorm
 
-# dependencies
-/node_modules
-/bower_components
-
-# IDEs and editors
-/.idea
 
 # misc
 /.sass-cache
@@ -261,3 +254,14 @@ fabric.properties
 
 
 # End of https://www.gitignore.io/api/node,macos,bower,angular,webstorm,phpstorm
+
+# gatsby files
+.cache/
+public
+
+# Yarn
+yarn-error.log
+.pnp/
+.pnp.js
+# Yarn Integrity file
+/.gitignore
