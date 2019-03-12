@@ -2,7 +2,7 @@ import React from 'react';
 import * as styles from './PrimaryHeader.module.scss';
 import Brand from '../../atoms/Brand/Brand';
 import PrimaryMenu from '../../molecules/PrimaryMenu/PrimaryMenu';
-import SiteInfo from '../../../hoc/siteInfo';
+import SiteInfo from '../../../utilities/siteInfo';
 
 const Header = () => (
   <header className={styles['primary-header']}>

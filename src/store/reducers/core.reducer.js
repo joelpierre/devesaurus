@@ -1,5 +1,5 @@
 import * as actionTypes from '../actionTypes/core.actionTypes';
-import { updateObject } from '../../shared/utility';
+import { updateObject } from '../../utilities';
 
 const initialState = {
   title: 'Store Title',

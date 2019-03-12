@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as pageActions from '../../store/actions/page.actions';
 
 import CoreLayout from '../../layouts/core';
-import { mapOverACFComponents } from '../../shared/utility';
+import { mapOverACFComponents } from '../../utilities';
 import AcfComponents from '../../hoc/acfComponents';
 
 
