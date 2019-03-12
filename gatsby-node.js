@@ -91,7 +91,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Create Page pages.
-        const pageTemplate = path.resolve('./src/templates/page.js');
+        const pageTemplate = path.resolve('./src/components/templates/page.js');
         _.each(result.data.allWordpressPage.edges, (edge) => {
           createPage({
             path: `/${edge.node.slug}/`,
@@ -136,7 +136,7 @@ exports.createPages = ({ graphql, actions }) => {
               console.log(result.errors);
               reject(result.errors);
             }
-            const postTemplate = path.resolve('./src/templates/post.js');
+            const postTemplate = path.resolve('./src/components/templates/post.js');
             _.each(result.data.allWordpressPost.edges, (edge) => {
               createPage({
                 path: `/post/${edge.node.slug}/`,
@@ -186,7 +186,7 @@ exports.createPages = ({ graphql, actions }) => {
               console.log(result.errors);
               reject(result.errors);
             }
-            const wordTemplate = path.resolve('./src/templates/word.js');
+            const wordTemplate = path.resolve('./src/components/templates/word.js');
             _.each(result.data.allWordpressWpWord.edges, (edge) => {
               createPage({
                 path: `/word/${edge.node.slug}/`,
@@ -229,7 +229,7 @@ exports.createPages = ({ graphql, actions }) => {
               console.log(result.errors);
               reject(result.errors);
             }
-            const personTemplate = path.resolve('./src/templates/person.js');
+            const personTemplate = path.resolve('./src/components/templates/person.js');
             _.each(result.data.allWordpressWpTeam.edges, (edge) => {
               createPage({
                 path: `/team/${edge.node.slug}/`,

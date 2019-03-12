@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import * as classes from './PrimaryMenu.module.scss';
 
-import Aux from '../../../hoc/Aux/Aux';
 import MenuItem from '../../atoms/MenuItem/MenuItem';
 
 const PrimaryMenu = () => (
@@ -25,7 +24,7 @@ const PrimaryMenu = () => (
       }
     }`}
     render={props => (
-      <Aux>
+      <>
         <nav className={classes['primary-menu']}>
           <ul className={classes['primary-menu__list']}>
             {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
@@ -33,7 +32,7 @@ const PrimaryMenu = () => (
             ))}
           </ul>
         </nav>
-      </Aux>
+      </>
     )}
   />
 
