@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as pageActions from '../store/actions/page.actions';
+import * as pageActions from '../../store/actions/page.actions';
 
-import CoreLayout from '../layouts/core';
-import { mapOverACFComponents } from '../shared/utility';
-import AcfComponents from '../hoc/AcfComponents/AcfComponents';
+import CoreLayout from '../../layouts/core';
+import { mapOverACFComponents } from '../../shared/utility';
+import AcfComponents from '../../hoc/acfComponents';
 
 
 function PageTemplate({ pageContext, onGetPage }) {

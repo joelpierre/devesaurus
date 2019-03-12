@@ -35,7 +35,8 @@
     "redux": "^4.0.1",
     "redux-immutable": "^4.0.0",
     "redux-saga": "^1.0.2",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.17.2"
   },
   "keywords": [
     "gatsby"
@@ -49,9 +50,9 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
-    "stylelint-config-standard": "~18.2.0",
     "eslint-config-airbnb": "~17.1.0",
-    "prettier": "~1.16.4"
+    "prettier": "~1.16.4",
+    "stylelint-config-standard": "~18.2.0"
   },
   "repository": {
     "type": "git",

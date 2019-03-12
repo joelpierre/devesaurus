@@ -8,7 +8,9 @@ function PrimaryFooter() {
         <div className="row">
           <div className="flex">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi delectus ea eum, excepturi neque optio possimus sunt suscipit. Cumque cupiditate doloremque eius illum omnis optio porro tempora tenetur, unde voluptate!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi delectus ea eum, excepturi neque optio
+              possimus sunt suscipit. Cumque cupiditate doloremque eius illum omnis optio porro tempora tenetur, unde
+              voluptate!
             </p>
           </div>
         </div>
