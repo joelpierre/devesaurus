@@ -10,17 +10,18 @@ const initialState = {
   error: false,
 };
 
-const getSiteMeta = (state, action) => {
+const setSiteMeta = (state, action) => {
   return updateObject(state, {
-    title: action.title,
-    description: action.description,
+    title: action.data.name,
+    description: action.data.description,
   });
 };
 
+
 const coreReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.GET_SITE_META:
-      return getSiteMeta(state);
+    case actionTypes.SET_SITE_META:
+      return setSiteMeta(state, action);
 
     default:
       return state;

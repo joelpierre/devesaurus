@@ -11,5 +11,5 @@ export const setPageData = data => ({
 });
 
 export const setPageDataFailed = () => ({
-  type: actionTypes.SET_PAGE_FAILED,
+  type: actionTypes.GET_PAGE_FAILED,
 });

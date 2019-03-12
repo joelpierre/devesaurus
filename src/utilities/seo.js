@@ -3,9 +3,15 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-function SEO({
-  description, lang, meta, keywords, title,
-}) {
+function SEO(
+  {
+    description,
+    lang,
+    meta,
+    keywords,
+    title,
+  },
+) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -72,12 +78,13 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
+  description: '',
 };
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
-  meta: PropTypes.array,
+  meta: PropTypes.instanceOf(Array),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
 };

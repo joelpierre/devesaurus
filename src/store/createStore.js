@@ -1,9 +1,8 @@
 import { createStore as reduxCreateStore, applyMiddleware, compose } from 'redux';
-import axios from 'axios';
 import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers/index.reducer';
-import { watchPage } from './sagas/index.saga';
+import { watchPage, watchSiteMeta } from './sagas/index.saga';
 
 
 const createStore = () => {
@@ -19,6 +18,7 @@ const createStore = () => {
   );
 
   sagaMiddleware.run(watchPage);
+  sagaMiddleware.run(watchSiteMeta);
 
   return store;
 };

@@ -1,1 +1,3 @@
 export const GET_SITE_META = 'GET_SITE_META';
+export const SET_SITE_META = 'SET_SITE_META';
+export const GET_SITE_META_FAILED = 'GET_SITE_META_FAILED';
