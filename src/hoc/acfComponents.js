@@ -1,7 +1,7 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import TextBlock from '../components/organisms/TextBlock/TextBlock';
-import InlineQuote from '../components/organisms/InlineQuote/InlineQuote';
+import InlineQuote from '../components/molecules/InlineQuote/InlineQuote';
 import ImageBlock from '../components/molecules/ImageBlock/ImageBlock';
 
 function AcfComponents({ component, pageTheme }) {
