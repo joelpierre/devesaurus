@@ -1,11 +1,6 @@
 import React from 'react';
 
 function CtaBanner({ module, pageTheme }) {
-  if (module.__typename !== 'cta_banner') {
-    return null;
-  }
-  console.log(module);
-
   return (
 
     <section className={`primary-main__section theme--${module.theme} cta-banner`}>
@@ -13,7 +8,7 @@ function CtaBanner({ module, pageTheme }) {
         <div className="row">
           <div className="flex text-center">
             <h2>
-              {module.__typename}
+              {module.acf_fc_layout}
             </h2>
           </div>
         </div>

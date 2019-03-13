@@ -17,8 +17,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -90,7 +89,7 @@ module.exports = {
       resolve: 'gatsby-source-wordpress',
       options: {
         baseUrl: process.env.GATSBY_BASE_URL || 'api.devesaurus.com',
-        protocol: process.env.GATSBY_PROTOCOL || 'https',
+        protocol: process.env.GATSBY_PROTOCOL || 'http',
         hostingWPCOM: false,
         useACF: true,
         verboseOutput: false,
@@ -108,10 +107,11 @@ module.exports = {
           '**/*/*/taxonomies',
           '**/*/*/users',
         ],
-        normalizer({ entities }) {
-          return entities;
-        },
+        // normalizer({ entities }) {
+        //   return entities;
+        // },
       },
     },
+    // `gatsby-plugin-offline`,
   ],
 };

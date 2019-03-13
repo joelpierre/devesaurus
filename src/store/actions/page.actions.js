@@ -10,6 +10,10 @@ export const setPageData = data => ({
   data,
 });
 
-export const setPageDataFailed = () => ({
+export const clearPageData = () => ({
+  type: actionTypes.CLEAR_PAGE_DATA,
+});
+
+export const getPageDataFailed = () => ({
   type: actionTypes.GET_PAGE_FAILED,
 });
