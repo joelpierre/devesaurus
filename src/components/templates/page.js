@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as pageActions from '../../store/actions/page.actions';
 import * as coreActions from '../../store/actions/core.actions';
 
@@ -8,10 +8,6 @@ import CoreLayout from '../../layouts/core';
 import { mapOverACFComponents } from '../../utilities';
 import AcfComponents from '../../hoc/acfComponents';
 import SEO from '../../utilities/seo';
-
-function setMetaData() {
-
-}
 
 function PageTemplate(
   {
@@ -22,7 +18,6 @@ function PageTemplate(
   },
 ) {
   const pageTheme = pageContext.acf.page_theme;
-  const components = pageContext.acf.components_page;
   const metaTitle = pageContext.yoast_meta.yoast_wpseo_title;
   const metaDescription = pageContext.yoast_meta.yoast_wpseo_metadesc;
 
@@ -40,7 +35,8 @@ function PageTemplate(
    * cycle over the components and rerender.
    */
   useEffect(() => {
-    setMetaData();
+    const components = pageData && pageData.acf.components || null;
+
     if (components) {
       mapOverACFComponents(components);
     }
@@ -49,7 +45,12 @@ function PageTemplate(
   return (
     <CoreLayout>
       <SEO title={metaTitle} description={metaDescription}/>
-      {components && components.map((component, index) => {
+
+      <h1 className="text-center">
+        {pageData && pageData.title}
+      </h1>
+
+      {pageData && pageData.acf.components.map((component, index) => {
         return (<AcfComponents component={component} pageTheme={pageTheme} key={index}/>);
       })}
     </CoreLayout>
@@ -72,7 +73,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onGetPage: pageData => dispatch(pageActions.getPageData(pageData.slug)),
+  onGetPage: data => dispatch(pageActions.getPageData(data.slug)),
   onGetSiteMeta: () => dispatch(coreActions.getSiteMeta()),
 });
 

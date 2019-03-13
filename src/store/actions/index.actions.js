@@ -1,1 +1,1 @@
-export { getPageData, setPageData, setPageDataFailed } from './page.actions';
+export { getPageData, getPageDataFailed, setPageData, clearPageData } from './page.actions';

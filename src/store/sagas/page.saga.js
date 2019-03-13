@@ -5,8 +5,9 @@ import * as pageActions from '../actions/page.actions';
 export function* getPageSaga(action) {
   try {
     const response = yield axios.get(`${process.env.GATSBY_PROTOCOL}://${process.env.GATSBY_BASE_URL}/wp-json/better-rest-endpoints/v1/page/${action.data}`);
+    // console.log(response.data);
     yield put(pageActions.setPageData(response.data));
   } catch (error) {
-    yield put(pageActions.setPageDataFailed());
+    yield put(pageActions.getPageDataFailed());
   }
 }

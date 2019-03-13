@@ -5,7 +5,7 @@ export const updateObject = (oldObject, updatedValues) => ({
 
 export const mapOverACFComponents = (components) => {
   components.map((component) => {
-    component.__typename = component.__typename.replace('WordPressAcf_', '');
+    component.acf_fc_layout = component.acf_fc_layout.replace('WordPressAcf_', '');
   });
   return components;
 };

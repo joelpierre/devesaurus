@@ -6,7 +6,7 @@ import InlineQuote from '../components/molecules/InlineQuote/InlineQuote';
 import ImageBlock from '../components/molecules/ImageBlock/ImageBlock';
 import CtaBanner from '../components/organisms/CtaBanner/CtaBanner';
 
-function AcfComponents({ component, pageTheme }) {
+export const AcfComponents = ({ component, pageTheme }) => {
   return (
     <>
       {
@@ -15,7 +15,7 @@ function AcfComponents({ component, pageTheme }) {
          * @prop module - object
          * @prop pageTheme - string
          */
-        component.__typename === 'text_block' && <TextBlock module={component} pageTheme={pageTheme}/>
+        component.acf_fc_layout === 'text_block' && <TextBlock module={component} pageTheme={pageTheme}/>
       }
       {
         /**
@@ -23,7 +23,7 @@ function AcfComponents({ component, pageTheme }) {
          * @prop module - object
          * @prop pageTheme - string
          */
-        component.__typename === 'image_block' && <ImageBlock module={component} pageTheme={pageTheme}/>
+        component.acf_fc_layout === 'image_block' && <ImageBlock module={component} pageTheme={pageTheme}/>
       }
       {
         /**
@@ -31,7 +31,7 @@ function AcfComponents({ component, pageTheme }) {
          * @prop module - object
          * @prop pageTheme - string
          */
-        component.__typename === 'inline_quote' && <InlineQuote module={component} pageTheme={pageTheme}/>
+        component.acf_fc_layout === 'inline_quote' && <InlineQuote module={component} pageTheme={pageTheme}/>
       }
       {
         /**
@@ -39,11 +39,11 @@ function AcfComponents({ component, pageTheme }) {
          * @prop module - object
          * @prop pageTheme - string
          */
-        component.__typename === 'cta_banner' && <CtaBanner module={component} pageTheme={pageTheme}/>
+        component.acf_fc_layout === 'cta_banner' && <CtaBanner module={component} pageTheme={pageTheme}/>
       }
     </>
   );
-}
+};
 
 AcfComponents.propTypes = {
   component: PropTypes.instanceOf(Object).isRequired,

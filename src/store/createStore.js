@@ -1,18 +1,17 @@
-import { createStore as reduxCreateStore, applyMiddleware, compose } from 'redux';
+import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers/index.reducer';
 import { watchPage, watchSiteMeta } from './sagas/index.saga';
 
 
 const createStore = () => {
-  const composeEnhancers = process.env.GATSBY_DEV_MODE ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
-
   const sagaMiddleware = createSagaMiddleware();
 
   const store = reduxCreateStore(
     rootReducer,
-    composeEnhancers(
+    composeWithDevTools(
       applyMiddleware(thunk, sagaMiddleware),
     ),
   );

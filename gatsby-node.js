@@ -12,10 +12,6 @@ exports.createPages = ({ graphql, actions }) => {
     isPermanent: true,
   });
   return new Promise((resolve, reject) => {
-    // The “graphql” function allows us to run arbitrary
-    // queries against the local WordPress graphql schema. Think of
-    // it like the site has a built-in database constructed
-    // from the fetched data that you can run queries against.
     graphql(
       `
         {
@@ -54,6 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors);
         }
 
+        // if (typeof window !== `undefined`) {
         // Create Page pages.
         const pageTemplate = path.resolve('./src/components/templates/page.js');
         _.each(result.data.allWordpressPage.edges, (edge) => {
@@ -63,6 +60,8 @@ exports.createPages = ({ graphql, actions }) => {
             context: edge.node,
           });
         });
+        resolve();
+        // }
       })
       // ==== END PAGES ====
 
@@ -103,6 +102,8 @@ exports.createPages = ({ graphql, actions }) => {
               console.log(result.errors);
               reject(result.errors);
             }
+
+            // if (typeof window !== `undefined`) {
             const postTemplate = path.resolve('./src/components/templates/post.js');
             _.each(result.data.allWordpressPost.edges, (edge) => {
               createPage({
@@ -112,6 +113,7 @@ exports.createPages = ({ graphql, actions }) => {
               });
             });
             resolve();
+            // }
           });
       })
       // ==== END POSTS ====
@@ -153,6 +155,8 @@ exports.createPages = ({ graphql, actions }) => {
               console.log(result.errors);
               reject(result.errors);
             }
+
+            // if (typeof window !== `undefined`) {
             const wordTemplate = path.resolve('./src/components/templates/word.js');
             _.each(result.data.allWordpressWpWord.edges, (edge) => {
               createPage({
@@ -162,6 +166,7 @@ exports.createPages = ({ graphql, actions }) => {
               });
             });
             resolve();
+            // }
           });
       })
       // ==== END WORDS ====
@@ -196,6 +201,8 @@ exports.createPages = ({ graphql, actions }) => {
               console.log(result.errors);
               reject(result.errors);
             }
+
+            // if (typeof window !== `undefined`) {
             const personTemplate = path.resolve('./src/components/templates/person.js');
             _.each(result.data.allWordpressWpTeam.edges, (edge) => {
               createPage({
@@ -205,6 +212,7 @@ exports.createPages = ({ graphql, actions }) => {
               });
             });
             resolve();
+            // }
           });
       });
     // ==== END PERSON ====
