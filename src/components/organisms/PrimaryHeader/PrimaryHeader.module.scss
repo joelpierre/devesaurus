@@ -5,12 +5,11 @@
 
   height: auto;
   align-items: center;
-  //position: fixed;
   top: 0;
   left: 0;
   z-index: 999999;
   width: 100%;
-  background-color: $color-alpha;
+  background-color: $color-tint-alpha;
   padding: 1rem 0;
   transition: $transition-all-base;
 

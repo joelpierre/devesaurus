@@ -1,0 +1,3 @@
+export const GET_PERSON_DATA = 'GET_PERSON_DATA';
+export const SET_PERSON_DATA = 'SET_PERSON_DATA';
+export const GET_PERSON_FAILED = 'GET_PERSON_FAILED';

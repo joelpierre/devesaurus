@@ -7,11 +7,9 @@ function PrimaryFooter() {
       <div className="container-fluid">
         <div className="row">
           <div className="flex">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi delectus ea eum, excepturi neque optio
-              possimus sunt suscipit. Cumque cupiditate doloremque eius illum omnis optio porro tempora tenetur, unde
-              voluptate!
-            </p>
+            <h6 className={styles['primary-footer__legal']}>
+              &copy; Devesaurus {new Date().getFullYear()} | Built by: Joel Pierre-Powell
+            </h6>
           </div>
         </div>
       </div>

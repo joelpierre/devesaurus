@@ -1,20 +1,14 @@
-@import "~sass/core";
-@import "~sass/typography";
-@import "~sass/overrides";
-
 body {
   background-color: $color-tint-alpha;
   font-family: $font-default;
-  color: $color-tint-omega;
+  color: $color-tint-psi;
 }
 
 .primary-main {
   position: relative;
-  background-color: $color-tint-alpha;
 
   .primary-main__section {
     position: relative;
     padding: 6rem 0;
-    background-color: $color-tint-alpha;
   }
 }
