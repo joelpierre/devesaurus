@@ -7,5 +7,6 @@
 import withProvider from './src/hoc/withProvider';
 
 require('flexigridcss/dist/flexigridcss.css');
+require('./src/sass/styles.scss');
 
 export const wrapRootElement = withProvider;

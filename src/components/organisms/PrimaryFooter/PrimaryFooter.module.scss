@@ -3,6 +3,13 @@
 .primary-footer {
   width: 100%;
   padding: 3rem 0;
-  background-color: $color-psi;
   transition: $transition-all-base;
+
+  &__legal {
+    border-top: 1px solid $color-tint-gamma;
+    padding-top: 2rem;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.4rem;
+  }
 }

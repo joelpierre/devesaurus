@@ -1,5 +1,4 @@
 import React from 'react';
-import './core.scss';
 
 import PrimaryHeader from '../components/organisms/PrimaryHeader/PrimaryHeader';
 import PrimaryFooter from '../components/organisms/PrimaryFooter/PrimaryFooter';

@@ -41,7 +41,9 @@ function PageTemplate(
    */
   useEffect(() => {
     setMetaData();
-    mapOverACFComponents(components);
+    if (components) {
+      mapOverACFComponents(components);
+    }
   }, [pageData]);
 
   return (

@@ -28,6 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
                   yoast_wpseo_canonical
                 }
                 title
+                slug
                 featured_media {
                   alt_text
                   source_url
@@ -36,14 +37,14 @@ exports.createPages = ({ graphql, actions }) => {
                     height
                   }
                 }
-                slug
                 acf {
                   page_theme
-                  components_page{
+                  components_page {
                     __typename
                     ...textBlockFields
                     ...imageBlockFields
                     ...inlineQuoteFields
+                    ...ctaBannerFields
                   }
                 }
               }
@@ -72,6 +73,21 @@ exports.createPages = ({ graphql, actions }) => {
                 title
               }
             }
+          }
+        }
+        
+        fragment ctaBannerFields on WordPressAcf_cta_banner {
+          heading
+          copy
+          theme
+          cta
+          cta_text
+          cta_theme
+          cta_link{
+            post_status
+            post_type
+            post_title
+            post_name
           }
         }
         
