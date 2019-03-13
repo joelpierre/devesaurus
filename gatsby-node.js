@@ -39,62 +39,10 @@ exports.createPages = ({ graphql, actions }) => {
                 }
                 acf {
                   page_theme
-                  components_page {
-                    __typename
-                    ...textBlockFields
-                    ...imageBlockFields
-                    ...inlineQuoteFields
-                    ...ctaBannerFields
-                  }
                 }
               }
             }
           }
-        }
-        
-        fragment inlineQuoteFields on WordPressAcf_inline_quote {
-          highlight
-          author
-          quote
-          theme
-        }
-        
-        fragment imageBlockFields on WordPressAcf_image_block {
-          theme
-          fill_screen
-          image{
-            alt_text
-            source_url
-            media_details{
-              width
-              height
-              image_meta {
-                caption
-                title
-              }
-            }
-          }
-        }
-        
-        fragment ctaBannerFields on WordPressAcf_cta_banner {
-          heading
-          copy
-          theme
-          cta
-          cta_text
-          cta_theme
-          cta_link{
-            post_status
-            post_type
-            post_title
-            post_name
-          }
-        }
-        
-        fragment textBlockFields on WordPressAcf_text_block {
-          theme
-          highlight
-          content
         }
       `,
     )
@@ -140,6 +88,9 @@ exports.createPages = ({ graphql, actions }) => {
                         width
                         height
                       }
+                    }
+                    acf {
+                      page_theme
                     }
                   }
                 }
