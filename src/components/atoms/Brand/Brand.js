@@ -1,6 +1,6 @@
 import React from 'react';
 import * as styles from './Brand.module.scss';
-import SiteInfo from '../../../utilities/siteInfo';
+import SiteInfo from '../../../utils/siteInfo';
 
 function Brand({ classes }) {
   return (

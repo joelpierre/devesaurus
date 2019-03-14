@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../utilities/seo';
+import SEO from '../utils/seo';
 import CoreLayout from '../layouts/core';
 
 const NotFoundPage = () => (

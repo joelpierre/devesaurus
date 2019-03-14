@@ -4,10 +4,9 @@ import PropTypes from 'prop-types';
 import * as pageActions from '../../store/actions/page.actions';
 import * as coreActions from '../../store/actions/core.actions';
 
-import CoreLayout from '../../layouts/core';
-import { mapOverACFComponents } from '../../utilities';
 import AcfComponents from '../../hoc/acfComponents';
-import SEO from '../../utilities/seo';
+import CoreLayout from '../../layouts/core';
+import { mapOverACFComponents } from '../../utils';
 
 function PageTemplate(
   {
@@ -17,15 +16,12 @@ function PageTemplate(
     onGetPage,
   },
 ) {
-  const pageTheme = pageContext.acf.page_theme;
-  const metaTitle = pageContext.yoast_meta.yoast_wpseo_title;
-  const metaDescription = pageContext.yoast_meta.yoast_wpseo_metadesc;
-
   /**
    * React Hook - Replaces componentDidMount() we pass and empty array as the second
    * argument in order to only fire it once.
    */
   useEffect(() => {
+    // onGetSiteOptions();
     onGetSiteMeta();
     onGetPage(pageContext);
   }, []);
@@ -44,25 +40,24 @@ function PageTemplate(
 
   return (
     <CoreLayout>
-      <SEO title={metaTitle} description={metaDescription}/>
-
       <h1 className="text-center">
         {pageData && pageData.title}
       </h1>
 
       {pageData && pageData.acf.components.map((component, index) => {
-        return (<AcfComponents component={component} pageTheme={pageTheme} key={index}/>);
+        return (<AcfComponents component={component} pageTheme={pageContext.acf.page_theme} key={index}/>);
       })}
     </CoreLayout>
   );
 }
 
 PageTemplate.defaultProps = {
+  pageContext: null,
   pageData: null,
 };
 
 PageTemplate.propTypes = {
-  pageContext: PropTypes.instanceOf(Object).isRequired,
+  pageContext: PropTypes.instanceOf(Object),
   pageData: PropTypes.instanceOf(Object),
   onGetPage: PropTypes.func.isRequired,
   onGetSiteMeta: PropTypes.func.isRequired,

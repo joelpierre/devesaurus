@@ -6,7 +6,7 @@ import InlineQuote from '../components/molecules/InlineQuote/InlineQuote';
 import ImageBlock from '../components/molecules/ImageBlock/ImageBlock';
 import CtaBanner from '../components/organisms/CtaBanner/CtaBanner';
 
-export const AcfComponents = ({ component, pageTheme }) => {
+function AcfComponents({ component, pageTheme }) {
   return (
     <>
       {
@@ -43,7 +43,7 @@ export const AcfComponents = ({ component, pageTheme }) => {
       }
     </>
   );
-};
+}
 
 AcfComponents.propTypes = {
   component: PropTypes.instanceOf(Object).isRequired,
