@@ -12,3 +12,16 @@ export const setSiteMeta = data => ({
 export const getSiteMetaFailed = () => ({
   type: actionTypes.GET_SITE_META_FAILED,
 });
+
+export const getSiteOptions = () => ({
+  type: actionTypes.GET_SITE_OPTIONS,
+});
+
+export const setSiteOptions = data => ({
+  type: actionTypes.SET_SITE_OPTIONS,
+  data,
+});
+
+export const getSiteOptionsFailed = () => ({
+  type: actionTypes.GET_SITE_OPTIONS_FAILED,
+});

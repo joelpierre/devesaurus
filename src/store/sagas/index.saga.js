@@ -1,6 +1,6 @@
 import { takeEvery, all } from 'redux-saga/effects';
 import { getPageSaga } from './page.saga';
-import { getSiteMetaSaga } from './core.saga';
+import { getSiteMetaSaga, getSiteOptionsSaga } from './core.saga';
 
 import * as pageActionTypes from '../actionTypes/page.actionTypes';
 import * as coreActionTypes from '../actionTypes/core.actionTypes';
@@ -14,5 +14,6 @@ export function* watchPage() {
 export function* watchSiteMeta() {
   yield all([
     takeEvery(coreActionTypes.GET_SITE_META, getSiteMetaSaga),
+    takeEvery(coreActionTypes.GET_SITE_OPTIONS, getSiteOptionsSaga),
   ]);
 }

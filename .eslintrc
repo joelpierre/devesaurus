@@ -10,6 +10,7 @@
     "window": false
   },
   "rules": {
+    "padded-blocks": "off",
     "no-unused-expressions": "off",
     "max-len": "off",
     "import/no-extraneous-dependencies": "off",

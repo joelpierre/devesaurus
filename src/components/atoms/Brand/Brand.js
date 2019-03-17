@@ -1,17 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import * as styles from './Brand.module.scss';
-import SiteInfo from '../../../utils/siteInfo';
 
-function Brand({ classes }) {
+function Brand({ classes, siteOptions }) {
   return (
     <div className={`${classes}`}>
       <div className={`${styles.brand}`}>
         <h1 className={styles.brand__heading}>
-          <SiteInfo />
+          {siteOptions.company_name}
         </h1>
       </div>
     </div>
   );
 }
 
-export default Brand;
+const mapStateToProps = state => ({
+  siteOptions: state.core.options,
+});
+
+export default connect(mapStateToProps)(Brand);

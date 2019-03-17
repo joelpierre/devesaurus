@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
 
 import PrimaryHeader from '../components/organisms/PrimaryHeader/PrimaryHeader';
 import PrimaryFooter from '../components/organisms/PrimaryFooter/PrimaryFooter';
-import SEO from '../components/templates/page';
+import SEO from '../utils/seo';
 
 const CoreLayout = ({ children, metaTitle, metaDescription }) => (
   <>
+    <SEO title={metaTitle} description={metaDescription}/>
     <PrimaryHeader/>
     <main className="primary-main">
       {children}

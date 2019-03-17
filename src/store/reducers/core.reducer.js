@@ -8,6 +8,7 @@ const initialState = {
   site: process.env.GATSBY_SITE_URL,
   loading: false,
   error: false,
+  options: null,
 };
 
 const setSiteMeta = (state, action) => {
@@ -17,11 +18,21 @@ const setSiteMeta = (state, action) => {
   });
 };
 
+const setSiteOptions = (state, action) => {
+  return updateObject(state, {
+    options: action.data,
+  });
+};
+
 
 const coreReducer = (state = initialState, action) => {
   switch (action.type) {
+
     case actionTypes.SET_SITE_META:
       return setSiteMeta(state, action);
+
+    case actionTypes.SET_SITE_OPTIONS:
+      return setSiteOptions(state, action);
 
     default:
       return state;
