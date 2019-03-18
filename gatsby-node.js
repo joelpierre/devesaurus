@@ -3,6 +3,29 @@ const Promise = require(`bluebird`);
 const path = require(`path`);
 const slash = require(`slash`);
 
+exports.onCreateWebpackConfig = (
+  {
+    actions,
+  },
+) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.(png|jpe?g|gif|webp)$/,
+          use: 'url-loader',
+        },
+        {
+          test: /\.svg$/,
+          use: [
+            `html-loader`,
+          ],
+        },
+      ],
+    },
+  });
+};
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
   // createRedirect({

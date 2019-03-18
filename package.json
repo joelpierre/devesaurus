@@ -27,6 +27,7 @@
     "gatsby-source-filesystem": "~2.0.8",
     "gatsby-source-wordpress": "~3.0.43",
     "gatsby-transformer-sharp": "~2.1.10",
+    "html-loader": "^0.5.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.5.0",
     "lodash": "~4.17.11",
@@ -47,7 +48,8 @@
     "redux-mock-store": "^1.5.3",
     "redux-saga": "^1.0.2",
     "redux-thunk": "^2.3.0",
-    "sass": "^1.17.2"
+    "sass": "^1.17.2",
+    "svg-react-loader": "^0.4.6"
   },
   "keywords": [
     "gatsby"
