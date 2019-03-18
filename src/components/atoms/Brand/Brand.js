@@ -1,21 +1,39 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as styles from './Brand.module.scss';
 
-function Brand({ classes, siteOptions }) {
+function Brand({
+  classes, heading, slogan, logo,
+}) {
   return (
     <div className={`${classes}`}>
       <div className={`${styles.brand}`}>
-        <h1 className={styles.brand__heading}>
-          {siteOptions.company_name}
-        </h1>
+
+        <div className={`${styles.brand__company}`}>
+          <h1 className={styles.brand__heading}>
+            {heading}
+          </h1>
+          <p className={styles.brand__slogan}>
+            {slogan}
+          </p>
+        </div>
       </div>
     </div>
   );
 }
 
-const mapStateToProps = state => ({
-  siteOptions: state.core.options,
-});
+Brand.defaultProps = {
+  classes: '',
+  heading: '',
+  slogan: '',
+  logo: '',
+};
 
-export default connect(mapStateToProps)(Brand);
+Brand.propTypes = {
+  classes: PropTypes.string,
+  heading: PropTypes.string,
+  slogan: PropTypes.string,
+  logo: PropTypes.string,
+};
+
+export default Brand;
