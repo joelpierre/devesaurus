@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as styles from './Brand.module.scss';
+import SvgIcon from '../SvgIcon/SvgIcon';
 
-function Brand({
-  classes, heading, slogan, logo,
-}) {
+function Brand(
+  {
+    classes, heading, slogan, logo,
+  },
+) {
   return (
     <div className={`${classes}`}>
       <div className={`${styles.brand}`}>
+
+        <SvgIcon name="arrow-down" classes="brand__icon brand__logo"/>
 
         <div className={`${styles.brand__company}`}>
           <h1 className={styles.brand__heading}>

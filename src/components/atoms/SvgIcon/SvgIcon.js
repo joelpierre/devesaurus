@@ -14,10 +14,12 @@ const SvgIcon = (
 
   const req = require.context('../../../icons/', true, /^\.\/.*\.svg$/);
 
-  const svg = (name) => {
-    let svg = markup;
+  const svg = () => {
+    let svg = markup();
     const titleReg = /<[title/>][^>]*><\/[title>]+>/;
     const descReg = /<[desc/>][^>]*><\/[desc>]+>/;
+
+    console.log(svg);
 
     svg = svg.replace(titleReg, `<title>${name}</title>`);
     svg = svg.replace(descReg, `<desc>${description}</desc>`);
@@ -25,7 +27,7 @@ const SvgIcon = (
     return svg;
   };
 
-  const markup = (name) => {
+  const markup = () => {
     return req('./' + name + '.svg')
       .replace(
         /^<svg /,
@@ -33,7 +35,7 @@ const SvgIcon = (
       );
   };
   return (
-    <span aria-label={name} className="svg-icon-wrapper" dangerouslySetInnerHTML={svg}/>
+    <span aria-label={name} className="svg-icon-wrapper" dangerouslySetInnerHTML={{ __html: svg() }}/>
   );
 };
 
@@ -41,18 +43,16 @@ SvgIcon.defaultProps = {
   width: '100%',
   height: '100%',
   fill: '#000000',
-  viewBox: '0 0 32 32',
   description: 'An SVG Icon',
 };
 
 SvgIcon.propTypes = {
-  name: PropTypes.string().isRequired,
-  description: PropTypes.string(),
-  classes: PropTypes.string().isRequired,
-  fill: PropTypes.string(),
-  width: PropTypes.string(),
-  height: PropTypes.string(),
-  viewBox: PropTypes.string(),
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  classes: PropTypes.string.isRequired,
+  fill: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
 };
 
 export default SvgIcon;
