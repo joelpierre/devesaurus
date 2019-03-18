@@ -1,0 +1,34 @@
+{
+  "presets": [
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": [
+            ">0.25%",
+            "not dead"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "inline-react-svg",
+      {
+        "svgo": {
+          "plugins": [
+            {
+              "removeAttrs": {
+                "attrs": "(data-name)"
+              }
+            },
+            {
+              "cleanupIDs": true
+            }
+          ]
+        }
+      }
+    ]
+  ]
+}

@@ -6,37 +6,51 @@ const slash = require(`slash`);
 exports.onCreateWebpackConfig = (
   {
     actions,
+    getConfig,
+    options,
   },
 ) => {
-  actions.setWebpackConfig({
+  const prevConfig = getConfig();
+
+  actions.replaceWebpackConfig({
+    ...prevConfig,
     module: {
+      ...prevConfig.module,
       rules: [
-        {
-          test: /\.(png|jpe?g|gif|webp)$/,
-          use: 'url-loader',
-        },
+        ...prevConfig.module.rules.map((item) => {
+          const { test } = item;
+          if (
+            test
+            && test.toString() === '/\\.(ico|svg|jpg|jpeg|png|gif|webp)(\\?.*)?$/'
+          ) {
+            return {
+              ...item,
+              exclude: [
+                path.resolve(__dirname, 'src/icons'),
+              ],
+            };
+          }
+          return { ...item };
+        }),
         {
           test: /\.svg$/,
           use: [
-            `html-loader`,
+            {
+              // loader: 'svg-sprite-loader',
+              loader: 'html-loader',
+              options,
+            },
+          ],
+          include: [
+            path.resolve(__dirname, 'src/icons'),
           ],
         },
       ],
     },
-  });
-};
-
-exports.onCreateWebpackConfig = ({ getConfig }) => {
-  const config = getConfig();
-  const rule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/');
-  config.module.rules.splice(config.module.rules.indexOf(rule), 1);
-  config.module.rules.push({
-    test: /\.(png|jpe?g|gif|webp)$/,
-    use: 'url-loader',
-  });
-  config.module.rules.push({
-    test: /\.svg$/,
-    use: 'html-loader',
+    resolve: {
+      ...prevConfig.resolve,
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
   });
 };
 

@@ -12,7 +12,7 @@ function Brand(
     <div className={`${classes}`}>
       <div className={`${styles.brand}`}>
 
-        <SvgIcon name="arrow-down" classes="brand__icon brand__logo"/>
+        <SvgIcon name="codepen" classes="brand__icon brand__logo"/>
 
         <div className={`${styles.brand__company}`}>
           <h1 className={styles.brand__heading}>

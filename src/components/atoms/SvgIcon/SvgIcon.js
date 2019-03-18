@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as styles from './SvgIcon.module.scss';
 
 const SvgIcon = (
   {
@@ -11,18 +12,16 @@ const SvgIcon = (
     height,
   },
 ) => {
-
   const req = require.context('../../../icons/', true, /^\.\/.*\.svg$/);
 
   const svg = () => {
     let svg = markup();
+
     const titleReg = /<[title/>][^>]*><\/[title>]+>/;
     const descReg = /<[desc/>][^>]*><\/[desc>]+>/;
 
-    console.log(svg);
-
     svg = svg.replace(titleReg, `<title>${name}</title>`);
-    svg = svg.replace(descReg, `<desc>${description}</desc>`);
+    svg = svg.replace(descReg, `<desc>${description} for ${name}</desc>`);
 
     return svg;
   };
@@ -31,11 +30,11 @@ const SvgIcon = (
     return req('./' + name + '.svg')
       .replace(
         /^<svg /,
-        `<svg role="img" class="${classes}" style="fill:${fill};width:${width};height:${height}" `,
+        `<svg role="img" class="${[styles.icon__svg, classes].join(' ')}" style="fill:${fill};width:${width};height:${height}" `,
       );
   };
   return (
-    <span aria-label={name} className="svg-icon-wrapper" dangerouslySetInnerHTML={{ __html: svg() }}/>
+    <span aria-label={name} className={styles.icon} dangerouslySetInnerHTML={{ __html: svg() }}/>
   );
 };
 
