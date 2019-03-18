@@ -8,6 +8,8 @@
     "axios": "^0.18.0",
     "babel-jest": "^24.5.0",
     "babel-plugin-inline-react-svg": "^1.0.1",
+    "babel-plugin-require-context-hook": "^1.0.0",
+    "babel-plugin-transform-require-context": "^0.1.1",
     "babel-preset-gatsby": "^0.1.9",
     "bluebird": "~3.5.3",
     "dotenv": "~6.2.0",
@@ -63,10 +65,11 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "jest -- --watch"
+    "test": "jest --watch"
   },
   "devDependencies": {
     "eslint-config-airbnb": "~17.1.0",
+    "jest-webpack": "^0.5.1",
     "prettier": "~1.16.4",
     "stylelint-config-standard": "~18.2.0"
   },

@@ -15,8 +15,7 @@ describe('<SvgIcon/>', () => {
     );
   });
 
-  it('Should render Brand Component', () => {
-    console.log(wrapper.debug());
+  it('Should render SvgIcon Component', () => {
     expect(wrapper)
       .toMatchSnapshot();
   });

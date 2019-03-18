@@ -12,6 +12,7 @@ const SvgIcon = (
     height,
   },
 ) => {
+
   const req = require.context('../../../icons/', true, /^\.\/.*\.svg$/);
 
   const svg = () => {
@@ -27,11 +28,15 @@ const SvgIcon = (
   };
 
   const markup = () => {
-    return req('./' + name + '.svg')
-      .replace(
-        /^<svg /,
-        `<svg role="img" class="${[styles.icon__svg, classes].join(' ')}" style="fill:${fill};width:${width};height:${height}" `,
-      );
+    if (req) {
+      return req('./' + name + '.svg')
+        .replace(
+          /^<svg /,
+          `<svg role="img" class="${[styles.icon__svg, classes].join(' ')}" style="fill:${fill};width:${width};height:${height}" `,
+        );
+    }
+
+    return null;
   };
   return (
     <span aria-label={name} className={styles.icon} dangerouslySetInnerHTML={{ __html: svg() }}/>
