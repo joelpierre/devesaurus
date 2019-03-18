@@ -26,6 +26,20 @@ exports.onCreateWebpackConfig = (
   });
 };
 
+exports.onCreateWebpackConfig = ({ getConfig }) => {
+  const config = getConfig();
+  const rule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/');
+  config.module.rules.splice(config.module.rules.indexOf(rule), 1);
+  config.module.rules.push({
+    test: /\.(png|jpe?g|gif|webp)$/,
+    use: 'url-loader',
+  });
+  config.module.rules.push({
+    test: /\.svg$/,
+    use: 'html-loader',
+  });
+};
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
   // createRedirect({
