@@ -28,16 +28,13 @@ const SvgIcon = (
   };
 
   const markup = () => {
-    if (req) {
-      return req('./' + name + '.svg')
-        .replace(
-          /^<svg /,
-          `<svg role="img" class="${[styles.icon__svg, classes].join(' ')}" style="fill:${fill};width:${width};height:${height}" `,
-        );
-    }
-
-    return null;
+    return req('./' + name + '.svg')
+      .replace(
+        /^<svg /,
+        `<svg role="img" class="${[styles.icon__svg, classes].join(' ')}" style="fill:${fill};width:${width};height:${height}" `,
+      );
   };
+
   return (
     <span aria-label={name} className={styles.icon} dangerouslySetInnerHTML={{ __html: svg() }}/>
   );
