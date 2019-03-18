@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import SEO from '../utils/seo';
 import * as coreActions from '../store/actions/core.actions';
 import Brand from '../components/atoms/Brand/Brand';
+import Button from '../components/molecules/Buttons/Button';
 
 function Index(
   {
@@ -32,7 +33,10 @@ function Index(
         />
       )}
 
-      <Brand/>
+      {/* <Brand/> */}
+
+      <Button text="This is a button" link="/home" behavior="router" theme="alpha"/>
+      <Button text="This is a button" link="http://www.google.com" behavior="anchor" theme="brand"/>
 
       <main className="primary-main primary-main--home">
         <section className="primary-main__section core-search">
