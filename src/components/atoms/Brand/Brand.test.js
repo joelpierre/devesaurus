@@ -1,23 +1,28 @@
 import React from 'react';
-import { configure, render, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
 import Brand from './Brand';
 
-configure({ adapter: new Adapter() });
+const defaultProps = {};
+
+/**
+ * Factory function to create a ShallowWrapper fro the App component.
+ * @param {object} props - Component props specific to setup
+ * @returns {ShallowWrapper}
+ */
+const setup = (props = {}) => {
+  const setupProps = { ...defaultProps, ...props };
+  return shallow(<Brand {...setupProps}/>);
+};
 
 describe('<Brand/>', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(
-      <Brand/>,
-    );
+    wrapper = setup();
   });
 
   it('Should render Brand Component', () => {
     expect(wrapper)
-      .toMatchSnapshot();
+      .toBeTruthy();
   });
 
   it('Should pass props and render them', () => {

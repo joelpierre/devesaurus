@@ -5,14 +5,14 @@ import SvgIcon from '../SvgIcon/SvgIcon';
 
 function Brand(
   {
-    classes, heading, slogan, logo,
+    classes, heading, slogan, logo = 'logo',
   },
 ) {
   return (
-    <div className={`${classes}`}>
+    <div data-test="component-brand" className={`${classes}`}>
       <div className={`${styles.brand}`}>
 
-        <SvgIcon name="codepen" classes="brand__icon brand__logo"/>
+        <SvgIcon name={logo} classes="brand__icon brand__logo"/>
 
         <div className={`${styles.brand__company}`}>
           <h1 className={styles.brand__heading}>

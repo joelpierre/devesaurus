@@ -12,6 +12,9 @@ module.exports = {
     __PATH_PREFIX__: ``,
   },
   testURL: `http://localhost`,
-  setupFiles: [`<rootDir>/jest-loader-shim.js`],
+  setupFiles: [
+    `<rootDir>/jest-loader-shim.js`,
+    `<rootDir>/jest-setup-tests.js`,
+  ],
   // collectCoverage: true,
 };
