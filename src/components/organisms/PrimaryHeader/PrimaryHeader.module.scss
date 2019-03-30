@@ -12,6 +12,7 @@
   background-color: $color-tint-alpha;
   padding: 1rem 0;
   transition: $transition-all-base;
+  background-color: lightgrey;
 
   &__wrapper {
     display: flex;
@@ -22,9 +23,9 @@
   }
 
   &__brand {
-    width: auto;
+    max-width: 300px;
     height: auto;
-    flex: 1;
+    flex: 0;
     text-align: left;
 
     @include tablet-landscape {
@@ -36,8 +37,8 @@
 
     @include tablet-landscape {
       display: flex;
-      flex: 1;
-      margin: 0 auto;
+      flex: 0;
+      margin-left: auto;
     }
   }
 

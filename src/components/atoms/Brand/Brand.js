@@ -1,17 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'gatsby';
+
 import * as styles from './Brand.module.scss';
 import SvgIcon from '../SvgIcon/SvgIcon';
 
-function Brand(
+const Brand = (
   {
-    classes, heading, slogan, logo = 'logo',
+    classes, heading, slogan, type,
   },
-) {
+) => {
+  let logo;
+
+  /**
+   * Switch statement to determine what brand logo is used
+   */
+  switch (type) {
+    case 'text':
+    case 'text-alt':
+    case 'symbol':
+    case 'symbol-alt':
+      logo = `logo-${type}`;
+      break;
+    default:
+      logo = 'logo';
+  }
+
   return (
     <div data-test="component-brand" className={`${classes}`}>
       <div className={`${styles.brand}`}>
-
+        {/*<Link to="/"/>*/}
         <SvgIcon name={logo} classes="brand__icon brand__logo"/>
 
         <div className={`${styles.brand__company}`}>
@@ -25,20 +43,22 @@ function Brand(
       </div>
     </div>
   );
-}
+};
 
 Brand.defaultProps = {
   classes: '',
   heading: '',
   slogan: '',
-  logo: '',
+  type: 'logo',
 };
 
 Brand.propTypes = {
   classes: PropTypes.string,
   heading: PropTypes.string,
   slogan: PropTypes.string,
-  logo: PropTypes.string,
+  type: PropTypes.oneOfType([
+    PropTypes.oneOf(['logo', 'text', 'text-alt', 'symbol', 'symbol-alt']),
+  ]),
 };
 
 export default Brand;

@@ -1,5 +1,6 @@
 import React from 'react';
 import Brand from './Brand';
+import { shallow } from 'enzyme';
 
 const defaultProps = {};
 

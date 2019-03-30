@@ -1,27 +1,31 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 
 import MenuItem from './MenuItem';
+import { findByTestAttr } from '../../../utils/test-utilities';
 
-configure({ adapter: new Adapter() });
+const defaultProps = {};
 
-const MockMenuItem = {
-  object_slug: 'test',
-  title: 'Test title',
+/**
+ * Factory function to create a ShallowWrapper fro the App component.
+ * @param {object} props - Component props specific to setup
+ * @returns {ShallowWrapper}
+ */
+const setup = (props = {}) => {
+  const setupProps = { ...defaultProps, ...props };
+  return shallow(<MenuItem {...setupProps}/>);
 };
 
 describe('<MenuItem/>', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(
-      <MenuItem classes="test-class" item={MockMenuItem}/>,
-    );
+    wrapper = setup();
   });
 
   it('Should render MenuItem Component', () => {
-    expect(wrapper)
-      .toMatchSnapshot();
+    const component = findByTestAttr(wrapper, 'component-menu-item');
+    expect(component.length)
+      .toBe(1);
   });
 });

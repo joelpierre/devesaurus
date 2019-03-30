@@ -3,7 +3,13 @@
 .brand {
   $root: &;
 
-  width: 100%;
+  width: 200px;
+  height: 60px;
+  padding: 0 10px;
+
+  @include tablet-landscape {
+    width: 300px;
+  }
 
   &__company {
     @include sr-only;

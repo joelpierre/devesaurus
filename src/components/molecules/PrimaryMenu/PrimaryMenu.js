@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
-import * as classes from './PrimaryMenu.module.scss';
+import * as styles from './PrimaryMenu.module.scss';
 
 import MenuItem from '../../atoms/MenuItem/MenuItem';
 
-const PrimaryMenu = () => (
+const PrimaryMenu = ({ classes }) => (
   <StaticQuery
     query={graphql`
     {
@@ -25,10 +25,10 @@ const PrimaryMenu = () => (
     }`}
     render={props => (
       <>
-        <nav className={classes['primary-menu']}>
-          <ul className={classes['primary-menu__list']}>
+        <nav className={`${styles['primary-menu']} ${classes}`}>
+          <ul className={styles['primary-menu__list']}>
             {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
-              <MenuItem classes={classes['primary-menu__item']} key={item.object_slug} item={item}/>
+              <MenuItem classes={styles['primary-menu__item']} key={item.object_slug} item={item}/>
             ))}
           </ul>
         </nav>

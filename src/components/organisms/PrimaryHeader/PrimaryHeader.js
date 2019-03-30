@@ -6,18 +6,13 @@ import SiteInfo from '../../../utils/siteInfo';
 
 const Header = () => (
   <header className={styles['primary-header']}>
-    <div className="container-fluid">
-      <div className="row">
-        <div className="flex">
 
-          <div className={styles['primary-header__wrapper']}>
-            <Brand classes={styles['primary-header__brand']}/>
-            <PrimaryMenu classes={styles['primary-header__menu']}/>
-          </div>
+    <div className={styles['primary-header__wrapper']}>
+      <Brand type="logo" classes={styles['primary-header__brand']}/>
 
-        </div>
-      </div>
+      <PrimaryMenu classes={styles['primary-header__menu']}/>
     </div>
+
   </header>
 );
 

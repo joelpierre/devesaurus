@@ -40,7 +40,7 @@ function PageTemplate(
 
   return (
     <CoreLayout>
-      <h1 className="text-center">
+      <h1 style={{ marginTop: '10px' }} className="text-center">
         {pageData && pageData.title}
       </h1>
 

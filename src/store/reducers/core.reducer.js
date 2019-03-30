@@ -1,6 +1,10 @@
-import * as actionTypes from '../actionTypes/core.actionTypes';
 import { updateObject } from '../../utils';
+import { coreActionTypes } from '../actionTypes';
 
+/**
+ * Set the initial core state
+ * @type {{site: string, options: null, description: string, api: string, title: string, loading: boolean, error: boolean}}
+ */
 const initialState = {
   title: 'Store Title',
   description: 'Store Description',
@@ -11,6 +15,11 @@ const initialState = {
   options: null,
 };
 
+/**
+ * Set Site Meta Reducer
+ * @param state
+ * @param action
+ */
 const setSiteMeta = (state, action) => {
   return updateObject(state, {
     title: action.data.name,
@@ -18,20 +27,30 @@ const setSiteMeta = (state, action) => {
   });
 };
 
+/**
+ * Set Site Options Reducer
+ * @param state
+ * @param action
+ */
 const setSiteOptions = (state, action) => {
   return updateObject(state, {
     options: action.data,
   });
 };
 
-
+/**
+ * Set the new state or return the current state as default
+ * @param state
+ * @param action
+ * @returns {{site: string, options: null, description: string, api: string, title: string, loading: boolean, error: boolean}}
+ */
 const coreReducer = (state = initialState, action) => {
   switch (action.type) {
 
-    case actionTypes.SET_SITE_META:
+    case coreActionTypes.SET_SITE_META:
       return setSiteMeta(state, action);
 
-    case actionTypes.SET_SITE_OPTIONS:
+    case coreActionTypes.SET_SITE_OPTIONS:
       return setSiteOptions(state, action);
 
     default:
