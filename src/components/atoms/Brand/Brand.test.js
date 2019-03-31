@@ -1,6 +1,7 @@
 import React from 'react';
 import Brand from './Brand';
 import { shallow } from 'enzyme';
+import { findByTestAttr } from '../../../utils/test-utilities';
 
 const defaultProps = {};
 
@@ -22,8 +23,11 @@ describe('<Brand/>', () => {
   });
 
   it('Should render Brand Component', () => {
-    expect(wrapper)
+    const component = findByTestAttr(wrapper, 'component-brand');
+    expect(component)
       .toBeTruthy();
+    expect(component.length)
+      .toBe(1);
   });
 
   it('Should pass props and render them', () => {

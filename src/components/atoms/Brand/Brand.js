@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby';
 
 import * as styles from './Brand.module.scss';
 import SvgIcon from '../SvgIcon/SvgIcon';
@@ -29,7 +28,6 @@ const Brand = (
   return (
     <div data-test="component-brand" className={`${classes}`}>
       <div className={`${styles.brand}`}>
-        {/*<Link to="/"/>*/}
         <SvgIcon name={logo} classes="brand__icon brand__logo"/>
 
         <div className={`${styles.brand__company}`}>

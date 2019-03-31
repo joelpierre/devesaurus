@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import * as pageActions from '../../store/actions/page.actions';
 import * as coreActions from '../../store/actions/core.actions';
 
+import { mapOverACFComponents } from '../../utils';
+
 import AcfComponents from '../../hoc/acfComponents';
 import CoreLayout from '../../layouts/core';
-import { mapOverACFComponents } from '../../utils';
+import FormField from '../molecules/FormField/FormField';
 
 function PageTemplate(
   {
@@ -21,7 +23,6 @@ function PageTemplate(
    * argument in order to only fire it once.
    */
   useEffect(() => {
-    // onGetSiteOptions();
     onGetSiteMeta();
     onGetPage(pageContext);
   }, []);
@@ -43,6 +44,10 @@ function PageTemplate(
       <h1 style={{ marginTop: '10px' }} className="text-center">
         {pageData && pageData.title}
       </h1>
+
+      <FormField type="date" name="test" placeholder="Test placeholder"/>
+
+      <FormField type="file" name="test" placeholder="Test placeholder"/>
 
       {pageData && pageData.acf.components.map((component, index) => {
         return (<AcfComponents component={component} pageTheme={pageContext.acf.page_theme} key={index}/>);
