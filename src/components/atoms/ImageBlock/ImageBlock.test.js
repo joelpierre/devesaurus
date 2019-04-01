@@ -1,32 +1,34 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import FormBase from './FormBase';
 import { findByTestAttr } from '../../../utils/test-utilities';
+
+import ImageBlock from './ImageBlock';
 
 const defaultProps = {};
 
 /**
- * Factory function to create a ShallowWrapper for the FormBase component.
+ * Factory function to create a ShallowWrapper for the ImageBlock component.
  * @param {object} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<FormBase {...setupProps}/>);
+  return shallow(<ImageBlock {...setupProps}/>);
 };
 
-describe('<FormBase/>', () => {
+describe('<ImageBlock/>', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = setup();
   });
 
-  it('Renders the FormBase Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'VALUE_HERE');
+  it('Renders the ImageBlock Component without errors', () => {
+    const component = findByTestAttr(wrapper, 'component-image-block');
     expect(component.length)
       .toBe(1);
   });
+
 
 });

@@ -19,6 +19,7 @@ const FormField = (
     case 'date':
       formField = (
         <InputField
+          data-test="component-form-field"
           className="form-control"
           type={type}
           name={name}
@@ -31,6 +32,7 @@ const FormField = (
     case 'number':
       formField = (
         <InputField
+          data-test="component-form-field"
           className="form-control"
           type={type}
           name={name}
@@ -44,17 +46,18 @@ const FormField = (
       break;
     case 'select':
       formField = (
-        <SelectField placeholder={placeholder} name={name} options={options}/>
+        <SelectField data-test="component-form-field" placeholder={placeholder} name={name} options={options}/>
       );
       break;
     case 'file':
       formField = (
-        <FileUpload placeholder={placeholder} name={name}/>
+        <FileUpload data-test="component-form-field" placeholder={placeholder} name={name}/>
       );
       break;
     default:
       formField = (
         <InputField
+          data-test="component-form-field"
           className="form-control"
           type="text"
           name={name}

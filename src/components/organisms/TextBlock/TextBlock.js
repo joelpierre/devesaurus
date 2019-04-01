@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 const TextBlock = ({ module, pageTheme }) => {
   return (
-    <section className={`primary-main__section theme--${module.theme ? module.theme : pageTheme} text-block`}>
+    <section
+      data-test="component-text-block"
+      className={`primary-main__section theme--${module.theme ? module.theme : pageTheme} text-block`}
+    >
       <div className="container-fluid">
         <div className="row">
           <div className="flex">
@@ -21,7 +24,7 @@ const TextBlock = ({ module, pageTheme }) => {
 
 TextBlock.propTypes = {
   module: PropTypes.instanceOf(Object).isRequired,
-  pageTheme: PropTypes.string.isRequired,
+  pageTheme: PropTypes.oneOf(['brand', 'alpha', 'beta', 'tint-alpha', 'tint-beta', 'tint-omega', 'tint-gamma', 'tint-psi']).isRequired,
 };
 
 export default TextBlock;

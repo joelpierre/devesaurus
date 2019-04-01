@@ -8,17 +8,16 @@ import MenuItem from '../../atoms/MenuItem/MenuItem';
 
 const PrimaryMenu = ({ classes }) => (
   <StaticQuery
+    data-test="component-primary-menu-query"
     query={menuQuery}
     render={props => (
-      <>
-        <nav className={`${styles['primary-menu']} ${classes}`}>
-          <ul className={styles['primary-menu__list']}>
-            {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
-              <MenuItem classes={styles['primary-menu__item']} key={item.object_slug} item={item}/>
-            ))}
-          </ul>
-        </nav>
-      </>
+      <nav data-test="component-primary-menu" className={`${styles['primary-menu']} ${classes}`}>
+        <ul className={styles['primary-menu__list']}>
+          {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
+            <MenuItem classes={styles['primary-menu__item']} key={item.object_slug} item={item}/>
+          ))}
+        </ul>
+      </nav>
     )}
   />
 

@@ -28,7 +28,7 @@ describe('<FormField/>', () => {
   });
 
   it('Renders the FormField Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'VALUE_HERE');
+    const component = findByTestAttr(wrapper, 'component-form-field');
     expect(component.length)
       .toBe(1);
   });

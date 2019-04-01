@@ -25,7 +25,7 @@ describe('<PrimaryFooter/>', () => {
   });
 
   it('Renders the PrimaryFooter Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'VALUE_HERE');
+    const component = findByTestAttr(wrapper, 'component-primary-footer');
     expect(component.length)
       .toBe(1);
   });

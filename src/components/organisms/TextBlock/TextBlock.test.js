@@ -5,7 +5,10 @@ import { findByTestAttr } from '../../../utils/test-utilities';
 
 import TextBlock from './TextBlock';
 
-const defaultProps = {};
+const defaultProps = {
+  module: {},
+  pageTheme: 'brand',
+};
 
 /**
  * Factory function to create a ShallowWrapper for the TextBlock component.
@@ -25,7 +28,7 @@ describe('<TextBlock/>', () => {
   });
 
   it('Renders the TextBlock Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'VALUE_HERE');
+    const component = findByTestAttr(wrapper, 'component-text-block');
     expect(component.length)
       .toBe(1);
   });

@@ -4,7 +4,10 @@ import { shallow } from 'enzyme';
 import InputGroup from './InputGroup';
 import { findByTestAttr } from '../../../utils/test-utilities';
 
-const defaultProps = {};
+const defaultProps = {
+  name: 'test-name',
+  type: 'text',
+};
 
 /**
  * Factory function to create a ShallowWrapper for the InputGroup component.

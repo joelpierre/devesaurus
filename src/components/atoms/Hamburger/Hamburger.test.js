@@ -1,10 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme/build';
 
 import Hamburger from './Hamburger';
 import { findByTestAttr } from '../../../utils/test-utilities';
 
-const defaultProps = {};
+const defaultProps = {
+  company: 'test-company',
+};
 
 /**
  * Factory function to create a ShallowWrapper for the Hamburger component.
@@ -24,7 +26,7 @@ describe('<Hamburger/>', () => {
   });
 
   it('Renders the Hamburger Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'VALUE_HERE');
+    const component = findByTestAttr(wrapper, 'component-hamburger');
     expect(component.length)
       .toBe(1);
   });

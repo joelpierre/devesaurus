@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const MobileMenu = (props) => {
-  return (<></>);
+  return (<div data-test="component-mobile-menu"/>);
 };
 
 MobileMenu.defaultProps = {};

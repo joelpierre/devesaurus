@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TermsMenu = (props) => {
-  return (<></>);
+  return (<div data-test="component-terms-menu"/>);
 };
 
 TermsMenu.defaultProps = {};

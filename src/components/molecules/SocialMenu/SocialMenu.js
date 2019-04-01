@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SocialMenu = (props) => {
-  return (<></>);
+  return (<nav data-test="component-social-menu"/>);
 };
 
 SocialMenu.defaultProps = {};

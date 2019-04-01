@@ -5,7 +5,10 @@ import { findByTestAttr } from '../../../utils/test-utilities';
 
 import ImageBlock from './ImageBlock';
 
-const defaultProps = {};
+const defaultProps = {
+  module: {},
+  pageTheme: 'brand',
+};
 
 /**
  * Factory function to create a ShallowWrapper for the ImageBlock component.
@@ -25,7 +28,7 @@ describe('<ImageBlock/>', () => {
   });
 
   it('Renders the ImageBlock Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'VALUE_HERE');
+    const component = findByTestAttr(wrapper, 'component-image-block');
     expect(component.length)
       .toBe(1);
   });

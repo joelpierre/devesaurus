@@ -5,7 +5,7 @@ import Brand from '../../atoms/Brand/Brand';
 import PrimaryMenu from '../../molecules/PrimaryMenu/PrimaryMenu';
 
 const Header = () => (
-  <header className={styles['primary-header']}>
+  <header data-test="component-primary-header" className={styles['primary-header']}>
 
     <div className={styles['primary-header__wrapper']}>
 

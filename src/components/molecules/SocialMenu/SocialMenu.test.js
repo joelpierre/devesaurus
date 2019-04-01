@@ -25,7 +25,7 @@ describe('<SocialMenu/>', () => {
   });
 
   it('Renders the SocialMenu Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'VALUE_HERE');
+    const component = findByTestAttr(wrapper, 'component-social-menu');
     expect(component.length)
       .toBe(1);
   });

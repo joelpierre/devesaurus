@@ -1,27 +1,29 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import * as styles from './Button.module.scss';
+import * as styles from './Button.scss';
 
 const Button = (
   {
     text, behavior, theme, link, size,
   },
 ) => {
-  return (
-    <>
-      {behavior === 'router'
-      && (
+  let button;
+
+  switch (behavior) {
+    case 'router':
+      button = (
         <Link
           to={link}
           className={`btn btn--${size} ${styles[`btn--${theme}`]} ${styles.btn}`}
         >
           {text}
         </Link>
-      )}
+      );
+      break;
 
-      {behavior === 'anchor'
-      && (
+    case 'anchor':
+      button = (
         <a
           href={link}
           className={`btn btn--${size} ${styles[`btn--${theme}`]} ${styles.btn}`}
@@ -30,7 +32,24 @@ const Button = (
         >
           {text}
         </a>
-      )}
+      );
+      break;
+
+    default:
+      button = (
+        <Link
+          to={link}
+          className={`btn btn--${size} ${styles[`btn--${theme}`]} ${styles.btn}`}
+        >
+          {text}
+        </Link>
+      );
+      break;
+  }
+
+  return (
+    <>
+      {button}
     </>
   );
 };
@@ -42,15 +61,11 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  theme: PropTypes.string,
-  behavior: PropTypes.oneOfType([
-    PropTypes.oneOf(['router', 'anchor']),
-  ]),
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'full']),
-  ]),
   text: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
+  theme: PropTypes.oneOf(['brand', 'alpha', 'beta', 'tint-alpha', 'tint-beta', 'tint-omega', 'tint-gamma', 'tint-psi']),
+  behavior: PropTypes.oneOf(['router', 'anchor']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'full']),
 };
 
 export default Button;

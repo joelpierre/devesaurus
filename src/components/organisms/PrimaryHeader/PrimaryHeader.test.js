@@ -25,7 +25,7 @@ describe('<PrimaryHeader/>', () => {
   });
 
   it('Renders the PrimaryHeader Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'VALUE_HERE');
+    const component = findByTestAttr(wrapper, 'component-primary-header');
     expect(component.length)
       .toBe(1);
   });

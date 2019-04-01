@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
-
 import FormBase from './FormBase';
+import { findByTestAttr } from '../../../utils/test-utilities';
 
 const defaultProps = {};
 
@@ -25,10 +24,9 @@ describe('<FormBase/>', () => {
   });
 
   it('Renders the FormBase Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'VALUE_HERE');
+    const component = findByTestAttr(wrapper, 'component-form-base');
     expect(component.length)
       .toBe(1);
   });
-
 
 });
