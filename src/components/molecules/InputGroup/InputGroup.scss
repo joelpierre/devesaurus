@@ -1,19 +1,52 @@
+@import '~sass/core';
+
 .input-group {
   display: flex;
   width: 100%;
   align-items: stretch;
+  margin-bottom: 0;
+  border: 1px solid $color-tint-gamma;
+  flex: 1;
+  flex-wrap: nowrap;
 
   &__prepend,
   &__append {
     display: inline-flex;
     align-items: center;
-    height: 100%;
     width: auto;
+    background-color: $color-tint-beta;
+
+    .btn {
+      border-radius: 0;
+      padding: 1rem 2rem;
+    }
+  }
+
+  &__prepend {
+    border-right: 1px solid $color-tint-gamma;
+  }
+
+  &__append {
+    border-left: 1px solid $color-tint-gamma;
   }
 
   &__inner {
+    padding: 1rem 2rem;
+  }
+
+  &__text {
+    padding: 0;
+    border: none;
   }
 
   &__input {
+    width: 100%;
+
+    .form-control {
+      border: none;
+      margin-bottom: 0;
+      height: 100%;
+      border-radius: 0;
+    }
   }
 }

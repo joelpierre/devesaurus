@@ -6,6 +6,8 @@ import SEO from '../utils/seo';
 import * as coreActions from '../store/actions/core.actions';
 import Brand from '../components/atoms/Brand/Brand';
 import Button from '../components/molecules/Buttons/Button';
+import InputGroup from '../components/molecules/InputGroup/InputGroup';
+import FormField from '../components/molecules/FormField/FormField';
 
 function Index(
   {
@@ -32,20 +34,16 @@ function Index(
           description={siteMeta.description}
         />
       )}
-
-      {/* <Brand/> */}
-
-      <Button text="This is a button" link="/home" behavior="router" theme="alpha"/>
-      <Button text="This is a button" link="http://www.google.com" behavior="anchor" theme="brand"/>
-
       <main className="primary-main primary-main--home">
         <section className="primary-main__section core-search">
-          <div className="container-fluid">
+          <div className="container">
             <div className="row">
-              <div className="flex">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cumque expedita perferendis quam
-                reiciendis reprehenderit suscipit ullam vel? Autem delectus in itaque, iusto officiis ratione rem saepe
-                vero vitae voluptatem.
+              <div className="flex-md-8">
+                <h1>Devasaurus</h1>
+                <FormField name="home-search" type="text" placeholder="Search for a keyword"/>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam ea eos laudantium minus neque
+                reprehenderit tempora. Culpa cupiditate ducimus et fugiat, iure molestias nisi omnis praesentium, qui
+                saepe, temporibus!
               </div>
             </div>
           </div>

@@ -31,12 +31,16 @@ const Brand = (
         <SvgIcon name={logo} classes="brand__icon brand__logo"/>
 
         <div className={`${styles.brand__company}`}>
-          <h1 className={styles.brand__heading}>
-            {heading}
-          </h1>
-          <p className={styles.brand__slogan}>
-            {slogan}
-          </p>
+          {heading && (
+            <h1 className={styles.brand__heading}>
+              {heading}
+            </h1>
+          )}
+          {slogan && (
+            <p className={styles.brand__slogan}>
+              {slogan}
+            </p>
+          )}
         </div>
       </div>
     </div>
@@ -44,9 +48,9 @@ const Brand = (
 };
 
 Brand.defaultProps = {
-  classes: '',
-  heading: '',
-  slogan: '',
+  classes: null,
+  heading: null,
+  slogan: null,
   type: 'logo',
 };
 

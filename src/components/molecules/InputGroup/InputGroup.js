@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import InputField from '../../atoms/InputField/InputField';
 import Button from '../Buttons/Button';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+import './InputGroup.scss';
 
 const InputGroup = (
   {
@@ -18,6 +19,8 @@ const InputGroup = (
   let appIcon;
   let preIconEl;
   let appIconEl;
+  let preText;
+  let appText;
 
   if (prepend) {
     /**
@@ -42,6 +45,13 @@ const InputGroup = (
     if (prepend.icon) {
       preIcon = prepend.icon;
       preIconEl = (<SvgIcon name={preIcon}/>);
+    }
+
+    /**
+     * If there is text to prepend
+     */
+    if (prepend.text) {
+      preText = prepend.text;
     }
   }
 
@@ -68,6 +78,13 @@ const InputGroup = (
     if (append.icon) {
       appIcon = prepend.icon;
       appIconEl = (<SvgIcon name={appIcon}/>);
+    }
+
+    /**
+     * If there is text to append
+     */
+    if (append.text) {
+      appText = append.text;
     }
   }
 
@@ -121,11 +138,27 @@ const InputGroup = (
     <div data-test="component-input-group" className="input-group">
       {prepend && (
         <div className="input-group__prepend">
-          <span className="input-group__inner">
-            {preButtonEl && preButtonEl}
-            {preIconEl && preIconEl}
-            {prepend.text && prepend.text}
-          </span>
+          {preButtonEl && (
+            <div className="input-group__button-wrapper">
+              {preButtonEl}
+            </div>
+          )}
+
+          {preIconEl && (
+            <div className="input-group__inner">
+              <div className="input-group__icon-wrapper">
+                {preIconEl}
+              </div>
+            </div>
+          )}
+
+          {preText && (
+            <div className="input-group__inner">
+              <div className="input-group__text">
+                {preText}
+              </div>
+            </div>
+          )}
         </div>
       )}
 
@@ -135,11 +168,27 @@ const InputGroup = (
 
       {append && (
         <div className="input-group__append">
-          <span className="input-group__inner">
-            {appButtonEl && appButtonEl}
-            {appIconEl && appIconEl}
-            {append.text && append.text}
-          </span>
+          {appButtonEl && (
+            <div className="input-group__button-wrapper">
+              {appButtonEl}
+            </div>
+          )}
+
+          {appIconEl && (
+            <div className="input-group__inner">
+              <div className="input-group__icon-wrapper">
+                {appIconEl}
+              </div>
+            </div>
+          )}
+
+          {appText && (
+            <div className="input-group__inner">
+              <div className="input-group__text">
+                {appText}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
