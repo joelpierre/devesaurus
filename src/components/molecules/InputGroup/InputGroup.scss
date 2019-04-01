@@ -1,0 +1,19 @@
+.input-group {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+
+  &__prepend,
+  &__append {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    width: auto;
+  }
+
+  &__inner {
+  }
+
+  &__input {
+  }
+}

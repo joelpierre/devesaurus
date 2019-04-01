@@ -19,45 +19,56 @@ const InputGroup = (
   let preIconEl;
   let appIconEl;
 
-  /**
-   * If there is a button to prepend to the input group.
-   */
-  if (prepend.button) {
-    preButton = prepend.button;
-    preButtonEl = (
-      <Button
-        link={preButton.link}
-        text={preButton.text}
-        behavior={preButton.behavior}
-        size={preButton.size}
-        theme={preButton.theme}
-      />
-    );
+  if (prepend) {
+    /**
+     * If there is a button to prepend to the input group.
+     */
+    if (prepend.button) {
+      preButton = prepend.button;
+      preButtonEl = (
+        <Button
+          link={preButton.link}
+          text={preButton.text}
+          behavior={preButton.behavior}
+          size={preButton.size}
+          theme={preButton.theme}
+        />
+      );
+    }
+
+    /**
+     * If there is an icon to prepend to the input group
+     */
+    if (prepend.icon) {
+      preIcon = prepend.icon;
+      preIconEl = (<SvgIcon name={preIcon}/>);
+    }
   }
 
-  /**
-   * If there is a button to append to the input group.
-   */
-  if (append.button) {
-    appButton = append.button;
-    appButtonEl = (
-      <Button
-        link={appButton.link}
-        text={appButton.text}
-        behavior={appButton.behavior}
-        size={appButton.size}
-        theme={appButton.theme}
-      />
-    );
-  }
+  if (append) {
+    /**
+     * If there is a button to append to the input group
+     */
+    if (append.button) {
+      appButton = append.button;
+      appButtonEl = (
+        <Button
+          link={appButton.link}
+          text={appButton.text}
+          behavior={appButton.behavior}
+          size={appButton.size}
+          theme={appButton.theme}
+        />
+      );
+    }
 
-  if (prepend.icon) {
-    preIcon = prepend.icon;
-    preIconEl = (<SvgIcon name={preIcon}/>);
-  }
-  if (append.icon) {
-    appIcon = prepend.icon;
-    appIconEl = (<SvgIcon name={appIcon}/>);
+    /**
+     * If there is an Icon to append to the input group
+     */
+    if (append.icon) {
+      appIcon = prepend.icon;
+      appIconEl = (<SvgIcon name={appIcon}/>);
+    }
   }
 
   /**

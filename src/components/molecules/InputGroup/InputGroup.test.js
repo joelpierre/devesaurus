@@ -27,7 +27,7 @@ describe('<InputGroup/>', () => {
   });
 
   it('Renders the InputGroup Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'VALUE_HERE');
+    const component = findByTestAttr(wrapper, 'component-input-group');
     expect(component.length)
       .toBe(1);
   });
