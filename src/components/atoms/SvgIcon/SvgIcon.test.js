@@ -3,7 +3,10 @@ import React from 'react';
 import SvgIcon from './SvgIcon';
 import { shallow } from 'enzyme';
 
-const defaultProps = {};
+const defaultProps = {
+  name: 'logo',
+
+};
 
 /**
  * Factory function to create a ShallowWrapper fro the App component.

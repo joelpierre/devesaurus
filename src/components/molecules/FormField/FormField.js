@@ -82,10 +82,8 @@ FormField.defaultProps = {
 
 FormField.propTypes = {
   name: PropTypes.string.isRequired,
-  type: PropTypes.oneOfType(
-    PropTypes.oneOf(
-      ['text', 'file', 'select', 'password', 'date', 'email', 'number'],
-    ),
+  type: PropTypes.oneOf(
+    ['text', 'file', 'select', 'password', 'date', 'email', 'number'],
   ).isRequired,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,

@@ -16,9 +16,13 @@ const FileUpload = ({ name, placeholder }) => {
   );
 };
 
+FileUpload.defaultProps = {
+  placeholder: 'Choose file from folder',
+};
+
 FileUpload.propTypes = {
   name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
 };
 
 export default FileUpload;

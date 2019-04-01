@@ -4,7 +4,13 @@ import { shallow } from 'enzyme';
 import MenuItem from './MenuItem';
 import { findByTestAttr } from '../../../utils/test-utilities';
 
-const defaultProps = {};
+const defaultProps = {
+  item: {
+    title: 'Test Title',
+    object_slug: 'test-title',
+  },
+  classes: 'test-class',
+};
 
 /**
  * Factory function to create a ShallowWrapper fro the App component.

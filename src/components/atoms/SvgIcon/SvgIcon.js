@@ -45,12 +45,13 @@ SvgIcon.defaultProps = {
   height: '100%',
   fill: '#000000',
   description: 'An SVG Icon',
+  classes: null,
 };
 
 SvgIcon.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string,
-  classes: PropTypes.string.isRequired,
+  classes: PropTypes.string,
   fill: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,

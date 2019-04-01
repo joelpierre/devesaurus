@@ -5,14 +5,13 @@ import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers/index';
 import { watchPage, watchSiteMeta } from './sagas';
 
+const sagaMiddleware = createSagaMiddleware();
 
 /**
  * Configure Store for Application
  * @returns {any}
  */
 const configureStore = () => {
-  const sagaMiddleware = createSagaMiddleware();
-
   const store = reduxCreateStore(
     rootReducer,
     composeWithDevTools(

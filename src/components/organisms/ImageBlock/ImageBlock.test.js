@@ -1,17 +1,34 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 
-function ImageBlock({ module, pageTheme }) {
-  return (
-    <section className={`primary-main__section theme--${module.theme} image-block`}>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="flex text-center">
-            <h2>Image Block</h2>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+import { findByTestAttr } from '../../../utils/test-utilities';
 
-export default ImageBlock;
+import ImageBlock from './ImageBlock';
+
+const defaultProps = {};
+
+/**
+ * Factory function to create a ShallowWrapper for the ImageBlock component.
+ * @param {object} props - Component props specific to setup
+ * @returns {ShallowWrapper}
+ */
+const setup = (props = {}) => {
+  const setupProps = { ...defaultProps, ...props };
+  return shallow(<ImageBlock {...setupProps}/>);
+};
+
+describe('<ImageBlock/>', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = setup();
+  });
+
+  it('Renders the ImageBlock Component without errors', () => {
+    const component = findByTestAttr(wrapper, 'VALUE_HERE');
+    expect(component.length)
+      .toBe(1);
+  });
+
+
+});

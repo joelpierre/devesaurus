@@ -1,28 +1,14 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
+import PropTypes from 'prop-types';
+
 import * as styles from './PrimaryMenu.module.scss';
 
 import MenuItem from '../../atoms/MenuItem/MenuItem';
 
 const PrimaryMenu = ({ classes }) => (
   <StaticQuery
-    query={graphql`
-    {
-      allWordpressWpApiMenusMenusItems(filter: {name: {
-        eq: "Primary Menu"
-      }}) {
-        edges {
-          node {
-            name
-            items {
-              order
-              title
-              object_slug
-            }
-          }
-        }
-      }
-    }`}
+    query={menuQuery}
     render={props => (
       <>
         <nav className={`${styles['primary-menu']} ${classes}`}>
@@ -38,4 +24,29 @@ const PrimaryMenu = ({ classes }) => (
 
 );
 
+PrimaryMenu.defaultProps = {
+  classes: null,
+};
+
+PrimaryMenu.propTypes = {
+  classes: PropTypes.string,
+};
+
 export default PrimaryMenu;
+
+const menuQuery = graphql`{
+      allWordpressWpApiMenusMenusItems(filter: {name: {
+        eq: "Primary Menu"
+      }}) {
+        edges {
+          node {
+            name
+            items {
+              order
+              title
+              object_slug
+            }
+          }
+        }
+      }
+    }`;

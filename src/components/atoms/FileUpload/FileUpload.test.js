@@ -4,7 +4,9 @@ import { shallow } from 'enzyme';
 import FileUpload from './FileUpload';
 import { findByTestAttr } from '../../../utils/test-utilities';
 
-const defaultProps = {};
+const defaultProps = {
+  name: 'test-name',
+};
 
 /**
  * Factory function to create a ShallowWrapper for the FileUpload component.

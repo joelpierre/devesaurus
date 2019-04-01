@@ -54,9 +54,7 @@ Brand.propTypes = {
   classes: PropTypes.string,
   heading: PropTypes.string,
   slogan: PropTypes.string,
-  type: PropTypes.oneOfType([
-    PropTypes.oneOf(['logo', 'text', 'text-alt', 'symbol', 'symbol-alt']),
-  ]),
+  type: PropTypes.oneOf(['logo', 'text', 'text-alt', 'symbol', 'symbol-alt']),
 };
 
 export default Brand;

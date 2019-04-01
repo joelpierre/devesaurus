@@ -15,7 +15,12 @@ function MenuItem({ item, classes }) {
 }
 
 MenuItem.propTypes = {
-  item: PropTypes.instanceOf(Object).isRequired,
+  item: PropTypes.shape(
+    {
+      title: PropTypes.string.isRequired,
+      object_slug: PropTypes.string.isRequired,
+    },
+  ).isRequired,
   classes: PropTypes.string.isRequired,
 };
 

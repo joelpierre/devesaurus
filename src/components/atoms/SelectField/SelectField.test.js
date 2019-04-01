@@ -4,7 +4,15 @@ import { shallow } from 'enzyme';
 import SelectField from './SelectField';
 import { findByTestAttr } from '../../../utils/test-utilities';
 
-const defaultProps = {};
+const defaultProps = {
+  name: 'test-name',
+  options: [
+    {
+      name: 'Test Option Name',
+      value: 'test-option-value',
+    },
+  ],
+};
 
 /**
  * Factory function to create a ShallowWrapper for the SelectField component.

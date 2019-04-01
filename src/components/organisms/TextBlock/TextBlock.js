@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function TextBlock({ module, pageTheme }) {
+const TextBlock = ({ module, pageTheme }) => {
   return (
-    <section className={`primary-main__section theme--${module.theme} text-block`}>
+    <section className={`primary-main__section theme--${module.theme ? module.theme : pageTheme} text-block`}>
       <div className="container-fluid">
         <div className="row">
           <div className="flex">
@@ -16,6 +17,11 @@ function TextBlock({ module, pageTheme }) {
       </div>
     </section>
   );
-}
+};
+
+TextBlock.propTypes = {
+  module: PropTypes.instanceOf(Object).isRequired,
+  pageTheme: PropTypes.string.isRequired,
+};
 
 export default TextBlock;

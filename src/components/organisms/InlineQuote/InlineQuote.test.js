@@ -1,19 +1,34 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 
-function InlineQuote({ module, pageTheme }) {
-  return (
-    <section className={`primary-main__section theme--${module.theme} inline-quote`}>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="flex">
-            <blockquote>
-              This is a blockquote
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+import { findByTestAttr } from '../../../utils/test-utilities';
 
-export default InlineQuote;
+import InlineQuote from './InlineQuote';
+
+const defaultProps = {};
+
+/**
+ * Factory function to create a ShallowWrapper for the InlineQuote component.
+ * @param {object} props - Component props specific to setup
+ * @returns {ShallowWrapper}
+ */
+const setup = (props = {}) => {
+  const setupProps = { ...defaultProps, ...props };
+  return shallow(<InlineQuote {...setupProps}/>);
+};
+
+describe('<InlineQuote/>', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = setup();
+  });
+
+  it('Renders the InlineQuote Component without errors', () => {
+    const component = findByTestAttr(wrapper, 'VALUE_HERE');
+    expect(component.length)
+      .toBe(1);
+  });
+
+
+});

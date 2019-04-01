@@ -2,17 +2,17 @@ import checkPropTypes from 'check-prop-types';
 import { applyMiddleware, createStore } from 'redux';
 
 import rootReducer from '../store/reducers';
-import { middleware } from '../store/configureStore';
+// import { sagaMiddleware } from '../store/configureStore';
 
-/**
- * Store Factory
- * @param initialState
- * @returns {Store<any, Action> & *}
- */
-export const storeFactory = (initialState) => {
-  const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore);
-  return createStoreWithMiddleware(rootReducer, initialState);
-};
+// /**
+//  * Store Factory
+//  * @param initialState
+//  * @returns {Store<any, Action> & *}
+//  */
+// export const storeFactory = (initialState) => {
+//   const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore);
+//   return createStoreWithMiddleware(rootReducer, initialState);
+// };
 
 
 /**
