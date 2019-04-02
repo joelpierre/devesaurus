@@ -1,7 +1,7 @@
 export const mockWords = [
   {
     word: 'example',
-    origin: 'origin',
+    origin: 'United Kingdom',
     syllables: {
       count: 3,
       list: [
@@ -10,13 +10,11 @@ export const mockWords = [
         'ple',
       ],
     },
-    pronunciation: {
-      all: 'ɪɡ\'zæmpəl',
-    },
+    pronunciation: 'ɪɡ\'zæmpəl',
     results: [
       {
         definition: '',
-        partOfSpeech: 'noun|verb|etc',
+        partOfSpeech: 'noun',
         synonyms: [
           'exercise',
         ],
@@ -47,7 +45,7 @@ export const mockWords = [
   },
   {
     word: 'example',
-    origin: 'origin',
+    origin: 'United Kingdom',
     syllables: {
       count: 3,
       list: [
@@ -56,13 +54,11 @@ export const mockWords = [
         'ple',
       ],
     },
-    pronunciation: {
-      all: 'ɪɡ\'zæmpəl',
-    },
+    pronunciation: 'ɪɡ\'zæmpəl',
     results: [
       {
         definition: '',
-        partOfSpeech: 'noun|verb|etc',
+        partOfSpeech: 'noun',
         synonyms: [
           'exercise',
         ],
@@ -93,7 +89,7 @@ export const mockWords = [
   },
   {
     word: 'example',
-    origin: 'origin',
+    origin: 'United Kingdom',
     syllables: {
       count: 3,
       list: [
@@ -102,13 +98,11 @@ export const mockWords = [
         'ple',
       ],
     },
-    pronunciation: {
-      all: 'ɪɡ\'zæmpəl',
-    },
+    pronunciation: 'ɪɡ\'zæmpəl',
     results: [
       {
         definition: '',
-        partOfSpeech: 'noun|verb|etc',
+        partOfSpeech: 'noun',
         synonyms: [
           'exercise',
         ],
@@ -141,7 +135,7 @@ export const mockWords = [
 
 export const mockWord = {
   word: 'example',
-  origin: 'origin',
+  origin: 'United Kingdom',
   syllables: {
     count: 3,
     list: [

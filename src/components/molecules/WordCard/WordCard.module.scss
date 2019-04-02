@@ -3,7 +3,49 @@
 .word-card {
   $root: &;
 
-  &__heading {
+  border-radius: $radius-rounded;
+  border: 1px solid $color-tint-gamma;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
 
+  &__header {
+    flex-basis: 100%;
+    flex-grow: 0;
+  }
+
+  &__heading {
+    text-transform: capitalize;
+    line-height: 1.2;
+  }
+
+  &__body {
+    flex-basis: 100%;
+    padding-top: 2rem;
+  }
+
+  &__syllables {
+
+  }
+
+  &__syllable {
+    display: inline-block;
+    margin: 0 .8rem;
+    position: relative;
+    font-style: italic;
+    font-weight: bold;
+
+    &:after {
+      content: '~';
+      position: absolute;
+      right: -1.2rem;
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+        margin-right: 0;
+      }
+    }
   }
 }

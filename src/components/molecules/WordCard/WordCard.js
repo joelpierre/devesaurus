@@ -2,51 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as styles from './WordCard.module.scss';
 import { wordPropTypeShape } from '../../../utils/propTypeShapes';
+import Button from '../Buttons/Button';
 
 const WordCard = (
   {
-    word, origin, syllables, pronunciation, results, category, tags,
+    word, origin, syllables, pronunciation, link,
   },
 ) => {
+
   return (
-    <article className={styles.wordCard} data-test="component-word-card">
+    <article className={styles['word-card']} data-test="component-word-card">
       <header className={styles['word-card__header']}>
         <h3 data-test="" className={styles['word-card__heading']}>
-          {word} {`(${results.partOfSpeech})`}
+          {word}
         </h3>
         {pronunciation && (<span className={styles['word-count__pronunciation']}>{pronunciation}</span>)}
         <h4 className={styles['word-card__origin']}>
-          {origin}
+          Origin: {origin}
         </h4>
         <p className={styles['word-card__syllables']}>
           Syllables {`(${syllables.count})`}:
-          {syllables.list.map((syllable) => {
-            return syllable;
+          {syllables.list.map((syllable, index) => {
+            return (<span key={index} className={styles['word-card__syllable']}>{syllable}</span>);
           })}
         </p>
       </header>
 
       <div className={styles['word-card__body']}>
-        <p className={styles['word-card__content']}>
-          {results.definition}
-        </p>
+        <Button link={link} text="Get definition"/>
       </div>
-
-      <footer className={styles['word-card__footer']}>
-        {category && (
-          <p className={styles['word-card__category']}>
-            Category: {category.title}
-          </p>
-        )}
-
-        {tags && (
-          <p className={styles['word-card__tags']}>
-            Tags: {tags.map((tag) => {
-            return (<span className={styles['word-card__tag']}>{tag}</span>);
-          })}
-          </p>
-        )}
-      </footer>
     </article>
   );
 };
@@ -59,6 +43,7 @@ WordCard.defaultProps = {
 
 WordCard.propTypes = {
   ...wordPropTypeShape,
+  link: PropTypes.string.isRequired,
 };
 
 export default WordCard;

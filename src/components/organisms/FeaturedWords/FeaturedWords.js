@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import WordCard from '../../molecules/WordCard/WordCard';
+import './FeaturedWords.scss';
 import { wordPropTypeShape } from '../../../utils/propTypeShapes';
 
 const FeaturedWords = ({ words }) => {
@@ -8,10 +9,20 @@ const FeaturedWords = ({ words }) => {
     <section data-test="component-featured-words">
       <div className="container">
         <div className="row">
-          {words && words.map(word => {
+          {words && words.map((word, index) => {
             return (
-              <div className="flex-16 flex-md-4 flex-lg-4" data-test="featured-words-word">
-                <WordCard origin={word.origin} word={word.word} syllables={word.syllables} results={word.results}/>
+              <div
+                key={index}
+                className="flex-16 flex-md-4 flex-lg-4 featured-words__word-card"
+                data-test="featured-words-word"
+              >
+                <WordCard
+                  link={word.link}
+                  origin={word.origin}
+                  word={word.word}
+                  syllables={word.syllables}
+                  results={word.results}
+                />
               </div>
             );
           })}
@@ -21,10 +32,8 @@ const FeaturedWords = ({ words }) => {
   );
 };
 
-FeaturedWords.defaultProps = {};
-
 FeaturedWords.propTypes = {
-  words: PropTypes.arrayOf(PropTypes.shape({ ...wordPropTypeShape })),
+  words: PropTypes.arrayOf(PropTypes.shape({ ...wordPropTypeShape })).isRequired,
 };
 
 export default FeaturedWords;
