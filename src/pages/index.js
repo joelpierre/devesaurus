@@ -8,6 +8,8 @@ import Brand from '../components/atoms/Brand/Brand';
 import Button from '../components/molecules/Buttons/Button';
 import InputGroup from '../components/molecules/InputGroup/InputGroup';
 import FormField from '../components/molecules/FormField/FormField';
+import FeaturedWords from '../components/organisms/FeaturedWords/FeaturedWords';
+import { mockWords } from '../../__mocks__/mock-words';
 
 function Index(
   {
@@ -48,6 +50,9 @@ function Index(
             </div>
           </div>
         </section>
+
+
+        <FeaturedWords words={mockWords}/>
       </main>
     </>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as styles from './WordCard.module.scss';
+import { wordPropTypeShape } from '../../../utils/propTypeShapes';
 
 const WordCard = (
   {
@@ -10,7 +11,7 @@ const WordCard = (
   return (
     <article className={styles.wordCard} data-test="component-word-card">
       <header className={styles['word-card__header']}>
-        <h3 className={styles['word-card__heading']}>
+        <h3 data-test="" className={styles['word-card__heading']}>
           {word} {`(${results.partOfSpeech})`}
         </h3>
         {pronunciation && (<span className={styles['word-count__pronunciation']}>{pronunciation}</span>)}
@@ -57,27 +58,7 @@ WordCard.defaultProps = {
 };
 
 WordCard.propTypes = {
-  word: PropTypes.string.isRequired,
-  origin: PropTypes.string.isRequired,
-  syllables: PropTypes.shape({
-    count: PropTypes.number.isRequired,
-    list: PropTypes.instanceOf(Array).isRequired,
-  }).isRequired,
-  pronunciation: PropTypes.string,
-  results: PropTypes.arrayOf(PropTypes.shape({
-    definition: PropTypes.string.isRequired,
-    partOfSpeech: PropTypes.oneOf(['noun', 'verb', 'adjective', 'pronoun', 'adverb', 'preposition', 'conjunction', 'interjection']),
-  })).isRequired,
-  category: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
-  }),
-  tags: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
-  })),
+  ...wordPropTypeShape,
 };
 
 export default WordCard;
