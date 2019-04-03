@@ -6,7 +6,7 @@ import Button from '../Buttons/Button';
 
 const WordCard = (
   {
-    word, origin, syllables, pronunciation, link,
+    word, origin, syllables, pronunciation, slug,
   },
 ) => {
 
@@ -29,21 +29,15 @@ const WordCard = (
       </header>
 
       <div className={styles['word-card__body']}>
-        <Button link={link} text="Get definition"/>
+        <Button link={`/word/${slug}`} text="Get definition"/>
       </div>
     </article>
   );
 };
 
-WordCard.defaultProps = {
-  pronunciation: null,
-  category: null,
-  tags: null,
-};
-
 WordCard.propTypes = {
   ...wordPropTypeShape,
-  link: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
 };
 
 export default WordCard;

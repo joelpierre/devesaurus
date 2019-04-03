@@ -193,7 +193,6 @@ exports.createPages = ({ graphql, actions }) => {
                       }
                       pronunciation
                       part_of_speech
-                      examples
                     }
                   }
                 }

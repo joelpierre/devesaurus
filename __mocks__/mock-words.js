@@ -1,181 +1,118 @@
-export const mockWords = [
-  {
-    word: 'example',
-    origin: 'United Kingdom',
-    syllables: {
-      count: 3,
-      list: [
-        'ex',
-        'am',
-        'ple',
-      ],
-    },
-    pronunciation: 'ɪɡ\'zæmpəl',
-    results: [
-      {
-        definition: '',
-        partOfSpeech: 'noun',
-        synonyms: [
-          'exercise',
-        ],
-        examples: [
-          {
-            type: 'code-block',
-            code: '<code></code>',
-          },
-          {
-            type: 'codepen',
-            link: 'url here',
-          },
-        ],
-      },
-    ],
-    category: {
-      id: 1,
-      title: 'Category',
-      slug: 'category',
-    },
-    tags: [
-      {
-        id: 1,
-        title: 'Tag[n]',
-        slug: 'tag[n]',
-      },
-    ],
-  },
-  {
-    word: 'example',
-    origin: 'United Kingdom',
-    syllables: {
-      count: 3,
-      list: [
-        'ex',
-        'am',
-        'ple',
-      ],
-    },
-    pronunciation: 'ɪɡ\'zæmpəl',
-    results: [
-      {
-        definition: '',
-        partOfSpeech: 'noun',
-        synonyms: [
-          'exercise',
-        ],
-        examples: [
-          {
-            type: 'code-block',
-            code: '<code></code>',
-          },
-          {
-            type: 'codepen',
-            link: 'url here',
-          },
-        ],
-      },
-    ],
-    category: {
-      id: 1,
-      title: 'Category',
-      slug: 'category',
-    },
-    tags: [
-      {
-        id: 1,
-        title: 'Tag[n]',
-        slug: 'tag[n]',
-      },
-    ],
-  },
-  {
-    word: 'example',
-    origin: 'United Kingdom',
-    syllables: {
-      count: 3,
-      list: [
-        'ex',
-        'am',
-        'ple',
-      ],
-    },
-    pronunciation: 'ɪɡ\'zæmpəl',
-    results: [
-      {
-        definition: '',
-        partOfSpeech: 'noun',
-        synonyms: [
-          'exercise',
-        ],
-        examples: [
-          {
-            type: 'code-block',
-            code: '<code></code>',
-          },
-          {
-            type: 'codepen',
-            link: 'url here',
-          },
-        ],
-      },
-    ],
-    category: {
-      id: 1,
-      title: 'Category',
-      slug: 'category',
-    },
-    tags: [
-      {
-        id: 1,
-        title: 'Tag[n]',
-        slug: 'tag[n]',
-      },
-    ],
-  },
-];
-
 export const mockWord = {
-  word: 'example',
-  origin: 'United Kingdom',
-  syllables: {
-    count: 3,
-    list: [
-      'ex',
-      'am',
-      'ple',
-    ],
-  },
-  pronunciation: {
-    all: 'ɪɡ\'zæmpəl',
-  },
-  results: [
+  title: 'Graphic Design',
+  slug: 'graphic-design',
+  terms: [
     {
-      definition: '',
-      partOfSpeech: 'noun|verb|etc',
+      name: 'Design',
+      slug: 'design',
+      taxonomy: 'word_tag',
+    },
+    {
+      name: 'Graphic Design',
+      slug: 'graphic-design',
+      taxonomy: 'word_category',
+    },
+  ],
+  acf: {
+    definition: '<p>The art or skill of combining text and pictures in advertisements, magazines, or books.</p>\n',
+    origin: {
+      value: 'GB',
+      label: 'United Kingdom',
+    },
+    syllables: {
+      count: '4',
+      list: [
+        {
+          item: 'gra',
+        },
+        {
+          item: 'phic',
+        },
+        {
+          item: 'de',
+        },
+        {
+          item: 'sign',
+        },
+      ],
+    },
+    pronunciation: 'graphic-de-sign',
+    part_of_speech: 'noun',
+    synonyms: [
+      {
+        post_title: 'Web Development',
+        post_status: 'publish',
+        post_name: 'web-development',
+      },
+    ],
+    examples: false,
+  },
+};
+
+export const mockWords = [
+  ...mockWord,
+  {
+    title: 'Web Development',
+    slug: 'web-development',
+    terms: [
+      {
+        name: 'CSS',
+        slug: 'css',
+        taxonomy: 'word_tag',
+      },
+      {
+        name: 'HTML5',
+        slug: 'html5',
+        taxonomy: 'word_tag',
+      },
+      {
+        name: 'Web Development',
+        slug: 'web-development',
+        taxonomy: 'word_category',
+      },
+    ],
+    acf: {
+      definition: '<p>Web development is the work involved in developing a web site for the Internet (World Wide Web) or an intranet (a private network). Among web professionals, "web development" usually refers to the main non-design aspects of building web sites: writing markup and coding</p>\n',
+      origin: {
+        value: 'GB',
+        label: 'United Kingdom',
+      },
+      syllables: {
+        count: '5',
+        list: [
+          {
+            item: 'web',
+          },
+          {
+            item: 'de',
+          },
+          {
+            item: 've',
+          },
+          {
+            item: 'lop',
+          },
+          {
+            item: 'ment',
+          },
+        ],
+      },
+      pronunciation: 'web~develop~ment',
+      part_of_speech: 'noun',
       synonyms: [
-        'exercise',
+        {
+          post_title: 'Graphic Design',
+          post_status: 'publish',
+          post_name: 'graphic-design',
+        },
       ],
       examples: [
         {
           type: 'code-block',
-          code: '<code></code>',
-        },
-        {
-          type: 'codepen',
-          link: 'url here',
+          codepen_url: '',
+          code: '<p><code></p>\n<header>\ntest<br />\n</header>\n<p></code></p>\n',
         },
       ],
     },
-  ],
-  category: {
-    id: 1,
-    title: 'Category',
-    slug: 'category',
   },
-  tags: [
-    {
-      id: 1,
-      title: 'Tag[n]',
-      slug: 'tag[n]',
-    },
-  ],
-};
+];

@@ -6,6 +6,7 @@ import { findByTestAttr } from '../../../utils/test-utilities';
 import WordCard from './WordCard';
 
 const defaultProps = {
+  slug: 'example',
   word: 'example',
   origin: 'origin',
   syllables: {
