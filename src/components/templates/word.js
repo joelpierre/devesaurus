@@ -4,11 +4,8 @@ import PropTypes from 'prop-types';
 import * as wordActions from '../../store/actions/word.actions';
 import * as coreActions from '../../store/actions/core.actions';
 
-import { mapOverACFComponents } from '../../utils';
-
-import AcfComponents from '../../hoc/acfComponents';
 import CoreLayout from '../../layouts/core';
-import FormField from '../molecules/FormField/FormField';
+import sortWordObj from '../../helpers/sortWordObj';
 
 function WordTemplate(
   {
@@ -16,6 +13,7 @@ function WordTemplate(
     wordData,
     onGetSiteMeta,
     onGetWord,
+    clearWordData,
   },
 ) {
   /**
@@ -25,27 +23,34 @@ function WordTemplate(
   useEffect(() => {
     onGetSiteMeta();
     onGetWord(pageContext);
+
+    return () => {
+      clearWordData();
+    };
   }, []);
 
-  /**
-   * React Hook - Fires when onGetWord has been executed. Once the store is updated we
-   * cycle over the components and rerender.
-   */
   useEffect(() => {
-    const components = wordData && wordData.acf.components || null;
-
-    if (components) {
-      mapOverACFComponents(components);
-    }
+    sortWordObj(wordData);
   }, [wordData]);
 
-  return (
-    <CoreLayout>
-      <h1 style={{ marginTop: '10px' }} className="text-center">
-        {wordData && wordData.title}
-      </h1>
-    </CoreLayout>
-  );
+
+  if (wordData) {
+    return (
+      <CoreLayout>
+        <section className="primary-main__section">
+          <div className="container">
+            <div className="flex">
+              <h1 style={{ marginTop: '10px' }} className="text-center">
+                {wordData.title}
+              </h1>
+            </div>
+          </div>
+        </section>
+      </CoreLayout>
+    );
+  }
+
+  return (<></>);
 }
 
 WordTemplate.defaultProps = {
@@ -58,6 +63,7 @@ WordTemplate.propTypes = {
   wordData: PropTypes.instanceOf(Object),
   onGetWord: PropTypes.func.isRequired,
   onGetSiteMeta: PropTypes.func.isRequired,
+  clearWordData: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -67,6 +73,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onGetWord: data => dispatch(wordActions.getWordData(data.slug)),
   onGetSiteMeta: () => dispatch(coreActions.getSiteMeta()),
+  clearWordData: () => dispatch(wordActions.clearWordData()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(WordTemplate);

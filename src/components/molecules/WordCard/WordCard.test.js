@@ -6,23 +6,17 @@ import { findByTestAttr } from '../../../utils/test-utilities';
 import WordCard from './WordCard';
 
 const defaultProps = {
-  slug: 'example',
-  word: 'example',
-  origin: 'origin',
-  syllables: {
-    count: 3,
-    list: [
-      'ex',
-      'am',
-      'ple',
-    ],
-  },
-  results: [
-    {
-      definition: 'lorem ipsum',
-      partOfSpeech: 'noun',
+  title: 'title',
+  slug: 'slug',
+  terms: [],
+  acf: {
+    syllables: {
+      count: '1',
+      list: [
+        { item: 'test' },
+      ],
     },
-  ],
+  },
 };
 
 

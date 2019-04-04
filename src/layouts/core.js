@@ -24,6 +24,7 @@ CoreLayout.defaultProps = {
 CoreLayout.propTypes = {
   metaTitle: PropTypes.string,
   metaDescription: PropTypes.string,
+  children: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default CoreLayout;

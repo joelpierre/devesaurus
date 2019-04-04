@@ -10,6 +10,7 @@ import InputGroup from '../components/molecules/InputGroup/InputGroup';
 import FormField from '../components/molecules/FormField/FormField';
 import FeaturedWords from '../components/organisms/FeaturedWords/FeaturedWords';
 import { mockWords } from '../../__mocks__/mock-words';
+import HeroSearch from '../components/organisms/HeroSearch/HeroSearch';
 
 function Index(
   {
@@ -37,20 +38,7 @@ function Index(
         />
       )}
       <main className="primary-main primary-main--home">
-        <section className="primary-main__section core-search">
-          <div className="container">
-            <div className="row">
-              <div className="flex-md-8">
-                <h1>Devasaurus</h1>
-                <FormField name="home-search" type="text" placeholder="Search for a keyword"/>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam ea eos laudantium minus neque
-                reprehenderit tempora. Culpa cupiditate ducimus et fugiat, iure molestias nisi omnis praesentium, qui
-                saepe, temporibus!
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <HeroSearch title={siteOptions && siteOptions.company_name}/>
 
         <FeaturedWords words={mockWords}/>
       </main>

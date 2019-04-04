@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as styles from './WordCard.module.scss';
 import { wordPropTypeShape } from '../../../utils/propTypeShapes';
@@ -6,27 +6,49 @@ import Button from '../Buttons/Button';
 
 const WordCard = (
   {
-    word, origin, syllables, pronunciation, slug,
+    title, slug, terms, acf,
   },
 ) => {
+  let categories;
+  let tags;
+
+  const sortTerms = () => {
+    if (terms) {
+      categories = terms.map(term => {
+        return term.taxonomy === 'word_category';
+      });
+
+      tags = terms.map(term => {
+        return term.taxonomy === 'word_tag';
+      });
+    }
+  };
+
+  useEffect(() => {
+    sortTerms();
+
+  }, []);
+
 
   return (
     <article className={styles['word-card']} data-test="component-word-card">
       <header className={styles['word-card__header']}>
         <h3 data-test="" className={styles['word-card__heading']}>
-          {word}
+          {title}
         </h3>
-        {pronunciation && (<span className={styles['word-count__pronunciation']}>{pronunciation}</span>)}
-        <h4 className={styles['word-card__origin']}>
-          Origin: {origin}
-        </h4>
-        <p className={styles['word-card__syllables']}>
-          Syllables {`(${syllables.count})`}:
-          {syllables.list.map((syllable, index) => {
-            return (<span key={index} className={styles['word-card__syllable']}>{syllable}</span>);
-          })}
-        </p>
       </header>
+
+      <p>
+        {categories && categories.map(category => {
+          return (<span>{category}</span>);
+        })}
+      </p>
+
+      <p>
+        {tags && tags.map(tag => {
+          return (<span>{tag}</span>);
+        })}
+      </p>
 
       <div className={styles['word-card__body']}>
         <Button link={`/word/${slug}`} text="Get definition"/>
@@ -37,7 +59,6 @@ const WordCard = (
 
 WordCard.propTypes = {
   ...wordPropTypeShape,
-  slug: PropTypes.string.isRequired,
 };
 
 export default WordCard;

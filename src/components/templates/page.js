@@ -16,6 +16,7 @@ function PageTemplate(
     pageData,
     onGetSiteMeta,
     onGetPage,
+    clearPageData,
   },
 ) {
   /**
@@ -25,6 +26,10 @@ function PageTemplate(
   useEffect(() => {
     onGetSiteMeta();
     onGetPage(pageContext);
+
+    return () => {
+      clearPageData();
+    };
   }, []);
 
   /**
@@ -33,10 +38,7 @@ function PageTemplate(
    */
   useEffect(() => {
     const components = pageData && pageData.acf.components || null;
-
-    if (components) {
-      mapOverACFComponents(components);
-    }
+    if (components) mapOverACFComponents(components);
   }, [pageData]);
 
   return (
@@ -66,6 +68,7 @@ PageTemplate.propTypes = {
   pageData: PropTypes.instanceOf(Object),
   onGetPage: PropTypes.func.isRequired,
   onGetSiteMeta: PropTypes.func.isRequired,
+  clearPageData: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -75,6 +78,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onGetPage: data => dispatch(pageActions.getPageData(data.slug)),
   onGetSiteMeta: () => dispatch(coreActions.getSiteMeta()),
+  clearPageData: () => dispatch(pageActions.clearPageData()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PageTemplate);
