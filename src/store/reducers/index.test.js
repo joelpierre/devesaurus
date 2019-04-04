@@ -1,8 +1,9 @@
 import rootReducer from './index';
 
 describe('CombineReducers', () => {
-  it('', () => {
+  it('Should have a rootReducer', () => {
     const reducer = rootReducer;
-    console.log(reducer);
+    expect(reducer)
+      .toBeTruthy();
   });
 });

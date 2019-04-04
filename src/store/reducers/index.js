@@ -13,6 +13,4 @@ const rootReducer = combineReducers({
   word: wordReducer,
 });
 
-console.log(rootReducer);
-
 export default rootReducer;
