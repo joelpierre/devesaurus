@@ -143,4 +143,29 @@ describe('Team and Person Actions', () => {
     expect(clearTeamData().type)
       .toBe(teamActionTypes.CLEAR_TEAM_DATA);
   });
+
+  // START PERSON TESTs
+  it('getPersonData should have the correct type', () => {
+    expect(getPersonData().type)
+      .toBe(teamActionTypes.GET_PERSON_DATA);
+  });
+
+  it('getPersonDataFailed should have the correct type', () => {
+    expect(getPersonDataFailed().type)
+      .toBe(teamActionTypes.GET_PERSON_FAILED);
+  });
+
+  it('setPersonData should have the correct type and data', () => {
+    const data = {};
+
+    expect(setPersonData(data).type)
+      .toBe(teamActionTypes.SET_PERSON_DATA);
+    expect(setPersonData(data).data)
+      .toBe(data);
+  });
+
+  it('getPersonData should have the correct type', () => {
+    expect(clearPersonData().type)
+      .toBe(teamActionTypes.CLEAR_PERSON_DATA);
+  });
 });
