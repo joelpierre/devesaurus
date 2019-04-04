@@ -25,7 +25,7 @@ const FeaturedWords = ({ words }) => {
         <div className="row">
           {words.map((word, index) => {
             return (
-              <div key={index} className="flex-16 flex-md-5 flex-lg-4">
+              <div data-test="featured-words-word" key={index} className="flex-16 flex-md-5 flex-lg-4">
                 <WordCard slug={word.slug} title={word.title} acf={word.acf} terms={word.terms}/>
               </div>
             );

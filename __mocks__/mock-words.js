@@ -50,7 +50,7 @@ export const mockWord = {
 };
 
 export const mockWords = [
-  ...mockWord,
+  mockWord,
   {
     title: 'Web Development',
     slug: 'web-development',
