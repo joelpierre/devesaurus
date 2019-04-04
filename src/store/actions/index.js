@@ -9,3 +9,12 @@ export {
 export {
   getWordData, getWordDataFailed, setWordData, clearWordData,
 } from './word.actions';
+
+export {
+  getPostData, getPostDataFailed, setPostData, clearPostData,
+} from './post.actions';
+
+export {
+  getTeamData, getTeamDataFailed, setTeamData, clearTeamData,
+  getPersonData, getPersonDataFailed, setPersonData, clearPersonData,
+} from './team.actions';
