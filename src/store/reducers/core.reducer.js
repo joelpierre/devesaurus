@@ -5,7 +5,7 @@ import { coreActionTypes } from '../actionTypes';
  * Set the initial core state
  * @type {{site: string, options: null, description: string, api: string, title: string, loading: boolean, error: boolean}}
  */
-const initialState = {
+export const initialState = {
   title: 'Store Title',
   description: 'Store Description',
   api: process.env.GATSBY_BASE_URL,

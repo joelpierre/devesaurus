@@ -18,7 +18,7 @@ export const postActionTypes = {
   GET_POST_DATA: 'GET_POST_DATA',
   SET_POST_DATA: 'SET_POST_DATA',
   GET_POST_FAILED: 'GET_POST_FAILED',
-  CLEAR_PAGE_DATA: 'CLEAR_PAGE_DATA',
+  CLEAR_POST_DATA: 'CLEAR_POST_DATA',
 };
 
 export const teamActionTypes = {

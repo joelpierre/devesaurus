@@ -5,7 +5,7 @@ import { pageActionTypes } from '../actionTypes';
  * Set initial state
  * @type {{data: any}}
  */
-const initialState = {
+export const initialState = {
   data: null,
 };
 
