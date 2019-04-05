@@ -2,7 +2,9 @@ import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers/index';
-import { watchPage, watchSiteMeta, watchWord } from './sagas';
+import {
+  watchPage, watchPost, watchSiteMeta, watchWord,
+} from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,6 +21,7 @@ const configureStore = () => {
   );
 
   sagaMiddleware.run(watchPage);
+  sagaMiddleware.run(watchPost);
   sagaMiddleware.run(watchWord);
   sagaMiddleware.run(watchSiteMeta);
 

@@ -30,18 +30,24 @@ class WordTemplate extends PureComponent {
   render() {
     const { wordData } = this.props;
 
-    return (
-      <CoreLayout>
-        <section className="primary-main__section">
-          <div className="container">
-            <div className="flex">
-              <h1 style={{ marginTop: '10px' }} className="text-center">
-                {wordData.title}
-              </h1>
+    if (wordData) {
+      return (
+        <CoreLayout>
+          <section className="primary-main__section">
+            <div className="container">
+              <div className="flex">
+                <h1 style={{ marginTop: '10px' }} className="text-center">
+                  {wordData.title}
+                </h1>
+              </div>
             </div>
-          </div>
-        </section>
-      </CoreLayout>
+          </section>
+        </CoreLayout>
+      );
+    }
+
+    return (
+      <></>
     );
   }
 }

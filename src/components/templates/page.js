@@ -32,12 +32,12 @@ class PageTemplate extends PureComponent {
   }
 
   render() {
-    const { pageData, pageContext } = this.props;
+    const { pageData } = this.props;
 
     return (
       <CoreLayout>
         {pageData && pageData.acf.components.map((component, index) => {
-          return (<AcfComponents component={component} pageTheme={pageContext.acf.page_theme} key={index}/>);
+          return (<AcfComponents component={component} pageTheme={pageData.acf.page_theme} key={index}/>);
         })}
       </CoreLayout>
     );
