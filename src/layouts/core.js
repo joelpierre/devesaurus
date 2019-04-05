@@ -19,12 +19,13 @@ const CoreLayout = ({ children, metaTitle, metaDescription }) => (
 CoreLayout.defaultProps = {
   metaTitle: 'Default Title',
   metaDescription: 'Default description',
+  children: null,
 };
 
 CoreLayout.propTypes = {
   metaTitle: PropTypes.string,
   metaDescription: PropTypes.string,
-  children: PropTypes.instanceOf(Object).isRequired,
+  children: PropTypes.instanceOf(Object),
 };
 
 export default CoreLayout;

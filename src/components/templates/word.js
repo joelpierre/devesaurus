@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as wordActions from '../../store/actions/word.actions';
@@ -7,34 +7,29 @@ import * as coreActions from '../../store/actions/core.actions';
 import CoreLayout from '../../layouts/core';
 import sortWordObj from '../../helpers/sortWordObj';
 
-function WordTemplate(
-  {
-    pageContext,
-    wordData,
-    onGetSiteMeta,
-    onGetWord,
-    clearWordData,
-  },
-) {
-  /**
-   * React Hook - Replaces componentDidMount() we pass and empty array as the second
-   * argument in order to only fire it once.
-   */
-  useEffect(() => {
+class WordTemplate extends PureComponent {
+  componentDidMount() {
+    const { onGetSiteMeta, onGetWord, pageContext } = this.props;
     onGetSiteMeta();
     onGetWord(pageContext);
+  }
 
-    return () => {
-      clearWordData();
-    };
-  }, []);
+  componentDidUpdate(prevProps) {
+    const { wordData } = this.props;
 
-  useEffect(() => {
-    sortWordObj(wordData);
-  }, [wordData]);
+    if (wordData && wordData !== prevProps.wordData) {
+      sortWordObj(wordData);
+    }
+  }
 
+  componentWillUnmount() {
+    const { clearWordData } = this.props;
+    clearWordData();
+  }
 
-  if (wordData) {
+  render() {
+    const { wordData } = this.props;
+
     return (
       <CoreLayout>
         <section className="primary-main__section">
@@ -49,8 +44,6 @@ function WordTemplate(
       </CoreLayout>
     );
   }
-
-  return (<></>);
 }
 
 WordTemplate.defaultProps = {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as pageActions from '../../store/actions/page.actions';
@@ -8,54 +8,40 @@ import { mapOverACFComponents } from '../../utils';
 
 import AcfComponents from '../../hoc/acfComponents';
 import CoreLayout from '../../layouts/core';
-import FormField from '../molecules/FormField/FormField';
 
-function PageTemplate(
-  {
-    pageContext,
-    pageData,
-    onGetSiteMeta,
-    onGetPage,
-    clearPageData,
-  },
-) {
-  /**
-   * React Hook - Replaces componentDidMount() we pass and empty array as the second
-   * argument in order to only fire it once.
-   */
-  useEffect(() => {
+
+class PageTemplate extends PureComponent {
+  componentDidMount() {
+    const { onGetSiteMeta, onGetPage, pageContext } = this.props;
     onGetSiteMeta();
     onGetPage(pageContext);
+  }
 
-    return () => {
-      clearPageData();
-    };
-  }, []);
+  componentDidUpdate(prevProps) {
+    const { pageData } = this.props;
 
-  /**
-   * React Hook - Fires when onGetPage has been executed. Once the store is updated we
-   * cycle over the components and rerender.
-   */
-  useEffect(() => {
-    const components = pageData && pageData.acf.components || null;
-    if (components) mapOverACFComponents(components);
-  }, [pageData]);
+    if (pageData && pageData !== prevProps.pageData) {
+      const { components } = pageData.acf.components;
+      if (components) mapOverACFComponents(components);
+    }
+  }
 
-  return (
-    <CoreLayout>
-      <h1 style={{ marginTop: '10px' }} className="text-center">
-        {pageData && pageData.title}
-      </h1>
+  componentWillUnmount() {
+    const { clearPageData } = this.props;
+    clearPageData();
+  }
 
-      <FormField type="date" name="test" placeholder="Test placeholder"/>
+  render() {
+    const { pageData, pageContext } = this.props;
 
-      <FormField type="file" name="test" placeholder="Test placeholder"/>
-
-      {pageData && pageData.acf.components.map((component, index) => {
-        return (<AcfComponents component={component} pageTheme={pageContext.acf.page_theme} key={index}/>);
-      })}
-    </CoreLayout>
-  );
+    return (
+      <CoreLayout>
+        {pageData && pageData.acf.components.map((component, index) => {
+          return (<AcfComponents component={component} pageTheme={pageContext.acf.page_theme} key={index}/>);
+        })}
+      </CoreLayout>
+    );
+  }
 }
 
 PageTemplate.defaultProps = {
