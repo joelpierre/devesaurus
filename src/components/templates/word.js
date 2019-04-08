@@ -7,7 +7,7 @@ import * as coreActions from '../../store/actions/core.actions';
 import CoreLayout from '../../layouts/core';
 import sortWordObj from '../../helpers/sortWordObj';
 
-class WordTemplate extends PureComponent {
+export class UnconnectedWordTemplate extends PureComponent {
   componentDidMount() {
     const { onGetSiteMeta, onGetWord, pageContext } = this.props;
     onGetSiteMeta();
@@ -30,9 +30,9 @@ class WordTemplate extends PureComponent {
   render() {
     const { wordData } = this.props;
 
-    if (wordData) {
-      return (
-        <CoreLayout>
+    return (
+      <CoreLayout data-test="component-word-template">
+        {wordData && (
           <section className="primary-main__section">
             <div className="container">
               <div className="flex">
@@ -42,22 +42,18 @@ class WordTemplate extends PureComponent {
               </div>
             </div>
           </section>
-        </CoreLayout>
-      );
-    }
-
-    return (
-      <></>
+        )}
+      </CoreLayout>
     );
   }
 }
 
-WordTemplate.defaultProps = {
+UnconnectedWordTemplate.defaultProps = {
   pageContext: null,
   wordData: null,
 };
 
-WordTemplate.propTypes = {
+UnconnectedWordTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
   wordData: PropTypes.instanceOf(Object),
   onGetWord: PropTypes.func.isRequired,
@@ -75,4 +71,7 @@ const mapDispatchToProps = dispatch => ({
   clearWordData: () => dispatch(wordActions.clearWordData()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(WordTemplate);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UnconnectedWordTemplate);

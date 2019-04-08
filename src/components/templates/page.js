@@ -9,8 +9,7 @@ import { mapOverACFComponents } from '../../utils';
 import AcfComponents from '../../hoc/acfComponents';
 import CoreLayout from '../../layouts/core';
 
-
-class PageTemplate extends PureComponent {
+export class UnconnectedPageTemplate extends PureComponent {
   componentDidMount() {
     const { onGetSiteMeta, onGetPage, pageContext } = this.props;
     onGetSiteMeta();
@@ -35,21 +34,28 @@ class PageTemplate extends PureComponent {
     const { pageData } = this.props;
 
     return (
-      <CoreLayout>
-        {pageData && pageData.acf.components.map((component, index) => {
-          return (<AcfComponents component={component} pageTheme={pageData.acf.page_theme} key={index}/>);
-        })}
+      <CoreLayout data-test="component-page-template">
+        {pageData &&
+          pageData.acf.components.map((component, index) => {
+            return (
+              <AcfComponents
+                component={component}
+                pageTheme={pageData.acf.page_theme}
+                key={index}
+              />
+            );
+          })}
       </CoreLayout>
     );
   }
 }
 
-PageTemplate.defaultProps = {
+UnconnectedPageTemplate.defaultProps = {
   pageContext: null,
   pageData: null,
 };
 
-PageTemplate.propTypes = {
+UnconnectedPageTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
   pageData: PropTypes.instanceOf(Object),
   onGetPage: PropTypes.func.isRequired,
@@ -67,4 +73,7 @@ const mapDispatchToProps = dispatch => ({
   clearPageData: () => dispatch(pageActions.clearPageData()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PageTemplate);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UnconnectedPageTemplate);

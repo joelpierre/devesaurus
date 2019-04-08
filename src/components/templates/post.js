@@ -9,7 +9,7 @@ import { mapOverACFComponents } from '../../utils';
 import AcfComponents from '../../hoc/acfComponents';
 import CoreLayout from '../../layouts/core';
 
-class PostTemplate extends PureComponent {
+export class UnconnectedPostTemplate extends PureComponent {
   componentDidMount() {
     const { onGetSiteMeta, onGetPost, pageContext } = this.props;
     onGetSiteMeta();
@@ -34,24 +34,32 @@ class PostTemplate extends PureComponent {
     const { postData } = this.props;
 
     return (
-      <CoreLayout>
-        <h1 className="text-center">
-          {postData && postData.title}
-        </h1>
-        {postData && postData.acf.components.map((component, index) => {
-          return (<AcfComponents component={component} pageTheme="brand" key={index}/>);
-        })}
+      <CoreLayout data-test="component-post-template">
+        {postData && (
+          <>
+            <h1 className="text-center">{postData && postData.title}</h1>
+            {postData.acf.components.map((component, index) => {
+              return (
+                <AcfComponents
+                  component={component}
+                  pageTheme="brand"
+                  key={index}
+                />
+              );
+            })}
+          </>
+        )}
       </CoreLayout>
     );
   }
 }
 
-PostTemplate.defaultProps = {
+UnconnectedPostTemplate.defaultProps = {
   pageContext: null,
   postData: null,
 };
 
-PostTemplate.propTypes = {
+UnconnectedPostTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
   postData: PropTypes.instanceOf(Object),
   onGetPost: PropTypes.func.isRequired,
@@ -69,4 +77,7 @@ const mapDispatchToProps = dispatch => ({
   clearPostData: () => dispatch(postActions.clearPostData()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostTemplate);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UnconnectedPostTemplate);

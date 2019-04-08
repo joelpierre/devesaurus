@@ -2,18 +2,19 @@ import checkPropTypes from 'check-prop-types';
 import { applyMiddleware, createStore } from 'redux';
 
 import rootReducer from '../store/reducers';
-// import { sagaMiddleware } from '../store/configureStore';
+import { sagaMiddleware } from '../store/configureStore';
 
-// /**
-//  * Store Factory
-//  * @param initialState
-//  * @returns {Store<any, Action> & *}
-//  */
-// export const storeFactory = (initialState) => {
-//   const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore);
-//   return createStoreWithMiddleware(rootReducer, initialState);
-// };
-
+/**
+ * Store Factory
+ * @param initialState
+ * @returns {Store<any, Action> & *}
+ */
+export const storeFactory = initialState => {
+  const createStoreWithMiddleware = applyMiddleware(...sagaMiddleware)(
+    createStore
+  );
+  return createStoreWithMiddleware(rootReducer, initialState);
+};
 
 /**
  * Return node(s) with the given data-test attribute.
@@ -25,7 +26,6 @@ export const findByTestAttr = (wrapper, val) => {
   return wrapper.find(`[data-test="${val}"]`);
 };
 
-
 /**
  * Check the props for a component
  * @param component
@@ -36,8 +36,7 @@ export const checkProps = (component, conformingProps) => {
     component.propTypes,
     conformingProps,
     'prop',
-    component.name,
+    component.name
   );
-  expect(propError)
-    .toBeUndefined();
+  expect(propError).toBeUndefined();
 };
