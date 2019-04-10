@@ -17,4 +17,12 @@ module.exports = {
     `<rootDir>/jest-setup-tests.js`,
   ],
   // collectCoverage: true,
+  // reporters: [
+  //   [
+  //     'jest-nyancat-reporter',
+  //     {
+  //       suppressErrorReporter: false,
+  //     },
+  //   ],
+  // ],
 };

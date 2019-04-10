@@ -8208,6 +8208,14 @@ jest-mock@^24.5.0:
   dependencies:
     "@jest/types" "^24.5.0"
 
+jest-nyancat-reporter@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/jest-nyancat-reporter/-/jest-nyancat-reporter-1.0.5.tgz#aeae69332617ae03e1c3308f6060b7c25d4fd4dd"
+  integrity sha512-rZiBpDuAjXi316vEGIQ+Oe+5gy8gjiiN7oX/52p7dt7B1yEbp1N2siaHHQp9mariN2cTQe0poyEmkKPhS1NAbA==
+  dependencies:
+    ms "^2.1.1"
+    supports-color "^6.1.0"
+
 jest-pnp-resolver@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/jest-pnp-resolver/-/jest-pnp-resolver-1.2.1.tgz#ecdae604c077a7fbc70defb6d517c3c1c898923a"
