@@ -5,9 +5,7 @@ import { wordActionTypes } from '../actionTypes';
  * Set initial state
  * @type {{data: any}}
  */
-const initialState = {
-  data: null,
-};
+const initialState = {};
 
 /**
  * Set Word data state
@@ -16,7 +14,7 @@ const initialState = {
  */
 const setWordData = (state, action) => {
   return updateObject(state, {
-    data: action.data,
+    ...action.data,
   });
 };
 
@@ -24,10 +22,8 @@ const setWordData = (state, action) => {
  * Clear the current word data
  * @param state
  */
-const clearWordData = (state) => {
-  return updateObject(state, {
-    data: null,
-  });
+const clearWordData = state => {
+  return updateObject(state, {});
 };
 
 /**
@@ -47,7 +43,6 @@ const wordReducer = (state = initialState, action) => {
     default:
       return state;
   }
-
 };
 
 export default wordReducer;

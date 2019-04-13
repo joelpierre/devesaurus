@@ -14,7 +14,7 @@ const defaultProps = {};
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<PrimaryFooter {...setupProps}/>);
+  return shallow(<PrimaryFooter {...setupProps} />);
 };
 
 describe('<PrimaryFooter/>', () => {
@@ -26,9 +26,6 @@ describe('<PrimaryFooter/>', () => {
 
   it('Renders the PrimaryFooter Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-primary-footer');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

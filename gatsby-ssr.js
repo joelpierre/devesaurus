@@ -11,7 +11,5 @@ require('flexigridcss/dist/flexigridcss.css');
 require('./src/sass/styles.scss');
 
 export const wrapRootElement = ({ element }) => {
-  return (
-    <Provider store={createStore()}>{element}</Provider>
-  );
+  return <Provider store={createStore()}>{element}</Provider>;
 };

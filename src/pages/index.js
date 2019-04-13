@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -8,39 +8,42 @@ import FeaturedWords from '../components/organisms/FeaturedWords/FeaturedWords';
 import { mockWords } from '../../__mocks__/mock-words';
 import HeroSearch from '../components/organisms/HeroSearch/HeroSearch';
 
-function Index({ onGetSiteMeta, onGetSiteOptions, siteOptions, siteMeta }) {
-  /**
-   * React Hook - Replaces componentDidMount() we pass and empty array as the second
-   * argument in order to only fire it once.
-   */
-  useEffect(() => {
+export class UnconnectedIndex extends PureComponent {
+  componentDidMount() {
+    const { onGetSiteMeta, onGetSiteOptions } = this.props;
+
     onGetSiteMeta();
     onGetSiteOptions();
-  }, []);
+  }
 
-  return (
-    <>
-      {siteOptions && (
-        <SEO
-          title={`${siteOptions.company_name} - ${siteOptions.company_slogan}`}
-          description={siteMeta.description}
-        />
-      )}
-      <main className="primary-main primary-main--home">
-        <HeroSearch title={siteOptions && siteOptions.company_name} />
+  render() {
+    const { siteOptions, siteMeta } = this.props;
 
-        <FeaturedWords words={mockWords} />
-      </main>
-    </>
-  );
+    return (
+      <>
+        {siteOptions && siteMeta ? (
+          <SEO
+            title={`${siteOptions.company_name} - ${
+              siteOptions.company_slogan
+            }`}
+            description={siteMeta.description}
+          />
+        ) : null}
+        <main className="primary-main primary-main--home">
+          <HeroSearch title="Devesaurus" />
+          <FeaturedWords words={mockWords} />
+        </main>
+      </>
+    );
+  }
 }
 
-Index.defaultProps = {
+UnconnectedIndex.defaultProps = {
   siteOptions: null,
   siteMeta: null,
 };
 
-Index.propTypes = {
+UnconnectedIndex.propTypes = {
   onGetSiteMeta: PropTypes.func.isRequired,
   onGetSiteOptions: PropTypes.func.isRequired,
   siteMeta: PropTypes.instanceOf(Object),
@@ -60,4 +63,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Index);
+)(UnconnectedIndex);

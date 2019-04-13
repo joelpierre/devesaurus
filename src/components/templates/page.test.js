@@ -4,9 +4,11 @@ import { shallow } from 'enzyme';
 import { UnconnectedPageTemplate } from './page';
 
 const defaultProps = {
-  onGetPage: () => {},
-  clearPageData: () => {},
-  onGetSiteMeta: () => {},
+  onGetPage: jest.fn(),
+  clearPageData: jest.fn(),
+  pageContext: {
+    title: 'test',
+  },
 };
 
 /**

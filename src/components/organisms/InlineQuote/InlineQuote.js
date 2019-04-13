@@ -1,28 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CoreSection from '../../core/CoreSection/CoreSection';
+import GridRow from '../../core/GridRow/GridRow';
+import GridContainer from '../../core/GridContainer/GridContainer';
+import GridColumn from '../../core/GridColumn/GridColumn';
 
 function InlineQuote({ module, pageTheme }) {
   return (
-    <section
+    <CoreSection
       data-test="component-inline-quote"
-      className={`primary-main__section theme--${module.theme ? module.theme : pageTheme} inline-quote`}
+      classes={`primary-main__section theme--${
+        module.theme ? module.theme : pageTheme
+      } inline-quote`}
     >
-      <div className="container-fluid">
-        <div className="row">
-          <div className="flex">
-            <blockquote>
-              This is a blockquote
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
+      <GridContainer>
+        <GridRow>
+          <GridColumn classes="flex">
+            <blockquote>This is a blockquote</blockquote>
+          </GridColumn>
+        </GridRow>
+      </GridContainer>
+    </CoreSection>
   );
 }
 
 InlineQuote.propTypes = {
   module: PropTypes.instanceOf(Object).isRequired,
-  pageTheme: PropTypes.oneOf(['brand', 'alpha', 'beta', 'tint-alpha', 'tint-beta', 'tint-omega', 'tint-gamma', 'tint-psi']).isRequired,
+  pageTheme: PropTypes.oneOf([
+    'brand',
+    'alpha',
+    'beta',
+    'tint-alpha',
+    'tint-beta',
+    'tint-omega',
+    'tint-gamma',
+    'tint-psi',
+  ]).isRequired,
 };
 
 export default InlineQuote;

@@ -1,4 +1,5 @@
 .featured-words {
+  position: relative;
   $root: &;
 
   &__word-card {

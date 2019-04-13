@@ -7,7 +7,6 @@ import { findByTestAttr } from '../../../utils/test-utilities';
 const defaultProps = {
   name: 'form-name',
   type: 'text',
-
 };
 
 /**
@@ -17,7 +16,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<FormField {...setupProps}/>);
+  return shallow(<FormField {...setupProps} />);
 };
 
 describe('<FormField/>', () => {
@@ -29,9 +28,6 @@ describe('<FormField/>', () => {
 
   it('Renders the FormField Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-form-field');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

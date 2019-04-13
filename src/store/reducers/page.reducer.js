@@ -5,9 +5,7 @@ import { pageActionTypes } from '../actionTypes';
  * Set initial state
  * @type {{data: any}}
  */
-export const initialState = {
-  data: null,
-};
+export const initialState = {};
 
 /**
  * Set Page data state
@@ -16,7 +14,7 @@ export const initialState = {
  */
 const setPageData = (state, action) => {
   return updateObject(state, {
-    data: action.data,
+    ...action.data,
   });
 };
 
@@ -24,10 +22,8 @@ const setPageData = (state, action) => {
  * Clear the current page data
  * @param state
  */
-const clearPageData = (state) => {
-  return updateObject(state, {
-    data: null,
-  });
+const clearPageData = state => {
+  return updateObject(state, {});
 };
 
 /**
@@ -47,7 +43,6 @@ const pageReducer = (state = initialState, action) => {
     default:
       return state;
   }
-
 };
 
 export default pageReducer;

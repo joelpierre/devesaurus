@@ -19,7 +19,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<MenuItem {...setupProps}/>);
+  return shallow(<MenuItem {...setupProps} />);
 };
 
 describe('<MenuItem/>', () => {
@@ -31,7 +31,6 @@ describe('<MenuItem/>', () => {
 
   it('Should render MenuItem Component', () => {
     const component = findByTestAttr(wrapper, 'component-menu-item');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
 });

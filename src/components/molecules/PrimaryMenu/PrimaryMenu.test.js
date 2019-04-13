@@ -14,7 +14,7 @@ const defaultProps = {};
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<PrimaryMenu {...setupProps}/>);
+  return shallow(<PrimaryMenu {...setupProps} />);
 };
 
 describe('<PrimaryMenu/>', () => {
@@ -26,9 +26,6 @@ describe('<PrimaryMenu/>', () => {
 
   it('Renders the PrimaryMenu Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-primary-menu-query');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

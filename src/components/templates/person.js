@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as personActions from '../../store/actions/team.actions';
-import * as coreActions from '../../store/actions/core.actions';
 
 import { mapOverACFComponents } from '../../utils';
 
@@ -11,8 +10,7 @@ import CoreLayout from '../../layouts/core';
 
 export class UnconnectedPersonTemplate extends PureComponent {
   componentDidMount() {
-    const { onGetSiteMeta, onGetPerson, pageContext } = this.props;
-    onGetSiteMeta();
+    const { onGetPerson, pageContext } = this.props;
     onGetPerson(pageContext);
   }
 
@@ -59,7 +57,6 @@ UnconnectedPersonTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
   personData: PropTypes.instanceOf(Object),
   onGetPerson: PropTypes.func.isRequired,
-  onGetSiteMeta: PropTypes.func.isRequired,
   clearPersonData: PropTypes.func.isRequired,
 };
 
@@ -69,7 +66,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onGetPerson: data => dispatch(personActions.getPersonData(data.slug)),
-  onGetSiteMeta: () => dispatch(coreActions.getSiteMeta()),
   clearPersonData: () => dispatch(personActions.clearPersonData()),
 });
 

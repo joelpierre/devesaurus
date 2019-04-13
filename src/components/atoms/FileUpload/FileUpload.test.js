@@ -15,7 +15,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<FileUpload {...setupProps}/>);
+  return shallow(<FileUpload {...setupProps} />);
 };
 
 describe('<FileUpload/>', () => {
@@ -27,9 +27,6 @@ describe('<FileUpload/>', () => {
 
   it('Renders the FileUpload Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-file-upload');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

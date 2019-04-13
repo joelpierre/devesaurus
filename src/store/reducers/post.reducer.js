@@ -5,9 +5,7 @@ import { postActionTypes } from '../actionTypes';
  * Set initial state
  * @type {{data: any}}
  */
-export const initialState = {
-  data: null,
-};
+export const initialState = {};
 
 /**
  * Set Post data state
@@ -16,7 +14,7 @@ export const initialState = {
  */
 const setPostData = (state, action) => {
   return updateObject(state, {
-    data: action.data,
+    ...action.data,
   });
 };
 
@@ -24,10 +22,8 @@ const setPostData = (state, action) => {
  * Clear the current post data
  * @param state
  */
-const clearPostData = (state) => {
-  return updateObject(state, {
-    data: null,
-  });
+const clearPostData = state => {
+  return updateObject(state, {});
 };
 
 /**
@@ -47,7 +43,6 @@ const postReducer = (state = initialState, action) => {
     default:
       return state;
   }
-
 };
 
 export default postReducer;

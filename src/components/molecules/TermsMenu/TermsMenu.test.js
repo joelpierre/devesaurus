@@ -14,7 +14,7 @@ const defaultProps = {};
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<TermsMenu {...setupProps}/>);
+  return shallow(<TermsMenu {...setupProps} />);
 };
 
 describe('<TermsMenu/>', () => {
@@ -26,9 +26,6 @@ describe('<TermsMenu/>', () => {
 
   it('Renders the TermsMenu Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-terms-menu');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

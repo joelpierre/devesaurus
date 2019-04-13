@@ -12,13 +12,10 @@ const defaultProps = {
   acf: {
     syllables: {
       count: '1',
-      list: [
-        { item: 'test' },
-      ],
+      list: [{ item: 'test' }],
     },
   },
 };
-
 
 /**
  * Factory function to create a ShallowWrapper for the WordCard component.
@@ -27,7 +24,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<WordCard {...setupProps}/>);
+  return shallow(<WordCard {...setupProps} />);
 };
 
 describe('<WordCard/>', () => {
@@ -39,10 +36,6 @@ describe('<WordCard/>', () => {
 
   it('Renders the WordCard Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-word-card');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });
-

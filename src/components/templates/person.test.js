@@ -4,9 +4,8 @@ import { shallow } from 'enzyme';
 import { UnconnectedPersonTemplate } from './person';
 
 const defaultProps = {
-  onGetPerson: () => {},
-  clearPersonData: () => {},
-  onGetSiteMeta: () => {},
+  onGetPerson: jest.fn(),
+  clearPersonData: jest.fn(),
 };
 
 /**

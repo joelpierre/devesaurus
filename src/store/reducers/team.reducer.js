@@ -5,9 +5,7 @@ import { teamActionTypes } from '../actionTypes';
  * Set initial state
  * @type {{data: any}}
  */
-const initialState = {
-  data: null,
-};
+const initialState = {};
 
 /**
  * Set Team data state
@@ -16,7 +14,7 @@ const initialState = {
  */
 const setTeamData = (state, action) => {
   return updateObject(state, {
-    data: action.data,
+    ...action.data,
   });
 };
 
@@ -24,10 +22,8 @@ const setTeamData = (state, action) => {
  * Clear the current team data
  * @param state
  */
-const clearTeamData = (state) => {
-  return updateObject(state, {
-    data: null,
-  });
+const clearTeamData = state => {
+  return updateObject(state, {});
 };
 
 /**
@@ -37,7 +33,7 @@ const clearTeamData = (state) => {
  */
 const setPersonData = (state, action) => {
   return updateObject(state, {
-    data: action.data,
+    ...action.data,
   });
 };
 
@@ -45,10 +41,8 @@ const setPersonData = (state, action) => {
  * Clear the current person data
  * @param state
  */
-const clearPersonData = (state) => {
-  return updateObject(state, {
-    data: null,
-  });
+const clearPersonData = state => {
+  return updateObject(state, {});
 };
 
 /**
@@ -74,7 +68,6 @@ const teamReducer = (state = initialState, action) => {
     default:
       return state;
   }
-
 };
 
 export default teamReducer;

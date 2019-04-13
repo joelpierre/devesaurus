@@ -4,9 +4,8 @@ import { shallow } from 'enzyme';
 import { UnconnectedPostTemplate } from './post';
 
 const defaultProps = {
-  onGetPost: () => {},
-  clearPostData: () => {},
-  onGetSiteMeta: () => {},
+  onGetPost: jest.fn(),
+  clearPostData: jest.fn(),
 };
 
 /**

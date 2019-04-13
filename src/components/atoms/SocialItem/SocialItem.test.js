@@ -17,7 +17,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<SocialItem {...setupProps}/>);
+  return shallow(<SocialItem {...setupProps} />);
 };
 
 describe('<SocialItem/>', () => {
@@ -29,9 +29,6 @@ describe('<SocialItem/>', () => {
 
   it('Renders the SocialItem Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-social-item');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

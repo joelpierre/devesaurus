@@ -17,7 +17,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<InlineQuote {...setupProps}/>);
+  return shallow(<InlineQuote {...setupProps} />);
 };
 
 describe('<InlineQuote/>', () => {
@@ -29,9 +29,6 @@ describe('<InlineQuote/>', () => {
 
   it('Renders the InlineQuote Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-inline-quote');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

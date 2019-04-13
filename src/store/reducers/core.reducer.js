@@ -6,8 +6,8 @@ import { coreActionTypes } from '../actionTypes';
  * @type {{site: string, options: null, description: string, api: string, title: string, loading: boolean, error: boolean}}
  */
 export const initialState = {
-  title: 'Store Title',
-  description: 'Store Description',
+  title: process.env.GATSBY_META_TITLE,
+  description: process.env.GATSBY_META_DESCRIPTION,
   api: process.env.GATSBY_BASE_URL,
   site: process.env.GATSBY_SITE_URL,
   loading: false,
@@ -46,7 +46,6 @@ const setSiteOptions = (state, action) => {
  */
 const coreReducer = (state = initialState, action) => {
   switch (action.type) {
-
     case coreActionTypes.SET_SITE_META:
       return setSiteMeta(state, action);
 

@@ -1,13 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
 
 import { UnconnectedWordTemplate } from './word';
 
 const defaultProps = {
-  onGetWord: () => {},
-  clearWordData: () => {},
-  onGetSiteMeta: () => {},
+  onGetWord: jest.fn(),
+  clearWordData: jest.fn(),
 };
 
 /**

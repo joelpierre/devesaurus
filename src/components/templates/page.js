@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as pageActions from '../../store/actions/page.actions';
-import * as coreActions from '../../store/actions/core.actions';
 
 import { mapOverACFComponents } from '../../utils';
 
@@ -11,8 +10,7 @@ import CoreLayout from '../../layouts/core';
 
 export class UnconnectedPageTemplate extends PureComponent {
   componentDidMount() {
-    const { onGetSiteMeta, onGetPage, pageContext } = this.props;
-    onGetSiteMeta();
+    const { onGetPage, pageContext } = this.props;
     onGetPage(pageContext);
   }
 
@@ -31,20 +29,27 @@ export class UnconnectedPageTemplate extends PureComponent {
   }
 
   render() {
-    const { pageData } = this.props;
+    const { pageData, pageContext } = this.props;
 
     return (
-      <CoreLayout data-test="component-page-template">
-        {pageData &&
-          pageData.acf.components.map((component, index) => {
-            return (
-              <AcfComponents
-                component={component}
-                pageTheme={pageData.acf.page_theme}
-                key={index}
-              />
-            );
-          })}
+      <CoreLayout
+        metaTitle={pageContext.title}
+        data-test="component-page-template"
+      >
+        {pageData && (
+          <>
+            {pageData.acf &&
+              pageData.acf.components.map((component, index) => {
+                return (
+                  <AcfComponents
+                    component={component}
+                    pageTheme={pageData.acf.page_theme}
+                    key={index}
+                  />
+                );
+              })}
+          </>
+        )}
       </CoreLayout>
     );
   }
@@ -59,17 +64,15 @@ UnconnectedPageTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
   pageData: PropTypes.instanceOf(Object),
   onGetPage: PropTypes.func.isRequired,
-  onGetSiteMeta: PropTypes.func.isRequired,
   clearPageData: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  pageData: state.page.data,
+  pageData: state.page,
 });
 
 const mapDispatchToProps = dispatch => ({
   onGetPage: data => dispatch(pageActions.getPageData(data.slug)),
-  onGetSiteMeta: () => dispatch(coreActions.getSiteMeta()),
   clearPageData: () => dispatch(pageActions.clearPageData()),
 });
 

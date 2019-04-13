@@ -16,7 +16,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<InputGroup {...setupProps}/>);
+  return shallow(<InputGroup {...setupProps} />);
 };
 
 describe('<InputGroup/>', () => {
@@ -28,9 +28,6 @@ describe('<InputGroup/>', () => {
 
   it('Renders the InputGroup Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-input-group');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

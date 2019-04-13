@@ -13,7 +13,7 @@ const defaultProps = {};
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<FormBase {...setupProps}/>);
+  return shallow(<FormBase {...setupProps} />);
 };
 
 describe('<FormBase/>', () => {
@@ -25,8 +25,6 @@ describe('<FormBase/>', () => {
 
   it('Renders the FormBase Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-form-base');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
 });

@@ -14,7 +14,7 @@ const defaultProps = {};
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<ImageBlock {...setupProps}/>);
+  return shallow(<ImageBlock {...setupProps} />);
 };
 
 describe('<ImageBlock/>', () => {
@@ -26,9 +26,6 @@ describe('<ImageBlock/>', () => {
 
   it('Renders the ImageBlock Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-image-block');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

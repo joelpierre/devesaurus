@@ -2,15 +2,18 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as wordActions from '../../store/actions/word.actions';
-import * as coreActions from '../../store/actions/core.actions';
 
 import CoreLayout from '../../layouts/core';
 import sortWordObj from '../../helpers/sortWordObj';
+import Heading from '../core/Heading/Heading';
+import CoreSection from '../core/CoreSection/CoreSection';
+import GridContainer from '../core/GridContainer/GridContainer';
+import GridRow from '../core/GridRow/GridRow';
+import GridColumn from '../core/GridColumn/GridColumn';
 
 export class UnconnectedWordTemplate extends PureComponent {
   componentDidMount() {
-    const { onGetSiteMeta, onGetWord, pageContext } = this.props;
-    onGetSiteMeta();
+    const { onGetWord, pageContext } = this.props;
     onGetWord(pageContext);
   }
 
@@ -33,15 +36,17 @@ export class UnconnectedWordTemplate extends PureComponent {
     return (
       <CoreLayout data-test="component-word-template">
         {wordData && (
-          <section className="primary-main__section">
-            <div className="container">
-              <div className="flex">
-                <h1 style={{ marginTop: '10px' }} className="text-center">
-                  {wordData.title}
-                </h1>
-              </div>
-            </div>
-          </section>
+          <CoreSection>
+            <GridContainer>
+              <GridRow>
+                <GridColumn classes="flex">
+                  <Heading priority="1" classes="text-center mt-1">
+                    {wordData.title}
+                  </Heading>
+                </GridColumn>
+              </GridRow>
+            </GridContainer>
+          </CoreSection>
         )}
       </CoreLayout>
     );
@@ -57,17 +62,15 @@ UnconnectedWordTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
   wordData: PropTypes.instanceOf(Object),
   onGetWord: PropTypes.func.isRequired,
-  onGetSiteMeta: PropTypes.func.isRequired,
   clearWordData: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  wordData: state.word.data,
+  wordData: state.word,
 });
 
 const mapDispatchToProps = dispatch => ({
   onGetWord: data => dispatch(wordActions.getWordData(data.slug)),
-  onGetSiteMeta: () => dispatch(coreActions.getSiteMeta()),
   clearWordData: () => dispatch(wordActions.clearWordData()),
 });
 

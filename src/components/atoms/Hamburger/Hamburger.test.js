@@ -15,7 +15,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<Hamburger {...setupProps}/>);
+  return shallow(<Hamburger {...setupProps} />);
 };
 
 describe('<Hamburger/>', () => {
@@ -27,9 +27,6 @@ describe('<Hamburger/>', () => {
 
   it('Renders the Hamburger Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-hamburger');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

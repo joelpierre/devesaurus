@@ -14,7 +14,7 @@ const defaultProps = {};
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<PrimaryHeader {...setupProps}/>);
+  return shallow(<PrimaryHeader {...setupProps} />);
 };
 
 describe('<PrimaryHeader/>', () => {
@@ -26,9 +26,6 @@ describe('<PrimaryHeader/>', () => {
 
   it('Renders the PrimaryHeader Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-primary-header');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

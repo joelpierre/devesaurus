@@ -6,10 +6,8 @@ import { mockWords } from '../../../../__mocks__/mock-words';
 import FeaturedWords from './FeaturedWords';
 
 const defaultProps = {
-    words: mockWords,
-  }
-;
-
+  words: mockWords,
+};
 /**
  * Factory function to create a ShallowWrapper for the FeaturedWords component.
  * @param {object} props - Component props specific to setup
@@ -17,7 +15,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<FeaturedWords {...setupProps}/>);
+  return shallow(<FeaturedWords {...setupProps} />);
 };
 
 describe('<FeaturedWords/>', () => {
@@ -29,15 +27,11 @@ describe('<FeaturedWords/>', () => {
 
   it('Renders the FeaturedWords Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-featured-words');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
 
   it('Renders the FeaturedWords Component without errors', () => {
     const component = findByTestAttr(wrapper, 'featured-words-word');
-    expect(component.length)
-      .toBe(mockWords.length);
+    expect(component.length).toBe(mockWords.length);
   });
-
-
 });

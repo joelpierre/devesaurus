@@ -2,17 +2,16 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as postActions from '../../store/actions/post.actions';
-import * as coreActions from '../../store/actions/core.actions';
 
 import { mapOverACFComponents } from '../../utils';
 
 import AcfComponents from '../../hoc/acfComponents';
 import CoreLayout from '../../layouts/core';
+import Heading from '../core/Heading/Heading';
 
 export class UnconnectedPostTemplate extends PureComponent {
   componentDidMount() {
-    const { onGetSiteMeta, onGetPost, pageContext } = this.props;
-    onGetSiteMeta();
+    const { onGetPost, pageContext } = this.props;
     onGetPost(pageContext);
   }
 
@@ -37,16 +36,20 @@ export class UnconnectedPostTemplate extends PureComponent {
       <CoreLayout data-test="component-post-template">
         {postData && (
           <>
-            <h1 className="text-center">{postData && postData.title}</h1>
-            {postData.acf.components.map((component, index) => {
-              return (
-                <AcfComponents
-                  component={component}
-                  pageTheme="brand"
-                  key={index}
-                />
-              );
-            })}
+            <Heading priority="1" classes="text-center">
+              {postData.title}
+            </Heading>
+
+            {postData.acf &&
+              postData.acf.components.map((component, index) => {
+                return (
+                  <AcfComponents
+                    component={component}
+                    pageTheme="brand"
+                    key={index}
+                  />
+                );
+              })}
           </>
         )}
       </CoreLayout>
@@ -63,17 +66,15 @@ UnconnectedPostTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
   postData: PropTypes.instanceOf(Object),
   onGetPost: PropTypes.func.isRequired,
-  onGetSiteMeta: PropTypes.func.isRequired,
   clearPostData: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  postData: state.post.data,
+  postData: state.post,
 });
 
 const mapDispatchToProps = dispatch => ({
   onGetPost: data => dispatch(postActions.getPostData(data.slug)),
-  onGetSiteMeta: () => dispatch(coreActions.getSiteMeta()),
   clearPostData: () => dispatch(postActions.clearPostData()),
 });
 

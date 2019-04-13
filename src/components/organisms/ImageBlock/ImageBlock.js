@@ -1,26 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CoreSection from '../../core/CoreSection/CoreSection';
+import GridContainer from '../../core/GridContainer/GridContainer';
+import GridRow from '../../core/GridRow/GridRow';
+import GridColumn from '../../core/GridColumn/GridColumn';
+import Heading from '../../core/Heading/Heading';
 
 function ImageBlock({ module, pageTheme }) {
   return (
-    <section
+    <CoreSection
       data-test="component-image-block"
-      className={`primary-main__section theme--${module.theme ? module.theme : pageTheme} image-block`}
+      classes={`primary-main__section theme--${
+        module.theme ? module.theme : pageTheme
+      } image-block`}
     >
-      <div className="container-fluid">
-        <div className="row">
-          <div className="flex text-center">
-            <h2>Image Block</h2>
-          </div>
-        </div>
-      </div>
-    </section>
+      <GridContainer classes="container-fluid">
+        <GridRow classes="row">
+          <GridColumn classes="flex text-center">
+            <Heading priority="2">Image Block</Heading>
+          </GridColumn>
+        </GridRow>
+      </GridContainer>
+    </CoreSection>
   );
 }
 
 ImageBlock.propTypes = {
   module: PropTypes.instanceOf(Object).isRequired,
-  pageTheme: PropTypes.oneOf(['brand', 'alpha', 'beta', 'tint-alpha', 'tint-beta', 'tint-omega', 'tint-gamma', 'tint-psi']).isRequired,
+  pageTheme: PropTypes.oneOf([
+    'brand',
+    'alpha',
+    'beta',
+    'tint-alpha',
+    'tint-beta',
+    'tint-omega',
+    'tint-gamma',
+    'tint-psi',
+  ]).isRequired,
 };
 
 export default ImageBlock;

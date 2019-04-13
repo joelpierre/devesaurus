@@ -21,7 +21,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<SelectField {...setupProps}/>);
+  return shallow(<SelectField {...setupProps} />);
 };
 
 describe('<SelectField/>', () => {
@@ -33,9 +33,6 @@ describe('<SelectField/>', () => {
 
   it('Renders the SelectField Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-select-field');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

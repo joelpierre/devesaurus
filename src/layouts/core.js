@@ -1,31 +1,51 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import PrimaryHeader from '../components/organisms/PrimaryHeader/PrimaryHeader';
 import PrimaryFooter from '../components/organisms/PrimaryFooter/PrimaryFooter';
 import SEO from '../utils/seo';
+import { getSiteMeta } from '../store/actions';
 
-const CoreLayout = ({ children, metaTitle, metaDescription }) => (
-  <>
-    <SEO title={metaTitle} description={metaDescription}/>
-    <PrimaryHeader/>
-    <main className="primary-main">
-      {children}
-    </main>
-    <PrimaryFooter/>
-  </>
-);
+class CoreLayout extends PureComponent {
+  componentDidMount() {
+    const { onGetSiteMeta } = this.props;
+    onGetSiteMeta();
+  }
+
+  render() {
+    const { children, title, description } = this.props;
+
+    return (
+      <React.Fragment>
+        <SEO title={title} description={description} />
+        <PrimaryHeader />
+        <main className="primary-main">{children}</main>
+        <PrimaryFooter />
+      </React.Fragment>
+    );
+  }
+}
 
 CoreLayout.defaultProps = {
-  metaTitle: 'Default Title',
-  metaDescription: 'Default description',
+  title: 'Default Title',
+  description: 'Default description',
   children: null,
 };
 
 CoreLayout.propTypes = {
-  metaTitle: PropTypes.string,
-  metaDescription: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
   children: PropTypes.instanceOf(Object),
+  onGetSiteMeta: PropTypes.func.isRequired,
 };
 
-export default CoreLayout;
+const mapStateToProps = ({ core: { title, description } }) => ({
+  title,
+  description,
+});
+
+export default connect(
+  mapStateToProps,
+  { onGetSiteMeta: getSiteMeta }
+)(CoreLayout);

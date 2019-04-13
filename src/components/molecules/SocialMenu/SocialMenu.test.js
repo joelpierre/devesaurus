@@ -14,7 +14,7 @@ const defaultProps = {};
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<SocialMenu {...setupProps}/>);
+  return shallow(<SocialMenu {...setupProps} />);
 };
 
 describe('<SocialMenu/>', () => {
@@ -26,9 +26,6 @@ describe('<SocialMenu/>', () => {
 
   it('Renders the SocialMenu Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-social-menu');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

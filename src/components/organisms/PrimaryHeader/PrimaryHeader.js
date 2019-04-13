@@ -4,19 +4,19 @@ import * as styles from './PrimaryHeader.module.scss';
 import Brand from '../../atoms/Brand/Brand';
 import PrimaryMenu from '../../molecules/PrimaryMenu/PrimaryMenu';
 
-const Header = () => (
-  <header data-test="component-primary-header" className={styles['primary-header']}>
-
+const PrimaryHeader = () => (
+  <header
+    data-test="component-primary-header"
+    className={styles['primary-header']}
+  >
     <div className={styles['primary-header__wrapper']}>
-
       <Link to="/">
-        <Brand type="logo" classes={styles['primary-header__brand']}/>
+        <Brand type="logo" classes={styles['primary-header__brand']} />
       </Link>
 
-      <PrimaryMenu classes={styles['primary-header__menu']}/>
+      <PrimaryMenu classes={styles['primary-header__menu']} />
     </div>
-
   </header>
 );
 
-export default Header;
+export default PrimaryHeader;

@@ -14,7 +14,7 @@ const defaultProps = {};
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<MobileMenu {...setupProps}/>);
+  return shallow(<MobileMenu {...setupProps} />);
 };
 
 describe('<MobileMenu/>', () => {
@@ -26,9 +26,6 @@ describe('<MobileMenu/>', () => {
 
   it('Renders the MobileMenu Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-mobile-menu');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

@@ -12,8 +12,8 @@ const HeroSearch = ({ title }) => {
     <CoreSection classes={styles['hero-search']}>
       <GridContainer data-test="component-hero-search">
         <GridRow>
-          <GridColumn type="article" classes="flex">
-            <Heading priority="1">{title} Herooo</Heading>
+          <GridColumn classes="flex">
+            <Heading priority="1">{title}</Heading>
           </GridColumn>
         </GridRow>
       </GridContainer>

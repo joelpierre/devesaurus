@@ -12,7 +12,7 @@ const defaultProps = {};
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<Brand {...setupProps}/>);
+  return shallow(<Brand {...setupProps} />);
 };
 
 describe('<Brand/>', () => {
@@ -24,10 +24,8 @@ describe('<Brand/>', () => {
 
   it('Should render Brand Component', () => {
     const component = findByTestAttr(wrapper, 'component-brand');
-    expect(component)
-      .toBeTruthy();
-    expect(component.length)
-      .toBe(1);
+    expect(component).toBeTruthy();
+    expect(component.length).toBe(1);
   });
 
   it('Should pass props and render them', () => {
@@ -37,16 +35,10 @@ describe('<Brand/>', () => {
       slogan: 'Joel Test Slogan',
     });
 
-    expect(wrapper.hasClass('wrapper__brand'))
-      .toEqual(true);
+    expect(wrapper.hasClass('wrapper__brand')).toEqual(true);
 
-    expect(wrapper.find('h1')
-      .text())
-      .toEqual('Joel Test Heading');
+    expect(wrapper.find('h1').text()).toEqual('Joel Test Heading');
 
-    expect(wrapper.find('p')
-      .text())
-      .toEqual('Joel Test Slogan');
+    expect(wrapper.find('p').text()).toEqual('Joel Test Slogan');
   });
-
 });

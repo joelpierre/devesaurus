@@ -13,7 +13,7 @@ const defaultProps = {};
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<Breadcrumbs {...setupProps}/>);
+  return shallow(<Breadcrumbs {...setupProps} />);
 };
 
 describe('<Breadcrumbs/>', () => {
@@ -25,9 +25,6 @@ describe('<Breadcrumbs/>', () => {
 
   it('Renders the Breadcrumbs Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-breadcrumbs');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

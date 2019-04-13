@@ -17,7 +17,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<TextBlock {...setupProps}/>);
+  return shallow(<TextBlock {...setupProps} />);
 };
 
 describe('<TextBlock/>', () => {
@@ -29,9 +29,6 @@ describe('<TextBlock/>', () => {
 
   it('Renders the TextBlock Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-text-block');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

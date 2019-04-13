@@ -16,7 +16,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<InputField {...setupProps}/>);
+  return shallow(<InputField {...setupProps} />);
 };
 
 describe('<InputField/>', () => {
@@ -28,9 +28,6 @@ describe('<InputField/>', () => {
 
   it('Renders the InputField Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-input-field');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });

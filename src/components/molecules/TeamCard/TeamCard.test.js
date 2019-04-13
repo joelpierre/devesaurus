@@ -20,7 +20,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<TeamCard {...setupProps}/>);
+  return shallow(<TeamCard {...setupProps} />);
 };
 
 describe('<TeamCard/>', () => {
@@ -32,9 +32,6 @@ describe('<TeamCard/>', () => {
 
   it('Renders the TeamCard Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-team-card');
-    expect(component.length)
-      .toBe(1);
+    expect(component.length).toBe(1);
   });
-
-
 });
