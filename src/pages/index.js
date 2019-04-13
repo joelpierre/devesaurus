@@ -4,22 +4,11 @@ import { connect } from 'react-redux';
 
 import SEO from '../utils/seo';
 import * as coreActions from '../store/actions/core.actions';
-import Brand from '../components/atoms/Brand/Brand';
-import Button from '../components/molecules/Buttons/Button';
-import InputGroup from '../components/molecules/InputGroup/InputGroup';
-import FormField from '../components/molecules/FormField/FormField';
 import FeaturedWords from '../components/organisms/FeaturedWords/FeaturedWords';
 import { mockWords } from '../../__mocks__/mock-words';
 import HeroSearch from '../components/organisms/HeroSearch/HeroSearch';
 
-function Index(
-  {
-    onGetSiteMeta,
-    onGetSiteOptions,
-    siteOptions,
-    siteMeta,
-  },
-) {
+function Index({ onGetSiteMeta, onGetSiteOptions, siteOptions, siteMeta }) {
   /**
    * React Hook - Replaces componentDidMount() we pass and empty array as the second
    * argument in order to only fire it once.
@@ -38,9 +27,9 @@ function Index(
         />
       )}
       <main className="primary-main primary-main--home">
-        <HeroSearch title={siteOptions && siteOptions.company_name}/>
+        <HeroSearch title={siteOptions && siteOptions.company_name} />
 
-        <FeaturedWords words={mockWords}/>
+        <FeaturedWords words={mockWords} />
       </main>
     </>
   );
@@ -68,5 +57,7 @@ const mapDispatchToProps = dispatch => ({
   onGetSiteMeta: () => dispatch(coreActions.getSiteOptions()),
 });
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Index);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Index);

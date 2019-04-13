@@ -3,29 +3,31 @@ import { shallow } from 'enzyme';
 
 import { findByTestAttr } from '../../../utils/test-utilities';
 
-import HeroSearch from './HeroSearch';
+import GridRow from './GridRow';
 
-const defaultProps = {};
+const defaultProps = {
+  children: `<div></div>`,
+};
 
 /**
- * Factory function to create a ShallowWrapper for the HeroSearch component.
+ * Factory function to create a ShallowWrapper for the GridRow component.
  * @param {object} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<HeroSearch {...setupProps} />);
+  return shallow(<GridRow {...setupProps} />);
 };
 
-describe('<HeroSearch/>', () => {
+describe('<GridRow/>', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = setup();
   });
 
-  it('Renders the HeroSearch Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'component-hero-search');
+  it('Renders the GridRow Component without errors', () => {
+    const component = findByTestAttr(wrapper, 'component-grid-row');
     expect(component.length).toBe(1);
   });
 });

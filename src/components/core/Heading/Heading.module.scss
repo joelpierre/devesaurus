@@ -1,3 +1,5 @@
+@import "~sass/core";
+
 //@font-face {
 //  font-family: '{{NAME}}';
 //  src: url('{{SOURCE}}') format('woff2'),
@@ -6,7 +8,7 @@
 //  font-style: normal;
 //}
 
-@mixin heading-core {
+%heading-core {
   line-height: 1.3;
   position: relative;
   margin-bottom: 2rem;
@@ -14,21 +16,21 @@
 }
 
 .heading-1 {
-  @include heading-core;
+  @extend %heading-core;
 
   font-weight: bold;
   font-size: $font-heading-1;
 }
 
 .heading-2 {
-  @include heading-core;
+  @extend %heading-core;
 
   font-weight: bold;
   font-size: $font-heading-2;
 }
 
 .heading-3 {
-  @include heading-core;
+  @extend %heading-core;
 
   font-size: $font-heading-3;
   font-family: $font-default;
@@ -37,20 +39,20 @@
 }
 
 .heading-4 {
-  @include heading-core;
+  @extend %heading-core;
 
   font-weight: normal;
   font-size: $font-heading-4;
 }
 
 .heading-5 {
-  @include heading-core;
+  @extend %heading-core;
 
   font-size: $font-heading-5;
 }
 
 .heading-6 {
-  @include heading-core;
+  @extend %heading-core;
 
   font-size: $font-heading-6;
 }

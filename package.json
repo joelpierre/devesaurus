@@ -13,6 +13,7 @@
     "babel-preset-gatsby": "^0.1.9",
     "bluebird": "~3.5.3",
     "check-prop-types": "^1.1.2",
+    "classnames": "^2.2.6",
     "dotenv": "~6.2.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
