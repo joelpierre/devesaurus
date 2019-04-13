@@ -95,7 +95,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "jest --onlyChanged && lint-staged",
-      "pre-push": "lint-staged && jest --collectCoverage"
+      "pre-push": "lint-staged && jest --coverage --coverageReporters=text-summary"
     }
   },
   "lint-staged": {
