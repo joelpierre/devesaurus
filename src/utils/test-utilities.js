@@ -38,3 +38,5 @@ export const checkProps = (component, conformingProps) => {
   );
   expect(propError).toBeUndefined();
 };
+
+/* eslint-enable */
