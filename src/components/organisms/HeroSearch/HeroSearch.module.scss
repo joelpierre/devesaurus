@@ -1,4 +1,30 @@
+@import "~sass/core";
+
 .hero-search {
   position: relative;
   width: 100%;
+  height: 80vh;
+  padding: 0;
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+  }
+
+  &__brand {
+    padding: 0 0 5rem;
+    min-width: 300px;
+
+    @include tablet-landscape {
+      height: auto;
+      width: 100%;
+      max-width: 500px;
+    }
+  }
 }

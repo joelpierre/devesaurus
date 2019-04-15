@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import * as styles from './Brand.module.scss';
+import classNames from 'classnames';
+import styles from './Brand.module.scss';
 import SvgIcon from '../SvgIcon/SvgIcon';
 
-const Brand = (
-  {
-    classes, heading, slogan, type,
-  },
-) => {
+const Brand = ({ classes, heading, slogan, type }) => {
   let logo;
 
   /**
@@ -26,21 +22,22 @@ const Brand = (
   }
 
   return (
-    <div data-test="component-brand" className={`${classes}`}>
-      <div className={`${styles.brand}`}>
-        <SvgIcon name={logo} classes="brand__icon brand__logo"/>
+    <div
+      data-test="component-brand"
+      className={classNames([styles.brand, classes])}
+    >
+      <div className={classNames(styles.brand__wrapper)}>
+        <SvgIcon
+          name={logo}
+          classes={classNames([
+            `${styles.brand__logo}`,
+            `${styles.brand__icon}`,
+          ])}
+        />
 
         <div className={`${styles.brand__company}`}>
-          {heading && (
-            <h1 className={styles.brand__heading}>
-              {heading}
-            </h1>
-          )}
-          {slogan && (
-            <p className={styles.brand__slogan}>
-              {slogan}
-            </p>
-          )}
+          {heading && <h1 className={styles.brand__heading}>{heading}</h1>}
+          {slogan && <p className={styles.brand__slogan}>{slogan}</p>}
         </div>
       </div>
     </div>

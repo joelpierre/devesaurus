@@ -19,6 +19,8 @@ export class UnconnectedIndex extends PureComponent {
   render() {
     const { siteOptions, siteMeta } = this.props;
 
+    const title = siteOptions && siteOptions.company_name;
+
     return (
       <>
         {siteOptions && siteMeta ? (
@@ -30,7 +32,7 @@ export class UnconnectedIndex extends PureComponent {
           />
         ) : null}
         <main className="primary-main primary-main--home">
-          <HeroSearch title="Devesaurus" />
+          <HeroSearch title={title} />
           <FeaturedWords words={mockWords} />
         </main>
       </>

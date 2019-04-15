@@ -3,3 +3,4 @@
 **/*.test.js
 *.test.js
 *registerServiceWorker.js
+./src/utils/test-utilities.js

@@ -8,7 +8,7 @@ import { mapOverACFComponents } from '../../utils';
 import AcfComponents from '../../hoc/acfComponents';
 import CoreLayout from '../../layouts/core';
 
-export class UnconnectedPageTemplate extends PureComponent {
+export class PageTemplate extends PureComponent {
   componentDidMount() {
     const { onGetPage, pageContext } = this.props;
     onGetPage(pageContext);
@@ -17,8 +17,10 @@ export class UnconnectedPageTemplate extends PureComponent {
   componentDidUpdate(prevProps) {
     const { pageData } = this.props;
 
+    /* istanbul ignore else */
     if (pageData && pageData !== prevProps.pageData) {
-      const { components } = pageData.acf.components;
+      const { components } = pageData.acf;
+      /* istanbul ignore else */
       if (components) mapOverACFComponents(components);
     }
   }
@@ -55,22 +57,24 @@ export class UnconnectedPageTemplate extends PureComponent {
   }
 }
 
-UnconnectedPageTemplate.defaultProps = {
+PageTemplate.defaultProps = {
   pageContext: null,
   pageData: null,
 };
 
-UnconnectedPageTemplate.propTypes = {
+PageTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
   pageData: PropTypes.instanceOf(Object),
   onGetPage: PropTypes.func.isRequired,
   clearPageData: PropTypes.func.isRequired,
 };
 
+/* istanbul ignore next */
 const mapStateToProps = state => ({
   pageData: state.page,
 });
 
+/* istanbul ignore next */
 const mapDispatchToProps = dispatch => ({
   onGetPage: data => dispatch(pageActions.getPageData(data.slug)),
   clearPageData: () => dispatch(pageActions.clearPageData()),
@@ -79,4 +83,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UnconnectedPageTemplate);
+)(PageTemplate);

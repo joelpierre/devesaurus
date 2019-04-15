@@ -1,19 +1,17 @@
+/* eslint-disable */
 import checkPropTypes from 'check-prop-types';
-import { applyMiddleware, createStore } from 'redux';
-
+import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
 import rootReducer from '../store/reducers';
 import { sagaMiddleware } from '../store/configureStore';
 
 /**
- * Store Factory
- * @param initialState
- * @returns {Store<any, Action> & *}
+ *
+ * @param state
  */
-export const storeFactory = initialState => {
-  const createStoreWithMiddleware = applyMiddleware(...sagaMiddleware)(
-    createStore
-  );
-  return createStoreWithMiddleware(rootReducer, initialState);
+export const mockStore = () => {
+  const mockMiddleware = applyMiddleware(sagaMiddleware);
+  const store = reduxCreateStore(rootReducer, mockMiddleware);
+  return store;
 };
 
 /**
