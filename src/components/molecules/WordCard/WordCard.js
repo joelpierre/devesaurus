@@ -4,11 +4,7 @@ import * as styles from './WordCard.module.scss';
 import { wordPropTypeShape } from '../../../utils/propTypeShapes';
 import Button from '../Buttons/Button';
 
-const WordCard = (
-  {
-    title, slug, terms, acf,
-  },
-) => {
+const WordCard = ({ title, slug, terms, acf }) => {
   let categories;
   let tags;
 
@@ -26,9 +22,7 @@ const WordCard = (
 
   useEffect(() => {
     sortTerms();
-
   }, []);
-
 
   return (
     <article className={styles['word-card']} data-test="component-word-card">
@@ -39,19 +33,21 @@ const WordCard = (
       </header>
 
       <p>
-        {categories && categories.map(category => {
-          return (<span>{category}</span>);
-        })}
+        {categories &&
+          categories.map(category => {
+            return <span>{category}</span>;
+          })}
       </p>
 
       <p>
-        {tags && tags.map(tag => {
-          return (<span>{tag}</span>);
-        })}
+        {tags &&
+          tags.map(tag => {
+            return <span>{tag}</span>;
+          })}
       </p>
 
       <div className={styles['word-card__body']}>
-        <Button link={`/word/${slug}`} text="Get definition"/>
+        <Button link={`/word/${slug}`} text="Get definition" />
       </div>
     </article>
   );

@@ -12,7 +12,7 @@ const HeroSearch = () => {
     <CoreSection classes={styles['hero-search']}>
       <GridContainer data-test="component-hero-search">
         <GridRow>
-          <GridColumn classes="flex-lg-8 mx-auto">
+          <GridColumn colLg="8" center>
             <div className={styles['hero-search__wrapper']}>
               <Brand classes={styles['hero-search__brand']} />
               <InputField

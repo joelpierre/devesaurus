@@ -43,9 +43,9 @@ class FeaturedWords extends PureComponent {
                 <GridColumn
                   data-test="featured-words-word"
                   key={index}
-                  classes={`flex-16 flex-md-5 flex-lg-4 ${
-                    styles['featured-words__word-card']
-                  }`}
+                  classes={styles['featured-words__word-card']}
+                  colXs="2"
+                  colLg="4"
                 >
                   <WordCard
                     slug={word.slug}

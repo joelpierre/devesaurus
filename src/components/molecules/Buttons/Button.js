@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import * as styles from './Button.module.scss';
 
-const Button = (
-  {
-    text, behavior, theme, link, size, action,
-  },
-) => {
+const Button = ({ text, behavior, theme, link, size, action }) => {
   let button;
 
   switch (behavior) {
@@ -15,7 +12,11 @@ const Button = (
       button = (
         <Link
           to={link}
-          className={`btn btn--${size} ${styles[`btn--${theme}`]} ${styles.btn}`}
+          className={classNames([
+            styles.btn,
+            styles[`btn--${size}`],
+            styles[`btn--${theme}`],
+          ])}
         >
           {text}
         </Link>
@@ -26,7 +27,11 @@ const Button = (
       button = (
         <a
           href={link}
-          className={`btn btn--${size} ${styles[`btn--${theme}`]} ${styles.btn}`}
+          className={classNames([
+            styles.btn,
+            styles[`btn--${size}`],
+            styles[`btn--${theme}`],
+          ])}
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
@@ -36,14 +41,30 @@ const Button = (
       break;
 
     case 'action':
-      button = (<button type="button" onClick={action.func}>{text}</button>);
+      button = (
+        <button
+          type="button"
+          className={classNames([
+            styles.btn,
+            styles[`btn--${size}`],
+            styles[`btn--${theme}`],
+          ])}
+          onClick={action.func}
+        >
+          {text}
+        </button>
+      );
       break;
 
     default:
       button = (
         <Link
           to={link}
-          className={`btn btn--${size} ${styles[`btn--${theme}`]} ${styles.btn}`}
+          className={classNames([
+            styles.btn,
+            styles[`btn--${size}`],
+            styles[`btn--${theme}`],
+          ])}
         >
           {text}
         </Link>
@@ -51,11 +72,7 @@ const Button = (
       break;
   }
 
-  return (
-    <>
-      {button}
-    </>
-  );
+  return <>{button}</>;
 };
 
 Button.defaultProps = {
@@ -69,7 +86,16 @@ Button.propTypes = {
   action: PropTypes.func,
   text: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-  theme: PropTypes.oneOf(['brand', 'alpha', 'beta', 'tint-alpha', 'tint-beta', 'tint-omega', 'tint-gamma', 'tint-psi']),
+  theme: PropTypes.oneOf([
+    'brand',
+    'alpha',
+    'beta',
+    'tint-alpha',
+    'tint-beta',
+    'tint-omega',
+    'tint-gamma',
+    'tint-psi',
+  ]),
   behavior: PropTypes.oneOf(['router', 'anchor', 'action']),
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'full']),
 };

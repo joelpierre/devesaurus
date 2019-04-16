@@ -10,14 +10,10 @@ describe('<Button/>', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(
-      <Button text="test button" link={`/test`}/>,
-    );
+    wrapper = shallow(<Button text="test button" link={`/test`} />);
   });
 
   it('Should render Button Component', () => {
     // expect(wrapper)
   });
-
-
 });

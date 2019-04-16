@@ -5,11 +5,17 @@ import Button from '../Buttons/Button';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import './InputGroup.scss';
 
-const InputGroup = (
-  {
-    append, prepend, name, placeholder, disabled, readonly, min, max, type,
-  },
-) => {
+const InputGroup = ({
+  append,
+  prepend,
+  name,
+  placeholder,
+  disabled,
+  readonly,
+  min,
+  max,
+  type,
+}) => {
   let inputField;
   let preButton;
   let appButton;
@@ -44,7 +50,7 @@ const InputGroup = (
      */
     if (prepend.icon) {
       preIcon = prepend.icon;
-      preIconEl = (<SvgIcon name={preIcon}/>);
+      preIconEl = <SvgIcon name={preIcon} />;
     }
 
     /**
@@ -77,7 +83,7 @@ const InputGroup = (
      */
     if (append.icon) {
       appIcon = prepend.icon;
-      appIconEl = (<SvgIcon name={appIcon}/>);
+      appIconEl = <SvgIcon name={appIcon} />;
     }
 
     /**
@@ -139,54 +145,40 @@ const InputGroup = (
       {prepend && (
         <div className="input-group__prepend">
           {preButtonEl && (
-            <div className="input-group__button-wrapper">
-              {preButtonEl}
-            </div>
+            <div className="input-group__button-wrapper">{preButtonEl}</div>
           )}
 
           {preIconEl && (
             <div className="input-group__inner">
-              <div className="input-group__icon-wrapper">
-                {preIconEl}
-              </div>
+              <div className="input-group__icon-wrapper">{preIconEl}</div>
             </div>
           )}
 
           {preText && (
             <div className="input-group__inner">
-              <div className="input-group__text">
-                {preText}
-              </div>
+              <div className="input-group__text">{preText}</div>
             </div>
           )}
         </div>
       )}
 
-      <div className="input-group__input">
-        {inputField}
-      </div>
+      <div className="input-group__input">{inputField}</div>
 
       {append && (
         <div className="input-group__append">
           {appButtonEl && (
-            <div className="input-group__button-wrapper">
-              {appButtonEl}
-            </div>
+            <div className="input-group__button-wrapper">{appButtonEl}</div>
           )}
 
           {appIconEl && (
             <div className="input-group__inner">
-              <div className="input-group__icon-wrapper">
-                {appIconEl}
-              </div>
+              <div className="input-group__icon-wrapper">{appIconEl}</div>
             </div>
           )}
 
           {appText && (
             <div className="input-group__inner">
-              <div className="input-group__text">
-                {appText}
-              </div>
+              <div className="input-group__text">{appText}</div>
             </div>
           )}
         </div>
@@ -210,7 +202,16 @@ InputGroup.propTypes = {
     button: PropTypes.shape({
       text: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
-      theme: PropTypes.oneOf(['brand', 'alpha', 'beta', 'tint-alpha', 'tint-beta', 'tint-omega', 'tint-gamma', 'tint-psi']),
+      theme: PropTypes.oneOf([
+        'brand',
+        'alpha',
+        'beta',
+        'tint-alpha',
+        'tint-beta',
+        'tint-omega',
+        'tint-gamma',
+        'tint-psi',
+      ]),
       behavior: PropTypes.oneOf(['router', 'anchor']),
       size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'full']),
     }),
@@ -221,7 +222,16 @@ InputGroup.propTypes = {
     button: PropTypes.shape({
       text: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
-      theme: PropTypes.oneOf(['brand', 'alpha', 'beta', 'tint-alpha', 'tint-beta', 'tint-omega', 'tint-gamma', 'tint-psi']),
+      theme: PropTypes.oneOf([
+        'brand',
+        'alpha',
+        'beta',
+        'tint-alpha',
+        'tint-beta',
+        'tint-omega',
+        'tint-gamma',
+        'tint-psi',
+      ]),
       behavior: PropTypes.oneOf(['router', 'anchor']),
       size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'full']),
     }),
@@ -229,9 +239,8 @@ InputGroup.propTypes = {
     text: PropTypes.string,
   }),
   name: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(
-    ['text', 'password', 'date', 'email', 'number'],
-  ).isRequired,
+  type: PropTypes.oneOf(['text', 'password', 'date', 'email', 'number'])
+    .isRequired,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
   readonly: PropTypes.bool,

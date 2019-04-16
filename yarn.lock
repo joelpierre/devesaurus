@@ -5707,10 +5707,15 @@ flatten@^1.0.2:
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
   integrity sha1-2uRqnXj74lKSJYzB54CkHZXAN4I=
 
-flexigridcss@~0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/flexigridcss/-/flexigridcss-0.3.1.tgz#e9c240e355ec9137db2a5961be9e14220b7e9760"
-  integrity sha512-jTMrbDS6vk7CCBE/n8WGIP5gRRDdVLN4MalM2wIz79EYkOwxP65iOGdF4B5k8j1RKmVqJKtEQh+2xsG6VFxuRA==
+flexbox-grid-mixins@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/flexbox-grid-mixins/-/flexbox-grid-mixins-0.1.6.tgz#2aa4edcbc49d27b738009a8f09a8502d090637d5"
+  integrity sha512-qyV3RsQ1bPGK2cxBq5pD/1blNorH4MUDyUljfjv7xQyFx7L/mWTcI30o8pAKffg48NTH6WNnPoh00SOpAYt6vw==
+
+flexigridcss@~0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/flexigridcss/-/flexigridcss-0.5.0.tgz#a27dd6eebb4f88ca4af88e603562f52b6a96d9f7"
+  integrity sha512-IYStaVaSwDSsET8cL912HATQPgaYFjp9DnKFOSUxIx0k+JoxHysNdhzmBCNfELvVxt3F+jzLS6pF/cNmEY9q/Q==
 
 flush-write-stream@^1.0.0:
   version "1.0.3"
@@ -10856,7 +10861,7 @@ postcss-attribute-case-insensitive@^4.0.1:
     postcss "^7.0.2"
     postcss-selector-parser "^5.0.0"
 
-postcss-calc@^7.0.0:
+postcss-calc@^7.0.0, postcss-calc@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/postcss-calc/-/postcss-calc-7.0.1.tgz#36d77bab023b0ecbb9789d84dcb23c4941145436"
   integrity sha512-oXqx0m6tb4N3JGdmeMSc/i91KppbYsFZKdH0xMOqK8V1rJlzrKlTdokz8ozUXLVejydRN6u2IddxpcijRj2FqQ==
@@ -11450,7 +11455,7 @@ postcss-resolve-nested-selector@^0.1.1:
   resolved "https://registry.yarnpkg.com/postcss-resolve-nested-selector/-/postcss-resolve-nested-selector-0.1.1.tgz#29ccbc7c37dedfac304e9fff0bf1596b3f6a0e4e"
   integrity sha1-Kcy8fDfe36wwTp//C/FZaz9qDk4=
 
-postcss-safe-parser@^4.0.0:
+postcss-safe-parser@^4.0.0, postcss-safe-parser@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/postcss-safe-parser/-/postcss-safe-parser-4.0.1.tgz#8756d9e4c36fdce2c72b091bbc8ca176ab1fcdea"
   integrity sha512-xZsFA3uX8MO3yAda03QrG3/Eg1LN3EPfjjf07vke/46HERLZyHrTsQ9E1r1w1W//fWEhtYNndo2hQplN2cVpCQ==

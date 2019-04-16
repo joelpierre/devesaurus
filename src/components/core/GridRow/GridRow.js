@@ -1,10 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import styles from './GridRow.module.scss';
 
 const GridRow = ({ children, row, column, reverse }) => {
   const classes = {
-    row,
+    [styles.row]: row,
     'row--reverse': row && reverse && !column,
     'row--column': column && !reverse,
     'row--column-reverse': column && reverse && !row,

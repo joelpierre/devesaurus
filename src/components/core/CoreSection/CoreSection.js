@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import styles from './CoreSection.module.scss';
 
 const CoreSection = ({ children, classes, type }) => {
   const Tag = `${type}`;
@@ -9,7 +10,7 @@ const CoreSection = ({ children, classes, type }) => {
     <Tag
       data-test="component-core-section"
       className={classNames({
-        'primary-main__section': true,
+        [styles.section]: true,
         [classes]: classes,
       })}
     >

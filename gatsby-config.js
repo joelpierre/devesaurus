@@ -1,8 +1,7 @@
 /* eslint-disable max-len */
-require('dotenv')
-  .config({
-    path: `.env.${process.env.NODE_ENV}`,
-  });
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 const path = require('path');
 
@@ -44,12 +43,19 @@ module.exports = {
         cssLoaderOptions: {
           camelCase: false,
         },
+        options: {
+          precision: 8,
+        },
       },
     },
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+        postCssPlugins: [
+          require(`postcss-preset-env`)({ stage: 0 }),
+          require(`postcss-safe-parser`),
+          require(`postcss-calc`),
+        ],
       },
     },
     {

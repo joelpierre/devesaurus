@@ -1,13 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import styles from './GridContainer.module.scss';
 
-const GridContainer = ({ full, children }) => (
+const GridContainer = ({ fluid, children }) => (
   <div
     data-test="component-grid-container"
     className={classNames({
-      container: !full,
-      'container-fluid': full,
+      [styles.container]: !fluid,
+      [styles['container--fluid']]: fluid,
     })}
   >
     {children}
@@ -15,11 +16,11 @@ const GridContainer = ({ full, children }) => (
 );
 
 GridContainer.defaultProps = {
-  full: false,
+  fluid: false,
 };
 
 GridContainer.propTypes = {
-  full: PropTypes.bool,
+  fluid: PropTypes.bool,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

@@ -1,5 +1,19 @@
+// Grid
+$grid-columns-mobile: 4;
+$grid-columns-portrait-tablet: 8;
+$grid-columns-landscape-tablet: 10;
+$grid-columns-desktop: 12;
+$grid-columns-big-desktop: 16;
+
+$grid-space-mobile: 1.6rem;
+$grid-space-portrait-tablet: 1.6rem;
+$grid-space-landscape-tablet: 2.4rem;
+$grid-space-desktop: 2.4rem;
+$grid-space-big-desktop: 2.4rem;
+
 // Fonts
 $font-default: "Helvetica", Helvetica Neue, Arial, sans-serif;
+$font-monospace: monospace, monoszpace;
 
 $font-heading-1: 4.8rem;
 $font-heading-2: 3.4rem;
