@@ -5,7 +5,6 @@ import { shallow } from 'enzyme';
 
 const defaultProps = {
   name: 'logo',
-
 };
 
 /**
@@ -15,7 +14,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<SvgIcon {...setupProps}/>);
+  return shallow(<SvgIcon {...setupProps} />);
 };
 
 describe('<SvgIcon/>', () => {
@@ -28,5 +27,4 @@ describe('<SvgIcon/>', () => {
   it('Should render SvgIcon Component', () => {
     // expect(wrapper)
   });
-
 });

@@ -7,7 +7,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import createStore from './src/store/configureStore';
 
-// require('flexigridcss/dist/flexigridcss.css');
+require('flexigridcss/dist/flexigridcss/modifiers.css');
 require('./src/sass/styles.scss');
 
 export const wrapRootElement = ({ element }) => {

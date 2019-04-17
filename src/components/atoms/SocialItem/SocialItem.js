@@ -6,8 +6,13 @@ const SocialItem = ({ name, link }) => {
   return (
     <>
       <li data-test="component-social-item">
-        <a href={link} aria-label={name} target="_blank" rel="noopener noreferrer">
-          <SvgIcon name={name}/>
+        <a
+          href={link}
+          aria-label={name}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <SvgIcon name={name} />
         </a>
       </li>
     </>

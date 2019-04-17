@@ -5,11 +5,16 @@ import InputField from '../../atoms/InputField/InputField';
 import FileUpload from '../../atoms/FileUpload/FileUpload';
 import SelectField from '../../atoms/SelectField/SelectField';
 
-const FormField = (
-  {
-    name, type, placeholder, disabled, readonly, options, min, max,
-  },
-) => {
+const FormField = ({
+  name,
+  type,
+  placeholder,
+  disabled,
+  readonly,
+  options,
+  min,
+  max,
+}) => {
   let formField;
 
   switch (type) {
@@ -46,12 +51,21 @@ const FormField = (
       break;
     case 'select':
       formField = (
-        <SelectField data-test="component-form-field" placeholder={placeholder} name={name} options={options}/>
+        <SelectField
+          data-test="component-form-field"
+          placeholder={placeholder}
+          name={name}
+          options={options}
+        />
       );
       break;
     case 'file':
       formField = (
-        <FileUpload data-test="component-form-field" placeholder={placeholder} name={name}/>
+        <FileUpload
+          data-test="component-form-field"
+          placeholder={placeholder}
+          name={name}
+        />
       );
       break;
     default:
@@ -67,11 +81,7 @@ const FormField = (
         />
       );
   }
-  return (
-    <>
-      {formField}
-    </>
-  );
+  return <>{formField}</>;
 };
 
 FormField.defaultProps = {
@@ -85,19 +95,23 @@ FormField.defaultProps = {
 
 FormField.propTypes = {
   name: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(
-    ['text', 'file', 'select', 'password', 'date', 'email', 'number'],
-  ).isRequired,
+  type: PropTypes.oneOf([
+    'text',
+    'file',
+    'select',
+    'password',
+    'date',
+    'email',
+    'number',
+  ]).isRequired,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
   readonly: PropTypes.bool,
   options: PropTypes.arrayOf(
-    PropTypes.shape(
-      {
-        name: PropTypes.string.isRequired,
-        value: PropTypes.number.isRequired,
-      },
-    ),
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+    })
   ),
   min: PropTypes.string,
   max: PropTypes.number,
