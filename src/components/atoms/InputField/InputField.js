@@ -16,7 +16,7 @@ const InputField = ({
   sm,
   md,
   lg,
-  value,
+  defaultValue,
   hidden,
   onChange,
   onBlur,
@@ -24,9 +24,6 @@ const InputField = ({
   onClick,
 }) => {
   let inputField;
-
-  console.log(styles);
-
   switch (type) {
     case 'text':
     case 'email':
@@ -46,7 +43,7 @@ const InputField = ({
           placeholder={placeholder}
           readOnly={readonly}
           disabled={disabled}
-          value={value}
+          defaultValue={defaultValue}
           aria-label={`Input for ${name}`}
           hidden={hidden}
           onChange={onChange}
@@ -73,7 +70,7 @@ const InputField = ({
           placeholder={placeholder}
           readOnly={readonly}
           disabled={disabled}
-          value={value}
+          defaultValue={defaultValue}
           aria-label={`Input for ${name}`}
           hidden={hidden}
           onChange={onChange}
@@ -98,7 +95,7 @@ const InputField = ({
           placeholder={placeholder}
           readOnly={readonly}
           disabled={disabled}
-          value={value}
+          defaultValue={defaultValue}
           aria-label={`Input for ${name}`}
           hidden={hidden}
           onChange={onChange}
@@ -126,7 +123,7 @@ InputField.defaultProps = {
   md: false,
   lg: false,
   label: null,
-  value: null,
+  defaultValue: '',
   hidden: null,
   onChange: null,
   onBlur: null,
@@ -154,7 +151,7 @@ InputField.propTypes = {
   lg: PropTypes.bool,
   min: PropTypes.string,
   max: PropTypes.number,
-  value: PropTypes.string,
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   hidden: PropTypes.bool,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,

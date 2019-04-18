@@ -1,11 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import FileUpload from './FileUpload';
-import { findByTestAttr } from '../../../utils/test-utilities';
 
 const defaultProps = {
-  name: 'test-name',
+  name: 'test',
 };
 
 /**
@@ -25,8 +31,16 @@ describe('<FileUpload/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the FileUpload Component without errors', () => {
+  it('renders the FileUpload Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-file-upload');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(FileUpload, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

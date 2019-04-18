@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Brand/> should match snapshot 1`] = `
+<div
+  className="brand"
+  data-test="component-brand"
+>
+  <div
+    className="brand__wrapper"
+  >
+    <SvgIcon
+      classes="brand__logo brand__icon"
+      description="An SVG Icon"
+      fill="#000000"
+      height="100%"
+      name="logo"
+      width="100%"
+    />
+    <div
+      className="brand__company"
+    />
+  </div>
+</div>
+`;

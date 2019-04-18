@@ -113,9 +113,14 @@ module.exports = {
           '**/*/*/taxonomies',
           '**/*/*/users',
         ],
-        // normalizer({ entities }) {
-        //   return entities;
-        // },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Lato'],
+        },
       },
     },
     // `gatsby-plugin-offline`,

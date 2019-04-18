@@ -4637,6 +4637,13 @@ enzyme-adapter-utils@^1.10.1:
     prop-types "^15.7.2"
     semver "^5.6.0"
 
+enzyme-to-json@^3.3.5:
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/enzyme-to-json/-/enzyme-to-json-3.3.5.tgz#f8eb82bd3d5941c9d8bc6fd9140030777d17d0af"
+  integrity sha512-DmH1wJ68HyPqKSYXdQqB33ZotwfUhwQZW3IGXaNXgR69Iodaoj8TF/D9RjLdz4pEhGq2Tx2zwNUIjBuqoZeTgA==
+  dependencies:
+    lodash "^4.17.4"
+
 enzyme@^3.9.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-3.9.0.tgz#2b491f06ca966eb56b6510068c7894a7e0be3909"
@@ -5712,10 +5719,10 @@ flexbox-grid-mixins@^0.1.6:
   resolved "https://registry.yarnpkg.com/flexbox-grid-mixins/-/flexbox-grid-mixins-0.1.6.tgz#2aa4edcbc49d27b738009a8f09a8502d090637d5"
   integrity sha512-qyV3RsQ1bPGK2cxBq5pD/1blNorH4MUDyUljfjv7xQyFx7L/mWTcI30o8pAKffg48NTH6WNnPoh00SOpAYt6vw==
 
-flexigridcss@~0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/flexigridcss/-/flexigridcss-0.5.1.tgz#a5c5a102f8238cd7470fe88f304a519dd575f0d9"
-  integrity sha512-loMmAkZdCPcaVCW3OdKxfz8t/ir2ugMsxP2yVOvu3uxagJpALSPQ4x6eRLsIPVHXdJT9W2rmvGSfdeT9cv94Zw==
+flexigridcss@~0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/flexigridcss/-/flexigridcss-0.5.3.tgz#1701e1d24e5534577c669b98127442a72ca1d960"
+  integrity sha512-PslyAA5OucVnaLTqIZqbC9B34yx+wb2ytKfFzI1VKqiIYbCmSShOAEMGXxhjCXwEQ9jIFQcXGQwhyfAFFL74bA==
 
 flush-write-stream@^1.0.0:
   version "1.0.3"
@@ -6065,6 +6072,14 @@ gatsby-plugin-sitemap@~2.0.4:
     minimatch "^3.0.4"
     pify "^3.0.0"
     sitemap "^1.12.0"
+
+gatsby-plugin-web-font-loader@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-web-font-loader/-/gatsby-plugin-web-font-loader-1.0.4.tgz#c50bdb0c1980110b3fd213a5be70feb2459514c3"
+  integrity sha512-3c39bX9CcsYJQFhhmTyjuMJSqpld2rX+HsTOxP9k1PKFR4Rvo3lpzBW4d1tVpmUesR8BNL6u9eHT7/XksS1iog==
+  dependencies:
+    babel-runtime "^6.26.0"
+    webfontloader "^1.6.28"
 
 gatsby-react-router-scroll@^2.0.4:
   version "2.0.4"
@@ -14979,6 +14994,11 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   integrity sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==
   dependencies:
     minimalistic-assert "^1.0.0"
+
+webfontloader@^1.6.28:
+  version "1.6.28"
+  resolved "https://registry.yarnpkg.com/webfontloader/-/webfontloader-1.6.28.tgz#db786129253cb6e8eae54c2fb05f870af6675bae"
+  integrity sha1-23hhKSU8tujq5UwvsF+HCvZnW64=
 
 webidl-conversions@^4.0.2:
   version "4.0.2"

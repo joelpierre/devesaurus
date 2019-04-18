@@ -11,10 +11,17 @@ const Brand = ({ classes, heading, slogan, type }) => {
    * Switch statement to determine what brand logo is used
    */
   switch (type) {
+    case 'logo-inv':
+      logo = type;
+      break;
     case 'text':
-    case 'text-alt':
+    case 'text-inv':
+    case 'character':
+    case 'character-inv':
     case 'symbol':
-    case 'symbol-alt':
+    case 'symbol-inv':
+    case 'social-inv':
+    case 'social':
       logo = `logo-${type}`;
       break;
     default:
@@ -55,7 +62,18 @@ Brand.propTypes = {
   classes: PropTypes.string,
   heading: PropTypes.string,
   slogan: PropTypes.string,
-  type: PropTypes.oneOf(['logo', 'text', 'text-alt', 'symbol', 'symbol-alt']),
+  type: PropTypes.oneOf([
+    'logo',
+    'logo-inv',
+    'text',
+    'text-inv',
+    'character',
+    'character-inv',
+    'symbol',
+    'symbol-inv',
+    'social-inv',
+    'social',
+  ]),
 };
 
 export default Brand;

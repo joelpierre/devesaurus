@@ -1,11 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
+import { checkProps, findByTestAttr } from '../../../utils/test-utilities';
 
 import WordCard from './WordCard';
 
 const defaultProps = {
+  contrast: false,
   title: 'title',
   slug: 'slug',
   terms: [],
@@ -34,8 +36,16 @@ describe('<WordCard/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the WordCard Component without errors', () => {
+  it('renders the WordCard Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-word-card');
     expect(component.length).toBe(1);
+  });
+
+  it('should match snapShot', () => {
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it('should have correct props', () => {
+    checkProps(WordCard, defaultProps);
   });
 });

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import checkPropTypes from 'check-prop-types';
 import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
+import toJson from 'enzyme-to-json';
 import rootReducer from '../store/reducers';
 import { sagaMiddleware } from '../store/configureStore';
 
@@ -37,6 +38,10 @@ export const checkProps = (component, conformingProps) => {
     component.name
   );
   expect(propError).toBeUndefined();
+};
+
+export const matchSnapshot = wrapper => {
+  return expect(toJson(wrapper)).toMatchSnapshot();
 };
 
 /* eslint-enable */

@@ -8,6 +8,7 @@ import CoreSection from '../../core/CoreSection/CoreSection';
 import GridContainer from '../../core/GridContainer/GridContainer';
 import GridRow from '../../core/GridRow/GridRow';
 import GridColumn from '../../core/GridColumn/GridColumn';
+import Heading from '../../core/Heading/Heading';
 
 class FeaturedWords extends PureComponent {
   constructor(props) {
@@ -29,22 +30,29 @@ class FeaturedWords extends PureComponent {
   }
 
   render() {
-    const { words } = this.props;
+    const { words, contrast } = this.props;
 
     return (
       <CoreSection
         data-test="component-featured-words"
         classes={`${styles['featured-words']}`}
-        contrast
+        contrast={contrast}
       >
         <GridContainer>
+          <GridRow>
+            <GridColumn>
+              <Heading priority="2" classes={styles['featured-words__heading']}>
+                Featured Words
+              </Heading>
+            </GridColumn>
+          </GridRow>
+
           <GridRow>
             {words.map((word, index) => {
               return (
                 <GridColumn
                   data-test="featured-words-word"
                   key={index}
-                  classes={styles['featured-words__word-card']}
                   colXs="2"
                   colLg="4"
                 >
@@ -53,6 +61,8 @@ class FeaturedWords extends PureComponent {
                     title={word.title}
                     acf={word.acf}
                     terms={word.terms}
+                    classes={styles['featured-words__word-card']}
+                    contrast={!contrast}
                   />
                 </GridColumn>
               );
@@ -64,7 +74,12 @@ class FeaturedWords extends PureComponent {
   }
 }
 
+FeaturedWords.defaultProps = {
+  contrast: true,
+};
+
 FeaturedWords.propTypes = {
+  contrast: PropTypes.bool,
   words: PropTypes.arrayOf(PropTypes.shape({ ...wordPropTypeShape }))
     .isRequired,
 };

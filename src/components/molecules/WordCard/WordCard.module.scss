@@ -3,8 +3,7 @@
 .word-card {
   $root: &;
 
-  border-radius: $radius-rounded;
-  border: 1px solid $color-tint-psi;
+  border-radius: 0;
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;

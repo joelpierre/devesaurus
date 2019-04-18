@@ -1,9 +1,37 @@
+@import "~sass/core";
+
 .featured-words {
-  position: relative;
   $root: &;
-  padding-bottom: 2rem;
+  position: relative;
+  padding: 10rem 0 7rem;
+
+  &__heading {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 4rem;
+  }
 
   &__word-card {
     margin-bottom: 3rem;
+  }
+
+  &.theme--tint-alpha {
+    background-color: red;
+
+    #{$root} {
+      &__word-card {
+        background-color: $color-tint-beta;
+      }
+    }
+  }
+
+  &.theme--tint-beta {
+    background-color: red;
+
+    #{$root} {
+      &__word-card {
+        background-color: $color-tint-alpha;
+      }
+    }
   }
 }
