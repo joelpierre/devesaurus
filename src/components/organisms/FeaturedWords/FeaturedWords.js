@@ -35,6 +35,7 @@ class FeaturedWords extends PureComponent {
       <CoreSection
         data-test="component-featured-words"
         classes={`${styles['featured-words']}`}
+        contrast
       >
         <GridContainer>
           <GridRow>

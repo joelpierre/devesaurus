@@ -1,6 +1,7 @@
 .featured-words {
   position: relative;
   $root: &;
+  padding-bottom: 2rem;
 
   &__word-card {
     margin-bottom: 3rem;

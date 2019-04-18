@@ -35,21 +35,14 @@ $label-margin-bottom: 1rem;
 $table-cell-padding: 1rem;
 
 // Colors
-$color-brand: #FF8F00;
-$color-brand-light: lighten($color-brand, 20%);
-$color-brand-dark: darken($color-brand, 5%);
-$color-alpha: #FF5C5C;
-$color-alpha-light: lighten($color-alpha, 20%);
-$color-alpha-dark: darken($color-alpha, 5%);
-$color-beta: #3F51B5;
-$color-beta-light: lighten($color-beta, 20%);
-$color-beta-dark: darken($color-beta, 5%);
+$color-brand: #047211;
+$color-alpha: #16991F;
 
 // Tint Colours
 $color-tint-alpha: white;
-$color-tint-beta: #F5F5F5;
-$color-tint-gamma: #BDBDBD;
-$color-tint-psi: #424242;
+$color-tint-beta: #F9F9F9;
+$color-tint-gamma: #C6C6C6;
+$color-tint-psi: #A0A0A0;
 $color-tint-omega: black;
 
 $color-external-link: #007BFF;
@@ -58,14 +51,7 @@ $color-link: $color-alpha;
 // All Colors
 $colors: (
   brand: $color-brand,
-  brand-light: $color-brand-light,
-  brand-dark: $color-brand-dark,
   alpha: $color-alpha,
-  alpha-light: $color-alpha-light,
-  alpha-dark: $color-alpha-dark,
-  beta: $color-beta,
-  beta-light: $color-beta-light,
-  beta-dark: $color-beta-dark,
   tint-alpha: $color-tint-alpha,
   tint-beta: $color-tint-beta,
   tint-gamma: $color-tint-gamma,
@@ -74,7 +60,7 @@ $colors: (
 );
 
 
-$link-hover-color: darken($color-link, 50%);
+$link-hover-color: $color-brand;
 $link-decoration: none;
 $link-hover-decoration: underline;
 

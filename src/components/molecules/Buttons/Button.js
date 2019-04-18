@@ -89,12 +89,10 @@ Button.propTypes = {
   theme: PropTypes.oneOf([
     'brand',
     'alpha',
-    'beta',
     'tint-alpha',
     'tint-beta',
-    'tint-omega',
-    'tint-gamma',
     'tint-psi',
+    'tint-omega',
   ]),
   behavior: PropTypes.oneOf(['router', 'anchor', 'action']),
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'full']),

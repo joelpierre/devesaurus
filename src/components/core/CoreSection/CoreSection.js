@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './CoreSection.module.scss';
 
-const CoreSection = ({ children, classes, type }) => {
+const CoreSection = ({ children, classes, type, contrast }) => {
   const Tag = `${type}`;
 
   return (
@@ -12,6 +12,8 @@ const CoreSection = ({ children, classes, type }) => {
       className={classNames({
         [styles.section]: true,
         [classes]: classes,
+        'theme--tint-alpha': !contrast,
+        'theme--tint-beta': contrast,
       })}
     >
       {children}
@@ -22,11 +24,13 @@ const CoreSection = ({ children, classes, type }) => {
 CoreSection.defaultProps = {
   classes: null,
   type: 'section',
+  contrast: false, // false = white, true = grey
 };
 
 CoreSection.propTypes = {
   classes: PropTypes.string,
   type: PropTypes.string,
+  contrast: PropTypes.bool,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

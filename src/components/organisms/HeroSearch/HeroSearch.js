@@ -16,15 +16,11 @@ const HeroSearch = () => {
           <GridColumn colLg="8" classes="mx-auto">
             <div className={styles['hero-search__wrapper']}>
               <Brand classes={styles['hero-search__brand']} />
-              <FileUpload
-                name="hero-upload"
-                placeholder="Testing file upload"
+              <InputField
+                name="hero-search"
+                type="text"
+                placeholder="Enter a search term. e.g. HTML"
               />
-              {/* <InputField */}
-              {/*  name="hero-search" */}
-              {/*  type="text" */}
-              {/*  placeholder="Enter a search term. e.g. HTML" */}
-              {/* /> */}
             </div>
           </GridColumn>
         </GridRow>
