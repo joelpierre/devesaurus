@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import styles from './GridRow.module.scss';
+import styles from './Row.module.scss';
 
-const GridRow = ({ children, row, column, reverse }) => {
+const Row = ({ children, row, column, reverse }) => {
   const classes = {
     [styles.row]: row,
     'row--reverse': row && reverse && !column,
@@ -18,13 +18,13 @@ const GridRow = ({ children, row, column, reverse }) => {
   );
 };
 
-GridRow.defaultProps = {
+Row.defaultProps = {
   row: true,
   column: false,
   reverse: false,
 };
 
-GridRow.propTypes = {
+Row.propTypes = {
   row: PropTypes.bool,
   column: PropTypes.bool,
   reverse: PropTypes.bool,
@@ -34,4 +34,4 @@ GridRow.propTypes = {
   ]).isRequired,
 };
 
-export default GridRow;
+export default Row;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SocialMenu/> should match snapshot 1`] = `
+<nav
+  data-test="component-social-menu"
+/>
+`;

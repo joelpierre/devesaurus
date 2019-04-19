@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import InputField from '../../atoms/InputField/InputField';
 import Button from '../Buttons/Button';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
-import './InputGroup.scss';
+import styles from './InputGroup.module.scss';
+import { themePropTypeShape } from '../../../utils/propTypeShapes';
 
 const InputGroup = ({
   append,
@@ -17,12 +18,8 @@ const InputGroup = ({
   type,
 }) => {
   let inputField;
-  let preButton;
-  let appButton;
   let preButtonEl;
   let appButtonEl;
-  let preIcon;
-  let appIcon;
   let preIconEl;
   let appIconEl;
   let preText;
@@ -33,7 +30,7 @@ const InputGroup = ({
      * If there is a button to prepend to the input group.
      */
     if (prepend.button) {
-      preButton = prepend.button;
+      const preButton = prepend.button;
       preButtonEl = (
         <Button
           link={preButton.link}
@@ -49,7 +46,7 @@ const InputGroup = ({
      * If there is an icon to prepend to the input group
      */
     if (prepend.icon) {
-      preIcon = prepend.icon;
+      const preIcon = prepend.icon;
       preIconEl = <SvgIcon name={preIcon} />;
     }
 
@@ -66,7 +63,7 @@ const InputGroup = ({
      * If there is a button to append to the input group
      */
     if (append.button) {
-      appButton = append.button;
+      const appButton = append.button;
       appButtonEl = (
         <Button
           link={appButton.link}
@@ -82,7 +79,7 @@ const InputGroup = ({
      * If there is an Icon to append to the input group
      */
     if (append.icon) {
-      appIcon = prepend.icon;
+      const appIcon = append.icon;
       appIconEl = <SvgIcon name={appIcon} />;
     }
 
@@ -104,7 +101,6 @@ const InputGroup = ({
     case 'date':
       inputField = (
         <InputField
-          className="form-control"
           type={type}
           name={name}
           placeholder={placeholder}
@@ -116,7 +112,6 @@ const InputGroup = ({
     case 'number':
       inputField = (
         <InputField
-          className="form-control"
           type={type}
           name={name}
           minLength={min}
@@ -127,58 +122,82 @@ const InputGroup = ({
         />
       );
       break;
-    default:
-      inputField = (
-        <InputField
-          className="form-control"
-          type="text"
-          name={name}
-          placeholder={placeholder}
-          readOnly={readonly}
-          disabled={disabled}
-        />
-      );
   }
 
   return (
-    <div data-test="component-input-group" className="input-group">
+    <div data-test="component-input-group" className={styles['input-group']}>
       {prepend && (
-        <div className="input-group__prepend">
+        <div className={styles['input-group__prepend']}>
           {preButtonEl && (
-            <div className="input-group__button-wrapper">{preButtonEl}</div>
+            <div
+              data-test="input-group-button"
+              className={styles['input-group__button-wrapper']}
+            >
+              {preButtonEl}
+            </div>
           )}
 
           {preIconEl && (
-            <div className="input-group__inner">
-              <div className="input-group__icon-wrapper">{preIconEl}</div>
+            <div className={styles['input-group__inner']}>
+              <div
+                data-test="input-group-icon"
+                className={styles['input-group__icon-wrapper']}
+              >
+                {preIconEl}
+              </div>
             </div>
           )}
 
           {preText && (
-            <div className="input-group__inner">
-              <div className="input-group__text">{preText}</div>
+            <div className={styles['input-group__inner']}>
+              <div
+                data-test="input-group-text"
+                className={styles['input-group__text']}
+              >
+                {preText}
+              </div>
             </div>
           )}
         </div>
       )}
 
-      <div className="input-group__input">{inputField}</div>
+      <div
+        data-test="input-group-input"
+        className={styles['input-group__input']}
+      >
+        {inputField}
+      </div>
 
       {append && (
-        <div className="input-group__append">
+        <div className={styles['input-group__append']}>
           {appButtonEl && (
-            <div className="input-group__button-wrapper">{appButtonEl}</div>
+            <div
+              data-test="input-group-button"
+              className={styles['input-group__button-wrapper']}
+            >
+              {appButtonEl}
+            </div>
           )}
 
           {appIconEl && (
-            <div className="input-group__inner">
-              <div className="input-group__icon-wrapper">{appIconEl}</div>
+            <div className={styles['input-group__inner']}>
+              <div
+                data-test="input-group-icon"
+                className={styles['input-group__icon-wrapper']}
+              >
+                {appIconEl}
+              </div>
             </div>
           )}
 
           {appText && (
-            <div className="input-group__inner">
-              <div className="input-group__text">{appText}</div>
+            <div className={styles['input-group__inner']}>
+              <div
+                data-test="input-group-text"
+                className={styles['input-group__text']}
+              >
+                {appText}
+              </div>
             </div>
           )}
         </div>
@@ -195,6 +214,7 @@ InputGroup.defaultProps = {
   readonly: false,
   min: null,
   max: null,
+  type: 'text',
 };
 
 InputGroup.propTypes = {
@@ -202,15 +222,8 @@ InputGroup.propTypes = {
     button: PropTypes.shape({
       text: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
-      theme: PropTypes.oneOf([
-        'brand',
-        'alpha',
-        'tint-alpha',
-        'tint-beta',
-        'tint-psi',
-        'tint-omega',
-      ]),
-      behavior: PropTypes.oneOf(['router', 'anchor']),
+      ...themePropTypeShape,
+      behavior: PropTypes.oneOf(['action']),
       size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'full']),
     }),
     icon: PropTypes.string,
@@ -220,23 +233,15 @@ InputGroup.propTypes = {
     button: PropTypes.shape({
       text: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
-      theme: PropTypes.oneOf([
-        'brand',
-        'alpha',
-        'tint-alpha',
-        'tint-beta',
-        'tint-psi',
-        'tint-omega',
-      ]),
-      behavior: PropTypes.oneOf(['router', 'anchor']),
+      ...themePropTypeShape,
+      behavior: PropTypes.oneOf(['action']),
       size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'full']),
     }),
     icon: PropTypes.string,
     text: PropTypes.string,
   }),
   name: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['text', 'password', 'date', 'email', 'number'])
-    .isRequired,
+  type: PropTypes.oneOf(['text', 'password', 'date', 'email', 'number']),
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
   readonly: PropTypes.bool,

@@ -1,8 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import Breadcrumbs from './Breadcrumbs';
-import { findByTestAttr } from '../../../utils/test-utilities';
 
 const defaultProps = {};
 
@@ -23,8 +29,16 @@ describe('<Breadcrumbs/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the Breadcrumbs Component without errors', () => {
+  it('renders the Breadcrumbs Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-breadcrumbs');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(Breadcrumbs, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

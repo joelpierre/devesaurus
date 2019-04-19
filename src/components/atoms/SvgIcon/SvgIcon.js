@@ -29,6 +29,7 @@ const SvgIcon = ({ name, description, fill, width, classes, height }) => {
 
   return (
     <span
+      data-test="component-svg-icon"
       aria-label={name}
       className={classNames([styles.icon, classes])}
       dangerouslySetInnerHTML={{ __html: svg() }}

@@ -1,7 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import BlogCard from './BlogCard';
 
@@ -24,8 +29,16 @@ describe('<BlogCard/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the BlogCard Component without errors', () => {
+  it('renders the BlogCard Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-blog-card');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(BlogCard, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

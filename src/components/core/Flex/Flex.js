@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import styles from './GridColumn.module.scss';
+import styles from './Flex.module.scss';
 
-const GridColumn = ({
+const Flex = ({
   children,
   type,
   classes,
@@ -37,13 +37,13 @@ const GridColumn = ({
   };
 
   return (
-    <Tag data-test="component-grid-column" className={classNames(mergeClasses)}>
+    <Tag data-test="component-flex" className={classNames(mergeClasses)}>
       {children}
     </Tag>
   );
 };
 
-GridColumn.defaultProps = {
+Flex.defaultProps = {
   classes: null,
   type: 'div',
   xs: false,
@@ -59,7 +59,7 @@ GridColumn.defaultProps = {
   colXl: null,
 };
 
-GridColumn.propTypes = {
+Flex.propTypes = {
   type: PropTypes.string,
   col: PropTypes.string,
   xs: PropTypes.bool,
@@ -79,4 +79,4 @@ GridColumn.propTypes = {
   ]).isRequired,
 };
 
-export default GridColumn;
+export default Flex;

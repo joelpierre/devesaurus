@@ -1,26 +1,26 @@
 import React from 'react';
-import GridContainer from '../../core/GridContainer/GridContainer';
-import GridRow from '../../core/GridRow/GridRow';
-import GridColumn from '../../core/GridColumn/GridColumn';
-import CoreSection from '../../core/CoreSection/CoreSection';
+import Container from '../../core/Container/Container';
+import Row from '../../core/Row/Row';
+import Flex from '../../core/Flex/Flex';
+import Section from '../../core/Section/Section';
 import Heading from '../../core/Heading/Heading';
 
 function CtaBanner({ module, pageTheme }) {
   return (
-    <CoreSection
+    <Section
       data-test="component-image-block"
       classes={`primary-main__section theme--${
         module.theme ? module.theme : pageTheme
       } cta-banner`}
     >
-      <GridContainer classes="container-fluid">
-        <GridRow classes="row">
-          <GridColumn classes="flex text-center">
+      <Container classes="container-fluid">
+        <Row classes="row">
+          <Flex>
             <Heading priority="2">CTA Banner</Heading>
-          </GridColumn>
-        </GridRow>
-      </GridContainer>
-    </CoreSection>
+          </Flex>
+        </Row>
+      </Container>
+    </Section>
   );
 }
 

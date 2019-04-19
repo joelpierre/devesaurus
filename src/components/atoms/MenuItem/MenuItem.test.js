@@ -1,8 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import MenuItem from './MenuItem';
-import { findByTestAttr } from '../../../utils/test-utilities';
 
 const defaultProps = {
   item: {
@@ -13,7 +19,7 @@ const defaultProps = {
 };
 
 /**
- * Factory function to create a ShallowWrapper fro the App component.
+ * Factory function to create a ShallowWrapper for the MenuItem component.
  * @param {object} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
@@ -29,8 +35,16 @@ describe('<MenuItem/>', () => {
     wrapper = setup();
   });
 
-  it('Should render MenuItem Component', () => {
+  it('renders the MenuItem Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-menu-item');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(MenuItem, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

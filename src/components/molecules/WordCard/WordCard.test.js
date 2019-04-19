@@ -48,4 +48,57 @@ describe('<WordCard/>', () => {
   it('should have correct props', () => {
     checkProps(WordCard, defaultProps);
   });
+
+  it('should call the sortTerms on mount', () => {
+    const spy = (wrapper.instance().sortTerms = jest.fn());
+    wrapper.instance().componentDidMount();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('should call the sortTerms on mount', () => {
+    const props = {
+      terms: [
+        {
+          name: 'category',
+          slug: 'slug',
+          taxonomy: 'word_category',
+        },
+        {
+          name: 'tag',
+          slug: 'slug',
+          taxonomy: 'word_tag',
+        },
+      ],
+    };
+    wrapper.setProps({ ...props });
+    wrapper.instance().sortTerms();
+    expect(wrapper.instance().categories[0].name).toBe(props.terms[0].name);
+    expect(wrapper.instance().tags[0].name).toBe(props.terms[1].name);
+  });
+
+  xit('should call the sortTerms on mount', () => {
+    const props = {
+      terms: [
+        {
+          name: 'category',
+          slug: 'slug',
+          taxonomy: 'word_category',
+        },
+        {
+          name: 'tag',
+          slug: 'slug',
+          taxonomy: 'word_tag',
+        },
+      ],
+    };
+    wrapper.instance().categories = [{ ...props.terms[0] }];
+    wrapper.instance().tags = [{ ...props.terms[1] }];
+    wrapper.instance().render();
+    const tag = findByTestAttr(wrapper, 'word-card-tag');
+    const category = findByTestAttr(wrapper, 'word-card-category');
+    wrapper.update();
+
+    expect(tag.length).toBe(1);
+    expect(category.length).toBe(1);
+  });
 });

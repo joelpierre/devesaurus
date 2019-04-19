@@ -1,11 +1,17 @@
 import React from 'react';
-import { shallow } from 'enzyme/build';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import Hamburger from './Hamburger';
-import { findByTestAttr } from '../../../utils/test-utilities';
 
 const defaultProps = {
-  company: 'test-company',
+  company: 'test',
 };
 
 /**
@@ -25,8 +31,16 @@ describe('<Hamburger/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the Hamburger Component without errors', () => {
+  it('renders the Hamburger Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-hamburger');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props (text)', () => {
+    checkProps(Hamburger, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

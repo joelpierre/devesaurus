@@ -1,19 +1,19 @@
 import React from 'react';
 import styles from './HeroSearch.module.scss';
-import GridContainer from '../../core/GridContainer/GridContainer';
-import CoreSection from '../../core/CoreSection/CoreSection';
-import GridRow from '../../core/GridRow/GridRow';
-import GridColumn from '../../core/GridColumn/GridColumn';
+import Container from '../../core/Container/Container';
+import Section from '../../core/Section/Section';
+import Row from '../../core/Row/Row';
+import Flex from '../../core/Flex/Flex';
 import InputField from '../../atoms/InputField/InputField';
 import Brand from '../../atoms/Brand/Brand';
 import FileUpload from '../../atoms/FileUpload/FileUpload';
 
 const HeroSearch = () => {
   return (
-    <CoreSection classes={styles['hero-search']}>
-      <GridContainer data-test="component-hero-search">
-        <GridRow>
-          <GridColumn colLg="8" classes="mx-auto">
+    <Section classes={styles['hero-search']}>
+      <Container data-test="component-hero-search">
+        <Row>
+          <Flex colLg="8" classes="mx-auto">
             <div className={styles['hero-search__wrapper']}>
               <Brand classes={styles['hero-search__brand']} />
               <InputField
@@ -22,10 +22,10 @@ const HeroSearch = () => {
                 placeholder="Enter a search term. e.g. HTML"
               />
             </div>
-          </GridColumn>
-        </GridRow>
-      </GridContainer>
-    </CoreSection>
+          </Flex>
+        </Row>
+      </Container>
+    </Section>
   );
 };
 

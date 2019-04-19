@@ -1,27 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CoreSection from '../../core/CoreSection/CoreSection';
-import GridContainer from '../../core/GridContainer/GridContainer';
-import GridRow from '../../core/GridRow/GridRow';
-import GridColumn from '../../core/GridColumn/GridColumn';
+import Section from '../../core/Section/Section';
+import Container from '../../core/Container/Container';
+import Row from '../../core/Row/Row';
+import Flex from '../../core/Flex/Flex';
 import Heading from '../../core/Heading/Heading';
 
 function ImageBlock({ module, pageTheme }) {
   return (
-    <CoreSection
+    <Section
       data-test="component-image-block"
       classes={`primary-main__section theme--${
         module.theme ? module.theme : pageTheme
       } image-block`}
     >
-      <GridContainer classes="container-fluid">
-        <GridRow classes="row">
-          <GridColumn classes="flex text-center">
+      <Container classes="container-fluid">
+        <Row classes="row">
+          <Flex classes="flex text-center">
             <Heading priority="2">Image Block</Heading>
-          </GridColumn>
-        </GridRow>
-      </GridContainer>
-    </CoreSection>
+          </Flex>
+        </Row>
+      </Container>
+    </Section>
   );
 }
 

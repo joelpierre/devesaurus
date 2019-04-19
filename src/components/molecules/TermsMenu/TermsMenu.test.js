@@ -1,7 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import TermsMenu from './TermsMenu';
 
@@ -24,8 +29,16 @@ describe('<TermsMenu/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the TermsMenu Component without errors', () => {
+  it('renders the TermsMenu Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-terms-menu');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(TermsMenu, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

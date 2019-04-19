@@ -1,31 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CoreSection from '../../core/CoreSection/CoreSection';
-import GridContainer from '../../core/GridContainer/GridContainer';
-import GridRow from '../../core/GridRow/GridRow';
-import GridColumn from '../../core/GridColumn/GridColumn';
+import Section from '../../core/Section/Section';
+import Container from '../../core/Container/Container';
+import Row from '../../core/Row/Row';
+import Flex from '../../core/Flex/Flex';
 
 const TextBlock = ({ module, pageTheme }) => {
   return (
-    <CoreSection
+    <Section
       data-test="component-text-block"
       classes={`primary-main__section theme--${
         module.theme ? module.theme : pageTheme
       } text-block`}
     >
-      <GridContainer>
-        <GridRow>
-          <GridColumn classes="flex">
+      <Container>
+        <Row>
+          <Flex classes="flex">
             <p className="text-block__content">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
               culpa illo ipsam magnam nulla optio pariatur qui quidem rem!
               Assumenda deleniti explicabo placeat rem. Dolores eos facere
               praesentium ullam unde!
             </p>
-          </GridColumn>
-        </GridRow>
-      </GridContainer>
-    </CoreSection>
+          </Flex>
+        </Row>
+      </Container>
+    </Section>
   );
 };
 

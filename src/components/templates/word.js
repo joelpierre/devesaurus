@@ -6,10 +6,10 @@ import * as wordActions from '../../store/actions/word.actions';
 import CoreLayout from '../../layouts/core';
 import sortWordObj from '../../helpers/sortWordObj';
 import Heading from '../core/Heading/Heading';
-import CoreSection from '../core/CoreSection/CoreSection';
-import GridContainer from '../core/GridContainer/GridContainer';
-import GridRow from '../core/GridRow/GridRow';
-import GridColumn from '../core/GridColumn/GridColumn';
+import Section from '../core/Section/Section';
+import Container from '../core/Container/Container';
+import Row from '../core/Row/Row';
+import Flex from '../core/Flex/Flex';
 
 export class UnconnectedWordTemplate extends PureComponent {
   componentDidMount() {
@@ -36,17 +36,17 @@ export class UnconnectedWordTemplate extends PureComponent {
     return (
       <CoreLayout data-test="component-word-template">
         {wordData && (
-          <CoreSection>
-            <GridContainer>
-              <GridRow>
-                <GridColumn classes="flex">
+          <Section>
+            <Container>
+              <Row>
+                <Flex classes="flex">
                   <Heading priority="1" classes="text-center mt-1">
                     {wordData.title}
                   </Heading>
-                </GridColumn>
-              </GridRow>
-            </GridContainer>
-          </CoreSection>
+                </Flex>
+              </Row>
+            </Container>
+          </Section>
         )}
       </CoreLayout>
     );

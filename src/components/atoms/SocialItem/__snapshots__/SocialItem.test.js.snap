@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SocialItem/> should match snapshot 1`] = `
+<Fragment>
+  <li
+    data-test="component-social-item"
+  >
+    <a
+      aria-label="test-name"
+      href="test-link"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <SvgIcon
+        classes={null}
+        description="An SVG Icon"
+        fill="#000000"
+        height="100%"
+        name="test-name"
+        width="100%"
+      />
+    </a>
+  </li>
+</Fragment>
+`;

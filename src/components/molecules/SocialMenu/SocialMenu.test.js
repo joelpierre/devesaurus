@@ -1,7 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import SocialMenu from './SocialMenu';
 
@@ -24,8 +29,16 @@ describe('<SocialMenu/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the SocialMenu Component without errors', () => {
+  it('renders the SocialMenu Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-social-menu');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(SocialMenu, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

@@ -1,7 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import SocialItem from './SocialItem';
 
@@ -27,8 +32,16 @@ describe('<SocialItem/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the SocialItem Component without errors', () => {
+  it('renders the SocialItem Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-social-item');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(SocialItem, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

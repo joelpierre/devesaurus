@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import * as styles from './Button.module.scss';
+import styles from './Button.module.scss';
 
 const Button = ({ text, behavior, theme, link, size, action }) => {
   let button;
-
   switch (behavior) {
     case 'router':
       button = (
         <Link
+          data-test="component-button"
           to={link}
           className={classNames([
             styles.btn,
@@ -26,6 +26,7 @@ const Button = ({ text, behavior, theme, link, size, action }) => {
     case 'anchor':
       button = (
         <a
+          data-test="component-button"
           href={link}
           className={classNames([
             styles.btn,
@@ -43,6 +44,7 @@ const Button = ({ text, behavior, theme, link, size, action }) => {
     case 'action':
       button = (
         <button
+          data-test="component-button"
           type="button"
           className={classNames([
             styles.btn,
@@ -53,21 +55,6 @@ const Button = ({ text, behavior, theme, link, size, action }) => {
         >
           {text}
         </button>
-      );
-      break;
-
-    default:
-      button = (
-        <Link
-          to={link}
-          className={classNames([
-            styles.btn,
-            styles[`btn--${size}`],
-            styles[`btn--${theme}`],
-          ])}
-        >
-          {text}
-        </Link>
       );
       break;
   }

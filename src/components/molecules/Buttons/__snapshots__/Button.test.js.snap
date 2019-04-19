@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button/> should match snapshot 1`] = `
+<Fragment>
+  <mockConstructor
+    className="btn btn--md btn--brand"
+    data-test="component-button"
+    to="#"
+  >
+    test
+  </mockConstructor>
+</Fragment>
+`;

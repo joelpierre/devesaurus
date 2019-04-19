@@ -80,30 +80,6 @@ const InputField = ({
         />
       );
       break;
-    default:
-      inputField = (
-        <input
-          data-test="component-input-field"
-          className={classNames({
-            [styles['input-field']]: true,
-            [styles['input-field--sm']]: sm,
-            [styles['input-field--md']]: md,
-            [styles['input-field--lg']]: lg,
-          })}
-          type="text"
-          name={name}
-          placeholder={placeholder}
-          readOnly={readonly}
-          disabled={disabled}
-          defaultValue={defaultValue}
-          aria-label={`Input for ${name}`}
-          hidden={hidden}
-          onChange={onChange}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          onClick={onClick}
-        />
-      );
   }
   return (
     <>

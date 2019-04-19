@@ -1,13 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import Label from './Label';
 
 const defaultProps = {
-  text: 'Label',
-  name: 'label',
+  text: 'test',
+  name: 'test',
 };
 
 /**
@@ -27,8 +32,16 @@ describe('<Label/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the Label Component without errors', () => {
+  it('renders the Label Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-label');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(Label, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

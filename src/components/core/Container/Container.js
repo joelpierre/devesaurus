@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import styles from './GridContainer.module.scss';
+import styles from './Container.module.scss';
 
-const GridContainer = ({ fluid, children }) => (
+const Container = ({ fluid, children }) => (
   <div
     data-test="component-grid-container"
     className={classNames({
@@ -15,11 +15,11 @@ const GridContainer = ({ fluid, children }) => (
   </div>
 );
 
-GridContainer.defaultProps = {
+Container.defaultProps = {
   fluid: false,
 };
 
-GridContainer.propTypes = {
+Container.propTypes = {
   fluid: PropTypes.bool,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
@@ -27,4 +27,4 @@ GridContainer.propTypes = {
   ]).isRequired,
 };
 
-export default GridContainer;
+export default Container;

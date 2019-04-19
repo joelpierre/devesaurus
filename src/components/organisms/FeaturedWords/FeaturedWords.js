@@ -4,10 +4,10 @@ import WordCard from '../../molecules/WordCard/WordCard';
 import styles from './FeaturedWords.module.scss';
 import { wordPropTypeShape } from '../../../utils/propTypeShapes';
 import sortWordObj from '../../../helpers/sortWordObj';
-import CoreSection from '../../core/CoreSection/CoreSection';
-import GridContainer from '../../core/GridContainer/GridContainer';
-import GridRow from '../../core/GridRow/GridRow';
-import GridColumn from '../../core/GridColumn/GridColumn';
+import Section from '../../core/Section/Section';
+import Container from '../../core/Container/Container';
+import Row from '../../core/Row/Row';
+import Flex from '../../core/Flex/Flex';
 import Heading from '../../core/Heading/Heading';
 
 class FeaturedWords extends PureComponent {
@@ -33,24 +33,24 @@ class FeaturedWords extends PureComponent {
     const { words, contrast } = this.props;
 
     return (
-      <CoreSection
+      <Section
         data-test="component-featured-words"
         classes={`${styles['featured-words']}`}
         contrast={contrast}
       >
-        <GridContainer>
-          <GridRow>
-            <GridColumn>
+        <Container>
+          <Row>
+            <Flex>
               <Heading priority="2" classes={styles['featured-words__heading']}>
                 Featured Words
               </Heading>
-            </GridColumn>
-          </GridRow>
+            </Flex>
+          </Row>
 
-          <GridRow>
+          <Row>
             {words.map((word, index) => {
               return (
-                <GridColumn
+                <Flex
                   data-test="featured-words-word"
                   key={index}
                   colXs="2"
@@ -64,12 +64,12 @@ class FeaturedWords extends PureComponent {
                     classes={styles['featured-words__word-card']}
                     contrast={!contrast}
                   />
-                </GridColumn>
+                </Flex>
               );
             })}
-          </GridRow>
-        </GridContainer>
-      </CoreSection>
+          </Row>
+        </Container>
+      </Section>
     );
   }
 }

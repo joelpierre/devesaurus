@@ -1,0 +1,336 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputGroup/> should match snapshot 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      defaultValue=""
+      disabled={false}
+      hidden={null}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      onBlur={null}
+      onChange={null}
+      onClick={null}
+      onFocus={null}
+      placeholder={null}
+      readOnly={false}
+      readonly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`<InputGroup/> should match snapshot with append button 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      defaultValue=""
+      disabled={false}
+      hidden={null}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      onBlur={null}
+      onChange={null}
+      onClick={null}
+      onFocus={null}
+      placeholder={null}
+      readOnly={false}
+      readonly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+  <div
+    className="input-group__append"
+  >
+    <div
+      className="input-group__button-wrapper"
+      data-test="input-group-button"
+    >
+      <Button
+        action={null}
+        behavior="action"
+        link="#"
+        size="md"
+        text="test"
+        theme="brand"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<InputGroup/> should match snapshot with append icon 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      defaultValue=""
+      disabled={false}
+      hidden={null}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      onBlur={null}
+      onChange={null}
+      onClick={null}
+      onFocus={null}
+      placeholder={null}
+      readOnly={false}
+      readonly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+  <div
+    className="input-group__append"
+  >
+    <div
+      className="input-group__inner"
+    >
+      <div
+        className="input-group__icon-wrapper"
+        data-test="input-group-icon"
+      >
+        <SvgIcon
+          classes={null}
+          description="An SVG Icon"
+          fill="#000000"
+          height="100%"
+          name="complete"
+          width="100%"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<InputGroup/> should match snapshot with append text 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      defaultValue=""
+      disabled={false}
+      hidden={null}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      onBlur={null}
+      onChange={null}
+      onClick={null}
+      onFocus={null}
+      placeholder={null}
+      readOnly={false}
+      readonly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+  <div
+    className="input-group__append"
+  >
+    <div
+      className="input-group__inner"
+    >
+      <div
+        className="input-group__text"
+        data-test="input-group-text"
+      >
+        test
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<InputGroup/> should match snapshot with prepend button 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__prepend"
+  >
+    <div
+      className="input-group__button-wrapper"
+      data-test="input-group-button"
+    >
+      <Button
+        action={null}
+        behavior="action"
+        link="#"
+        size="md"
+        text="test"
+        theme="brand"
+      />
+    </div>
+  </div>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      defaultValue=""
+      disabled={false}
+      hidden={null}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      onBlur={null}
+      onChange={null}
+      onClick={null}
+      onFocus={null}
+      placeholder={null}
+      readOnly={false}
+      readonly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`<InputGroup/> should match snapshot with prepend icon 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__prepend"
+  >
+    <div
+      className="input-group__inner"
+    >
+      <div
+        className="input-group__icon-wrapper"
+        data-test="input-group-icon"
+      >
+        <SvgIcon
+          classes={null}
+          description="An SVG Icon"
+          fill="#000000"
+          height="100%"
+          name="complete"
+          width="100%"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      defaultValue=""
+      disabled={false}
+      hidden={null}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      onBlur={null}
+      onChange={null}
+      onClick={null}
+      onFocus={null}
+      placeholder={null}
+      readOnly={false}
+      readonly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`<InputGroup/> should match snapshot with prepend text 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__prepend"
+  >
+    <div
+      className="input-group__inner"
+    >
+      <div
+        className="input-group__text"
+        data-test="input-group-text"
+      >
+        test
+      </div>
+    </div>
+  </div>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      defaultValue=""
+      disabled={false}
+      hidden={null}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      onBlur={null}
+      onChange={null}
+      onClick={null}
+      onFocus={null}
+      placeholder={null}
+      readOnly={false}
+      readonly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+</div>
+`;

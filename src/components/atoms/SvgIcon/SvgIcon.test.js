@@ -1,14 +1,21 @@
 import React from 'react';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import SvgIcon from './SvgIcon';
-import { shallow } from 'enzyme';
 
 const defaultProps = {
   name: 'logo',
 };
 
 /**
- * Factory function to create a ShallowWrapper fro the App component.
+ * Factory function to create a ShallowWrapper for the SvgIcon component.
  * @param {object} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
@@ -24,7 +31,16 @@ describe('<SvgIcon/>', () => {
     wrapper = setup();
   });
 
-  it('Should render SvgIcon Component', () => {
-    // expect(wrapper)
+  it('renders the SvgIcon Component without errors', () => {
+    const component = findByTestAttr(wrapper, 'component-svg-icon');
+    expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(SvgIcon, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

@@ -1,11 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import InputField from './InputField';
-import { findByTestAttr } from '../../../utils/test-utilities';
 
 const defaultProps = {
-  name: 'test-name',
+  name: 'test',
   type: 'text',
 };
 
@@ -26,8 +32,24 @@ describe('<InputField/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the InputField Component without errors', () => {
+  it('renders the InputField Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-input-field');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(InputField, defaultProps);
+  });
+
+  it('should render with correct input', () => {
+    wrapper = setup({
+      type: 'number',
+      name: 'number',
+    });
+    expect(wrapper).toBeTruthy();
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

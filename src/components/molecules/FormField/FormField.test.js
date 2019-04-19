@@ -1,12 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import FormField from './FormField';
-import { findByTestAttr } from '../../../utils/test-utilities';
 
 const defaultProps = {
-  name: 'form-name',
-  type: 'text',
+  children: 'form-name',
 };
 
 /**
@@ -26,8 +31,16 @@ describe('<FormField/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the FormField Component without errors', () => {
+  it('renders the FormField Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-form-field');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(FormField, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectField/> should match snapshot 1`] = `
+<Fragment>
+  <div
+    className="select-field"
+    data-test="component-select-field"
+  >
+    <select
+      className="select-field__select"
+      name="test-name"
+      placeholder={null}
+    >
+      <option
+        key="0"
+        value="test-option-value"
+      >
+        Test Option Name
+      </option>
+    </select>
+  </div>
+</Fragment>
+`;

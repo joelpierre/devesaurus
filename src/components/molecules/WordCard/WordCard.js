@@ -5,13 +5,12 @@ import * as styles from './WordCard.module.scss';
 import { wordPropTypeShape } from '../../../utils/propTypeShapes';
 import Button from '../Buttons/Button';
 
-let categories;
-let tags;
-
 class WordCard extends PureComponent {
   constructor() {
     super();
     this.sortTerms = this.sortTerms.bind(this);
+    this.categories = null;
+    this.tags = null;
   }
 
   componentDidMount() {
@@ -21,20 +20,27 @@ class WordCard extends PureComponent {
   sortTerms() {
     const { terms } = this.props;
 
+    // console.log(terms);
+
     if (terms) {
-      categories = terms.map(term => {
+      this.categories = terms.filter(term => {
         return term.taxonomy === 'word_category';
       });
 
-      tags = terms.map(term => {
+      this.tags = terms.filter(term => {
         return term.taxonomy === 'word_tag';
       });
     }
+
+    // console.log(this.categories);
+    // console.log(this.tags);
   }
 
   render() {
     const { title, slug, acf, classes, contrast } = this.props;
-
+    // console.log(acf);
+    // console.log(this.categories);
+    // console.log(this.tags);
     return (
       <article
         className={classNames([
@@ -54,16 +60,16 @@ class WordCard extends PureComponent {
         </header>
 
         <p>
-          {categories &&
-            categories.map(category => {
-              return <span>{category}</span>;
+          {this.categories &&
+            this.categories.map(category => {
+              <span data-test="word-card-category">{category}</span>;
             })}
         </p>
 
         <p>
-          {tags &&
-            tags.map(tag => {
-              return <span>{tag}</span>;
+          {this.tags &&
+            this.tags.map(tag => {
+              <span data-test="word-card-tag">{tag}</span>;
             })}
         </p>
 

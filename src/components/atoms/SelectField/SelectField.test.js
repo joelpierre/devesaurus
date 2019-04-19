@@ -1,8 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import SelectField from './SelectField';
-import { findByTestAttr } from '../../../utils/test-utilities';
 
 const defaultProps = {
   name: 'test-name',
@@ -31,8 +37,16 @@ describe('<SelectField/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the SelectField Component without errors', () => {
+  it('renders the SelectField Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-select-field');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(SelectField, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

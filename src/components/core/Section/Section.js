@@ -1,14 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import styles from './CoreSection.module.scss';
+import styles from './Section.module.scss';
 
-const CoreSection = ({ children, classes, type, contrast }) => {
+const Section = ({ children, classes, type, contrast }) => {
   const Tag = `${type}`;
 
   return (
     <Tag
-      data-test="component-core-section"
+      data-test="component-section"
       className={classNames({
         [styles.section]: true,
         [classes]: classes,
@@ -21,13 +21,13 @@ const CoreSection = ({ children, classes, type, contrast }) => {
   );
 };
 
-CoreSection.defaultProps = {
+Section.defaultProps = {
   classes: null,
   type: 'section',
   contrast: false, // false = white, true = grey
 };
 
-CoreSection.propTypes = {
+Section.propTypes = {
   classes: PropTypes.string,
   type: PropTypes.string,
   contrast: PropTypes.bool,
@@ -37,4 +37,4 @@ CoreSection.propTypes = {
   ]).isRequired,
 };
 
-export default CoreSection;
+export default Section;

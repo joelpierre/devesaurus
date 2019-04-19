@@ -1,120 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import styles from './FormField.module.scss';
 
-import InputField from '../../atoms/InputField/InputField';
-import FileUpload from '../../atoms/FileUpload/FileUpload';
-import SelectField from '../../atoms/SelectField/SelectField';
-
-const FormField = ({
-  name,
-  type,
-  placeholder,
-  disabled,
-  readonly,
-  options,
-  min,
-  max,
-}) => {
-  let formField;
-
-  switch (type) {
-    case 'text':
-    case 'email':
-    case 'password':
-    case 'date':
-      formField = (
-        <InputField
-          data-test="component-form-field"
-          className="form-control"
-          type={type}
-          name={name}
-          placeholder={placeholder}
-          readOnly={readonly}
-          disabled={disabled}
-        />
-      );
-      break;
-    case 'number':
-      formField = (
-        <InputField
-          data-test="component-form-field"
-          className="form-control"
-          type={type}
-          name={name}
-          minLength={min}
-          maxLength={max}
-          placeholder={placeholder}
-          readOnly={readonly}
-          disabled={disabled}
-        />
-      );
-      break;
-    case 'select':
-      formField = (
-        <SelectField
-          data-test="component-form-field"
-          placeholder={placeholder}
-          name={name}
-          options={options}
-        />
-      );
-      break;
-    case 'file':
-      formField = (
-        <FileUpload
-          data-test="component-form-field"
-          placeholder={placeholder}
-          name={name}
-        />
-      );
-      break;
-    default:
-      formField = (
-        <InputField
-          data-test="component-form-field"
-          className="form-control"
-          type="text"
-          name={name}
-          placeholder={placeholder}
-          readOnly={readonly}
-          disabled={disabled}
-        />
-      );
-  }
-  return <>{formField}</>;
+const FormField = ({ classes, children }) => {
+  return (
+    <div
+      data-test="component-form-field"
+      className={classNames([styles['form-field'], classes])}
+    >
+      {children}
+    </div>
+  );
 };
 
 FormField.defaultProps = {
-  placeholder: null,
-  disabled: false,
-  readonly: false,
-  options: null,
-  min: null,
-  max: null,
+  classes: null,
 };
 
 FormField.propTypes = {
-  name: PropTypes.string.isRequired,
-  type: PropTypes.oneOf([
-    'text',
-    'file',
-    'select',
-    'password',
-    'date',
-    'email',
-    'number',
+  classes: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
   ]).isRequired,
-  placeholder: PropTypes.string,
-  disabled: PropTypes.bool,
-  readonly: PropTypes.bool,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      value: PropTypes.number.isRequired,
-    })
-  ),
-  min: PropTypes.string,
-  max: PropTypes.number,
 };
 
 export default FormField;
