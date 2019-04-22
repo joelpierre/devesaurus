@@ -5,7 +5,7 @@ import styles from './Brand.module.scss';
 import SvgIcon from '../SvgIcon/SvgIcon';
 import SiteInfo from '../SiteInfo/SiteInfo';
 
-const Brand = ({ classes, heading, slogan, type }) => {
+const Brand = ({ classes, type }) => {
   let logo;
 
   /**
@@ -51,15 +51,11 @@ const Brand = ({ classes, heading, slogan, type }) => {
 
 Brand.defaultProps = {
   classes: null,
-  heading: null,
-  slogan: null,
   type: 'logo',
 };
 
 Brand.propTypes = {
   classes: PropTypes.string,
-  heading: PropTypes.string,
-  slogan: PropTypes.string,
   type: PropTypes.oneOf([
     'logo',
     'logo-inv',

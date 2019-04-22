@@ -4,15 +4,17 @@ exports[`<PostTemplate/> should match snapshot 1`] = `
 <CoreLayout
   classes={null}
   data-test="component-post-template"
-  description="Default description"
+  description=""
   onGetSiteMeta={[Function]}
   onGetSiteOptions={[Function]}
-  title="Default Title"
+  title="test"
 >
   <Heading
     classes="text-center"
     priority="1"
-  />
+  >
+    test
+  </Heading>
   <AcfComponents
     component={
       Object {

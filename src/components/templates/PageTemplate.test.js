@@ -21,6 +21,9 @@ const defaultProps = {
   },
   pageContext: {
     title: 'test',
+    yoast_meta: {
+      yoast_wpseo_metadesc: '',
+    },
   },
 };
 

@@ -4,10 +4,10 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
 <CoreLayout
   classes={null}
   data-test="component-word-template"
-  description="Default description"
+  description=""
   onGetSiteMeta={[Function]}
   onGetSiteOptions={[Function]}
-  title="Default Title"
+  title="test"
 >
   <Section
     classes={null}
@@ -40,7 +40,9 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
           <Heading
             classes="text-center mt-1"
             priority="1"
-          />
+          >
+            test
+          </Heading>
         </Flex>
       </Row>
     </Container>

@@ -8,6 +8,7 @@ import {
 } from '../../../utils/test-utilities';
 import toJson from 'enzyme-to-json';
 import SvgIcon from '../SvgIcon/SvgIcon';
+import SiteInfo from '../SiteInfo/SiteInfo';
 
 const defaultProps = {};
 
@@ -42,16 +43,8 @@ describe('<Brand/>', () => {
     matchSnapshot(wrapper);
   });
 
-  it('should pass props and render them', () => {
-    wrapper = setup({
-      classes: 'wrapper__brand',
-      heading: 'Joel Test Heading',
-      slogan: 'Joel Test Slogan',
-    });
-
-    expect(wrapper.hasClass('wrapper__brand')).toEqual(true);
-    expect(wrapper.find('h1').text()).toEqual('Joel Test Heading');
-    expect(wrapper.find('p').text()).toEqual('Joel Test Slogan');
+  it('should render SiteInfo component', () => {
+    expect(wrapper.find(SiteInfo)).toBeTruthy();
   });
 
   it('should render the correct SVG', () => {

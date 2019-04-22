@@ -10,8 +10,6 @@ exports[`<PrimaryHeader/> should match snapshot 1`] = `
     >
       <Brand
         classes={null}
-        heading={null}
-        slogan={null}
         type="logo"
       />
     </mockConstructor>

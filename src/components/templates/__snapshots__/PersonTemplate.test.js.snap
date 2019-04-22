@@ -4,10 +4,10 @@ exports[`<PersonTemplate/> should match snapshot 1`] = `
 <CoreLayout
   classes={null}
   data-test="component-person-template"
-  description="Default description"
+  description=""
   onGetSiteMeta={[Function]}
   onGetSiteOptions={[Function]}
-  title="Default Title"
+  title="test"
 >
   <AcfComponents
     component={

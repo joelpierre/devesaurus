@@ -2,6 +2,7 @@
 
 exports[`<SiteInfo/> should match snapshot 1`] = `
 <mockConstructor
+  data-test="component-site-info-query"
   render={[Function]}
 />
 `;

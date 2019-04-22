@@ -35,8 +35,6 @@ exports[`<HeroSearch/> should match snapshot 1`] = `
         >
           <Brand
             classes="hero-search__brand"
-            heading={null}
-            slogan={null}
             type="logo"
           />
           <InputField

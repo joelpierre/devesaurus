@@ -16,8 +16,8 @@ exports[`<Brand/> should match snapshot 1`] = `
       name="logo"
       width="100%"
     />
-    <div
-      className="brand__company"
+    <SiteInfo
+      classes={null}
     />
   </div>
 </div>
