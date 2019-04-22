@@ -13,7 +13,7 @@ export class Index extends PureComponent {
 
   render() {
     return (
-      <BasicLayout title="Devesaurus Home" data-test="component-index">
+      <BasicLayout title="Devesaurus Home" data-test="page-index">
         <HeroSearch title="Devesaurus" />
         <FeaturedWords words={mockWords} />
       </BasicLayout>

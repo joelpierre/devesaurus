@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import PureIndex, { Index } from './index';
+import acfComponents from './acfComponents';
 import {
   checkProps,
   findByTestAttr,
@@ -10,34 +10,40 @@ import {
 } from '../utils/test-utilities';
 
 const defaultProps = {
-  onGetSiteMeta: () => {},
-  onGetSiteOptions: () => {},
+  component: {
+    acf_fc_layout: 'text_block',
+  },
+  pageTheme: 'brand',
 };
 
 /**
- * Factory function to create a ShallowWrapper for the Index component.
+ * Factory function to create a ShallowWrapper for the acfComponents component.
  * @param {object} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<Index {...setupProps} />);
+  return shallow(<acfComponents {...setupProps} />);
 };
 
-describe('<Index/>', () => {
+describe('<acfComponents/>', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = setup();
   });
 
-  it('renders the Index Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'page-index');
+  xit('renders the acfComponents Component without errors', () => {
+    const component = findByTestAttr(
+      wrapper,
+      `hoc-acf-${defaultProps.component.acf_fc_layout}`
+    );
+
     expect(component.length).toBe(1);
   });
 
   it('should render with correct props', () => {
-    checkProps(Index, defaultProps);
+    checkProps(acfComponents, defaultProps);
   });
 
   it('should match snapshot', () => {

@@ -1,4 +1,4 @@
-const sortWordObj = (word) => {
+export const sortWordObj = word => {
   if (word) {
     delete word.author_id;
     delete word.author;
@@ -14,5 +14,3 @@ const sortWordObj = (word) => {
 
   return false;
 };
-
-export default sortWordObj;
