@@ -5,12 +5,13 @@ import classNames from 'classnames';
 import styles from './Layout.module.scss';
 
 import SEO from '../utils/seo';
-import { getSiteMeta } from '../store/actions';
+import { getSiteMeta, getSiteOptions } from '../store/actions';
 
 export class BasicLayout extends PureComponent {
   componentDidMount() {
-    const { onGetSiteMeta } = this.props;
+    const { onGetSiteMeta, onGetSiteOptions } = this.props;
     onGetSiteMeta();
+    onGetSiteOptions();
   }
 
   render() {
@@ -20,8 +21,8 @@ export class BasicLayout extends PureComponent {
       <>
         <SEO title={title} description={description} />
         <main
-          data-test="index-main"
-          className={classNames([styles['primary-main'], ...classes])}
+          data-test="basic-layout-main"
+          className={classNames([styles['primary-main'], classes])}
         >
           {children}
         </main>
@@ -45,6 +46,7 @@ BasicLayout.propTypes = {
     PropTypes.node,
   ]).isRequired,
   onGetSiteMeta: PropTypes.func.isRequired,
+  onGetSiteOptions: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ core: { title, description } }) => ({
@@ -54,5 +56,5 @@ const mapStateToProps = ({ core: { title, description } }) => ({
 
 export default connect(
   mapStateToProps,
-  { onGetSiteMeta: getSiteMeta }
+  { onGetSiteMeta: getSiteMeta, onGetSiteOptions: getSiteOptions }
 )(BasicLayout);

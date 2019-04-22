@@ -43,19 +43,4 @@ describe('<Index/>', () => {
   it('should match snapshot', () => {
     matchSnapshot(wrapper);
   });
-
-  it('should get siteMeta and siteOptions on componentDidMount', () => {
-    wrapper = setup({
-      onGetSiteMeta: jest.fn(),
-      onGetSiteOptions: jest.fn(),
-    });
-
-    const spy1 = wrapper.instance().props.onGetSiteMeta;
-    const spy2 = wrapper.instance().props.onGetSiteOptions;
-
-    wrapper.instance().componentDidMount();
-
-    expect(spy1).toHaveBeenCalled();
-    expect(spy2).toHaveBeenCalled();
-  });
 });

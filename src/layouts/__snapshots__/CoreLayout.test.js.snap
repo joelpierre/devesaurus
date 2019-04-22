@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CoreLayout/> should match snapshot 1`] = `
+<Fragment>
+  <SEO
+    description="Default description"
+    keywords={Array []}
+    lang="en"
+    meta={Array []}
+    title="Default Title"
+  />
+  <PrimaryHeader />
+  <main
+    className="primary-main"
+    data-test="core-layout-main"
+  >
+    Hello
+  </main>
+  <PrimaryFooter
+    company="Replace Company Name"
+  />
+</Fragment>
+`;

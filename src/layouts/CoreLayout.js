@@ -11,8 +11,9 @@ import styles from './Layout.module.scss';
 
 export class CoreLayout extends PureComponent {
   componentDidMount() {
-    const { onGetSiteMeta } = this.props;
+    const { onGetSiteMeta, onGetSiteOptions } = this.props;
     onGetSiteMeta();
+    onGetSiteOptions();
   }
 
   render() {
@@ -23,8 +24,8 @@ export class CoreLayout extends PureComponent {
         <SEO title={title} description={description} />
         <PrimaryHeader />
         <main
-          data-test="index-main"
-          className={classNames([styles['primary-main'], ...classes])}
+          data-test="core-layout-main"
+          className={classNames([styles['primary-main'], classes])}
         >
           {children}
         </main>
