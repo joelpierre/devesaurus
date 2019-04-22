@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PrimaryFooter/> should match snapshot 1`] = `
+<footer
+  data-test="component-primary-footer"
+>
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="flex"
+      >
+        <h6>
+          © 
+          Replace Company Name 2019 | Built by: Joel Pierre-Powell
+        </h6>
+      </div>
+    </div>
+  </div>
+</footer>
+`;

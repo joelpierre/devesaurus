@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PrimaryHeader/> should match snapshot 1`] = `
+<header
+  data-test="component-primary-header"
+>
+  <div>
+    <mockConstructor
+      to="/"
+    >
+      <Brand
+        classes={null}
+        heading={null}
+        slogan={null}
+        type="logo"
+      />
+    </mockConstructor>
+    <PrimaryMenu
+      classes={null}
+    />
+  </div>
+</header>
+`;

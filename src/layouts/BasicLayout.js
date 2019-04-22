@@ -35,6 +35,8 @@ BasicLayout.defaultProps = {
   title: 'Default Title',
   description: 'Default description',
   classes: null,
+  onGetSiteMeta: () => {},
+  onGetSiteOptions: () => {},
 };
 
 BasicLayout.propTypes = {
@@ -45,8 +47,8 @@ BasicLayout.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-  onGetSiteMeta: PropTypes.func.isRequired,
-  onGetSiteOptions: PropTypes.func.isRequired,
+  onGetSiteMeta: PropTypes.func,
+  onGetSiteOptions: PropTypes.func,
 };
 
 const mapStateToProps = ({ core: { title, description } }) => ({
@@ -56,5 +58,8 @@ const mapStateToProps = ({ core: { title, description } }) => ({
 
 export default connect(
   mapStateToProps,
-  { onGetSiteMeta: getSiteMeta, onGetSiteOptions: getSiteOptions }
+  {
+    onGetSiteMeta: getSiteMeta,
+    onGetSiteOptions: getSiteOptions,
+  }
 )(BasicLayout);

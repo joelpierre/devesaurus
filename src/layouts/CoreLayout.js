@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import PrimaryHeader from '../components/organisms/PrimaryHeader/PrimaryHeader';
 import PrimaryFooter from '../components/organisms/PrimaryFooter/PrimaryFooter';
 import SEO from '../utils/seo';
-import { getSiteMeta } from '../store/actions';
+import { getSiteMeta, getSiteOptions } from '../store/actions';
 import styles from './Layout.module.scss';
 
 export class CoreLayout extends PureComponent {
@@ -39,6 +39,8 @@ CoreLayout.defaultProps = {
   title: 'Default Title',
   description: 'Default description',
   classes: null,
+  onGetSiteMeta: () => {},
+  onGetSiteOptions: () => {},
 };
 
 CoreLayout.propTypes = {
@@ -49,7 +51,8 @@ CoreLayout.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-  onGetSiteMeta: PropTypes.func.isRequired,
+  onGetSiteMeta: PropTypes.func,
+  onGetSiteOptions: PropTypes.func,
 };
 
 const mapStateToProps = ({ core: { title, description } }) => ({
@@ -59,5 +62,8 @@ const mapStateToProps = ({ core: { title, description } }) => ({
 
 export default connect(
   mapStateToProps,
-  { onGetSiteMeta: getSiteMeta }
+  {
+    onGetSiteMeta: getSiteMeta,
+    onGetSiteOptions: getSiteOptions,
+  }
 )(CoreLayout);

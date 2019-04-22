@@ -1,8 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import FormBase from './FormBase';
-import { findByTestAttr } from '../../../utils/test-utilities';
 
 const defaultProps = {};
 
@@ -23,8 +29,16 @@ describe('<FormBase/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the FormBase Component without errors', () => {
+  it('renders the FormBase Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-form-base');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(FormBase, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

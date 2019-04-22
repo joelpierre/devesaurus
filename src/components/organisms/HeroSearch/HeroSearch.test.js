@@ -1,7 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import HeroSearch from './HeroSearch';
 
@@ -24,8 +29,16 @@ describe('<HeroSearch/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the HeroSearch Component without errors', () => {
+  it('renders the HeroSearch Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-hero-search');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(HeroSearch, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

@@ -1,0 +1,312 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeaturedWords/> should match snapshot 1`] = `
+<Section
+  classes="featured-words"
+  contrast={true}
+  data-test="component-featured-words"
+  type="section"
+>
+  <Container
+    fluid={false}
+  >
+    <Row
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes={null}
+        col={null}
+        colLg={null}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <Heading
+          classes="featured-words__heading"
+          priority="2"
+        >
+          Featured Words
+        </Heading>
+      </Flex>
+    </Row>
+    <Row
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes={null}
+        col={null}
+        colLg="4"
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs="2"
+        data-test="featured-words-word"
+        key="0"
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <WordCard
+          acf={
+            Object {
+              "definition": "<p>The art or skill of combining text and pictures in advertisements, magazines, or books.</p>
+",
+              "examples": false,
+              "origin": Object {
+                "label": "United Kingdom",
+                "value": "GB",
+              },
+              "part_of_speech": "noun",
+              "pronunciation": "graphic-de-sign",
+              "syllables": Object {
+                "count": "4",
+                "list": Array [
+                  Object {
+                    "item": "gra",
+                  },
+                  Object {
+                    "item": "phic",
+                  },
+                  Object {
+                    "item": "de",
+                  },
+                  Object {
+                    "item": "sign",
+                  },
+                ],
+              },
+              "synonyms": Array [
+                Object {
+                  "post_name": "web-development",
+                  "post_status": "publish",
+                  "post_title": "Web Development",
+                },
+              ],
+            }
+          }
+          classes="featured-words__word-card"
+          contrast={false}
+          slug="graphic-design"
+          terms={
+            Array [
+              Object {
+                "name": "Design",
+                "slug": "design",
+                "taxonomy": "word_tag",
+              },
+              Object {
+                "name": "Graphic Design",
+                "slug": "graphic-design",
+                "taxonomy": "word_category",
+              },
+            ]
+          }
+          title="Graphic Design"
+        />
+      </Flex>
+      <Flex
+        classes={null}
+        col={null}
+        colLg="4"
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs="2"
+        data-test="featured-words-word"
+        key="1"
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <WordCard
+          acf={
+            Object {
+              "definition": "<p>Web development is the work involved in developing a web site for the Internet (World Wide Web) or an intranet (a private network). Among web professionals, \\"web development\\" usually refers to the main non-design aspects of building web sites: writing markup and coding</p>
+",
+              "examples": Array [
+                Object {
+                  "code": "<p><code></p>
+<header>
+test<br />
+</header>
+<p></code></p>
+",
+                  "codepen_url": "",
+                  "type": "code-block",
+                },
+              ],
+              "origin": Object {
+                "label": "United Kingdom",
+                "value": "GB",
+              },
+              "part_of_speech": "noun",
+              "pronunciation": "web~develop~ment",
+              "syllables": Object {
+                "count": "5",
+                "list": Array [
+                  Object {
+                    "item": "web",
+                  },
+                  Object {
+                    "item": "de",
+                  },
+                  Object {
+                    "item": "ve",
+                  },
+                  Object {
+                    "item": "lop",
+                  },
+                  Object {
+                    "item": "ment",
+                  },
+                ],
+              },
+              "synonyms": Array [
+                Object {
+                  "post_name": "graphic-design",
+                  "post_status": "publish",
+                  "post_title": "Graphic Design",
+                },
+              ],
+            }
+          }
+          classes="featured-words__word-card"
+          contrast={false}
+          slug="web-development"
+          terms={
+            Array [
+              Object {
+                "name": "CSS",
+                "slug": "css",
+                "taxonomy": "word_tag",
+              },
+              Object {
+                "name": "HTML5",
+                "slug": "html5",
+                "taxonomy": "word_tag",
+              },
+              Object {
+                "name": "Web Development",
+                "slug": "web-development",
+                "taxonomy": "word_category",
+              },
+            ]
+          }
+          title="Web Development"
+        />
+      </Flex>
+      <Flex
+        classes={null}
+        col={null}
+        colLg="4"
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs="2"
+        data-test="featured-words-word"
+        key="2"
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <WordCard
+          acf={
+            Object {
+              "definition": "<p>Web development is the work involved in developing a web site for the Internet (World Wide Web) or an intranet (a private network). Among web professionals, \\"web development\\" usually refers to the main non-design aspects of building web sites: writing markup and coding</p>
+",
+              "examples": Array [
+                Object {
+                  "code": "<p><code></p>
+<header>
+test<br />
+</header>
+<p></code></p>
+",
+                  "codepen_url": "",
+                  "type": "code-block",
+                },
+              ],
+              "origin": Object {
+                "label": "United Kingdom",
+                "value": "GB",
+              },
+              "part_of_speech": "noun",
+              "pronunciation": "web~develop~ment",
+              "syllables": Object {
+                "count": "5",
+                "list": Array [
+                  Object {
+                    "item": "web",
+                  },
+                  Object {
+                    "item": "de",
+                  },
+                  Object {
+                    "item": "ve",
+                  },
+                  Object {
+                    "item": "lop",
+                  },
+                  Object {
+                    "item": "ment",
+                  },
+                ],
+              },
+              "synonyms": Array [
+                Object {
+                  "post_name": "graphic-design",
+                  "post_status": "publish",
+                  "post_title": "Graphic Design",
+                },
+              ],
+            }
+          }
+          classes="featured-words__word-card"
+          contrast={false}
+          slug="web-development"
+          terms={
+            Array [
+              Object {
+                "name": "CSS",
+                "slug": "css",
+                "taxonomy": "word_tag",
+              },
+              Object {
+                "name": "HTML5",
+                "slug": "html5",
+                "taxonomy": "word_tag",
+              },
+              Object {
+                "name": "Web Development",
+                "slug": "web-development",
+                "taxonomy": "word_category",
+              },
+            ]
+          }
+          title="Web Development 2"
+        />
+      </Flex>
+    </Row>
+  </Container>
+</Section>
+`;

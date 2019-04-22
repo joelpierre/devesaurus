@@ -7,6 +7,14 @@ import { checkProps, matchSnapshot } from '../../utils/test-utilities';
 const defaultProps = {
   onGetWord: jest.fn(),
   clearWordData: jest.fn(),
+  wordData: {
+    acf: {
+      components: [{ acf_fc_layout: 'WordPressAcf_Text_Block' }],
+    },
+  },
+  pageContext: {
+    title: 'test',
+  },
 };
 
 /**

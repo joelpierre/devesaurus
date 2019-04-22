@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CtaBanner/> should match snapshot 1`] = `
+<Section
+  classes="primary-main__section theme--brand cta-banner"
+  contrast={false}
+  data-test="component-cta-banner"
+  type="section"
+>
+  <Container
+    classes="container-fluid"
+    fluid={false}
+  >
+    <Row
+      classes="row"
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes={null}
+        col={null}
+        colLg={null}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <Heading
+          classes={null}
+          priority="2"
+        >
+          CTA Banner
+        </Heading>
+      </Flex>
+    </Row>
+  </Container>
+</Section>
+`;

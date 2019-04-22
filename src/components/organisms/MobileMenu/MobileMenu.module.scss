@@ -1,0 +1,8 @@
+@import "~sass/core";
+
+.mobile-menu {
+  $root: &;
+
+  position: relative;
+  width: 100%;
+}

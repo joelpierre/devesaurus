@@ -1,7 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import InlineQuote from './InlineQuote';
 
@@ -27,8 +32,16 @@ describe('<InlineQuote/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the InlineQuote Component without errors', () => {
+  it('renders the InlineQuote Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-inline-quote');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(InlineQuote, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

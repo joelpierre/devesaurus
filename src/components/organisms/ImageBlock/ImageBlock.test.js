@@ -1,7 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import ImageBlock from './ImageBlock';
 
@@ -27,8 +32,16 @@ describe('<ImageBlock/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the ImageBlock Component without errors', () => {
+  it('renders the ImageBlock Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-image-block');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(ImageBlock, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

@@ -1,0 +1,8 @@
+@import "~sass/core";
+
+.cta-banner {
+  $root: &;
+
+  position: relative;
+  width: 100%;
+}

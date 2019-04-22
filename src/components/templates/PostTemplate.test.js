@@ -7,6 +7,14 @@ import { checkProps, matchSnapshot } from '../../utils/test-utilities';
 const defaultProps = {
   onGetPost: jest.fn(),
   clearPostData: jest.fn(),
+  postData: {
+    acf: {
+      components: [{ acf_fc_layout: 'WordPressAcf_Text_Block' }],
+    },
+  },
+  pageContext: {
+    title: 'test',
+  },
 };
 
 /**

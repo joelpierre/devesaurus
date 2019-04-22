@@ -8,34 +8,38 @@ import {
   matchSnapshot,
 } from '../../../utils/test-utilities';
 
-import PrimaryFooter from './PrimaryFooter';
+import CtaBanner from './CtaBanner';
 
-const defaultProps = {};
+const defaultProps = {
+  module: {
+    theme: null,
+  },
+};
 
 /**
- * Factory function to create a ShallowWrapper for the PrimaryFooter component.
+ * Factory function to create a ShallowWrapper for the CtaBanner component.
  * @param {object} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<PrimaryFooter {...setupProps} />);
+  return shallow(<CtaBanner {...setupProps} />);
 };
 
-describe('<PrimaryFooter/>', () => {
+describe('<CtaBanner/>', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = setup();
   });
 
-  it('renders the PrimaryFooter Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'component-primary-footer');
+  it('renders the CtaBanner Component without errors', () => {
+    const component = findByTestAttr(wrapper, 'component-cta-banner');
     expect(component.length).toBe(1);
   });
 
   it('should render with correct props', () => {
-    checkProps(PrimaryFooter, defaultProps);
+    checkProps(CtaBanner, defaultProps);
   });
 
   it('should match snapshot', () => {

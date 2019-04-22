@@ -5,6 +5,18 @@ exports[`<PersonTemplate/> should match snapshot 1`] = `
   classes={null}
   data-test="component-person-template"
   description="Default description"
+  onGetSiteMeta={[Function]}
+  onGetSiteOptions={[Function]}
   title="Default Title"
-/>
+>
+  <AcfComponents
+    component={
+      Object {
+        "acf_fc_layout": "WordPressAcf_Text_Block",
+      }
+    }
+    key="0"
+    pageTheme="brand"
+  />
+</CoreLayout>
 `;

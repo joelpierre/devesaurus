@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextBlock/> should match snapshot 1`] = `
+<Section
+  classes="primary-main__section theme--brand text-block"
+  contrast={false}
+  data-test="component-text-block"
+  type="section"
+>
+  <Container
+    fluid={false}
+  >
+    <Row
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes="flex"
+        col={null}
+        colLg={null}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <p
+          className="text-block__content"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa illo ipsam magnam nulla optio pariatur qui quidem rem! Assumenda deleniti explicabo placeat rem. Dolores eos facere praesentium ullam unde!
+        </p>
+      </Flex>
+    </Row>
+  </Container>
+</Section>
+`;

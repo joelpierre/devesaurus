@@ -1,0 +1,8 @@
+@import "~sass/core";
+
+.image-block {
+  $root: &;
+
+  position: relative;
+  width: 100%;
+}

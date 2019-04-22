@@ -1,7 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import TextBlock from './TextBlock';
 
@@ -27,8 +32,16 @@ describe('<TextBlock/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the TextBlock Component without errors', () => {
+  it('renders the TextBlock Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-text-block');
     expect(component.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(TextBlock, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

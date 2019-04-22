@@ -1,7 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 import { mockWords } from '../../../../__mocks__/mock-words';
 import FeaturedWords from './FeaturedWords';
 
@@ -25,13 +29,21 @@ describe('<FeaturedWords/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the FeaturedWords Component without errors', () => {
+  it('renders the FeaturedWords Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-featured-words');
     expect(component.length).toBe(1);
   });
 
-  it('Renders the FeaturedWords Component without errors', () => {
+  it('renders the FeaturedWords Component without errors', () => {
     const component = findByTestAttr(wrapper, 'featured-words-word');
     expect(component.length).toBe(mockWords.length);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(FeaturedWords, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

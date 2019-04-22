@@ -1,0 +1,8 @@
+@import "~sass/core";
+
+.simple-header {
+  $root: &;
+
+  position: relative;
+  width: 100%;
+}

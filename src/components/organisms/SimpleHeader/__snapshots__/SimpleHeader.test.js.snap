@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SimpleHeader/> should match snapshot 1`] = `
+<header
+  data-test="component-simple-header"
+/>
+`;

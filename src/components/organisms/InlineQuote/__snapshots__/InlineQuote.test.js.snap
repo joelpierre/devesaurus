@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InlineQuote/> should match snapshot 1`] = `
+<Section
+  classes="primary-main__section theme--brand inline-quote"
+  contrast={false}
+  data-test="component-inline-quote"
+  type="section"
+>
+  <Container
+    fluid={false}
+  >
+    <Row
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes="flex"
+        col={null}
+        colLg={null}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <blockquote>
+          This is a blockquote
+        </blockquote>
+      </Flex>
+    </Row>
+  </Container>
+</Section>
+`;

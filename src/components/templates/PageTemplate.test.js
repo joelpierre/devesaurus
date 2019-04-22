@@ -3,18 +3,24 @@ import { shallow } from 'enzyme';
 
 import ConnectedPageTemplate, { PageTemplate } from './PageTemplate';
 import { Provider } from 'react-redux';
-import { mockStore } from '../../utils/test-utilities';
+import {
+  checkProps,
+  matchSnapshot,
+  mockStore,
+} from '../../utils/test-utilities';
 import * as testUtils from '../../utils';
 
 const defaultProps = {
   onGetPage: jest.fn(),
   clearPageData: jest.fn(),
-  pageData: {},
-  pageContext: {
-    title: 'test',
+  pageData: {
     acf: {
+      page_theme: 'brand',
       components: [{ acf_fc_layout: 'WordPressAcf_Text_Block' }],
     },
+  },
+  pageContext: {
+    title: 'test',
   },
 };
 
@@ -66,6 +72,14 @@ describe('<PageTemplate/>', () => {
   it('should call clearPageData on unmount', () => {
     wrapper.instance().componentWillUnmount();
     expect(defaultProps.clearPageData.mock.calls.length).toBe(1);
+  });
+
+  it('should render with correct props', () => {
+    checkProps(PageTemplate, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });
 

@@ -7,6 +7,15 @@ import { checkProps, matchSnapshot } from '../../utils/test-utilities';
 const defaultProps = {
   onGetPerson: jest.fn(),
   clearPersonData: jest.fn(),
+  personData: {
+    acf: {
+      page_theme: 'brand',
+      components: [{ acf_fc_layout: 'WordPressAcf_Text_Block' }],
+    },
+  },
+  pageContext: {
+    title: 'test',
+  },
 };
 
 /**

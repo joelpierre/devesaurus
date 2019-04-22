@@ -1,14 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import styles from './CtaBanner.module.scss';
 import Container from '../../core/Container/Container';
 import Row from '../../core/Row/Row';
 import Flex from '../../core/Flex/Flex';
 import Section from '../../core/Section/Section';
 import Heading from '../../core/Heading/Heading';
 
-function CtaBanner({ module, pageTheme }) {
+const CtaBanner = ({ module, pageTheme }) => {
   return (
     <Section
-      data-test="component-image-block"
+      data-test="component-cta-banner"
       classes={`primary-main__section theme--${
         module.theme ? module.theme : pageTheme
       } cta-banner`}
@@ -22,6 +25,15 @@ function CtaBanner({ module, pageTheme }) {
       </Container>
     </Section>
   );
-}
+};
+
+CtaBanner.defaultProps = {
+  pageTheme: 'brand',
+};
+
+CtaBanner.propTypes = {
+  module: PropTypes.instanceOf(Object).isRequired,
+  pageTheme: PropTypes.string,
+};
 
 export default CtaBanner;
