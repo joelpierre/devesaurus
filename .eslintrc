@@ -10,6 +10,7 @@
     "window": false
   },
   "rules": {
+    "import/no-named-as-default": "off",
     "react/jsx-one-expression-per-line": "off",
     "default-case": "warn",
     "no-danger": "off",

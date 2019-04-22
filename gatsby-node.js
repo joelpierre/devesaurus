@@ -3,13 +3,7 @@ const Promise = require(`bluebird`);
 const path = require(`path`);
 const slash = require(`slash`);
 
-exports.onCreateWebpackConfig = (
-  {
-    actions,
-    getConfig,
-    options,
-  },
-) => {
+exports.onCreateWebpackConfig = ({ actions, getConfig, options }) => {
   const prevConfig = getConfig();
 
   actions.replaceWebpackConfig({
@@ -17,17 +11,15 @@ exports.onCreateWebpackConfig = (
     module: {
       ...prevConfig.module,
       rules: [
-        ...prevConfig.module.rules.map((item) => {
+        ...prevConfig.module.rules.map(item => {
           const { test } = item;
           if (
-            test
-            && test.toString() === '/\\.(ico|svg|jpg|jpeg|png|gif|webp)(\\?.*)?$/'
+            test &&
+            test.toString() === '/\\.(ico|svg|jpg|jpeg|png|gif|webp)(\\?.*)?$/'
           ) {
             return {
               ...item,
-              exclude: [
-                path.resolve(__dirname, 'src/icons'),
-              ],
+              exclude: [path.resolve(__dirname, 'src/icons')],
             };
           }
           return { ...item };
@@ -36,14 +28,11 @@ exports.onCreateWebpackConfig = (
           test: /\.svg$/,
           use: [
             {
-              // loader: 'svg-sprite-loader',
               loader: 'html-loader',
               options,
             },
           ],
-          include: [
-            path.resolve(__dirname, 'src/icons'),
-          ],
+          include: [path.resolve(__dirname, 'src/icons')],
         },
       ],
     },
@@ -63,39 +52,37 @@ exports.createPages = ({ graphql, actions }) => {
   //   isPermanent: true,
   // });
   return new Promise((resolve, reject) => {
-    graphql(
-      `
-        {
-          allWordpressPage {
-            edges {
-              node {
-                yoast_meta {
-                  yoast_wpseo_title
-                  yoast_wpseo_metadesc
-                  yoast_wpseo_canonical
+    graphql(`
+      {
+        allWordpressPage {
+          edges {
+            node {
+              yoast_meta {
+                yoast_wpseo_title
+                yoast_wpseo_metadesc
+                yoast_wpseo_canonical
+              }
+              title
+              slug
+              date
+              featured_media {
+                alt_text
+                source_url
+                media_details {
+                  width
+                  height
                 }
-                title
-                slug
-                featured_media {
-                  alt_text
-                  source_url
-                  media_details {
-                    width
-                    height
-                  }
-                }
-                acf {
-                  page_theme
-                }
+              }
+              acf {
+                page_theme
               }
             }
           }
         }
-      `,
-    )
-
-    // START PAGES //
-      .then((result) => {
+      }
+    `)
+      // START PAGES //
+      .then(result => {
         if (result.errors) {
           console.log(result.errors);
           reject(result.errors);
@@ -104,7 +91,7 @@ exports.createPages = ({ graphql, actions }) => {
         // if (typeof window !== `undefined`) {
         // Create Page pages.
         const pageTemplate = path.resolve('./src/components/templates/page.js');
-        _.each(result.data.allWordpressPage.edges, (edge) => {
+        _.each(result.data.allWordpressPage.edges, edge => {
           createPage({
             path: `/${edge.node.slug}/`,
             component: slash(pageTemplate),
@@ -118,54 +105,62 @@ exports.createPages = ({ graphql, actions }) => {
 
       // ==== POSTS (WORDPRESS NATIVE AND ACF) ====
       .then(() => {
-        graphql(
-          `
-            {
-              allWordpressPost {
-                edges{
-                  node{
-                    yoast_meta {
-                      yoast_wpseo_title
-                      yoast_wpseo_metadesc
-                      yoast_wpseo_canonical
-                    }
-                    title
+        graphql(`
+          {
+            allWordpressPost {
+              edges {
+                node {
+                  yoast_meta {
+                    yoast_wpseo_title
+                    yoast_wpseo_metadesc
+                    yoast_wpseo_canonical
+                  }
+                  title
+                  slug
+                  date
+                  author {
+                    name
                     slug
-                    featured_media{
-                      alt_text
-                      source_url
-                      media_details {
-                        width
-                        height
-                      }
+                  }
+                  categories {
+                    name
+                    slug
+                  }
+                  featured_media {
+                    alt_text
+                    source_url
+                    media_details {
+                      width
+                      height
                     }
-                    acf {
-                      page_theme
-                    }
+                  }
+                  acf {
+                    page_theme
                   }
                 }
               }
             }
-          `,
-        )
-          .then((result) => {
-            if (result.errors) {
-              console.log(result.errors);
-              reject(result.errors);
-            }
+          }
+        `).then(result => {
+          if (result.errors) {
+            console.log(result.errors);
+            reject(result.errors);
+          }
 
-            // if (typeof window !== `undefined`) {
-            const postTemplate = path.resolve('./src/components/templates/post.js');
-            _.each(result.data.allWordpressPost.edges, (edge) => {
-              createPage({
-                path: `/post/${edge.node.slug}/`,
-                component: slash(postTemplate),
-                context: edge.node,
-              });
+          // if (typeof window !== `undefined`) {
+          const postTemplate = path.resolve(
+            './src/components/templates/post.js'
+          );
+          _.each(result.data.allWordpressPost.edges, edge => {
+            createPage({
+              path: `/post/${edge.node.slug}/`,
+              component: slash(postTemplate),
+              context: edge.node,
             });
-            resolve();
-            // }
           });
+          resolve();
+          // }
+        });
       })
       // ==== END POSTS ====
 
@@ -174,64 +169,94 @@ exports.createPages = ({ graphql, actions }) => {
         graphql(
           `
             {
-              allWordpressWpWord{
-                edges{
-                  node{
+              allWordpressWpWord {
+                edges {
+                  node {
+                    yoast_meta {
+                      yoast_wpseo_title
+                      yoast_wpseo_metadesc
+                      yoast_wpseo_canonical
+                    }
                     title
                     slug
-                    acf{
+                    link
+                    date
+                    type
+                    word_tag
+                    word_category
+                    acf {
+                      page_theme
                       definition
-                      origin{
+                      origin {
                         value
                         label
                       }
-                      syllables{
+                      syllables {
                         count
-                        list{
+                        list {
                           item
                         }
                       }
                       pronunciation
                       part_of_speech
+                      synonyms {
+                        post_title
+                        post_name
+                      }
                     }
                   }
                 }
               }
             }
-          `,
-        )
-          .then((result) => {
-            if (result.errors) {
-              console.log(result.errors);
-              reject(result.errors);
-            }
+          `
+        ).then(result => {
+          if (result.errors) {
+            console.log(result.errors);
+            reject(result.errors);
+          }
 
-            // if (typeof window !== `undefined`) {
-            const wordTemplate = path.resolve('./src/components/templates/word.js');
-            _.each(result.data.allWordpressWpWord.edges, (edge) => {
-              createPage({
-                path: `/word/${edge.node.slug}/`,
-                component: slash(wordTemplate),
-                context: edge.node,
-              });
+          // if (typeof window !== `undefined`) {
+          const wordTemplate = path.resolve(
+            './src/components/templates/word.js'
+          );
+          _.each(result.data.allWordpressWpWord.edges, edge => {
+            createPage({
+              path: `/word/${edge.node.slug}/`,
+              component: slash(wordTemplate),
+              context: edge.node,
             });
-            resolve();
-            // }
           });
+          resolve();
+          // }
+        });
       })
       // ==== END WORDS ====
 
       // ==== START PERSON ====
       .then(() => {
-        graphql(
-          `
+        graphql(`
           {
-            allWordpressWpTeam{
-              edges{
-                node{
+            allWordpressWpTeam {
+              edges {
+                node {
+                  yoast_meta {
+                    yoast_wpseo_title
+                    yoast_wpseo_metadesc
+                    yoast_wpseo_canonical
+                  }
                   title
                   slug
-                  acf{
+                  date
+                  staff_department
+                  featured_media {
+                    alt_text
+                    source_url
+                    media_details {
+                      width
+                      height
+                    }
+                  }
+                  acf {
                     page_theme
                     job_title
                     short_description
@@ -244,26 +269,26 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
-        `,
-        )
-          .then((result) => {
-            if (result.errors) {
-              console.log(result.errors);
-              reject(result.errors);
-            }
+        `).then(result => {
+          if (result.errors) {
+            console.log(result.errors);
+            reject(result.errors);
+          }
 
-            // if (typeof window !== `undefined`) {
-            const personTemplate = path.resolve('./src/components/templates/person.js');
-            _.each(result.data.allWordpressWpTeam.edges, (edge) => {
-              createPage({
-                path: `/team/${edge.node.slug}/`,
-                component: slash(personTemplate),
-                context: edge.node,
-              });
+          // if (typeof window !== `undefined`) {
+          const personTemplate = path.resolve(
+            './src/components/templates/person.js'
+          );
+          _.each(result.data.allWordpressWpTeam.edges, edge => {
+            createPage({
+              path: `/team/${edge.node.slug}/`,
+              component: slash(personTemplate),
+              context: edge.node,
             });
-            resolve();
-            // }
           });
+          resolve();
+          // }
+        });
       });
     // ==== END PERSON ====
   });

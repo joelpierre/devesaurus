@@ -59,19 +59,25 @@ class WordCard extends PureComponent {
           </h3>
         </header>
 
-        <p>
-          {this.categories &&
-            this.categories.map(category => {
-              <span data-test="word-card-category">{category}</span>;
-            })}
-        </p>
+        {this.categories && (
+          <p data-test="word-card-categories">
+            {this.categories.map(category => (
+              <span key={category.name} data-test="word-card-category">
+                {category}
+              </span>
+            ))}
+          </p>
+        )}
 
-        <p>
-          {this.tags &&
-            this.tags.map(tag => {
-              <span data-test="word-card-tag">{tag}</span>;
-            })}
-        </p>
+        {this.tags && (
+          <p data-test="word-card-tags">
+            {this.tags.map(tag => (
+              <span key={tag.name} data-test="word-card-tag">
+                {tag}
+              </span>
+            ))}
+          </p>
+        )}
 
         <div className={styles['word-card__body']}>
           <Button link={`/word/${slug}`} text="Get definition" />

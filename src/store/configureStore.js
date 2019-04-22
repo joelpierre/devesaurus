@@ -10,6 +10,7 @@ export const sagaMiddleware = createSagaMiddleware();
  * Configure Store for Application
  * @returns {any}
  */
+/* istanbul ignore next */
 const configureStore = () => {
   const store = reduxCreateStore(
     rootReducer,

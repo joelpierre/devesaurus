@@ -12,8 +12,6 @@ exports[`<WordCard/> should match snapShot 1`] = `
       title
     </h3>
   </header>
-  <p />
-  <p />
   <div>
     <Button
       action={null}
