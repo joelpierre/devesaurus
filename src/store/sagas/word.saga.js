@@ -9,7 +9,11 @@ import { getWordDataFailed, setWordData } from '../actions';
  */
 export function* getWordSaga(action) {
   try {
-    const response = yield axios.get(`${process.env.GATSBY_PROTOCOL}://${process.env.GATSBY_BASE_URL}/wp-json/better-rest-endpoints/v1/word/${action.data}`);
+    const response = yield axios.get(
+      `${process.env.GATSBY_PROTOCOL}://${
+        process.env.GATSBY_BASE_URL
+      }/wp-json/better-rest-endpoints/v1/word/${action.data}`
+    );
     yield put(setWordData(response.data));
   } catch (error) {
     yield put(getWordDataFailed());
