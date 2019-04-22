@@ -9,21 +9,17 @@ import {
   matchSnapshot,
 } from '../../../utils/test-utilities';
 
-import PrimaryMenu, { PurePrimaryMenu } from './PrimaryMenu';
+import SiteInfo, { PureSiteInfo } from './SiteInfo';
 
 const defaultProps = {};
 
 const defaultPureProps = {
-  allWordpressWpApiMenusMenusItems: {
+  allWordpressSiteMetadata: {
     edges: [
       {
         node: {
-          items: [
-            {
-              title: 'title',
-              object_slug: 'slug',
-            },
-          ],
+          name: 'test name',
+          description: 'test description',
         },
       },
     ],
@@ -31,21 +27,21 @@ const defaultPureProps = {
 };
 
 /**
- * Factory function to create a ShallowWrapper for the PrimaryMenu component.
+ * Factory function to create a ShallowWrapper for the SiteInfo component.
  * @param {object} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<PrimaryMenu {...setupProps} />);
+  return shallow(<SiteInfo {...setupProps} />);
 };
 
 const pureSetup = (props = {}) => {
   const setupProps = { ...defaultPureProps, ...props };
-  return shallow(<PurePrimaryMenu {...setupProps} />);
+  return shallow(<PureSiteInfo {...setupProps} />);
 };
 
-describe('<PrimaryMenu/>', () => {
+describe('<SiteInfo/>', () => {
   let wrapper;
   let pureWrapper;
 
@@ -54,22 +50,22 @@ describe('<PrimaryMenu/>', () => {
     pureWrapper = pureSetup();
   });
 
-  it('renders the PrimaryMenu Component without errors query', () => {
-    const component = findByTestAttr(wrapper, 'component-primary-menu-query');
+  it('renders the SiteInfo Component without errors query', () => {
+    const component = findByTestAttr(wrapper, 'component-site-info-query');
     expect(component.length).toBe(1);
   });
 
-  it('renders the PrimaryMenu Component without errors', () => {
-    const component = findByTestAttr(pureWrapper, 'component-primary-menu');
+  it('renders the SiteInfo Component without errors info', () => {
+    const component = findByTestAttr(pureWrapper, 'component-site-info');
     expect(component.length).toBe(1);
   });
 
   it('should render with correct props', () => {
-    checkProps(PrimaryMenu, defaultProps);
+    checkProps(SiteInfo, defaultProps);
   });
 
   it('should render with correct props', () => {
-    checkProps(PurePrimaryMenu, defaultProps);
+    checkProps(PureSiteInfo, defaultProps);
   });
 
   it('should match snapshot', () => {

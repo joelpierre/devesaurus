@@ -17,9 +17,6 @@ export function* getSiteMetaSaga() {
     const response = yield axios.get(
       `${process.env.GATSBY_PROTOCOL}://${process.env.GATSBY_BASE_URL}/wp-json`
     );
-
-    console.log(response);
-
     yield put(setSiteMeta(response.data));
   } catch (e) {
     yield put(getSiteMetaFailed());

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SiteInfo/> should match snapshot 1`] = `
+<mockConstructor
+  render={[Function]}
+/>
+`;
+
+exports[`<SiteInfo/> should match snapshot 2`] = `
+<div
+  className="site-info"
+  data-test="component-site-info"
+>
+  <span
+    className="site-info__heading"
+  >
+    test name
+  </span>
+  <span
+    className="site-info__slogan"
+  >
+    test description
+  </span>
+</div>
+`;

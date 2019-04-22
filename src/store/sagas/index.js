@@ -3,10 +3,13 @@ import { getPageSaga } from './page.saga';
 import { getWordSaga } from './word.saga';
 import { getPostSaga } from './post.saga';
 import { getSiteMetaSaga, getSiteOptionsSaga } from './core.saga';
+import { getTeamSaga } from './team.saga';
+import { getPersonSaga } from './person.saga';
 import {
   coreActionTypes,
   pageActionTypes,
   postActionTypes,
+  teamActionTypes,
   wordActionTypes,
 } from '../actionTypes';
 
@@ -42,5 +45,16 @@ export function* watchSiteMeta() {
   yield all([
     takeEvery(coreActionTypes.GET_SITE_META, getSiteMetaSaga),
     takeEvery(coreActionTypes.GET_SITE_OPTIONS, getSiteOptionsSaga),
+  ]);
+}
+
+/**
+ * Watch Team generator function
+ * @returns {IterableIterator<AllEffect<SimpleEffect<"FORK", ForkEffectDescriptor>>>}
+ */
+export function* watchTeam() {
+  yield all([
+    takeEvery(teamActionTypes.GET_TEAM_DATA, getTeamSaga),
+    takeEvery(teamActionTypes.GET_PERSON_DATA, getPersonSaga),
   ]);
 }

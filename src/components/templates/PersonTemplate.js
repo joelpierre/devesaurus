@@ -29,10 +29,14 @@ export class PersonTemplate extends PureComponent {
   }
 
   render() {
-    const { personData } = this.props;
+    const { personData, pageContext } = this.props;
 
     return (
-      <CoreLayout data-test="component-person-template">
+      <CoreLayout
+        title={pageContext.title}
+        description={pageContext.yoast_meta.yoast_wpseo_metadesc}
+        data-test="component-person-template"
+      >
         {personData &&
           personData.acf.components.map((component, index) => {
             return (

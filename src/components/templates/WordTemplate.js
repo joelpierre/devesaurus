@@ -31,23 +31,27 @@ export class WordTemplate extends PureComponent {
   }
 
   render() {
-    const { wordData } = this.props;
+    const { wordData, pageContext } = this.props;
+
+    // console.log(wordData);
 
     return (
-      <CoreLayout data-test="component-word-template">
-        {wordData && (
-          <Section>
-            <Container>
-              <Row>
-                <Flex classes="flex">
-                  <Heading priority="1" classes="text-center mt-1">
-                    {wordData.title}
-                  </Heading>
-                </Flex>
-              </Row>
-            </Container>
-          </Section>
-        )}
+      <CoreLayout
+        title={pageContext.title}
+        description={pageContext.yoast_meta.yoast_wpseo_metadesc}
+        data-test="component-word-template"
+      >
+        <Section>
+          <Container>
+            <Row>
+              <Flex classes="flex">
+                <Heading priority="1" classes="text-center mt-1">
+                  {pageContext.title}
+                </Heading>
+              </Flex>
+            </Row>
+          </Container>
+        </Section>
       </CoreLayout>
     );
   }

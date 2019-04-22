@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './Brand.module.scss';
 import SvgIcon from '../SvgIcon/SvgIcon';
+import SiteInfo from '../SiteInfo/SiteInfo';
 
 const Brand = ({ classes, heading, slogan, type }) => {
   let logo;
@@ -42,10 +43,7 @@ const Brand = ({ classes, heading, slogan, type }) => {
           ])}
         />
 
-        <div className={`${styles.brand__company}`}>
-          {heading && <h1 className={styles.brand__heading}>{heading}</h1>}
-          {slogan && <p className={styles.brand__slogan}>{slogan}</p>}
-        </div>
+        <SiteInfo />
       </div>
     </div>
   );

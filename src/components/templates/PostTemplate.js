@@ -30,16 +30,20 @@ export class PostTemplate extends PureComponent {
   }
 
   render() {
-    const { postData } = this.props;
+    const { postData, pageContext } = this.props;
 
     return (
-      <CoreLayout data-test="component-post-template">
+      <CoreLayout
+        title={pageContext.title}
+        description={pageContext.yoast_meta.yoast_wpseo_metadesc}
+        data-test="component-post-template"
+      >
+        <Heading priority="1" classes="text-center">
+          {pageContext.title}
+        </Heading>
+
         {postData && (
           <>
-            <Heading priority="1" classes="text-center">
-              {postData.title}
-            </Heading>
-
             {postData.acf &&
               postData.acf.components.map((component, index) => {
                 return (

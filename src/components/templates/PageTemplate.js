@@ -33,9 +33,12 @@ export class PageTemplate extends PureComponent {
   render() {
     const { pageData, pageContext } = this.props;
 
+    console.log(pageContext);
+
     return (
       <CoreLayout
-        metaTitle={pageContext.title}
+        title={pageContext.title}
+        description={pageContext.yoast_meta.yoast_wpseo_metadesc}
         data-test="component-page-template"
       >
         {pageData && (
