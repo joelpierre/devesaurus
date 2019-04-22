@@ -2,7 +2,7 @@
 
 exports[`<Index/> should match snapshot 1`] = `
 <Connect(BasicLayout)
-  data-test="component-index"
+  data-test="page-index"
   title="Devesaurus Home"
 >
   <HeroSearch
