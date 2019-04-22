@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PersonTemplate/> should match snapshot 1`] = `
+<CoreLayout
+  classes={null}
+  data-test="component-person-template"
+  description="Default description"
+  title="Default Title"
+/>
+`;

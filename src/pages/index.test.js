@@ -32,7 +32,7 @@ describe('<Index/>', () => {
   });
 
   it('renders the Index Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'index-main');
+    const component = findByTestAttr(wrapper, 'component-index');
     expect(component.length).toBe(1);
   });
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { UnconnectedPostTemplate } from './post';
+import ConnectedPostTemplate, { PostTemplate } from './PostTemplate';
+import { checkProps, matchSnapshot } from '../../utils/test-utilities';
 
 const defaultProps = {
   onGetPost: jest.fn(),
@@ -15,7 +16,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<UnconnectedPostTemplate {...setupProps} />);
+  return shallow(<PostTemplate {...setupProps} />);
 };
 
 describe('<PostTemplate/>', () => {
@@ -27,5 +28,13 @@ describe('<PostTemplate/>', () => {
 
   it('Renders the PostTemplate Component without errors', () => {
     expect(wrapper).toBeTruthy();
+  });
+
+  it('should render with correct props', () => {
+    checkProps(PostTemplate, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

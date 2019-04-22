@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { UnconnectedWordTemplate } from './word';
+import ConnectedWordTemplate, { WordTemplate } from './WordTemplate';
+import { checkProps, matchSnapshot } from '../../utils/test-utilities';
 
 const defaultProps = {
   onGetWord: jest.fn(),
@@ -15,7 +16,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<UnconnectedWordTemplate {...setupProps} />);
+  return shallow(<WordTemplate {...setupProps} />);
 };
 
 describe('<WordTemplate/>', () => {
@@ -27,5 +28,13 @@ describe('<WordTemplate/>', () => {
 
   it('Renders the WordTemplate Component without errors', () => {
     expect(wrapper).toBeTruthy();
+  });
+
+  it('should render with correct props', () => {
+    checkProps(WordTemplate, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

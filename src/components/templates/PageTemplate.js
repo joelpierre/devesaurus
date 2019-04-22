@@ -6,7 +6,7 @@ import * as pageActions from '../../store/actions/page.actions';
 import { mapOverACFComponents } from '../../utils';
 
 import AcfComponents from '../../hoc/acfComponents';
-import CoreLayout from '../../layouts/core';
+import { CoreLayout } from '../../layouts/CoreLayout';
 
 export class PageTemplate extends PureComponent {
   componentDidMount() {

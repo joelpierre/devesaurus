@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ConnectedPageTemplate, { PageTemplate } from './page';
+import ConnectedPageTemplate, { PageTemplate } from './PageTemplate';
 import { Provider } from 'react-redux';
 import { mockStore } from '../../utils/test-utilities';
 import * as testUtils from '../../utils';

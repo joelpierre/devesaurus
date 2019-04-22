@@ -6,10 +6,10 @@ import * as postActions from '../../store/actions/post.actions';
 import { mapOverACFComponents } from '../../utils';
 
 import AcfComponents from '../../hoc/acfComponents';
-import CoreLayout from '../../layouts/core';
 import Heading from '../core/Heading/Heading';
+import { CoreLayout } from '../../layouts/CoreLayout';
 
-export class UnconnectedPostTemplate extends PureComponent {
+export class PostTemplate extends PureComponent {
   componentDidMount() {
     const { onGetPost, pageContext } = this.props;
     onGetPost(pageContext);
@@ -57,12 +57,12 @@ export class UnconnectedPostTemplate extends PureComponent {
   }
 }
 
-UnconnectedPostTemplate.defaultProps = {
+PostTemplate.defaultProps = {
   pageContext: null,
   postData: null,
 };
 
-UnconnectedPostTemplate.propTypes = {
+PostTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
   postData: PropTypes.instanceOf(Object),
   onGetPost: PropTypes.func.isRequired,
@@ -81,4 +81,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UnconnectedPostTemplate);
+)(PostTemplate);

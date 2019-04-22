@@ -6,9 +6,9 @@ import * as personActions from '../../store/actions/team.actions';
 import { mapOverACFComponents } from '../../utils';
 
 import AcfComponents from '../../hoc/acfComponents';
-import CoreLayout from '../../layouts/core';
+import { CoreLayout } from '../../layouts/CoreLayout';
 
-export class UnconnectedPersonTemplate extends PureComponent {
+export class PersonTemplate extends PureComponent {
   componentDidMount() {
     const { onGetPerson, pageContext } = this.props;
     onGetPerson(pageContext);
@@ -48,12 +48,12 @@ export class UnconnectedPersonTemplate extends PureComponent {
   }
 }
 
-UnconnectedPersonTemplate.defaultProps = {
+PersonTemplate.defaultProps = {
   pageContext: null,
   personData: null,
 };
 
-UnconnectedPersonTemplate.propTypes = {
+PersonTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
   personData: PropTypes.instanceOf(Object),
   onGetPerson: PropTypes.func.isRequired,
@@ -61,7 +61,7 @@ UnconnectedPersonTemplate.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  personData: state.post.data,
+  personData: state.Post.data,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -72,4 +72,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UnconnectedPersonTemplate);
+)(PersonTemplate);

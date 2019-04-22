@@ -1,7 +1,8 @@
 import React from 'react';
-import SEO from '../utils/seo';
-import CoreLayout from '../layouts/core';
+import { BasicLayout } from '../layouts/BasicLayout';
 
-const NotFoundPage = () => <></>;
+const NotFoundPage = () => (
+  <BasicLayout title="Error page not found">404 Error</BasicLayout>
+);
 
 export default NotFoundPage;

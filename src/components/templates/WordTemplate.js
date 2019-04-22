@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as wordActions from '../../store/actions/word.actions';
 
-import CoreLayout from '../../layouts/core';
 import sortWordObj from '../../helpers/sortWordObj';
 import Heading from '../core/Heading/Heading';
 import Section from '../core/Section/Section';
 import Container from '../core/Container/Container';
 import Row from '../core/Row/Row';
 import Flex from '../core/Flex/Flex';
+import { CoreLayout } from '../../layouts/CoreLayout';
 
-export class UnconnectedWordTemplate extends PureComponent {
+export class WordTemplate extends PureComponent {
   componentDidMount() {
     const { onGetWord, pageContext } = this.props;
     onGetWord(pageContext);
@@ -53,12 +53,12 @@ export class UnconnectedWordTemplate extends PureComponent {
   }
 }
 
-UnconnectedWordTemplate.defaultProps = {
+WordTemplate.defaultProps = {
   pageContext: null,
   wordData: null,
 };
 
-UnconnectedWordTemplate.propTypes = {
+WordTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
   wordData: PropTypes.instanceOf(Object),
   onGetWord: PropTypes.func.isRequired,
@@ -77,4 +77,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UnconnectedWordTemplate);
+)(WordTemplate);

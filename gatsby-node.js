@@ -90,7 +90,9 @@ exports.createPages = ({ graphql, actions }) => {
 
         // if (typeof window !== `undefined`) {
         // Create Page pages.
-        const pageTemplate = path.resolve('./src/components/templates/page.js');
+        const pageTemplate = path.resolve(
+          './src/components/templates/PageTemplate.js'
+        );
         _.each(result.data.allWordpressPage.edges, edge => {
           createPage({
             path: `/${edge.node.slug}/`,
@@ -149,7 +151,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           // if (typeof window !== `undefined`) {
           const postTemplate = path.resolve(
-            './src/components/templates/post.js'
+            './src/components/templates/PostTemplate.js'
           );
           _.each(result.data.allWordpressPost.edges, edge => {
             createPage({
@@ -217,7 +219,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           // if (typeof window !== `undefined`) {
           const wordTemplate = path.resolve(
-            './src/components/templates/word.js'
+            './src/components/templates/WordTemplate.js'
           );
           _.each(result.data.allWordpressWpWord.edges, edge => {
             createPage({
@@ -277,7 +279,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           // if (typeof window !== `undefined`) {
           const personTemplate = path.resolve(
-            './src/components/templates/person.js'
+            './src/components/templates/PersonTemplate.js'
           );
           _.each(result.data.allWordpressWpTeam.edges, edge => {
             createPage({

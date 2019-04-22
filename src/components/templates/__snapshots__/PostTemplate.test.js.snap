@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PostTemplate/> should match snapshot 1`] = `
+<CoreLayout
+  classes={null}
+  data-test="component-post-template"
+  description="Default description"
+  title="Default Title"
+/>
+`;

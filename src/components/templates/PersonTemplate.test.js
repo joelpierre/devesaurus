@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { UnconnectedPersonTemplate } from './person';
+import ConnectedPersonTemplate, { PersonTemplate } from './PersonTemplate';
+import { checkProps, matchSnapshot } from '../../utils/test-utilities';
 
 const defaultProps = {
   onGetPerson: jest.fn(),
@@ -15,7 +16,7 @@ const defaultProps = {
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<UnconnectedPersonTemplate {...setupProps} />);
+  return shallow(<PersonTemplate {...setupProps} />);
 };
 
 describe('<PersonTemplate/>', () => {
@@ -27,5 +28,13 @@ describe('<PersonTemplate/>', () => {
 
   it('Renders the PersonTemplate Component without errors', () => {
     expect(wrapper).toBeTruthy();
+  });
+
+  it('should render with correct props', () => {
+    checkProps(PersonTemplate, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });
