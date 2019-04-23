@@ -16,6 +16,15 @@ module.exports = {
     `<rootDir>/jest-loader-shim.js`,
     `<rootDir>/jest-setup-tests.js`,
   ],
+  cacheDirectory: './.cache/jest',
+  coverageThreshold: {
+    global: {
+      statements: 72,
+      branches: 78,
+      functions: 73,
+      lines: 73,
+    },
+  },
   // collectCoverage: true,
   // reporters: [
   //   [
