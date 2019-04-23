@@ -9,6 +9,7 @@ import {
 } from '../../../utils/test-utilities';
 
 import SelectField from './SelectField';
+import Label from '../Label/Label';
 
 const defaultProps = {
   name: 'test-name',
@@ -48,5 +49,15 @@ describe('<SelectField/>', () => {
 
   it('should match snapshot', () => {
     matchSnapshot(wrapper);
+  });
+
+  it('should render with label', () => {
+    wrapper = setup({
+      ...defaultProps,
+      label: 'hello',
+    });
+
+    expect(wrapper.find(Label)).toBeTruthy();
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

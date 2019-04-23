@@ -12,7 +12,7 @@ import CtaBanner from './CtaBanner';
 
 const defaultProps = {
   module: {
-    theme: null,
+    theme: 'brand',
   },
 };
 
@@ -44,5 +44,15 @@ describe('<CtaBanner/>', () => {
 
   it('should match snapshot', () => {
     matchSnapshot(wrapper);
+  });
+
+  it('should render with pageTheme instead of module theme', () => {
+    wrapper = setup({
+      module: {},
+      pageTheme: 'brand',
+    });
+    const component = findByTestAttr(wrapper, 'component-cta-banner');
+    matchSnapshot(wrapper);
+    expect(component.prop('classes')).toContain('theme--brand');
   });
 });

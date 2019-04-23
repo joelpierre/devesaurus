@@ -1,7 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import { checkProps, findByTestAttr } from '../../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 import Heading from './Heading';
 
@@ -27,12 +32,16 @@ describe('<Heading/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the Heading Component without errors', () => {
+  it('renders the Heading Component without errors', () => {
     const component = findByTestAttr(wrapper, 'component-heading');
     expect(component.length).toBe(1);
   });
 
-  it('does not throw warning with expected props', () => {
+  it('should render with correct props', () => {
     checkProps(Heading, defaultProps);
+  });
+
+  it('should match snapshot', () => {
+    matchSnapshot(wrapper);
   });
 });

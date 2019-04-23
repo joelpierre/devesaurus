@@ -33,7 +33,7 @@ export class PageTemplate extends PureComponent {
   render() {
     const { pageData, pageContext } = this.props;
 
-    console.log(pageContext);
+    // console.log(pageContext);
 
     return (
       <CoreLayout

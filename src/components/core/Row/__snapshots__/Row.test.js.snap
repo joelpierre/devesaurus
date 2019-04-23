@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Row/> renders with class column 1`] = `
+<div
+  className="row row--column"
+  data-test="component-grid-row"
+>
+  &lt;div/&gt;
+</div>
+`;
+
+exports[`<Row/> renders with class column reverse row 1`] = `
+<div
+  className="row--column-reverse"
+  data-test="component-grid-row"
+>
+  &lt;div/&gt;
+</div>
+`;
+
+exports[`<Row/> renders with class reverse row 1`] = `
+<div
+  className="row row--reverse"
+  data-test="component-grid-row"
+>
+  &lt;div/&gt;
+</div>
+`;
+
+exports[`<Row/> renders with class row 1`] = `
+<div
+  className="row"
+  data-test="component-grid-row"
+>
+  &lt;div/&gt;
+</div>
+`;
+
+exports[`<Row/> should match snapshot 1`] = `
+<div
+  className="row"
+  data-test="component-grid-row"
+>
+  &lt;div/&gt;
+</div>
+`;

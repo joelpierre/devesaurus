@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import styles from './CtaBanner.module.scss';
 import Container from '../../core/Container/Container';
@@ -12,9 +13,10 @@ const CtaBanner = ({ module, pageTheme }) => {
   return (
     <Section
       data-test="component-cta-banner"
-      classes={`primary-main__section theme--${
-        module.theme ? module.theme : pageTheme
-      } cta-banner`}
+      classes={classNames([
+        `theme--${module.theme ? module.theme : pageTheme}`,
+        styles['cta-banner'],
+      ])}
     >
       <Container classes="container-fluid">
         <Row classes="row">
