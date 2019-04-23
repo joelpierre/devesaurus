@@ -19,10 +19,10 @@ module.exports = {
   cacheDirectory: './.cache/jest',
   coverageThreshold: {
     global: {
-      statements: 72,
-      branches: 78,
-      functions: 73,
-      lines: 73,
+      statements: 60,
+      branches: 60,
+      functions: 60,
+      lines: 60,
     },
   },
   // collectCoverage: true,
