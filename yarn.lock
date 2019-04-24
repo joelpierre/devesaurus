@@ -4308,7 +4308,7 @@ dom-converter@~0.2:
   dependencies:
     utila "~0.4"
 
-dom-helpers@^3.2.1:
+dom-helpers@^3.2.1, dom-helpers@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
   integrity sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==
@@ -5987,6 +5987,14 @@ gatsby-plugin-manifest@~2.0.9:
     bluebird "^3.5.0"
     sharp "^0.21.3"
 
+gatsby-plugin-nprogress@^2.0.10:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-nprogress/-/gatsby-plugin-nprogress-2.0.10.tgz#4d60e09515270c86b956497e4cc66cede5565db7"
+  integrity sha512-+zDHYeSVaR01rFUXd4H2rSUvDV1yR9/uCKSJ97VIV0IZAIguf8SVxdY3nJIq5umIw1hi37JV0ICAHy91SGCMRQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    nprogress "^0.2.0"
+
 gatsby-plugin-offline@~2.0.21:
   version "2.0.24"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.0.24.tgz#75034a9c658fbd55391e077fa8f40de4cb5e0ba9"
@@ -6012,6 +6020,23 @@ gatsby-plugin-page-creator@^2.0.6:
     micromatch "^3.1.10"
     parse-filepath "^1.0.1"
     slash "^1.0.0"
+
+gatsby-plugin-page-load-delay@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-load-delay/-/gatsby-plugin-page-load-delay-0.1.2.tgz#cd547f47a9fa6cbfb3326a24d64ead811fb94c77"
+  integrity sha512-d5e8ggKqkR/HoiRi3Wg2USbsm9TPI2S6qYowAn5eVdBrFKjbNl+ospvINL28l6N3M0mXYS+aqNqRWrlB4HDgPw==
+  dependencies:
+    babel-runtime "^6.26.0"
+    history "^4.7.2"
+
+gatsby-plugin-page-transitions@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-transitions/-/gatsby-plugin-page-transitions-1.0.7.tgz#e6c5a858d3c59fbccfefb19d0bd0834c36535d48"
+  integrity sha512-JyswnEWjyU7bikxndLYurMdu6nkPww2ncWMU22N9zhSnCf9G8ypqqbcK/XaTUeyvM1QlDYFRrsJLjeV2YWnqjA==
+  dependencies:
+    history "^4.7.2"
+    prop-types "^15.6.2"
+    react-transition-group "^2.4.0"
 
 gatsby-plugin-postcss@~2.0.5:
   version "2.0.5"
@@ -10070,6 +10095,11 @@ npm-which@^3.0.1:
     gauge "~2.7.3"
     set-blocking "~2.0.0"
 
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
+
 nth-check@^1.0.2, nth-check@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-1.0.2.tgz#b2bd295c37e3dd58a3bf0700376663ba4d9cf05c"
@@ -12167,6 +12197,16 @@ react-testing-library@^6.0.0:
   dependencies:
     "@babel/runtime" "^7.3.1"
     dom-testing-library "^3.13.1"
+
+react-transition-group@^2.4.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.9.0.tgz#df9cdb025796211151a436c69a8f3b97b5b07c8d"
+  integrity sha512-+HzNTCHpeQyl4MJ/bdE0u6XRMe9+XG/+aL4mCxVN4DnPBQ0/5bfHWPDuOZUzYdMj94daZaZdCCc1Dzt9R/xSSg==
+  dependencies:
+    dom-helpers "^3.4.0"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+    react-lifecycles-compat "^3.0.4"
 
 react@~16.8.4:
   version "16.8.4"

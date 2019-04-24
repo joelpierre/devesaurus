@@ -2,7 +2,7 @@
 
 exports[`<InlineQuote/> should match snapshot 1`] = `
 <Section
-  classes="primary-main__section theme--brand inline-quote"
+  classes="theme--alpha inline-quote"
   contrast={false}
   data-test="component-inline-quote"
   type="section"
@@ -41,7 +41,7 @@ exports[`<InlineQuote/> should match snapshot 1`] = `
 
 exports[`<InlineQuote/> should render with pageTheme instead of module theme 1`] = `
 <Section
-  classes="primary-main__section theme--brand inline-quote"
+  classes="theme--brand inline-quote"
   contrast={false}
   data-test="component-inline-quote"
   type="section"

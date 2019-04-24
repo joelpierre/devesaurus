@@ -12,7 +12,7 @@ import ImageBlock from './ImageBlock';
 
 const defaultProps = {
   module: {},
-  pageTheme: 'brand',
+  pageTheme: 'alpha',
 };
 
 /**

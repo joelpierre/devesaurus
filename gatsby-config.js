@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `env/${process.env.NODE_ENV}.env`,
 });
 
 const path = require('path');
@@ -8,15 +8,23 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: `Devesaurus`,
-    description: ``,
+    description: `A place to get simplified definitions for complicated dev related words`,
     author: `@devesaurus`,
-    siteUrl: ``,
+    siteUrl: process.env.GATSBY_SITE_URL,
   },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
-    // `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sitemap`,
+    'gatsby-plugin-page-transitions',
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#047211`,
+        showSpinner: false,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

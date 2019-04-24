@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import Section from '../../core/Section/Section';
 import Row from '../../core/Row/Row';
 import Container from '../../core/Container/Container';
 import Flex from '../../core/Flex/Flex';
+import styles from '../CtaBanner/CtaBanner.module.scss';
 
-function InlineQuote({ module, pageTheme }) {
+const InlineQuote = ({ module, pageTheme }) => {
   return (
     <Section
       data-test="component-inline-quote"
-      classes={`primary-main__section theme--${
-        module.theme ? module.theme : pageTheme
-      } inline-quote`}
+      classes={classNames([
+        `theme--${module.theme ? module.theme : pageTheme}`,
+        styles['inline-quote'],
+      ])}
     >
       <Container>
         <Row>
@@ -22,7 +26,7 @@ function InlineQuote({ module, pageTheme }) {
       </Container>
     </Section>
   );
-}
+};
 
 InlineQuote.propTypes = {
   module: PropTypes.instanceOf(Object).isRequired,

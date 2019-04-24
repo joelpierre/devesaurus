@@ -2,7 +2,7 @@
 
 exports[`<TextBlock/> should match snapshot 1`] = `
 <Section
-  classes="primary-main__section theme--brand text-block"
+  classes="theme--alpha text-block"
   contrast={false}
   data-test="component-text-block"
   type="section"
@@ -43,7 +43,7 @@ exports[`<TextBlock/> should match snapshot 1`] = `
 
 exports[`<TextBlock/> should render with pageTheme instead of module theme 1`] = `
 <Section
-  classes="primary-main__section theme--brand text-block"
+  classes="theme--brand text-block"
   contrast={false}
   data-test="component-text-block"
   type="section"

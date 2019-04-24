@@ -12,7 +12,7 @@ import TextBlock from './TextBlock';
 
 const defaultProps = {
   module: {},
-  pageTheme: 'brand',
+  pageTheme: 'alpha',
 };
 
 /**
@@ -50,7 +50,9 @@ describe('<TextBlock/>', () => {
       module: {},
       pageTheme: 'brand',
     });
+
     const component = findByTestAttr(wrapper, 'component-text-block');
+
     matchSnapshot(wrapper);
     expect(component.prop('classes')).toContain('theme--brand');
   });

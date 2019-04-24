@@ -12,7 +12,7 @@ import InlineQuote from './InlineQuote';
 
 const defaultProps = {
   module: {},
-  pageTheme: 'brand',
+  pageTheme: 'alpha',
 };
 
 /**

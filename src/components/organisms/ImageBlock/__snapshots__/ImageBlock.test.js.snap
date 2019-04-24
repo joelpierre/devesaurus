@@ -2,7 +2,7 @@
 
 exports[`<ImageBlock/> should match snapshot 1`] = `
 <Section
-  classes="primary-main__section theme--brand image-block"
+  classes="theme--alpha image-block"
   contrast={false}
   data-test="component-image-block"
   type="section"
@@ -46,7 +46,7 @@ exports[`<ImageBlock/> should match snapshot 1`] = `
 
 exports[`<ImageBlock/> should render with pageTheme instead of module theme 1`] = `
 <Section
-  classes="primary-main__section theme--brand image-block"
+  classes="theme--brand image-block"
   contrast={false}
   data-test="component-image-block"
   type="section"

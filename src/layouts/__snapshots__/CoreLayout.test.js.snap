@@ -4,9 +4,18 @@ exports[`<CoreLayout/> should match snapshot 1`] = `
 <Fragment>
   <SEO
     description="Default description"
-    keywords={Array []}
+    keywords={
+      Array [
+        "Devesaurus",
+        "Dev thesaurus",
+        "Dev dictionary",
+        "Joel Pierre",
+        "Joel Pierre-Powell",
+      ]
+    }
     lang="en"
     meta={Array []}
+    ogType="website"
     title="Default Title"
   />
   <PrimaryHeader />

@@ -2,7 +2,7 @@
 
 exports[`<CtaBanner/> should match snapshot 1`] = `
 <Section
-  classes="theme--brand cta-banner"
+  classes="theme--alpha cta-banner"
   contrast={false}
   data-test="component-cta-banner"
   type="section"

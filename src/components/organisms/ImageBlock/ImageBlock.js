@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Section from '../../core/Section/Section';
 import Container from '../../core/Container/Container';
 import Row from '../../core/Row/Row';
 import Flex from '../../core/Flex/Flex';
 import Heading from '../../core/Heading/Heading';
+import styles from '../CtaBanner/CtaBanner.module.scss';
 
-function ImageBlock({ module, pageTheme }) {
+const ImageBlock = ({ module, pageTheme }) => {
   return (
     <Section
       data-test="component-image-block"
-      classes={`primary-main__section theme--${
-        module.theme ? module.theme : pageTheme
-      } image-block`}
+      classes={classNames([
+        `theme--${module.theme ? module.theme : pageTheme}`,
+        styles['image-block'],
+      ])}
     >
       <Container classes="container-fluid">
         <Row classes="row">
@@ -23,7 +26,7 @@ function ImageBlock({ module, pageTheme }) {
       </Container>
     </Section>
   );
-}
+};
 
 ImageBlock.propTypes = {
   module: PropTypes.instanceOf(Object).isRequired,

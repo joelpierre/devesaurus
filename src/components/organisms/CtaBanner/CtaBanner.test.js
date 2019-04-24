@@ -12,7 +12,7 @@ import CtaBanner from './CtaBanner';
 
 const defaultProps = {
   module: {
-    theme: 'brand',
+    theme: 'alpha',
   },
 };
 

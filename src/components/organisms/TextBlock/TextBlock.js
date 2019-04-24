@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import Section from '../../core/Section/Section';
 import Container from '../../core/Container/Container';
 import Row from '../../core/Row/Row';
 import Flex from '../../core/Flex/Flex';
+import styles from '../CtaBanner/CtaBanner.module.scss';
 
 const TextBlock = ({ module, pageTheme }) => {
   return (
     <Section
       data-test="component-text-block"
-      classes={`primary-main__section theme--${
-        module.theme ? module.theme : pageTheme
-      } text-block`}
+      classes={classNames([
+        `theme--${module.theme ? module.theme : pageTheme}`,
+        styles['text-block'],
+      ])}
     >
       <Container>
         <Row>
