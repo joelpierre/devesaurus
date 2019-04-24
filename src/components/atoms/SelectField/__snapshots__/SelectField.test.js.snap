@@ -47,29 +47,3 @@ exports[`<SelectField/> should render with FormLabel 1`] = `
   </div>
 </Fragment>
 `;
-
-exports[`<SelectField/> should render with label 1`] = `
-<Fragment>
-  <FormLabel
-    name="test-name"
-    text="hello"
-  />
-  <div
-    className="select-field"
-    data-test="component-select-field"
-  >
-    <select
-      className="select-field__select"
-      name="test-name"
-      placeholder={null}
-    >
-      <option
-        key="0"
-        value="test-option-value"
-      >
-        Test Option Name
-      </option>
-    </select>
-  </div>
-</Fragment>
-`;

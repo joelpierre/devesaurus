@@ -5,17 +5,24 @@ exports[`<WordCard/> should match snapShot 1`] = `
   className="theme--tint-alpha"
   data-test="component-word-card"
 >
-  <header>
-    <h3
-      data-test=""
+  <header
+    data-test="word-card-header"
+  >
+    <Heading
+      classes={null}
+      data-test="word-card-heading"
+      priority="3"
     >
       title
-    </h3>
+    </Heading>
   </header>
-  <div>
+  <div
+    data-test="word-card-body"
+  >
     <Button
       action={null}
       behavior="router"
+      data-test="word-card-button"
       link="/word/slug"
       size="md"
       text="Get definition"

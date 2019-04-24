@@ -9,7 +9,7 @@ exports[`<PageTemplate/> should match snapshot 1`] = `
   onGetSiteOptions={[Function]}
   title="test"
 >
-  <WithAcfComponents
+  <AcfComponents
     component={
       Object {
         "acf_fc_layout": "WordPressAcf_Text_Block",

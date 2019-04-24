@@ -41,9 +41,6 @@ exports[`<AcfComponents/> should match snapshot 1`] = `
   }
   pageTheme="brand"
 >
-  <div>
-    Test
-  </div>
   <CtaBanner
     data-test="hoc-acf-cta_banner"
     module={
