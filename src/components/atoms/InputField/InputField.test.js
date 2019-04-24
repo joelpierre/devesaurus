@@ -9,6 +9,7 @@ import {
 } from '../../../utils/test-utilities';
 
 import InputField from './InputField';
+import FormLabel from '../FormLabel/FormLabel';
 
 const defaultProps = {
   name: 'test',
@@ -50,6 +51,16 @@ describe('<InputField/>', () => {
   });
 
   it('should match snapshot', () => {
+    matchSnapshot(wrapper);
+  });
+
+  it('should render with FormLabel', () => {
+    wrapper = setup({
+      ...defaultProps,
+      label: 'hello',
+    });
+
+    expect(wrapper.find(FormLabel)).toBeTruthy();
     matchSnapshot(wrapper);
   });
 });

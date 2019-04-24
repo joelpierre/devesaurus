@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './InputField.module.scss';
-import Label from '../Label/Label';
+import Label from '../FormLabel/FormLabel';
 
 const InputField = ({
   name,

@@ -5,9 +5,9 @@ import * as postActions from '../../store/actions/post.actions';
 
 import { mapOverACFComponents } from '../../utils';
 
-import AcfComponents from '../../hoc/acfComponents';
 import Heading from '../core/Heading/Heading';
 import { CoreLayout } from '../../layouts/CoreLayout';
+import AcfComponents from '../../hoc/AcfComponents';
 
 export class PostTemplate extends PureComponent {
   componentDidMount() {

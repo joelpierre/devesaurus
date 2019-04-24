@@ -9,7 +9,7 @@ import {
 } from '../../../utils/test-utilities';
 
 import SelectField from './SelectField';
-import Label from '../Label/Label';
+import FormLabel from '../FormLabel/FormLabel';
 
 const defaultProps = {
   name: 'test-name',
@@ -51,13 +51,13 @@ describe('<SelectField/>', () => {
     matchSnapshot(wrapper);
   });
 
-  it('should render with label', () => {
+  it('should render with FormLabel', () => {
     wrapper = setup({
       ...defaultProps,
       label: 'hello',
     });
 
-    expect(wrapper.find(Label)).toBeTruthy();
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper.find(FormLabel)).toBeTruthy();
+    matchSnapshot(wrapper);
   });
 });

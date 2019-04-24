@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Label/> should match snapshot 1`] = `
+exports[`<FormLabel/> should match snapshot 1`] = `
 <label
-  aria-label="Label for test"
+  aria-label="FormLabel for test"
   className="form__label"
   data-test="component-label"
   htmlFor="test"

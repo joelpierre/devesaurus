@@ -2,22 +2,22 @@ import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import styles from './TermsMenu.module.scss';
+import styles from './FooterMenu.module.scss';
 
 import MenuItem from '../../atoms/MenuItem/MenuItem';
 
-export const PureTermsMenu = ({
+export const PureFooterMenu = ({
   classes,
   allWordpressWpApiMenusMenusItems,
 }) => (
   <nav
-    data-test="component-terms-menu"
-    className={`${styles['terms-menu']} ${classes}`}
+    data-test="component-footer-menu"
+    className={`${styles['footer-menu']} ${classes}`}
   >
-    <ul className={styles['terms-menu__list']}>
+    <ul className={styles['footer-menu__list']}>
       {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
         <MenuItem
-          classes={styles['terms-menu__item']}
+          classes={styles['footer-menu__item']}
           key={item.object_slug}
           item={item}
         />
@@ -26,27 +26,27 @@ export const PureTermsMenu = ({
   </nav>
 );
 
-const TermsMenu = ({ classes }) => (
+const FooterMenu = ({ classes }) => (
   <StaticQuery
-    data-test="component-terms-menu-query"
+    data-test="component-footer-menu-query"
     query={menuQuery}
-    render={props => <PureTermsMenu {...props} classes={classes} />}
+    render={props => <PureFooterMenu {...props} classes={classes} />}
   />
 );
 
-TermsMenu.defaultProps = {
+FooterMenu.defaultProps = {
   classes: null,
 };
 
-TermsMenu.propTypes = {
+FooterMenu.propTypes = {
   classes: PropTypes.string,
 };
 
-export default TermsMenu;
+export default FooterMenu;
 
 const menuQuery = graphql`
   {
-    allWordpressWpApiMenusMenusItems(filter: { name: { eq: "Terms Menu" } }) {
+    allWordpressWpApiMenusMenusItems(filter: { name: { eq: "Footer Menu" } }) {
       edges {
         node {
           name

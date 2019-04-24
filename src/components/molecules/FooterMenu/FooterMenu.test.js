@@ -9,7 +9,7 @@ import {
   matchSnapshot,
 } from '../../../utils/test-utilities';
 
-import TermsMenu, { PureTermsMenu } from './TermsMenu';
+import FooterMenu, { PureFooterMenu } from './FooterMenu';
 
 const defaultProps = {};
 
@@ -31,21 +31,21 @@ const defaultPureProps = {
 };
 
 /**
- * Factory function to create a ShallowWrapper for the TermsMenu component.
+ * Factory function to create a ShallowWrapper for the FooterMenu component.
  * @param {object} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<TermsMenu {...setupProps} />);
+  return shallow(<FooterMenu {...setupProps} />);
 };
 
 const pureSetup = (props = {}) => {
   const setupProps = { ...defaultPureProps, ...props };
-  return shallow(<PureTermsMenu {...setupProps} />);
+  return shallow(<PureFooterMenu {...setupProps} />);
 };
 
-describe('<TermsMenu/>', () => {
+describe('<FooterMenu/>', () => {
   let wrapper;
   let pureWrapper;
 
@@ -54,22 +54,22 @@ describe('<TermsMenu/>', () => {
     pureWrapper = pureSetup();
   });
 
-  it('renders the TermsMenu Component without errors query', () => {
-    const component = findByTestAttr(wrapper, 'component-terms-menu-query');
+  it('renders the FooterMenu Component without errors query', () => {
+    const component = findByTestAttr(wrapper, 'component-footer-menu-query');
     expect(component.length).toBe(1);
   });
 
-  it('renders the TermsMenu Component without errors', () => {
-    const component = findByTestAttr(pureWrapper, 'component-terms-menu');
+  it('renders the FooterMenu Component without errors', () => {
+    const component = findByTestAttr(pureWrapper, 'component-footer-menu');
     expect(component.length).toBe(1);
   });
 
   it('should render with correct props', () => {
-    checkProps(TermsMenu, defaultProps);
+    checkProps(FooterMenu, defaultProps);
   });
 
   it('should render with correct props', () => {
-    checkProps(PureTermsMenu, defaultProps);
+    checkProps(PureFooterMenu, defaultProps);
   });
 
   it('should match snapshot', () => {

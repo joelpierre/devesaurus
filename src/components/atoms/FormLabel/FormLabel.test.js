@@ -2,48 +2,43 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import acfComponents from './acfComponents';
 import {
   checkProps,
   findByTestAttr,
   matchSnapshot,
-} from '../utils/test-utilities';
+} from '../../../utils/test-utilities';
+
+import Label from './FormLabel';
 
 const defaultProps = {
-  component: {
-    acf_fc_layout: 'text_block',
-  },
-  pageTheme: 'brand',
+  text: 'test',
+  name: 'test',
 };
 
 /**
- * Factory function to create a ShallowWrapper for the acfComponents component.
+ * Factory function to create a ShallowWrapper for the FormLabel component.
  * @param {object} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<acfComponents {...setupProps} />);
+  return shallow(<Label {...setupProps} />);
 };
 
-describe('<acfComponents/>', () => {
+describe('<FormLabel/>', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = setup();
   });
 
-  xit('renders the acfComponents Component without errors', () => {
-    const component = findByTestAttr(
-      wrapper,
-      `hoc-acf-${defaultProps.component.acf_fc_layout}`
-    );
-
+  it('renders the FormLabel Component without errors', () => {
+    const component = findByTestAttr(wrapper, 'component-label');
     expect(component.length).toBe(1);
   });
 
   it('should render with correct props', () => {
-    checkProps(acfComponents, defaultProps);
+    checkProps(Label, defaultProps);
   });
 
   it('should match snapshot', () => {

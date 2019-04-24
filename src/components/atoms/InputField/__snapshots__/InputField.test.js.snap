@@ -20,3 +20,28 @@ exports[`<InputField/> should match snapshot 1`] = `
   />
 </Fragment>
 `;
+
+exports[`<InputField/> should render with FormLabel 1`] = `
+<Fragment>
+  <FormLabel
+    name="test"
+    text="hello"
+  />
+  <input
+    aria-label="Input for test"
+    className="input-field"
+    data-test="component-input-field"
+    defaultValue=""
+    disabled={false}
+    hidden={null}
+    name="test"
+    onBlur={null}
+    onChange={null}
+    onClick={null}
+    onFocus={null}
+    placeholder=""
+    readOnly={false}
+    type="text"
+  />
+</Fragment>
+`;

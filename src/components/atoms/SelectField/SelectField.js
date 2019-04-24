@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SelectField.module.scss';
-import Label from '../Label/Label';
+import Label from '../FormLabel/FormLabel';
 
 const SelectField = ({ name, placeholder, options, label }) => {
   return (

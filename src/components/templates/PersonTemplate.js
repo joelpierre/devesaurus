@@ -5,8 +5,8 @@ import * as personActions from '../../store/actions/team.actions';
 
 import { mapOverACFComponents } from '../../utils';
 
-import AcfComponents from '../../hoc/acfComponents';
 import { CoreLayout } from '../../layouts/CoreLayout';
+import AcfComponents from '../../hoc/AcfComponents';
 
 export class PersonTemplate extends PureComponent {
   componentDidMount() {

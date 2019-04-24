@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import * as styles from './WordCard.module.scss';
 import { wordPropTypeShape } from '../../../utils/propTypes';
 import Button from '../Buttons/Button';
+import Heading from '../../core/Heading/Heading';
 
 class WordCard extends PureComponent {
   constructor() {
@@ -19,8 +20,6 @@ class WordCard extends PureComponent {
 
   sortTerms() {
     const { terms } = this.props;
-
-    // console.log(terms);
 
     if (terms) {
       this.categories = terms.filter(term => {
@@ -53,10 +52,17 @@ class WordCard extends PureComponent {
         ])}
         data-test="component-word-card"
       >
-        <header className={styles['word-card__header']}>
-          <h3 data-test="" className={styles['word-card__heading']}>
+        <header
+          data-test="word-card-header"
+          className={styles['word-card__header']}
+        >
+          <Heading
+            priority="3"
+            data-test="word-card-heading"
+            className={styles['word-card__heading']}
+          >
             {title}
-          </h3>
+          </Heading>
         </header>
 
         {this.categories && (
@@ -79,8 +85,12 @@ class WordCard extends PureComponent {
           </p>
         )}
 
-        <div className={styles['word-card__body']}>
-          <Button link={`/word/${slug}`} text="Get definition" />
+        <div data-test="word-card-body" className={styles['word-card__body']}>
+          <Button
+            data-test="word-card-button"
+            link={`/word/${slug}`}
+            text="Get definition"
+          />
         </div>
       </article>
     );

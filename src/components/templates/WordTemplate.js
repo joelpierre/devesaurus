@@ -33,7 +33,7 @@ export class WordTemplate extends PureComponent {
   render() {
     const { wordData, pageContext } = this.props;
 
-    // console.log(wordData);
+    // console.log('Word Data ', wordData);
 
     return (
       <CoreLayout

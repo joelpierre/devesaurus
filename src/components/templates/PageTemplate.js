@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import * as pageActions from '../../store/actions/page.actions';
-
 import { mapOverACFComponents } from '../../utils';
-
-import AcfComponents from '../../hoc/acfComponents';
 import { CoreLayout } from '../../layouts/CoreLayout';
+import AcfComponents from '../../hoc/AcfComponents';
 
 export class PageTemplate extends PureComponent {
   componentDidMount() {
