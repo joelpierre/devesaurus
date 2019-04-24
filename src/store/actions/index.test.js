@@ -28,6 +28,7 @@ import {
 } from './';
 import {
   coreActionTypes,
+  pageActionTypes,
   postActionTypes,
   teamActionTypes,
   wordActionTypes,
@@ -64,6 +65,27 @@ describe('Core Actions', () => {
     expect(getSiteOptionsFailed().type).toBe(
       coreActionTypes.GET_SITE_OPTIONS_FAILED
     );
+  });
+});
+
+describe('Page Actions', () => {
+  it('getPageData should have the correct type', () => {
+    expect(getPageData().type).toBe(pageActionTypes.GET_PAGE_DATA);
+  });
+
+  it('getPageDataFailed should have the correct type', () => {
+    expect(getPageDataFailed().type).toBe(pageActionTypes.GET_PAGE_FAILED);
+  });
+
+  it('setPageData should have the correct type and data', () => {
+    const data = {};
+
+    expect(setPageData(data).type).toBe(pageActionTypes.SET_PAGE_DATA);
+    expect(setPageData(data).data).toBe(data);
+  });
+
+  it('getPageData should have the correct type', () => {
+    expect(clearPageData().type).toBe(pageActionTypes.CLEAR_PAGE_DATA);
   });
 });
 
