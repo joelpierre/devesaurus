@@ -1,3 +1,4 @@
+/* istanbul ignore next */
 export {
   getPageData,
   getPageDataFailed,
@@ -5,6 +6,7 @@ export {
   clearPageData,
 } from './page.actions';
 
+/* istanbul ignore next */
 export {
   getSiteMeta,
   getSiteMetaFailed,
@@ -14,6 +16,7 @@ export {
   setSiteOptions,
 } from './core.actions';
 
+/* istanbul ignore next */
 export {
   getWordData,
   getWordDataFailed,
@@ -21,6 +24,7 @@ export {
   clearWordData,
 } from './word.actions';
 
+/* istanbul ignore next */
 export {
   getPostData,
   getPostDataFailed,
@@ -28,6 +32,7 @@ export {
   clearPostData,
 } from './post.actions';
 
+/* istanbul ignore next */
 export {
   getTeamData,
   getTeamDataFailed,
