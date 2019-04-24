@@ -1,6 +1,6 @@
 module.exports = {
   transform: {
-    '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`,
+    '^.+\\.jsx?$': `<rootDir>/config/jest/jest-preprocess.js`,
   },
   moduleNameMapper: {
     '.+\\.(css|styl|less|sass|scss)$': `identity-obj-proxy`,
@@ -8,21 +8,22 @@ module.exports = {
   },
   testPathIgnorePatterns: [`node_modules`, `.cache`],
   transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
   globals: {
     __PATH_PREFIX__: ``,
   },
   testURL: `http://localhost`,
   setupFiles: [
-    `<rootDir>/jest-loader-shim.js`,
-    `<rootDir>/jest-setup-tests.js`,
+    `<rootDir>/config/jest/jest-loader-shim.js`,
+    `<rootDir>/config/jest/jest-setup-tests.js`,
   ],
   cacheDirectory: './.cache/jest',
   coverageThreshold: {
     global: {
-      statements: 60,
-      branches: 60,
-      functions: 60,
-      lines: 60,
+      statements: 72,
+      branches: 78,
+      functions: 73,
+      lines: 73,
     },
   },
   // collectCoverage: true,
