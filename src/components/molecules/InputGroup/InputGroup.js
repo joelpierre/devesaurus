@@ -4,7 +4,7 @@ import InputField from '../../atoms/InputField/InputField';
 import Button from '../Buttons/Button';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import styles from './InputGroup.module.scss';
-import { themePropTypeShape } from '../../../utils/propTypeShapes';
+import { themePropType } from '../../../utils/propTypes';
 
 const InputGroup = ({
   append,
@@ -222,7 +222,7 @@ InputGroup.propTypes = {
     button: PropTypes.shape({
       text: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
-      ...themePropTypeShape,
+      ...themePropType,
       behavior: PropTypes.oneOf(['action']),
       size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'full']),
     }),
@@ -233,7 +233,7 @@ InputGroup.propTypes = {
     button: PropTypes.shape({
       text: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
-      ...themePropTypeShape,
+      ...themePropType,
       behavior: PropTypes.oneOf(['action']),
       size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'full']),
     }),

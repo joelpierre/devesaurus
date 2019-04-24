@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import WordCard from '../../molecules/WordCard/WordCard';
 import styles from './FeaturedWords.module.scss';
-import { wordPropTypeShape } from '../../../utils/propTypeShapes';
+import { wordPropTypeShape } from '../../../utils/propTypes';
 import { sortWordObj } from '../../../helpers';
 import Section from '../../core/Section/Section';
 import Container from '../../core/Container/Container';

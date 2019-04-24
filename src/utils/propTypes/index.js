@@ -28,8 +28,27 @@ export const wordPropTypeShape = {
   }),
 };
 
-export const themePropTypeShape = {
+export const defaultTheme = {
+  theme: 'brand',
+};
+
+export const themePropType = {
   theme: PropTypes.oneOf([
+    'brand',
+    'alpha',
+    'tint-alpha',
+    'tint-beta',
+    'tint-psi',
+    'tint-omega',
+  ]),
+};
+
+export const defaultPageTheme = {
+  pageTheme: 'brand',
+};
+
+export const pageThemePropType = {
+  pageTheme: PropTypes.oneOf([
     'brand',
     'alpha',
     'tint-alpha',

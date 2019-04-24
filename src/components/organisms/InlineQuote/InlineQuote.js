@@ -7,6 +7,7 @@ import Row from '../../core/Row/Row';
 import Container from '../../core/Container/Container';
 import Flex from '../../core/Flex/Flex';
 import styles from '../CtaBanner/CtaBanner.module.scss';
+import { defaultPageTheme, pageThemePropType } from '../../../utils/propTypes';
 
 const InlineQuote = ({ module, pageTheme }) => {
   return (
@@ -28,16 +29,13 @@ const InlineQuote = ({ module, pageTheme }) => {
   );
 };
 
+InlineQuote.defaultProps = {
+  ...defaultPageTheme,
+};
+
 InlineQuote.propTypes = {
   module: PropTypes.instanceOf(Object).isRequired,
-  pageTheme: PropTypes.oneOf([
-    'brand',
-    'alpha',
-    'tint-alpha',
-    'tint-beta',
-    'tint-psi',
-    'tint-omega',
-  ]).isRequired,
+  ...pageThemePropType,
 };
 
 export default InlineQuote;

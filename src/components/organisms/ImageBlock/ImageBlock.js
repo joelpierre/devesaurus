@@ -7,6 +7,7 @@ import Row from '../../core/Row/Row';
 import Flex from '../../core/Flex/Flex';
 import Heading from '../../core/Heading/Heading';
 import styles from '../CtaBanner/CtaBanner.module.scss';
+import { defaultPageTheme, pageThemePropType } from '../../../utils/propTypes';
 
 const ImageBlock = ({ module, pageTheme }) => {
   return (
@@ -28,16 +29,13 @@ const ImageBlock = ({ module, pageTheme }) => {
   );
 };
 
+ImageBlock.defaultProps = {
+  ...defaultPageTheme,
+};
+
 ImageBlock.propTypes = {
   module: PropTypes.instanceOf(Object).isRequired,
-  pageTheme: PropTypes.oneOf([
-    'brand',
-    'alpha',
-    'tint-alpha',
-    'tint-beta',
-    'tint-psi',
-    'tint-omega',
-  ]).isRequired,
+  ...pageThemePropType,
 };
 
 export default ImageBlock;

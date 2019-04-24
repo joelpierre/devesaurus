@@ -11,8 +11,9 @@ import {
 import ImageBlock from './ImageBlock';
 
 const defaultProps = {
-  module: {},
-  pageTheme: 'alpha',
+  module: {
+    theme: 'alpha',
+  },
 };
 
 /**

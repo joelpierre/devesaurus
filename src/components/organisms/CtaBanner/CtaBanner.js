@@ -8,6 +8,7 @@ import Row from '../../core/Row/Row';
 import Flex from '../../core/Flex/Flex';
 import Section from '../../core/Section/Section';
 import Heading from '../../core/Heading/Heading';
+import { defaultPageTheme, pageThemePropType } from '../../../utils/propTypes';
 
 const CtaBanner = ({ module, pageTheme }) => {
   return (
@@ -30,12 +31,12 @@ const CtaBanner = ({ module, pageTheme }) => {
 };
 
 CtaBanner.defaultProps = {
-  pageTheme: 'brand',
+  ...defaultPageTheme,
 };
 
 CtaBanner.propTypes = {
   module: PropTypes.instanceOf(Object).isRequired,
-  pageTheme: PropTypes.string,
+  ...pageThemePropType,
 };
 
 export default CtaBanner;

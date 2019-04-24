@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import * as styles from './WordCard.module.scss';
-import { wordPropTypeShape } from '../../../utils/propTypeShapes';
+import { wordPropTypeShape } from '../../../utils/propTypes';
 import Button from '../Buttons/Button';
 
 class WordCard extends PureComponent {
