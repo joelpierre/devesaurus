@@ -18,6 +18,9 @@ exports[`<WordCard/> should match snapShot 1`] = `
   </header>
   <div
     data-test="word-card-body"
+  />
+  <footer
+    data-test="word-card-footer"
   >
     <Button
       action={null}
@@ -28,6 +31,6 @@ exports[`<WordCard/> should match snapShot 1`] = `
       text="Get definition"
       theme="brand"
     />
-  </div>
+  </footer>
 </article>
 `;

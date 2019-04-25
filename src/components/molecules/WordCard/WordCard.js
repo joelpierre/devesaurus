@@ -10,8 +10,11 @@ class WordCard extends PureComponent {
   constructor() {
     super();
     this.sortTerms = this.sortTerms.bind(this);
-    this.categories = null;
-    this.tags = null;
+
+    this.state = {
+      categories: null,
+      tags: null,
+    };
   }
 
   componentDidMount() {
@@ -20,26 +23,32 @@ class WordCard extends PureComponent {
 
   sortTerms() {
     const { terms } = this.props;
+    let cats;
+    let tags;
 
     if (terms) {
-      this.categories = terms.filter(term => {
+      cats = terms.filter(term => {
         return term.taxonomy === 'word_category';
       });
 
-      this.tags = terms.filter(term => {
+      tags = terms.filter(term => {
         return term.taxonomy === 'word_tag';
       });
     }
 
-    // console.log(this.categories);
-    // console.log(this.tags);
+    if (cats) {
+      this.setState({ categories: cats });
+    }
+
+    if (tags) {
+      this.setState({ tags });
+    }
   }
 
   render() {
-    const { title, slug, acf, classes, contrast } = this.props;
-    // console.log(acf);
-    // console.log(this.categories);
-    // console.log(this.tags);
+    const { title, slug, classes, contrast } = this.props;
+    const { categories, tags } = this.state;
+
     return (
       <article
         className={classNames([
@@ -65,33 +74,32 @@ class WordCard extends PureComponent {
           </Heading>
         </header>
 
-        {this.categories && (
-          <p data-test="word-card-categories">
-            {this.categories.map(category => (
-              <span key={category.name} data-test="word-card-category">
-                {category}
-              </span>
-            ))}
-          </p>
-        )}
-
-        {this.tags && (
-          <p data-test="word-card-tags">
-            {this.tags.map(tag => (
-              <span key={tag.name} data-test="word-card-tag">
-                {tag}
-              </span>
-            ))}
-          </p>
-        )}
-
         <div data-test="word-card-body" className={styles['word-card__body']}>
+          {categories &&
+            categories.map(category => (
+              <span key={category.slug} data-test="word-card-category">
+                {category.name}
+              </span>
+            ))}
+
+          {tags &&
+            tags.map(tag => (
+              <span key={tag.slug} data-test="word-card-tag">
+                {tag.name}
+              </span>
+            ))}
+        </div>
+
+        <footer
+          data-test="word-card-footer"
+          className={styles['word-card__footer']}
+        >
           <Button
             data-test="word-card-button"
             link={`/word/${slug}`}
             text="Get definition"
           />
-        </div>
+        </footer>
       </article>
     );
   }

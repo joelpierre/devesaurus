@@ -35,6 +35,7 @@ export class CoreLayout extends PureComponent {
   }
 }
 
+/* istanbul ignore next */
 CoreLayout.defaultProps = {
   title: 'Default Title',
   description: 'Default description',
@@ -55,6 +56,7 @@ CoreLayout.propTypes = {
   onGetSiteOptions: PropTypes.func,
 };
 
+/* istanbul ignore next */
 const mapStateToProps = ({ core: { title, description } }) => ({
   title,
   description,

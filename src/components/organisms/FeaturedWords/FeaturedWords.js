@@ -40,7 +40,7 @@ class FeaturedWords extends PureComponent {
       >
         <Container>
           <Row>
-            <Flex>
+            <Flex col="12">
               <Heading priority="2" classes={styles['featured-words__heading']}>
                 Featured Words
               </Heading>
@@ -53,7 +53,7 @@ class FeaturedWords extends PureComponent {
                 <Flex
                   data-test="featured-words-word"
                   key={index}
-                  colXs="2"
+                  colMd="6"
                   colLg="4"
                 >
                   <WordCard

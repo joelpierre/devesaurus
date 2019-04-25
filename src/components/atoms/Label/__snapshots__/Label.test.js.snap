@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Label/> should match snapshot 1`] = `
+<Fragment>
+  <span
+    className="label"
+    data-test="component-label"
+  >
+    some label text
+  </span>
+</Fragment>
+`;
+
+exports[`<Label/> should match snapshot link 1`] = `
+<Fragment>
+  <mockConstructor
+    className="label"
+    data-test="component-label"
+    to="/hello"
+  >
+    text
+  </mockConstructor>
+</Fragment>
+`;
+
+exports[`<Label/> should match snapshot non-link 1`] = `
+<Fragment>
+  <span
+    className="label"
+    data-test="component-label"
+  >
+    some label text
+  </span>
+</Fragment>
+`;
