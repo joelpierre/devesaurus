@@ -3,11 +3,15 @@
 exports[`<Label/> should match snapshot link 1`] = `
 <Fragment>
   <mockConstructor
-    className="label"
+    className="label label--brand"
     data-test="component-label"
     to="/hello"
   >
-    text
+    <span
+      className="label__text"
+    >
+      text
+    </span>
   </mockConstructor>
 </Fragment>
 `;
@@ -15,10 +19,14 @@ exports[`<Label/> should match snapshot link 1`] = `
 exports[`<Label/> should match snapshot non-link 1`] = `
 <Fragment>
   <span
-    className="label"
+    className="label label--brand"
     data-test="component-label"
   >
-    some label text
+    <span
+      className="label__text"
+    >
+      some label text
+    </span>
   </span>
 </Fragment>
 `;

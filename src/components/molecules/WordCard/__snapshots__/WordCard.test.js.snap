@@ -20,6 +20,7 @@ exports[`<WordCard/> should match snapShot 1`] = `
     data-test="word-card-body"
   />
   <footer
+    className="mt-1"
     data-test="word-card-footer"
   >
     <Button

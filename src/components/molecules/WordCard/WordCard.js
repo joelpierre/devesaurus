@@ -5,6 +5,7 @@ import * as styles from './WordCard.module.scss';
 import { wordPropTypeShape } from '../../../utils/propTypes';
 import Button from '../Buttons/Button';
 import Heading from '../../core/Heading/Heading';
+import Label from '../../atoms/Label/Label';
 
 class WordCard extends PureComponent {
   constructor() {
@@ -77,22 +78,28 @@ class WordCard extends PureComponent {
         <div data-test="word-card-body" className={styles['word-card__body']}>
           {categories &&
             categories.map(category => (
-              <span key={category.slug} data-test="word-card-category">
-                {category.name}
-              </span>
+              <Label
+                key={category.slug}
+                data-test="word-card-category"
+                text={category.name}
+                link={`/category/${category.slug}`}
+              />
             ))}
 
           {tags &&
             tags.map(tag => (
-              <span key={tag.slug} data-test="word-card-tag">
-                {tag.name}
-              </span>
+              <Label
+                key={tag.slug}
+                data-test="word-card-tag"
+                text={tag.name}
+                link={`/tag/${tag.slug}`}
+              />
             ))}
         </div>
 
         <footer
           data-test="word-card-footer"
-          className={styles['word-card__footer']}
+          className={classNames([styles['word-card__footer'], 'mt-1'])}
         >
           <Button
             data-test="word-card-button"

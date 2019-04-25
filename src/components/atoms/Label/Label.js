@@ -1,16 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Link } from 'gatsby';
 import styles from './Label.module.scss';
+import { defaultTheme, themePropType } from '../../../utils/propTypes';
 
-const Label = ({ text, link }) => {
+const Label = ({ text, link, theme }) => {
   const label = link ? (
-    <Link data-test="component-label" to={link} className={styles.label}>
-      {text}
+    <Link
+      data-test="component-label"
+      to={link}
+      className={classNames([styles.label, styles[`label--${theme}`]])}
+    >
+      <span className={classNames(styles.label__text)}>{text}</span>
     </Link>
   ) : (
-    <span data-test="component-label" className={styles.label}>
-      {text}
+    <span
+      data-test="component-label"
+      className={classNames([styles.label, styles[`label--${theme}`]])}
+    >
+      <span className={classNames(styles.label__text)}>{text}</span>
     </span>
   );
 
@@ -19,11 +28,13 @@ const Label = ({ text, link }) => {
 
 Label.defaultProps = {
   link: null,
+  ...defaultTheme,
 };
 
 Label.propTypes = {
   link: PropTypes.string,
   text: PropTypes.string.isRequired,
+  ...themePropType,
 };
 
 export default Label;

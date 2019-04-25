@@ -1,5 +1,33 @@
+@import "~sass/core";
+
 .label {
   $root: &;
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  padding: .5rem 1rem .6rem;
+  margin-right: .8rem;
+  margin-bottom: .8rem;
+  border-radius: 2.5rem;
+  align-content: center;
+  justify-content: center;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  @include theme {
+    color: white;
+    transition: $transition-all-base;
+
+    @include hover-focus {
+      color: white;
+      opacity: .8;
+      text-decoration: none;
+    }
+  }
+
+  &__text {
+    text-decoration: none;
+    line-height: 1;
+  }
 }

@@ -1,12 +1,12 @@
 @mixin can-hover {
   @media (hover: hover) {
-    @content
+    @content;
   }
 }
 
 @mixin no-hover {
   @media (hover: none) {
-    @content
+    @content;
   }
 }
 
