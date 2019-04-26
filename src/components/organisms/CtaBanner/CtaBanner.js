@@ -31,7 +31,7 @@ const CtaBanner = ({ module, pageTheme }) => {
 };
 
 CtaBanner.defaultProps = {
-  ...defaultPageTheme,
+  ...defaultPageTheme(),
 };
 
 CtaBanner.propTypes = {

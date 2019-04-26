@@ -30,7 +30,7 @@ const InlineQuote = ({ module, pageTheme }) => {
 };
 
 InlineQuote.defaultProps = {
-  ...defaultPageTheme,
+  ...defaultPageTheme(),
 };
 
 InlineQuote.propTypes = {

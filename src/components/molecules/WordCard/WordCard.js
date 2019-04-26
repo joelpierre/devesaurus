@@ -76,25 +76,39 @@ class WordCard extends PureComponent {
         </header>
 
         <div data-test="word-card-body" className={styles['word-card__body']}>
-          {categories &&
-            categories.map(category => (
-              <Label
-                key={category.slug}
-                data-test="word-card-category"
-                text={category.name}
-                link={`/category/${category.slug}`}
-              />
-            ))}
+          {categories && (
+            <div className={styles['word-card__categories']}>
+              <Heading priority={5}>Categories</Heading>
+              {categories.map(category => {
+                // console.log(category);
+                return (
+                  <Label
+                    key={category.slug}
+                    data-test="word-card-category"
+                    text={category.name}
+                    link={`/category/${category.slug}`}
+                  />
+                );
+              })}
+            </div>
+          )}
 
-          {tags &&
-            tags.map(tag => (
-              <Label
-                key={tag.slug}
-                data-test="word-card-tag"
-                text={tag.name}
-                link={`/tag/${tag.slug}`}
-              />
-            ))}
+          {tags && (
+            <div className={styles['word-card__tags']}>
+              <Heading priority={5}>Tags</Heading>
+              {tags.map(tag => {
+                // console.log(tag);
+                return (
+                  <Label
+                    key={tag.slug}
+                    data-test="word-card-tag"
+                    text={tag.name}
+                    link={`/tag/${tag.slug}`}
+                  />
+                );
+              })}
+            </div>
+          )}
         </div>
 
         <footer
@@ -105,6 +119,7 @@ class WordCard extends PureComponent {
             data-test="word-card-button"
             link={`/word/${slug}`}
             text="Get definition"
+            caps
           />
         </footer>
       </article>

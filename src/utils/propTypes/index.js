@@ -28,9 +28,17 @@ export const wordPropTypeShape = {
   }),
 };
 
-export const defaultTheme = {
-  theme: 'brand',
+export const defaultSize = (size = 'md') => ({
+  size,
+});
+
+export const sizePropType = {
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'full']),
 };
+
+export const defaultTheme = (theme = 'brand') => ({
+  theme,
+});
 
 export const themePropType = {
   theme: PropTypes.oneOf([
@@ -43,9 +51,9 @@ export const themePropType = {
   ]),
 };
 
-export const defaultPageTheme = {
-  pageTheme: 'brand',
-};
+export const defaultPageTheme = (theme = 'brand') => ({
+  pageTheme: theme,
+});
 
 export const pageThemePropType = {
   pageTheme: PropTypes.oneOf([

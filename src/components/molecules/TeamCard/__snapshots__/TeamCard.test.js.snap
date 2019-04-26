@@ -21,10 +21,12 @@ exports[`<TeamCard/> should match snapshot 1`] = `
     <Button
       action={null}
       behavior="router"
+      caps={false}
+      classes={null}
       link="slug"
       size="md"
       text="Read First Name's profile"
-      theme="brand"
+      theme="tint-omega"
     />
   </footer>
 </article>

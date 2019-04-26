@@ -3,7 +3,7 @@
 exports[`<Label/> should match snapshot link 1`] = `
 <Fragment>
   <mockConstructor
-    className="label label--brand"
+    className="label label--alpha label--sm"
     data-test="component-label"
     to="/hello"
   >
@@ -19,7 +19,7 @@ exports[`<Label/> should match snapshot link 1`] = `
 exports[`<Label/> should match snapshot non-link 1`] = `
 <Fragment>
   <span
-    className="label label--brand"
+    className="label label--alpha label--sm"
     data-test="component-label"
   >
     <span

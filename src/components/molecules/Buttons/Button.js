@@ -3,8 +3,23 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './Button.module.scss';
+import {
+  defaultSize,
+  defaultTheme,
+  sizePropType,
+  themePropType,
+} from '../../../utils/propTypes';
 
-const Button = ({ text, behavior, theme, link, size, action }) => {
+const Button = ({
+  text,
+  behavior,
+  theme,
+  link,
+  size,
+  action,
+  caps,
+  classes,
+}) => {
   let button;
   switch (behavior) {
     case 'router':
@@ -16,6 +31,10 @@ const Button = ({ text, behavior, theme, link, size, action }) => {
             styles.btn,
             styles[`btn--${size}`],
             styles[`btn--${theme}`],
+            {
+              [styles[`btn--capitalise`]]: caps,
+            },
+            classes,
           ])}
         >
           {text}
@@ -32,6 +51,10 @@ const Button = ({ text, behavior, theme, link, size, action }) => {
             styles.btn,
             styles[`btn--${size}`],
             styles[`btn--${theme}`],
+            {
+              [styles[`btn--capitalise`]]: caps,
+            },
+            classes,
           ])}
           target="_blank"
           rel="noopener noreferrer nofollow"
@@ -50,6 +73,10 @@ const Button = ({ text, behavior, theme, link, size, action }) => {
             styles.btn,
             styles[`btn--${size}`],
             styles[`btn--${theme}`],
+            {
+              [styles[`btn--capitalise`]]: caps,
+            },
+            classes,
           ])}
           onClick={action.func}
         >
@@ -63,26 +90,23 @@ const Button = ({ text, behavior, theme, link, size, action }) => {
 };
 
 Button.defaultProps = {
-  theme: 'brand',
+  ...defaultTheme('tint-omega'),
+  ...defaultSize('md'),
+  caps: false,
   behavior: 'router',
-  size: 'md',
   action: null,
+  classes: null,
 };
 
 Button.propTypes = {
   action: PropTypes.func,
   text: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-  theme: PropTypes.oneOf([
-    'brand',
-    'alpha',
-    'tint-alpha',
-    'tint-beta',
-    'tint-psi',
-    'tint-omega',
-  ]),
+  classes: PropTypes.string,
+  caps: PropTypes.bool,
+  ...themePropType,
+  ...sizePropType,
   behavior: PropTypes.oneOf(['router', 'anchor', 'action']),
-  size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'full']),
 };
 
 export default Button;

@@ -67,7 +67,7 @@ class AcfComponents extends Component {
 }
 
 AcfComponents.defaultProps = {
-  ...defaultPageTheme,
+  ...defaultPageTheme(),
 };
 
 AcfComponents.propTypes = {

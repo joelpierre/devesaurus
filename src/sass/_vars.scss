@@ -60,6 +60,14 @@ $colors: (
   tint-omega: $color-tint-omega,
 );
 
+$sizes: (
+  xs: 'xs',
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+  xl: 'xl',
+);
+
 
 $link-hover-color: $color-brand;
 $link-decoration: none;

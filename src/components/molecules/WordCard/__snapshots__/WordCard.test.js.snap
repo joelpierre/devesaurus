@@ -26,11 +26,13 @@ exports[`<WordCard/> should match snapShot 1`] = `
     <Button
       action={null}
       behavior="router"
+      caps={true}
+      classes={null}
       data-test="word-card-button"
       link="/word/slug"
       size="md"
       text="Get definition"
-      theme="brand"
+      theme="tint-omega"
     />
   </footer>
 </article>

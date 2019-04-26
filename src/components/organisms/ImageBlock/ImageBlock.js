@@ -30,7 +30,7 @@ const ImageBlock = ({ module, pageTheme }) => {
 };
 
 ImageBlock.defaultProps = {
-  ...defaultPageTheme,
+  ...defaultPageTheme(),
 };
 
 ImageBlock.propTypes = {

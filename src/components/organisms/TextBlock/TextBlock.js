@@ -35,7 +35,7 @@ const TextBlock = ({ module, pageTheme }) => {
 };
 
 TextBlock.defaultProps = {
-  ...defaultPageTheme,
+  ...defaultPageTheme(),
 };
 
 TextBlock.propTypes = {
