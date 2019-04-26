@@ -47,7 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
   // createRedirect({
   //   fromPath: '/',
-  //   toPath: '/home',
+  //   toPath: '/about',
   //   redirectInBrowser: true,
   //   isPermanent: true,
   // });
@@ -291,7 +291,30 @@ exports.createPages = ({ graphql, actions }) => {
           resolve();
           // }
         });
-      });
-    // ==== END PERSON ====
+      }); // ==== END PERSON ====
+    // // ==== START Archive ====
+    // .then(() => {
+    //   graphql(``)
+    //     .then(result => {
+    //       if (result.errors) {
+    //         console.log(result.errors);
+    //         reject(result.errors);
+    //       }
+    //
+    //       // if (typeof window !== `undefined`) {
+    //       const personTemplate = path.resolve(
+    //         './src/components/templates/ArchiveTemplate.js',
+    //       );
+    //       _.each(result.data.allWordpressWpTeam.edges, edge => {
+    //         createPage({
+    //           path: `/team/${edge.node.slug}/`,
+    //           component: slash(personTemplate),
+    //           context: edge.node,
+    //         });
+    //       });
+    //       resolve();
+    //       // }
+    //     });
+    // });// ==== END ARCHIVE ==== //
   });
 };

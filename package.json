@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Joel Pierre-Powell <j.pierrepowell@gmail.com>",
   "dependencies": {
+    "algoliasearch": "^3.32.1",
     "axios": "^0.18.0",
     "babel-jest": "^24.5.0",
     "babel-plugin-inline-react-svg": "^1.0.1",
