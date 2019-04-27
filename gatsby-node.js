@@ -168,50 +168,58 @@ exports.createPages = ({ graphql, actions }) => {
 
       // ==== START WORDS ====
       .then(() => {
-        graphql(
-          `
-            {
-              allWordpressWpWord {
-                edges {
-                  node {
-                    yoast_meta {
-                      yoast_wpseo_title
-                      yoast_wpseo_metadesc
-                      yoast_wpseo_canonical
-                    }
-                    title
+        graphql(`
+          {
+            allWordpressWpWord {
+              edges {
+                node {
+                  id
+                  yoast_meta {
+                    yoast_wpseo_title
+                    yoast_wpseo_metadesc
+                    yoast_wpseo_canonical
+                  }
+                  title
+                  slug
+                  date
+                  type
+                  word_tags {
+                    id
+                    name
                     slug
-                    link
-                    date
-                    type
-                    word_tag
-                    word_category
-                    acf {
-                      page_theme
-                      definition
-                      origin {
-                        value
-                        label
+                    taxonomy
+                  }
+                  word_cats {
+                    id
+                    name
+                    slug
+                    taxonomy
+                  }
+                  acf {
+                    page_theme
+                    definition
+                    origin {
+                      value
+                      label
+                    }
+                    syllables {
+                      count
+                      list {
+                        item
                       }
-                      syllables {
-                        count
-                        list {
-                          item
-                        }
-                      }
-                      pronunciation
-                      part_of_speech
-                      synonyms {
-                        post_title
-                        post_name
-                      }
+                    }
+                    pronunciation
+                    part_of_speech
+                    synonyms {
+                      post_title
+                      post_name
                     }
                   }
                 }
               }
             }
-          `
-        ).then(result => {
+          }
+        `).then(result => {
           if (result.errors) {
             console.log(result.errors);
             reject(result.errors);
@@ -249,7 +257,12 @@ exports.createPages = ({ graphql, actions }) => {
                   title
                   slug
                   date
-                  staff_department
+                  department {
+                    id
+                    slug
+                    name
+                    taxonomy
+                  }
                   featured_media {
                     alt_text
                     source_url
@@ -291,30 +304,253 @@ exports.createPages = ({ graphql, actions }) => {
           resolve();
           // }
         });
-      }); // ==== END PERSON ====
-    // // ==== START Archive ====
-    // .then(() => {
-    //   graphql(``)
-    //     .then(result => {
-    //       if (result.errors) {
-    //         console.log(result.errors);
-    //         reject(result.errors);
-    //       }
-    //
-    //       // if (typeof window !== `undefined`) {
-    //       const personTemplate = path.resolve(
-    //         './src/components/templates/ArchiveTemplate.js',
-    //       );
-    //       _.each(result.data.allWordpressWpTeam.edges, edge => {
-    //         createPage({
-    //           path: `/team/${edge.node.slug}/`,
-    //           component: slash(personTemplate),
-    //           context: edge.node,
-    //         });
-    //       });
-    //       resolve();
-    //       // }
-    //     });
-    // });// ==== END ARCHIVE ==== //
+      }) // ==== END PERSON ====
+
+      // ==== START WORD CATEGORY ====
+      .then(() => {
+        graphql(`
+          {
+            allWordpressWpWordCategory {
+              edges {
+                node {
+                  id
+                  wordpress_id
+                  name
+                  slug
+                  taxonomy
+                  words {
+                    id
+                    title
+                    slug
+                    date
+                    acf {
+                      page_theme
+                      definition
+                      origin {
+                        value
+                        label
+                      }
+                      syllables {
+                        count
+                        list {
+                          item
+                        }
+                      }
+                      pronunciation
+                      part_of_speech
+                      synonyms {
+                        post_title
+                        post_name
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `).then(result => {
+          if (result.errors) {
+            console.log(result.errors);
+            reject(result.errors);
+          }
+
+          // if (typeof window !== `undefined`) {
+          const archiveTemplate = path.resolve(
+            './src/components/templates/ArchiveTemplate.js'
+          );
+          _.each(result.data.allWordpressWpWordCategory.edges, edge => {
+            createPage({
+              path: `/word-category/${edge.node.slug}/`,
+              component: slash(archiveTemplate),
+              context: edge.node,
+            });
+          });
+          resolve();
+          // }
+        });
+      })
+      // ==== END WORD CATEGORY ==== //
+
+      // ==== START WORD TAG ====
+      .then(() => {
+        graphql(`
+          {
+            allWordpressWpWordTag {
+              edges {
+                node {
+                  id
+                  wordpress_id
+                  name
+                  slug
+                  taxonomy
+                  words {
+                    id
+                    title
+                    slug
+                    date
+                    acf {
+                      page_theme
+                      definition
+                      origin {
+                        value
+                        label
+                      }
+                      syllables {
+                        count
+                        list {
+                          item
+                        }
+                      }
+                      pronunciation
+                      part_of_speech
+                      synonyms {
+                        post_title
+                        post_name
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `).then(result => {
+          if (result.errors) {
+            console.log(result.errors);
+            reject(result.errors);
+          }
+
+          // if (typeof window !== `undefined`) {
+          const archiveTemplate = path.resolve(
+            './src/components/templates/ArchiveTemplate.js'
+          );
+          _.each(result.data.allWordpressWpWordTag.edges, edge => {
+            createPage({
+              path: `/word-tag/${edge.node.slug}/`,
+              component: slash(archiveTemplate),
+              context: edge.node,
+            });
+          });
+          resolve();
+          // }
+        });
+      })
+      // ==== END WORD TAG ==== //
+
+      // ==== START TAG ====
+      .then(() => {
+        graphql(`
+          {
+            allWordpressTag {
+              edges {
+                node {
+                  wordpress_id
+                  name
+                  slug
+                  taxonomy
+                  posts {
+                    id
+                    title
+                    slug
+                    date
+                    author {
+                      name
+                      slug
+                    }
+                    featured_media {
+                      alt_text
+                      source_url
+                      media_details {
+                        width
+                        height
+                      }
+                    }
+                    acf {
+                      page_theme
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `).then(result => {
+          if (result.errors) {
+            console.log(result.errors);
+            reject(result.errors);
+          }
+
+          // if (typeof window !== `undefined`) {
+          const archiveTemplate = path.resolve(
+            './src/components/templates/ArchiveTemplate.js'
+          );
+          _.each(result.data.allWordpressTag.edges, edge => {
+            createPage({
+              path: `/tag/${edge.node.slug}/`,
+              component: slash(archiveTemplate),
+              context: edge.node,
+            });
+          });
+          resolve();
+          // }
+        });
+      })
+      // ==== END TAG ==== //
+
+      // ==== START CATEGORY ====
+      .then(() => {
+        graphql(`
+          {
+            allWordpressCategory {
+              edges {
+                node {
+                  wordpress_id
+                  name
+                  slug
+                  taxonomy
+                  posts {
+                    id
+                    title
+                    slug
+                    date
+                    author {
+                      name
+                      slug
+                    }
+                    featured_media {
+                      alt_text
+                      source_url
+                      media_details {
+                        width
+                        height
+                      }
+                    }
+                    acf {
+                      page_theme
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `).then(result => {
+          if (result.errors) {
+            console.log(result.errors);
+            reject(result.errors);
+          }
+
+          // if (typeof window !== `undefined`) {
+          const archiveTemplate = path.resolve(
+            './src/components/templates/ArchiveTemplate.js'
+          );
+          _.each(result.data.allWordpressCategory.edges, edge => {
+            createPage({
+              path: `/category/${edge.node.slug}/`,
+              component: slash(archiveTemplate),
+              context: edge.node,
+            });
+          });
+          resolve();
+          // }
+        });
+      }); // ==== END CATEGORY ==== //
   });
 };

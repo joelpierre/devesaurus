@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+/* eslint-disable */
 require('dotenv').config({
   path: `env/${process.env.NODE_ENV}.env`,
 });
@@ -110,6 +110,7 @@ module.exports = {
         concurrentRequests: 20,
         includedRoutes: [
           '**/*/*/categories',
+          '**/*/*/tags',
           '**/*/*/menus',
           '**/*/*/team',
           '**/*/*/word',
@@ -122,6 +123,7 @@ module.exports = {
           '**/*/*/word_category',
           '**/*/*/users',
         ],
+        normalizer: mapThings,
       },
     },
     {
@@ -135,3 +137,134 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 };
+
+function mapThings({ entities }) {
+  // Post Types
+  const pages = entities.filter(e => e.__type === 'wordpress__PAGE');
+  const posts = entities.filter(e => e.__type === 'wordpress__POST');
+  const words = entities.filter(e => e.__type === 'wordpress__wp_word');
+
+  // Taxonomies
+  const tags = entities.filter(e => e.__type === 'wordpress__TAG');
+  const cats = entities.filter(e => e.__type === 'wordpress__CATEGORY');
+
+  const teamDept = entities.filter(
+    e => e.__type === `wordpress__wp_staff_department`
+  );
+  const wordTags = entities.filter(e => e.__type === `wordpress__wp_word_tag`);
+  const wordCats = entities.filter(
+    e => e.__type === `wordpress__wp_word_category`
+  );
+
+  return entities.map(e => {
+    // Add Posts to category query
+    if (e.__type === 'wordpress__CATEGORY') {
+      const id = e.id;
+      let catPosts;
+
+      catPosts = posts.map(post => {
+        if (post.categories___NODE) {
+          if (post.categories___NODE.includes(id)) {
+            return post.id;
+          }
+        }
+      });
+      catPosts = Array.from(new Set(catPosts));
+      e.posts___NODE = catPosts.filter(post => post !== undefined);
+    }
+
+    // Add Words to word category query
+    if (e.__type === 'wordpress__wp_word_category') {
+      const id = e.id;
+      let catWords;
+
+      catWords = words.map(word => {
+        if (word.word_cats___NODE) {
+          if (word.word_cats___NODE.includes(id)) {
+            return word.id;
+          }
+        }
+      });
+
+      catWords = Array.from(new Set(catWords));
+      e.words___NODE = catWords.filter(word => word !== undefined);
+    }
+
+    // Add Posts to tag query
+    if (e.__type === 'wordpress__TAG') {
+      const id = e.id;
+      let tagPosts;
+
+      tagPosts = posts.map(post => {
+        if (post.tags___NODE) {
+          if (post.tags___NODE.includes(id)) {
+            return post.id;
+          }
+        }
+      });
+
+      tagPosts = Array.from(new Set(tagPosts));
+      e.posts___NODE = tagPosts.filter(post => post !== undefined);
+    }
+
+    // Add Words to word tag query
+    if (e.__type === 'wordpress__wp_word_tag') {
+      const id = e.id;
+      let tagWords;
+
+      tagWords = words.map(word => {
+        if (word.word_tags___NODE) {
+          if (word.word_tags___NODE.includes(id)) {
+            return word.id;
+          }
+        }
+      });
+
+      tagWords = Array.from(new Set(tagWords));
+      e.words___NODE = tagWords.filter(word => word !== undefined);
+    }
+
+    // Add word tags to words
+    if (e.__type === `wordpress__wp_word`) {
+      const hasWordTag =
+        e.word_tag && Array.isArray(e.word_tag) && e.word_tag.length;
+
+      if (hasWordTag) {
+        e.word_tags___NODE = e.word_tag.map(
+          tag => wordTags.find(gObj => tag === gObj.wordpress_id).id
+        );
+      }
+    }
+
+    // Add word categories to words
+    if (e.__type === `wordpress__wp_word`) {
+      const hasWordCat =
+        e.word_category &&
+        Array.isArray(e.word_category) &&
+        e.word_category.length;
+
+      if (hasWordCat) {
+        e.word_cats___NODE = e.word_category.map(
+          c => wordCats.find(gObj => c === gObj.wordpress_id).id
+        );
+      }
+    }
+
+    // Add staff dept to team
+    if (e.__type === `wordpress__wp_team`) {
+      const hasDept =
+        e.staff_department &&
+        Array.isArray(e.staff_department) &&
+        e.staff_department.length;
+
+      if (hasDept) {
+        e.department___NODE = e.staff_department.map(
+          c => teamDept.find(gObj => c === gObj.wordpress_id).id
+        );
+      }
+    }
+
+    // Return all mapped entities
+    return e;
+  });
+}

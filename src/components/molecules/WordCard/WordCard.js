@@ -86,7 +86,7 @@ class WordCard extends PureComponent {
                     key={category.slug}
                     data-test="word-card-category"
                     text={category.name}
-                    link={`/category/${category.slug}`}
+                    link={`/word-category/${category.slug}`}
                   />
                 );
               })}
@@ -103,7 +103,7 @@ class WordCard extends PureComponent {
                     key={tag.slug}
                     data-test="word-card-tag"
                     text={tag.name}
-                    link={`/tag/${tag.slug}`}
+                    link={`/word-tag/${tag.slug}`}
                   />
                 );
               })}
