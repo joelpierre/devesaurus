@@ -9,7 +9,11 @@ import {
   matchSnapshot,
 } from '../../utils/test-utilities';
 
-const defaultProps = {};
+const defaultProps = {
+  pageContext: {
+    name: 'test',
+  },
+};
 
 /**
  * Factory function to create a ShallowWrapper for the ArchiveTemplate component.
