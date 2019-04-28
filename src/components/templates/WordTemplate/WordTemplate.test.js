@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme/build';
 
 import ConnectedWordTemplate, { WordTemplate } from './WordTemplate';
-import { checkProps, matchSnapshot } from '../../utils/test-utilities';
+import { checkProps, matchSnapshot } from '../../../utils/test-utilities';
 
 const defaultProps = {
   onGetWord: jest.fn(),
@@ -14,6 +14,7 @@ const defaultProps = {
   },
   pageContext: {
     title: 'test',
+    slug: 'test-slug',
     yoast_meta: {
       yoast_wpseo_metadesc: '',
     },

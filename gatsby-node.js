@@ -91,7 +91,7 @@ exports.createPages = ({ graphql, actions }) => {
         // if (typeof window !== `undefined`) {
         // Create Page pages.
         const pageTemplate = path.resolve(
-          './src/components/templates/PageTemplate.js'
+          './src/components/templates/PageTemplate/PageTemplate.js'
         );
         _.each(result.data.allWordpressPage.edges, edge => {
           createPage({
@@ -151,7 +151,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           // if (typeof window !== `undefined`) {
           const postTemplate = path.resolve(
-            './src/components/templates/PostTemplate.js'
+            './src/components/templates/PostTemplate/PostTemplate.js'
           );
           _.each(result.data.allWordpressPost.edges, edge => {
             createPage({
@@ -227,7 +227,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           // if (typeof window !== `undefined`) {
           const wordTemplate = path.resolve(
-            './src/components/templates/WordTemplate.js'
+            './src/components/templates/WordTemplate/WordTemplate.js'
           );
           _.each(result.data.allWordpressWpWord.edges, edge => {
             createPage({
@@ -292,7 +292,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           // if (typeof window !== `undefined`) {
           const personTemplate = path.resolve(
-            './src/components/templates/PersonTemplate.js'
+            './src/components/templates/PersonTemplate/PersonTemplate.js'
           );
           _.each(result.data.allWordpressWpTeam.edges, edge => {
             createPage({
@@ -356,7 +356,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           // if (typeof window !== `undefined`) {
           const archiveTemplate = path.resolve(
-            './src/components/templates/ArchiveTemplate.js'
+            './src/components/templates/ArchiveTemplate/ArchiveTemplate.js'
           );
           _.each(result.data.allWordpressWpWordCategory.edges, edge => {
             createPage({
@@ -421,7 +421,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           // if (typeof window !== `undefined`) {
           const archiveTemplate = path.resolve(
-            './src/components/templates/ArchiveTemplate.js'
+            './src/components/templates/ArchiveTemplate/ArchiveTemplate.js'
           );
           _.each(result.data.allWordpressWpWordTag.edges, edge => {
             createPage({
@@ -480,7 +480,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           // if (typeof window !== `undefined`) {
           const archiveTemplate = path.resolve(
-            './src/components/templates/ArchiveTemplate.js'
+            './src/components/templates/ArchiveTemplate/ArchiveTemplate.js'
           );
           _.each(result.data.allWordpressTag.edges, edge => {
             createPage({
@@ -539,7 +539,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           // if (typeof window !== `undefined`) {
           const archiveTemplate = path.resolve(
-            './src/components/templates/ArchiveTemplate.js'
+            './src/components/templates/ArchiveTemplate/ArchiveTemplate.js'
           );
           _.each(result.data.allWordpressCategory.edges, edge => {
             createPage({

@@ -1,14 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme/build';
 
 import ConnectedPageTemplate, { PageTemplate } from './PageTemplate';
 import { Provider } from 'react-redux';
 import {
   checkProps,
+  findByTestAttr,
   matchSnapshot,
   mockStore,
-} from '../../utils/test-utilities';
-import * as testUtils from '../../utils';
+} from '../../../utils/test-utilities';
+import * as testUtils from '../../../utils';
 
 const defaultProps = {
   onGetPage: jest.fn(),
@@ -21,6 +22,7 @@ const defaultProps = {
   },
   pageContext: {
     title: 'test',
+    slug: 'test-slug',
     yoast_meta: {
       yoast_wpseo_metadesc: '',
     },
@@ -44,8 +46,14 @@ describe('<PageTemplate/>', () => {
     wrapper = setup();
   });
 
-  it('Renders the PageTemplate Component without errors', () => {
+  it('renders the PageTemplate Component without errors', () => {
     expect(wrapper).toBeTruthy();
+  });
+
+  it('should render PageTemplate', () => {
+    const template = findByTestAttr(wrapper, 'template-page');
+    expect(template).toBeTruthy();
+    expect(template.length).toBe(1);
   });
 
   it('should call getPageData when mounted', () => {

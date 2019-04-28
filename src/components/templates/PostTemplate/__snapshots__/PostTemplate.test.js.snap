@@ -1,14 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PersonTemplate/> should match snapshot 1`] = `
+exports[`<PostTemplate/> should match snapshot 1`] = `
 <CoreLayout
-  classes={null}
-  data-test="component-person-template"
+  classes="post post__test-slug"
+  data-test="template-post"
   description=""
   onGetSiteMeta={[Function]}
   onGetSiteOptions={[Function]}
   title="test"
 >
+  <Heading
+    classes="text-center"
+    priority="1"
+  >
+    test
+  </Heading>
   <AcfComponents
     component={
       Object {

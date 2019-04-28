@@ -1,8 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme/build';
 
 import ConnectedPersonTemplate, { PersonTemplate } from './PersonTemplate';
-import { checkProps, matchSnapshot } from '../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 const defaultProps = {
   onGetPerson: jest.fn(),
@@ -15,6 +19,7 @@ const defaultProps = {
   },
   pageContext: {
     title: 'test',
+    slug: 'test-slug',
     yoast_meta: {
       yoast_wpseo_metadesc: '',
     },
@@ -40,6 +45,12 @@ describe('<PersonTemplate/>', () => {
 
   it('Renders the PersonTemplate Component without errors', () => {
     expect(wrapper).toBeTruthy();
+  });
+
+  it('should render PersonTemplate', () => {
+    const template = findByTestAttr(wrapper, 'template-person');
+    expect(template).toBeTruthy();
+    expect(template.length).toBe(1);
   });
 
   it('should render with correct props', () => {

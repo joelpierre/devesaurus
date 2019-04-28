@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-import * as pageActions from '../../store/actions/page.actions';
-import { mapOverACFComponents } from '../../utils';
-import { CoreLayout } from '../../layouts/CoreLayout';
-import AcfComponents from '../../hoc/AcfComponents';
+import styles from './PageTemplate.module.scss';
+import * as pageActions from '../../../store/actions/page.actions';
+import { mapOverACFComponents } from '../../../utils';
+import { CoreLayout } from '../../../layouts/CoreLayout';
+import AcfComponents from '../../../hoc/AcfComponents';
 
 export class PageTemplate extends PureComponent {
   componentDidMount() {
@@ -38,7 +40,11 @@ export class PageTemplate extends PureComponent {
       <CoreLayout
         title={pageContext.title}
         description={pageContext.yoast_meta.yoast_wpseo_metadesc}
-        data-test="component-page-template"
+        data-test="template-page"
+        classes={classNames([
+          styles.page,
+          `page__${pageContext.slug.replace('_', '-')}`,
+        ])}
       >
         {pageData && (
           <>

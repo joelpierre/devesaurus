@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme/build';
 import toJson from 'enzyme-to-json';
 
 import ArchiveTemplate from './ArchiveTemplate';
@@ -7,11 +7,13 @@ import {
   checkProps,
   findByTestAttr,
   matchSnapshot,
-} from '../../utils/test-utilities';
+} from '../../../utils/test-utilities';
 
 const defaultProps = {
   pageContext: {
     name: 'test',
+    slug: 'test-slug',
+    taxonomy: 'test-taxonomy',
   },
 };
 
@@ -33,8 +35,9 @@ describe('<ArchiveTemplate/>', () => {
   });
 
   it('renders the ArchiveTemplate Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'template-archive');
-    expect(component.length).toBe(1);
+    const template = findByTestAttr(wrapper, 'template-archive');
+    expect(template).toBeTruthy();
+    expect(template.length).toBe(1);
   });
 
   it('should render with correct props', () => {

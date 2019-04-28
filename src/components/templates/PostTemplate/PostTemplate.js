@@ -1,13 +1,14 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as postActions from '../../store/actions/post.actions';
+import classNames from 'classnames';
 
-import { mapOverACFComponents } from '../../utils';
-
-import Heading from '../core/Heading/Heading';
-import { CoreLayout } from '../../layouts/CoreLayout';
-import AcfComponents from '../../hoc/AcfComponents';
+import styles from './PostTemplate.module.scss';
+import * as postActions from '../../../store/actions/post.actions';
+import { mapOverACFComponents } from '../../../utils';
+import Heading from '../../core/Heading/Heading';
+import { CoreLayout } from '../../../layouts/CoreLayout';
+import AcfComponents from '../../../hoc/AcfComponents';
 
 export class PostTemplate extends PureComponent {
   componentDidMount() {
@@ -36,7 +37,11 @@ export class PostTemplate extends PureComponent {
       <CoreLayout
         title={pageContext.title}
         description={pageContext.yoast_meta.yoast_wpseo_metadesc}
-        data-test="component-post-template"
+        data-test="template-post"
+        classes={classNames([
+          styles.post,
+          `post__${pageContext.slug.replace('_', '-')}`,
+        ])}
       >
         <Heading priority="1" classes="text-center">
           {pageContext.title}

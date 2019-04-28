@@ -2,8 +2,8 @@
 
 exports[`<PageTemplate/> should match snapshot 1`] = `
 <CoreLayout
-  classes={null}
-  data-test="component-page-template"
+  classes="page page__test-slug"
+  data-test="template-page"
   description=""
   onGetSiteMeta={[Function]}
   onGetSiteOptions={[Function]}

@@ -1,12 +1,14 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as personActions from '../../store/actions/team.actions';
+import classNames from 'classnames';
 
-import { mapOverACFComponents } from '../../utils';
+import styles from './PersonTemplate.module.scss';
+import * as personActions from '../../../store/actions/team.actions';
+import { mapOverACFComponents } from '../../../utils';
 
-import { CoreLayout } from '../../layouts/CoreLayout';
-import AcfComponents from '../../hoc/AcfComponents';
+import { CoreLayout } from '../../../layouts/CoreLayout';
+import AcfComponents from '../../../hoc/AcfComponents';
 
 export class PersonTemplate extends PureComponent {
   componentDidMount() {
@@ -35,7 +37,11 @@ export class PersonTemplate extends PureComponent {
       <CoreLayout
         title={pageContext.title}
         description={pageContext.yoast_meta.yoast_wpseo_metadesc}
-        data-test="component-person-template"
+        data-test="template-person"
+        classes={classNames([
+          styles.person,
+          `person__${pageContext.slug.replace('_', '-')}`,
+        ])}
       >
         {personData &&
           personData.acf.components.map((component, index) => {

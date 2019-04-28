@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<WordTemplate/> should match snapshot 1`] = `
+exports[`<ArchiveTemplate/> should match snapshot 1`] = `
 <CoreLayout
-  classes={null}
-  data-test="component-word-template"
+  classes="archive archive__test-taxonomy"
+  data-test="template-archive"
   description=""
   onGetSiteMeta={[Function]}
   onGetSiteOptions={[Function]}
@@ -23,7 +23,7 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
         row={true}
       >
         <Flex
-          classes="flex"
+          classes={null}
           col={null}
           colLg={null}
           colMd={null}
@@ -38,7 +38,7 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
           xs={false}
         >
           <Heading
-            classes="text-center mt-1"
+            classes="text-center mb-0"
             priority="1"
           >
             test

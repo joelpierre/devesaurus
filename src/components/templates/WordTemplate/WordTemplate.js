@@ -1,15 +1,17 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as wordActions from '../../store/actions/word.actions';
+import classNames from 'classnames';
 
-import { sortWordObj } from '../../helpers';
-import Heading from '../core/Heading/Heading';
-import Section from '../core/Section/Section';
-import Container from '../core/Container/Container';
-import Row from '../core/Row/Row';
-import Flex from '../core/Flex/Flex';
-import { CoreLayout } from '../../layouts/CoreLayout';
+import styles from '../PostTemplate/PostTemplate.module.scss';
+import * as wordActions from '../../../store/actions/word.actions';
+import { sortWordObj } from '../../../helpers';
+import Heading from '../../core/Heading/Heading';
+import Section from '../../core/Section/Section';
+import Container from '../../core/Container/Container';
+import Row from '../../core/Row/Row';
+import Flex from '../../core/Flex/Flex';
+import { CoreLayout } from '../../../layouts/CoreLayout';
 
 export class WordTemplate extends PureComponent {
   componentDidMount() {
@@ -39,7 +41,11 @@ export class WordTemplate extends PureComponent {
       <CoreLayout
         title={pageContext.title}
         description={pageContext.yoast_meta.yoast_wpseo_metadesc}
-        data-test="component-word-template"
+        data-test="template-word"
+        classes={classNames([
+          styles.word,
+          `word__${pageContext.slug.replace('_', '-')}`,
+        ])}
       >
         <Section>
           <Container>

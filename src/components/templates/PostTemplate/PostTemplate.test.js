@@ -1,8 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme/build';
 
 import ConnectedPostTemplate, { PostTemplate } from './PostTemplate';
-import { checkProps, matchSnapshot } from '../../utils/test-utilities';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../utils/test-utilities';
 
 const defaultProps = {
   onGetPost: jest.fn(),
@@ -14,6 +18,7 @@ const defaultProps = {
   },
   pageContext: {
     title: 'test',
+    slug: 'test-slug',
     yoast_meta: {
       yoast_wpseo_metadesc: '',
     },
@@ -39,6 +44,12 @@ describe('<PostTemplate/>', () => {
 
   it('Renders the PostTemplate Component without errors', () => {
     expect(wrapper).toBeTruthy();
+  });
+
+  it('should render PostTemplate', () => {
+    const template = findByTestAttr(wrapper, 'template-post');
+    expect(template).toBeTruthy();
+    expect(template.length).toBe(1);
   });
 
   it('should render with correct props', () => {
