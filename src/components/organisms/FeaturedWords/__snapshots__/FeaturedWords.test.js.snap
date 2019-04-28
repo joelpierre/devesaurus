@@ -74,13 +74,9 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
           breakpoints={
             Object {
               "600": Object {
-                "addArrowClickHandler": false,
-                "arrowRight": null,
                 "slidesPerPage": 1,
               },
               "900": Object {
-                "addArrowClickHandler": false,
-                "arrowRight": null,
                 "slidesPerPage": 2,
               },
             }
