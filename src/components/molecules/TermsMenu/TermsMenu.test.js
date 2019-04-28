@@ -3,11 +3,7 @@ import { shallow } from 'enzyme';
 import { StaticQuery } from 'gatsby';
 import toJson from 'enzyme-to-json';
 
-import {
-  checkProps,
-  findByTestAttr,
-  matchSnapshot,
-} from '../../../utils/test-utilities';
+import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 
 import TermsMenu, { PureTermsMenu } from './TermsMenu';
 

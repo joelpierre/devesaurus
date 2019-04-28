@@ -1,11 +1,7 @@
 import React from 'react';
 import Brand from './Brand';
 import { shallow } from 'enzyme';
-import {
-  checkProps,
-  findByTestAttr,
-  matchSnapshot,
-} from '../../../utils/test-utilities';
+import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 import toJson from 'enzyme-to-json';
 import SvgIcon from '../SvgIcon/SvgIcon';
 import SiteInfo from '../SiteInfo/SiteInfo';

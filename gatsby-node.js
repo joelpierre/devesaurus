@@ -19,7 +19,7 @@ exports.onCreateWebpackConfig = ({ actions, getConfig, options }) => {
           ) {
             return {
               ...item,
-              exclude: [path.resolve(__dirname, 'src/icons')],
+              exclude: [path.resolve(__dirname, 'src/assets/icons')],
             };
           }
           return { ...item };
@@ -32,7 +32,7 @@ exports.onCreateWebpackConfig = ({ actions, getConfig, options }) => {
               options,
             },
           ],
-          include: [path.resolve(__dirname, 'src/icons')],
+          include: [path.resolve(__dirname, 'src/assets/icons')],
         },
       ],
     },

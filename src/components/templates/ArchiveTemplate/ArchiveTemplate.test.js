@@ -3,11 +3,7 @@ import { shallow } from 'enzyme/build';
 import toJson from 'enzyme-to-json';
 
 import ArchiveTemplate from './ArchiveTemplate';
-import {
-  checkProps,
-  findByTestAttr,
-  matchSnapshot,
-} from '../../../utils/test-utilities';
+import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 
 const defaultProps = {
   pageContext: {

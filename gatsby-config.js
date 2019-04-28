@@ -28,7 +28,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/static/images`,
       },
     },
     {
@@ -40,7 +40,7 @@ module.exports = {
         background_color: `#FFFFFF`,
         theme_color: `#FFFFFF`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.jpg`, // This path is relative to the root of the site.
+        icon: `static/images/favicon.jpg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -70,8 +70,8 @@ module.exports = {
       options: {
         src: path.join(__dirname, 'src'),
         components: path.join(__dirname, 'src/components'),
-        sass: path.join(__dirname, 'src/sass'),
-        icons: path.join(__dirname, 'src/icons'),
+        sass: path.join(__dirname, 'src/assets/sass'),
+        icons: path.join(__dirname, 'src/assets/icons'),
       },
     },
     {

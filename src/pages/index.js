@@ -15,7 +15,7 @@ export class Index extends PureComponent {
     return (
       <BasicLayout title="Devesaurus Home" data-test="page-index">
         <HeroSearch title="Devesaurus" />
-        <FeaturedWords words={mockWords} />
+        <FeaturedWords words={mockWords} theme="alpha" />
       </BasicLayout>
     );
   }

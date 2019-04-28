@@ -2,11 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import {
-  checkProps,
-  findByTestAttr,
-  matchSnapshot,
-} from '../../../utils/test-utilities';
+import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 
 import Label from './FormLabel';
 

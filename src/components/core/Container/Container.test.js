@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { findByTestAttr } from '../../../utils/test-utilities';
+import { findByTestAttr } from '../../../utils/test';
 import Container from './Container';
 
 const defaultProps = {

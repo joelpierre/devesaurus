@@ -10,6 +10,7 @@ exports[`<Index/> should match snapshot 1`] = `
   />
   <FeaturedWords
     contrast={true}
+    theme="alpha"
     words={
       Array [
         Object {

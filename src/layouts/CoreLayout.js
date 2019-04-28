@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import PrimaryHeader from '../components/organisms/PrimaryHeader/PrimaryHeader';
 import PrimaryFooter from '../components/organisms/PrimaryFooter/PrimaryFooter';
-import SEO from '../utils/seo';
+import SEO from '../components/core/SEO/SEO';
 import { getSiteMeta, getSiteOptions } from '../store/actions';
 import styles from './Layout.module.scss';
 

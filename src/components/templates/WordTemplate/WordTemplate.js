@@ -5,13 +5,13 @@ import classNames from 'classnames';
 
 import styles from '../PostTemplate/PostTemplate.module.scss';
 import * as wordActions from '../../../store/actions/word.actions';
-import { sortWordObj } from '../../../helpers';
 import Heading from '../../core/Heading/Heading';
 import Section from '../../core/Section/Section';
 import Container from '../../core/Container/Container';
 import Row from '../../core/Row/Row';
 import Flex from '../../core/Flex/Flex';
 import { CoreLayout } from '../../../layouts/CoreLayout';
+import { sortWordObj } from '../../../utils';
 
 export class WordTemplate extends PureComponent {
   componentDidMount() {

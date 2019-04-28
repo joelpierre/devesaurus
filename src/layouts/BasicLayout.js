@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './Layout.module.scss';
 
-import SEO from '../utils/seo';
+import SEO from '../components/core/SEO/SEO';
 import { getSiteMeta, getSiteOptions } from '../store/actions';
+import PrimaryFooter from '../components/organisms/PrimaryFooter/PrimaryFooter';
 
 export class BasicLayout extends PureComponent {
   componentDidMount() {
@@ -26,6 +27,7 @@ export class BasicLayout extends PureComponent {
         >
           {children}
         </main>
+        <PrimaryFooter />
       </>
     );
   }

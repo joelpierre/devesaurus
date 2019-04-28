@@ -13,7 +13,7 @@ const Section = ({ children, classes, type, contrast, theme }) => {
       className={classNames({
         [styles.section]: true,
         [classes]: classes,
-        [styles[`theme--${theme}`]]: theme && !contrast,
+        [styles[`theme--${theme}`]]: theme,
         [styles[`theme--tint-alpha`]]: !contrast && !theme,
         [styles[`theme--tint-beta`]]: contrast && !theme,
       })}

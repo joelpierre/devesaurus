@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './Flex.module.scss';
+import { columnShape } from '../../../utils/propTypes';
 
 const Flex = ({
   children,
@@ -61,17 +62,17 @@ Flex.defaultProps = {
 
 Flex.propTypes = {
   type: PropTypes.string,
-  col: PropTypes.string,
+  col: columnShape,
   xs: PropTypes.bool,
   sm: PropTypes.bool,
   md: PropTypes.bool,
   lg: PropTypes.bool,
   xl: PropTypes.bool,
-  colXs: PropTypes.string,
-  colSm: PropTypes.string,
-  colMd: PropTypes.string,
-  colLg: PropTypes.string,
-  colXl: PropTypes.string,
+  colXs: columnShape,
+  colSm: columnShape,
+  colMd: columnShape,
+  colLg: columnShape,
+  colXl: columnShape,
   classes: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),

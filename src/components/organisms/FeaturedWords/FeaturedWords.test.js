@@ -1,11 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import {
-  checkProps,
-  findByTestAttr,
-  matchSnapshot,
-} from '../../../utils/test-utilities';
+import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 import { mockWords } from '../../../../__mocks__/mock-words';
 import FeaturedWords from './FeaturedWords';
 
@@ -27,6 +24,7 @@ describe('<FeaturedWords/>', () => {
 
   beforeEach(() => {
     wrapper = setup();
+    // console.log(wrapper.debug());
   });
 
   it('renders the FeaturedWords Component without errors', () => {
@@ -34,9 +32,9 @@ describe('<FeaturedWords/>', () => {
     expect(component.length).toBe(1);
   });
 
-  it('renders the FeaturedWords Component without errors', () => {
+  it('renders the FeaturedWords Word element without errors', () => {
     const component = findByTestAttr(wrapper, 'featured-words-word');
-    expect(component.length).toBe(mockWords.length);
+    expect(component.length).toBeGreaterThanOrEqual(3);
   });
 
   it('should render with correct props', () => {

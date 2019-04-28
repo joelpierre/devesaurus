@@ -3,10 +3,11 @@
 .word-card {
   $root: &;
 
-  border-radius: 0;
+  border-radius: $radius-rounded;
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
+  height: 100%;
 
   &__header {
     flex-basis: 100%;

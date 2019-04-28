@@ -1,0 +1,169 @@
+@import "~sass/core";
+
+.BrainhubCarousel {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.BrainhubCarousel .BrainhubCarousel__trackContainer {
+  overflow: hidden;
+  margin-right: .5rem;
+}
+
+.BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track {
+  display: flex;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track.BrainhubCarousel__track--transition {
+  transition: transform;
+}
+
+/* variables */
+.BrainhubCarousel__dots {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.BrainhubCarousel__dots .BrainhubCarousel__dot {
+  outline: 0;
+  padding: 10px;
+  border: none;
+  opacity: .5;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.BrainhubCarousel__dots .BrainhubCarousel__dot.BrainhubCarousel__dot--selected {
+  opacity: 1 !important;
+}
+
+.BrainhubCarousel__dots .BrainhubCarousel__dot:hover {
+  opacity: 1;
+}
+
+.BrainhubCarousel__dots .BrainhubCarousel__dot:before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
+  background: $color-tint-omega;
+}
+
+.BrainhubCarousel__dots .BrainhubCarousel__thumbnail {
+  outline: 0;
+  padding: 10px;
+  border: none;
+  opacity: .5;
+  cursor: pointer;
+}
+
+.BrainhubCarousel__dots .BrainhubCarousel__thumbnail.BrainhubCarousel__thumbnail--selected {
+  opacity: 1 !important;
+}
+
+.BrainhubCarousel__dots .BrainhubCarousel__thumbnail:hover {
+  opacity: 1;
+}
+
+.BrainhubCarousel__thumbnail[type=button] {
+  -webkit-appearance: none;
+}
+
+.BrainhubCarouselItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.BrainhubCarouselItem.BrainhubCarouselItem--clickable {
+  cursor: pointer;
+}
+
+.BrainhubCarouselItem .debug-number {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2em;
+  text-shadow: 0 0 .9rem $color-tint-alpha;
+}
+
+.BrainhubCarousel__arrows {
+  position: relative;
+  padding: 21px;
+  border: none;
+  overflow: hidden;
+  outline: 0;
+  font-size: 0;
+  line-height: 0;
+  background-color: #7B59FF;
+  cursor: pointer;
+}
+
+.BrainhubCarousel__arrows span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-style: solid;
+  border-color: $color-tint-alpha;
+  border-width: 3px 3px 0 0;
+  padding: 5px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  font-size: 0;
+}
+
+.BrainhubCarousel__arrows:hover {
+  background-color: #8768FF;
+}
+
+.BrainhubCarousel__arrowLeft span {
+  -webkit-transform: translate(-50%, -50%) rotate(-135deg);
+  transform: translate(-50%, -50%) rotate(-135deg);
+  margin-left: 2.45px;
+}
+
+.BrainhubCarousel__arrowRight span {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+  margin-left: -2.45px;
+}
+
+.BrainhubCarousel__arrows:hover span {
+  border-color: $color-tint-alpha;
+  margin: 0;
+}
+
+.BrainhubCarousel__customArrows {
+  box-sizing: content-box;
+  cursor: pointer;
+}
+
+.BrainhubCarousel__custom-arrowRight {
+  width: 45rem;
+  height: 25px;
+
+  svg {
+    fill: $color-tint-gamma !important;
+  }
+}

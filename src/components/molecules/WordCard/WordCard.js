@@ -6,7 +6,7 @@ import { wordPropTypeShape } from '../../../utils/propTypes';
 import Button from '../Buttons/Button';
 import Heading from '../../core/Heading/Heading';
 import Label from '../../atoms/Label/Label';
-import { mapTaxonomyTheme } from '../../../helpers';
+import { mapTaxonomyTheme } from '../../../utils';
 
 class WordCard extends PureComponent {
   constructor() {

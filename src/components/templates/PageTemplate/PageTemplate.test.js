@@ -8,7 +8,7 @@ import {
   findByTestAttr,
   matchSnapshot,
   mockStore,
-} from '../../../utils/test-utilities';
+} from '../../../utils/test';
 import * as testUtils from '../../../utils';
 
 const defaultProps = {

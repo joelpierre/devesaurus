@@ -3,11 +3,7 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import PureIndex, { Index } from './index';
-import {
-  checkProps,
-  findByTestAttr,
-  matchSnapshot,
-} from '../utils/test-utilities';
+import { checkProps, findByTestAttr, matchSnapshot } from '../utils/test';
 
 const defaultProps = {
   onGetSiteMeta: () => {},

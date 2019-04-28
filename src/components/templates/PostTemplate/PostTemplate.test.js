@@ -2,11 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme/build';
 
 import ConnectedPostTemplate, { PostTemplate } from './PostTemplate';
-import {
-  checkProps,
-  findByTestAttr,
-  matchSnapshot,
-} from '../../../utils/test-utilities';
+import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 
 const defaultProps = {
   onGetPost: jest.fn(),

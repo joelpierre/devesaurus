@@ -17,12 +17,12 @@ exports[`<HeroSearch/> should match snapshot 1`] = `
       row={true}
     >
       <Flex
-        classes="mx-auto"
+        classes=""
         col={null}
-        colLg="8"
-        colMd={null}
+        colLg={8}
+        colMd={10}
         colSm={null}
-        colXl={null}
+        colXl={8}
         colXs={null}
         lg={false}
         md={false}

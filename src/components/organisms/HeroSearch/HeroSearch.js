@@ -13,7 +13,7 @@ const HeroSearch = () => {
     <Section classes={styles['hero-search']}>
       <Container data-test="component-hero-search">
         <Row>
-          <Flex colLg="8" classes="mx-auto">
+          <Flex colMd={10} colLg={8} colXl={8} classes="">
             <div className={styles['hero-search__wrapper']}>
               <Brand classes={styles['hero-search__brand']} />
               <InputField

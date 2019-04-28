@@ -3,11 +3,7 @@ import { mount, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import AcfComponents from './AcfComponents';
-import {
-  checkProps,
-  findByTestAttr,
-  matchSnapshot,
-} from '../utils/test-utilities';
+import { checkProps, findByTestAttr, matchSnapshot } from '../utils/test';
 import { mockComponent } from '../../__mocks__/mock-components';
 
 const defaultProps = {

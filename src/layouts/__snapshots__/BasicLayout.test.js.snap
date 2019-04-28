@@ -24,5 +24,8 @@ exports[`<BasicLayout/> should match snapshot 1`] = `
   >
     Hello
   </main>
+  <PrimaryFooter
+    company="Replace Company Name"
+  />
 </Fragment>
 `;

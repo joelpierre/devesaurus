@@ -1,15 +1,23 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import Carousel from '@brainhubeu/react-carousel';
 
 import WordCard from '../../molecules/WordCard/WordCard';
 import styles from './FeaturedWords.module.scss';
-import { wordPropTypeShape } from '../../../utils/propTypes';
-import { sortWordObj } from '../../../helpers';
+import './ReactCarousel.scss';
+
+import {
+  defaultTheme,
+  themePropType,
+  wordPropTypeShape,
+} from '../../../utils/propTypes';
 import Section from '../../core/Section/Section';
 import Container from '../../core/Container/Container';
 import Row from '../../core/Row/Row';
 import Flex from '../../core/Flex/Flex';
 import Heading from '../../core/Heading/Heading';
+import { sortWordObj } from '../../../utils';
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 class FeaturedWords extends PureComponent {
   constructor(props) {
@@ -19,6 +27,20 @@ class FeaturedWords extends PureComponent {
 
     this.state = {
       featuredWords: words,
+      carouselSettings: {
+        slidesPerPage: 3,
+        infinite: true,
+        addArrowClickHandler: true,
+        arrowRight: <SvgIcon name="arrow-right" />,
+        breakpoints: {
+          900: {
+            slidesPerPage: 2,
+          },
+          600: {
+            slidesPerPage: 1,
+          },
+        },
+      },
     };
 
     this.sortWords = this.sortWords.bind(this);
@@ -37,14 +59,15 @@ class FeaturedWords extends PureComponent {
   }
 
   render() {
-    const { contrast } = this.props;
-    const { featuredWords } = this.state;
+    const { contrast, theme } = this.props;
+    const { featuredWords, carouselSettings } = this.state;
 
     return (
       <Section
         data-test="component-featured-words"
         classes={`${styles['featured-words']}`}
         contrast={contrast}
+        theme={theme}
       >
         <Container>
           <Row>
@@ -56,25 +79,24 @@ class FeaturedWords extends PureComponent {
           </Row>
 
           <Row>
-            {featuredWords.map(word => {
-              return (
-                <Flex
-                  data-test="featured-words-word"
-                  key={word.id}
-                  colMd="6"
-                  colLg="4"
-                >
-                  <WordCard
-                    slug={word.slug}
-                    title={word.title}
-                    acf={word.acf}
-                    terms={word.terms}
-                    classes={styles['featured-words__word-card']}
-                    contrast={!contrast}
-                  />
-                </Flex>
-              );
-            })}
+            <Flex col={12}>
+              <Carousel {...carouselSettings}>
+                {featuredWords.map(word => {
+                  return (
+                    <WordCard
+                      data-test="featured-words-word"
+                      key={word.id}
+                      slug={word.slug}
+                      title={word.title}
+                      acf={word.acf}
+                      terms={word.terms}
+                      classes={styles['featured-words__word-card']}
+                      contrast={!contrast}
+                    />
+                  );
+                })}
+              </Carousel>
+            </Flex>
           </Row>
         </Container>
       </Section>
@@ -84,9 +106,11 @@ class FeaturedWords extends PureComponent {
 
 FeaturedWords.defaultProps = {
   contrast: true,
+  ...defaultTheme(),
 };
 
 FeaturedWords.propTypes = {
+  ...themePropType,
   contrast: PropTypes.bool,
   words: PropTypes.arrayOf(PropTypes.shape({ ...wordPropTypeShape }))
     .isRequired,

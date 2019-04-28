@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import styles from './SvgIcon.module.scss';
 
 const SvgIcon = ({ name, description, fill, width, classes, height }) => {
-  const req = require.context('../../../icons/', true, /^\.\/.*\.svg$/);
+  const req = require.context('../../../assets/icons/', true, /^\.\/.*\.svg$/);
 
   const svg = () => {
     let svg = markup();

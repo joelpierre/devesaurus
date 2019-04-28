@@ -3,16 +3,17 @@
 .featured-words {
   $root: &;
   position: relative;
-  padding: 10rem 0 7rem;
+  padding: 10rem 0 12rem;
 
   &__heading {
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 4rem;
+    color: white;
   }
 
   &__word-card {
-    margin-bottom: 3rem;
+    margin-right: 2rem;
   }
 
   &.theme--tint-alpha {
