@@ -12,6 +12,7 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
   <Section
     classes={null}
     contrast={false}
+    theme={null}
     type="section"
   >
     <Container

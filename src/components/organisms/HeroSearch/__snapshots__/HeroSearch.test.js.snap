@@ -4,6 +4,7 @@ exports[`<HeroSearch/> should match snapshot 1`] = `
 <Section
   classes="hero-search"
   contrast={false}
+  theme={null}
   type="section"
 >
   <Container

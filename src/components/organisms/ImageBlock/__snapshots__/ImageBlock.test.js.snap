@@ -5,6 +5,7 @@ exports[`<ImageBlock/> should match snapshot 1`] = `
   classes="theme--alpha image-block"
   contrast={false}
   data-test="component-image-block"
+  theme={null}
   type="section"
 >
   <Container
@@ -49,6 +50,7 @@ exports[`<ImageBlock/> should render with pageTheme instead of module theme 1`] 
   classes="theme--brand image-block"
   contrast={false}
   data-test="component-image-block"
+  theme={null}
   type="section"
 >
   <Container

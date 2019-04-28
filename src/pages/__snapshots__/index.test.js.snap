@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Index/> should match snapshot 1`] = `
-<Connect(BasicLayout)
+<Component
   data-test="page-index"
   title="Devesaurus Home"
 >
@@ -48,6 +48,7 @@ exports[`<Index/> should match snapshot 1`] = `
               },
             ],
           },
+          "id": 1,
           "slug": "graphic-design",
           "terms": Array [
             Object {
@@ -113,6 +114,7 @@ test<br />
               },
             ],
           },
+          "id": 2,
           "slug": "web-development",
           "terms": Array [
             Object {
@@ -183,6 +185,7 @@ test<br />
               },
             ],
           },
+          "id": 3,
           "slug": "web-development",
           "terms": Array [
             Object {
@@ -206,5 +209,5 @@ test<br />
       ]
     }
   />
-</Connect(BasicLayout)>
+</Component>
 `;

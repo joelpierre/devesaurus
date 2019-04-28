@@ -5,6 +5,7 @@ exports[`<TextBlock/> should match snapshot 1`] = `
   classes="theme--alpha text-block"
   contrast={false}
   data-test="component-text-block"
+  theme={null}
   type="section"
 >
   <Container
@@ -46,6 +47,7 @@ exports[`<TextBlock/> should render with pageTheme instead of module theme 1`] =
   classes="theme--brand text-block"
   contrast={false}
   data-test="component-text-block"
+  theme={null}
   type="section"
 >
   <Container

@@ -86,6 +86,7 @@ exports[`<AcfComponents/> should match snapshot 1`] = `
       classes="theme--brand cta-banner"
       contrast={false}
       data-test="component-cta-banner"
+      theme={null}
       type="section"
     >
       <section

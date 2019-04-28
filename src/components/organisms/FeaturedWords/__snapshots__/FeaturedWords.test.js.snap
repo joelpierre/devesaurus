@@ -5,6 +5,7 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
   classes="featured-words"
   contrast={true}
   data-test="component-featured-words"
+  theme={null}
   type="section"
 >
   <Container
@@ -52,7 +53,7 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
         colXl={null}
         colXs={null}
         data-test="featured-words-word"
-        key="0"
+        key="1"
         lg={false}
         md={false}
         sm={false}
@@ -127,7 +128,7 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
         colXl={null}
         colXs={null}
         data-test="featured-words-word"
-        key="1"
+        key="2"
         lg={false}
         md={false}
         sm={false}
@@ -221,7 +222,7 @@ test<br />
         colXl={null}
         colXs={null}
         data-test="featured-words-word"
-        key="2"
+        key="3"
         lg={false}
         md={false}
         sm={false}

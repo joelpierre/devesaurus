@@ -12,7 +12,6 @@ describe('test helper functions', () => {
       content: '',
       date_modified: '',
       excerpt: '',
-      id: '',
       yoast: '',
     };
 
