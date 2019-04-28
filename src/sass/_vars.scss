@@ -38,6 +38,10 @@ $table-cell-padding: 1rem;
 // Colors
 $color-brand: #047211;
 $color-alpha: #16991F;
+$color-beta: #C2395E;
+$color-gamma: #21A7BA;
+$color-psi: #7457AD;
+$color-omega: #E26B50;
 
 // Tint Colours
 $color-tint-alpha: white;
@@ -53,6 +57,10 @@ $color-link: $color-alpha;
 $colors: (
   brand: $color-brand,
   alpha: $color-alpha,
+  beta: $color-beta,
+  gamma: $color-gamma,
+  psi: $color-psi,
+  omega: $color-omega,
   tint-alpha: $color-tint-alpha,
   tint-beta: $color-tint-beta,
   tint-gamma: $color-tint-gamma,

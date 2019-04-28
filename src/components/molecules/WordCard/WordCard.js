@@ -6,6 +6,7 @@ import { wordPropTypeShape } from '../../../utils/propTypes';
 import Button from '../Buttons/Button';
 import Heading from '../../core/Heading/Heading';
 import Label from '../../atoms/Label/Label';
+import { mapTaxonomyTheme } from '../../../helpers';
 
 class WordCard extends PureComponent {
   constructor() {
@@ -84,6 +85,7 @@ class WordCard extends PureComponent {
                 return (
                   <Label
                     key={category.slug}
+                    theme={mapTaxonomyTheme(category.slug)}
                     data-test="word-card-category"
                     text={category.name}
                     link={`/word-category/${category.slug}`}
@@ -101,6 +103,7 @@ class WordCard extends PureComponent {
                 return (
                   <Label
                     key={tag.slug}
+                    theme={mapTaxonomyTheme(tag.slug)}
                     data-test="word-card-tag"
                     text={tag.name}
                     link={`/word-tag/${tag.slug}`}

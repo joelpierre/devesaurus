@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+
 import WordCard from '../../molecules/WordCard/WordCard';
 import styles from './FeaturedWords.module.scss';
 import { wordPropTypeShape } from '../../../utils/propTypes';
@@ -13,6 +14,13 @@ import Heading from '../../core/Heading/Heading';
 class FeaturedWords extends PureComponent {
   constructor(props) {
     super(props);
+
+    const { words } = this.props;
+
+    this.state = {
+      featuredWords: words,
+    };
+
     this.sortWords = this.sortWords.bind(this);
   }
 
@@ -22,15 +30,15 @@ class FeaturedWords extends PureComponent {
 
   sortWords() {
     const { words } = this.props;
-    if (words) {
-      words.map(word => {
-        return sortWordObj(word);
-      });
-    }
+
+    words.map(word => {
+      return sortWordObj(word);
+    });
   }
 
   render() {
-    const { words, contrast } = this.props;
+    const { contrast } = this.props;
+    const { featuredWords } = this.state;
 
     return (
       <Section
@@ -48,11 +56,11 @@ class FeaturedWords extends PureComponent {
           </Row>
 
           <Row>
-            {words.map((word, index) => {
+            {featuredWords.map(word => {
               return (
                 <Flex
                   data-test="featured-words-word"
-                  key={index}
+                  key={word.id}
                   colMd="6"
                   colLg="4"
                 >

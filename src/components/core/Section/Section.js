@@ -2,8 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './Section.module.scss';
+import { defaultTheme, themePropType } from '../../../utils/propTypes';
 
-const Section = ({ children, classes, type, contrast }) => {
+const Section = ({ children, classes, type, contrast, theme }) => {
   const Tag = `${type}`;
 
   return (
@@ -12,8 +13,9 @@ const Section = ({ children, classes, type, contrast }) => {
       className={classNames({
         [styles.section]: true,
         [classes]: classes,
-        'theme--tint-alpha': !contrast,
-        'theme--tint-beta': contrast,
+        [styles[`theme--${theme}`]]: theme && !contrast,
+        [styles[`theme--tint-alpha`]]: !contrast && !theme,
+        [styles[`theme--tint-beta`]]: contrast && !theme,
       })}
     >
       {children}
@@ -25,6 +27,7 @@ Section.defaultProps = {
   classes: null,
   type: 'section',
   contrast: false, // false = white, true = grey
+  ...defaultTheme(null),
 };
 
 Section.propTypes = {
@@ -35,6 +38,7 @@ Section.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  ...themePropType,
 };
 
 export default Section;

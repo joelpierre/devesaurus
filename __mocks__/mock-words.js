@@ -1,4 +1,5 @@
 export const mockWord = {
+  id: 1,
   title: 'Graphic Design',
   slug: 'graphic-design',
   terms: [
@@ -53,6 +54,7 @@ export const mockWord = {
 export const mockWords = [
   mockWord,
   {
+    id: 2,
     title: 'Web Development',
     slug: 'web-development',
     terms: [
@@ -119,6 +121,7 @@ export const mockWords = [
     },
   },
   {
+    id: 3,
     title: 'Web Development 2',
     slug: 'web-development',
     terms: [
