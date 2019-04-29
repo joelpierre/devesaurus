@@ -74,6 +74,7 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
           breakpoints={
             Object {
               "600": Object {
+                "draggable": true,
                 "slidesPerPage": 1,
               },
               "900": Object {
@@ -81,6 +82,7 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
               },
             }
           }
+          draggable={false}
           infinite={true}
           slidesPerPage={3}
         >

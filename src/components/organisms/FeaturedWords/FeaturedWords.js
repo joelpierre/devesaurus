@@ -32,11 +32,13 @@ class FeaturedWords extends PureComponent {
         infinite: true,
         addArrowClickHandler: true,
         arrowRight: <SvgIcon name="arrow-right" />,
+        draggable: false,
         breakpoints: {
           900: {
             slidesPerPage: 2,
           },
           600: {
+            draggable: true,
             slidesPerPage: 1,
           },
         },
