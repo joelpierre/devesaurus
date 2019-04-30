@@ -10,7 +10,6 @@ import {
 
 describe('Core saga flow', () => {
   let generator;
-  let request;
 
   beforeEach(() => {
     moxios.install();
@@ -25,19 +24,6 @@ describe('Core saga flow', () => {
     generator = getSiteMetaSaga();
     generator.next();
 
-    moxios.wait(() => {
-      request = moxios.requests.mostRecent();
-
-      request.respondWith({
-        status: 200,
-        response: {
-          data: {
-            test: 'getSiteMetaSaga',
-          },
-        },
-      });
-    });
-
     expect(generator.next({ test: 'getSiteMetaSaga' }).value).toEqual(
       put(setSiteMeta())
     );
@@ -48,14 +34,6 @@ describe('Core saga flow', () => {
     generator = getSiteMetaSaga();
     generator.next();
 
-    moxios.wait(() => {
-      request = moxios.requests.mostRecent();
-
-      request.respondWith({
-        status: 404,
-      });
-    });
-
     expect(generator.next().value).toEqual(put(getSiteMetaFailed()));
     expect(generator.next().done).toBeTruthy();
   });
@@ -63,17 +41,6 @@ describe('Core saga flow', () => {
   it('should call getSiteOptionsSaga success', () => {
     generator = getSiteOptionsSaga();
     generator.next();
-
-    moxios.wait(() => {
-      request = moxios.requests.mostRecent();
-
-      request.respondWith({
-        status: 200,
-        response: {
-          data: {},
-        },
-      });
-    });
 
     expect(
       generator.next({
@@ -86,14 +53,6 @@ describe('Core saga flow', () => {
   it('should call getSiteOptionsSaga fail', () => {
     generator = getSiteOptionsSaga();
     generator.next();
-
-    moxios.wait(() => {
-      request = moxios.requests.mostRecent();
-
-      request.respondWith({
-        status: 404,
-      });
-    });
 
     expect(generator.next().value).toEqual(put(getSiteOptionsFailed()));
     expect(generator.next().done).toBeTruthy();

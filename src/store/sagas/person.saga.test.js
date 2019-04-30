@@ -5,7 +5,6 @@ import { getPersonDataFailed, setPersonData } from '../actions';
 
 describe('Person saga flow', () => {
   let generator;
-  let request;
 
   beforeEach(() => {
     moxios.install();
@@ -14,24 +13,10 @@ describe('Person saga flow', () => {
   afterEach(() => {
     moxios.uninstall();
     generator = null;
-    request = null;
   });
 
   it('should call getPersonSaga success', () => {
     generator = getPersonSaga({ data: 2 });
-
-    moxios.wait(() => {
-      request = moxios.requests.mostRecent();
-
-      request.respondWith({
-        status: 200,
-        response: {
-          data: {
-            test: 'getPersonSaga',
-          },
-        },
-      });
-    });
 
     generator.next();
 
@@ -43,14 +28,6 @@ describe('Person saga flow', () => {
 
   it('should call getPersonSaga fail', () => {
     generator = getPersonSaga({ data: 2 });
-
-    moxios.wait(() => {
-      request = moxios.requests.mostRecent();
-
-      request.respondWith({
-        status: 404,
-      });
-    });
 
     generator.next();
 

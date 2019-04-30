@@ -68,3 +68,29 @@ export const mapTaxonomyTheme = (slug = 'default') => {
 
   return theme;
 };
+
+export const breakpoint = {
+  is(s) {
+    const size = s.trim();
+    const sizes = {
+      xsmall: '599px',
+      small: '600px',
+      medium: '900px',
+      large: '1200px',
+      xlarge: '1800px',
+    };
+
+    // console.log(window.matchMedia);
+
+    // Eslint doesn't like you accessing hasOwnProperty directly on object.
+    // https://eslint.org/docs/rules/no-prototype-builtins
+    if (Object.prototype.hasOwnProperty.call(sizes, size)) {
+      return window.matchMedia(`only screen and (min-width: ${sizes[size]})`)
+        .matches;
+    }
+
+    throw new ReferenceError(
+      `The size ${size} is not a valid breakpoint: ${JSON.stringify(sizes)}`
+    );
+  },
+};

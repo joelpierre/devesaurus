@@ -1,5 +1,6 @@
+import 'jsdom-global/register';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import AcfComponents from './AcfComponents';

@@ -5,7 +5,6 @@ import { getPostDataFailed, setPostData } from '../actions';
 
 describe('Post saga flow', () => {
   let generator;
-  let request;
 
   beforeEach(() => {
     moxios.install();
@@ -14,24 +13,10 @@ describe('Post saga flow', () => {
   afterEach(() => {
     moxios.uninstall();
     generator = null;
-    request = null;
   });
 
   it('should call getPostSaga success', () => {
     generator = getPostSaga({ data: 2 });
-
-    moxios.wait(() => {
-      request = moxios.requests.mostRecent();
-
-      request.respondWith({
-        status: 200,
-        response: {
-          data: {
-            test: 'getPostSaga',
-          },
-        },
-      });
-    });
 
     generator.next();
 
@@ -43,14 +28,6 @@ describe('Post saga flow', () => {
 
   it('should call getPostSaga fail', () => {
     generator = getPostSaga({ data: 2 });
-
-    moxios.wait(() => {
-      request = moxios.requests.mostRecent();
-
-      request.respondWith({
-        status: 404,
-      });
-    });
 
     generator.next();
 

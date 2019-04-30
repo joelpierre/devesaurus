@@ -5,7 +5,6 @@ import { getPageDataFailed, setPageData } from '../actions';
 
 describe('Page saga flow', () => {
   let generator;
-  let request;
 
   beforeEach(() => {
     moxios.install();
@@ -14,24 +13,10 @@ describe('Page saga flow', () => {
   afterEach(() => {
     moxios.uninstall();
     generator = null;
-    request = null;
   });
 
   it('should call getPageSaga success', () => {
     generator = getPageSaga({ data: 2 });
-
-    moxios.wait(() => {
-      request = moxios.requests.mostRecent();
-
-      request.respondWith({
-        status: 200,
-        response: {
-          data: {
-            test: 'getPageSaga',
-          },
-        },
-      });
-    });
 
     generator.next();
 
@@ -43,14 +28,6 @@ describe('Page saga flow', () => {
 
   it('should call getPageSaga fail', () => {
     generator = getPageSaga({ data: 2 });
-
-    moxios.wait(() => {
-      request = moxios.requests.mostRecent();
-
-      request.respondWith({
-        status: 404,
-      });
-    });
 
     generator.next();
 

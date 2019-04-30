@@ -5,7 +5,6 @@ import { getTeamDataFailed, setTeamData } from '../actions';
 
 describe('Team saga flow', () => {
   let generator;
-  let request;
 
   beforeEach(() => {
     moxios.install();
@@ -14,24 +13,10 @@ describe('Team saga flow', () => {
   afterEach(() => {
     moxios.uninstall();
     generator = null;
-    request = null;
   });
 
   it('should call getTeamSaga success', () => {
     generator = getTeamSaga();
-
-    moxios.wait(() => {
-      request = moxios.requests.mostRecent();
-
-      request.respondWith({
-        status: 200,
-        response: {
-          data: {
-            test: 'getTeamSaga',
-          },
-        },
-      });
-    });
 
     generator.next();
 
@@ -43,14 +28,6 @@ describe('Team saga flow', () => {
 
   it('should call getTeamSaga fail', () => {
     generator = getTeamSaga();
-
-    moxios.wait(() => {
-      request = moxios.requests.mostRecent();
-
-      request.respondWith({
-        status: 404,
-      });
-    });
 
     generator.next();
 
