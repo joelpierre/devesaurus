@@ -79,6 +79,7 @@ const mapStateToProps = state => ({
   wordData: state.word,
 });
 
+/* istanbul ignore next */
 const mapDispatchToProps = dispatch => ({
   onGetWord: data => dispatch(wordActions.getWordData(data.slug)),
   clearWordData: () => dispatch(wordActions.clearWordData()),

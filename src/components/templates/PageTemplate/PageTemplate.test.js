@@ -9,7 +9,7 @@ import {
   matchSnapshot,
   mockStore,
 } from '../../../utils/test';
-import * as testUtils from '../../../utils';
+import * as utils from '../../../utils';
 
 const defaultProps = {
   onGetPage: jest.fn(),
@@ -65,7 +65,7 @@ describe('<PageTemplate/>', () => {
   });
 
   it('should call mapOverACFComponents()', () => {
-    testUtils.mapOverACFComponents = jest.fn();
+    utils.mapOverACFComponents = jest.fn();
 
     wrapper.setProps({
       pageData: {
@@ -77,7 +77,7 @@ describe('<PageTemplate/>', () => {
     });
     wrapper.instance().componentDidUpdate({ ...defaultProps });
 
-    expect(testUtils.mapOverACFComponents).toHaveBeenCalled();
+    expect(utils.mapOverACFComponents).toHaveBeenCalled();
   });
 
   it('should call clearPageData on unmount', () => {

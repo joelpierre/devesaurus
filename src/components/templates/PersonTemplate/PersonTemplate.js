@@ -20,7 +20,7 @@ export class PersonTemplate extends PureComponent {
     const { personData } = this.props;
 
     if (personData && personData !== prevProps.personData) {
-      const { components } = personData.acf.components;
+      const { components } = personData.acf;
       if (components) mapOverACFComponents(components);
     }
   }
@@ -70,10 +70,12 @@ PersonTemplate.propTypes = {
   clearPersonData: PropTypes.func.isRequired,
 };
 
+/* istanbul ignore next */
 const mapStateToProps = state => ({
   personData: state.Post.data,
 });
 
+/* istanbul ignore next */
 const mapDispatchToProps = dispatch => ({
   onGetPerson: data => dispatch(personActions.getPersonData(data.slug)),
   clearPersonData: () => dispatch(personActions.clearPersonData()),

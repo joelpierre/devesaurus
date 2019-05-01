@@ -3,6 +3,7 @@ import { shallow } from 'enzyme/build';
 
 import ConnectedPostTemplate, { PostTemplate } from './PostTemplate';
 import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
+import * as utils from '../../../utils';
 
 const defaultProps = {
   onGetPost: jest.fn(),
@@ -54,5 +55,34 @@ describe('<PostTemplate/>', () => {
 
   it('should match snapshot', () => {
     matchSnapshot(wrapper);
+  });
+
+  it('should call getPostData when mounted', () => {
+    wrapper.instance().componentDidMount();
+    expect(defaultProps.onGetPost.mock.calls.length).toBe(1);
+    expect(defaultProps.onGetPost).toHaveBeenCalledWith(
+      defaultProps.pageContext
+    );
+  });
+
+  it('should call mapOverACFComponents()', () => {
+    utils.mapOverACFComponents = jest.fn();
+
+    wrapper.setProps({
+      postData: {
+        acf: {
+          page_theme: 'brand',
+          components: [],
+        },
+      },
+    });
+    wrapper.instance().componentDidUpdate({ ...defaultProps });
+
+    expect(utils.mapOverACFComponents).toHaveBeenCalled();
+  });
+
+  it('should call clearPostData on unmount', () => {
+    wrapper.instance().componentWillUnmount();
+    expect(defaultProps.clearPostData.mock.calls.length).toBe(1);
   });
 });

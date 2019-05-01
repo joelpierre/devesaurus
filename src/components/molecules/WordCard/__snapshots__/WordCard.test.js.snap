@@ -37,3 +37,176 @@ exports[`<WordCard/> should match snapShot 1`] = `
   </footer>
 </article>
 `;
+
+exports[`<WordCard/> should mount component and subsequent components 1`] = `
+<WordCard
+  acf={
+    Object {
+      "syllables": Object {
+        "count": "1",
+        "list": Array [
+          Object {
+            "item": "test",
+          },
+        ],
+      },
+    }
+  }
+  classes={null}
+  contrast={false}
+  slug="slug"
+  terms={
+    Array [
+      Object {
+        "name": "Design",
+        "slug": "design",
+        "taxonomy": "word_tag",
+      },
+      Object {
+        "name": "Graphic Design",
+        "slug": "graphic-design",
+        "taxonomy": "word_category",
+      },
+    ]
+  }
+  title="title"
+>
+  <article
+    className="theme--tint-alpha"
+    data-test="component-word-card"
+  >
+    <header
+      data-test="word-card-header"
+    >
+      <Heading
+        classes={null}
+        data-test="word-card-heading"
+        priority="3"
+      >
+        <h3
+          className="heading-3"
+          data-test="component-heading"
+        >
+          title
+        </h3>
+      </Heading>
+    </header>
+    <div
+      data-test="word-card-body"
+    >
+      <div>
+        <Heading
+          classes={null}
+          priority={5}
+        >
+          <h5
+            className="heading-5"
+            data-test="component-heading"
+          >
+            Categories
+          </h5>
+        </Heading>
+        <Label
+          caps={false}
+          classes={null}
+          data-test="word-card-category"
+          key="graphic-design"
+          link="/word-category/graphic-design"
+          size="sm"
+          text="Graphic Design"
+          theme="beta"
+        >
+          <mockConstructor
+            className="label label--beta label--sm"
+            data-test="component-label"
+            to="/word-category/graphic-design"
+          >
+            <a
+              className="label label--beta label--sm"
+              data-test="component-label"
+              href="/word-category/graphic-design"
+            >
+              <span
+                className="label__text"
+              >
+                Graphic Design
+              </span>
+            </a>
+          </mockConstructor>
+        </Label>
+      </div>
+      <div>
+        <Heading
+          classes={null}
+          priority={5}
+        >
+          <h5
+            className="heading-5"
+            data-test="component-heading"
+          >
+            Tags
+          </h5>
+        </Heading>
+        <Label
+          caps={false}
+          classes={null}
+          data-test="word-card-tag"
+          key="design"
+          link="/word-tag/design"
+          size="sm"
+          text="Design"
+          theme="beta"
+        >
+          <mockConstructor
+            className="label label--beta label--sm"
+            data-test="component-label"
+            to="/word-tag/design"
+          >
+            <a
+              className="label label--beta label--sm"
+              data-test="component-label"
+              href="/word-tag/design"
+            >
+              <span
+                className="label__text"
+              >
+                Design
+              </span>
+            </a>
+          </mockConstructor>
+        </Label>
+      </div>
+    </div>
+    <footer
+      className="mt-1"
+      data-test="word-card-footer"
+    >
+      <Button
+        action={null}
+        behavior="router"
+        caps={true}
+        classes={null}
+        data-test="word-card-button"
+        link="/word/slug"
+        size="md"
+        text="Get definition"
+        theme="tint-omega"
+      >
+        <mockConstructor
+          className="btn btn--md btn--tint-omega btn--capitalise"
+          data-test="component-button"
+          to="/word/slug"
+        >
+          <a
+            className="btn btn--md btn--tint-omega btn--capitalise"
+            data-test="component-button"
+            href="/word/slug"
+          >
+            Get definition
+          </a>
+        </mockConstructor>
+      </Button>
+    </footer>
+  </article>
+</WordCard>
+`;

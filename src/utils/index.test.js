@@ -2,6 +2,8 @@ import 'jsdom-global/register';
 import {
   breakpoint,
   mapOverACFComponents,
+  mapTaxonomyTheme,
+  randNumBetween,
   sortWordObj,
   updateObject,
 } from './index';
@@ -49,6 +51,34 @@ describe('Test util functions', () => {
 
     expect(word).not.toEqual(serverWord);
     expect(word).toEqual(mockWord);
+  });
+
+  it('sortWordObj should fail', () => {
+    // Run Function
+    sortWordObj();
+
+    expect(sortWordObj()).toBe(false);
+  });
+
+  it('should generate random number between 1 and 10 by default', () => {
+    expect(randNumBetween()).toBeGreaterThanOrEqual(0);
+    expect(randNumBetween()).toBeLessThanOrEqual(10);
+  });
+
+  it('should generate random number between min and max by default', () => {
+    const min = 20;
+    const max = 50;
+    expect(randNumBetween(min, max)).toBeGreaterThanOrEqual(20);
+    expect(randNumBetween(min, max)).toBeLessThanOrEqual(50);
+  });
+
+  it('should return a theme', () => {
+    expect(mapTaxonomyTheme()).toEqual('brand');
+    expect(mapTaxonomyTheme('development')).toEqual('alpha');
+    expect(mapTaxonomyTheme('design')).toEqual('beta');
+    expect(mapTaxonomyTheme('css')).toEqual('gamma');
+    expect(mapTaxonomyTheme('html')).toEqual('psi');
+    expect(mapTaxonomyTheme('news')).toEqual('omega');
   });
 });
 

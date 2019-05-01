@@ -3,6 +3,8 @@ import { shallow } from 'enzyme/build';
 
 import ConnectedWordTemplate, { WordTemplate } from './WordTemplate';
 import { checkProps, matchSnapshot } from '../../../utils/test';
+import * as utils from '../../../utils';
+import { sortWordObj } from '../../../utils';
 
 const defaultProps = {
   onGetWord: jest.fn(),
@@ -48,5 +50,34 @@ describe('<WordTemplate/>', () => {
 
   it('should match snapshot', () => {
     matchSnapshot(wrapper);
+  });
+
+  it('should call getWordData when mounted', () => {
+    wrapper.instance().componentDidMount();
+    expect(defaultProps.onGetWord.mock.calls.length).toBe(1);
+    expect(defaultProps.onGetWord).toHaveBeenCalledWith(
+      defaultProps.pageContext
+    );
+  });
+
+  it('should call mapOverACFComponents()', () => {
+    utils.sortWordObj = jest.fn();
+
+    wrapper.setProps({
+      wordData: {
+        acf: {
+          page_theme: 'brand',
+          components: [],
+        },
+      },
+    });
+    wrapper.instance().componentDidUpdate({ ...defaultProps });
+
+    expect(utils.sortWordObj).toHaveBeenCalled();
+  });
+
+  it('should call clearWordData on unmount', () => {
+    wrapper.instance().componentWillUnmount();
+    expect(defaultProps.clearWordData.mock.calls.length).toBe(1);
   });
 });

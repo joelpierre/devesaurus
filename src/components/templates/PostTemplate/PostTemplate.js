@@ -20,7 +20,7 @@ export class PostTemplate extends PureComponent {
     const { postData } = this.props;
 
     if (postData && postData !== prevProps.postData) {
-      const { components } = postData.acf.components;
+      const { components } = postData.acf;
       if (components) mapOverACFComponents(components);
     }
   }
@@ -82,6 +82,7 @@ const mapStateToProps = state => ({
   postData: state.post,
 });
 
+/* istanbul ignore next */
 const mapDispatchToProps = dispatch => ({
   onGetPost: data => dispatch(postActions.getPostData(data.slug)),
   clearPostData: () => dispatch(postActions.clearPostData()),

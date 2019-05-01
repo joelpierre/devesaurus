@@ -5,6 +5,7 @@ import toJson from 'enzyme-to-json';
 import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 import { mockWords } from '../../../../__mocks__/mock-words';
 import FeaturedWords from './FeaturedWords';
+import * as utils from '../../../utils';
 
 const defaultProps = {
   words: mockWords,
@@ -21,6 +22,7 @@ const setup = (props = {}) => {
 
 describe('<FeaturedWords/>', () => {
   let wrapper;
+  utils.sortWordObj = jest.fn();
 
   beforeEach(() => {
     wrapper = setup();
@@ -35,6 +37,18 @@ describe('<FeaturedWords/>', () => {
   it('renders the FeaturedWords Word element without errors', () => {
     const component = findByTestAttr(wrapper, 'featured-words-word');
     expect(component.length).toBeGreaterThanOrEqual(3);
+  });
+
+  it('should fire sortWords on mount', () => {
+    wrapper.instance().sortWords = jest.fn();
+    wrapper.instance().componentDidMount();
+    expect(wrapper.instance().sortWords).toHaveBeenCalled();
+  });
+
+  it('should fire sortWord on sortWords fire', () => {
+    wrapper.instance().sortWords();
+
+    expect(utils.sortWordObj).toHaveBeenCalled();
   });
 
   it('should render with correct props', () => {

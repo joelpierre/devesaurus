@@ -14,6 +14,7 @@ export const mapOverACFComponents = components => {
 };
 
 export const sortWordObj = word => {
+  /* istanbul ignore else */
   if (word) {
     delete word.author_id;
     delete word.author;
@@ -29,14 +30,8 @@ export const sortWordObj = word => {
   return false;
 };
 
-export const randTheme = () => {
-  const theme = ['brand', 'alpha', 'beta', 'gamma', 'psi', 'omega'];
-  const rand = randNumBetween(0, theme.length);
-  return theme[rand];
-};
-
 export const randNumBetween = (min = 0, max = 10) => {
-  return Math.floor(Math.random() * max) + min;
+  return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
 export const mapTaxonomyTheme = (slug = 'default') => {
@@ -69,7 +64,9 @@ export const mapTaxonomyTheme = (slug = 'default') => {
   return theme;
 };
 
+/* istanbul ignore next */
 export const breakpoint = {
+  /* istanbul ignore next */
   is(s) {
     const size = s.trim();
     const sizes = {
@@ -84,6 +81,7 @@ export const breakpoint = {
 
     // Eslint doesn't like you accessing hasOwnProperty directly on object.
     // https://eslint.org/docs/rules/no-prototype-builtins
+    /* istanbul ignore else */
     if (Object.prototype.hasOwnProperty.call(sizes, size)) {
       return window.matchMedia(`only screen and (min-width: ${sizes[size]})`)
         .matches;

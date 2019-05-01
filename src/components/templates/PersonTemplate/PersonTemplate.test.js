@@ -3,6 +3,7 @@ import { shallow } from 'enzyme/build';
 
 import ConnectedPersonTemplate, { PersonTemplate } from './PersonTemplate';
 import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
+import * as utils from '../../../utils';
 
 const defaultProps = {
   onGetPerson: jest.fn(),
@@ -55,5 +56,34 @@ describe('<PersonTemplate/>', () => {
 
   it('should match snapshot', () => {
     matchSnapshot(wrapper);
+  });
+
+  it('should call getPersonData when mounted', () => {
+    wrapper.instance().componentDidMount();
+    expect(defaultProps.onGetPerson.mock.calls.length).toBe(1);
+    expect(defaultProps.onGetPerson).toHaveBeenCalledWith(
+      defaultProps.pageContext
+    );
+  });
+
+  it('should call mapOverACFComponents()', () => {
+    utils.mapOverACFComponents = jest.fn();
+
+    wrapper.setProps({
+      personData: {
+        acf: {
+          page_theme: 'brand',
+          components: [],
+        },
+      },
+    });
+    wrapper.instance().componentDidUpdate({ ...defaultProps });
+
+    expect(utils.mapOverACFComponents).toHaveBeenCalled();
+  });
+
+  it('should call clearPersonData on unmount', () => {
+    wrapper.instance().componentWillUnmount();
+    expect(defaultProps.clearPersonData.mock.calls.length).toBe(1);
   });
 });
