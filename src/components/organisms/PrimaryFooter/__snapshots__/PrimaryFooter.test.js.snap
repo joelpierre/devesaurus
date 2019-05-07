@@ -2,23 +2,101 @@
 
 exports[`<PrimaryFooter/> should match snapshot 1`] = `
 <footer
+  className="primary-footer"
   data-test="component-primary-footer"
 >
-  <div
-    className="container-fluid"
+  <Container
+    classes={null}
+    fluid={false}
   >
-    <div
-      className="row"
+    <Row
+      classes="primary-footer--top"
+      column={false}
+      reverse={false}
+      row={true}
     >
-      <div
-        className="flex"
+      <Flex
+        classes={null}
+        col={null}
+        colLg={4}
+        colMd={6}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
       >
-        <h6>
-          © 
-          Replace Company Name 2019 | Built by: Joel Pierre-Powell
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda cupiditate eius eum ex expedita facilis ipsum, iste minus modi nobis nulla quae quas quia quisquam reprehenderit similique tenetur voluptatum.
+      </Flex>
+      <Flex
+        classes={null}
+        col={null}
+        colLg={4}
+        colMd={6}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda cupiditate eius eum ex expedita facilis ipsum, iste minus modi nobis nulla quae quas quia quisquam reprehenderit similique tenetur voluptatum.
+      </Flex>
+      <Flex
+        classes={null}
+        col={null}
+        colLg={4}
+        colMd={6}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda cupiditate eius eum ex expedita facilis ipsum, iste minus modi nobis nulla quae quas quia quisquam reprehenderit similique tenetur voluptatum.
+      </Flex>
+    </Row>
+    <Row
+      classes="primary-footer--bottom"
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes={null}
+        col={null}
+        colLg={null}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <h6
+          className="primary-footer__legal"
+        >
+          ©
+           
+          Devesaurus 2019 | Built by: Joel Pierre-Powell
         </h6>
-      </div>
-    </div>
-  </div>
+      </Flex>
+    </Row>
+  </Container>
 </footer>
 `;

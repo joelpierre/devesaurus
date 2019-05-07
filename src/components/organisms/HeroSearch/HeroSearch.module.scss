@@ -22,12 +22,21 @@
 
   &__brand {
     padding: 0 0 5rem;
+    width: 100%;
     min-width: 300px;
+    height: 110px;
 
     @include tablet-landscape {
-      height: auto;
       width: 100%;
       max-width: 500px;
+    }
+  }
+
+  &__input {
+    margin-bottom: 10rem !important;
+
+    @include tablet-landscape {
+      margin-bottom: 15rem !important;
     }
   }
 }

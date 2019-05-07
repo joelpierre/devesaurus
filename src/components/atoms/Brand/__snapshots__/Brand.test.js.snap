@@ -2,19 +2,18 @@
 
 exports[`<Brand/> should match snapshot 1`] = `
 <div
-  className="brand"
+  className="brand brand--left"
   data-test="component-brand"
 >
   <div
     className="brand__wrapper"
   >
     <SvgIcon
+      center={false}
       classes="brand__logo brand__icon"
       description="An SVG Icon"
       fill="#000000"
-      height="100%"
       name="logo"
-      width="100%"
     />
     <SiteInfo
       classes={null}

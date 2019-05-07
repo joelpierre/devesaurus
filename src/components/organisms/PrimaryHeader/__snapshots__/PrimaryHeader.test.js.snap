@@ -9,8 +9,11 @@ exports[`<PrimaryHeader/> should match snapshot 1`] = `
       to="/"
     >
       <Brand
+        center={false}
         classes={null}
-        type="logo"
+        left={true}
+        right={false}
+        type="symbol"
       />
     </mockConstructor>
     <PrimaryMenu

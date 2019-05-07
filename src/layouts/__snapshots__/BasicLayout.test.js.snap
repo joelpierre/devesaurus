@@ -18,6 +18,7 @@ exports[`<BasicLayout/> should match snapshot 1`] = `
     ogType="website"
     title="Default Title"
   />
+  <SimpleHeader />
   <main
     className="primary-main"
     data-test="basic-layout-main"
@@ -25,7 +26,7 @@ exports[`<BasicLayout/> should match snapshot 1`] = `
     Hello
   </main>
   <PrimaryFooter
-    company="Replace Company Name"
+    company="Devesaurus"
   />
 </Fragment>
 `;

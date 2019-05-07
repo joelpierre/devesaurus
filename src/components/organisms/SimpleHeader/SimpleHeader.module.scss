@@ -5,4 +5,18 @@
 
   position: relative;
   width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  top: 0;
+  left: 0;
+  padding: 1rem 0;
+  background-color: $color-tint-alpha;
+  transition: $transition-all-base;
+
+  &__menu {
+    margin-left: auto;
+    display: inline-flex;
+  }
 }

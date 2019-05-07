@@ -98,7 +98,7 @@ exports[`<AcfComponents/> should match snapshot 1`] = `
           fluid={false}
         >
           <div
-            className="container"
+            className="container classes"
             data-test="component-grid-container"
           >
             <Row
@@ -108,7 +108,7 @@ exports[`<AcfComponents/> should match snapshot 1`] = `
               row={true}
             >
               <div
-                className="row"
+                className="row row"
                 data-test="component-grid-row"
               >
                 <Flex

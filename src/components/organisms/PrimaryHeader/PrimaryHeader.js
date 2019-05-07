@@ -11,7 +11,7 @@ const PrimaryHeader = () => (
   >
     <div className={styles['primary-header__wrapper']}>
       <Link to="/">
-        <Brand type="logo" classes={styles['primary-header__brand']} />
+        <Brand type="symbol" left classes={styles['primary-header__brand']} />
       </Link>
 
       <PrimaryMenu classes={styles['primary-header__menu']} />

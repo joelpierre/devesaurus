@@ -1,12 +1,20 @@
 @import "~sass/core";
 
 .primary-footer {
+  $root: &;
   width: 100%;
-  padding: 3rem 0;
+  background-color: $color-tint-alpha;
   transition: $transition-all-base;
 
+  &--top {
+    padding: 4rem 0;
+  }
+
+  &--bottom {
+    padding: 2rem 0;
+  }
+
   &__legal {
-    border-top: 1px solid $color-tint-psi;
     padding-top: 2rem;
     text-align: center;
     font-weight: normal;

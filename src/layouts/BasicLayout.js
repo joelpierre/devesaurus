@@ -7,6 +7,7 @@ import styles from './Layout.module.scss';
 import SEO from '../components/core/SEO/SEO';
 import { getSiteMeta, getSiteOptions } from '../store/actions';
 import PrimaryFooter from '../components/organisms/PrimaryFooter/PrimaryFooter';
+import SimpleHeader from '../components/organisms/SimpleHeader/SimpleHeader';
 
 export class BasicLayout extends PureComponent {
   componentDidMount() {
@@ -21,6 +22,7 @@ export class BasicLayout extends PureComponent {
     return (
       <>
         <SEO title={title} description={description} />
+        <SimpleHeader />
         <main
           data-test="basic-layout-main"
           className={classNames([styles['primary-main'], classes])}

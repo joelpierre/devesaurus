@@ -12,7 +12,6 @@
   background-color: $color-tint-alpha;
   padding: 1rem 0;
   transition: $transition-all-base;
-  background-color: lightgrey;
 
   &__wrapper {
     display: flex;
@@ -29,6 +28,7 @@
     text-align: left;
 
     @include tablet-landscape {
+      max-width: 350px;
     }
   }
 

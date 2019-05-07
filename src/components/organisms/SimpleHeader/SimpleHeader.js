@@ -1,12 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-const SimpleHeader = props => {
-  return <header data-test="component-simple-header" />;
+import styles from './SimpleHeader.module.scss';
+import PrimaryMenu from '../../molecules/PrimaryMenu/PrimaryMenu';
+
+const SimpleHeader = () => {
+  return (
+    <header
+      className={classNames([styles['simple-header']])}
+      data-test="component-simple-header"
+    >
+      <PrimaryMenu classes={styles['simple-header__menu']} />
+    </header>
+  );
 };
-
-SimpleHeader.defaultProps = {};
-
-SimpleHeader.propTypes = {};
 
 export default SimpleHeader;

@@ -10,22 +10,16 @@ exports[`<InputGroup/> should match snapshot 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      defaultValue=""
+      classes={null}
       disabled={false}
-      hidden={null}
       label={null}
       lg={false}
       max={null}
       md={false}
       min={null}
       name="test-name"
-      onBlur={null}
-      onChange={null}
-      onClick={null}
-      onFocus={null}
       placeholder={null}
       readOnly={false}
-      readonly={false}
       sm={false}
       type="text"
     />
@@ -43,22 +37,16 @@ exports[`<InputGroup/> should match snapshot with append button 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      defaultValue=""
+      classes={null}
       disabled={false}
-      hidden={null}
       label={null}
       lg={false}
       max={null}
       md={false}
       min={null}
       name="test-name"
-      onBlur={null}
-      onChange={null}
-      onClick={null}
-      onFocus={null}
       placeholder={null}
       readOnly={false}
-      readonly={false}
       sm={false}
       type="text"
     />
@@ -95,22 +83,16 @@ exports[`<InputGroup/> should match snapshot with append icon 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      defaultValue=""
+      classes={null}
       disabled={false}
-      hidden={null}
       label={null}
       lg={false}
       max={null}
       md={false}
       min={null}
       name="test-name"
-      onBlur={null}
-      onChange={null}
-      onClick={null}
-      onFocus={null}
       placeholder={null}
       readOnly={false}
-      readonly={false}
       sm={false}
       type="text"
     />
@@ -126,12 +108,11 @@ exports[`<InputGroup/> should match snapshot with append icon 1`] = `
         data-test="input-group-icon"
       >
         <SvgIcon
+          center={false}
           classes={null}
           description="An SVG Icon"
           fill="#000000"
-          height="100%"
           name="complete"
-          width="100%"
         />
       </div>
     </div>
@@ -149,22 +130,16 @@ exports[`<InputGroup/> should match snapshot with append text 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      defaultValue=""
+      classes={null}
       disabled={false}
-      hidden={null}
       label={null}
       lg={false}
       max={null}
       md={false}
       min={null}
       name="test-name"
-      onBlur={null}
-      onChange={null}
-      onClick={null}
-      onFocus={null}
       placeholder={null}
       readOnly={false}
-      readonly={false}
       sm={false}
       type="text"
     />
@@ -215,22 +190,16 @@ exports[`<InputGroup/> should match snapshot with prepend button 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      defaultValue=""
+      classes={null}
       disabled={false}
-      hidden={null}
       label={null}
       lg={false}
       max={null}
       md={false}
       min={null}
       name="test-name"
-      onBlur={null}
-      onChange={null}
-      onClick={null}
-      onFocus={null}
       placeholder={null}
       readOnly={false}
-      readonly={false}
       sm={false}
       type="text"
     />
@@ -254,12 +223,11 @@ exports[`<InputGroup/> should match snapshot with prepend icon 1`] = `
         data-test="input-group-icon"
       >
         <SvgIcon
+          center={false}
           classes={null}
           description="An SVG Icon"
           fill="#000000"
-          height="100%"
           name="complete"
-          width="100%"
         />
       </div>
     </div>
@@ -269,22 +237,16 @@ exports[`<InputGroup/> should match snapshot with prepend icon 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      defaultValue=""
+      classes={null}
       disabled={false}
-      hidden={null}
       label={null}
       lg={false}
       max={null}
       md={false}
       min={null}
       name="test-name"
-      onBlur={null}
-      onChange={null}
-      onClick={null}
-      onFocus={null}
       placeholder={null}
       readOnly={false}
-      readonly={false}
       sm={false}
       type="text"
     />
@@ -316,22 +278,16 @@ exports[`<InputGroup/> should match snapshot with prepend text 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      defaultValue=""
+      classes={null}
       disabled={false}
-      hidden={null}
       label={null}
       lg={false}
       max={null}
       md={false}
       min={null}
       name="test-name"
-      onBlur={null}
-      onChange={null}
-      onClick={null}
-      onFocus={null}
       placeholder={null}
       readOnly={false}
-      readonly={false}
       sm={false}
       type="text"
     />

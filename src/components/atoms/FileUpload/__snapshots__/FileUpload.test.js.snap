@@ -26,12 +26,11 @@ exports[`<FileUpload/> should match snapshot 1`] = `
           Browse
         </span>
         <SvgIcon
+          center={false}
           classes="file-upload__icon"
           description="An SVG Icon"
           fill="#000000"
-          height="100%"
           name="complete"
-          width="100%"
         />
       </span>
     </span>

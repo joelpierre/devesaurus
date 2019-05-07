@@ -9,9 +9,11 @@ exports[`<InlineQuote/> should match snapshot 1`] = `
   type="section"
 >
   <Container
+    classes={null}
     fluid={false}
   >
     <Row
+      classes={null}
       column={false}
       reverse={false}
       row={true}
@@ -49,9 +51,11 @@ exports[`<InlineQuote/> should render with pageTheme instead of module theme 1`]
   type="section"
 >
   <Container
+    classes={null}
     fluid={false}
   >
     <Row
+      classes={null}
       column={false}
       reverse={false}
       row={true}

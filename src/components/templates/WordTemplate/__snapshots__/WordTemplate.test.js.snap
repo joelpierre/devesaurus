@@ -16,9 +16,11 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
     type="section"
   >
     <Container
+      classes={null}
       fluid={false}
     >
       <Row
+        classes={null}
         column={false}
         reverse={false}
         row={true}

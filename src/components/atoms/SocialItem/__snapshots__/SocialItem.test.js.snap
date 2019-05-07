@@ -12,12 +12,11 @@ exports[`<SocialItem/> should match snapshot 1`] = `
       target="_blank"
     >
       <SvgIcon
+        center={false}
         classes={null}
         description="An SVG Icon"
         fill="#000000"
-        height="100%"
         name="test-name"
-        width="100%"
       />
     </a>
   </li>

@@ -19,26 +19,32 @@ const Flex = ({
   colMd,
   colLg,
   colXl,
+  ...props
 }) => {
   const Tag = `${type}`;
-  const mergeClasses = {
-    [styles.flex]: !col,
-    [styles['flex-xs']]: xs,
-    [styles['flex-sm']]: sm,
-    [styles['flex-md']]: md,
-    [styles['flex-lg']]: lg,
-    [styles['flex-xl']]: xl,
-    [styles[`flex-${col}`]]: col,
-    [styles[`flex-xs-${colXs}`]]: colXs,
-    [styles[`flex-sm-${colSm}`]]: colSm,
-    [styles[`flex-md-${colMd}`]]: colMd,
-    [styles[`flex-lg-${colLg}`]]: colLg,
-    [styles[`flex-xl-${colXl}`]]: colXl,
-    [classes]: classes,
-  };
 
   return (
-    <Tag data-test="component-flex" className={classNames(mergeClasses)}>
+    <Tag
+      data-test="component-flex"
+      {...props}
+      className={classNames([
+        classes,
+        {
+          [styles.flex]: !col,
+          [styles['flex-xs']]: xs,
+          [styles['flex-sm']]: sm,
+          [styles['flex-md']]: md,
+          [styles['flex-lg']]: lg,
+          [styles['flex-xl']]: xl,
+          [styles[`flex-${col}`]]: col,
+          [styles[`flex-xs-${colXs}`]]: colXs,
+          [styles[`flex-sm-${colSm}`]]: colSm,
+          [styles[`flex-md-${colMd}`]]: colMd,
+          [styles[`flex-lg-${colLg}`]]: colLg,
+          [styles[`flex-xl-${colXl}`]]: colXl,
+        },
+      ])}
+    >
       {children}
     </Tag>
   );
