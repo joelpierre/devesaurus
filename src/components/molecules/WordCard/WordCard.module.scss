@@ -4,6 +4,7 @@
   $root: &;
 
   padding: 2rem;
+  border-radius: $radius-rounded;
   position: relative;
   display: flex;
   flex-wrap: wrap;

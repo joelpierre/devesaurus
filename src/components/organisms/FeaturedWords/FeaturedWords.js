@@ -33,8 +33,6 @@ class FeaturedWords extends PureComponent {
         slidesPerPage: 3,
         infinite: true,
         addArrowClickHandler: true,
-        // arrowLeft: <SvgIcon name="arrow-left" />,
-        // arrowRight: <SvgIcon name="arrow-right" />,
         arrowLeft: (
           <span>
             <span className={styles['featured-words__arrow-text']}>
@@ -49,7 +47,7 @@ class FeaturedWords extends PureComponent {
             <FontAwesomeIcon icon={['far', 'chevron-right']} />
           </span>
         ),
-        draggable: true,
+        draggable: false,
         breakpoints: {
           900: {
             slidesPerPage: 2,

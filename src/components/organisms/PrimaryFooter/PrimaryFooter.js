@@ -6,6 +6,10 @@ import styles from './PrimaryFooter.module.scss';
 import Container from '../../core/Container/Container';
 import Row from '../../core/Row/Row';
 import Flex from '../../core/Flex/Flex';
+import TermsMenu from '../../molecules/TermsMenu/TermsMenu';
+import Brand from '../../atoms/Brand/Brand';
+import SocialMenu from '../../molecules/SocialMenu/SocialMenu';
+import TagCloud from '../../molecules/TagCloud/TagCloud';
 
 const PrimaryFooter = ({ company }) => {
   // console.log();
@@ -14,36 +18,45 @@ const PrimaryFooter = ({ company }) => {
       data-test="component-primary-footer"
       className={styles['primary-footer']}
     >
-      <Container>
+      <Container fluid>
         <Row classes={classNames([styles['primary-footer--top']])}>
           <Flex colLg={4} colMd={6}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-            assumenda cupiditate eius eum ex expedita facilis ipsum, iste minus
-            modi nobis nulla quae quas quia quisquam reprehenderit similique
-            tenetur voluptatum.
+            <Brand left type="text" classes={styles['primary-footer__brand']} />
+            <SocialMenu />
           </Flex>
 
-          <Flex colLg={4} colMd={6}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-            assumenda cupiditate eius eum ex expedita facilis ipsum, iste minus
-            modi nobis nulla quae quas quia quisquam reprehenderit similique
-            tenetur voluptatum.
-          </Flex>
-
-          <Flex colLg={4} colMd={6}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-            assumenda cupiditate eius eum ex expedita facilis ipsum, iste minus
-            modi nobis nulla quae quas quia quisquam reprehenderit similique
-            tenetur voluptatum.
+          <Flex
+            colLg={6}
+            colMd={6}
+            classes={styles['primary-footer__tag-cloud']}
+          >
+            <TagCloud />
           </Flex>
         </Row>
 
         <Row classes={classNames([styles['primary-footer--bottom']])}>
-          <Flex>
-            <h6 className={styles['primary-footer__legal']}>
+          <Flex colLg={5} classes={styles['primary-footer__legal']}>
+            <h6 className={styles['primary-footer__legal-copy']}>
               &copy;{' '}
-              {`${company} ${new Date().getFullYear()} | Built by: Joel Pierre-Powell`}
+              {`${company} ${new Date().getFullYear()} | Developed by: Joel Pierre-Powell | Supported by`}{' '}
+              <a
+                className={styles['primary-footer__link']}
+                href="http://www.jppdesigns.co.uk"
+              >
+                JPPdesigns Web design &amp; Development
+              </a>
+              {' and '}
+              <a
+                className={styles['primary-footer__link']}
+                href="https://www.foolproof.co.uk"
+              >
+                Foolproof, a Zensar Company
+              </a>
             </h6>
+          </Flex>
+
+          <Flex colLg={7}>
+            <TermsMenu classes={styles['primary-footer__terms-menu']} />
           </Flex>
         </Row>
       </Container>

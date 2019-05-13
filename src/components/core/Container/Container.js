@@ -8,7 +8,7 @@ const Container = ({ fluid, children, classes, ...props }) => (
     data-test="component-grid-container"
     className={classNames({
       [styles.container]: !fluid,
-      [styles['container--fluid']]: fluid,
+      [styles['container-fluid']]: fluid,
       classes,
     })}
     {...props}
