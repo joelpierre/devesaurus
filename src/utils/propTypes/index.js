@@ -80,6 +80,7 @@ export const themePropType = {
     'tint-gamma',
     'tint-psi',
     'tint-omega',
+    'gradient-brand',
   ]),
 };
 

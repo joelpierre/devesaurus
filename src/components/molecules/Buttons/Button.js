@@ -11,7 +11,7 @@ import {
 } from '../../../utils/propTypes';
 
 const Button = ({
-  text,
+  children,
   behavior,
   theme,
   link,
@@ -37,7 +37,7 @@ const Button = ({
             classes,
           ])}
         >
-          {text}
+          {children}
         </Link>
       );
       break;
@@ -59,7 +59,7 @@ const Button = ({
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          {text}
+          {children}
         </a>
       );
       break;
@@ -80,7 +80,7 @@ const Button = ({
           ])}
           onClick={action.func}
         >
-          {text}
+          {children}
         </button>
       );
       break;
@@ -92,7 +92,7 @@ const Button = ({
 Button.defaultProps = {
   ...defaultTheme('tint-omega'),
   ...defaultSize('md'),
-  caps: false,
+  caps: true,
   behavior: 'router',
   action: null,
   classes: null,
@@ -100,7 +100,10 @@ Button.defaultProps = {
 
 Button.propTypes = {
   action: PropTypes.func,
-  text: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
   link: PropTypes.string.isRequired,
   classes: PropTypes.string,
   caps: PropTypes.bool,

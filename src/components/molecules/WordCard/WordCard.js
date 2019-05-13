@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Link } from 'gatsby';
 import * as styles from './WordCard.module.scss';
 import { wordPropTypeShape } from '../../../utils/propTypes';
 import Button from '../Buttons/Button';
@@ -63,6 +64,10 @@ class WordCard extends PureComponent {
         ])}
         data-test="component-word-card"
       >
+        <Link to={`/word/${slug}`} className={styles['word-card__link']}>
+          <span className={styles['word-card__link-text']}>{title}</span>
+        </Link>
+
         <header
           data-test="word-card-header"
           className={styles['word-card__header']}
@@ -113,18 +118,6 @@ class WordCard extends PureComponent {
             </div>
           )}
         </div>
-
-        <footer
-          data-test="word-card-footer"
-          className={classNames([styles['word-card__footer'], 'mt-1'])}
-        >
-          <Button
-            data-test="word-card-button"
-            link={`/word/${slug}`}
-            text="Get definition"
-            caps
-          />
-        </footer>
       </article>
     );
   }

@@ -5,6 +5,13 @@ exports[`<WordCard/> should match snapShot 1`] = `
   className="theme--tint-alpha"
   data-test="component-word-card"
 >
+  <mockConstructor
+    to="/word/slug"
+  >
+    <span>
+      title
+    </span>
+  </mockConstructor>
   <header
     data-test="word-card-header"
   >
@@ -19,22 +26,6 @@ exports[`<WordCard/> should match snapShot 1`] = `
   <div
     data-test="word-card-body"
   />
-  <footer
-    className="mt-1"
-    data-test="word-card-footer"
-  >
-    <Button
-      action={null}
-      behavior="router"
-      caps={true}
-      classes={null}
-      data-test="word-card-button"
-      link="/word/slug"
-      size="md"
-      text="Get definition"
-      theme="tint-omega"
-    />
-  </footer>
 </article>
 `;
 
@@ -75,6 +66,17 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
     className="theme--tint-alpha"
     data-test="component-word-card"
   >
+    <mockConstructor
+      to="/word/slug"
+    >
+      <a
+        href="/word/slug"
+      >
+        <span>
+          title
+        </span>
+      </a>
+    </mockConstructor>
     <header
       data-test="word-card-header"
     >
@@ -177,36 +179,6 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
         </Label>
       </div>
     </div>
-    <footer
-      className="mt-1"
-      data-test="word-card-footer"
-    >
-      <Button
-        action={null}
-        behavior="router"
-        caps={true}
-        classes={null}
-        data-test="word-card-button"
-        link="/word/slug"
-        size="md"
-        text="Get definition"
-        theme="tint-omega"
-      >
-        <mockConstructor
-          className="btn btn--md btn--tint-omega btn--capitalise"
-          data-test="component-button"
-          to="/word/slug"
-        >
-          <a
-            className="btn btn--md btn--tint-omega btn--capitalise"
-            data-test="component-button"
-            href="/word/slug"
-          >
-            Get definition
-          </a>
-        </mockConstructor>
-      </Button>
-    </footer>
   </article>
 </WordCard>
 `;

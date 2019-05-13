@@ -7,5 +7,6 @@
 
   &.theme {
     @include theme;
+    @include gradient-theme;
   }
 }

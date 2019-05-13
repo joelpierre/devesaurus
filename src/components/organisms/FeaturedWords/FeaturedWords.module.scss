@@ -4,35 +4,24 @@
   $root: &;
   position: relative;
   padding: 10rem 0 12rem;
+  overflow: hidden;
 
   &__heading {
     font-size: 40px;
     font-weight: bold;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     color: white;
+  }
+
+  &__copy {
+    color: $color-tint-alpha;
   }
 
   &__word-card {
     margin-right: 2rem;
   }
 
-  &.theme--tint-alpha {
-    background-color: red;
-
-    #{$root} {
-      &__word-card {
-        background-color: $color-tint-beta;
-      }
-    }
-  }
-
-  &.theme--tint-beta {
-    background-color: red;
-
-    #{$root} {
-      &__word-card {
-        background-color: $color-tint-alpha;
-      }
-    }
+  &__arrow-text {
+    @include sr-only;
   }
 }

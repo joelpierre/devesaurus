@@ -21,7 +21,7 @@ exports[`<TeamCard/> should match snapshot 1`] = `
     <Button
       action={null}
       behavior="router"
-      caps={false}
+      caps={true}
       classes={null}
       link="slug"
       size="md"

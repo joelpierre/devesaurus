@@ -61,7 +61,7 @@ exports[`<InputGroup/> should match snapshot with append button 1`] = `
       <Button
         action={null}
         behavior="action"
-        caps={false}
+        caps={true}
         classes={null}
         link="#"
         size="md"
@@ -176,7 +176,7 @@ exports[`<InputGroup/> should match snapshot with prepend button 1`] = `
       <Button
         action={null}
         behavior="action"
-        caps={false}
+        caps={true}
         classes={null}
         link="#"
         size="md"

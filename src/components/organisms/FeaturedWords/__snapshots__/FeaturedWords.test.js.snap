@@ -13,16 +13,16 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
     fluid={false}
   >
     <Row
-      classes={null}
+      classes="mb-4"
       column={false}
       reverse={false}
       row={true}
     >
       <Flex
         classes={null}
-        col="12"
+        col={null}
         colLg={null}
-        colMd={null}
+        colMd="8"
         colSm={null}
         colXl={null}
         colXs={null}
@@ -39,8 +39,18 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
         >
           Featured Words
         </Heading>
+        <p
+          className="featured-words__copy"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolores ex expedita explicabo hic, in iure minima nesciunt, nobis nulla numquam odio placeat quaerat quisquam quos sequi vero, vitae voluptatibus?
+        </p>
       </Flex>
     </Row>
+  </Container>
+  <Container
+    classes={null}
+    fluid={false}
+  >
     <Row
       classes={null}
       column={false}
@@ -64,14 +74,69 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
       >
         <t
           addArrowClickHandler={true}
+          arrowLeft={
+            <span>
+              <span
+                className="featured-words__arrow-text"
+              >
+                Previous
+              </span>
+              <FontAwesomeIcon
+                border={false}
+                className=""
+                fixedWidth={false}
+                flip={null}
+                icon={
+                  Array [
+                    "far",
+                    "chevron-left",
+                  ]
+                }
+                inverse={false}
+                listItem={false}
+                mask={null}
+                pull={null}
+                pulse={false}
+                rotation={null}
+                size={null}
+                spin={false}
+                symbol={false}
+                title=""
+                transform={null}
+              />
+            </span>
+          }
           arrowRight={
-            <SvgIcon
-              center={false}
-              classes={null}
-              description="An SVG Icon"
-              fill="#000000"
-              name="arrow-right"
-            />
+            <span>
+              <span
+                className="featured-words__arrow-text"
+              >
+                Next
+              </span>
+              <FontAwesomeIcon
+                border={false}
+                className=""
+                fixedWidth={false}
+                flip={null}
+                icon={
+                  Array [
+                    "far",
+                    "chevron-right",
+                  ]
+                }
+                inverse={false}
+                listItem={false}
+                mask={null}
+                pull={null}
+                pulse={false}
+                rotation={null}
+                size={null}
+                spin={false}
+                symbol={false}
+                title=""
+                transform={null}
+              />
+            </span>
           }
           breakpoints={
             Object {
@@ -304,6 +369,69 @@ test<br />
             title="Web Development 2"
           />
         </t>
+      </Flex>
+    </Row>
+  </Container>
+  <Container
+    classes={null}
+    fluid={false}
+  >
+    <Row
+      classes="mt-5"
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes={null}
+        col={null}
+        colLg={null}
+        colMd="8"
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <Button
+          action={null}
+          behavior="router"
+          caps={true}
+          classes={null}
+          link="/"
+          size="lg"
+          theme="tint-alpha"
+        >
+          View all word categories
+           
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Array [
+                "far",
+                "chevron-right",
+              ]
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+        </Button>
       </Flex>
     </Row>
   </Container>

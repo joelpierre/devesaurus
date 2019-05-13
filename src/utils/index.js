@@ -1,8 +1,31 @@
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import {
+  faChevronRight,
+  faChevronLeft,
+} from '@fortawesome/pro-regular-svg-icons';
+
+/**
+ * Add Fontawesome icons to library for app
+ */
+library.add(fab, faChevronRight, faChevronLeft);
+
+/**
+ * Update any object passed through
+ * @param oldObject
+ * @param updatedValues
+ * @returns updatedObject
+ */
 export const updateObject = (oldObject, updatedValues) => ({
   ...oldObject,
   ...updatedValues,
 });
 
+/**
+ * Map over ACF Component array and amend the layout title
+ * @param components
+ * @returns {*}
+ */
 export const mapOverACFComponents = components => {
   components.map(component => {
     component.acf_fc_layout = component.acf_fc_layout.replace(
@@ -13,6 +36,11 @@ export const mapOverACFComponents = components => {
   return components;
 };
 
+/**
+ * Amend the Word object passed through.
+ * @param word
+ * @returns {boolean|*}
+ */
 export const sortWordObj = word => {
   /* istanbul ignore else */
   if (word) {
@@ -30,10 +58,21 @@ export const sortWordObj = word => {
   return false;
 };
 
+/**
+ * Generate random number between two values
+ * @param min
+ * @param max
+ * @returns {number}
+ */
 export const randNumBetween = (min = 0, max = 10) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+/**
+ * Map taxonomy slugs to theme colours
+ * @param slug
+ * @returns {string}
+ */
 export const mapTaxonomyTheme = (slug = 'default') => {
   let theme;
 
@@ -64,6 +103,45 @@ export const mapTaxonomyTheme = (slug = 'default') => {
   return theme;
 };
 
+/**
+ * Map taxonomy slug to fontAwesome icon
+ * @param slug
+ * @returns {string}
+ */
+export const mapTaxonomyIcon = (slug = 'default') => {
+  let icon;
+
+  switch (slug) {
+    case 'development':
+    case 'web-development':
+      icon = 'alpha';
+      break;
+    case 'graphic-design':
+    case 'design':
+      icon = 'beta';
+      break;
+    case 'css':
+    case 'css3':
+      icon = 'gamma';
+      break;
+    case 'html':
+    case 'html5':
+      icon = 'psi';
+      break;
+    case 'news':
+      icon = 'omega';
+      break;
+    default:
+      icon = 'brand';
+  }
+
+  return icon;
+};
+
+/**
+ * Find out what the breakpoint is for responsive javascript functions
+ * @type {{is(*): (*|undefined)}}
+ */
 /* istanbul ignore next */
 export const breakpoint = {
   /* istanbul ignore next */

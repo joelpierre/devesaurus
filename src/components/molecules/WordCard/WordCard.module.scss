@@ -3,11 +3,24 @@
 .word-card {
   $root: &;
 
-  border-radius: $radius-rounded;
   padding: 2rem;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   height: 100%;
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    &-text {
+      @include sr-only();
+    }
+  }
 
   &__header {
     flex-basis: 100%;

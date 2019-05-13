@@ -6,3 +6,11 @@
     }
   }
 }
+
+@mixin gradient-theme {
+  &--gradient {
+    &-brand {
+      background: linear-gradient(135deg, rgba($color-brand, 1) 30%, rgba(lighten($color-alpha, 20%), 1) 100%);
+    }
+  }
+}

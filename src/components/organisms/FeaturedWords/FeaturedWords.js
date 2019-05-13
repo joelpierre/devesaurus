@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Carousel from '@brainhubeu/react-carousel';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import WordCard from '../../molecules/WordCard/WordCard';
 import styles from './FeaturedWords.module.scss';
@@ -17,7 +18,8 @@ import Row from '../../core/Row/Row';
 import Flex from '../../core/Flex/Flex';
 import Heading from '../../core/Heading/Heading';
 import { sortWordObj } from '../../../utils';
-import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+import Button from '../../molecules/Buttons/Button';
+// import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 class FeaturedWords extends PureComponent {
   constructor(props) {
@@ -31,7 +33,22 @@ class FeaturedWords extends PureComponent {
         slidesPerPage: 3,
         infinite: true,
         addArrowClickHandler: true,
-        arrowRight: <SvgIcon name="arrow-right" />,
+        // arrowLeft: <SvgIcon name="arrow-left" />,
+        // arrowRight: <SvgIcon name="arrow-right" />,
+        arrowLeft: (
+          <span>
+            <span className={styles['featured-words__arrow-text']}>
+              Previous
+            </span>
+            <FontAwesomeIcon icon={['far', 'chevron-left']} />
+          </span>
+        ),
+        arrowRight: (
+          <span>
+            <span className={styles['featured-words__arrow-text']}>Next</span>
+            <FontAwesomeIcon icon={['far', 'chevron-right']} />
+          </span>
+        ),
         draggable: true,
         breakpoints: {
           900: {
@@ -72,14 +89,22 @@ class FeaturedWords extends PureComponent {
         theme={theme}
       >
         <Container>
-          <Row>
-            <Flex col="12">
+          <Row classes="mb-4">
+            <Flex colMd="8">
               <Heading priority="2" classes={styles['featured-words__heading']}>
                 Featured Words
               </Heading>
+              <p className={styles['featured-words__copy']}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Aperiam dolores ex expedita explicabo hic, in iure minima
+                nesciunt, nobis nulla numquam odio placeat quaerat quisquam quos
+                sequi vero, vitae voluptatibus?
+              </p>
             </Flex>
           </Row>
+        </Container>
 
+        <Container>
           <Row>
             <Flex col={12}>
               <Carousel {...carouselSettings}>
@@ -98,6 +123,17 @@ class FeaturedWords extends PureComponent {
                   );
                 })}
               </Carousel>
+            </Flex>
+          </Row>
+        </Container>
+
+        <Container>
+          <Row classes="mt-5">
+            <Flex colMd="8">
+              <Button link="/" size="lg" theme="tint-alpha">
+                View all word categories{' '}
+                <FontAwesomeIcon icon={['far', 'chevron-right']} />
+              </Button>
             </Flex>
           </Row>
         </Container>

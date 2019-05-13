@@ -7,7 +7,7 @@ import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 import Button from './Button';
 
 const defaultProps = {
-  text: 'test',
+  children: 'test',
   link: '#',
 };
 

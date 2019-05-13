@@ -1,26 +1,26 @@
 @import "~sass/core";
 
 .BrainhubCarousel {
-  overflow: hidden;
+  //overflow: hidden;
   display: flex;
   align-items: center;
-}
 
-.BrainhubCarousel .BrainhubCarousel__trackContainer {
-  overflow: hidden;
-  margin-right: .5rem;
-}
+  .BrainhubCarousel__trackContainer {
+    //overflow: hidden;
+    margin-right: .5rem;
 
-.BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track {
-  display: flex;
-  overflow: hidden;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    .BrainhubCarousel__track {
+      display: flex;
+      //overflow: hidden;
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-.BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track.BrainhubCarousel__track--transition {
-  transition: transform;
+      &.BrainhubCarousel__track--transition {
+        transition: transform;
+      }
+    }
+  }
 }
 
 /* variables */
@@ -32,54 +32,55 @@
   padding: 0;
   font-size: 0;
   line-height: 0;
-}
 
-.BrainhubCarousel__dots .BrainhubCarousel__dot {
-  outline: 0;
-  padding: 10px;
-  border: none;
-  opacity: .5;
-  cursor: pointer;
-  -webkit-appearance: none;
-}
+  .BrainhubCarousel__dot {
+    outline: 0;
+    padding: 10px;
+    border: none;
+    opacity: .5;
+    cursor: pointer;
+    -webkit-appearance: none;
 
-.BrainhubCarousel__dots .BrainhubCarousel__dot.BrainhubCarousel__dot--selected {
-  opacity: 1 !important;
-}
+    &.BrainhubCarousel__dot--selected {
+      opacity: 1 !important;
+    }
 
-.BrainhubCarousel__dots .BrainhubCarousel__dot:hover {
-  opacity: 1;
-}
+    @include hover {
+      opacity: 1;
+    }
 
-.BrainhubCarousel__dots .BrainhubCarousel__dot:before {
-  content: '';
-  display: block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  padding: 0;
-  border: none;
-  background: $color-tint-omega;
-}
+    &:before {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      padding: 0;
+      border: none;
+      background: $color-tint-omega;
+    }
+  }
 
-.BrainhubCarousel__dots .BrainhubCarousel__thumbnail {
-  outline: 0;
-  padding: 10px;
-  border: none;
-  opacity: .5;
-  cursor: pointer;
-}
+  .BrainhubCarousel__thumbnail {
+    outline: 0;
+    padding: 10px;
+    border: none;
+    opacity: .5;
+    cursor: pointer;
 
-.BrainhubCarousel__dots .BrainhubCarousel__thumbnail.BrainhubCarousel__thumbnail--selected {
-  opacity: 1 !important;
-}
+    &[type=button] {
+      -webkit-appearance: none;
+      appearance: none;
+    }
 
-.BrainhubCarousel__dots .BrainhubCarousel__thumbnail:hover {
-  opacity: 1;
-}
+    &.BrainhubCarousel__thumbnail--selected {
+      opacity: 1 !important;
+    }
 
-.BrainhubCarousel__thumbnail[type=button] {
-  -webkit-appearance: none;
+    @include hover {
+      opacity: 1;
+    }
+  }
 }
 
 .BrainhubCarouselItem {
@@ -87,24 +88,62 @@
   justify-content: center;
   align-items: center;
   position: relative;
-}
+  opacity: .8;
+  filter: blur(.1rem);
+  transform: scale(1, 1);
+  transition: transform .2s ease-out;
+  pointer-events: none;
 
-.BrainhubCarouselItem.BrainhubCarouselItem--clickable {
-  cursor: pointer;
-}
+  &--active {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1, 1);
+    pointer-events: all;
 
-.BrainhubCarouselItem .debug-number {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2em;
-  text-shadow: 0 0 .9rem $color-tint-alpha;
+    @include hover-focus {
+      transform: scale(1.04, 1.04);
+    }
+
+    & + .BrainhubCarouselItem {
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1, 1);
+      pointer-events: all;
+
+      @include hover-focus {
+        transform: scale(1.04, 1.04);
+      }
+
+      & + .BrainhubCarouselItem {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1, 1);
+        pointer-events: all;
+
+        @include hover-focus {
+          transform: scale(1.04, 1.04);
+        }
+      }
+    }
+  }
+
+  .debug-number {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 2em;
+    text-shadow: 0 0 .9rem $color-tint-alpha;
+  }
+
+  &.BrainhubCarouselItem--clickable {
+    cursor: pointer;
+  }
 }
 
 .BrainhubCarousel__arrows {
@@ -115,55 +154,81 @@
   outline: 0;
   font-size: 0;
   line-height: 0;
-  background-color: #7B59FF;
   cursor: pointer;
+
+  @include hover {
+    background-color: $color-brand;
+
+    span {
+      border-color: $color-tint-alpha;
+      margin: 0;
+    }
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-style: solid;
+    border-color: $color-tint-alpha;
+    border-width: 3px 3px 0 0;
+    padding: 5px;
+    transition: .3s;
+    font-size: 0;
+  }
 }
 
-.BrainhubCarousel__arrows span {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-style: solid;
-  border-color: $color-tint-alpha;
-  border-width: 3px 3px 0 0;
-  padding: 5px;
-  -webkit-transition: .3s;
-  transition: .3s;
-  font-size: 0;
-}
-
-.BrainhubCarousel__arrows:hover {
-  background-color: #8768FF;
-}
 
 .BrainhubCarousel__arrowLeft span {
-  -webkit-transform: translate(-50%, -50%) rotate(-135deg);
   transform: translate(-50%, -50%) rotate(-135deg);
   margin-left: 2.45px;
 }
 
 .BrainhubCarousel__arrowRight span {
-  -webkit-transform: translate(-50%, -50%) rotate(45deg);
   transform: translate(-50%, -50%) rotate(45deg);
   margin-left: -2.45px;
-}
-
-.BrainhubCarousel__arrows:hover span {
-  border-color: $color-tint-alpha;
-  margin: 0;
 }
 
 .BrainhubCarousel__customArrows {
   box-sizing: content-box;
   cursor: pointer;
-}
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem;
+  //background-color: $color-tint-alpha;
+  border-radius: 50%;
+  //border: .2rem solid $color-brand;
+  //box-shadow: 0 0 15px 0 rgba($color-tint-psi, 1);
+  z-index: 100;
 
-.BrainhubCarousel__custom-arrowRight {
-  width: 45rem;
-  height: 25px;
+  // Adjustments to bring arrows up
+  top: -7rem;
 
   svg {
-    fill: $color-tint-gamma !important;
+    fill: $color-tint-alpha !important;
+    color: $color-tint-alpha !important;
+    width: 60% !important;
+    height: auto;
+  }
+
+  &.BrainhubCarousel__custom-arrowLeft {
+    right: 5rem;
+
+    svg {
+      margin-left: -.4rem;
+    }
+  }
+
+  &.BrainhubCarousel__custom-arrowRight {
+    right: 0;
+
+    svg {
+      margin-left: .4rem;
+    }
   }
 }
