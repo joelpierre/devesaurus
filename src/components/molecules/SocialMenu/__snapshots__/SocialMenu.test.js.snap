@@ -1,7 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SocialMenu/> should match snapshot 1`] = `
+exports[`<PureSocialMenu/> should match snapshot 1`] = `
 <nav
+  className="social-menu"
   data-test="component-social-menu"
-/>
+>
+  <ul
+    className="social-menu__list"
+  >
+    <SocialItem
+      classes="social-menu__item"
+      link="facebook"
+      name="facebook"
+    />
+    <SocialItem
+      classes="social-menu__item"
+      link="twitter"
+      name="twitter"
+    />
+    <SocialItem
+      classes="social-menu__item"
+      link="instagram"
+      name="instagram"
+    />
+    <SocialItem
+      classes="social-menu__item"
+      link="linkedin"
+      name="linkedin"
+    />
+  </ul>
+</nav>
 `;

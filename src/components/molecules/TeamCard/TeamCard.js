@@ -16,7 +16,10 @@ const TeamCard = ({ firstName, lastName, jobTitle, bio, link }) => {
       <div className={styles['team-card__body']}>{bio}</div>
 
       <footer className={styles['team-card__footer']}>
-        <Button link={link} text={`Read ${firstName}'s profile`} />
+        <Button link={link}>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          Read {firstName}'s profile
+        </Button>
       </footer>
     </article>
   );

@@ -2,12 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as styles from './WordCard.module.scss';
 import { wordPropTypeShape } from '../../../utils/propTypes';
 import Button from '../Buttons/Button';
 import Heading from '../../core/Heading/Heading';
 import Label from '../../atoms/Label/Label';
-import { mapTaxonomyTheme } from '../../../utils';
+import { mapTaxonomyIcon, mapTaxonomyTheme } from '../../../utils';
 
 class WordCard extends PureComponent {
   constructor() {
@@ -49,7 +50,7 @@ class WordCard extends PureComponent {
   }
 
   render() {
-    const { title, slug, classes, contrast } = this.props;
+    const { title, slug, classes, contrast, acf } = this.props;
     const { categories, tags } = this.state;
 
     return (
@@ -64,6 +65,31 @@ class WordCard extends PureComponent {
         ])}
         data-test="component-word-card"
       >
+        {categories && (
+          <div
+            data-test="word-card-category"
+            className={classNames(
+              styles['word-card__category'],
+              styles[
+                `word-card--theme--${mapTaxonomyTheme(categories[0].slug)}`
+              ]
+            )}
+          >
+            <Link
+              to={`/word-category/${categories[0].slug}`}
+              className={styles['word-card__category-link']}
+            >
+              <span className={styles['word-card__category-text']}>
+                {categories[0].name}
+              </span>
+
+              <span className={styles['word-card__category-icon']}>
+                <FontAwesomeIcon icon={mapTaxonomyIcon(categories[0].slug)} />
+              </span>
+            </Link>
+          </div>
+        )}
+
         <Link to={`/word/${slug}`} className={styles['word-card__link']}>
           <span className={styles['word-card__link-text']}>{title}</span>
         </Link>
@@ -75,49 +101,45 @@ class WordCard extends PureComponent {
           <Heading
             priority="3"
             data-test="word-card-heading"
-            className={styles['word-card__heading']}
+            classes={styles['word-card__heading']}
           >
             {title}
           </Heading>
         </header>
 
         <div data-test="word-card-body" className={styles['word-card__body']}>
-          {categories && (
-            <div className={styles['word-card__categories']}>
-              <Heading priority={5}>Categories</Heading>
-              {categories.map(category => {
-                // console.log(category);
-                return (
-                  <Label
-                    key={category.slug}
-                    theme={mapTaxonomyTheme(category.slug)}
-                    data-test="word-card-category"
-                    text={category.name}
-                    link={`/word-category/${category.slug}`}
-                  />
-                );
-              })}
-            </div>
-          )}
+          <p className={styles['word-card__copy']}>
+            <strong>Origin:</strong> {acf.origin.label} ({acf.origin.value})
+          </p>
+          <p className={styles['word-card__copy']}>
+            <strong>Pronunciation:</strong> {acf.pronunciation}
+          </p>
+        </div>
 
+        <footer className={classNames(styles['word-card__footer'])}>
           {tags && (
             <div className={styles['word-card__tags']}>
-              <Heading priority={5}>Tags</Heading>
               {tags.map(tag => {
                 // console.log(tag);
                 return (
                   <Label
-                    key={tag.slug}
-                    theme={mapTaxonomyTheme(tag.slug)}
                     data-test="word-card-tag"
-                    text={tag.name}
+                    classes={styles['word-card__label']}
+                    key={tag.slug}
                     link={`/word-tag/${tag.slug}`}
-                  />
+                    theme={mapTaxonomyTheme(tag.slug)}
+                  >
+                    <FontAwesomeIcon
+                      icon={mapTaxonomyIcon(tag.slug)}
+                      className={styles['word-card__icon']}
+                    />
+                    {tag.name}
+                  </Label>
                 );
               })}
             </div>
           )}
-        </div>
+        </footer>
       </article>
     );
   }

@@ -43,11 +43,20 @@ $color-gamma: #21A7BA;
 $color-psi: #7457AD;
 $color-omega: #E26B50;
 
+// Gradients
+$color-gradient-brand: linear-gradient(135deg, rgba($color-brand, 1) 30%, rgba(lighten($color-alpha, 20%), 1) 100%);
+$color-gradient-alpha: linear-gradient(135deg, rgba($color-brand, 1) 30%, rgba(lighten($color-alpha, 20%), 1) 100%);
+$color-gradient-beta: linear-gradient(135deg, rgba($color-brand, 1) 30%, rgba(lighten($color-alpha, 20%), 1) 100%);
+$color-gradient-gamma: linear-gradient(135deg, rgba($color-brand, 1) 30%, rgba(lighten($color-alpha, 20%), 1) 100%);
+$color-gradient-psi: linear-gradient(135deg, rgba($color-brand, 1) 30%, rgba(lighten($color-alpha, 20%), 1) 100%);
+$color-gradient-omega: linear-gradient(135deg, rgba($color-brand, 1) 30%, rgba(lighten($color-alpha, 20%), 1) 100%);
+
 // Tint Colours
 $color-tint-alpha: white;
 $color-tint-beta: #F9F9F9;
 $color-tint-gamma: #C6C6C6;
-$color-tint-psi: #A0A0A0;
+$color-tint-delta: #A0A0A0;
+$color-tint-psi: #666;
 $color-tint-omega: black;
 
 $color-external-link: #007BFF;

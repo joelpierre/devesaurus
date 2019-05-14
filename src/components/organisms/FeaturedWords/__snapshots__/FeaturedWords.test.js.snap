@@ -13,7 +13,7 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
     fluid={false}
   >
     <Row
-      classes="mb-4"
+      classes="mb-5"
       column={false}
       reverse={false}
       row={true}
@@ -140,16 +140,16 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
           }
           breakpoints={
             Object {
-              "600": Object {
+              "1200": Object {
+                "slidesPerPage": 2,
+              },
+              "900": Object {
                 "draggable": true,
                 "slidesPerPage": 1,
               },
-              "900": Object {
-                "slidesPerPage": 2,
-              },
             }
           }
-          draggable={true}
+          draggable={false}
           infinite={true}
           slidesPerPage={3}
         >
@@ -377,7 +377,7 @@ test<br />
     fluid={false}
   >
     <Row
-      classes="mt-5"
+      classes="mt-6"
       column={false}
       reverse={false}
       row={true}

@@ -34,11 +34,12 @@ const InputGroup = ({
       preButtonEl = (
         <Button
           link={preButton.link}
-          text={preButton.text}
           behavior={preButton.behavior}
           size={preButton.size}
           theme={preButton.theme}
-        />
+        >
+          {preButton.text}
+        </Button>
       );
     }
 
@@ -67,11 +68,12 @@ const InputGroup = ({
       appButtonEl = (
         <Button
           link={appButton.link}
-          text={appButton.text}
           behavior={appButton.behavior}
           size={appButton.size}
           theme={appButton.theme}
-        />
+        >
+          {appButton.text}
+        </Button>
       );
     }
 

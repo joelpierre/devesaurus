@@ -25,9 +25,12 @@ exports[`<TeamCard/> should match snapshot 1`] = `
       classes={null}
       link="slug"
       size="md"
-      text="Read First Name's profile"
       theme="tint-omega"
-    />
+    >
+      Read 
+      First Name
+      's profile
+    </Button>
   </footer>
 </article>
 `;

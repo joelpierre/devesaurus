@@ -28,6 +28,10 @@ const defaultProps = {
       count: '1',
       list: [{ item: 'test' }],
     },
+    origin: {
+      value: 'test',
+      label: 'test',
+    },
   },
 };
 
@@ -75,10 +79,13 @@ describe('<WordCard/>', () => {
 
   it('should mount component and subsequent components', () => {
     wrapper = mount(<WordCard {...defaultProps} />);
+
     const tags = findByTestAttr(wrapper, 'word-card-tag');
     const cats = findByTestAttr(wrapper, 'word-card-category');
+
     expect(tags.length).toBe(1);
     expect(cats.length).toBe(1);
+
     expect(wrapper).toMatchSnapshot();
   });
 });

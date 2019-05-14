@@ -3,12 +3,34 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
   faChevronRight,
   faChevronLeft,
+  faCode,
+  faBracketsCurly,
+  faTerminal,
+  faCodeCommit,
+  faCodeBranch,
+  faAtomAlt,
+  faTint,
+  faPaintBrush,
+  faPalette,
 } from '@fortawesome/pro-regular-svg-icons';
 
 /**
  * Add Fontawesome icons to library for app
  */
-library.add(fab, faChevronRight, faChevronLeft);
+library.add(
+  fab,
+  faChevronRight,
+  faChevronLeft,
+  faCode,
+  faBracketsCurly,
+  faTerminal,
+  faCodeCommit,
+  faCodeBranch,
+  faAtomAlt,
+  faTint,
+  faPaintBrush,
+  faPalette
+);
 
 /**
  * Update any object passed through
@@ -81,6 +103,7 @@ export const mapTaxonomyTheme = (slug = 'default') => {
     case 'web-development':
       theme = 'alpha';
       break;
+    case 'web':
     case 'graphic-design':
     case 'design':
       theme = 'beta';
@@ -94,6 +117,8 @@ export const mapTaxonomyTheme = (slug = 'default') => {
       theme = 'psi';
       break;
     case 'news':
+    case 'js':
+    case 'es6':
       theme = 'omega';
       break;
     default:
@@ -106,33 +131,57 @@ export const mapTaxonomyTheme = (slug = 'default') => {
 /**
  * Map taxonomy slug to fontAwesome icon
  * @param slug
- * @returns {string}
+ * @returns {array}
  */
 export const mapTaxonomyIcon = (slug = 'default') => {
   let icon;
 
   switch (slug) {
     case 'development':
+      icon = ['far', 'brackets-curly'];
+      break;
     case 'web-development':
-      icon = 'alpha';
+      icon = ['far', 'code'];
       break;
     case 'graphic-design':
+      icon = ['far', 'palette'];
+      break;
+    case 'ux':
+    case 'user-experience':
+      icon = ['far', 'tint'];
+      break;
     case 'design':
-      icon = 'beta';
+      icon = ['far', 'paint-brush'];
       break;
     case 'css':
     case 'css3':
-      icon = 'gamma';
+      icon = ['fab', 'css3'];
       break;
     case 'html':
     case 'html5':
-      icon = 'psi';
+      icon = ['fab', 'html5'];
       break;
-    case 'news':
-      icon = 'omega';
+    case 'js':
+    case 'es6':
+    case 'javascript':
+      icon = ['fab', 'js'];
+      break;
+    case 'bash':
+    case 'shell':
+    case 'zsh':
+      icon = ['far', 'terminal'];
+      break;
+    case 'gitlab':
+      icon = ['fab', 'gitlab'];
+      break;
+    case 'github':
+      icon = ['far', 'code-commit'];
+      break;
+    case 'git-commands':
+      icon = ['far', 'code-branch'];
       break;
     default:
-      icon = 'brand';
+      icon = ['far', 'atom-alt'];
   }
 
   return icon;

@@ -1,10 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TagCloud/> should match snapshot 1`] = `
-<div
+exports[`<PureTagCloud/> should match snapshot 1`] = `
+<ul
   className="tag-cloud"
   data-test="component-tag-cloud"
->
-  Tag cloud here
-</div>
+/>
 `;

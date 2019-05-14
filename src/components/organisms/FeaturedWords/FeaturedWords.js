@@ -49,10 +49,10 @@ class FeaturedWords extends PureComponent {
         ),
         draggable: false,
         breakpoints: {
-          900: {
+          1200: {
             slidesPerPage: 2,
           },
-          600: {
+          900: {
             draggable: true,
             slidesPerPage: 1,
           },
@@ -87,7 +87,7 @@ class FeaturedWords extends PureComponent {
         theme={theme}
       >
         <Container>
-          <Row classes="mb-4">
+          <Row classes="mb-5">
             <Flex colMd="8">
               <Heading priority="2" classes={styles['featured-words__heading']}>
                 Featured Words
@@ -126,7 +126,7 @@ class FeaturedWords extends PureComponent {
         </Container>
 
         <Container>
-          <Row classes="mt-5">
+          <Row classes="mt-6">
             <Flex colMd="8">
               <Button link="/" size="lg" theme="tint-alpha">
                 View all word categories{' '}

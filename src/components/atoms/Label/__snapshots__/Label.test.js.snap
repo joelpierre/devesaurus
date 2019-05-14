@@ -10,7 +10,7 @@ exports[`<Label/> should match snapshot link 1`] = `
     <span
       className="label__text"
     >
-      text
+      some label text
     </span>
   </mockConstructor>
 </Fragment>

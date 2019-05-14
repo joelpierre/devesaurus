@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './Label.module.scss';
 import {
   defaultSize,
@@ -9,8 +10,9 @@ import {
   sizePropType,
   themePropType,
 } from '../../../utils/propTypes';
+import { mapTaxonomyIcon } from '../../../utils';
 
-const Label = ({ text, link, theme, size, caps, classes }) => {
+const Label = ({ children, link, theme, size, caps, classes }) => {
   const label = link ? (
     <Link
       data-test="component-label"
@@ -23,7 +25,7 @@ const Label = ({ text, link, theme, size, caps, classes }) => {
         classes,
       ])}
     >
-      <span className={classNames(styles.label__text)}>{text}</span>
+      <span className={classNames(styles.label__text)}>{children}</span>
     </Link>
   ) : (
     <span
@@ -36,7 +38,7 @@ const Label = ({ text, link, theme, size, caps, classes }) => {
         classes,
       ])}
     >
-      <span className={classNames(styles.label__text)}>{text}</span>
+      <span className={classNames(styles.label__text)}>{children}</span>
     </span>
   );
 
@@ -55,7 +57,10 @@ Label.propTypes = {
   link: PropTypes.string,
   classes: PropTypes.string,
   caps: PropTypes.bool,
-  text: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
   ...sizePropType,
   ...themePropType,
 };

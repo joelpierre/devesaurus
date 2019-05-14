@@ -2,4 +2,18 @@
 
 .social-menu {
   display: flex;
+  width: 100%;
+  margin-bottom: 0;
+
+  &__list {
+    list-style-type: none;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  &__item {
+    display: inline-flex;
+    width: 3rem;
+    height: 3rem;
+  }
 }

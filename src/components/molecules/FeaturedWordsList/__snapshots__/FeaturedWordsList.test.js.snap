@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeaturedWordsList/> should match snapshot 1`] = `
+<div
+  className="featured-words-list"
+  data-test="component-featured-words-list"
+>
+  <ul
+    className="featured-words-list__list"
+  >
+    <li
+      className="featured-words-list__item"
+      key="1"
+    >
+      <mockConstructor
+        className="featured-words-list__link"
+        to="/word/graphic-design"
+      >
+        Graphic Design
+      </mockConstructor>
+    </li>
+    <li
+      className="featured-words-list__item"
+      key="2"
+    >
+      <mockConstructor
+        className="featured-words-list__link"
+        to="/word/web-development"
+      >
+        Web Development
+      </mockConstructor>
+    </li>
+    <li
+      className="featured-words-list__item"
+      key="3"
+    >
+      <mockConstructor
+        className="featured-words-list__link"
+        to="/word/web-development"
+      >
+        Web Development 2
+      </mockConstructor>
+    </li>
+  </ul>
+</div>
+`;

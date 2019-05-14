@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Link } from 'gatsby';
 
 import styles from './PrimaryFooter.module.scss';
 import Container from '../../core/Container/Container';
@@ -10,6 +11,8 @@ import TermsMenu from '../../molecules/TermsMenu/TermsMenu';
 import Brand from '../../atoms/Brand/Brand';
 import SocialMenu from '../../molecules/SocialMenu/SocialMenu';
 import TagCloud from '../../molecules/TagCloud/TagCloud';
+import Heading from '../../core/Heading/Heading';
+import FeaturedWordsList from '../../molecules/FeaturedWordsList/FeaturedWordsList';
 
 const PrimaryFooter = ({ company }) => {
   // console.log();
@@ -21,16 +24,50 @@ const PrimaryFooter = ({ company }) => {
       <Container fluid>
         <Row classes={classNames([styles['primary-footer--top']])}>
           <Flex colLg={4} colMd={6}>
-            <Brand left type="text" classes={styles['primary-footer__brand']} />
-            <SocialMenu />
+            <Link to="/">
+              <Brand
+                left
+                type="text"
+                classes={classNames(styles['primary-footer__brand'], 'mb-2')}
+              />
+            </Link>
+
+            <p className={classNames(styles['primary-footer__copy'])}>
+              Get real-world definitions to complex dev terms | Supported by{' '}
+              <a
+                className={styles['primary-footer__link']}
+                href="http://www.jppdesigns.co.uk"
+              >
+                JPPdesigns Web design &amp; Development
+              </a>
+            </p>
+
+            <SocialMenu classes="mt-3" />
           </Flex>
 
-          <Flex
-            colLg={6}
-            colMd={6}
-            classes={styles['primary-footer__tag-cloud']}
-          >
-            <TagCloud />
+          <Flex colLg={3} classes="mx-auto">
+            <Heading
+              priority={5}
+              classes={classNames(styles['primary-footer__heading'])}
+            >
+              Featured Words
+            </Heading>
+            <FeaturedWordsList />
+          </Flex>
+
+          <Flex colLg={4} colMd={6} classes="ml-auto">
+            <Heading
+              priority={5}
+              classes={classNames(
+                styles['primary-footer__heading'],
+                'display-none'
+              )}
+            >
+              Word Tags
+            </Heading>
+            <div className={styles['primary-footer__tag-cloud-wrapper']}>
+              <TagCloud classes={styles['primary-footer__tag-cloud']} />
+            </div>
           </Flex>
         </Row>
 
@@ -38,20 +75,7 @@ const PrimaryFooter = ({ company }) => {
           <Flex colLg={5} classes={styles['primary-footer__legal']}>
             <h6 className={styles['primary-footer__legal-copy']}>
               &copy;{' '}
-              {`${company} ${new Date().getFullYear()} | Developed by: Joel Pierre-Powell | Supported by`}{' '}
-              <a
-                className={styles['primary-footer__link']}
-                href="http://www.jppdesigns.co.uk"
-              >
-                JPPdesigns Web design &amp; Development
-              </a>
-              {' and '}
-              <a
-                className={styles['primary-footer__link']}
-                href="https://www.foolproof.co.uk"
-              >
-                Foolproof, a Zensar Company
-              </a>
+              {`${company} ${new Date().getFullYear()} | Developed by: Joel Pierre-Powell`}
             </h6>
           </Flex>
 

@@ -1,35 +1,36 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import TagCloud, { PureTagCloud } from './TagCloud';
 import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
+
+import FeaturedWordsList from './FeaturedWordsList';
 
 const defaultProps = {};
 
 /**
- * Factory function to create a ShallowWrapper for the TagCloud component.
+ * Factory function to create a ShallowWrapper for the FeaturedWordsList component.
  * @param {object} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<PureTagCloud {...setupProps} />);
+  return shallow(<FeaturedWordsList {...setupProps} />);
 };
 
-describe('<PureTagCloud/>', () => {
+describe('<FeaturedWordsList/>', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = setup();
   });
 
-  it('renders the PureTagCloud Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'component-tag-cloud');
+  it('renders the FeaturedWordsList Component without errors', () => {
+    const component = findByTestAttr(wrapper, 'component-featured-words-list');
     expect(component.length).toBe(1);
   });
 
   it('should render with correct props', () => {
-    checkProps(PureTagCloud, defaultProps);
+    checkProps(FeaturedWordsList, defaultProps);
   });
 
   it('should match snapshot', () => {

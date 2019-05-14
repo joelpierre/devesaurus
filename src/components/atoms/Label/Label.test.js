@@ -8,7 +8,7 @@ import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 import Label from './Label';
 
 const defaultProps = {
-  text: 'some label text',
+  children: 'some label text',
 };
 
 /**
