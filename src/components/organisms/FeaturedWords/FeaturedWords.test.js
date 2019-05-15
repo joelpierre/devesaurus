@@ -8,7 +8,23 @@ import FeaturedWords from './FeaturedWords';
 import * as utils from '../../../utils';
 
 const defaultProps = {
-  words: mockWords,
+  words: [
+    {
+      node: {
+        ...mockWords[0],
+      },
+    },
+    {
+      node: {
+        ...mockWords[1],
+      },
+    },
+    {
+      node: {
+        ...mockWords[2],
+      },
+    },
+  ],
 };
 /**
  * Factory function to create a ShallowWrapper for the FeaturedWords component.

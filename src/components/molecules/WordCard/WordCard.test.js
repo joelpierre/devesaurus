@@ -11,15 +11,25 @@ const defaultProps = {
   contrast: false,
   title: 'title',
   slug: 'slug',
-  terms: [
+  tags: [
     {
-      name: 'Design',
-      slug: 'design',
+      id: 1,
+      name: 'CSS',
+      slug: 'css',
       taxonomy: 'word_tag',
     },
     {
-      name: 'Graphic Design',
-      slug: 'graphic-design',
+      id: 2,
+      name: 'HTML5',
+      slug: 'html5',
+      taxonomy: 'word_tag',
+    },
+  ],
+  category: [
+    {
+      id: 1,
+      name: 'Web Development',
+      slug: 'web-development',
       taxonomy: 'word_category',
     },
   ],
@@ -65,25 +75,13 @@ describe('<WordCard/>', () => {
     checkProps(WordCard, defaultProps);
   });
 
-  it('should call the sortTerms on mount', () => {
-    const spy = (wrapper.instance().sortTerms = jest.fn());
-    wrapper.instance().componentDidMount();
-    expect(spy).toHaveBeenCalled();
-  });
-
-  it('should add terms to state', () => {
-    wrapper.instance().sortTerms();
-    expect(wrapper.state().tags).toEqual([defaultProps.terms[0]]);
-    expect(wrapper.state().categories).toEqual([defaultProps.terms[1]]);
-  });
-
   it('should mount component and subsequent components', () => {
     wrapper = mount(<WordCard {...defaultProps} />);
 
     const tags = findByTestAttr(wrapper, 'word-card-tag');
     const cats = findByTestAttr(wrapper, 'word-card-category');
 
-    expect(tags.length).toBe(1);
+    expect(tags.length).toBe(2);
     expect(cats.length).toBe(1);
 
     expect(wrapper).toMatchSnapshot();

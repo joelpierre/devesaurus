@@ -78,7 +78,6 @@ class WordCard extends PureComponent {
           {tags && (
             <div className={styles['word-card__tags']}>
               {tags.map(tag => {
-                // console.log(tag);
                 return (
                   <Label
                     data-test="word-card-tag"

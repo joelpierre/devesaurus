@@ -191,22 +191,26 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
                 ],
               }
             }
+            category={
+              Object {
+                "id": 1,
+                "name": "Graphic Design",
+                "slug": "graphic-design",
+                "taxonomy": "word_category",
+              }
+            }
             classes="featured-words__word-card"
             contrast={false}
             data-test="featured-words-word"
             key="1"
             slug="graphic-design"
-            terms={
+            tags={
               Array [
                 Object {
+                  "id": 1,
                   "name": "Design",
                   "slug": "design",
                   "taxonomy": "word_tag",
-                },
-                Object {
-                  "name": "Graphic Design",
-                  "slug": "graphic-design",
-                  "taxonomy": "word_category",
                 },
               ]
             }
@@ -264,27 +268,32 @@ test<br />
                 ],
               }
             }
+            category={
+              Object {
+                "id": 1,
+                "name": "Web Development",
+                "slug": "web-development",
+                "taxonomy": "word_category",
+              }
+            }
             classes="featured-words__word-card"
             contrast={false}
             data-test="featured-words-word"
             key="2"
             slug="web-development"
-            terms={
+            tags={
               Array [
                 Object {
+                  "id": 1,
                   "name": "CSS",
                   "slug": "css",
                   "taxonomy": "word_tag",
                 },
                 Object {
+                  "id": 2,
                   "name": "HTML5",
                   "slug": "html5",
                   "taxonomy": "word_tag",
-                },
-                Object {
-                  "name": "Web Development",
-                  "slug": "web-development",
-                  "taxonomy": "word_category",
                 },
               ]
             }
@@ -342,27 +351,32 @@ test<br />
                 ],
               }
             }
+            category={
+              Object {
+                "id": 1,
+                "name": "Web Development",
+                "slug": "web-development",
+                "taxonomy": "word_category",
+              }
+            }
             classes="featured-words__word-card"
             contrast={false}
             data-test="featured-words-word"
             key="3"
             slug="web-development"
-            terms={
+            tags={
               Array [
                 Object {
+                  "id": 1,
                   "name": "CSS",
                   "slug": "css",
                   "taxonomy": "word_tag",
                 },
                 Object {
+                  "id": 2,
                   "name": "HTML5",
                   "slug": "html5",
                   "taxonomy": "word_tag",
-                },
-                Object {
-                  "name": "Web Development",
-                  "slug": "web-development",
-                  "taxonomy": "word_category",
                 },
               ]
             }

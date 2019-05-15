@@ -47,7 +47,6 @@ export class PageTemplate extends PureComponent {
           `page__${pageContext.slug.replace('_', '-')}`,
         ])}
       >
-        <PageHero />
         {pageData && (
           <>
             {pageData.acf &&

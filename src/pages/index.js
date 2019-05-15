@@ -18,8 +18,8 @@ export class Index extends PureComponent {
         <StaticQuery
           query={query}
           render={({ allWordpressWpWord }) => {
-            const { edges } = allWordpressWpWord;
-            return <FeaturedWords words={edges} theme="gradient-brand" />;
+            const { edges: words } = allWordpressWpWord;
+            return <FeaturedWords words={words} theme="gradient-brand" />;
           }}
         />
       </BasicLayout>

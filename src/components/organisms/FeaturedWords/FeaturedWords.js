@@ -102,16 +102,16 @@ class FeaturedWords extends PureComponent {
           <Row>
             <Flex col={12}>
               <Carousel {...carouselSettings}>
-                {words.map(({ node }) => {
+                {words.map(({ node: word }) => {
                   return (
                     <WordCard
                       data-test="featured-words-word"
-                      key={node.id}
-                      slug={node.slug}
-                      title={node.title}
-                      acf={node.acf}
-                      tags={node.word_tags}
-                      category={node.word_cats[0]}
+                      key={word.id}
+                      slug={word.slug}
+                      title={word.title}
+                      acf={word.acf}
+                      tags={word.word_tags}
+                      category={word.word_cats[0]}
                       classes={styles['featured-words__word-card']}
                       contrast={!contrast}
                     />

@@ -2,13 +2,17 @@ export const mockWord = {
   id: 1,
   title: 'Graphic Design',
   slug: 'graphic-design',
-  terms: [
+  word_tags: [
     {
+      id: 1,
       name: 'Design',
       slug: 'design',
       taxonomy: 'word_tag',
     },
+  ],
+  word_cats: [
     {
+      id: 1,
       name: 'Graphic Design',
       slug: 'graphic-design',
       taxonomy: 'word_category',
@@ -57,18 +61,23 @@ export const mockWords = [
     id: 2,
     title: 'Web Development',
     slug: 'web-development',
-    terms: [
+    word_tags: [
       {
+        id: 1,
         name: 'CSS',
         slug: 'css',
         taxonomy: 'word_tag',
       },
       {
+        id: 2,
         name: 'HTML5',
         slug: 'html5',
         taxonomy: 'word_tag',
       },
+    ],
+    word_cats: [
       {
+        id: 1,
         name: 'Web Development',
         slug: 'web-development',
         taxonomy: 'word_category',
@@ -124,18 +133,23 @@ export const mockWords = [
     id: 3,
     title: 'Web Development 2',
     slug: 'web-development',
-    terms: [
+    word_tags: [
       {
+        id: 1,
         name: 'CSS',
         slug: 'css',
         taxonomy: 'word_tag',
       },
       {
+        id: 2,
         name: 'HTML5',
         slug: 'html5',
         taxonomy: 'word_tag',
       },
+    ],
+    word_cats: [
       {
+        id: 1,
         name: 'Web Development',
         slug: 'web-development',
         taxonomy: 'word_category',
