@@ -1,0 +1,10 @@
+@import "~sass/core";
+
+.basic-list-item {
+  $root: &;
+  color: inherit;
+
+  &__link {
+    color: inherit;
+  }
+}

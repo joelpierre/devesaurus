@@ -1,11 +1,27 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'gatsby';
+import { graphql, Link, StaticQuery } from 'gatsby';
 import styles from './FeaturedWordsList.module.scss';
-import { mockWords } from '../../../../__mocks__/mock-words';
-import { mapTaxonomyIcon } from '../../../utils';
+
+export const PureList = ({ ...props }) => {
+  const { edges } = props;
+  return edges.map(({ node }) => {
+    return (
+      <li
+        key={node.id}
+        className={classNames(styles['featured-words-list__item'])}
+      >
+        <Link
+          className={classNames(styles['featured-words-list__link'])}
+          to={`/word/${node.slug}`}
+        >
+          {node.title}
+        </Link>
+      </li>
+    );
+  });
+};
 
 const FeaturedWordsList = ({ classes }) => {
   return (
@@ -14,21 +30,12 @@ const FeaturedWordsList = ({ classes }) => {
       className={classNames(classes, styles['featured-words-list'])}
     >
       <ul className={classNames(styles['featured-words-list__list'])}>
-        {mockWords.map(word => {
-          return (
-            <li
-              key={word.id}
-              className={classNames(styles['featured-words-list__item'])}
-            >
-              <Link
-                className={classNames(styles['featured-words-list__link'])}
-                to={`/word/${word.slug}`}
-              >
-                {word.title}
-              </Link>
-            </li>
-          );
-        })}
+        <StaticQuery
+          query={query}
+          render={({ allWordpressWpWord }) => {
+            return <PureList {...allWordpressWpWord} />;
+          }}
+        />
       </ul>
     </div>
   );
@@ -43,3 +50,36 @@ FeaturedWordsList.propTypes = {
 };
 
 export default FeaturedWordsList;
+
+const query = graphql`
+  {
+    allWordpressWpWord {
+      edges {
+        node {
+          id
+          title
+          slug
+          acf {
+            pronunciation
+            origin {
+              value
+              label
+            }
+          }
+          word_tags {
+            id
+            slug
+            name
+            taxonomy
+          }
+          word_cats {
+            id
+            slug
+            name
+            taxonomy
+          }
+        }
+      }
+    }
+  }
+`;

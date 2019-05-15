@@ -19,16 +19,12 @@ import Flex from '../../core/Flex/Flex';
 import Heading from '../../core/Heading/Heading';
 import { sortWordObj } from '../../../utils';
 import Button from '../../molecules/Buttons/Button';
-// import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 class FeaturedWords extends PureComponent {
   constructor(props) {
     super(props);
 
-    const { words } = this.props;
-
     this.state = {
-      featuredWords: words,
       carouselSettings: {
         slidesPerPage: 3,
         infinite: true,
@@ -76,8 +72,8 @@ class FeaturedWords extends PureComponent {
   }
 
   render() {
-    const { contrast, theme } = this.props;
-    const { featuredWords, carouselSettings } = this.state;
+    const { contrast, theme, words } = this.props;
+    const { carouselSettings } = this.state;
 
     return (
       <Section
@@ -106,15 +102,16 @@ class FeaturedWords extends PureComponent {
           <Row>
             <Flex col={12}>
               <Carousel {...carouselSettings}>
-                {featuredWords.map(word => {
+                {words.map(({ node }) => {
                   return (
                     <WordCard
                       data-test="featured-words-word"
-                      key={word.id}
-                      slug={word.slug}
-                      title={word.title}
-                      acf={word.acf}
-                      terms={word.terms}
+                      key={node.id}
+                      slug={node.slug}
+                      title={node.title}
+                      acf={node.acf}
+                      tags={node.word_tags}
+                      category={node.word_cats[0]}
                       classes={styles['featured-words__word-card']}
                       contrast={!contrast}
                     />

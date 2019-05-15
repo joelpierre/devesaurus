@@ -5,53 +5,13 @@ import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as styles from './WordCard.module.scss';
 import { wordPropTypeShape } from '../../../utils/propTypes';
-import Button from '../Buttons/Button';
 import Heading from '../../core/Heading/Heading';
 import Label from '../../atoms/Label/Label';
 import { mapTaxonomyIcon, mapTaxonomyTheme } from '../../../utils';
 
 class WordCard extends PureComponent {
-  constructor() {
-    super();
-    this.sortTerms = this.sortTerms.bind(this);
-
-    this.state = {
-      categories: null,
-      tags: null,
-    };
-  }
-
-  componentDidMount() {
-    this.sortTerms();
-  }
-
-  sortTerms() {
-    const { terms } = this.props;
-    let cats;
-    let tags;
-
-    if (terms) {
-      cats = terms.filter(term => {
-        return term.taxonomy === 'word_category';
-      });
-
-      tags = terms.filter(term => {
-        return term.taxonomy === 'word_tag';
-      });
-    }
-
-    if (cats) {
-      this.setState({ categories: cats });
-    }
-
-    if (tags) {
-      this.setState({ tags });
-    }
-  }
-
   render() {
-    const { title, slug, classes, contrast, acf } = this.props;
-    const { categories, tags } = this.state;
+    const { title, slug, classes, contrast, acf, tags, category } = this.props;
 
     return (
       <article
@@ -65,26 +25,24 @@ class WordCard extends PureComponent {
         ])}
         data-test="component-word-card"
       >
-        {categories && (
+        {category && (
           <div
             data-test="word-card-category"
             className={classNames(
               styles['word-card__category'],
-              styles[
-                `word-card--theme--${mapTaxonomyTheme(categories[0].slug)}`
-              ]
+              styles[`word-card--theme--${mapTaxonomyTheme(category.slug)}`]
             )}
           >
             <Link
-              to={`/word-category/${categories[0].slug}`}
+              to={`/word-category/${category.slug}`}
               className={styles['word-card__category-link']}
             >
               <span className={styles['word-card__category-text']}>
-                {categories[0].name}
+                {category.name}
               </span>
 
               <span className={styles['word-card__category-icon']}>
-                <FontAwesomeIcon icon={mapTaxonomyIcon(categories[0].slug)} />
+                <FontAwesomeIcon icon={mapTaxonomyIcon(category.slug)} />
               </span>
             </Link>
           </div>

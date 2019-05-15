@@ -9,7 +9,7 @@ import Flex from '../../core/Flex/Flex';
 import styles from '../CtaBanner/CtaBanner.module.scss';
 import { defaultPageTheme, pageThemePropType } from '../../../utils/propTypes';
 
-const TextBlock = ({ module, pageTheme }) => {
+const TextBlock = ({ module, pageTheme, ...props }) => {
   return (
     <Section
       data-test="component-text-block"
@@ -17,6 +17,7 @@ const TextBlock = ({ module, pageTheme }) => {
         `theme--${module.theme ? module.theme : pageTheme}`,
         styles['text-block'],
       ])}
+      {...props}
     >
       <Container>
         <Row>

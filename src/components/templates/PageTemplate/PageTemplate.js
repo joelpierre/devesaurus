@@ -8,6 +8,7 @@ import * as pageActions from '../../../store/actions/page.actions';
 import { mapOverACFComponents } from '../../../utils';
 import { CoreLayout } from '../../../layouts/CoreLayout';
 import AcfComponents from '../../../hoc/AcfComponents';
+import PageHero from '../../organisms/PageHero/PageHero';
 
 export class PageTemplate extends PureComponent {
   componentDidMount() {
@@ -46,6 +47,7 @@ export class PageTemplate extends PureComponent {
           `page__${pageContext.slug.replace('_', '-')}`,
         ])}
       >
+        <PageHero />
         {pageData && (
           <>
             {pageData.acf &&

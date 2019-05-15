@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Link } from 'gatsby';
-import toJson from 'enzyme-to-json';
 
 import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 

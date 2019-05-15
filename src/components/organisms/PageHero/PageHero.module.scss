@@ -1,0 +1,7 @@
+@import "~sass/core";
+
+.page-hero {
+  $root: &;
+  width: 100%;
+  max-width: 100%;
+}
