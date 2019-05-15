@@ -1,21 +1,47 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-function TextBlock({ module, pageTheme }) {
+import Section from '../../core/Section/Section';
+import Container from '../../core/Container/Container';
+import Row from '../../core/Row/Row';
+import Flex from '../../core/Flex/Flex';
+import styles from '../CtaBanner/CtaBanner.module.scss';
+import { defaultPageTheme, pageThemePropType } from '../../../utils/propTypes';
+
+const TextBlock = ({ module, pageTheme, ...props }) => {
   return (
-    <section className={`primary-main__section theme--${module.theme} text-block`}>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="flex">
+    <Section
+      data-test="component-text-block"
+      classes={classNames([
+        `theme--${module.theme ? module.theme : pageTheme}`,
+        styles['text-block'],
+      ])}
+      {...props}
+    >
+      <Container>
+        <Row>
+          <Flex classes="flex">
             <p className="text-block__content">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa illo ipsam magnam nulla optio
-              pariatur qui quidem rem! Assumenda deleniti explicabo placeat rem. Dolores eos facere praesentium ullam
-              unde!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+              culpa illo ipsam magnam nulla optio pariatur qui quidem rem!
+              Assumenda deleniti explicabo placeat rem. Dolores eos facere
+              praesentium ullam unde!
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
+          </Flex>
+        </Row>
+      </Container>
+    </Section>
   );
-}
+};
+
+TextBlock.defaultProps = {
+  ...defaultPageTheme(),
+};
+
+TextBlock.propTypes = {
+  module: PropTypes.instanceOf(Object).isRequired,
+  ...pageThemePropType,
+};
 
 export default TextBlock;

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SEO/> should match snapshot PureSEO 1`] = `
+<HelmetWrapper
+  data-test="seo-helmet"
+  defer={true}
+  encodeSpecialCharacters={true}
+  htmlAttributes={
+    Object {
+      "lang": undefined,
+    }
+  }
+  meta={
+    Array [
+      Object {
+        "content": "Some description",
+        "name": "description",
+      },
+      Object {
+        "content": "test title",
+        "property": "og:title",
+      },
+      Object {
+        "content": "Some description",
+        "property": "og:description",
+      },
+      Object {
+        "content": undefined,
+        "property": "og:type",
+      },
+      Object {
+        "content": "summary",
+        "name": "twitter:card",
+      },
+      Object {
+        "content": undefined,
+        "name": "twitter:creator",
+      },
+      Object {
+        "content": "test title",
+        "name": "twitter:title",
+      },
+      Object {
+        "content": "Some description",
+        "name": "twitter:description",
+      },
+      undefined,
+    ]
+  }
+  title="test title"
+  titleTemplate="%s | undefined"
+/>
+`;
+
+exports[`<SEO/> should match snapshot SEO 1`] = `
+<mockConstructor
+  render={[Function]}
+/>
+`;

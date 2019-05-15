@@ -1,24 +1,22 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import * as styles from './PrimaryHeader.module.scss';
 import Brand from '../../atoms/Brand/Brand';
 import PrimaryMenu from '../../molecules/PrimaryMenu/PrimaryMenu';
-import SiteInfo from '../../../utilities/siteInfo';
 
-const Header = () => (
-  <header className={styles['primary-header']}>
-    <div className="container-fluid">
-      <div className="row">
-        <div className="flex">
+const PrimaryHeader = () => (
+  <header
+    data-test="component-primary-header"
+    className={styles['primary-header']}
+  >
+    <div className={styles['primary-header__wrapper']}>
+      <Link to="/">
+        <Brand type="symbol" left classes={styles['primary-header__brand']} />
+      </Link>
 
-          <div className={styles['primary-header__wrapper']}>
-            <Brand classes={styles['primary-header__brand']}/>
-            <PrimaryMenu classes={styles['primary-header__menu']}/>
-          </div>
-
-        </div>
-      </div>
+      <PrimaryMenu classes={styles['primary-header__menu']} />
     </div>
   </header>
 );
 
-export default Header;
+export default PrimaryHeader;

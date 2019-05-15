@@ -5,13 +5,11 @@
  */
 import React from 'react';
 import { Provider } from 'react-redux';
-import createStore from './src/store/createStore';
+import createStore from './src/store/configureStore';
 
-require('flexigridcss/dist/flexigridcss.css');
-require('./src/sass/styles.scss');
+require('flexigridcss/dist/flexigridcss/modifiers.css');
+require('./src/assets/sass/styles.scss');
 
 export const wrapRootElement = ({ element }) => {
-  return (
-    <Provider store={createStore()}>{element}</Provider>
-  );
+  return <Provider store={createStore()}>{element}</Provider>;
 };

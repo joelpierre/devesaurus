@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MenuItem/> should match snapshot 1`] = `
+<li
+  className="test-class undefined"
+  data-test="component-menu-item"
+>
+  <mockConstructor
+    key="Test Title"
+    to="/test-title"
+  >
+    Test Title
+  </mockConstructor>
+</li>
+`;

@@ -1,41 +1,47 @@
-/* eslint-disable max-len */
-require('dotenv')
-  .config({
-    path: `.env.${process.env.NODE_ENV}`,
-  });
+/* eslint-disable */
+require('dotenv').config({
+  path: `env/${process.env.NODE_ENV}.env`,
+});
 
 const path = require('path');
 
 module.exports = {
   siteMetadata: {
     title: `Devesaurus`,
-    description: ``,
+    description: `A place to get simplified definitions for complicated dev related words`,
     author: `@devesaurus`,
-    siteUrl: ``,
+    siteUrl: process.env.GATSBY_SITE_URL,
   },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
-    // `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#047211`,
+        showSpinner: false,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/static/images`,
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
-      // options: {
-      //   name: `gatsby-starter-default`,
-      //   short_name: `starter`,
-      //   start_url: `/`,
-      //   background_color: `#663399`,
-      //   theme_color: `#663399`,
-      //   display: `minimal-ui`,
-      //   icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      // },
+      options: {
+        name: `devesaurus-theme`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#FFFFFF`,
+        theme_color: `#FFFFFF`,
+        display: `minimal-ui`,
+        icon: `static/images/favicon.jpg`, // This path is relative to the root of the site.
+      },
     },
     {
       resolve: `gatsby-plugin-sass`,
@@ -44,12 +50,19 @@ module.exports = {
         cssLoaderOptions: {
           camelCase: false,
         },
+        options: {
+          precision: 8,
+        },
       },
     },
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+        postCssPlugins: [
+          require(`postcss-preset-env`)({ stage: 0 }),
+          require(`postcss-safe-parser`),
+          require(`postcss-calc`),
+        ],
       },
     },
     {
@@ -57,8 +70,8 @@ module.exports = {
       options: {
         src: path.join(__dirname, 'src'),
         components: path.join(__dirname, 'src/components'),
-        sass: path.join(__dirname, 'src/sass'),
-        icons: path.join(__dirname, 'src/icons'),
+        sass: path.join(__dirname, 'src/assets/sass'),
+        icons: path.join(__dirname, 'src/assets/icons'),
       },
     },
     {
@@ -97,21 +110,161 @@ module.exports = {
         concurrentRequests: 20,
         includedRoutes: [
           '**/*/*/categories',
+          '**/*/*/tags',
           '**/*/*/menus',
           '**/*/*/team',
           '**/*/*/word',
           '**/*/*/posts',
           '**/*/*/pages',
           '**/*/*/media',
-          '**/*/*/tags',
-          '**/*/*/taxonomies',
+          '**/*/*/post_tag',
+          '**/*/*/word_tag',
+          '**/*/*/staff_department',
+          '**/*/*/word_category',
           '**/*/*/users',
         ],
-        // normalizer({ entities }) {
-        //   return entities;
-        // },
+        normalizer: mapThings,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Lato'],
+        },
       },
     },
     // `gatsby-plugin-offline`,
   ],
 };
+
+function mapThings({ entities }) {
+  // Post Types
+  const pages = entities.filter(e => e.__type === 'wordpress__PAGE');
+  const posts = entities.filter(e => e.__type === 'wordpress__POST');
+  const words = entities.filter(e => e.__type === 'wordpress__wp_word');
+
+  // Taxonomies
+  const tags = entities.filter(e => e.__type === 'wordpress__TAG');
+  const cats = entities.filter(e => e.__type === 'wordpress__CATEGORY');
+
+  const teamDept = entities.filter(
+    e => e.__type === `wordpress__wp_staff_department`
+  );
+  const wordTags = entities.filter(e => e.__type === `wordpress__wp_word_tag`);
+  const wordCats = entities.filter(
+    e => e.__type === `wordpress__wp_word_category`
+  );
+
+  return entities.map(e => {
+    // Add Posts to category query
+    if (e.__type === 'wordpress__CATEGORY') {
+      const id = e.id;
+      let catPosts;
+
+      catPosts = posts.map(post => {
+        if (post.categories___NODE) {
+          if (post.categories___NODE.includes(id)) {
+            return post.id;
+          }
+        }
+      });
+      catPosts = Array.from(new Set(catPosts));
+      e.posts___NODE = catPosts.filter(post => post !== undefined);
+    }
+
+    // Add Words to word category query
+    if (e.__type === 'wordpress__wp_word_category') {
+      const id = e.id;
+      let catWords;
+
+      catWords = words.map(word => {
+        if (word.word_cats___NODE) {
+          if (word.word_cats___NODE.includes(id)) {
+            return word.id;
+          }
+        }
+      });
+
+      catWords = Array.from(new Set(catWords));
+      e.words___NODE = catWords.filter(word => word !== undefined);
+    }
+
+    // Add Posts to tag query
+    if (e.__type === 'wordpress__TAG') {
+      const id = e.id;
+      let tagPosts;
+
+      tagPosts = posts.map(post => {
+        if (post.tags___NODE) {
+          if (post.tags___NODE.includes(id)) {
+            return post.id;
+          }
+        }
+      });
+
+      tagPosts = Array.from(new Set(tagPosts));
+      e.posts___NODE = tagPosts.filter(post => post !== undefined);
+    }
+
+    // Add Words to word tag query
+    if (e.__type === 'wordpress__wp_word_tag') {
+      const id = e.id;
+      let tagWords;
+
+      tagWords = words.map(word => {
+        if (word.word_tags___NODE) {
+          if (word.word_tags___NODE.includes(id)) {
+            return word.id;
+          }
+        }
+      });
+
+      tagWords = Array.from(new Set(tagWords));
+      e.words___NODE = tagWords.filter(word => word !== undefined);
+    }
+
+    // Add word tags to words
+    if (e.__type === `wordpress__wp_word`) {
+      const hasWordTag =
+        e.word_tag && Array.isArray(e.word_tag) && e.word_tag.length;
+
+      if (hasWordTag) {
+        e.word_tags___NODE = e.word_tag.map(
+          tag => wordTags.find(gObj => tag === gObj.wordpress_id).id
+        );
+      }
+    }
+
+    // Add word categories to words
+    if (e.__type === `wordpress__wp_word`) {
+      const hasWordCat =
+        e.word_category &&
+        Array.isArray(e.word_category) &&
+        e.word_category.length;
+
+      if (hasWordCat) {
+        e.word_cats___NODE = e.word_category.map(
+          c => wordCats.find(gObj => c === gObj.wordpress_id).id
+        );
+      }
+    }
+
+    // Add staff dept to team
+    if (e.__type === `wordpress__wp_team`) {
+      const hasDept =
+        e.staff_department &&
+        Array.isArray(e.staff_department) &&
+        e.staff_department.length;
+
+      if (hasDept) {
+        e.department___NODE = e.staff_department.map(
+          c => teamDept.find(gObj => c === gObj.wordpress_id).id
+        );
+      }
+    }
+
+    // Return all mapped entities
+    return e;
+  });
+}

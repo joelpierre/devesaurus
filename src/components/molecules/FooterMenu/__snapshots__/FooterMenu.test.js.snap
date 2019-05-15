@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FooterMenu/> should match snapshot 1`] = `
+<mockConstructor
+  data-test="component-footer-menu-query"
+  render={[Function]}
+/>
+`;
+
+exports[`<FooterMenu/> should match snapshot 2`] = `
+<nav
+  className="footer-menu undefined"
+  data-test="component-footer-menu"
+>
+  <ul
+    className="footer-menu__list"
+  >
+    <MenuItem
+      classes="footer-menu__item"
+      item={
+        Object {
+          "object_slug": "slug",
+          "title": "title",
+        }
+      }
+      key="slug"
+    />
+  </ul>
+</nav>
+`;

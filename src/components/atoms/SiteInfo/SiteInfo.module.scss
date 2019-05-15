@@ -1,0 +1,14 @@
+@import "~sass/core";
+
+.site-info {
+  $root: &;
+  @include sr-only;
+
+  &__heading {
+    display: block;
+  }
+
+  &__slogan {
+    display: block;
+  }
+}

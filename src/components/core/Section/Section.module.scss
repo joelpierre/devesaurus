@@ -1,0 +1,12 @@
+@import "~sass/core";
+
+.section {
+  width: 100%;
+  position: relative;
+  padding: 6rem 0;
+
+  &.theme {
+    @include theme;
+    @include gradient-theme;
+  }
+}

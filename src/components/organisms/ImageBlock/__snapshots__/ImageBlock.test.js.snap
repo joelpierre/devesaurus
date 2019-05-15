@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ImageBlock/> should match snapshot 1`] = `
+<Section
+  classes="theme--alpha image-block"
+  contrast={false}
+  data-test="component-image-block"
+  theme={null}
+  type="section"
+>
+  <Container
+    classes="container-fluid"
+    fluid={false}
+  >
+    <Row
+      classes="row"
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes="flex text-center"
+        col={null}
+        colLg={null}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <Heading
+          classes={null}
+          priority="2"
+        >
+          Image Block
+        </Heading>
+      </Flex>
+    </Row>
+  </Container>
+</Section>
+`;
+
+exports[`<ImageBlock/> should render with pageTheme instead of module theme 1`] = `
+<Section
+  classes="theme--brand image-block"
+  contrast={false}
+  data-test="component-image-block"
+  theme={null}
+  type="section"
+>
+  <Container
+    classes="container-fluid"
+    fluid={false}
+  >
+    <Row
+      classes="row"
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes="flex text-center"
+        col={null}
+        colLg={null}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <Heading
+          classes={null}
+          priority="2"
+        >
+          Image Block
+        </Heading>
+      </Flex>
+    </Row>
+  </Container>
+</Section>
+`;

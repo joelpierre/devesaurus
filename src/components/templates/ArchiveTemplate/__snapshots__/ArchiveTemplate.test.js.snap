@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArchiveTemplate/> should match snapshot 1`] = `
+<CoreLayout
+  classes="archive archive__test-taxonomy"
+  data-test="template-archive"
+  description=""
+  onGetSiteMeta={[Function]}
+  onGetSiteOptions={[Function]}
+  title="test"
+>
+  <Section
+    classes={null}
+    contrast={false}
+    theme={null}
+    type="section"
+  >
+    <Container
+      classes={null}
+      fluid={false}
+    >
+      <Row
+        classes={null}
+        column={false}
+        reverse={false}
+        row={true}
+      >
+        <Flex
+          classes={null}
+          col={null}
+          colLg={null}
+          colMd={null}
+          colSm={null}
+          colXl={null}
+          colXs={null}
+          lg={false}
+          md={false}
+          sm={false}
+          type="div"
+          xl={false}
+          xs={false}
+        >
+          <Heading
+            classes="text-center mb-0"
+            priority="1"
+          >
+            test
+          </Heading>
+        </Flex>
+      </Row>
+    </Container>
+  </Section>
+</CoreLayout>
+`;

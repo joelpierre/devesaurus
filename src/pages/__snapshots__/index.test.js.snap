@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Index/> should match snapshot 1`] = `
+<Component
+  data-test="page-index"
+  title="Devesaurus Home"
+>
+  <HeroSearch
+    title="Devesaurus"
+  />
+  <mockConstructor
+    render={[Function]}
+  />
+</Component>
+`;

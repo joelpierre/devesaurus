@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FileUpload/> should match snapshot 1`] = `
+<div
+  className="file-upload"
+  data-test="component-file-upload"
+>
+  <label
+    className="file-upload__inner"
+    htmlFor="test"
+  >
+    <span
+      className="file-upload__label"
+    >
+      <span
+        className="file-upload__label-text"
+      >
+        Choose file from folder
+      </span>
+      <span
+        className="file-upload__btn"
+      >
+        <span
+          className="file-upload__btn-text"
+        >
+          Browse
+        </span>
+        <SvgIcon
+          center={false}
+          classes="file-upload__icon"
+          description="An SVG Icon"
+          fill="#000000"
+          name="complete"
+        />
+      </span>
+    </span>
+    <input
+      className="file-upload__input"
+      name="test"
+      type="file"
+    />
+  </label>
+</div>
+`;

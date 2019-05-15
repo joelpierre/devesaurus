@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AcfComponents/> should match snapshot 1`] = `
+<AcfComponents
+  component={
+    Object {
+      "acf_fc_layout": "cta_banner",
+      "copy": "Why not get in touch today",
+      "cta": true,
+      "cta_link": Object {
+        "ID": 187,
+        "comment_count": "0",
+        "comment_status": "closed",
+        "filter": "raw",
+        "guid": "http://devesaurus.test/?page_id=187",
+        "menu_order": 0,
+        "ping_status": "closed",
+        "pinged": "",
+        "post_author": "1",
+        "post_content": "",
+        "post_content_filtered": "",
+        "post_date": "2019-03-08 20:42:03",
+        "post_date_gmt": "2019-03-08 20:42:03",
+        "post_excerpt": "",
+        "post_mime_type": "",
+        "post_modified": "2019-03-13 12:58:02",
+        "post_modified_gmt": "2019-03-13 12:58:02",
+        "post_name": "terms-and-conditions",
+        "post_parent": 0,
+        "post_password": "",
+        "post_status": "publish",
+        "post_title": "Terms and Conditions",
+        "post_type": "page",
+        "to_ping": "",
+      },
+      "cta_text": "Some text",
+      "cta_theme": "alpha",
+      "heading": "Get in touch",
+      "theme": "brand",
+    }
+  }
+  pageTheme="brand"
+>
+  <CtaBanner
+    data-test="hoc-acf-cta_banner"
+    module={
+      Object {
+        "acf_fc_layout": "cta_banner",
+        "copy": "Why not get in touch today",
+        "cta": true,
+        "cta_link": Object {
+          "ID": 187,
+          "comment_count": "0",
+          "comment_status": "closed",
+          "filter": "raw",
+          "guid": "http://devesaurus.test/?page_id=187",
+          "menu_order": 0,
+          "ping_status": "closed",
+          "pinged": "",
+          "post_author": "1",
+          "post_content": "",
+          "post_content_filtered": "",
+          "post_date": "2019-03-08 20:42:03",
+          "post_date_gmt": "2019-03-08 20:42:03",
+          "post_excerpt": "",
+          "post_mime_type": "",
+          "post_modified": "2019-03-13 12:58:02",
+          "post_modified_gmt": "2019-03-13 12:58:02",
+          "post_name": "terms-and-conditions",
+          "post_parent": 0,
+          "post_password": "",
+          "post_status": "publish",
+          "post_title": "Terms and Conditions",
+          "post_type": "page",
+          "to_ping": "",
+        },
+        "cta_text": "Some text",
+        "cta_theme": "alpha",
+        "heading": "Get in touch",
+        "theme": "brand",
+      }
+    }
+    pageTheme="brand"
+  >
+    <Section
+      classes="theme--brand cta-banner"
+      contrast={false}
+      data-test="component-cta-banner"
+      theme={null}
+      type="section"
+    >
+      <section
+        className="section theme--brand cta-banner theme--tint-alpha"
+        data-test="component-section"
+      >
+        <Container
+          classes="container-fluid"
+          fluid={false}
+        >
+          <div
+            className="container classes"
+            data-test="component-grid-container"
+          >
+            <Row
+              classes="row"
+              column={false}
+              reverse={false}
+              row={true}
+            >
+              <div
+                className="row row"
+                data-test="component-grid-row"
+              >
+                <Flex
+                  classes={null}
+                  col={null}
+                  colLg={null}
+                  colMd={null}
+                  colSm={null}
+                  colXl={null}
+                  colXs={null}
+                  lg={false}
+                  md={false}
+                  sm={false}
+                  type="div"
+                  xl={false}
+                  xs={false}
+                >
+                  <div
+                    className="flex"
+                    data-test="component-flex"
+                  >
+                    <Heading
+                      classes={null}
+                      priority="2"
+                    >
+                      <h2
+                        className="heading-2"
+                        data-test="component-heading"
+                      >
+                        CTA Banner
+                      </h2>
+                    </Heading>
+                  </div>
+                </Flex>
+              </div>
+            </Row>
+          </div>
+        </Container>
+      </section>
+    </Section>
+  </CtaBanner>
+</AcfComponents>
+`;

@@ -1,0 +1,27 @@
+@import "~sass/core";
+
+.featured-words {
+  $root: &;
+  position: relative;
+  padding: 8rem 0 10rem;
+  overflow: hidden;
+
+  &__heading {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: white;
+  }
+
+  &__copy {
+    color: $color-tint-alpha;
+  }
+
+  &__word-card {
+    margin-right: 2rem;
+  }
+
+  &__arrow-text {
+    @include sr-only;
+  }
+}

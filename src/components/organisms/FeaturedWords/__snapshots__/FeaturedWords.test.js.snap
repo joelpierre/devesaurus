@@ -1,0 +1,453 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeaturedWords/> should match snapshot 1`] = `
+<Section
+  classes="featured-words"
+  contrast={true}
+  data-test="component-featured-words"
+  theme="brand"
+  type="section"
+>
+  <Container
+    classes={null}
+    fluid={false}
+  >
+    <Row
+      classes="mb-5"
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes={null}
+        col={null}
+        colLg={null}
+        colMd="8"
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <Heading
+          classes="featured-words__heading"
+          priority="2"
+        >
+          Featured Words
+        </Heading>
+        <p
+          className="featured-words__copy"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolores ex expedita explicabo hic, in iure minima nesciunt, nobis nulla numquam odio placeat quaerat quisquam quos sequi vero, vitae voluptatibus?
+        </p>
+      </Flex>
+    </Row>
+  </Container>
+  <Container
+    classes={null}
+    fluid={false}
+  >
+    <Row
+      classes={null}
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes={null}
+        col={12}
+        colLg={null}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <t
+          addArrowClickHandler={true}
+          arrowLeft={
+            <span>
+              <span
+                className="featured-words__arrow-text"
+              >
+                Previous
+              </span>
+              <FontAwesomeIcon
+                border={false}
+                className=""
+                fixedWidth={false}
+                flip={null}
+                icon={
+                  Array [
+                    "far",
+                    "chevron-left",
+                  ]
+                }
+                inverse={false}
+                listItem={false}
+                mask={null}
+                pull={null}
+                pulse={false}
+                rotation={null}
+                size={null}
+                spin={false}
+                symbol={false}
+                title=""
+                transform={null}
+              />
+            </span>
+          }
+          arrowRight={
+            <span>
+              <span
+                className="featured-words__arrow-text"
+              >
+                Next
+              </span>
+              <FontAwesomeIcon
+                border={false}
+                className=""
+                fixedWidth={false}
+                flip={null}
+                icon={
+                  Array [
+                    "far",
+                    "chevron-right",
+                  ]
+                }
+                inverse={false}
+                listItem={false}
+                mask={null}
+                pull={null}
+                pulse={false}
+                rotation={null}
+                size={null}
+                spin={false}
+                symbol={false}
+                title=""
+                transform={null}
+              />
+            </span>
+          }
+          breakpoints={
+            Object {
+              "1200": Object {
+                "slidesPerPage": 2,
+              },
+              "900": Object {
+                "draggable": true,
+                "slidesPerPage": 1,
+              },
+            }
+          }
+          draggable={false}
+          infinite={true}
+          slidesPerPage={3}
+        >
+          <WordCard
+            acf={
+              Object {
+                "definition": "<p>The art or skill of combining text and pictures in advertisements, magazines, or books.</p>
+",
+                "examples": false,
+                "origin": Object {
+                  "label": "United Kingdom",
+                  "value": "GB",
+                },
+                "part_of_speech": "noun",
+                "pronunciation": "graphic-de-sign",
+                "syllables": Object {
+                  "count": "4",
+                  "list": Array [
+                    Object {
+                      "item": "gra",
+                    },
+                    Object {
+                      "item": "phic",
+                    },
+                    Object {
+                      "item": "de",
+                    },
+                    Object {
+                      "item": "sign",
+                    },
+                  ],
+                },
+                "synonyms": Array [
+                  Object {
+                    "post_name": "web-development",
+                    "post_status": "publish",
+                    "post_title": "Web Development",
+                  },
+                ],
+              }
+            }
+            category={
+              Object {
+                "id": 1,
+                "name": "Graphic Design",
+                "slug": "graphic-design",
+                "taxonomy": "word_category",
+              }
+            }
+            classes="featured-words__word-card"
+            contrast={false}
+            data-test="featured-words-word"
+            key="1"
+            slug="graphic-design"
+            tags={
+              Array [
+                Object {
+                  "id": 1,
+                  "name": "Design",
+                  "slug": "design",
+                  "taxonomy": "word_tag",
+                },
+              ]
+            }
+            title="Graphic Design"
+          />
+          <WordCard
+            acf={
+              Object {
+                "definition": "<p>Web development is the work involved in developing a web site for the Internet (World Wide Web) or an intranet (a private network). Among web professionals, \\"web development\\" usually refers to the main non-design aspects of building web sites: writing markup and coding</p>
+",
+                "examples": Array [
+                  Object {
+                    "code": "<p><code></p>
+<header>
+test<br />
+</header>
+<p></code></p>
+",
+                    "codepen_url": "",
+                    "type": "code-block",
+                  },
+                ],
+                "origin": Object {
+                  "label": "United Kingdom",
+                  "value": "GB",
+                },
+                "part_of_speech": "noun",
+                "pronunciation": "web~develop~ment",
+                "syllables": Object {
+                  "count": "5",
+                  "list": Array [
+                    Object {
+                      "item": "web",
+                    },
+                    Object {
+                      "item": "de",
+                    },
+                    Object {
+                      "item": "ve",
+                    },
+                    Object {
+                      "item": "lop",
+                    },
+                    Object {
+                      "item": "ment",
+                    },
+                  ],
+                },
+                "synonyms": Array [
+                  Object {
+                    "post_name": "graphic-design",
+                    "post_status": "publish",
+                    "post_title": "Graphic Design",
+                  },
+                ],
+              }
+            }
+            category={
+              Object {
+                "id": 1,
+                "name": "Web Development",
+                "slug": "web-development",
+                "taxonomy": "word_category",
+              }
+            }
+            classes="featured-words__word-card"
+            contrast={false}
+            data-test="featured-words-word"
+            key="2"
+            slug="web-development"
+            tags={
+              Array [
+                Object {
+                  "id": 1,
+                  "name": "CSS",
+                  "slug": "css",
+                  "taxonomy": "word_tag",
+                },
+                Object {
+                  "id": 2,
+                  "name": "HTML5",
+                  "slug": "html5",
+                  "taxonomy": "word_tag",
+                },
+              ]
+            }
+            title="Web Development"
+          />
+          <WordCard
+            acf={
+              Object {
+                "definition": "<p>Web development is the work involved in developing a web site for the Internet (World Wide Web) or an intranet (a private network). Among web professionals, \\"web development\\" usually refers to the main non-design aspects of building web sites: writing markup and coding</p>
+",
+                "examples": Array [
+                  Object {
+                    "code": "<p><code></p>
+<header>
+test<br />
+</header>
+<p></code></p>
+",
+                    "codepen_url": "",
+                    "type": "code-block",
+                  },
+                ],
+                "origin": Object {
+                  "label": "United Kingdom",
+                  "value": "GB",
+                },
+                "part_of_speech": "noun",
+                "pronunciation": "web~develop~ment",
+                "syllables": Object {
+                  "count": "5",
+                  "list": Array [
+                    Object {
+                      "item": "web",
+                    },
+                    Object {
+                      "item": "de",
+                    },
+                    Object {
+                      "item": "ve",
+                    },
+                    Object {
+                      "item": "lop",
+                    },
+                    Object {
+                      "item": "ment",
+                    },
+                  ],
+                },
+                "synonyms": Array [
+                  Object {
+                    "post_name": "graphic-design",
+                    "post_status": "publish",
+                    "post_title": "Graphic Design",
+                  },
+                ],
+              }
+            }
+            category={
+              Object {
+                "id": 1,
+                "name": "Web Development",
+                "slug": "web-development",
+                "taxonomy": "word_category",
+              }
+            }
+            classes="featured-words__word-card"
+            contrast={false}
+            data-test="featured-words-word"
+            key="3"
+            slug="web-development"
+            tags={
+              Array [
+                Object {
+                  "id": 1,
+                  "name": "CSS",
+                  "slug": "css",
+                  "taxonomy": "word_tag",
+                },
+                Object {
+                  "id": 2,
+                  "name": "HTML5",
+                  "slug": "html5",
+                  "taxonomy": "word_tag",
+                },
+              ]
+            }
+            title="Web Development 2"
+          />
+        </t>
+      </Flex>
+    </Row>
+  </Container>
+  <Container
+    classes={null}
+    fluid={false}
+  >
+    <Row
+      classes="mt-6"
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes={null}
+        col={null}
+        colLg={null}
+        colMd="8"
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <Button
+          action={null}
+          behavior="router"
+          caps={true}
+          classes={null}
+          link="/"
+          size="lg"
+          theme="tint-alpha"
+        >
+          View all word categories
+           
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Array [
+                "far",
+                "chevron-right",
+              ]
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+        </Button>
+      </Flex>
+    </Row>
+  </Container>
+</Section>
+`;

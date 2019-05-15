@@ -1,0 +1,14 @@
+body {
+  background-color: $color-tint-alpha;
+  font-family: $font-default;
+  color: $color-tint-omega;
+}
+
+.primary-main {
+  position: relative;
+
+  .primary-main__section {
+    position: relative;
+    padding: 6rem 0;
+  }
+}

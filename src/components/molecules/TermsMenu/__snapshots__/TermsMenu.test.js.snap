@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TermsMenu/> should match snapshot 1`] = `
+<mockConstructor
+  data-test="component-terms-menu-query"
+  render={[Function]}
+/>
+`;
+
+exports[`<TermsMenu/> should match snapshot 2`] = `
+<nav
+  className="terms-menu undefined"
+  data-test="component-terms-menu"
+>
+  <ul
+    className="terms-menu__list"
+  >
+    <MenuItem
+      classes="terms-menu__item"
+      item={
+        Object {
+          "object_slug": "slug",
+          "title": "title",
+        }
+      }
+      key="slug"
+    />
+  </ul>
+</nav>
+`;

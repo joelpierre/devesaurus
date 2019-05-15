@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PersonTemplate/> should match snapshot 1`] = `
+<CoreLayout
+  classes="person person__test-slug"
+  data-test="template-person"
+  description=""
+  onGetSiteMeta={[Function]}
+  onGetSiteOptions={[Function]}
+  title="test"
+>
+  <AcfComponents
+    component={
+      Object {
+        "acf_fc_layout": "WordPressAcf_Text_Block",
+      }
+    }
+    key="0"
+    pageTheme="brand"
+  />
+</CoreLayout>
+`;

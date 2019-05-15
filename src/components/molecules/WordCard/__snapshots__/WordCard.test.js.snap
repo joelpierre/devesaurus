@@ -1,0 +1,459 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WordCard/> should match snapShot 1`] = `
+<article
+  className="theme--tint-alpha"
+  data-test="component-word-card"
+>
+  <div
+    className=""
+    data-test="word-card-category"
+  >
+    <mockConstructor
+      to="/word-category/undefined"
+    >
+      <span />
+      <span>
+        <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Array [
+              "far",
+              "atom-alt",
+            ]
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />
+      </span>
+    </mockConstructor>
+  </div>
+  <mockConstructor
+    to="/word/slug"
+  >
+    <span>
+      title
+    </span>
+  </mockConstructor>
+  <header
+    data-test="word-card-header"
+  >
+    <Heading
+      classes={null}
+      data-test="word-card-heading"
+      priority="3"
+    >
+      title
+    </Heading>
+  </header>
+  <div
+    data-test="word-card-body"
+  >
+    <p>
+      <strong>
+        Origin:
+      </strong>
+       
+      test
+       (
+      test
+      )
+    </p>
+    <p>
+      <strong>
+        Pronunciation:
+      </strong>
+       
+    </p>
+  </div>
+  <footer
+    className=""
+  >
+    <div>
+      <Label
+        caps={false}
+        classes={null}
+        data-test="word-card-tag"
+        key="css"
+        link="/word-tag/css"
+        size="sm"
+        theme="gamma"
+      >
+        <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Array [
+              "fab",
+              "css3",
+            ]
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />
+        CSS
+      </Label>
+      <Label
+        caps={false}
+        classes={null}
+        data-test="word-card-tag"
+        key="html5"
+        link="/word-tag/html5"
+        size="sm"
+        theme="psi"
+      >
+        <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Array [
+              "fab",
+              "html5",
+            ]
+          }
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />
+        HTML5
+      </Label>
+    </div>
+  </footer>
+</article>
+`;
+
+exports[`<WordCard/> should mount component and subsequent components 1`] = `
+<WordCard
+  acf={
+    Object {
+      "origin": Object {
+        "label": "test",
+        "value": "test",
+      },
+      "syllables": Object {
+        "count": "1",
+        "list": Array [
+          Object {
+            "item": "test",
+          },
+        ],
+      },
+    }
+  }
+  category={
+    Array [
+      Object {
+        "id": 1,
+        "name": "Web Development",
+        "slug": "web-development",
+        "taxonomy": "word_category",
+      },
+    ]
+  }
+  classes={null}
+  contrast={false}
+  slug="slug"
+  tags={
+    Array [
+      Object {
+        "id": 1,
+        "name": "CSS",
+        "slug": "css",
+        "taxonomy": "word_tag",
+      },
+      Object {
+        "id": 2,
+        "name": "HTML5",
+        "slug": "html5",
+        "taxonomy": "word_tag",
+      },
+    ]
+  }
+  title="title"
+>
+  <article
+    className="theme--tint-alpha"
+    data-test="component-word-card"
+  >
+    <div
+      className=""
+      data-test="word-card-category"
+    >
+      <mockConstructor
+        to="/word-category/undefined"
+      >
+        <a
+          href="/word-category/undefined"
+        >
+          <span />
+          <span>
+            <FontAwesomeIcon
+              border={false}
+              className=""
+              fixedWidth={false}
+              flip={null}
+              icon={
+                Array [
+                  "far",
+                  "atom-alt",
+                ]
+              }
+              inverse={false}
+              listItem={false}
+              mask={null}
+              pull={null}
+              pulse={false}
+              rotation={null}
+              size={null}
+              spin={false}
+              symbol={false}
+              title=""
+              transform={null}
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-atom-alt fa-w-14 "
+                data-icon="atom-alt"
+                data-prefix="far"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M424.99 55.03C385.37 15.43 307.46 28.48 224 82.08 140.54 28.51 62.65 15.49 23.01 55.03c-39.58 39.55-26.55 117.39 27.1 200.81-53.64 83.41-66.67 161.25-27.1 200.81 61.04 60.99 182.86-15.37 200.99-27 18.19 11.68 139.91 87.96 200.99 27 39.58-39.55 26.55-117.39-27.1-200.81 53.64-83.42 66.67-161.26 27.1-200.81zm-33.98 33.94c16.76 16.74 10.58 64.65-23.71 124.33-40.03-50.33-78.23-82.79-100.77-100.67 42.11-24.17 102.23-45.83 124.48-23.66zm-334.02 0c22.34-22.27 82.67-.34 124.47 23.65-50.38 40-82.89 78.21-100.76 100.68-34.29-59.68-40.47-107.59-23.71-124.33zm0 333.72c-16.76-16.74-10.58-64.65 23.71-124.33 40.53 50.97 78.19 82.61 100.82 100.57-59.74 34.29-107.72 40.48-124.53 23.76zm167-52c-45.05-33.43-80.97-69.13-114.96-114.85 19.24-25.88 55.93-71.52 114.96-115.35 59.05 43.84 95.82 89.59 114.96 115.35-33.7 45.35-69.55 81.17-114.96 114.85zm167.02 52c-16.83 16.73-64.8 10.54-124.54-23.75 22.63-17.95 60.3-49.62 100.83-100.58 34.29 59.68 40.47 107.6 23.71 124.33zM224 223.82c-17.69 0-32.04 14.33-32.04 32.01s14.34 32.01 32.04 32.01 32.04-14.33 32.04-32.01-14.35-32.01-32.04-32.01z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </FontAwesomeIcon>
+          </span>
+        </a>
+      </mockConstructor>
+    </div>
+    <mockConstructor
+      to="/word/slug"
+    >
+      <a
+        href="/word/slug"
+      >
+        <span>
+          title
+        </span>
+      </a>
+    </mockConstructor>
+    <header
+      data-test="word-card-header"
+    >
+      <Heading
+        classes={null}
+        data-test="word-card-heading"
+        priority="3"
+      >
+        <h3
+          className="heading-3"
+          data-test="component-heading"
+        >
+          title
+        </h3>
+      </Heading>
+    </header>
+    <div
+      data-test="word-card-body"
+    >
+      <p>
+        <strong>
+          Origin:
+        </strong>
+         
+        test
+         (
+        test
+        )
+      </p>
+      <p>
+        <strong>
+          Pronunciation:
+        </strong>
+         
+      </p>
+    </div>
+    <footer
+      className=""
+    >
+      <div>
+        <Label
+          caps={false}
+          classes={null}
+          data-test="word-card-tag"
+          key="css"
+          link="/word-tag/css"
+          size="sm"
+          theme="gamma"
+        >
+          <mockConstructor
+            className="label label--gamma label--sm"
+            data-test="component-label"
+            to="/word-tag/css"
+          >
+            <a
+              className="label label--gamma label--sm"
+              data-test="component-label"
+              href="/word-tag/css"
+            >
+              <span
+                className="label__text"
+              >
+                <FontAwesomeIcon
+                  border={false}
+                  className=""
+                  fixedWidth={false}
+                  flip={null}
+                  icon={
+                    Array [
+                      "fab",
+                      "css3",
+                    ]
+                  }
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size={null}
+                  spin={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="svg-inline--fa fa-css3 fa-w-16 "
+                    data-icon="css3"
+                    data-prefix="fab"
+                    focusable="false"
+                    role="img"
+                    style={Object {}}
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M480 32l-64 368-223.3 80L0 400l19.6-94.8h82l-8 40.6L210 390.2l134.1-44.4 18.8-97.1H29.5l16-82h333.7l10.5-52.7H56.3l16.3-82H480z"
+                      fill="currentColor"
+                      style={Object {}}
+                    />
+                  </svg>
+                </FontAwesomeIcon>
+                CSS
+              </span>
+            </a>
+          </mockConstructor>
+        </Label>
+        <Label
+          caps={false}
+          classes={null}
+          data-test="word-card-tag"
+          key="html5"
+          link="/word-tag/html5"
+          size="sm"
+          theme="psi"
+        >
+          <mockConstructor
+            className="label label--psi label--sm"
+            data-test="component-label"
+            to="/word-tag/html5"
+          >
+            <a
+              className="label label--psi label--sm"
+              data-test="component-label"
+              href="/word-tag/html5"
+            >
+              <span
+                className="label__text"
+              >
+                <FontAwesomeIcon
+                  border={false}
+                  className=""
+                  fixedWidth={false}
+                  flip={null}
+                  icon={
+                    Array [
+                      "fab",
+                      "html5",
+                    ]
+                  }
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size={null}
+                  spin={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="svg-inline--fa fa-html5 fa-w-12 "
+                    data-icon="html5"
+                    data-prefix="fab"
+                    focusable="false"
+                    role="img"
+                    style={Object {}}
+                    viewBox="0 0 384 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"
+                      fill="currentColor"
+                      style={Object {}}
+                    />
+                  </svg>
+                </FontAwesomeIcon>
+                HTML5
+              </span>
+            </a>
+          </mockConstructor>
+        </Label>
+      </div>
+    </footer>
+  </article>
+</WordCard>
+`;

@@ -1,17 +1,87 @@
 import React from 'react';
-import * as styles from './Brand.module.scss';
-import SiteInfo from '../../../utilities/siteInfo';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import styles from './Brand.module.scss';
+import SvgIcon from '../SvgIcon/SvgIcon';
+import SiteInfo from '../SiteInfo/SiteInfo';
 
-function Brand({ classes }) {
+const Brand = ({ classes, type, left, right, center }) => {
+  let logo;
+
+  /**
+   * Switch statement to determine what brand logo is used
+   */
+  switch (type) {
+    case 'logo-inv':
+      logo = type;
+      break;
+    case 'text':
+    case 'text-inv':
+    case 'character':
+    case 'character-inv':
+    case 'symbol':
+    case 'symbol-inv':
+    case 'social-inv':
+    case 'social':
+      logo = `logo-${type}`;
+      break;
+    default:
+      logo = 'logo';
+  }
+
   return (
-    <div className={`${classes}`}>
-      <div className={`${styles.brand}`}>
-        <h1 className={styles.brand__heading}>
-          <SiteInfo />
-        </h1>
+    <div
+      data-test="component-brand"
+      className={classNames([
+        styles.brand,
+        {
+          [styles['brand--left']]: left && center === false && right === false,
+          [styles['brand--right']]: right,
+          [styles['brand--center']]: center,
+        },
+        classes,
+      ])}
+    >
+      <div className={classNames(styles.brand__wrapper)}>
+        <SvgIcon
+          name={logo}
+          classes={classNames([
+            `${styles.brand__logo}`,
+            `${styles.brand__icon}`,
+          ])}
+        />
+
+        <SiteInfo />
       </div>
     </div>
   );
-}
+};
+
+Brand.defaultProps = {
+  classes: null,
+  left: true,
+  center: false,
+  right: false,
+  type: 'logo',
+};
+
+Brand.propTypes = {
+  classes: PropTypes.string,
+  left: PropTypes.bool,
+  center: PropTypes.bool,
+  right: PropTypes.bool,
+  type: PropTypes.oneOf([
+    'logo',
+    'logo-inv',
+    'text',
+    'text-inv',
+    'character',
+    'character-inv',
+    'symbol',
+    'symbol-inv',
+    'social-inv',
+    'social',
+  ]),
+};
 
 export default Brand;

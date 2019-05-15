@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextBlock/> should match snapshot 1`] = `
+<Section
+  classes="theme--alpha text-block"
+  contrast={false}
+  data-test="component-text-block"
+  theme={null}
+  type="section"
+>
+  <Container
+    classes={null}
+    fluid={false}
+  >
+    <Row
+      classes={null}
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes="flex"
+        col={null}
+        colLg={null}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <p
+          className="text-block__content"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa illo ipsam magnam nulla optio pariatur qui quidem rem! Assumenda deleniti explicabo placeat rem. Dolores eos facere praesentium ullam unde!
+        </p>
+      </Flex>
+    </Row>
+  </Container>
+</Section>
+`;
+
+exports[`<TextBlock/> should render with pageTheme instead of module theme 1`] = `
+<Section
+  classes="theme--brand text-block"
+  contrast={false}
+  data-test="component-text-block"
+  theme={null}
+  type="section"
+>
+  <Container
+    classes={null}
+    fluid={false}
+  >
+    <Row
+      classes={null}
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes="flex"
+        col={null}
+        colLg={null}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <p
+          className="text-block__content"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa illo ipsam magnam nulla optio pariatur qui quidem rem! Assumenda deleniti explicabo placeat rem. Dolores eos facere praesentium ullam unde!
+        </p>
+      </Flex>
+    </Row>
+  </Container>
+</Section>
+`;

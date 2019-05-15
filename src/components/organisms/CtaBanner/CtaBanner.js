@@ -1,20 +1,42 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-function CtaBanner({ module, pageTheme }) {
+import styles from './CtaBanner.module.scss';
+import Container from '../../core/Container/Container';
+import Row from '../../core/Row/Row';
+import Flex from '../../core/Flex/Flex';
+import Section from '../../core/Section/Section';
+import Heading from '../../core/Heading/Heading';
+import { defaultPageTheme, pageThemePropType } from '../../../utils/propTypes';
+
+const CtaBanner = ({ module, pageTheme }) => {
   return (
-
-    <section className={`primary-main__section theme--${module.theme} cta-banner`}>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="flex text-center">
-            <h2>
-              {module.acf_fc_layout}
-            </h2>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Section
+      data-test="component-cta-banner"
+      classes={classNames([
+        `theme--${module.theme ? module.theme : pageTheme}`,
+        styles['cta-banner'],
+      ])}
+    >
+      <Container classes="container-fluid">
+        <Row classes="row">
+          <Flex>
+            <Heading priority="2">CTA Banner</Heading>
+          </Flex>
+        </Row>
+      </Container>
+    </Section>
   );
-}
+};
+
+CtaBanner.defaultProps = {
+  ...defaultPageTheme(),
+};
+
+CtaBanner.propTypes = {
+  module: PropTypes.instanceOf(Object).isRequired,
+  ...pageThemePropType,
+};
 
 export default CtaBanner;

@@ -1,19 +1,19 @@
-import * as actionTypes from '../actionTypes/page.actionTypes';
+import { pageActionTypes } from '../actionTypes';
 
 export const getPageData = data => ({
-  type: actionTypes.GET_PAGE_DATA,
+  type: pageActionTypes.GET_PAGE_DATA,
   data,
 });
 
 export const setPageData = data => ({
-  type: actionTypes.SET_PAGE_DATA,
+  type: pageActionTypes.SET_PAGE_DATA,
   data,
 });
 
 export const clearPageData = () => ({
-  type: actionTypes.CLEAR_PAGE_DATA,
+  type: pageActionTypes.CLEAR_PAGE_DATA,
 });
 
 export const getPageDataFailed = () => ({
-  type: actionTypes.GET_PAGE_FAILED,
+  type: pageActionTypes.GET_PAGE_FAILED,
 });

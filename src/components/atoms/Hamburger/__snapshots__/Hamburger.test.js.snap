@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Hamburger/> should match snapshot 1`] = `
+<div
+  className="hamburger"
+  data-test="component-hamburger"
+>
+  <span
+    className="hamburger__line"
+  />
+  <span
+    className="hamburger__line"
+  />
+  <span
+    className="hamburger__line"
+  />
+  <span
+    className="hamburger__company"
+  >
+    test
+  </span>
+</div>
+`;

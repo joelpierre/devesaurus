@@ -1,0 +1,13 @@
+@mixin dynamic-property($size: null, $property: null, $value:null, $unit: null) {
+  @if ($size == null) {
+    &-#{$value} {
+      #{$property}: #{$value} !important;
+    }
+  }
+
+  @if ($size != null) {
+    &-#{$size}-#{$value} {
+      #{$property}: #{$value} !important;
+    }
+  }
+}

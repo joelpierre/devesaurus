@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PrimaryFooter/> should match snapshot 1`] = `
+<footer
+  className="primary-footer"
+  data-test="component-primary-footer"
+>
+  <Container
+    classes={null}
+    fluid={true}
+  >
+    <Row
+      classes="primary-footer--top"
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes={null}
+        col={null}
+        colLg={4}
+        colMd={6}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <mockConstructor
+          to="/"
+        >
+          <Brand
+            center={false}
+            classes="primary-footer__brand mb-2"
+            left={true}
+            right={false}
+            type="text"
+          />
+        </mockConstructor>
+        <p
+          className="primary-footer__copy"
+        >
+          Get real-world definitions to complex dev terms | Supported by
+           
+          <a
+            className="primary-footer__link"
+            href="http://www.jppdesigns.co.uk"
+          >
+            JPPdesigns Web design & Development
+          </a>
+        </p>
+        <SocialMenu
+          classes="mt-3"
+        />
+      </Flex>
+      <Flex
+        classes="mx-auto"
+        col={null}
+        colLg={3}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <Heading
+          classes="primary-footer__heading"
+          priority={5}
+        >
+          Featured Words
+        </Heading>
+        <FeaturedWordsList />
+      </Flex>
+      <Flex
+        classes="ml-auto"
+        col={null}
+        colLg={4}
+        colMd={6}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <Heading
+          classes="primary-footer__heading display-none"
+          priority={5}
+        >
+          Word Tags
+        </Heading>
+        <div
+          className="primary-footer__tag-cloud-wrapper"
+        >
+          <TagCloud
+            classes="primary-footer__tag-cloud"
+            taxonomy="word_tag"
+          />
+        </div>
+      </Flex>
+    </Row>
+    <Row
+      classes="primary-footer--bottom"
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes="primary-footer__legal"
+        col={null}
+        colLg={5}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <h6
+          className="primary-footer__legal-copy"
+        >
+          ©
+           
+          Devesaurus 2019 | Developed by: Joel Pierre-Powell
+        </h6>
+      </Flex>
+      <Flex
+        classes={null}
+        col={null}
+        colLg={7}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <TermsMenu
+          classes="primary-footer__terms-menu"
+        />
+      </Flex>
+    </Row>
+  </Container>
+</footer>
+`;

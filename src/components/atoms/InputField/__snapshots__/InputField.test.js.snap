@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputField/> should match snapshot 1`] = `
+<Fragment>
+  <input
+    aria-label="Input for test"
+    className="input-field"
+    data-test="component-input-field"
+    disabled={false}
+    name="test"
+    placeholder=""
+    type="text"
+  />
+</Fragment>
+`;
+
+exports[`<InputField/> should render with FormLabel 1`] = `
+<Fragment>
+  <FormLabel
+    name="test"
+    text="hello"
+  />
+  <input
+    aria-label="Input for test"
+    className="input-field"
+    data-test="component-input-field"
+    disabled={false}
+    name="test"
+    placeholder=""
+    type="text"
+  />
+</Fragment>
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error404/> should match snapshot 1`] = `
+<BasicLayout
+  classes={null}
+  data-test="page-error-404"
+  description="Default description"
+  onGetSiteMeta={[Function]}
+  onGetSiteOptions={[Function]}
+  title="Error page not found"
+>
+  404 Error
+</BasicLayout>
+`;

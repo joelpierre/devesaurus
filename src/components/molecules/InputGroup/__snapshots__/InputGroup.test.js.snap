@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputGroup/> should match snapshot 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      classes={null}
+      disabled={false}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      placeholder={null}
+      readOnly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`<InputGroup/> should match snapshot with append button 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      classes={null}
+      disabled={false}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      placeholder={null}
+      readOnly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+  <div
+    className="input-group__append"
+  >
+    <div
+      className="input-group__button-wrapper"
+      data-test="input-group-button"
+    >
+      <Button
+        action={null}
+        behavior="action"
+        caps={true}
+        classes={null}
+        link="#"
+        size="md"
+        theme="tint-omega"
+      >
+        test
+      </Button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<InputGroup/> should match snapshot with append icon 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      classes={null}
+      disabled={false}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      placeholder={null}
+      readOnly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+  <div
+    className="input-group__append"
+  >
+    <div
+      className="input-group__inner"
+    >
+      <div
+        className="input-group__icon-wrapper"
+        data-test="input-group-icon"
+      >
+        <SvgIcon
+          center={false}
+          classes={null}
+          description="An SVG Icon"
+          fill="#000000"
+          name="complete"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<InputGroup/> should match snapshot with append text 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      classes={null}
+      disabled={false}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      placeholder={null}
+      readOnly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+  <div
+    className="input-group__append"
+  >
+    <div
+      className="input-group__inner"
+    >
+      <div
+        className="input-group__text"
+        data-test="input-group-text"
+      >
+        test
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<InputGroup/> should match snapshot with prepend button 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__prepend"
+  >
+    <div
+      className="input-group__button-wrapper"
+      data-test="input-group-button"
+    >
+      <Button
+        action={null}
+        behavior="action"
+        caps={true}
+        classes={null}
+        link="#"
+        size="md"
+        theme="tint-omega"
+      >
+        test
+      </Button>
+    </div>
+  </div>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      classes={null}
+      disabled={false}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      placeholder={null}
+      readOnly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`<InputGroup/> should match snapshot with prepend icon 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__prepend"
+  >
+    <div
+      className="input-group__inner"
+    >
+      <div
+        className="input-group__icon-wrapper"
+        data-test="input-group-icon"
+      >
+        <SvgIcon
+          center={false}
+          classes={null}
+          description="An SVG Icon"
+          fill="#000000"
+          name="complete"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      classes={null}
+      disabled={false}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      placeholder={null}
+      readOnly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`<InputGroup/> should match snapshot with prepend text 1`] = `
+<div
+  className="input-group"
+  data-test="component-input-group"
+>
+  <div
+    className="input-group__prepend"
+  >
+    <div
+      className="input-group__inner"
+    >
+      <div
+        className="input-group__text"
+        data-test="input-group-text"
+      >
+        test
+      </div>
+    </div>
+  </div>
+  <div
+    className="input-group__input"
+    data-test="input-group-input"
+  >
+    <InputField
+      classes={null}
+      disabled={false}
+      label={null}
+      lg={false}
+      max={null}
+      md={false}
+      min={null}
+      name="test-name"
+      placeholder={null}
+      readOnly={false}
+      sm={false}
+      type="text"
+    />
+  </div>
+</div>
+`;

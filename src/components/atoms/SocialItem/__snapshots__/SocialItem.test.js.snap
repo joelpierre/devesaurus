@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SocialItem/> should match snapshot 1`] = `
+<li
+  className="social-item social-item--theme-gradient-brand"
+  data-test="component-social-item"
+>
+  <a
+    aria-label="test-name"
+    className="social-item__link"
+    data-test="social-item-link"
+    href="test-link"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <FontAwesomeIcon
+      border={false}
+      className=""
+      data-test="social-item-icon"
+      fixedWidth={false}
+      flip={null}
+      icon={
+        Array [
+          "fab",
+          "test-name",
+        ]
+      }
+      inverse={false}
+      listItem={false}
+      mask={null}
+      pull={null}
+      pulse={false}
+      rotation={null}
+      size={null}
+      spin={false}
+      symbol={false}
+      title=""
+      transform={null}
+    />
+  </a>
+</li>
+`;

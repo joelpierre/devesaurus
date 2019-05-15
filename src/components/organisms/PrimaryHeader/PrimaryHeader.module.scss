@@ -22,12 +22,13 @@
   }
 
   &__brand {
-    width: auto;
+    max-width: 300px;
     height: auto;
-    flex: 1;
+    flex: 0;
     text-align: left;
 
     @include tablet-landscape {
+      max-width: 350px;
     }
   }
 
@@ -36,8 +37,8 @@
 
     @include tablet-landscape {
       display: flex;
-      flex: 1;
-      margin: 0 auto;
+      flex: 0;
+      margin-left: auto;
     }
   }
 

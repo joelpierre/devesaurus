@@ -1,0 +1,29 @@
+@import "~sass/core";
+
+.terms-menu {
+  $root: &;
+
+  display: flex;
+  align-items: center;
+  width: auto;
+
+  &__list {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 0;
+    padding: 0;
+    margin-left: auto;
+    font-size: inherit;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 0 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: inherit;
+    color: $color-tint-psi;
+  }
+}

@@ -1,0 +1,17 @@
+.icon {
+  display: inline-flex;
+  position: relative;
+  height: 100%;
+  margin: 0;
+  box-sizing: content-box;
+
+  &__svg {
+    width: inherit;
+    height: inherit;
+  }
+
+  &__center {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
