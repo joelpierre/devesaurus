@@ -11,7 +11,7 @@ export function* getPostSaga(action) {
   try {
     const response = yield axios.get(
       `${process.env.GATSBY_PROTOCOL}://${
-        process.env.GATSBY_BASE_URL
+        process.env.GATSBY_API_URL
       }/wp-json/better-rest-endpoints/v1/post/${action.data}`
     );
     yield put(setPostData(response.data));

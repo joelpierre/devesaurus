@@ -10,7 +10,7 @@ module.exports = {
     title: `Devesaurus`,
     description: `A place to get simplified definitions for complicated dev related words`,
     author: `@devesaurus`,
-    siteUrl: process.env.GATSBY_SITE_URL || 'devesaurus.com',
+    siteUrl: process.env.GATSBY_SITE_URL || 'https://www.devesaurus.com',
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -101,7 +101,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: process.env.GATSBY_BASE_URL || 'api.devesaurus.com',
+        baseUrl: process.env.GATSBY_API_URL || 'api.devesaurus.com',
         protocol: process.env.GATSBY_PROTOCOL || 'http',
         hostingWPCOM: false,
         useACF: true,

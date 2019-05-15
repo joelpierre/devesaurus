@@ -15,7 +15,7 @@ import {
 export function* getSiteMetaSaga() {
   try {
     const response = yield axios.get(
-      `${process.env.GATSBY_PROTOCOL}://${process.env.GATSBY_BASE_URL}/wp-json`
+      `${process.env.GATSBY_PROTOCOL}://${process.env.GATSBY_API_URL}/wp-json`
     );
     yield put(setSiteMeta(response.data));
   } catch (e) {
@@ -31,7 +31,7 @@ export function* getSiteOptionsSaga() {
   try {
     const response = yield axios.get(
       `${process.env.GATSBY_PROTOCOL}://${
-        process.env.GATSBY_BASE_URL
+        process.env.GATSBY_API_URL
       }/wp-json/acf/v2/options`
     );
     yield put(setSiteOptions(response.data.acf));

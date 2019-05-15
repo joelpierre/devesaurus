@@ -8,7 +8,7 @@ import { coreActionTypes } from '../actionTypes';
 export const initialState = {
   title: process.env.GATSBY_META_TITLE,
   description: process.env.GATSBY_META_DESCRIPTION,
-  api: process.env.GATSBY_BASE_URL,
+  api: process.env.GATSBY_API_URL,
   site: process.env.GATSBY_SITE_URL,
   loading: false,
   error: false,
