@@ -88,7 +88,6 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors);
         }
 
-        // if (typeof window !== `undefined`) {
         // Create Page pages.
         const pageTemplate = path.resolve(
           './src/components/templates/PageTemplate/PageTemplate.js'
@@ -100,8 +99,6 @@ exports.createPages = ({ graphql, actions }) => {
             context: edge.node,
           });
         });
-        resolve();
-        // }
       })
       // ==== END PAGES ====
 
@@ -149,7 +146,6 @@ exports.createPages = ({ graphql, actions }) => {
             reject(result.errors);
           }
 
-          // if (typeof window !== `undefined`) {
           const postTemplate = path.resolve(
             './src/components/templates/PostTemplate/PostTemplate.js'
           );
@@ -160,8 +156,6 @@ exports.createPages = ({ graphql, actions }) => {
               context: edge.node,
             });
           });
-          resolve();
-          // }
         });
       })
       // ==== END POSTS ====
@@ -225,7 +219,6 @@ exports.createPages = ({ graphql, actions }) => {
             reject(result.errors);
           }
 
-          // if (typeof window !== `undefined`) {
           const wordTemplate = path.resolve(
             './src/components/templates/WordTemplate/WordTemplate.js'
           );
@@ -236,8 +229,6 @@ exports.createPages = ({ graphql, actions }) => {
               context: edge.node,
             });
           });
-          resolve();
-          // }
         });
       })
       // ==== END WORDS ====
@@ -290,7 +281,6 @@ exports.createPages = ({ graphql, actions }) => {
             reject(result.errors);
           }
 
-          // if (typeof window !== `undefined`) {
           const personTemplate = path.resolve(
             './src/components/templates/PersonTemplate/PersonTemplate.js'
           );
@@ -301,8 +291,6 @@ exports.createPages = ({ graphql, actions }) => {
               context: edge.node,
             });
           });
-          resolve();
-          // }
         });
       }) // ==== END PERSON ====
 
@@ -354,7 +342,6 @@ exports.createPages = ({ graphql, actions }) => {
             reject(result.errors);
           }
 
-          // if (typeof window !== `undefined`) {
           const archiveTemplate = path.resolve(
             './src/components/templates/ArchiveTemplate/ArchiveTemplate.js'
           );
@@ -365,8 +352,6 @@ exports.createPages = ({ graphql, actions }) => {
               context: edge.node,
             });
           });
-          resolve();
-          // }
         });
       })
       // ==== END WORD CATEGORY ==== //
@@ -419,7 +404,6 @@ exports.createPages = ({ graphql, actions }) => {
             reject(result.errors);
           }
 
-          // if (typeof window !== `undefined`) {
           const archiveTemplate = path.resolve(
             './src/components/templates/ArchiveTemplate/ArchiveTemplate.js'
           );
@@ -430,8 +414,6 @@ exports.createPages = ({ graphql, actions }) => {
               context: edge.node,
             });
           });
-          resolve();
-          // }
         });
       })
       // ==== END WORD TAG ==== //
@@ -478,7 +460,6 @@ exports.createPages = ({ graphql, actions }) => {
             reject(result.errors);
           }
 
-          // if (typeof window !== `undefined`) {
           const archiveTemplate = path.resolve(
             './src/components/templates/ArchiveTemplate/ArchiveTemplate.js'
           );
@@ -489,8 +470,6 @@ exports.createPages = ({ graphql, actions }) => {
               context: edge.node,
             });
           });
-          resolve();
-          // }
         });
       })
       // ==== END TAG ==== //
@@ -537,10 +516,26 @@ exports.createPages = ({ graphql, actions }) => {
             reject(result.errors);
           }
 
-          // if (typeof window !== `undefined`) {
           const archiveTemplate = path.resolve(
             './src/components/templates/ArchiveTemplate/ArchiveTemplate.js'
           );
+
+          // const categories = result.data.allWordpressCategory.edges;
+          // const catsPerPage = 2;
+          // const noOfPages = Math.ceil(categories.length / catsPerPage);
+
+          // Array.from({ length: noOfPages })
+          //   .forEach((page, index) => {
+          //     createPage({
+          //       path: index === 0 ? '/categories' : `/categories/${index + 1}/`,
+          //       context: {
+          //         categories: categories.slice(index * catsPerPage, (index * catsPerPage) + catsPerPage),
+          //         noOfPages,
+          //         currentPage: index + 1,
+          //       },
+          //     });
+          //   });
+
           _.each(result.data.allWordpressCategory.edges, edge => {
             createPage({
               path: `/category/${edge.node.slug}/`,
@@ -548,8 +543,8 @@ exports.createPages = ({ graphql, actions }) => {
               context: edge.node,
             });
           });
+
           resolve();
-          // }
         });
       }); // ==== END CATEGORY ==== //
   });
