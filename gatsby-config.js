@@ -10,7 +10,7 @@ module.exports = {
     title: `Devesaurus`,
     description: `A place to get simplified definitions for complicated dev related words`,
     author: `@devesaurus`,
-    siteUrl: process.env.GATSBY_SITE_URL,
+    siteUrl: process.env.GATSBY_SITE_URL || 'devesaurus.com',
   },
   plugins: [
     `gatsby-transformer-sharp`,
