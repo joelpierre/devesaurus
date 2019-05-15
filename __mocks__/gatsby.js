@@ -1,5 +1,4 @@
-import * as jest from 'jest';
-
+/* eslint-disable */
 const React = require('react');
 
 const gatsby = jest.requireActual('gatsby');
@@ -16,3 +15,4 @@ module.exports = {
   StaticQuery: jest.fn(),
   useStaticQuery: jest.fn(),
 };
+/* eslint-enable */
