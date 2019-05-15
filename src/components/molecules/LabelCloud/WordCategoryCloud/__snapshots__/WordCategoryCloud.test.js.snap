@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PureWordCategoryCloudList/> should match snapshot PureWordCategoryCloudList 1`] = `
+<Fragment>
+  <li
+    className="label-cloud__item"
+    data-test="word-category-cloud-item"
+    key="1"
+  >
+    <Label
+      caps={false}
+      classes="label-cloud__label"
+      link="/word-category/test-slug"
+      size="sm"
+      theme="brand"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className="label-cloud__icon"
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Array [
+            "far",
+            "atom-alt",
+          ]
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+      test-name
+    </Label>
+  </li>
+</Fragment>
+`;
+
+exports[`<PureWordCategoryCloudList/> should match snapshot WordCategoryCloudList 1`] = `
+<ul
+  className="label-cloud"
+  data-test="component-word-category-cloud"
+>
+  <mockConstructor
+    data-test="component-word-category-cloud-query"
+    render={[Function]}
+  />
+</ul>
+`;

@@ -104,7 +104,7 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
         <div
           className="primary-footer__tag-cloud-wrapper"
         >
-          <TagCloud
+          <LabelCloud
             classes="primary-footer__tag-cloud"
             taxonomy="word_tag"
           />

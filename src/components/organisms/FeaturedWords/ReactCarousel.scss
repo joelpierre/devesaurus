@@ -93,6 +93,7 @@
   transform: scale(1, 1);
   transition: transform .2s ease-out;
   pointer-events: none;
+  backface-visibility: hidden;
 
   @include tablet-portrait {
     opacity: .8;
@@ -105,7 +106,7 @@
     pointer-events: all;
 
     @include hover-focus {
-      transform: scale(1.04, 1.04);
+      transform: scale(1.02, 1.02);
     }
 
     & + .BrainhubCarouselItem {
@@ -116,7 +117,7 @@
         pointer-events: all;
 
         @include hover-focus {
-          transform: scale(1.04, 1.04);
+          transform: scale(1.02, 1.02);
         }
       }
 
@@ -128,7 +129,7 @@
           pointer-events: all;
 
           @include hover-focus {
-            transform: scale(1.04, 1.04);
+            transform: scale(1.02, 1.02);
           }
         }
       }

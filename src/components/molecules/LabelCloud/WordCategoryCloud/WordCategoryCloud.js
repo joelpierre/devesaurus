@@ -11,7 +11,11 @@ import { mapTaxonomyIcon, mapTaxonomyTheme } from '../../../../utils';
 export const PureWordCategoryCloudList = ({ allWordpressWpWordCategory }) => (
   <>
     {allWordpressWpWordCategory.edges.map(({ node }) => (
-      <li key={node.id} className={classNames(styles['label-cloud__item'])}>
+      <li
+        data-test="word-category-cloud-item"
+        key={node.id}
+        className={classNames(styles['label-cloud__item'])}
+      >
         <Label
           classes={styles['label-cloud__label']}
           link={'/word-category/' + node.slug}
@@ -30,11 +34,11 @@ export const PureWordCategoryCloudList = ({ allWordpressWpWordCategory }) => (
 
 const WordCategoryCloud = ({ classes }) => (
   <ul
-    data-test="component-label-cloud"
+    data-test="component-word-category-cloud"
     className={classNames(styles['label-cloud'], classes)}
   >
     <StaticQuery
-      data-test="component-label-cloud-query"
+      data-test="component-word-category-cloud-query"
       query={query}
       render={props => <PureWordCategoryCloudList {...props} />}
     />

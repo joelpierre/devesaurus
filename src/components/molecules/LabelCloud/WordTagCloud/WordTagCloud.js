@@ -11,7 +11,11 @@ import { mapTaxonomyIcon, mapTaxonomyTheme } from '../../../../utils';
 export const PureWordTagCloudList = ({ allWordpressWpWordTag }) => (
   <>
     {allWordpressWpWordTag.edges.map(({ node }) => (
-      <li key={node.id} className={classNames(styles['label-cloud__item'])}>
+      <li
+        data-test="word-tag-cloud-item"
+        key={node.id}
+        className={classNames(styles['label-cloud__item'])}
+      >
         <Label
           classes={styles['label-cloud__label']}
           link={'/word-tag/' + node.slug}
@@ -30,11 +34,11 @@ export const PureWordTagCloudList = ({ allWordpressWpWordTag }) => (
 
 const WordTagCloud = ({ classes }) => (
   <ul
-    data-test="component-label-cloud"
+    data-test="component-word-tag-cloud"
     className={classNames(styles['label-cloud'], classes)}
   >
     <StaticQuery
-      data-test="component-label-cloud-query"
+      data-test="component-word-tag-cloud-query"
       query={query}
       render={props => <PureWordTagCloudList {...props} />}
     />

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PureWordTagCloudList/> should match snapshot PureWordTagCloudList 1`] = `
+<Fragment>
+  <li
+    className="label-cloud__item"
+    data-test="word-tag-cloud-item"
+    key="1"
+  >
+    <Label
+      caps={false}
+      classes="label-cloud__label"
+      link="/word-tag/test-slug"
+      size="sm"
+      theme="brand"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className="label-cloud__icon"
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Array [
+            "far",
+            "atom-alt",
+          ]
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+      test-name
+    </Label>
+  </li>
+</Fragment>
+`;
+
+exports[`<PureWordTagCloudList/> should match snapshot WordTagCloudList 1`] = `
+<ul
+  className="label-cloud"
+  data-test="component-word-tag-cloud"
+>
+  <mockConstructor
+    data-test="component-word-tag-cloud-query"
+    render={[Function]}
+  />
+</ul>
+`;
