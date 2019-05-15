@@ -10,12 +10,11 @@ import Flex from '../../core/Flex/Flex';
 import TermsMenu from '../../molecules/TermsMenu/TermsMenu';
 import Brand from '../../atoms/Brand/Brand';
 import SocialMenu from '../../molecules/SocialMenu/SocialMenu';
-import TagCloud from '../../molecules/TagCloud/TagCloud';
 import Heading from '../../core/Heading/Heading';
 import FeaturedWordsList from '../../molecules/FeaturedWordsList/FeaturedWordsList';
+import LabelCloud from '../../molecules/LabelCloud/LabelCloud';
 
 const PrimaryFooter = ({ company }) => {
-  // console.log();
   return (
     <footer
       data-test="component-primary-footer"
@@ -66,7 +65,10 @@ const PrimaryFooter = ({ company }) => {
               Word Tags
             </Heading>
             <div className={styles['primary-footer__tag-cloud-wrapper']}>
-              <TagCloud classes={styles['primary-footer__tag-cloud']} />
+              <LabelCloud
+                classes={styles['primary-footer__tag-cloud']}
+                taxonomy="word_tag"
+              />
             </div>
           </Flex>
         </Row>

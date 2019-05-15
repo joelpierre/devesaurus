@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LabelCloud/> should match snapshot 1`] = `<WordTagCloud />`;
+
+exports[`<LabelCloud/> should match snapshot taxonomy:category 1`] = `<CategoryCloud />`;
+
+exports[`<LabelCloud/> should match snapshot taxonomy:post_tag 1`] = `<TagCloud />`;
+
+exports[`<LabelCloud/> should match snapshot taxonomy:word_category 1`] = `<WordCategoryCloud />`;
+
+exports[`<LabelCloud/> should match snapshot taxonomy:word_tag 1`] = `<WordTagCloud />`;

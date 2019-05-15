@@ -1,8 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme/build';
 
 import TagCloud, { PureTagCloud } from './TagCloud';
-import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
+import {
+  checkProps,
+  findByTestAttr,
+  matchSnapshot,
+} from '../../../../utils/test';
 
 const defaultProps = {};
 
