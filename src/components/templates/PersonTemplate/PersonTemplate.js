@@ -72,7 +72,7 @@ PersonTemplate.propTypes = {
 
 /* istanbul ignore next */
 const mapStateToProps = state => ({
-  personData: state.Post.data,
+  personData: state.person,
 });
 
 /* istanbul ignore next */
