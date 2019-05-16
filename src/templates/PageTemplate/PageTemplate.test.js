@@ -8,8 +8,8 @@ import {
   findByTestAttr,
   matchSnapshot,
   mockStore,
-} from '../../../utils/test';
-import * as utils from '../../../utils';
+} from '../../utils/test';
+import * as utils from '../../utils';
 
 const defaultProps = {
   onGetPage: jest.fn(),

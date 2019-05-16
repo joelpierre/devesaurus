@@ -7,7 +7,7 @@
   transition: $transition-all-base;
 
   &--top {
-    padding: 8rem 0 9rem;
+    padding: 8rem 0 3rem;
     background-color: $color-tint-beta;
   }
 
@@ -53,18 +53,21 @@
     }
   }
 
+  &__social {
+    margin-bottom: 4rem !important;
+  }
+
+  &__featured-words {
+    margin-bottom: 4rem !important;
+  }
+
   &__tag-cloud-wrapper {
     display: flex;
     flex-wrap: wrap;
   }
 
   &__tag-cloud {
-    margin-left: auto;
     margin-bottom: 0;
-  }
-
-  &__terms-menu {
-    font-size: 1.4rem;
   }
 
   &__link {
@@ -73,13 +76,33 @@
   }
 
   &__legal {
-    text-align: left;
+    text-align: center;
+
+    @include tablet-landscape {
+      text-align: left;
+    }
 
     &-copy {
       color: $color-tint-psi;
       font-weight: normal;
       font-size: 1.4rem;
-      margin-bottom: 0;
+      margin-bottom: 2rem;
+
+      @include desktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__terms-menu {
+    font-size: 1.4rem;
+    justify-content: center;
+
+    @include tablet-landscape {
+      justify-content: flex-start;
+    }
+    @include desktop {
+      justify-content: flex-end;
     }
   }
 }

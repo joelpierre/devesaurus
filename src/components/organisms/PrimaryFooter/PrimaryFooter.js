@@ -22,7 +22,7 @@ const PrimaryFooter = ({ company }) => {
     >
       <Container fluid>
         <Row classes={classNames([styles['primary-footer--top']])}>
-          <Flex colLg={4} colMd={6}>
+          <Flex colLg={4} colMd={5}>
             <Link to="/">
               <Brand
                 left
@@ -41,26 +41,27 @@ const PrimaryFooter = ({ company }) => {
               </a>
             </p>
 
-            <SocialMenu classes="mt-3" />
+            <SocialMenu
+              classes={classNames('mt-3', styles['primary-footer__social'])}
+            />
           </Flex>
 
-          <Flex colLg={3} classes="mx-auto">
+          <Flex colLg={3} colMd={6} classes="ml-auto">
             <Heading
               priority={5}
               classes={classNames(styles['primary-footer__heading'])}
             >
               Featured Words
             </Heading>
-            <FeaturedWordsList />
+            <FeaturedWordsList
+              classes={classNames(styles['primary-footer__featured-words'])}
+            />
           </Flex>
 
-          <Flex colLg={4} colMd={6} classes="ml-auto">
+          <Flex colLg={4} colMd={12} classes="ml-lg-auto order-lg-1">
             <Heading
               priority={5}
-              classes={classNames(
-                styles['primary-footer__heading'],
-                'display-none'
-              )}
+              classes={classNames(styles['primary-footer__heading'])}
             >
               Word Tags
             </Heading>
@@ -74,14 +75,14 @@ const PrimaryFooter = ({ company }) => {
         </Row>
 
         <Row classes={classNames([styles['primary-footer--bottom']])}>
-          <Flex colLg={5} classes={styles['primary-footer__legal']}>
+          <Flex colLg={5} colMd={12} classes={styles['primary-footer__legal']}>
             <h6 className={styles['primary-footer__legal-copy']}>
               &copy;{' '}
               {`${company} ${new Date().getFullYear()} | Developed by: Joel Pierre-Powell`}
             </h6>
           </Flex>
 
-          <Flex colLg={7}>
+          <Flex colLg={7} colMd={12}>
             <TermsMenu classes={styles['primary-footer__terms-menu']} />
           </Flex>
         </Row>

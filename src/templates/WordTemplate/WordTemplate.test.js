@@ -2,9 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme/build';
 
 import ConnectedWordTemplate, { WordTemplate } from './WordTemplate';
-import { checkProps, matchSnapshot } from '../../../utils/test';
-import * as utils from '../../../utils';
-import { sortWordObj } from '../../../utils';
+import { checkProps, matchSnapshot } from '../../utils/test';
+import * as utils from '../../utils';
+import { sortWordObj } from '../../utils';
 
 const defaultProps = {
   onGetWord: jest.fn(),

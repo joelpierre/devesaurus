@@ -10,9 +10,8 @@ const Heading = ({ priority, children, classes }) => {
     <Tag
       data-test="component-heading"
       className={classNames([`${styles[`heading-${priority}`]}`, classes])}
-    >
-      {children}
-    </Tag>
+      dangerouslySetInnerHTML={{ __html: children }}
+    />
   );
 };
 

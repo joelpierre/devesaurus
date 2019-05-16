@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import styles from './PersonTemplate.module.scss';
-import * as personActions from '../../../store/actions/team.actions';
-import { mapOverACFComponents } from '../../../utils';
+import * as personActions from '../../store/actions/team.actions';
+import { mapOverACFComponents } from '../../utils';
 
-import { CoreLayout } from '../../../layouts/CoreLayout';
-import AcfComponents from '../../../hoc/AcfComponents';
+import { CoreLayout } from '../../layouts/CoreLayout';
+import AcfComponents from '../../hoc/AcfComponents';
 
 export class PersonTemplate extends PureComponent {
   componentDidMount() {

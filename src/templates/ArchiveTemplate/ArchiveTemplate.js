@@ -2,19 +2,19 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import Heading from '../../core/Heading/Heading';
-import { CoreLayout } from '../../../layouts/CoreLayout';
-import Section from '../../core/Section/Section';
-import Container from '../../core/Container/Container';
-import Row from '../../core/Row/Row';
-import Flex from '../../core/Flex/Flex';
+import Heading from '../../components/core/Heading/Heading';
+import { CoreLayout } from '../../layouts/CoreLayout';
+import Section from '../../components/core/Section/Section';
+import Container from '../../components/core/Container/Container';
+import Row from '../../components/core/Row/Row';
+import Flex from '../../components/core/Flex/Flex';
 import styles from './ArchiveTemplate.module.scss';
 
 export class ArchiveTemplate extends PureComponent {
   render() {
     const { pageContext } = this.props;
 
-    // console.log(pageContext);
+    console.log(pageContext);
 
     return (
       <CoreLayout

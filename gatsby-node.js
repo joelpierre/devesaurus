@@ -1,7 +1,13 @@
+/* eslint-disable */
+require('dotenv').config({
+  path: `env/${process.env.NODE_ENV}.env`,
+});
+
 const _ = require(`lodash`);
 const Promise = require(`bluebird`);
 const path = require(`path`);
 const slash = require(`slash`);
+const itemsPerPage = 12;
 
 exports.onCreateWebpackConfig = ({ actions, getConfig, options }) => {
   const prevConfig = getConfig();
@@ -90,7 +96,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create Page pages.
         const pageTemplate = path.resolve(
-          './src/components/templates/PageTemplate/PageTemplate.js'
+          './src/templates/PageTemplate/PageTemplate.js'
         );
         _.each(result.data.allWordpressPage.edges, edge => {
           createPage({
@@ -147,8 +153,33 @@ exports.createPages = ({ graphql, actions }) => {
           }
 
           const postTemplate = path.resolve(
-            './src/components/templates/PostTemplate/PostTemplate.js'
+            './src/templates/PostTemplate/PostTemplate.js'
           );
+
+          const archiveTemplate = path.resolve(
+            './src/templates/ArchiveTemplate/ArchiveTemplate.js'
+          );
+
+          const items = result.data.allWordpressPost.edges;
+          const noOfPages = Math.ceil(items.length / itemsPerPage);
+
+          Array.from({ length: noOfPages }).forEach((page, index) => {
+            createPage({
+              component: slash(archiveTemplate),
+              path: index === 0 ? '/devegram' : `/devegram/${index + 1}/`,
+              context: {
+                items: items.slice(
+                  index * itemsPerPage,
+                  index * itemsPerPage + itemsPerPage
+                ),
+                noOfPages,
+                currentPage: index + 1,
+                taxonomy: 'devegram',
+                name: 'Devegram',
+              },
+            });
+          });
+
           _.each(result.data.allWordpressPost.edges, edge => {
             createPage({
               path: `/post/${edge.node.slug}/`,
@@ -220,8 +251,33 @@ exports.createPages = ({ graphql, actions }) => {
           }
 
           const wordTemplate = path.resolve(
-            './src/components/templates/WordTemplate/WordTemplate.js'
+            './src/templates/WordTemplate/WordTemplate.js'
           );
+
+          const archiveTemplate = path.resolve(
+            './src/templates/ArchiveTemplate/ArchiveTemplate.js'
+          );
+
+          const items = result.data.allWordpressWpWord.edges;
+          const noOfPages = Math.ceil(items.length / itemsPerPage);
+
+          Array.from({ length: noOfPages }).forEach((page, index) => {
+            createPage({
+              component: slash(archiveTemplate),
+              path: index === 0 ? '/words' : `/words/${index + 1}/`,
+              context: {
+                items: items.slice(
+                  index * itemsPerPage,
+                  index * itemsPerPage + itemsPerPage
+                ),
+                noOfPages,
+                currentPage: index + 1,
+                taxonomy: 'words',
+                name: 'Words Archive',
+              },
+            });
+          });
+
           _.each(result.data.allWordpressWpWord.edges, edge => {
             createPage({
               path: `/word/${edge.node.slug}/`,
@@ -282,7 +338,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
 
           const personTemplate = path.resolve(
-            './src/components/templates/PersonTemplate/PersonTemplate.js'
+            './src/templates/PersonTemplate/PersonTemplate.js'
           );
           _.each(result.data.allWordpressWpTeam.edges, edge => {
             createPage({
@@ -343,12 +399,40 @@ exports.createPages = ({ graphql, actions }) => {
           }
 
           const archiveTemplate = path.resolve(
-            './src/components/templates/ArchiveTemplate/ArchiveTemplate.js'
+            './src/templates/ArchiveTemplate/ArchiveTemplate.js'
           );
+
+          const taxonomyTemplate = path.resolve(
+            './src/templates/TaxonomyTemplate/TaxonomyTemplate.js'
+          );
+
+          const items = result.data.allWordpressWpWordCategory.edges;
+          const noOfPages = Math.ceil(items.length / itemsPerPage);
+
+          Array.from({ length: noOfPages }).forEach((page, index) => {
+            createPage({
+              component: slash(archiveTemplate),
+              path:
+                index === 0
+                  ? '/word-categories'
+                  : `/word-categories/${index + 1}/`,
+              context: {
+                items: items.slice(
+                  index * itemsPerPage,
+                  index * itemsPerPage + itemsPerPage
+                ),
+                noOfPages,
+                currentPage: index + 1,
+                taxonomy: 'word-categories',
+                name: 'Word Categories Archive',
+              },
+            });
+          });
+
           _.each(result.data.allWordpressWpWordCategory.edges, edge => {
             createPage({
               path: `/word-category/${edge.node.slug}/`,
-              component: slash(archiveTemplate),
+              component: slash(taxonomyTemplate),
               context: edge.node,
             });
           });
@@ -405,12 +489,37 @@ exports.createPages = ({ graphql, actions }) => {
           }
 
           const archiveTemplate = path.resolve(
-            './src/components/templates/ArchiveTemplate/ArchiveTemplate.js'
+            './src/templates/ArchiveTemplate/ArchiveTemplate.js'
           );
+
+          const taxonomyTemplate = path.resolve(
+            './src/templates/TaxonomyTemplate/TaxonomyTemplate.js'
+          );
+
+          const items = result.data.allWordpressWpWordTag.edges;
+          const noOfPages = Math.ceil(items.length / itemsPerPage);
+
+          Array.from({ length: noOfPages }).forEach((page, index) => {
+            createPage({
+              component: slash(archiveTemplate),
+              path: index === 0 ? '/word-tags' : `/word-tags/${index + 1}/`,
+              context: {
+                items: items.slice(
+                  index * itemsPerPage,
+                  index * itemsPerPage + itemsPerPage
+                ),
+                noOfPages,
+                currentPage: index + 1,
+                taxonomy: 'word-tags',
+                name: 'Word Tag Archive',
+              },
+            });
+          });
+
           _.each(result.data.allWordpressWpWordTag.edges, edge => {
             createPage({
               path: `/word-tag/${edge.node.slug}/`,
-              component: slash(archiveTemplate),
+              component: slash(taxonomyTemplate),
               context: edge.node,
             });
           });
@@ -461,12 +570,37 @@ exports.createPages = ({ graphql, actions }) => {
           }
 
           const archiveTemplate = path.resolve(
-            './src/components/templates/ArchiveTemplate/ArchiveTemplate.js'
+            './src/templates/ArchiveTemplate/ArchiveTemplate.js'
           );
+
+          const taxonomyTemplate = path.resolve(
+            './src/templates/TaxonomyTemplate/TaxonomyTemplate.js'
+          );
+
+          const items = result.data.allWordpressTag.edges;
+          const noOfPages = Math.ceil(items.length / itemsPerPage);
+
+          Array.from({ length: noOfPages }).forEach((page, index) => {
+            createPage({
+              component: slash(archiveTemplate),
+              path: index === 0 ? '/tags' : `/tags/${index + 1}/`,
+              context: {
+                items: items.slice(
+                  index * itemsPerPage,
+                  index * itemsPerPage + itemsPerPage
+                ),
+                noOfPages,
+                currentPage: index + 1,
+                taxonomy: 'tags',
+                name: 'Blog Tag Archive',
+              },
+            });
+          });
+
           _.each(result.data.allWordpressTag.edges, edge => {
             createPage({
               path: `/tag/${edge.node.slug}/`,
-              component: slash(archiveTemplate),
+              component: slash(taxonomyTemplate),
               context: edge.node,
             });
           });
@@ -517,29 +651,37 @@ exports.createPages = ({ graphql, actions }) => {
           }
 
           const archiveTemplate = path.resolve(
-            './src/components/templates/ArchiveTemplate/ArchiveTemplate.js'
+            './src/templates/ArchiveTemplate/ArchiveTemplate.js'
           );
 
-          // const categories = result.data.allWordpressCategory.edges;
-          // const catsPerPage = 2;
-          // const noOfPages = Math.ceil(categories.length / catsPerPage);
+          const taxonomyTemplate = path.resolve(
+            './src/templates/TaxonomyTemplate/TaxonomyTemplate.js'
+          );
 
-          // Array.from({ length: noOfPages })
-          //   .forEach((page, index) => {
-          //     createPage({
-          //       path: index === 0 ? '/categories' : `/categories/${index + 1}/`,
-          //       context: {
-          //         categories: categories.slice(index * catsPerPage, (index * catsPerPage) + catsPerPage),
-          //         noOfPages,
-          //         currentPage: index + 1,
-          //       },
-          //     });
-          //   });
+          const items = result.data.allWordpressCategory.edges;
+          const noOfPages = Math.ceil(items.length / itemsPerPage);
+
+          Array.from({ length: noOfPages }).forEach((page, index) => {
+            createPage({
+              component: slash(archiveTemplate),
+              path: index === 0 ? '/categories' : `/categories/${index + 1}/`,
+              context: {
+                items: items.slice(
+                  index * itemsPerPage,
+                  index * itemsPerPage + itemsPerPage
+                ),
+                noOfPages,
+                currentPage: index + 1,
+                taxonomy: 'categories',
+                name: 'Blog Categories Archive',
+              },
+            });
+          });
 
           _.each(result.data.allWordpressCategory.edges, edge => {
             createPage({
               path: `/category/${edge.node.slug}/`,
-              component: slash(archiveTemplate),
+              component: slash(taxonomyTemplate),
               context: edge.node,
             });
           });

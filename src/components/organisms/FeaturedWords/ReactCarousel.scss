@@ -106,7 +106,7 @@
     pointer-events: all;
 
     @include hover-focus {
-      transform: scale(1.02, 1.02);
+      opacity: .95;
     }
 
     & + .BrainhubCarouselItem {
@@ -117,7 +117,7 @@
         pointer-events: all;
 
         @include hover-focus {
-          transform: scale(1.02, 1.02);
+          opacity: .95;
         }
       }
 
@@ -129,7 +129,7 @@
           pointer-events: all;
 
           @include hover-focus {
-            transform: scale(1.02, 1.02);
+            opacity: .95;
           }
         }
       }

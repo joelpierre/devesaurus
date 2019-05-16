@@ -2,8 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme/build';
 
 import ConnectedPersonTemplate, { PersonTemplate } from './PersonTemplate';
-import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
-import * as utils from '../../../utils';
+import { checkProps, findByTestAttr, matchSnapshot } from '../../utils/test';
+import * as utils from '../../utils';
 
 const defaultProps = {
   onGetPerson: jest.fn(),

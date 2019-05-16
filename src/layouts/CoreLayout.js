@@ -17,12 +17,12 @@ export class CoreLayout extends PureComponent {
   }
 
   render() {
-    const { children, title, description, classes } = this.props;
+    const { children, title, description, classes, headerTitle } = this.props;
 
     return (
       <>
         <SEO title={title} description={description} />
-        <PrimaryHeader />
+        <PrimaryHeader title={headerTitle || title} />
         <main
           data-test="core-layout-main"
           className={classNames([styles['primary-main'], classes])}
@@ -38,6 +38,7 @@ export class CoreLayout extends PureComponent {
 /* istanbul ignore next */
 CoreLayout.defaultProps = {
   title: 'Default Title',
+  headerTitle: undefined,
   description: 'Default description',
   classes: null,
   onGetSiteMeta: () => {},
@@ -46,6 +47,7 @@ CoreLayout.defaultProps = {
 
 CoreLayout.propTypes = {
   title: PropTypes.string,
+  headerTitle: PropTypes.string,
   description: PropTypes.string,
   classes: PropTypes.string,
   children: PropTypes.oneOfType([

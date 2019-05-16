@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme/build';
-import toJson from 'enzyme-to-json';
 
-import ArchiveTemplate from './ArchiveTemplate';
-import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
+import TaxonomyTemplate from './TaxonomyTemplate';
+import { checkProps, findByTestAttr, matchSnapshot } from '../../utils/test';
 
 const defaultProps = {
   pageContext: {
@@ -14,30 +13,30 @@ const defaultProps = {
 };
 
 /**
- * Factory function to create a ShallowWrapper for the ArchiveTemplate component.
+ * Factory function to create a ShallowWrapper for the TaxonomyTemplate component.
  * @param {object} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<ArchiveTemplate {...setupProps} />);
+  return shallow(<TaxonomyTemplate {...setupProps} />);
 };
 
-describe('<ArchiveTemplate/>', () => {
+describe('<TaxonomyTemplate/>', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = setup();
   });
 
-  it('renders the ArchiveTemplate Component without errors', () => {
-    const template = findByTestAttr(wrapper, 'template-archive');
+  it('renders the TaxonomyTemplate Component without errors', () => {
+    const template = findByTestAttr(wrapper, 'template-taxonomy');
     expect(template).toBeTruthy();
     expect(template.length).toBe(1);
   });
 
   it('should render with correct props', () => {
-    checkProps(ArchiveTemplate, defaultProps);
+    checkProps(TaxonomyTemplate, defaultProps);
   });
 
   it('should match snapshot', () => {

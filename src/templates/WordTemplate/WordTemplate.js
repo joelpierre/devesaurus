@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import styles from '../PostTemplate/PostTemplate.module.scss';
-import * as wordActions from '../../../store/actions/word.actions';
-import Heading from '../../core/Heading/Heading';
-import Section from '../../core/Section/Section';
-import Container from '../../core/Container/Container';
-import Row from '../../core/Row/Row';
-import Flex from '../../core/Flex/Flex';
-import { CoreLayout } from '../../../layouts/CoreLayout';
-import { sortWordObj } from '../../../utils';
+import * as wordActions from '../../store/actions/word.actions';
+import Heading from '../../components/core/Heading/Heading';
+import Section from '../../components/core/Section/Section';
+import Container from '../../components/core/Container/Container';
+import Row from '../../components/core/Row/Row';
+import Flex from '../../components/core/Flex/Flex';
+import { CoreLayout } from '../../layouts/CoreLayout';
+import { sortWordObj } from '../../utils';
 
 export class WordTemplate extends PureComponent {
   componentDidMount() {
@@ -33,13 +33,14 @@ export class WordTemplate extends PureComponent {
   }
 
   render() {
-    const { wordData, pageContext } = this.props;
-
-    // console.log('Word Data ', wordData);
+    const { pageContext } = this.props;
 
     return (
       <CoreLayout
         title={pageContext.title}
+        headerTitle={`${pageContext.title} <span class="ml-1">[${
+          pageContext.acf.pronunciation
+        }]</span>`}
         description={pageContext.yoast_meta.yoast_wpseo_metadesc}
         data-test="template-word"
         classes={classNames([

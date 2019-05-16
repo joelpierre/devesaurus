@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import styles from './PostTemplate.module.scss';
-import * as postActions from '../../../store/actions/post.actions';
-import { mapOverACFComponents } from '../../../utils';
-import Heading from '../../core/Heading/Heading';
-import { CoreLayout } from '../../../layouts/CoreLayout';
-import AcfComponents from '../../../hoc/AcfComponents';
+import * as postActions from '../../store/actions/post.actions';
+import { mapOverACFComponents } from '../../utils';
+import Heading from '../../components/core/Heading/Heading';
+import { CoreLayout } from '../../layouts/CoreLayout';
+import AcfComponents from '../../hoc/AcfComponents';
 
 export class PostTemplate extends PureComponent {
   componentDidMount() {
