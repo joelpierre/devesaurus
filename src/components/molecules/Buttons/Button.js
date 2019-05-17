@@ -19,6 +19,7 @@ const Button = ({
   action,
   caps,
   classes,
+  type,
 }) => {
   let button;
   switch (behavior) {
@@ -66,9 +67,10 @@ const Button = ({
 
     case 'action':
       button = (
+        // eslint-disable-next-line react/button-has-type
         <button
           data-test="component-button"
-          type="button"
+          type={type || 'button'}
           className={classNames([
             styles.btn,
             styles[`btn--${size}`],
@@ -78,7 +80,14 @@ const Button = ({
             },
             classes,
           ])}
-          onClick={action.func}
+          onClick={
+            action ||
+            (e => {
+              e.preventDefault();
+              console.log(e);
+              console.log('No Action added');
+            })
+          }
         >
           {children}
         </button>
@@ -96,15 +105,17 @@ Button.defaultProps = {
   behavior: 'router',
   action: null,
   classes: null,
+  type: 'button',
 };
 
 Button.propTypes = {
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
   action: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-  link: PropTypes.string.isRequired,
+  link: PropTypes.string,
   classes: PropTypes.string,
   caps: PropTypes.bool,
   ...themePropType,

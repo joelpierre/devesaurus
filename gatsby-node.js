@@ -239,6 +239,11 @@ exports.createPages = ({ graphql, actions }) => {
                       post_title
                       post_name
                     }
+                    examples {
+                      type
+                      codepen_url
+                      code
+                    }
                   }
                 }
               }

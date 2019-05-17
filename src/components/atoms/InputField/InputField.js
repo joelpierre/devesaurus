@@ -94,15 +94,8 @@ InputField.propTypes = {
   name: PropTypes.string.isRequired,
   classes: PropTypes.string,
   label: PropTypes.string,
-  type: PropTypes.oneOf([
-    'text',
-    'file',
-    'select',
-    'password',
-    'date',
-    'email',
-    'number',
-  ]).isRequired,
+  type: PropTypes.oneOf(['text', 'password', 'date', 'email', 'number'])
+    .isRequired,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
   sm: PropTypes.bool,

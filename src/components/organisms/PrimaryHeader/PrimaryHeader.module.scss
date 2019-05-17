@@ -20,6 +20,7 @@
     min-width: 0;
     align-content: center;
     align-items: normal;
+    padding: 0 1rem;
   }
 
   &__brand {
@@ -55,12 +56,11 @@
     }
   }
 
-  &__menu {
+  &__search {
     display: none;
 
     @include tablet-landscape {
       display: flex;
-      flex: 0;
       margin-left: auto;
     }
   }

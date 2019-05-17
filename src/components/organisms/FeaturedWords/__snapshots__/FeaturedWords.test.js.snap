@@ -419,6 +419,7 @@ test<br />
           link="/"
           size="lg"
           theme="tint-alpha"
+          type="button"
         >
           View all word categories
            

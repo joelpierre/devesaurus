@@ -18,6 +18,7 @@ exports[`<InputField/> should render with FormLabel 1`] = `
 <Fragment>
   <FormLabel
     name="test"
+    size="md"
     text="hello"
   />
   <input

@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormBase/> should match snapshot 1`] = `
+<form
+  className="form-base"
+  data-test="component-form-base"
+>
+  <div
+    className="form-base__group"
+    key="0"
+  >
+    <legend
+      className="form-base__legend"
+    >
+      FormBase Legend
+    </legend>
+    <p
+      className="form-base__description"
+    >
+      some text here
+    </p>
+    <Row
+      classes="form-base__row"
+      column={false}
+      reverse={false}
+      row={true}
+    >
+      <Flex
+        classes={null}
+        col={12}
+        colLg={null}
+        colMd={6}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        key="0"
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <FormField
+          classes="form-base__form-field"
+        >
+          <InputField
+            classes="form-base__input-field"
+            disabled={false}
+            label="label-1"
+            lg={false}
+            max={null}
+            md={false}
+            min={null}
+            name="test-1"
+            placeholder="placeholder-1"
+            sm={false}
+            type="text"
+          />
+        </FormField>
+      </Flex>
+      <Flex
+        classes={null}
+        col={12}
+        colLg={null}
+        colMd={6}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        key="1"
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <FormField
+          classes="form-base__form-field"
+        >
+          <SelectField
+            classes="form-base__select"
+            label="label-2"
+            name="test-2"
+            options={
+              Array [
+                Object {
+                  "name": "option-name",
+                  "value": "option-value",
+                },
+              ]
+            }
+            placeholder="placeholder-1"
+          />
+        </FormField>
+      </Flex>
+      <Flex
+        classes={null}
+        col={12}
+        colLg={null}
+        colMd={null}
+        colSm={null}
+        colXl={null}
+        colXs={null}
+        key="2"
+        lg={false}
+        md={false}
+        sm={false}
+        type="div"
+        xl={false}
+        xs={false}
+      >
+        <FormField
+          classes="form-base__form-field"
+        >
+          <FileUpload
+            classes="form-base__file-upload"
+            name="file-name"
+            placeholder="file-placeholder"
+          />
+        </FormField>
+      </Flex>
+    </Row>
+  </div>
+  <FormField
+    classes="form-base__submit-field"
+  >
+    <Button
+      action={null}
+      behavior="action"
+      caps={true}
+      classes={null}
+      size="md"
+      theme="tint-omega"
+      type="submit"
+    >
+      Submit
+    </Button>
+  </FormField>
+</form>
+`;

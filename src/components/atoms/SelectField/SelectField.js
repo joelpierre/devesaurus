@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './SelectField.module.scss';
 import Label from '../FormLabel/FormLabel';
 
-const SelectField = ({ name, placeholder, options, label }) => {
+const SelectField = ({ name, placeholder, options, label, ...props }) => {
   return (
     <>
       {label && <Label text={label} name={name} />}
@@ -15,6 +15,7 @@ const SelectField = ({ name, placeholder, options, label }) => {
           className={styles['select-field__select']}
           name={name}
           placeholder={placeholder}
+          {...props}
         >
           {options.map((option, index) => {
             return (

@@ -3,7 +3,7 @@
 exports[`<FormLabel/> should match snapshot 1`] = `
 <label
   aria-label="Label for test"
-  className="form__label"
+  className="form__label form__label--md"
   data-test="component-label"
   htmlFor="test"
   id="test"

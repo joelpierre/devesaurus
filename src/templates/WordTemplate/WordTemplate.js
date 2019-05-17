@@ -12,6 +12,7 @@ import Row from '../../components/core/Row/Row';
 import Flex from '../../components/core/Flex/Flex';
 import { CoreLayout } from '../../layouts/CoreLayout';
 import { sortWordObj } from '../../utils';
+import FormBase from '../../components/molecules/FormBase/FormBase';
 
 export class WordTemplate extends PureComponent {
   componentDidMount() {
@@ -55,6 +56,8 @@ export class WordTemplate extends PureComponent {
                 <Heading priority="1" classes="text-center mt-1">
                   {pageContext.title}
                 </Heading>
+
+                <FormBase />
               </Flex>
             </Row>
           </Container>

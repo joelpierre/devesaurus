@@ -47,6 +47,57 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
           >
             test
           </Heading>
+          <FormBase
+            formGroups={
+              Array [
+                Object {
+                  "fieldSet": Object {
+                    "description": "some text here",
+                    "fields": Array [
+                      Object {
+                        "columns": Object {
+                          "colMd": 6,
+                        },
+                        "input": Object {
+                          "label": "label-1",
+                          "name": "test-1",
+                          "placeholder": "placeholder-1",
+                          "type": "text",
+                        },
+                        "type": "input",
+                      },
+                      Object {
+                        "columns": Object {
+                          "colMd": 6,
+                        },
+                        "input": Object {
+                          "label": "label-2",
+                          "name": "test-2",
+                          "options": Array [
+                            Object {
+                              "name": "option-name",
+                              "value": "option-value",
+                            },
+                          ],
+                          "placeholder": "placeholder-1",
+                        },
+                        "type": "select",
+                      },
+                      Object {
+                        "columns": Object {},
+                        "input": Object {
+                          "name": "file-name",
+                          "placeholder": "file-placeholder",
+                        },
+                        "type": "file",
+                      },
+                    ],
+                    "legend": "FormBase Legend",
+                  },
+                },
+              ]
+            }
+          />
         </Flex>
       </Row>
     </Container>

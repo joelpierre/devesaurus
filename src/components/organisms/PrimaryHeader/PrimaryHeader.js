@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import * as styles from './PrimaryHeader.module.scss';
 import Brand from '../../atoms/Brand/Brand';
-import PrimaryMenu from '../../molecules/PrimaryMenu/PrimaryMenu';
 import Heading from '../../core/Heading/Heading';
+import InputField from '../../atoms/InputField/InputField';
 
 const PrimaryHeader = ({ title }) => (
   <header
@@ -24,7 +24,14 @@ const PrimaryHeader = ({ title }) => (
         </div>
       )}
 
-      <PrimaryMenu classes={styles['primary-header__menu']} />
+      <div className={styles['primary-header__search']}>
+        <InputField
+          name="hero-search"
+          type="text"
+          placeholder="Enter a search term. e.g. HTML"
+          classes={styles['primary-header__input']}
+        />
+      </div>
     </div>
   </header>
 );

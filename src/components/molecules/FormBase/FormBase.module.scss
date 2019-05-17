@@ -1,0 +1,14 @@
+@import "~sass/core";
+
+.form-base {
+  $root: &;
+  padding: 0;
+
+  &__legend {
+    font-weight: bold;
+  }
+
+  &__description {
+    margin-bottom: 2rem !important;
+  }
+}

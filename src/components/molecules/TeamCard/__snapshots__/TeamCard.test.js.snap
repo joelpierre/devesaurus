@@ -26,6 +26,7 @@ exports[`<TeamCard/> should match snapshot 1`] = `
       link="slug"
       size="md"
       theme="tint-omega"
+      type="button"
     >
       Read 
       First Name

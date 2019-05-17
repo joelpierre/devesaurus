@@ -26,6 +26,7 @@ exports[`<SelectField/> should render with FormLabel 1`] = `
 <Fragment>
   <FormLabel
     name="test-name"
+    size="md"
     text="hello"
   />
   <div

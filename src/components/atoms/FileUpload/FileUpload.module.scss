@@ -1,18 +1,28 @@
 @import "~sass/core";
 
 .file-upload {
+  $root: &;
   position: relative;
   display: inline-block;
-  height: 45px;
+  padding: 0;
+  height: spacing(5);
   width: 100%;
   margin-bottom: 0;
-  padding: 0;
   line-height: 1;
   background-color: white;
-  border: 1px solid $color-tint-psi;
-  border-radius: 0;
+  border-radius: $radius-rounded;
+  border: 1px solid $color-tint-delta;
   cursor: pointer;
   overflow: hidden;
+
+  @include hover {
+    border-color: $color-tint-psi;
+  }
+
+  &:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
 
   &__inner {
     display: block;
@@ -33,11 +43,6 @@
     opacity: 0;
     line-height: 1;
     cursor: pointer;
-
-    @include hover-focus {
-      outline: 1px dotted;
-      outline: 5px auto -webkit-focus-ring-color;
-    }
   }
 
   &__label {
@@ -59,15 +64,16 @@
   &__btn {
     align-self: center;
     max-height: 100%;
-    display: inline-flex;
+    display: flex;
     align-content: center;
     padding: 1.6rem;
     margin-left: auto;
-    background-color: $color-brand;
+    background-color: $color-alpha;
 
     &-text {
       align-self: center;
       display: inline-block;
+      color: $color-tint-alpha;
     }
   }
 
