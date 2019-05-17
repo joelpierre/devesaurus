@@ -3,8 +3,11 @@
 exports[`<Heading/> should match snapshot 1`] = `
 <h1
   className="heading-1"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "heading text",
+    }
+  }
   data-test="component-heading"
->
-  heading text
-</h1>
+/>
 `;

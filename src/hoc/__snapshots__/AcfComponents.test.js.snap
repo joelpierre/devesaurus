@@ -136,10 +136,13 @@ exports[`<AcfComponents/> should match snapshot 1`] = `
                     >
                       <h2
                         className="heading-2"
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "CTA Banner",
+                          }
+                        }
                         data-test="component-heading"
-                      >
-                        CTA Banner
-                      </h2>
+                      />
                     </Heading>
                   </div>
                 </Flex>

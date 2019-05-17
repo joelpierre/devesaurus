@@ -286,10 +286,13 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
       >
         <h3
           className="heading-3"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "title",
+            }
+          }
           data-test="component-heading"
-        >
-          title
-        </h3>
+        />
       </Heading>
     </header>
     <div

@@ -5,6 +5,7 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
   classes="word word__test-slug"
   data-test="template-word"
   description=""
+  headerTitle="test <span class=\\"ml-1\\">[test]</span>"
   onGetSiteMeta={[Function]}
   onGetSiteOptions={[Function]}
   title="test"

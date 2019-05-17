@@ -18,7 +18,9 @@ exports[`<CoreLayout/> should match snapshot 1`] = `
     ogType="website"
     title="Default Title"
   />
-  <PrimaryHeader />
+  <PrimaryHeader
+    title="Default Title"
+  />
   <main
     className="primary-main"
     data-test="core-layout-main"

@@ -4,19 +4,22 @@ import { shallow } from 'enzyme/build';
 import ConnectedWordTemplate, { WordTemplate } from './WordTemplate';
 import { checkProps, matchSnapshot } from '../../utils/test';
 import * as utils from '../../utils';
-import { sortWordObj } from '../../utils';
 
 const defaultProps = {
   onGetWord: jest.fn(),
   clearWordData: jest.fn(),
   wordData: {
     acf: {
+      pronunciation: 'test',
       components: [{ acf_fc_layout: 'WordPressAcf_Text_Block' }],
     },
   },
   pageContext: {
     title: 'test',
     slug: 'test-slug',
+    acf: {
+      pronunciation: 'test',
+    },
     yoast_meta: {
       yoast_wpseo_metadesc: '',
     },

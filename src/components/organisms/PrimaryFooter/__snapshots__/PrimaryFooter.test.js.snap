@@ -19,7 +19,7 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
         classes={null}
         col={null}
         colLg={4}
-        colMd={6}
+        colMd={5}
         colSm={null}
         colXl={null}
         colXs={null}
@@ -54,14 +54,14 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
           </a>
         </p>
         <SocialMenu
-          classes="mt-3"
+          classes="mt-3 primary-footer__social"
         />
       </Flex>
       <Flex
-        classes="mx-auto"
+        classes="ml-auto"
         col={null}
         colLg={3}
-        colMd={null}
+        colMd={6}
         colSm={null}
         colXl={null}
         colXs={null}
@@ -78,13 +78,15 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
         >
           Featured Words
         </Heading>
-        <FeaturedWordsList />
+        <FeaturedWordsList
+          classes="primary-footer__featured-words"
+        />
       </Flex>
       <Flex
-        classes="ml-auto"
+        classes="ml-lg-auto order-lg-1"
         col={null}
         colLg={4}
-        colMd={6}
+        colMd={12}
         colSm={null}
         colXl={null}
         colXs={null}
@@ -96,7 +98,7 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
         xs={false}
       >
         <Heading
-          classes="primary-footer__heading display-none"
+          classes="primary-footer__heading"
           priority={5}
         >
           Word Tags
@@ -121,7 +123,7 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
         classes="primary-footer__legal"
         col={null}
         colLg={5}
-        colMd={null}
+        colMd={12}
         colSm={null}
         colXl={null}
         colXs={null}
@@ -144,7 +146,7 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
         classes={null}
         col={null}
         colLg={7}
-        colMd={null}
+        colMd={12}
         colSm={null}
         colXl={null}
         colXs={null}

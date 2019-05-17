@@ -1,18 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<PureFeaturedWordsList/> should match pure snapshot 1`] = `
-<li
-  className="featured-words-list__item"
-  data-test="component-pure-featured-words-list"
-  key="1"
->
-  <mockConstructor
-    className="featured-words-list__link"
-    to="/word/slug"
+<Fragment>
+  <li
+    className="featured-words-list__item"
+    data-test="component-pure-featured-words-list"
+    key="1"
   >
-    title
-  </mockConstructor>
-</li>
+    <mockConstructor
+      className="featured-words-list__link"
+      to="/word/slug"
+    >
+      title
+    </mockConstructor>
+  </li>
+</Fragment>
 `;
 
 exports[`<PureFeaturedWordsList/> should match snapshot 1`] = `
