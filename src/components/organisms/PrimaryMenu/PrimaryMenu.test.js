@@ -1,15 +1,21 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { StaticQuery } from 'gatsby';
-import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme/build';
 
 import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 
-import PrimaryMenu, { PurePrimaryMenu } from './PrimaryMenu';
+import ConnectedPrimaryMenu, {
+  PrimaryMenu,
+  PurePrimaryMenu,
+} from './PrimaryMenu';
 
-const defaultProps = {};
+const defaultProps = {
+  isMenuOpen: false,
+  setMenuState: jest.fn(),
+};
 
 const defaultPureProps = {
+  isMenuOpen: false,
+  setMenuState: jest.fn(),
   allWordpressWpApiMenusMenusItems: {
     edges: [
       {

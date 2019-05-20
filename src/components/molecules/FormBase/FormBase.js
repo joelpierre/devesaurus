@@ -11,60 +11,17 @@ import Row from '../../core/Row/Row';
 import Flex from '../../core/Flex/Flex';
 import FormField from '../FormField/FormField';
 import Button from '../Buttons/Button';
+import { slugify } from '../../../utils';
+import { themePropType } from '../../../utils/propTypes';
 
-const mockFormBase = [
-  {
-    fieldSet: {
-      legend: 'FormBase Legend',
-      description: 'some text here',
-      fields: [
-        {
-          type: 'input',
-          columns: {
-            colMd: 6,
-          },
-          input: {
-            label: 'label-1',
-            name: 'test-1',
-            type: 'text',
-            placeholder: 'placeholder-1',
-          },
-        },
-        {
-          type: 'select',
-          columns: {
-            colMd: 6,
-          },
-          input: {
-            label: 'label-2',
-            name: 'test-2',
-            placeholder: 'placeholder-1',
-            options: [
-              {
-                name: 'option-name',
-                value: 'option-value',
-              },
-            ],
-          },
-        },
-        {
-          type: 'file',
-          columns: {},
-          input: {
-            name: 'file-name',
-            placeholder: 'file-placeholder',
-          },
-        },
-      ],
-    },
-  },
-];
-
-const FormBase = ({ formGroups }) => {
+const FormBase = ({ formName, buttons, formGroups, encType, onSubmit }) => {
   return (
     <form
+      id={slugify(formName)}
       data-test="component-form-base"
       className={classNames(styles['form-base'])}
+      encType={encType}
+      onSubmit={onSubmit}
     >
       {formGroups.map(
         ({ fieldSet: { legend, description, fields } }, index) => (
@@ -80,12 +37,12 @@ const FormBase = ({ formGroups }) => {
                 (
                   {
                     type,
-                    columns: { col, colXs, colSm, colMd, colLg, colXl },
                     input: {
                       name,
                       type: inputType,
                       placeholder,
                       options,
+                      classes,
                       ...field
                     },
                   },
@@ -93,12 +50,12 @@ const FormBase = ({ formGroups }) => {
                 ) => (
                   <Flex
                     key={index}
-                    colXl={colXl}
-                    colLg={colLg}
-                    colMd={colMd}
-                    colSm={colSm}
-                    colXs={colXs}
-                    col={col || 12}
+                    colXl={field.columns ? field.columns.colXl : undefined}
+                    colLg={field.columns ? field.columns.colLg : undefined}
+                    colMd={field.columns ? field.columns.colMd : undefined}
+                    colSm={field.columns ? field.columns.colSm : undefined}
+                    colXs={field.columns ? field.columns.colXs : undefined}
+                    col={field.columns ? field.columns.col || 12 : 12}
                   >
                     <FormField
                       classes={classNames(styles['form-base__form-field'])}
@@ -108,7 +65,10 @@ const FormBase = ({ formGroups }) => {
                           name={name}
                           type={inputType}
                           placeholder={placeholder}
-                          classes={classNames(styles['form-base__input-field'])}
+                          classes={classNames(
+                            styles['form-base__input-field'],
+                            classes
+                          )}
                           {...field}
                         />
                       )}
@@ -116,7 +76,10 @@ const FormBase = ({ formGroups }) => {
                         <SelectField
                           name={name}
                           placeholder={placeholder}
-                          classes={classNames(styles['form-base__select'])}
+                          classes={classNames(
+                            styles['form-base__select-field'],
+                            classes
+                          )}
                           options={options}
                           {...field}
                         />
@@ -125,7 +88,10 @@ const FormBase = ({ formGroups }) => {
                         <FileUpload
                           name={name}
                           placeholder={placeholder}
-                          classes={classNames(styles['form-base__file-upload'])}
+                          classes={classNames(
+                            styles['form-base__file-upload'],
+                            classes
+                          )}
                           {...field}
                         />
                       )}
@@ -138,20 +104,47 @@ const FormBase = ({ formGroups }) => {
         )
       )}
 
-      <FormField classes={classNames(styles['form-base__submit-field'])}>
-        <Button behavior="action" type="submit">
-          Submit
-        </Button>
-      </FormField>
+      <Row classes={styles['form-base__row']}>
+        {buttons.map(({ theme, type, classes, text }, index) => (
+          <Flex key={index} auto>
+            <FormField classes={classNames(styles['form-base__buttons'])}>
+              <Button
+                theme={theme}
+                behavior="action"
+                type={type}
+                classes={classNames(classes, styles['form-base__button'])}
+              >
+                {text}
+              </Button>
+            </FormField>
+          </Flex>
+        ))}
+      </Row>
     </form>
   );
 };
 
 FormBase.defaultProps = {
-  formGroups: mockFormBase,
+  encType: 'multipart/form-data',
+  onSubmit: e => {
+    e.preventDefault();
+    console.warn(
+      'WARNING:: Please add an onSubmit function as a prop to the FormBase component'
+    );
+  },
 };
 
 FormBase.propTypes = {
+  formName: PropTypes.string.isRequired,
+  encType: PropTypes.string,
+  buttons: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.oneOf(['submit', 'reset']),
+      classes: PropTypes.string,
+      text: PropTypes.string,
+      ...themePropType,
+    })
+  ).isRequired,
   formGroups: PropTypes.arrayOf(
     PropTypes.shape({
       fieldSet: PropTypes.shape({
@@ -199,7 +192,8 @@ FormBase.propTypes = {
         ),
       }),
     })
-  ),
+  ).isRequired,
+  onSubmit: PropTypes.func,
 };
 
 export default FormBase;

@@ -59,10 +59,8 @@ exports[`<InputGroup/> should match snapshot with append button 1`] = `
       data-test="input-group-button"
     >
       <Button
-        action={null}
         behavior="action"
         caps={true}
-        classes={null}
         link="#"
         size="md"
         theme="tint-omega"
@@ -176,10 +174,8 @@ exports[`<InputGroup/> should match snapshot with prepend button 1`] = `
       data-test="input-group-button"
     >
       <Button
-        action={null}
         behavior="action"
         caps={true}
-        classes={null}
         link="#"
         size="md"
         theme="tint-omega"

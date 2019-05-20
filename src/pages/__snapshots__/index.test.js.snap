@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Index/> should match snapshot 1`] = `
-<Component
+<BasicLayout
+  classes={null}
   data-test="page-index"
+  description="Default description"
   title="Devesaurus Home"
 >
   <HeroSearch
@@ -11,5 +13,5 @@ exports[`<Index/> should match snapshot 1`] = `
   <mockConstructor
     render={[Function]}
   />
-</Component>
+</BasicLayout>
 `;

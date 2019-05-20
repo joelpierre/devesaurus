@@ -5,3 +5,5 @@
 *registerServiceWorker.js
 ./src/utils/test/index.js
 /config
+./src/html.js
+html.js

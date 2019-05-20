@@ -1,35 +1,45 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import PrimaryHeader from '../components/organisms/PrimaryHeader/PrimaryHeader';
 import PrimaryFooter from '../components/organisms/PrimaryFooter/PrimaryFooter';
 import SEO from '../components/core/SEO/SEO';
-import { getSiteMeta, getSiteOptions } from '../store/actions';
 import styles from './Layout.module.scss';
+import PrimaryMenu from '../components/organisms/PrimaryMenu/PrimaryMenu';
 
 export class CoreLayout extends PureComponent {
-  componentDidMount() {
-    const { onGetSiteMeta, onGetSiteOptions } = this.props;
-    onGetSiteMeta();
-    onGetSiteOptions();
-  }
-
   render() {
-    const { children, title, description, classes, headerTitle } = this.props;
+    const {
+      children,
+      title,
+      description,
+      classes,
+      headerTitle,
+      isMenuOpen,
+    } = this.props;
 
     return (
       <>
         <SEO title={title} description={description} />
-        <PrimaryHeader title={headerTitle || title} />
-        <main
-          data-test="core-layout-main"
-          className={classNames([styles['primary-main'], classes])}
+
+        <PrimaryMenu isMenuOpen={isMenuOpen} />
+
+        <div
+          id="push-wrapper"
+          className={classNames('push-wrapper', {
+            'push-wrapper--active': isMenuOpen,
+          })}
         >
-          {children}
-        </main>
-        <PrimaryFooter />
+          <PrimaryHeader title={headerTitle || title} />
+          <main
+            data-test="core-layout-main"
+            className={classNames([styles['primary-main'], classes])}
+          >
+            {children}
+          </main>
+          <PrimaryFooter />
+        </div>
       </>
     );
   }
@@ -41,8 +51,7 @@ CoreLayout.defaultProps = {
   headerTitle: undefined,
   description: 'Default description',
   classes: null,
-  onGetSiteMeta: () => {},
-  onGetSiteOptions: () => {},
+  isMenuOpen: false,
 };
 
 CoreLayout.propTypes = {
@@ -54,20 +63,7 @@ CoreLayout.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-  onGetSiteMeta: PropTypes.func,
-  onGetSiteOptions: PropTypes.func,
+  isMenuOpen: PropTypes.bool,
 };
 
-/* istanbul ignore next */
-const mapStateToProps = ({ core: { title, description } }) => ({
-  title,
-  description,
-});
-
-export default connect(
-  mapStateToProps,
-  {
-    onGetSiteMeta: getSiteMeta,
-    onGetSiteOptions: getSiteOptions,
-  }
-)(CoreLayout);
+export default CoreLayout;

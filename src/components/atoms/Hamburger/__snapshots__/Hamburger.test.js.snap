@@ -1,23 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Hamburger/> should match snapshot 1`] = `
-<div
+<button
   className="hamburger"
   data-test="component-hamburger"
+  type="button"
 >
   <span
-    className="hamburger__line"
+    className="hamburger__line hamburger__line-theme--undefined"
   />
   <span
-    className="hamburger__line"
+    className="hamburger__line hamburger__line-theme--undefined"
   />
   <span
-    className="hamburger__line"
+    className="hamburger__line hamburger__line-theme--undefined"
   />
   <span
-    className="hamburger__company"
-  >
-    test
-  </span>
-</div>
+    className="hamburger__descriptor"
+  />
+</button>
 `;

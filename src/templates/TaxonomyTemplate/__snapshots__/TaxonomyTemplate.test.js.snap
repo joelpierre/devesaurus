@@ -5,8 +5,7 @@ exports[`<TaxonomyTemplate/> should match snapshot 1`] = `
   classes="taxonomy taxonomy__test-taxonomy"
   data-test="template-taxonomy"
   description=""
-  onGetSiteMeta={[Function]}
-  onGetSiteOptions={[Function]}
+  isMenuOpen={false}
   title="test"
 >
   <Section
@@ -26,13 +25,7 @@ exports[`<TaxonomyTemplate/> should match snapshot 1`] = `
         row={true}
       >
         <Flex
-          classes={null}
-          col={null}
-          colLg={null}
-          colMd={null}
-          colSm={null}
-          colXl={null}
-          colXs={null}
+          auto={false}
           lg={false}
           md={false}
           sm={false}

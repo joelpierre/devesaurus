@@ -17,10 +17,10 @@ export class PostTemplate extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    const { postData } = this.props;
+    const { pageData } = this.props;
 
-    if (postData && postData !== prevProps.postData) {
-      const { components } = postData.acf;
+    if (pageData && pageData !== prevProps.pageData) {
+      const { components } = pageData.acf;
       if (components) mapOverACFComponents(components);
     }
   }
@@ -31,7 +31,7 @@ export class PostTemplate extends PureComponent {
   }
 
   render() {
-    const { postData, pageContext } = this.props;
+    const { pageData, pageContext, isMenuOpen } = this.props;
 
     return (
       <CoreLayout
@@ -42,15 +42,16 @@ export class PostTemplate extends PureComponent {
           styles.post,
           `post__${pageContext.slug.replace('_', '-')}`,
         ])}
+        isMenuOpen={isMenuOpen}
       >
         <Heading priority="1" classes="text-center">
           {pageContext.title}
         </Heading>
 
-        {postData && (
+        {pageData && (
           <>
-            {postData.acf &&
-              postData.acf.components.map((component, index) => {
+            {pageData.acf &&
+              pageData.acf.components.map((component, index) => {
                 return (
                   <AcfComponents
                     component={component}
@@ -68,18 +69,21 @@ export class PostTemplate extends PureComponent {
 
 PostTemplate.defaultProps = {
   pageContext: null,
-  postData: null,
+  pageData: null,
 };
 
 PostTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
-  postData: PropTypes.instanceOf(Object),
+  pageData: PropTypes.instanceOf(Object),
   onGetPost: PropTypes.func.isRequired,
   clearPostData: PropTypes.func.isRequired,
+  isMenuOpen: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = state => ({
-  postData: state.post,
+/* istanbul ignore next */
+const mapStateToProps = ({ post, core: { isMenuOpen } }) => ({
+  pageData: post,
+  isMenuOpen,
 });
 
 /* istanbul ignore next */

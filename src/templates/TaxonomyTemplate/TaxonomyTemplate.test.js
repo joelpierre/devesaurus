@@ -1,7 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme/build';
 
-import TaxonomyTemplate from './TaxonomyTemplate';
+import ConnectedTaxonomyTemplate, {
+  TaxonomyTemplate,
+} from './TaxonomyTemplate';
 import { checkProps, findByTestAttr, matchSnapshot } from '../../utils/test';
 
 const defaultProps = {
@@ -10,6 +12,8 @@ const defaultProps = {
     slug: 'test-slug',
     taxonomy: 'test-taxonomy',
   },
+  isMenuOpen: false,
+  setMenuState: jest.fn(),
 };
 
 /**

@@ -5,8 +5,7 @@ exports[`<PageTemplate/> should match snapshot 1`] = `
   classes="page page__test-slug"
   data-test="template-page"
   description=""
-  onGetSiteMeta={[Function]}
-  onGetSiteOptions={[Function]}
+  isMenuOpen={false}
   title="test"
 >
   <AcfComponents

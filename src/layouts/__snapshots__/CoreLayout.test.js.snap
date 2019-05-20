@@ -18,17 +18,25 @@ exports[`<CoreLayout/> should match snapshot 1`] = `
     ogType="website"
     title="Default Title"
   />
-  <PrimaryHeader
-    title="Default Title"
+  <Component
+    isMenuOpen={false}
   />
-  <main
-    className="primary-main"
-    data-test="core-layout-main"
+  <div
+    className="push-wrapper"
+    id="push-wrapper"
   >
-    Hello
-  </main>
-  <PrimaryFooter
-    company="Devesaurus"
-  />
+    <Component
+      title="Default Title"
+    />
+    <main
+      className="primary-main"
+      data-test="core-layout-main"
+    >
+      Hello
+    </main>
+    <PrimaryFooter
+      company="Devesaurus"
+    />
+  </div>
 </Fragment>
 `;

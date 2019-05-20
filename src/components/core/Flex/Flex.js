@@ -6,6 +6,7 @@ import { columnShape } from '../../../utils/propTypes';
 
 const Flex = ({
   children,
+  auto,
   type,
   classes,
   xs,
@@ -31,6 +32,7 @@ const Flex = ({
         classes,
         {
           [styles.flex]: !col,
+          [styles['flex--auto']]: auto,
           [styles['flex-xs']]: xs,
           [styles['flex-sm']]: sm,
           [styles['flex-md']]: md,
@@ -51,23 +53,25 @@ const Flex = ({
 };
 
 Flex.defaultProps = {
-  classes: null,
+  classes: undefined,
   type: 'div',
+  auto: false,
   xs: false,
   sm: false,
   md: false,
   lg: false,
   xl: false,
-  col: null,
-  colXs: null,
-  colSm: null,
-  colMd: null,
-  colLg: null,
-  colXl: null,
+  col: undefined,
+  colXs: undefined,
+  colSm: undefined,
+  colMd: undefined,
+  colLg: undefined,
+  colXl: undefined,
 };
 
 Flex.propTypes = {
   type: PropTypes.string,
+  auto: PropTypes.bool,
   col: columnShape,
   xs: PropTypes.bool,
   sm: PropTypes.bool,

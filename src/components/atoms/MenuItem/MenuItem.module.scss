@@ -4,11 +4,12 @@
   $root: &;
 
   position: relative;
-  padding: 1rem 1.5rem;
   display: inline-flex;
 
   &__link {
+    padding: 1rem 1.5rem;
     color: inherit;
     font-size: inherit;
+    display: block;
   }
 }

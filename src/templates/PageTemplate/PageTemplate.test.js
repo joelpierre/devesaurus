@@ -27,6 +27,8 @@ const defaultProps = {
       yoast_wpseo_metadesc: '',
     },
   },
+  isMenuOpen: false,
+  setMenuState: jest.fn(),
 };
 
 /**

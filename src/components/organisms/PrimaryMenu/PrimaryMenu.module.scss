@@ -1,0 +1,35 @@
+@import "~sass/core";
+
+.primary-menu {
+  $root: &;
+
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: -100%;
+  z-index: 10;
+  transition: .8s all;
+  overflow: hidden;
+
+  &--is-active {
+    left: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-bottom: 0;
+    width: 450px;
+    z-index: 100;
+  }
+
+  &__item {
+    width: 100%;
+    display: block;
+    margin-bottom: 0;
+  }
+}

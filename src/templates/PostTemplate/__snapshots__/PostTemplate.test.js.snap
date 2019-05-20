@@ -5,8 +5,7 @@ exports[`<PostTemplate/> should match snapshot 1`] = `
   classes="post post__test-slug"
   data-test="template-post"
   description=""
-  onGetSiteMeta={[Function]}
-  onGetSiteOptions={[Function]}
+  isMenuOpen={false}
   title="test"
 >
   <Heading

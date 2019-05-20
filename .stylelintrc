@@ -10,6 +10,7 @@
     "color-hex-length": null,
     "selector-pseudo-element-colon-notation": "single",
     "declaration-empty-line-before": null,
-    "at-rule-empty-line-before": null
+    "at-rule-empty-line-before": null,
+    "declaration-block-no-shorthand-property-overrides": null
   }
 }

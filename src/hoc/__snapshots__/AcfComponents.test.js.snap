@@ -112,13 +112,7 @@ exports[`<AcfComponents/> should match snapshot 1`] = `
                 data-test="component-grid-row"
               >
                 <Flex
-                  classes={null}
-                  col={null}
-                  colLg={null}
-                  colMd={null}
-                  colSm={null}
-                  colXl={null}
-                  colXs={null}
+                  auto={false}
                   lg={false}
                   md={false}
                   sm={false}

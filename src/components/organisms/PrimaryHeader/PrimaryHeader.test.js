@@ -1,12 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
 
 import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 
-import PrimaryHeader from './PrimaryHeader';
+import ConnectedPrimaryHeader, { PrimaryHeader } from './PrimaryHeader';
 
-const defaultProps = {};
+const defaultProps = {
+  isMenuOpen: false,
+  setMenuState: jest.fn(),
+};
 
 /**
  * Factory function to create a ShallowWrapper for the PrimaryHeader component.

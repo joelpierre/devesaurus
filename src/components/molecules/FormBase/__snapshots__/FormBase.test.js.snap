@@ -4,6 +4,9 @@ exports[`<FormBase/> should match snapshot 1`] = `
 <form
   className="form-base"
   data-test="component-form-base"
+  encType="multipart/form-data"
+  id="test-search-form"
+  onSubmit={[Function]}
 >
   <div
     className="form-base__group"
@@ -26,13 +29,8 @@ exports[`<FormBase/> should match snapshot 1`] = `
       row={true}
     >
       <Flex
-        classes={null}
+        auto={false}
         col={12}
-        colLg={null}
-        colMd={6}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         key="0"
         lg={false}
         md={false}
@@ -60,13 +58,8 @@ exports[`<FormBase/> should match snapshot 1`] = `
         </FormField>
       </Flex>
       <Flex
-        classes={null}
+        auto={false}
         col={12}
-        colLg={null}
-        colMd={6}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         key="1"
         lg={false}
         md={false}
@@ -79,7 +72,7 @@ exports[`<FormBase/> should match snapshot 1`] = `
           classes="form-base__form-field"
         >
           <SelectField
-            classes="form-base__select"
+            classes="form-base__select-field"
             label="label-2"
             name="test-2"
             options={
@@ -95,13 +88,8 @@ exports[`<FormBase/> should match snapshot 1`] = `
         </FormField>
       </Flex>
       <Flex
-        classes={null}
+        auto={false}
         col={12}
-        colLg={null}
-        colMd={null}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         key="2"
         lg={false}
         md={false}
@@ -122,20 +110,62 @@ exports[`<FormBase/> should match snapshot 1`] = `
       </Flex>
     </Row>
   </div>
-  <FormField
-    classes="form-base__submit-field"
+  <Row
+    classes="form-base__row"
+    column={false}
+    reverse={false}
+    row={true}
   >
-    <Button
-      action={null}
-      behavior="action"
-      caps={true}
-      classes={null}
-      size="md"
-      theme="tint-omega"
-      type="submit"
+    <Flex
+      auto={true}
+      key="0"
+      lg={false}
+      md={false}
+      sm={false}
+      type="div"
+      xl={false}
+      xs={false}
     >
-      Submit
-    </Button>
-  </FormField>
+      <FormField
+        classes="form-base__buttons"
+      >
+        <Button
+          behavior="action"
+          caps={true}
+          classes="form-base__button"
+          size="md"
+          theme="brand"
+          type="submit"
+        >
+          Submit Form
+        </Button>
+      </FormField>
+    </Flex>
+    <Flex
+      auto={true}
+      key="1"
+      lg={false}
+      md={false}
+      sm={false}
+      type="div"
+      xl={false}
+      xs={false}
+    >
+      <FormField
+        classes="form-base__buttons"
+      >
+        <Button
+          behavior="action"
+          caps={true}
+          classes="form-base__button"
+          size="md"
+          theme="beta"
+          type="reset"
+        >
+          Reset Form
+        </Button>
+      </FormField>
+    </Flex>
+  </Row>
 </form>
 `;

@@ -8,7 +8,7 @@ import * as utils from '../../utils';
 const defaultProps = {
   onGetWord: jest.fn(),
   clearWordData: jest.fn(),
-  wordData: {
+  pageData: {
     acf: {
       pronunciation: 'test',
       components: [{ acf_fc_layout: 'WordPressAcf_Text_Block' }],
@@ -24,6 +24,8 @@ const defaultProps = {
       yoast_wpseo_metadesc: '',
     },
   },
+  isMenuOpen: false,
+  setMenuState: jest.fn(),
 };
 
 /**
@@ -67,7 +69,7 @@ describe('<WordTemplate/>', () => {
     utils.sortWordObj = jest.fn();
 
     wrapper.setProps({
-      wordData: {
+      pageData: {
         acf: {
           page_theme: 'brand',
           components: [],

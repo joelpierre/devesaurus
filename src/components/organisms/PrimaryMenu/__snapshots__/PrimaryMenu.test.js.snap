@@ -9,8 +9,9 @@ exports[`<PrimaryMenu/> should match snapshot 1`] = `
 
 exports[`<PrimaryMenu/> should match snapshot 2`] = `
 <nav
-  className="primary-menu undefined"
+  className="primary-menu"
   data-test="component-primary-menu"
+  onClick={[Function]}
 >
   <ul
     className="primary-menu__list"

@@ -4,8 +4,11 @@ import { shallow } from 'enzyme';
 import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 
 import FormBase from './FormBase';
+import { mockFormData } from '../../../../__mocks__/mock-form';
 
-const defaultProps = {};
+const defaultProps = {
+  ...mockFormData,
+};
 
 /**
  * Factory function to create a ShallowWrapper for the FormBase component.

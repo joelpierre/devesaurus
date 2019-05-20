@@ -14,6 +14,7 @@ export {
   getSiteOptionsFailed,
   setSiteMeta,
   setSiteOptions,
+  setMenuState,
 } from './core.actions';
 
 /* istanbul ignore next */

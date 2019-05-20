@@ -19,13 +19,8 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
       row={true}
     >
       <Flex
-        classes={null}
-        col={null}
-        colLg={null}
+        auto={false}
         colMd="8"
-        colSm={null}
-        colXl={null}
-        colXs={null}
         lg={false}
         md={false}
         sm={false}
@@ -58,13 +53,8 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
       row={true}
     >
       <Flex
-        classes={null}
+        auto={false}
         col={12}
-        colLg={null}
-        colMd={null}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         lg={false}
         md={false}
         sm={false}
@@ -397,13 +387,8 @@ test<br />
       row={true}
     >
       <Flex
-        classes={null}
-        col={null}
-        colLg={null}
+        auto={false}
         colMd="8"
-        colSm={null}
-        colXl={null}
-        colXs={null}
         lg={false}
         md={false}
         sm={false}
@@ -412,10 +397,8 @@ test<br />
         xs={false}
       >
         <Button
-          action={null}
           behavior="router"
           caps={true}
-          classes={null}
           link="/"
           size="lg"
           theme="tint-alpha"

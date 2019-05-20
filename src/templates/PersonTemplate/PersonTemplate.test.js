@@ -8,7 +8,9 @@ import * as utils from '../../utils';
 const defaultProps = {
   onGetPerson: jest.fn(),
   clearPersonData: jest.fn(),
-  personData: {
+  isMenuOpen: false,
+  setMenuState: jest.fn(),
+  pageData: {
     acf: {
       page_theme: 'brand',
       components: [{ acf_fc_layout: 'WordPressAcf_Text_Block' }],
@@ -70,7 +72,7 @@ describe('<PersonTemplate/>', () => {
     utils.mapOverACFComponents = jest.fn();
 
     wrapper.setProps({
-      personData: {
+      pageData: {
         acf: {
           page_theme: 'brand',
           components: [],

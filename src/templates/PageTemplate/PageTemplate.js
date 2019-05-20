@@ -8,7 +8,6 @@ import * as pageActions from '../../store/actions/page.actions';
 import { mapOverACFComponents } from '../../utils';
 import { CoreLayout } from '../../layouts/CoreLayout';
 import AcfComponents from '../../hoc/AcfComponents';
-import PageHero from '../../components/organisms/PageHero/PageHero';
 
 export class PageTemplate extends PureComponent {
   componentDidMount() {
@@ -33,9 +32,7 @@ export class PageTemplate extends PureComponent {
   }
 
   render() {
-    const { pageData, pageContext } = this.props;
-
-    // console.log(pageContext);
+    const { pageData, pageContext, isMenuOpen } = this.props;
 
     return (
       <CoreLayout
@@ -46,6 +43,7 @@ export class PageTemplate extends PureComponent {
           styles.page,
           `page__${pageContext.slug.replace('_', '-')}`,
         ])}
+        isMenuOpen={isMenuOpen}
       >
         {pageData && (
           <>
@@ -76,11 +74,13 @@ PageTemplate.propTypes = {
   pageData: PropTypes.instanceOf(Object),
   onGetPage: PropTypes.func.isRequired,
   clearPageData: PropTypes.func.isRequired,
+  isMenuOpen: PropTypes.bool.isRequired,
 };
 
 /* istanbul ignore next */
-const mapStateToProps = state => ({
-  pageData: state.page,
+const mapStateToProps = ({ page, core: { isMenuOpen } }) => ({
+  pageData: page,
+  isMenuOpen,
 });
 
 /* istanbul ignore next */

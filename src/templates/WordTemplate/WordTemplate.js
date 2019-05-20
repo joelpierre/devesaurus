@@ -12,7 +12,6 @@ import Row from '../../components/core/Row/Row';
 import Flex from '../../components/core/Flex/Flex';
 import { CoreLayout } from '../../layouts/CoreLayout';
 import { sortWordObj } from '../../utils';
-import FormBase from '../../components/molecules/FormBase/FormBase';
 
 export class WordTemplate extends PureComponent {
   componentDidMount() {
@@ -21,10 +20,10 @@ export class WordTemplate extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    const { wordData } = this.props;
+    const { pageData } = this.props;
 
-    if (wordData && wordData !== prevProps.wordData) {
-      sortWordObj(wordData);
+    if (pageData && pageData !== prevProps.pageData) {
+      sortWordObj(pageData);
     }
   }
 
@@ -34,7 +33,7 @@ export class WordTemplate extends PureComponent {
   }
 
   render() {
-    const { pageContext } = this.props;
+    const { pageContext, isMenuOpen } = this.props;
 
     return (
       <CoreLayout
@@ -48,16 +47,15 @@ export class WordTemplate extends PureComponent {
           styles.word,
           `word__${pageContext.slug.replace('_', '-')}`,
         ])}
+        isMenuOpen={isMenuOpen}
       >
         <Section>
           <Container>
             <Row>
-              <Flex classes="flex">
+              <Flex>
                 <Heading priority="1" classes="text-center mt-1">
                   {pageContext.title}
                 </Heading>
-
-                <FormBase />
               </Flex>
             </Row>
           </Container>
@@ -69,18 +67,21 @@ export class WordTemplate extends PureComponent {
 
 WordTemplate.defaultProps = {
   pageContext: null,
-  wordData: null,
+  pageData: null,
 };
 
 WordTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
-  wordData: PropTypes.instanceOf(Object),
+  pageData: PropTypes.instanceOf(Object),
   onGetWord: PropTypes.func.isRequired,
   clearWordData: PropTypes.func.isRequired,
+  isMenuOpen: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = state => ({
-  wordData: state.word,
+/* istanbul ignore next */
+const mapStateToProps = ({ word, core: { isMenuOpen } }) => ({
+  pageData: word,
+  isMenuOpen,
 });
 
 /* istanbul ignore next */

@@ -2,10 +2,11 @@
 
 exports[`<MenuItem/> should match snapshot 1`] = `
 <li
-  className="test-class undefined"
+  className="test-class menu-item"
   data-test="component-menu-item"
 >
   <mockConstructor
+    className="menu-item__link"
     key="Test Title"
     to="/test-title"
   >

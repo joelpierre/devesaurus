@@ -19,10 +19,8 @@ exports[`<TeamCard/> should match snapshot 1`] = `
   </div>
   <footer>
     <Button
-      action={null}
       behavior="router"
       caps={true}
-      classes={null}
       link="slug"
       size="md"
       theme="tint-omega"

@@ -16,10 +16,10 @@ const Button = ({
   theme,
   link,
   size,
-  action,
   caps,
   classes,
   type,
+  ...props
 }) => {
   let button;
   switch (behavior) {
@@ -37,6 +37,7 @@ const Button = ({
             },
             classes,
           ])}
+          {...props}
         >
           {children}
         </Link>
@@ -59,6 +60,7 @@ const Button = ({
           ])}
           target="_blank"
           rel="noopener noreferrer nofollow"
+          {...props}
         >
           {children}
         </a>
@@ -80,14 +82,7 @@ const Button = ({
             },
             classes,
           ])}
-          onClick={
-            action ||
-            (e => {
-              e.preventDefault();
-              console.log(e);
-              console.log('No Action added');
-            })
-          }
+          {...props}
         >
           {children}
         </button>
@@ -103,14 +98,13 @@ Button.defaultProps = {
   ...defaultSize('md'),
   caps: true,
   behavior: 'router',
-  action: null,
-  classes: null,
+  action: undefined,
+  classes: undefined,
   type: 'button',
 };
 
 Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
-  action: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

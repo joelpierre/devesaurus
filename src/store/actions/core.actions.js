@@ -9,6 +9,11 @@ export const setSiteMeta = data => ({
   data,
 });
 
+export const setMenuState = data => ({
+  type: coreActionTypes.SET_MENU_STATE,
+  data,
+});
+
 export const getSiteMetaFailed = () => ({
   type: coreActionTypes.GET_SITE_META_FAILED,
 });

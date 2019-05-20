@@ -1,8 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme/build';
-import toJson from 'enzyme-to-json';
 
-import ArchiveTemplate from './ArchiveTemplate';
+import ConnectedArchiveTemplate, { ArchiveTemplate } from './ArchiveTemplate';
 import { checkProps, findByTestAttr, matchSnapshot } from '../../utils/test';
 
 const defaultProps = {
@@ -11,6 +10,8 @@ const defaultProps = {
     slug: 'test-slug',
     taxonomy: 'test-taxonomy',
   },
+  isMenuOpen: false,
+  setMenuState: jest.fn(),
 };
 
 /**

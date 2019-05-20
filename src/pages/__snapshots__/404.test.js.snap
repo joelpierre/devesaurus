@@ -5,8 +5,6 @@ exports[`<Error404/> should match snapshot 1`] = `
   classes={null}
   data-test="page-error-404"
   description="Default description"
-  onGetSiteMeta={[Function]}
-  onGetSiteOptions={[Function]}
   title="Error page not found"
 >
   404 Error

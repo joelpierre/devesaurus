@@ -19,13 +19,8 @@ exports[`<ImageBlock/> should match snapshot 1`] = `
       row={true}
     >
       <Flex
+        auto={false}
         classes="flex text-center"
-        col={null}
-        colLg={null}
-        colMd={null}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         lg={false}
         md={false}
         sm={false}
@@ -64,13 +59,8 @@ exports[`<ImageBlock/> should render with pageTheme instead of module theme 1`] 
       row={true}
     >
       <Flex
+        auto={false}
         classes="flex text-center"
-        col={null}
-        colLg={null}
-        colMd={null}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         lg={false}
         md={false}
         sm={false}

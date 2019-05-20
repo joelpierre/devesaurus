@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Link } from 'gatsby';
-import * as styles from './MenuItem.module.scss';
+import styles from './MenuItem.module.scss';
 
 function MenuItem({ item, classes }) {
   return (
     <li
       data-test="component-menu-item"
-      className={`${classes} ${styles['menu-item']}`}
+      className={classNames(classes, styles['menu-item'])}
     >
       <Link
         className={styles['menu-item__link']}

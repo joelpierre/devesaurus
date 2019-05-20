@@ -19,13 +19,8 @@ exports[`<InlineQuote/> should match snapshot 1`] = `
       row={true}
     >
       <Flex
+        auto={false}
         classes="flex"
-        col={null}
-        colLg={null}
-        colMd={null}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         lg={false}
         md={false}
         sm={false}
@@ -61,13 +56,8 @@ exports[`<InlineQuote/> should render with pageTheme instead of module theme 1`]
       row={true}
     >
       <Flex
+        auto={false}
         classes="flex"
-        col={null}
-        colLg={null}
-        colMd={null}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         lg={false}
         md={false}
         sm={false}

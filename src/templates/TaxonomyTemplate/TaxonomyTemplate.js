@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { connect } from 'react-redux';
 
 import Heading from '../../components/core/Heading/Heading';
 import { CoreLayout } from '../../layouts/CoreLayout';
@@ -12,9 +13,7 @@ import styles from './TaxonomyTemplate.module.scss';
 
 export class TaxonomyTemplate extends PureComponent {
   render() {
-    const { pageContext } = this.props;
-
-    console.log(pageContext);
+    const { pageContext, isMenuOpen } = this.props;
 
     return (
       <CoreLayout
@@ -25,6 +24,7 @@ export class TaxonomyTemplate extends PureComponent {
           styles.taxonomy,
           styles[`taxonomy__${pageContext.taxonomy.replace('_', '-')}`],
         ])}
+        isMenuOpen={isMenuOpen}
       >
         <Section>
           <Container>
@@ -48,6 +48,12 @@ TaxonomyTemplate.defaultProps = {
 
 TaxonomyTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
+  isMenuOpen: PropTypes.bool.isRequired,
 };
 
-export default TaxonomyTemplate;
+/* istanbul ignore next */
+const mapStateToProps = ({ core: { isMenuOpen } }) => ({
+  isMenuOpen,
+});
+
+export default connect(mapStateToProps)(TaxonomyTemplate);

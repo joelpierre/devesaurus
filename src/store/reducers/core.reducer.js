@@ -13,12 +13,14 @@ export const initialState = {
   loading: false,
   error: false,
   options: null,
+  isMenuOpen: false,
 };
 
 /**
  * Set Site Meta Reducer
  * @param state
  * @param action
+ * @returns {updatedObject}
  */
 const setSiteMeta = (state, action) => {
   return updateObject(state, {
@@ -31,10 +33,23 @@ const setSiteMeta = (state, action) => {
  * Set Site Options Reducer
  * @param state
  * @param action
+ * @returns {updatedObject}
  */
 const setSiteOptions = (state, action) => {
   return updateObject(state, {
     options: action.data,
+  });
+};
+
+/**
+ * Set the menu state
+ * @param state
+ * @param action
+ * @returns {updatedObject}
+ */
+const setMenuState = (state, action) => {
+  return updateObject(state, {
+    isMenuOpen: action.data,
   });
 };
 
@@ -51,6 +66,9 @@ const coreReducer = (state = initialState, action) => {
 
     case coreActionTypes.SET_SITE_OPTIONS:
       return setSiteOptions(state, action);
+
+    case coreActionTypes.SET_MENU_STATE:
+      return setMenuState(state, action);
 
     default:
       return state;

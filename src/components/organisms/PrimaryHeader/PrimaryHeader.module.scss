@@ -38,7 +38,7 @@
     align-content: center;
     align-items: center;
     display: inline-flex;
-    margin-left: 1rem;
+    margin-left: 2rem;
 
     &-text {
       align-self: center;
@@ -57,19 +57,50 @@
   }
 
   &__search {
+    align-self: center;
     display: none;
+    position: relative;
+    max-height: 40px;
+    overflow: hidden;
 
     @include tablet-landscape {
-      display: flex;
+      display: inline-flex;
+      width: 300px;
       margin-left: auto;
+    }
+
+    &-btn {
+      position: absolute;
+      top: 50%;
+      transform: $centerY;
+      right: 0;
+      width: 4rem !important;
+      height: 4rem !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+
+    &-form {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 100%;
+    }
+
+    &-icon {
+      margin-left: 0 !important;
+    }
+
+    &-input {
+      padding-right: 5.5rem !important;
     }
   }
 
   &__hamburger {
     display: flex;
-
-    @include tablet-landscape {
-      display: none;
-    }
+    align-self: center;
+    margin-right: 2rem;
   }
 }

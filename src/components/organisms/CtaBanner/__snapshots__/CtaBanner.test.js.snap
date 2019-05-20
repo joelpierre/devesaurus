@@ -19,13 +19,7 @@ exports[`<CtaBanner/> should match snapshot 1`] = `
       row={true}
     >
       <Flex
-        classes={null}
-        col={null}
-        colLg={null}
-        colMd={null}
-        colSm={null}
-        colXl={null}
-        colXs={null}
+        auto={false}
         lg={false}
         md={false}
         sm={false}
@@ -64,13 +58,7 @@ exports[`<CtaBanner/> should render with pageTheme instead of module theme 1`] =
       row={true}
     >
       <Flex
-        classes={null}
-        col={null}
-        colLg={null}
-        colMd={null}
-        colSm={null}
-        colXl={null}
-        colXs={null}
+        auto={false}
         lg={false}
         md={false}
         sm={false}

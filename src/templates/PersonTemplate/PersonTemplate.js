@@ -17,10 +17,10 @@ export class PersonTemplate extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    const { personData } = this.props;
+    const { pageData } = this.props;
 
-    if (personData && personData !== prevProps.personData) {
-      const { components } = personData.acf;
+    if (pageData && pageData !== prevProps.pageData) {
+      const { components } = pageData.acf;
       if (components) mapOverACFComponents(components);
     }
   }
@@ -31,7 +31,7 @@ export class PersonTemplate extends PureComponent {
   }
 
   render() {
-    const { personData, pageContext } = this.props;
+    const { pageData, pageContext, isMenuOpen } = this.props;
 
     return (
       <CoreLayout
@@ -42,13 +42,14 @@ export class PersonTemplate extends PureComponent {
           styles.person,
           `person__${pageContext.slug.replace('_', '-')}`,
         ])}
+        isMenuOpen={isMenuOpen}
       >
-        {personData &&
-          personData.acf.components.map((component, index) => {
+        {pageData &&
+          pageData.acf.components.map((component, index) => {
             return (
               <AcfComponents
                 component={component}
-                pageTheme={personData.acf.page_theme}
+                pageTheme={pageData.acf.page_theme}
                 key={index}
               />
             );
@@ -60,19 +61,21 @@ export class PersonTemplate extends PureComponent {
 
 PersonTemplate.defaultProps = {
   pageContext: null,
-  personData: null,
+  pageData: null,
 };
 
 PersonTemplate.propTypes = {
   pageContext: PropTypes.instanceOf(Object),
-  personData: PropTypes.instanceOf(Object),
+  pageData: PropTypes.instanceOf(Object),
   onGetPerson: PropTypes.func.isRequired,
   clearPersonData: PropTypes.func.isRequired,
+  isMenuOpen: PropTypes.bool.isRequired,
 };
 
 /* istanbul ignore next */
-const mapStateToProps = state => ({
-  personData: state.person,
+const mapStateToProps = ({ person, core: { isMenuOpen } }) => ({
+  pageData: person,
+  isMenuOpen,
 });
 
 /* istanbul ignore next */

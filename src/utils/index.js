@@ -12,6 +12,7 @@ import {
   faTint,
   faPaintBrush,
   faPalette,
+  faSearch,
 } from '@fortawesome/pro-regular-svg-icons';
 
 /**
@@ -29,7 +30,8 @@ library.add(
   faAtomAlt,
   faTint,
   faPaintBrush,
-  faPalette
+  faPalette,
+  faSearch
 );
 
 /**
@@ -185,6 +187,22 @@ export const mapTaxonomyIcon = (slug = 'default') => {
   }
 
   return icon;
+};
+
+/**
+ * Slugify a string in order
+ * @param text
+ * @returns {string}
+ */
+export const slugify = text => {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/[^\w-]+/g, '') // Remove all non-word chars
+    .replace(/--+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, ''); // Trim - from end of text
 };
 
 /**

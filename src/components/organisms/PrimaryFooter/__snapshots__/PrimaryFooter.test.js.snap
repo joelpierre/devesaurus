@@ -16,13 +16,9 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
       row={true}
     >
       <Flex
-        classes={null}
-        col={null}
+        auto={false}
         colLg={4}
         colMd={5}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         lg={false}
         md={false}
         sm={false}
@@ -58,13 +54,10 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
         />
       </Flex>
       <Flex
+        auto={false}
         classes="ml-auto"
-        col={null}
         colLg={3}
         colMd={6}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         lg={false}
         md={false}
         sm={false}
@@ -83,13 +76,10 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
         />
       </Flex>
       <Flex
+        auto={false}
         classes="ml-lg-auto order-lg-1"
-        col={null}
         colLg={4}
         colMd={12}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         lg={false}
         md={false}
         sm={false}
@@ -120,13 +110,10 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
       row={true}
     >
       <Flex
+        auto={false}
         classes="primary-footer__legal"
-        col={null}
         colLg={5}
         colMd={12}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         lg={false}
         md={false}
         sm={false}
@@ -143,13 +130,9 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
         </h6>
       </Flex>
       <Flex
-        classes={null}
-        col={null}
+        auto={false}
         colLg={7}
         colMd={12}
-        colSm={null}
-        colXl={null}
-        colXs={null}
         lg={false}
         md={false}
         sm={false}

@@ -8,7 +8,7 @@ import * as utils from '../../utils';
 const defaultProps = {
   onGetPost: jest.fn(),
   clearPostData: jest.fn(),
-  postData: {
+  pageData: {
     acf: {
       components: [{ acf_fc_layout: 'WordPressAcf_Text_Block' }],
     },
@@ -20,6 +20,8 @@ const defaultProps = {
       yoast_wpseo_metadesc: '',
     },
   },
+  isMenuOpen: false,
+  setMenuState: jest.fn(),
 };
 
 /**
@@ -69,7 +71,7 @@ describe('<PostTemplate/>', () => {
     utils.mapOverACFComponents = jest.fn();
 
     wrapper.setProps({
-      postData: {
+      pageData: {
         acf: {
           page_theme: 'brand',
           components: [],

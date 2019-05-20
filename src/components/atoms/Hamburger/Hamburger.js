@@ -1,19 +1,59 @@
-import React from 'react';
+import React, { memo } from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Hamburger = ({ company }) => {
+import styles from './Hamburger.module.scss';
+import { defaultTheme, themePropType } from '../../../utils/propTypes';
+
+const Hamburger = ({ descriptor, classes, theme, isMenuOpen, onClick }) => {
   return (
-    <div data-test="component-hamburger" className="hamburger">
-      <span className="hamburger__line" />
-      <span className="hamburger__line" />
-      <span className="hamburger__line" />
-      <span className="hamburger__company">{company}</span>
-    </div>
+    <button
+      type="button"
+      data-test="component-hamburger"
+      className={classNames(
+        styles.hamburger,
+        {
+          [styles['hamburger--active']]: isMenuOpen,
+        },
+        classes
+      )}
+      onClick={onClick}
+    >
+      <span
+        className={classNames(
+          styles.hamburger__line,
+          styles[`hamburger__line-theme--${theme}`]
+        )}
+      />
+      <span
+        className={classNames(
+          styles.hamburger__line,
+          styles[`hamburger__line-theme--${theme}`]
+        )}
+      />
+      <span
+        className={classNames(
+          styles.hamburger__line,
+          styles[`hamburger__line-theme--${theme}`]
+        )}
+      />
+      <span className={styles.hamburger__descriptor}>{descriptor}</span>
+    </button>
   );
 };
 
-Hamburger.propTypes = {
-  company: PropTypes.string.isRequired,
+Hamburger.defaultProps = {
+  isMenuOpen: false,
+  classes: undefined,
+  ...defaultTheme(),
 };
 
-export default Hamburger;
+Hamburger.propTypes = {
+  ...themePropType,
+  onClick: PropTypes.func,
+  isMenuOpen: PropTypes.bool,
+  classes: PropTypes.string,
+  descriptor: PropTypes.string.isRequired,
+};
+
+export default memo(Hamburger);
