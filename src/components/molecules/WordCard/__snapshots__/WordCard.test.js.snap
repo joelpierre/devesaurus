@@ -51,8 +51,8 @@ exports[`<WordCard/> should match snapShot 1`] = `
     data-test="word-card-header"
   >
     <Heading
-      classes={null}
       data-test="word-card-heading"
+      innerHTML={true}
       priority="3"
     >
       title
@@ -280,8 +280,8 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
       data-test="word-card-header"
     >
       <Heading
-        classes={null}
         data-test="word-card-heading"
+        innerHTML={true}
         priority="3"
       >
         <h3

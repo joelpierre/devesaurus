@@ -26,6 +26,7 @@ exports[`<CoreLayout/> should match snapshot 1`] = `
     id="push-wrapper"
   >
     <Component
+      alt={true}
       title="Default Title"
     />
     <main

@@ -2,11 +2,14 @@ import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 import styles from './PrimaryMenu.module.scss';
 import * as coreActions from '../../../store/actions/core.actions';
 import MenuItem from '../../atoms/MenuItem/MenuItem';
+import Brand from '../../atoms/Brand/Brand';
 
 export const PurePrimaryMenu = ({
   classes,
@@ -14,31 +17,75 @@ export const PurePrimaryMenu = ({
   allWordpressWpApiMenusMenusItems,
   setMenuState,
 }) => {
+  const getBodyAttr = () => {
+    return (
+      <Helmet>
+        <body className={isMenuOpen ? 'menu-is-active' : ''} />
+      </Helmet>
+    );
+  };
+
+  /**
+   * Toggle the menu state, this changes the global state
+   */
   const toggleMenuState = () => {
     setMenuState(!isMenuOpen);
   };
 
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions
-    <nav
-      data-test="component-primary-menu"
-      className={classNames(
-        styles['primary-menu'],
-        { [styles['primary-menu--is-active']]: isMenuOpen },
-        classes
-      )}
-      onClick={toggleMenuState}
-    >
-      <ul className={styles['primary-menu__list']}>
-        {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
-          <MenuItem
-            classes={styles['primary-menu__item']}
-            key={item.object_slug}
-            item={item}
+    // eslint-disable-next-line react/jsx-no-comment-textnodes
+    <>
+      {getBodyAttr()}
+      <nav
+        data-test="component-primary-menu"
+        className={classNames(
+          styles['primary-menu'],
+          { [styles['primary-menu--is-active']]: isMenuOpen },
+          classes
+        )}
+      >
+        {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+        <button
+          className={classNames(styles['primary-menu__overlay'], {
+            [styles['primary-menu__overlay--is-active']]: isMenuOpen,
+          })}
+          type="button"
+          onClick={toggleMenuState}
+        />
+        <div className={styles['primary-menu__inner']}>
+          <Brand
+            type="character"
+            center
+            classes={styles['primary-menu__brand']}
           />
-        ))}
-      </ul>
-    </nav>
+
+          <ul className={styles['primary-menu__list']}>
+            {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(
+              (item, index) => {
+                console.log(item);
+                return item.object_slug === 'divider' ? (
+                  <li key={index} className={styles['primary-menu__divider']} />
+                ) : (
+                  <MenuItem
+                    classes={styles['primary-menu__item']}
+                    key={index}
+                    item={item}
+                    onClick={toggleMenuState}
+                  >
+                    {item.title}{' '}
+                    <FontAwesomeIcon
+                      className={classNames(styles['primary-menu__icon'])}
+                      icon={['far', 'chevron-right']}
+                    />
+                  </MenuItem>
+                );
+              }
+            )}
+          </ul>
+        </div>
+      </nav>
+    </>
   );
 };
 

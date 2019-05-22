@@ -30,6 +30,7 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
       >
         <Heading
           classes="featured-words__heading"
+          innerHTML={true}
           priority="2"
         >
           Featured Words

@@ -12,6 +12,10 @@ const defaultProps = {
     acf: {
       pronunciation: 'test',
       components: [{ acf_fc_layout: 'WordPressAcf_Text_Block' }],
+      syllables: {
+        count: '1',
+        list: [{ item: 'test-item' }],
+      },
     },
   },
   pageContext: {
@@ -19,6 +23,11 @@ const defaultProps = {
     slug: 'test-slug',
     acf: {
       pronunciation: 'test',
+      components: [{ acf_fc_layout: 'WordPressAcf_Text_Block' }],
+      syllables: {
+        count: '1',
+        list: [{ item: 'test-item' }],
+      },
     },
     yoast_meta: {
       yoast_wpseo_metadesc: '',

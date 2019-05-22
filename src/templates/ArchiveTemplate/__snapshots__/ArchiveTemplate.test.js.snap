@@ -35,6 +35,7 @@ exports[`<ArchiveTemplate/> should match snapshot 1`] = `
         >
           <Heading
             classes="text-center mb-0"
+            innerHTML={true}
             priority="1"
           >
             test

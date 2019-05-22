@@ -20,73 +20,90 @@ const PrimaryFooter = ({ company }) => {
       data-test="component-primary-footer"
       className={styles['primary-footer']}
     >
-      <Container fluid>
-        <Row classes={classNames([styles['primary-footer--top']])}>
-          <Flex colLg={4} colMd={5}>
-            <Link to="/">
-              <Brand
-                left
-                type="text"
-                classes={classNames(styles['primary-footer__brand'], 'mb-2')}
-              />
-            </Link>
-
-            <p className={classNames(styles['primary-footer__copy'])}>
-              Get real-world definitions to complex dev terms | Supported by{' '}
-              <a
-                className={styles['primary-footer__link']}
-                href="http://www.jppdesigns.co.uk"
+      <div className={classNames([styles['primary-footer--top']])}>
+        <Container>
+          <Row>
+            <Flex colLg={4} colMd={5}>
+              <Heading
+                priority={5}
+                classes={classNames(styles['primary-footer__heading'])}
               >
-                JPPdesigns Web design &amp; Development
-              </a>
-            </p>
+                About
+              </Heading>
+              <Heading
+                priority={6}
+                classes={classNames(styles['primary-footer__legal-copy'])}
+                innerHTML={false}
+              >
+                Get real-world definitions to complex dev terms | Supported by{' '}
+                <a
+                  className={styles['primary-footer__link']}
+                  href="http://www.jppdesigns.co.uk"
+                >
+                  JPPdesigns Web design &amp; Development
+                </a>{' '}
+                | &copy;{' '}
+                {`${company} ${new Date().getFullYear()} | Developed by: Joel Pierre-Powell`}
+              </Heading>
 
-            <SocialMenu
-              classes={classNames('mt-3', styles['primary-footer__social'])}
-            />
-          </Flex>
-
-          <Flex colLg={3} colMd={6} classes="ml-auto">
-            <Heading
-              priority={5}
-              classes={classNames(styles['primary-footer__heading'])}
-            >
-              Featured Words
-            </Heading>
-            <FeaturedWordsList
-              classes={classNames(styles['primary-footer__featured-words'])}
-            />
-          </Flex>
-
-          <Flex colLg={4} colMd={12} classes="ml-lg-auto order-lg-1">
-            <Heading
-              priority={5}
-              classes={classNames(styles['primary-footer__heading'])}
-            >
-              Word Tags
-            </Heading>
-            <div className={styles['primary-footer__tag-cloud-wrapper']}>
-              <LabelCloud
-                classes={styles['primary-footer__tag-cloud']}
-                taxonomy="word_tag"
+              <SocialMenu
+                classes={classNames('mt-3', styles['primary-footer__social'])}
               />
-            </div>
-          </Flex>
-        </Row>
+            </Flex>
 
-        <Row classes={classNames([styles['primary-footer--bottom']])}>
-          <Flex colLg={5} colMd={12} classes={styles['primary-footer__legal']}>
-            <h6 className={styles['primary-footer__legal-copy']}>
-              &copy;{' '}
-              {`${company} ${new Date().getFullYear()} | Developed by: Joel Pierre-Powell`}
-            </h6>
-          </Flex>
+            <Flex colLg={3} colMd={6} classes="ml-auto">
+              <Heading
+                priority={5}
+                classes={classNames(styles['primary-footer__heading'])}
+              >
+                Featured Words
+              </Heading>
+              <FeaturedWordsList
+                classes={classNames(styles['primary-footer__featured-words'])}
+              />
+            </Flex>
 
-          <Flex colLg={7} colMd={12}>
-            <TermsMenu classes={styles['primary-footer__terms-menu']} />
-          </Flex>
-        </Row>
-      </Container>
+            <Flex colLg={4} colMd={12} classes="ml-lg-auto order-lg-1">
+              <Heading
+                priority={5}
+                classes={classNames(styles['primary-footer__heading'])}
+              >
+                Word Tags
+              </Heading>
+              <div className={styles['primary-footer__tag-cloud-wrapper']}>
+                <LabelCloud
+                  classes={styles['primary-footer__tag-cloud']}
+                  taxonomy="word_tag"
+                />
+              </div>
+            </Flex>
+          </Row>
+        </Container>
+      </div>
+
+      <div className={classNames([styles['primary-footer--bottom']])}>
+        <Container>
+          <Row>
+            <Flex
+              colLg={5}
+              colMd={12}
+              classes={styles['primary-footer__legal']}
+            >
+              <Link to="/">
+                <Brand
+                  left
+                  type="text"
+                  classes={classNames(styles['primary-footer__brand'], 'mb-2')}
+                />
+              </Link>
+            </Flex>
+
+            <Flex colLg={7} colMd={12} classes="display-flex">
+              <TermsMenu classes={styles['primary-footer__terms-menu']} />
+            </Flex>
+          </Row>
+        </Container>
+      </div>
     </footer>
   );
 };

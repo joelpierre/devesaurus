@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react';
+import React, { createRef, PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { connect } from 'react-redux';
@@ -15,13 +16,34 @@ export class PrimaryHeader extends PureComponent {
   constructor() {
     super();
 
+    this.state = {
+      searchFormData: '',
+    };
+
+    this.searchForm = createRef();
+
     this.toggleMenu = this.toggleMenu.bind(this);
-    this.onSearchFormSubmitHandler = this.toggleMenu.bind(this);
+    this.handleSearchInputOnChange = this.handleSearchInputOnChange.bind(this);
+    this.onSearchFormSubmitHandler = this.onSearchFormSubmitHandler.bind(this);
   }
 
   onSearchFormSubmitHandler(e) {
     e.preventDefault();
+    const { searchFormData } = this.state;
+    console.log('Form Data: ', searchFormData);
     console.log('Do something on submit');
+    this.searchForm.current.reset();
+  }
+
+  handleSearchInputOnChange(e) {
+    e.preventDefault();
+    const {
+      target: { value },
+    } = e;
+
+    this.setState(() => ({
+      searchFormData: value,
+    }));
   }
 
   toggleMenu(e) {
@@ -32,24 +54,27 @@ export class PrimaryHeader extends PureComponent {
 
   render() {
     const { button: buttonData, input: inputData } = searchFormData;
-    const { title, isMenuOpen } = this.props;
+    const { title, isMenuOpen, alt } = this.props;
 
     return (
       <header
         data-test="component-primary-header"
-        className={styles['primary-header']}
+        className={classNames(styles['primary-header'], {
+          [styles['primary-header--alt']]: alt,
+        })}
       >
         <div className={styles['primary-header__wrapper']}>
           <Hamburger
             classes={styles['primary-header__hamburger']}
             descriptor="Menu"
+            alt
             isMenuOpen={isMenuOpen}
             onClick={this.toggleMenu}
           />
 
           <Link to="/">
             <Brand
-              type="symbol"
+              type="symbol-inv"
               left
               classes={styles['primary-header__brand']}
             />
@@ -68,10 +93,16 @@ export class PrimaryHeader extends PureComponent {
 
           <div className={styles['primary-header__search']}>
             <form
+              ref={this.searchForm}
               className={styles['primary-header__search-form']}
               onSubmit={this.onSearchFormSubmitHandler}
             >
-              {inputData && <InputField {...inputData} />}
+              {inputData && (
+                <InputField
+                  {...inputData}
+                  onChange={this.handleSearchInputOnChange}
+                />
+              )}
               {buttonData && <Button {...buttonData}>{buttonData.text}</Button>}
             </form>
           </div>
@@ -104,10 +135,12 @@ const searchFormData = {
 
 PrimaryHeader.defaultProps = {
   title: undefined,
+  alt: false,
 };
 
 PrimaryHeader.propTypes = {
   title: PropTypes.string,
+  alt: PropTypes.bool,
   isMenuOpen: PropTypes.bool.isRequired,
   setMenuState: PropTypes.func.isRequired,
 };

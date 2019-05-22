@@ -130,7 +130,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Lato'],
+          families: ['Montserrat', 'Lato'],
         },
       },
     },

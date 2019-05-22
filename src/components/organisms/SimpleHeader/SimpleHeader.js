@@ -8,7 +8,9 @@ const SimpleHeader = () => {
     <header
       className={classNames([styles['simple-header']])}
       data-test="component-simple-header"
-    />
+    >
+      Simplified menu to be added later
+    </header>
   );
 };
 

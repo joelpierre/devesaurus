@@ -13,6 +13,10 @@
   padding: 1rem 0;
   transition: $transition-all-base;
 
+  &--alt {
+    background-color: $color-alpha;
+  }
+
   &__wrapper {
     display: flex;
     flex-wrap: nowrap;
@@ -47,11 +51,12 @@
       font-size: 3rem !important;
       margin-bottom: 0 !important;
       letter-spacing: 1px;
+      color: $color-tint-alpha;
 
       & > span {
         font-size: 2rem;
         text-transform: none;
-        color: $color-tint-psi;
+        color: $color-tint-gamma;
       }
     }
   }

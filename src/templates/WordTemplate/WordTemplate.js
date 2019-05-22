@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import styles from '../PostTemplate/PostTemplate.module.scss';
+import styles from './WordTemplate.module.scss';
+
 import * as wordActions from '../../store/actions/word.actions';
 import Heading from '../../components/core/Heading/Heading';
 import Section from '../../components/core/Section/Section';
@@ -38,9 +39,7 @@ export class WordTemplate extends PureComponent {
     return (
       <CoreLayout
         title={pageContext.title}
-        headerTitle={`${pageContext.title} <span class="ml-1">[${
-          pageContext.acf.pronunciation
-        }]</span>`}
+        headerTitle={`${pageContext.title} <span>:: definition</span>`}
         description={pageContext.yoast_meta.yoast_wpseo_metadesc}
         data-test="template-word"
         classes={classNames([
@@ -52,10 +51,58 @@ export class WordTemplate extends PureComponent {
         <Section>
           <Container>
             <Row>
-              <Flex>
-                <Heading priority="1" classes="text-center mt-1">
+              <Flex colLg={7}>
+                <Heading
+                  innerHTML={false}
+                  classes={styles.word__heading}
+                  priority={1}
+                >
                   {pageContext.title}
                 </Heading>
+
+                <p
+                  className={classNames(
+                    styles.word__pronunciation,
+                    styles.word__copy
+                  )}
+                >
+                  <strong>Pronunciation:</strong> [
+                  {pageContext.acf.pronunciation}]
+                </p>
+
+                <p
+                  className={classNames(
+                    styles.word__syllables,
+                    styles.word__copy
+                  )}
+                >
+                  <strong>Syllables:</strong>
+                  {pageContext.acf.syllables.list.map((syllable, index) => (
+                    <span
+                      key={index}
+                      className={classNames(styles.word__syllable)}
+                    >
+                      {syllable.item}
+                    </span>
+                  ))}{' '}
+                  ({pageContext.acf.syllables.count})
+                </p>
+
+                <hr className={styles.word__hr} />
+
+                <Heading priority={3} classes={styles.word__subheading}>
+                  Definition
+                </Heading>
+                <p
+                  className={styles.word__copy}
+                  dangerouslySetInnerHTML={{
+                    __html: pageContext.acf.definition,
+                  }}
+                />
+              </Flex>
+
+              <Flex colLg={4} classes={classNames('ml-auto')}>
+                Ads or something?
               </Flex>
             </Row>
           </Container>

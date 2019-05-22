@@ -28,7 +28,7 @@ exports[`<CtaBanner/> should match snapshot 1`] = `
         xs={false}
       >
         <Heading
-          classes={null}
+          innerHTML={true}
           priority="2"
         >
           CTA Banner
@@ -67,7 +67,7 @@ exports[`<CtaBanner/> should render with pageTheme instead of module theme 1`] =
         xs={false}
       >
         <Heading
-          classes={null}
+          innerHTML={true}
           priority="2"
         >
           CTA Banner

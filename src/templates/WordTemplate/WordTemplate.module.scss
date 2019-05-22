@@ -1,6 +1,39 @@
 @import "~sass/core";
 
 .word {
+  $root: &;
   padding: 0;
   margin: 0;
+
+  &__hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__heading {
+    font-size: 4rem !important;
+    margin-bottom: 1rem;
+  }
+
+  &__subheading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: none;
+  }
+
+  &__syllable {
+    margin-right: 1rem;
+
+    &:first-of-type {
+      margin-left: 1rem;
+    }
+
+    &:last-of-type {
+      margin-right: 1rem;
+    }
+  }
+
+  &__copy {
+    margin-bottom: 1rem;
+  }
 }

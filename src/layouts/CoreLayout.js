@@ -31,7 +31,7 @@ export class CoreLayout extends PureComponent {
             'push-wrapper--active': isMenuOpen,
           })}
         >
-          <PrimaryHeader title={headerTitle || title} />
+          <PrimaryHeader alt title={headerTitle || title} />
           <main
             data-test="core-layout-main"
             className={classNames([styles['primary-main'], classes])}

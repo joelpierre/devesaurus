@@ -125,7 +125,7 @@ exports[`<AcfComponents/> should match snapshot 1`] = `
                     data-test="component-flex"
                   >
                     <Heading
-                      classes={null}
+                      innerHTML={true}
                       priority="2"
                     >
                       <h2

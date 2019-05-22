@@ -4,5 +4,7 @@ exports[`<SimpleHeader/> should match snapshot 1`] = `
 <header
   className="simple-header"
   data-test="component-simple-header"
-/>
+>
+  Simplified menu to be added later
+</header>
 `;

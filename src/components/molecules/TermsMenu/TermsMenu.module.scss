@@ -25,6 +25,19 @@
     font-size: inherit;
     color: $color-tint-psi;
 
+    & > a {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
+
     &:first-of-type {
       margin-left: 0;
       padding-left: 0;
