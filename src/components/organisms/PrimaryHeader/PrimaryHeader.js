@@ -46,6 +46,10 @@ export class PrimaryHeader extends PureComponent {
     }));
   }
 
+  /**
+   * Toggle the menu state
+   * @param e
+   */
   toggleMenu(e) {
     e.preventDefault();
     const { isMenuOpen, setMenuState } = this.props;
@@ -65,7 +69,7 @@ export class PrimaryHeader extends PureComponent {
       >
         <div className={styles['primary-header__wrapper']}>
           <Hamburger
-            classes={styles['primary-header__hamburger']}
+            className={styles['primary-header__hamburger']}
             descriptor="Menu"
             alt
             isMenuOpen={isMenuOpen}
@@ -76,7 +80,7 @@ export class PrimaryHeader extends PureComponent {
             <Brand
               type="symbol-inv"
               left
-              classes={styles['primary-header__brand']}
+              className={styles['primary-header__brand']}
             />
           </Link>
 
@@ -84,7 +88,7 @@ export class PrimaryHeader extends PureComponent {
             <div className={styles['primary-header__title']}>
               <Heading
                 priority={1}
-                classes={styles['primary-header__title-text']}
+                className={styles['primary-header__title-text']}
               >
                 {title}
               </Heading>
@@ -123,10 +127,10 @@ const searchFormData = {
         className={styles['primary-header__search-icon']}
       />
     ),
-    classes: styles['primary-header__search-btn'],
+    className: styles['primary-header__search-btn'],
   },
   input: {
-    classes: styles['primary-header__search-input'],
+    className: styles['primary-header__search-input'],
     name: 'hero-search',
     type: 'text',
     placeholder: 'Enter a search term. e.g. HTML',

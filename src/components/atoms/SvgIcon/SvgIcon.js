@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './SvgIcon.module.scss';
 
-const SvgIcon = ({ name, description, fill, classes, center }) => {
+const SvgIcon = ({ name, description, fill, className, center }) => {
   const req = require.context('../../../assets/icons/', true, /^\.\/.*\.svg$/);
 
   const svg = () => {
@@ -34,7 +34,7 @@ const SvgIcon = ({ name, description, fill, classes, center }) => {
       className={classNames([
         styles.icon,
         { [styles.icon__center]: center },
-        classes,
+        className,
       ])}
       dangerouslySetInnerHTML={{ __html: svg() }}
     />
@@ -44,7 +44,7 @@ const SvgIcon = ({ name, description, fill, classes, center }) => {
 SvgIcon.defaultProps = {
   fill: '#000000',
   description: 'An SVG Icon',
-  classes: null,
+  className: null,
   center: false,
 };
 
@@ -52,7 +52,7 @@ SvgIcon.propTypes = {
   center: PropTypes.bool,
   name: PropTypes.string.isRequired,
   description: PropTypes.string,
-  classes: PropTypes.string,
+  className: PropTypes.string,
   fill: PropTypes.string,
 };
 

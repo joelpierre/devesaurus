@@ -83,7 +83,7 @@ exports[`<AcfComponents/> should match snapshot 1`] = `
     pageTheme="brand"
   >
     <Section
-      classes="theme--brand cta-banner"
+      className="theme--brand cta-banner"
       contrast={false}
       data-test="component-cta-banner"
       theme={null}
@@ -94,15 +94,15 @@ exports[`<AcfComponents/> should match snapshot 1`] = `
         data-test="component-section"
       >
         <Container
-          classes="container-fluid"
+          className="container-fluid"
           fluid={false}
         >
           <div
-            className="container classes"
+            className="container className"
             data-test="component-grid-container"
           >
             <Row
-              classes="row"
+              className="row"
               column={false}
               reverse={false}
               row={true}

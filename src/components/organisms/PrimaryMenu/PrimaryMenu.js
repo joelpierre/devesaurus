@@ -13,7 +13,7 @@ import Brand from '../../atoms/Brand/Brand';
 import SocialMenu from '../../molecules/SocialMenu/SocialMenu';
 
 export const PurePrimaryMenu = ({
-  classes,
+  className,
   isMenuOpen,
   allWordpressWpApiMenusMenusItems,
   setMenuState,
@@ -46,7 +46,7 @@ export const PurePrimaryMenu = ({
         className={classNames(
           styles['primary-menu'],
           { [styles['primary-menu--is-active']]: isMenuOpen },
-          classes
+          className
         )}
       >
         {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
@@ -63,7 +63,7 @@ export const PurePrimaryMenu = ({
             <Brand
               type="character"
               center
-              classes={styles['primary-menu__brand']}
+              className={styles['primary-menu__brand']}
             />
           </Link>
 
@@ -76,7 +76,7 @@ export const PurePrimaryMenu = ({
                 />
               ) : (
                 <MenuItem
-                  classes={styles['primary-menu__item']}
+                  className={styles['primary-menu__item']}
                   key={item.order}
                   item={item}
                   onClick={toggleMenuState}
@@ -91,21 +91,21 @@ export const PurePrimaryMenu = ({
             })}
           </ul>
 
-          <SocialMenu classes={classNames(styles['primary-menu__social'])} />
+          <SocialMenu className={classNames(styles['primary-menu__social'])} />
         </div>
       </nav>
     </>
   );
 };
 
-export const PrimaryMenu = ({ classes, isMenuOpen, setMenuState }) => (
+export const PrimaryMenu = ({ className, isMenuOpen, setMenuState }) => (
   <StaticQuery
     data-test="component-primary-menu-query"
     query={menuQuery}
     render={props => (
       <PurePrimaryMenu
         {...props}
-        classes={classes}
+        className={className}
         isMenuOpen={isMenuOpen}
         setMenuState={setMenuState}
       />
@@ -114,11 +114,11 @@ export const PrimaryMenu = ({ classes, isMenuOpen, setMenuState }) => (
 );
 
 PrimaryMenu.defaultProps = {
-  classes: undefined,
+  className: undefined,
 };
 
 PrimaryMenu.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
   isMenuOpen: PropTypes.bool.isRequired,
   setMenuState: PropTypes.func.isRequired,
 };

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './SocialItem.module.scss';
 
-const SocialItem = ({ name, link, classes }) => {
+const SocialItem = ({ name, link, className }) => {
   let icon;
 
   switch (name) {
@@ -23,7 +23,7 @@ const SocialItem = ({ name, link, classes }) => {
     <li
       className={classNames(
         styles['social-item'],
-        classes,
+        className,
         styles['social-item--theme-gradient-brand']
       )}
       data-test="component-social-item"
@@ -43,11 +43,11 @@ const SocialItem = ({ name, link, classes }) => {
 };
 
 SocialItem.defaultProps = {
-  classes: undefined,
+  className: undefined,
 };
 
 SocialItem.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
   name: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
 };

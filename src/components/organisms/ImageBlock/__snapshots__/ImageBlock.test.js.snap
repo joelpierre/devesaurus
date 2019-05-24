@@ -2,25 +2,25 @@
 
 exports[`<ImageBlock/> should match snapshot 1`] = `
 <Section
-  classes="theme--alpha image-block"
+  className="theme--alpha image-block"
   contrast={false}
   data-test="component-image-block"
   theme={null}
   type="section"
 >
   <Container
-    classes="container-fluid"
+    className="container-fluid"
     fluid={false}
   >
     <Row
-      classes="row"
+      className="row"
       column={false}
       reverse={false}
       row={true}
     >
       <Flex
         auto={false}
-        classes="flex text-center"
+        className="flex text-center"
         lg={false}
         md={false}
         sm={false}
@@ -42,25 +42,25 @@ exports[`<ImageBlock/> should match snapshot 1`] = `
 
 exports[`<ImageBlock/> should render with pageTheme instead of module theme 1`] = `
 <Section
-  classes="theme--brand image-block"
+  className="theme--brand image-block"
   contrast={false}
   data-test="component-image-block"
   theme={null}
   type="section"
 >
   <Container
-    classes="container-fluid"
+    className="container-fluid"
     fluid={false}
   >
     <Row
-      classes="row"
+      className="row"
       column={false}
       reverse={false}
       row={true}
     >
       <Flex
         auto={false}
-        classes="flex text-center"
+        className="flex text-center"
         lg={false}
         md={false}
         sm={false}

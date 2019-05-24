@@ -14,7 +14,7 @@ export class CoreLayout extends PureComponent {
       children,
       title,
       description,
-      classes,
+      className,
       headerTitle,
       isMenuOpen,
     } = this.props;
@@ -34,7 +34,7 @@ export class CoreLayout extends PureComponent {
           <PrimaryHeader alt title={headerTitle || title} />
           <main
             data-test="core-layout-main"
-            className={classNames([styles['primary-main'], classes])}
+            className={classNames([styles['primary-main'], className])}
           >
             {children}
           </main>
@@ -50,7 +50,7 @@ CoreLayout.defaultProps = {
   title: 'Default Title',
   headerTitle: undefined,
   description: 'Default description',
-  classes: null,
+  className: null,
   isMenuOpen: false,
 };
 
@@ -58,7 +58,7 @@ CoreLayout.propTypes = {
   title: PropTypes.string,
   headerTitle: PropTypes.string,
   description: PropTypes.string,
-  classes: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

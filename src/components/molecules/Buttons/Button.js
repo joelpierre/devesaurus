@@ -17,7 +17,7 @@ const Button = ({
   link,
   size,
   caps,
-  classes,
+  className,
   type,
   ...props
 }) => {
@@ -35,7 +35,7 @@ const Button = ({
             {
               [styles[`btn--capitalise`]]: caps,
             },
-            classes,
+            className,
           ])}
           {...props}
         >
@@ -56,7 +56,7 @@ const Button = ({
             {
               [styles[`btn--capitalise`]]: caps,
             },
-            classes,
+            className,
           ])}
           target="_blank"
           rel="noopener noreferrer nofollow"
@@ -80,7 +80,7 @@ const Button = ({
             {
               [styles[`btn--capitalise`]]: caps,
             },
-            classes,
+            className,
           ])}
           {...props}
         >
@@ -99,7 +99,7 @@ Button.defaultProps = {
   caps: true,
   behavior: 'router',
   action: undefined,
-  classes: undefined,
+  className: undefined,
   type: 'button',
 };
 
@@ -110,7 +110,7 @@ Button.propTypes = {
     PropTypes.node,
   ]).isRequired,
   link: PropTypes.string,
-  classes: PropTypes.string,
+  className: PropTypes.string,
   caps: PropTypes.bool,
   ...themePropType,
   ...sizePropType,

@@ -2,7 +2,7 @@
 
 exports[`<WordTemplate/> should match snapshot 1`] = `
 <CoreLayout
-  classes="word word__test-slug"
+  className="word word__test-slug"
   data-test="template-word"
   description=""
   headerTitle="test <span>:: definition</span>"
@@ -10,17 +10,17 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
   title="test"
 >
   <Section
-    classes={null}
+    className={null}
     contrast={false}
     theme={null}
     type="section"
   >
     <Container
-      classes={null}
+      className={null}
       fluid={false}
     >
       <Row
-        classes={null}
+        className={null}
         column={false}
         reverse={false}
         row={true}
@@ -36,7 +36,7 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
           xs={false}
         >
           <Heading
-            classes="word__heading"
+            className="word__heading"
             innerHTML={false}
             priority={1}
           >
@@ -73,7 +73,7 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
             className="word__hr"
           />
           <Heading
-            classes="word__subheading"
+            className="word__subheading"
             innerHTML={true}
             priority={3}
           >
@@ -90,7 +90,7 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
         </Flex>
         <Flex
           auto={false}
-          classes="ml-auto"
+          className="ml-auto"
           colLg={4}
           lg={false}
           md={false}

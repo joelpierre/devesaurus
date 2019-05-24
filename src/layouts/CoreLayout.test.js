@@ -2,10 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { checkProps, findByTestAttr, matchSnapshot } from '../utils/test';
-import { CoreLayout } from './CoreLayout';
+import ConnectedCoreLayout, { CoreLayout } from './CoreLayout';
 
 const defaultProps = {
   children: 'Hello',
+  isMenuOpen: false,
 };
 
 /**

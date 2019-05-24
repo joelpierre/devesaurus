@@ -13,7 +13,7 @@ const TextBlock = ({ module, pageTheme, ...props }) => {
   return (
     <Section
       data-test="component-text-block"
-      classes={classNames([
+      className={classNames([
         `theme--${module.theme ? module.theme : pageTheme}`,
         styles['text-block'],
       ])}
@@ -21,7 +21,7 @@ const TextBlock = ({ module, pageTheme, ...props }) => {
     >
       <Container>
         <Row>
-          <Flex classes="flex">
+          <Flex className="flex">
             <p className="text-block__content">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
               culpa illo ipsam magnam nulla optio pariatur qui quidem rem!

@@ -17,7 +17,7 @@ export const PureCategoryCloudList = ({ allWordpressCategory }) => (
         className={classNames(styles['label-cloud__item'])}
       >
         <Label
-          classes={styles['label-cloud__label']}
+          className={styles['label-cloud__label']}
           link={'/category/' + node.slug}
           theme={mapTaxonomyTheme(node.slug)}
         >
@@ -32,10 +32,10 @@ export const PureCategoryCloudList = ({ allWordpressCategory }) => (
   </>
 );
 
-const CategoryCloud = ({ classes }) => (
+const CategoryCloud = ({ className }) => (
   <ul
     data-test="component-category-cloud"
-    className={classNames(styles['label-cloud'], classes)}
+    className={classNames(styles['label-cloud'], className)}
   >
     <StaticQuery
       data-test="component-category-cloud-query"
@@ -46,11 +46,11 @@ const CategoryCloud = ({ classes }) => (
 );
 
 CategoryCloud.defaultProps = {
-  classes: undefined,
+  className: undefined,
 };
 
 CategoryCloud.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default CategoryCloud;

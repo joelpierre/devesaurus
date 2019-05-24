@@ -8,7 +8,7 @@ const Flex = ({
   children,
   auto,
   type,
-  classes,
+  className,
   xs,
   sm,
   md,
@@ -29,7 +29,7 @@ const Flex = ({
       data-test="component-flex"
       {...props}
       className={classNames([
-        classes,
+        className,
         {
           [styles.flex]: !col,
           [styles['flex--auto']]: auto,
@@ -53,7 +53,7 @@ const Flex = ({
 };
 
 Flex.defaultProps = {
-  classes: undefined,
+  className: undefined,
   type: 'div',
   auto: false,
   xs: false,
@@ -83,7 +83,7 @@ Flex.propTypes = {
   colMd: columnShape,
   colLg: columnShape,
   colXl: columnShape,
-  classes: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

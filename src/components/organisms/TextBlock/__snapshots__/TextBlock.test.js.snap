@@ -2,25 +2,25 @@
 
 exports[`<TextBlock/> should match snapshot 1`] = `
 <Section
-  classes="theme--alpha text-block"
+  className="theme--alpha text-block"
   contrast={false}
   data-test="component-text-block"
   theme={null}
   type="section"
 >
   <Container
-    classes={null}
+    className={null}
     fluid={false}
   >
     <Row
-      classes={null}
+      className={null}
       column={false}
       reverse={false}
       row={true}
     >
       <Flex
         auto={false}
-        classes="flex"
+        className="flex"
         lg={false}
         md={false}
         sm={false}
@@ -41,25 +41,25 @@ exports[`<TextBlock/> should match snapshot 1`] = `
 
 exports[`<TextBlock/> should render with pageTheme instead of module theme 1`] = `
 <Section
-  classes="theme--brand text-block"
+  className="theme--brand text-block"
   contrast={false}
   data-test="component-text-block"
   theme={null}
   type="section"
 >
   <Container
-    classes={null}
+    className={null}
     fluid={false}
   >
     <Row
-      classes={null}
+      className={null}
       column={false}
       reverse={false}
       row={true}
     >
       <Flex
         auto={false}
-        classes="flex"
+        className="flex"
         lg={false}
         md={false}
         sm={false}

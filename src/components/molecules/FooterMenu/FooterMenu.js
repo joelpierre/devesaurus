@@ -7,17 +7,17 @@ import styles from './FooterMenu.module.scss';
 import MenuItem from '../../atoms/MenuItem/MenuItem';
 
 export const PureFooterMenu = ({
-  classes,
+  className,
   allWordpressWpApiMenusMenusItems,
 }) => (
   <nav
     data-test="component-footer-menu"
-    className={`${styles['footer-menu']} ${classes}`}
+    className={`${styles['footer-menu']} ${className}`}
   >
     <ul className={styles['footer-menu__list']}>
       {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
         <MenuItem
-          classes={styles['footer-menu__item']}
+          className={styles['footer-menu__item']}
           key={item.order}
           item={item}
         />
@@ -26,20 +26,20 @@ export const PureFooterMenu = ({
   </nav>
 );
 
-const FooterMenu = ({ classes }) => (
+const FooterMenu = ({ className }) => (
   <StaticQuery
     data-test="component-footer-menu-query"
     query={menuQuery}
-    render={props => <PureFooterMenu {...props} classes={classes} />}
+    render={props => <PureFooterMenu {...props} className={className} />}
   />
 );
 
 FooterMenu.defaultProps = {
-  classes: null,
+  className: null,
 };
 
 FooterMenu.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default FooterMenu;

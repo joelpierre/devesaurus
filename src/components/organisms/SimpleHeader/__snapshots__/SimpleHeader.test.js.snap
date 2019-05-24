@@ -5,6 +5,14 @@ exports[`<SimpleHeader/> should match snapshot 1`] = `
   className="simple-header"
   data-test="component-simple-header"
 >
-  Simplified menu to be added later
+  <div
+    className="simple-header__wrapper"
+  >
+    <Component
+      className="simple-header__hamburger"
+      descriptor="Menu"
+      onClick={[Function]}
+    />
+  </div>
 </header>
 `;

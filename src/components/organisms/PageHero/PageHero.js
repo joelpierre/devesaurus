@@ -11,7 +11,7 @@ import { pageThemePropType } from '../../../utils/propTypes';
 
 const PageHero = ({ module, pageTheme, ...props }) => {
   return (
-    <Section classes={classNames(styles['page-hero'])} {...props}>
+    <Section className={classNames(styles['page-hero'])} {...props}>
       <Container fluid>
         <Row>
           <Flex>

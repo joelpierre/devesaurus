@@ -6,6 +6,7 @@ import { checkProps, findByTestAttr, matchSnapshot } from '../utils/test';
 
 const defaultProps = {
   children: 'Hello',
+  isMenuOpen: false,
 };
 
 /**

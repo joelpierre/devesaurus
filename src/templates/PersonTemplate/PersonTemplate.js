@@ -38,7 +38,7 @@ export class PersonTemplate extends PureComponent {
         title={pageContext.title}
         description={pageContext.yoast_meta.yoast_wpseo_metadesc}
         data-test="template-person"
-        classes={classNames([
+        className={classNames([
           styles.person,
           `person__${pageContext.slug.replace('_', '-')}`,
         ])}

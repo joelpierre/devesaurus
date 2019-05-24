@@ -11,9 +11,18 @@
   justify-content: flex-end;
   top: 0;
   left: 0;
-  padding: 1rem 0;
+  padding: .5rem .6rem;
   background-color: $color-tint-alpha;
   transition: $transition-all-base;
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  &__hamburger {
+    margin-right: auto;
+  }
 
   &__menu {
     margin-left: auto;

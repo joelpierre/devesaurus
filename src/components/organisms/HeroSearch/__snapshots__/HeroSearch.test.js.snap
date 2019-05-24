@@ -2,25 +2,25 @@
 
 exports[`<HeroSearch/> should match snapshot 1`] = `
 <Section
-  classes="hero-search"
+  className="hero-search"
   contrast={false}
   theme={null}
   type="section"
 >
   <Container
-    classes={null}
+    className={null}
     data-test="component-hero-search"
     fluid={false}
   >
     <Row
-      classes={null}
+      className={null}
       column={false}
       reverse={false}
       row={true}
     >
       <Flex
         auto={false}
-        classes="mx-auto"
+        className="mx-auto"
         colLg={8}
         colMd={10}
         colXl={8}
@@ -36,13 +36,13 @@ exports[`<HeroSearch/> should match snapshot 1`] = `
         >
           <Brand
             center={true}
-            classes="hero-search__brand"
+            className="hero-search__brand"
             left={true}
             right={false}
             type="logo"
           />
           <InputField
-            classes="hero-search__input"
+            className="hero-search__input"
             disabled={false}
             label={null}
             lg={false}

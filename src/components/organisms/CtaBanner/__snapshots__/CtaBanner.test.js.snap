@@ -2,18 +2,18 @@
 
 exports[`<CtaBanner/> should match snapshot 1`] = `
 <Section
-  classes="theme--alpha cta-banner"
+  className="theme--alpha cta-banner"
   contrast={false}
   data-test="component-cta-banner"
   theme={null}
   type="section"
 >
   <Container
-    classes="container-fluid"
+    className="container-fluid"
     fluid={false}
   >
     <Row
-      classes="row"
+      className="row"
       column={false}
       reverse={false}
       row={true}
@@ -41,18 +41,18 @@ exports[`<CtaBanner/> should match snapshot 1`] = `
 
 exports[`<CtaBanner/> should render with pageTheme instead of module theme 1`] = `
 <Section
-  classes="theme--brand cta-banner"
+  className="theme--brand cta-banner"
   contrast={false}
   data-test="component-cta-banner"
   theme={null}
   type="section"
 >
   <Container
-    classes="container-fluid"
+    className="container-fluid"
     fluid={false}
   >
     <Row
-      classes="row"
+      className="row"
       column={false}
       reverse={false}
       row={true}

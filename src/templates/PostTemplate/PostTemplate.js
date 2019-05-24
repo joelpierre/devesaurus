@@ -38,13 +38,13 @@ export class PostTemplate extends PureComponent {
         title={pageContext.title}
         description={pageContext.yoast_meta.yoast_wpseo_metadesc}
         data-test="template-post"
-        classes={classNames([
+        className={classNames([
           styles.post,
           `post__${pageContext.slug.replace('_', '-')}`,
         ])}
         isMenuOpen={isMenuOpen}
       >
-        <Heading priority="1" classes="text-center">
+        <Heading priority="1" className="text-center">
           {pageContext.title}
         </Heading>
 

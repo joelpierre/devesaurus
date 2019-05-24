@@ -17,7 +17,7 @@ exports[`<PrimaryHeader/> should match snapshot 1`] = `
     >
       <Brand
         center={false}
-        classes={null}
+        className={null}
         left={true}
         right={false}
         type="symbol-inv"
@@ -28,7 +28,7 @@ exports[`<PrimaryHeader/> should match snapshot 1`] = `
         onSubmit={[Function]}
       >
         <InputField
-          classes={null}
+          className={null}
           disabled={false}
           label={null}
           lg={false}

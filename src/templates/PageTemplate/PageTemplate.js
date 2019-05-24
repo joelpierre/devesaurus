@@ -39,7 +39,7 @@ export class PageTemplate extends PureComponent {
         title={pageContext.title}
         description={pageContext.yoast_meta.yoast_wpseo_metadesc}
         data-test="template-page"
-        classes={classNames([
+        className={classNames([
           styles.page,
           `page__${pageContext.slug.replace('_', '-')}`,
         ])}

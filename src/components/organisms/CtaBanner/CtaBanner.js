@@ -14,13 +14,13 @@ const CtaBanner = ({ module, pageTheme }) => {
   return (
     <Section
       data-test="component-cta-banner"
-      classes={classNames([
+      className={classNames([
         `theme--${module.theme ? module.theme : pageTheme}`,
         styles['cta-banner'],
       ])}
     >
-      <Container classes="container-fluid">
-        <Row classes="row">
+      <Container className="container-fluid">
+        <Row className="row">
           <Flex>
             <Heading priority="2">CTA Banner</Heading>
           </Flex>

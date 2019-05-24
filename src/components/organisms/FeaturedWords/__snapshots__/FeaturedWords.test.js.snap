@@ -2,18 +2,18 @@
 
 exports[`<FeaturedWords/> should match snapshot 1`] = `
 <Section
-  classes="featured-words"
+  className="featured-words"
   contrast={true}
   data-test="component-featured-words"
   theme="brand"
   type="section"
 >
   <Container
-    classes={null}
+    className={null}
     fluid={false}
   >
     <Row
-      classes="mb-5"
+      className="mb-5"
       column={false}
       reverse={false}
       row={true}
@@ -29,7 +29,7 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
         xs={false}
       >
         <Heading
-          classes="featured-words__heading"
+          className="featured-words__heading"
           innerHTML={true}
           priority="2"
         >
@@ -44,11 +44,11 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
     </Row>
   </Container>
   <Container
-    classes={null}
+    className={null}
     fluid={false}
   >
     <Row
-      classes={null}
+      className={null}
       column={false}
       reverse={false}
       row={true}
@@ -190,7 +190,7 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
                 "taxonomy": "word_category",
               }
             }
-            classes="featured-words__word-card"
+            className="featured-words__word-card"
             contrast={false}
             data-test="featured-words-word"
             key="1"
@@ -267,7 +267,7 @@ test<br />
                 "taxonomy": "word_category",
               }
             }
-            classes="featured-words__word-card"
+            className="featured-words__word-card"
             contrast={false}
             data-test="featured-words-word"
             key="2"
@@ -350,7 +350,7 @@ test<br />
                 "taxonomy": "word_category",
               }
             }
-            classes="featured-words__word-card"
+            className="featured-words__word-card"
             contrast={false}
             data-test="featured-words-word"
             key="3"
@@ -378,11 +378,11 @@ test<br />
     </Row>
   </Container>
   <Container
-    classes={null}
+    className={null}
     fluid={false}
   >
     <Row
-      classes="mt-6"
+      className="mt-6"
       column={false}
       reverse={false}
       row={true}

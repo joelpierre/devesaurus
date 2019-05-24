@@ -6,22 +6,33 @@ import styles from './Layout.module.scss';
 import SEO from '../components/core/SEO/SEO';
 import PrimaryFooter from '../components/organisms/PrimaryFooter/PrimaryFooter';
 import SimpleHeader from '../components/organisms/SimpleHeader/SimpleHeader';
+import PrimaryMenu from '../components/organisms/PrimaryMenu/PrimaryMenu';
 
 export class BasicLayout extends PureComponent {
   render() {
-    const { children, title, description, classes } = this.props;
+    const { children, title, description, className, isMenuOpen } = this.props;
 
     return (
       <>
         <SEO title={title} description={description} />
-        <SimpleHeader />
-        <main
-          data-test="basic-layout-main"
-          className={classNames([styles['primary-main'], classes])}
+
+        <PrimaryMenu isMenuOpen={isMenuOpen} />
+
+        <div
+          id="push-wrapper"
+          className={classNames('push-wrapper', {
+            'push-wrapper--active': isMenuOpen,
+          })}
         >
-          {children}
-        </main>
-        <PrimaryFooter />
+          <SimpleHeader />
+          <main
+            data-test="basic-layout-main"
+            className={classNames([styles['primary-main'], className])}
+          >
+            {children}
+          </main>
+          <PrimaryFooter />
+        </div>
       </>
     );
   }
@@ -31,13 +42,14 @@ export class BasicLayout extends PureComponent {
 BasicLayout.defaultProps = {
   title: 'Default Title',
   description: 'Default description',
-  classes: null,
+  className: null,
 };
 
 BasicLayout.propTypes = {
+  isMenuOpen: PropTypes.bool.isRequired,
   title: PropTypes.string,
   description: PropTypes.string,
-  classes: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

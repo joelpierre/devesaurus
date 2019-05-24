@@ -23,7 +23,7 @@ exports[`<FormBase/> should match snapshot 1`] = `
       some text here
     </p>
     <Row
-      classes="form-base__row"
+      className="form-base__row"
       column={false}
       reverse={false}
       row={true}
@@ -40,10 +40,10 @@ exports[`<FormBase/> should match snapshot 1`] = `
         xs={false}
       >
         <FormField
-          classes="form-base__form-field"
+          className="form-base__form-field"
         >
           <InputField
-            classes="form-base__input-field"
+            className="form-base__input-field"
             disabled={false}
             label="label-1"
             lg={false}
@@ -69,10 +69,10 @@ exports[`<FormBase/> should match snapshot 1`] = `
         xs={false}
       >
         <FormField
-          classes="form-base__form-field"
+          className="form-base__form-field"
         >
           <SelectField
-            classes="form-base__select-field"
+            className="form-base__select-field"
             label="label-2"
             name="test-2"
             options={
@@ -99,10 +99,10 @@ exports[`<FormBase/> should match snapshot 1`] = `
         xs={false}
       >
         <FormField
-          classes="form-base__form-field"
+          className="form-base__form-field"
         >
           <FileUpload
-            classes="form-base__file-upload"
+            className="form-base__file-upload"
             name="file-name"
             placeholder="file-placeholder"
           />
@@ -111,7 +111,7 @@ exports[`<FormBase/> should match snapshot 1`] = `
     </Row>
   </div>
   <Row
-    classes="form-base__row"
+    className="form-base__row"
     column={false}
     reverse={false}
     row={true}
@@ -127,12 +127,12 @@ exports[`<FormBase/> should match snapshot 1`] = `
       xs={false}
     >
       <FormField
-        classes="form-base__buttons"
+        className="form-base__buttons"
       >
         <Button
           behavior="action"
           caps={true}
-          classes="form-base__button"
+          className="form-base__button"
           size="md"
           theme="brand"
           type="submit"
@@ -152,12 +152,12 @@ exports[`<FormBase/> should match snapshot 1`] = `
       xs={false}
     >
       <FormField
-        classes="form-base__buttons"
+        className="form-base__buttons"
       >
         <Button
           behavior="action"
           caps={true}
-          classes="form-base__button"
+          className="form-base__button"
           size="md"
           theme="beta"
           type="reset"

@@ -16,11 +16,11 @@ exports[`<FooterMenu/> should match snapshot 2`] = `
     className="footer-menu__list"
   >
     <MenuItem
-      classes="footer-menu__item"
+      className="footer-menu__item"
       item={
         Object {
           "attr": "attr",
-          "classes": "classes",
+          "classes": "test-class",
           "object_slug": "slug",
           "order": "1",
           "title": "title",

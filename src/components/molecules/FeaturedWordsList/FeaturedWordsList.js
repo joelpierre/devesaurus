@@ -25,10 +25,10 @@ export const PureFeaturedWordsList = ({ allWordpressWpWord }) => (
   </>
 );
 
-const FeaturedWordsList = ({ classes }) => (
+const FeaturedWordsList = ({ className }) => (
   <div
     data-test="component-featured-words-list"
-    className={classNames(classes, styles['featured-words-list'])}
+    className={classNames(className, styles['featured-words-list'])}
   >
     <ul
       data-test="featured-words-list"
@@ -44,11 +44,11 @@ const FeaturedWordsList = ({ classes }) => (
 );
 
 FeaturedWordsList.defaultProps = {
-  classes: undefined,
+  className: undefined,
 };
 
 FeaturedWordsList.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default FeaturedWordsList;

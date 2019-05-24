@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './FormField.module.scss';
 
-const FormField = ({ classes, children }) => {
+const FormField = ({ className, children }) => {
   return (
     <div
       data-test="component-form-field"
-      className={classNames([styles['form-field'], classes])}
+      className={classNames([styles['form-field'], className])}
     >
       {children}
     </div>
@@ -15,11 +15,11 @@ const FormField = ({ classes, children }) => {
 };
 
 FormField.defaultProps = {
-  classes: null,
+  className: null,
 };
 
 FormField.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

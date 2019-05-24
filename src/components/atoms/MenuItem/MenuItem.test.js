@@ -14,7 +14,7 @@ const defaultProps = {
     classes: 'faHeart',
     object_slug: 'test-title',
   },
-  classes: 'test-class',
+  className: 'test-class',
 };
 
 /**
@@ -34,7 +34,64 @@ describe('<MenuItem/>', () => {
     wrapper = setup();
   });
 
-  it('renders the MenuItem Component without errors', () => {
+  it('renders the MenuItem Component without errors {item: { attr: "anchor" }}', () => {
+    const component = findByTestAttr(wrapper, 'component-menu-item');
+    expect(component.length).toBe(1);
+  });
+
+  it('renders the MenuItem Component without errors {item: { title: undefined, attr: "anchor" }}', () => {
+    wrapper = setup({
+      item: {
+        ...defaultProps.item,
+        title: undefined,
+      },
+    });
+    const component = findByTestAttr(wrapper, 'component-menu-item');
+    expect(component.length).toBe(1);
+  });
+
+  it('renders the MenuItem Component without errors {item: { attr: "" }}', () => {
+    wrapper = setup({
+      item: {
+        ...defaultProps.item,
+        attr: '',
+      },
+    });
+    const component = findByTestAttr(wrapper, 'component-menu-item');
+    expect(component.length).toBe(1);
+  });
+
+  it('renders the MenuItem Component without errors {item: { title: undefined, attr: "" }}', () => {
+    wrapper = setup({
+      item: {
+        ...defaultProps.item,
+        title: undefined,
+        attr: '',
+      },
+    });
+    const component = findByTestAttr(wrapper, 'component-menu-item');
+    expect(component.length).toBe(1);
+  });
+
+  it('renders the MenuItem Component without errors {item: { attr: "divider" }}', () => {
+    wrapper = setup({
+      item: {
+        ...defaultProps.item,
+        attr: 'divider',
+      },
+    });
+    const component = findByTestAttr(wrapper, 'component-menu-item');
+    expect(component.length).toBe(1);
+  });
+
+  it('renders the MenuItem Component without errors {item: { title: undefined, attr: "divider" }}', () => {
+    wrapper = setup({
+      item: {
+        ...defaultProps.item,
+        title: undefined,
+        attr: 'divider',
+      },
+    });
     const component = findByTestAttr(wrapper, 'component-menu-item');
     expect(component.length).toBe(1);
   });

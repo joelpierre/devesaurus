@@ -6,19 +6,19 @@ import PropTypes from 'prop-types';
 import styles from './SocialMenu.module.scss';
 import SocialItem from '../../atoms/SocialItem/SocialItem';
 
-export const PureSocialMenu = ({ classes, allWordpressAcfOptions }) => {
+export const PureSocialMenu = ({ className, allWordpressAcfOptions }) => {
   const { options } = allWordpressAcfOptions.edges[0].node;
   const { facebook, twitter, instagram, linkedin } = options;
 
   return (
     <nav
       data-test="component-social-menu"
-      className={classNames(styles['social-menu'], classes)}
+      className={classNames(styles['social-menu'], className)}
     >
       <ul className={styles['social-menu__list']}>
         {facebook && (
           <SocialItem
-            classes={styles['social-menu__item']}
+            className={styles['social-menu__item']}
             name="facebook"
             link={facebook}
           />
@@ -26,7 +26,7 @@ export const PureSocialMenu = ({ classes, allWordpressAcfOptions }) => {
 
         {twitter && (
           <SocialItem
-            classes={styles['social-menu__item']}
+            className={styles['social-menu__item']}
             name="twitter"
             link={twitter}
           />
@@ -34,7 +34,7 @@ export const PureSocialMenu = ({ classes, allWordpressAcfOptions }) => {
 
         {instagram && (
           <SocialItem
-            classes={styles['social-menu__item']}
+            className={styles['social-menu__item']}
             name="instagram"
             link={instagram}
           />
@@ -42,7 +42,7 @@ export const PureSocialMenu = ({ classes, allWordpressAcfOptions }) => {
 
         {linkedin && (
           <SocialItem
-            classes={styles['social-menu__item']}
+            className={styles['social-menu__item']}
             name="linkedin"
             link={linkedin}
           />
@@ -52,20 +52,20 @@ export const PureSocialMenu = ({ classes, allWordpressAcfOptions }) => {
   );
 };
 
-const SocialMenu = ({ classes }) => (
+const SocialMenu = ({ className }) => (
   <StaticQuery
     data-test="component-primary-menu-query"
     query={menuQuery}
-    render={props => <PureSocialMenu {...props} classes={classes} />}
+    render={props => <PureSocialMenu {...props} className={className} />}
   />
 );
 
 SocialMenu.defaultProps = {
-  classes: undefined,
+  className: undefined,
 };
 
 SocialMenu.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default SocialMenu;

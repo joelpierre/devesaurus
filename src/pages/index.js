@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { graphql, StaticQuery } from 'gatsby';
 
 import FeaturedWords from '../components/organisms/FeaturedWords/FeaturedWords';
@@ -6,13 +8,15 @@ import HeroSearch from '../components/organisms/HeroSearch/HeroSearch';
 import BasicLayout from '../layouts/BasicLayout';
 
 export class Index extends PureComponent {
-  componentDidMount() {
-    console.log();
-  }
-
   render() {
+    const { isMenuOpen } = this.props;
+
     return (
-      <BasicLayout title="Devesaurus Home" data-test="page-index">
+      <BasicLayout
+        isMenuOpen={isMenuOpen}
+        title="Find a word"
+        data-test="page-index"
+      >
         <HeroSearch title="Devesaurus" />
 
         <StaticQuery
@@ -27,7 +31,17 @@ export class Index extends PureComponent {
   }
 }
 
-export default Index;
+Index.propTypes = {
+  isMenuOpen: PropTypes.bool.isRequired,
+};
+
+/* istanbul ignore next */
+const mapStateToProps = ({ core: { isMenuOpen } }) => ({
+  isMenuOpen,
+});
+
+// export default Index;
+export default connect(mapStateToProps)(Index);
 
 const query = graphql`
   {

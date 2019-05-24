@@ -6,8 +6,9 @@ import PureIndex, { Index } from './index';
 import { checkProps, findByTestAttr, matchSnapshot } from '../utils/test';
 
 const defaultProps = {
-  onGetSiteMeta: () => {},
-  onGetSiteOptions: () => {},
+  onGetSiteMeta: jest.fn(),
+  onGetSiteOptions: jest.fn(),
+  isMenuOpen: false,
 };
 
 /**

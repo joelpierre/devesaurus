@@ -10,17 +10,17 @@ import ScrollingMouse from '../../atoms/ScrollingMouse/ScrollingMouse';
 
 const HeroSearch = () => {
   return (
-    <Section classes={styles['hero-search']}>
+    <Section className={styles['hero-search']}>
       <Container data-test="component-hero-search">
         <Row>
-          <Flex colMd={10} colLg={8} colXl={8} classes="mx-auto">
+          <Flex colMd={10} colLg={8} colXl={8} className="mx-auto">
             <div className={styles['hero-search__wrapper']}>
-              <Brand center classes={styles['hero-search__brand']} />
+              <Brand center className={styles['hero-search__brand']} />
               <InputField
                 name="hero-search"
                 type="text"
                 placeholder="Enter a search term. e.g. HTML"
-                classes={styles['hero-search__input']}
+                className={styles['hero-search__input']}
               />
             </div>
           </Flex>

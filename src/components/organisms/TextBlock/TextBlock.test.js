@@ -51,6 +51,6 @@ describe('<TextBlock/>', () => {
     const component = findByTestAttr(wrapper, 'component-text-block');
 
     matchSnapshot(wrapper);
-    expect(component.prop('classes')).toContain('theme--brand');
+    expect(component.prop('className')).toContain('theme--brand');
   });
 });

@@ -5,7 +5,7 @@ import styles from './Brand.module.scss';
 import SvgIcon from '../SvgIcon/SvgIcon';
 import SiteInfo from '../SiteInfo/SiteInfo';
 
-const Brand = ({ classes, type, left, right, center }) => {
+const Brand = ({ className, type, left, right, center }) => {
   let logo;
 
   /**
@@ -39,13 +39,13 @@ const Brand = ({ classes, type, left, right, center }) => {
           [styles['brand--right']]: right,
           [styles['brand--center']]: center,
         },
-        classes,
+        className,
       ])}
     >
       <div className={classNames(styles.brand__wrapper)}>
         <SvgIcon
           name={logo}
-          classes={classNames([
+          className={classNames([
             `${styles.brand__logo}`,
             `${styles.brand__icon}`,
           ])}
@@ -58,7 +58,7 @@ const Brand = ({ classes, type, left, right, center }) => {
 };
 
 Brand.defaultProps = {
-  classes: null,
+  className: null,
   left: true,
   center: false,
   right: false,
@@ -66,7 +66,7 @@ Brand.defaultProps = {
 };
 
 Brand.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
   left: PropTypes.bool,
   center: PropTypes.bool,
   right: PropTypes.bool,

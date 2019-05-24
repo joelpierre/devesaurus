@@ -17,7 +17,7 @@ export const PureWordTagCloudList = ({ allWordpressWpWordTag }) => (
         className={classNames(styles['label-cloud__item'])}
       >
         <Label
-          classes={styles['label-cloud__label']}
+          className={styles['label-cloud__label']}
           link={'/definitions/tag/' + node.slug}
           theme={mapTaxonomyTheme(node.slug)}
         >
@@ -32,10 +32,10 @@ export const PureWordTagCloudList = ({ allWordpressWpWordTag }) => (
   </>
 );
 
-const WordTagCloud = ({ classes }) => (
+const WordTagCloud = ({ className }) => (
   <ul
     data-test="component-word-tag-cloud"
-    className={classNames(styles['label-cloud'], classes)}
+    className={classNames(styles['label-cloud'], className)}
   >
     <StaticQuery
       data-test="component-word-tag-cloud-query"
@@ -46,11 +46,11 @@ const WordTagCloud = ({ classes }) => (
 );
 
 WordTagCloud.defaultProps = {
-  classes: undefined,
+  className: undefined,
 };
 
 WordTagCloud.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default WordTagCloud;

@@ -20,7 +20,7 @@ export class ArchiveTemplate extends PureComponent {
         title={pageContext.name}
         description=""
         data-test="template-archive"
-        classes={classNames([
+        className={classNames([
           styles.archive,
           styles[`archive__${pageContext.taxonomy.replace('_', '-')}`],
         ])}
@@ -30,7 +30,7 @@ export class ArchiveTemplate extends PureComponent {
           <Container>
             <Row>
               <Flex>
-                <Heading priority="1" classes="text-center mb-0">
+                <Heading priority="1" className="text-center mb-0">
                   {pageContext.name}
                 </Heading>
               </Flex>

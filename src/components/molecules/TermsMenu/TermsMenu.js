@@ -7,17 +7,17 @@ import styles from './TermsMenu.module.scss';
 import MenuItem from '../../atoms/MenuItem/MenuItem';
 
 export const PureTermsMenu = ({
-  classes,
+  className,
   allWordpressWpApiMenusMenusItems,
 }) => (
   <nav
     data-test="component-terms-menu"
-    className={`${styles['terms-menu']} ${classes}`}
+    className={`${styles['terms-menu']} ${className}`}
   >
     <ul className={styles['terms-menu__list']}>
       {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
         <MenuItem
-          classes={styles['terms-menu__item']}
+          className={styles['terms-menu__item']}
           key={item.order}
           item={item}
         />
@@ -26,20 +26,20 @@ export const PureTermsMenu = ({
   </nav>
 );
 
-const TermsMenu = ({ classes }) => (
+const TermsMenu = ({ className }) => (
   <StaticQuery
     data-test="component-terms-menu-query"
     query={menuQuery}
-    render={props => <PureTermsMenu {...props} classes={classes} />}
+    render={props => <PureTermsMenu {...props} className={className} />}
   />
 );
 
 TermsMenu.defaultProps = {
-  classes: null,
+  className: null,
 };
 
 TermsMenu.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default TermsMenu;

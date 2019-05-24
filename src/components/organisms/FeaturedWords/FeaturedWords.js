@@ -78,14 +78,17 @@ class FeaturedWords extends PureComponent {
     return (
       <Section
         data-test="component-featured-words"
-        classes={`${styles['featured-words']}`}
+        className={`${styles['featured-words']}`}
         contrast={contrast}
         theme={theme}
       >
         <Container>
-          <Row classes="mb-5">
+          <Row className="mb-5">
             <Flex colMd="8">
-              <Heading priority="2" classes={styles['featured-words__heading']}>
+              <Heading
+                priority="2"
+                className={styles['featured-words__heading']}
+              >
                 Featured Words
               </Heading>
               <p className={styles['featured-words__copy']}>
@@ -112,7 +115,7 @@ class FeaturedWords extends PureComponent {
                       acf={word.acf}
                       tags={word.word_tags}
                       category={word.word_cats[0]}
-                      classes={styles['featured-words__word-card']}
+                      className={styles['featured-words__word-card']}
                       contrast={!contrast}
                     />
                   );
@@ -123,7 +126,7 @@ class FeaturedWords extends PureComponent {
         </Container>
 
         <Container>
-          <Row classes="mt-6">
+          <Row className="mt-6">
             <Flex colMd="8">
               <Button link="/" size="lg" theme="tint-alpha">
                 View all word categories{' '}

@@ -49,6 +49,6 @@ describe('<CtaBanner/>', () => {
     });
     const component = findByTestAttr(wrapper, 'component-cta-banner');
     matchSnapshot(wrapper);
-    expect(component.prop('classes')).toContain('theme--brand');
+    expect(component.prop('className')).toContain('theme--brand');
   });
 });

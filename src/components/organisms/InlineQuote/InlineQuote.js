@@ -13,14 +13,14 @@ const InlineQuote = ({ module, pageTheme }) => {
   return (
     <Section
       data-test="component-inline-quote"
-      classes={classNames([
+      className={classNames([
         `theme--${module.theme ? module.theme : pageTheme}`,
         styles['inline-quote'],
       ])}
     >
       <Container>
         <Row>
-          <Flex classes="flex">
+          <Flex className="flex">
             <blockquote>This is a blockquote</blockquote>
           </Flex>
         </Row>

@@ -32,7 +32,7 @@ const FormBase = ({ formName, buttons, formGroups, encType, onSubmit }) => {
             {description && (
               <p className={styles['form-base__description']}>{description}</p>
             )}
-            <Row classes={styles['form-base__row']}>
+            <Row className={styles['form-base__row']}>
               {fields.map(
                 (
                   {
@@ -42,7 +42,7 @@ const FormBase = ({ formName, buttons, formGroups, encType, onSubmit }) => {
                       type: inputType,
                       placeholder,
                       options,
-                      classes,
+                      className,
                       ...field
                     },
                   },
@@ -58,16 +58,16 @@ const FormBase = ({ formName, buttons, formGroups, encType, onSubmit }) => {
                     col={field.columns ? field.columns.col || 12 : 12}
                   >
                     <FormField
-                      classes={classNames(styles['form-base__form-field'])}
+                      className={classNames(styles['form-base__form-field'])}
                     >
                       {type === 'input' && (
                         <InputField
                           name={name}
                           type={inputType}
                           placeholder={placeholder}
-                          classes={classNames(
+                          className={classNames(
                             styles['form-base__input-field'],
-                            classes
+                            className
                           )}
                           {...field}
                         />
@@ -76,9 +76,9 @@ const FormBase = ({ formName, buttons, formGroups, encType, onSubmit }) => {
                         <SelectField
                           name={name}
                           placeholder={placeholder}
-                          classes={classNames(
+                          className={classNames(
                             styles['form-base__select-field'],
-                            classes
+                            className
                           )}
                           options={options}
                           {...field}
@@ -88,9 +88,9 @@ const FormBase = ({ formName, buttons, formGroups, encType, onSubmit }) => {
                         <FileUpload
                           name={name}
                           placeholder={placeholder}
-                          classes={classNames(
+                          className={classNames(
                             styles['form-base__file-upload'],
-                            classes
+                            className
                           )}
                           {...field}
                         />
@@ -104,15 +104,15 @@ const FormBase = ({ formName, buttons, formGroups, encType, onSubmit }) => {
         )
       )}
 
-      <Row classes={styles['form-base__row']}>
-        {buttons.map(({ theme, type, classes, text }, index) => (
+      <Row className={styles['form-base__row']}>
+        {buttons.map(({ theme, type, className, text }, index) => (
           <Flex key={index} auto>
-            <FormField classes={classNames(styles['form-base__buttons'])}>
+            <FormField className={classNames(styles['form-base__buttons'])}>
               <Button
                 theme={theme}
                 behavior="action"
                 type={type}
-                classes={classNames(classes, styles['form-base__button'])}
+                className={classNames(className, styles['form-base__button'])}
               >
                 {text}
               </Button>
@@ -140,7 +140,7 @@ FormBase.propTypes = {
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       type: PropTypes.oneOf(['submit', 'reset']),
-      classes: PropTypes.string,
+      className: PropTypes.string,
       text: PropTypes.string,
       ...themePropType,
     })

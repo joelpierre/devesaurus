@@ -2,7 +2,7 @@
 
 exports[`<PageTemplate/> should match snapshot 1`] = `
 <CoreLayout
-  classes="page page__test-slug"
+  className="page page__test-slug"
   data-test="template-page"
   description=""
   isMenuOpen={false}

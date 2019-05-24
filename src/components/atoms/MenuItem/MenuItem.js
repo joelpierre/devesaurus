@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import styles from './MenuItem.module.scss';
 import { sanitizeUrl } from '../../../utils';
 
-function MenuItem({ item, classes, children, ...props }) {
+function MenuItem({ item, className, children, ...props }) {
   const { attr } = item;
   const link = sanitizeUrl(item.url);
   let el;
@@ -45,7 +45,7 @@ function MenuItem({ item, classes, children, ...props }) {
   return (
     <li
       data-test="component-menu-item"
-      className={classNames(classes, styles['menu-item'])}
+      className={classNames(className, styles['menu-item'])}
       {...props}
     >
       {el}
@@ -63,13 +63,13 @@ MenuItem.propTypes = {
     PropTypes.node,
   ]),
   item: PropTypes.shape({
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     object_slug: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     classes: PropTypes.string.isRequired,
     attr: PropTypes.string.isRequired,
   }).isRequired,
-  classes: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default MenuItem;

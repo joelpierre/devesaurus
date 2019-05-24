@@ -3,13 +3,13 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './Container.module.scss';
 
-const Container = ({ fluid, children, classes, ...props }) => (
+const Container = ({ fluid, children, className, ...props }) => (
   <div
     data-test="component-grid-container"
     className={classNames({
       [styles.container]: !fluid,
       [styles['container-fluid']]: fluid,
-      classes,
+      className,
     })}
     {...props}
   >
@@ -19,12 +19,12 @@ const Container = ({ fluid, children, classes, ...props }) => (
 
 Container.defaultProps = {
   fluid: false,
-  classes: null,
+  className: null,
 };
 
 Container.propTypes = {
   fluid: PropTypes.bool,
-  classes: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

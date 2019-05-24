@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './Section.module.scss';
 import { defaultTheme, themePropType } from '../../../utils/propTypes';
 
-const Section = ({ children, classes, type, contrast, theme }) => {
+const Section = ({ children, className, type, contrast, theme }) => {
   const Tag = `${type}`;
 
   return (
@@ -12,7 +12,7 @@ const Section = ({ children, classes, type, contrast, theme }) => {
       data-test="component-section"
       className={classNames({
         [styles.section]: true,
-        [classes]: classes,
+        [className]: className,
         [styles[`theme--${theme}`]]: theme,
         [styles[`theme--tint-alpha`]]: !contrast && !theme,
         [styles[`theme--tint-beta`]]: contrast && !theme,
@@ -24,14 +24,14 @@ const Section = ({ children, classes, type, contrast, theme }) => {
 };
 
 Section.defaultProps = {
-  classes: null,
+  className: null,
   type: 'section',
   contrast: false, // false = white, true = grey
   ...defaultTheme(null),
 };
 
 Section.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
   type: PropTypes.string,
   contrast: PropTypes.bool,
   children: PropTypes.oneOfType([

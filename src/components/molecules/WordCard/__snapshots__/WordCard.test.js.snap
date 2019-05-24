@@ -84,7 +84,7 @@ exports[`<WordCard/> should match snapShot 1`] = `
     <div>
       <Label
         caps={false}
-        classes={null}
+        className={null}
         data-test="word-card-tag"
         key="css"
         link="/definitions/tag/css"
@@ -118,7 +118,7 @@ exports[`<WordCard/> should match snapShot 1`] = `
       </Label>
       <Label
         caps={false}
-        classes={null}
+        className={null}
         data-test="word-card-tag"
         key="html5"
         link="/definitions/tag/html5"
@@ -183,7 +183,7 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
       },
     ]
   }
-  classes={null}
+  className={null}
   contrast={false}
   slug="slug"
   tags={
@@ -321,7 +321,7 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
       <div>
         <Label
           caps={false}
-          classes={null}
+          className={null}
           data-test="word-card-tag"
           key="css"
           link="/definitions/tag/css"
@@ -389,7 +389,7 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
         </Label>
         <Label
           caps={false}
-          classes={null}
+          className={null}
           data-test="word-card-tag"
           key="html5"
           link="/definitions/tag/html5"

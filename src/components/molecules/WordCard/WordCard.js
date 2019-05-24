@@ -11,13 +11,21 @@ import { mapTaxonomyIcon, mapTaxonomyTheme } from '../../../utils';
 
 class WordCard extends PureComponent {
   render() {
-    const { title, slug, classes, contrast, acf, tags, category } = this.props;
+    const {
+      title,
+      slug,
+      className,
+      contrast,
+      acf,
+      tags,
+      category,
+    } = this.props;
 
     return (
       <article
         className={classNames([
           styles['word-card'],
-          classes,
+          className,
           {
             'theme--tint-alpha': !contrast,
             'theme--tint-beta': contrast,
@@ -59,7 +67,7 @@ class WordCard extends PureComponent {
           <Heading
             priority="3"
             data-test="word-card-heading"
-            classes={styles['word-card__heading']}
+            className={styles['word-card__heading']}
           >
             {title}
           </Heading>
@@ -81,7 +89,7 @@ class WordCard extends PureComponent {
                 return (
                   <Label
                     data-test="word-card-tag"
-                    classes={styles['word-card__label']}
+                    className={styles['word-card__label']}
                     key={tag.slug}
                     link={`/definitions/tag/${tag.slug}`}
                     theme={mapTaxonomyTheme(tag.slug)}
@@ -103,11 +111,11 @@ class WordCard extends PureComponent {
 }
 
 WordCard.defaultProps = {
-  classes: null,
+  className: null,
 };
 
 WordCard.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
   contrast: PropTypes.bool.isRequired,
   ...wordPropTypeShape,
 };

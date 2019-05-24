@@ -10,7 +10,7 @@ exports[`<InputGroup/> should match snapshot 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      classes={null}
+      className={null}
       disabled={false}
       label={null}
       lg={false}
@@ -37,7 +37,7 @@ exports[`<InputGroup/> should match snapshot with append button 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      classes={null}
+      className={null}
       disabled={false}
       label={null}
       lg={false}
@@ -83,7 +83,7 @@ exports[`<InputGroup/> should match snapshot with append icon 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      classes={null}
+      className={null}
       disabled={false}
       label={null}
       lg={false}
@@ -109,7 +109,7 @@ exports[`<InputGroup/> should match snapshot with append icon 1`] = `
       >
         <SvgIcon
           center={false}
-          classes={null}
+          className={null}
           description="An SVG Icon"
           fill="#000000"
           name="complete"
@@ -130,7 +130,7 @@ exports[`<InputGroup/> should match snapshot with append text 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      classes={null}
+      className={null}
       disabled={false}
       label={null}
       lg={false}
@@ -190,7 +190,7 @@ exports[`<InputGroup/> should match snapshot with prepend button 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      classes={null}
+      className={null}
       disabled={false}
       label={null}
       lg={false}
@@ -224,7 +224,7 @@ exports[`<InputGroup/> should match snapshot with prepend icon 1`] = `
       >
         <SvgIcon
           center={false}
-          classes={null}
+          className={null}
           description="An SVG Icon"
           fill="#000000"
           name="complete"
@@ -237,7 +237,7 @@ exports[`<InputGroup/> should match snapshot with prepend icon 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      classes={null}
+      className={null}
       disabled={false}
       label={null}
       lg={false}
@@ -278,7 +278,7 @@ exports[`<InputGroup/> should match snapshot with prepend text 1`] = `
     data-test="input-group-input"
   >
     <InputField
-      classes={null}
+      className={null}
       disabled={false}
       label={null}
       lg={false}

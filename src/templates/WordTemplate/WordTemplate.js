@@ -42,7 +42,7 @@ export class WordTemplate extends PureComponent {
         headerTitle={`${pageContext.title} <span>:: definition</span>`}
         description={pageContext.yoast_meta.yoast_wpseo_metadesc}
         data-test="template-word"
-        classes={classNames([
+        className={classNames([
           styles.word,
           `word__${pageContext.slug.replace('_', '-')}`,
         ])}
@@ -54,7 +54,7 @@ export class WordTemplate extends PureComponent {
               <Flex colLg={7}>
                 <Heading
                   innerHTML={false}
-                  classes={styles.word__heading}
+                  className={styles.word__heading}
                   priority={1}
                 >
                   {pageContext.title}
@@ -90,7 +90,7 @@ export class WordTemplate extends PureComponent {
 
                 <hr className={styles.word__hr} />
 
-                <Heading priority={3} classes={styles.word__subheading}>
+                <Heading priority={3} className={styles.word__subheading}>
                   Definition
                 </Heading>
                 <p
@@ -101,7 +101,7 @@ export class WordTemplate extends PureComponent {
                 />
               </Flex>
 
-              <Flex colLg={4} classes={classNames('ml-auto')}>
+              <Flex colLg={4} className={classNames('ml-auto')}>
                 Ads or something?
               </Flex>
             </Row>

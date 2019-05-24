@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './Heading.module.scss';
 
-const Heading = ({ priority, children, classes, innerHTML }) => {
+const Heading = ({ priority, children, className, innerHTML }) => {
   const Tag = `h${priority}`;
 
   if (innerHTML) {
     return (
       <Tag
         data-test="component-heading"
-        className={classNames([`${styles[`heading-${priority}`]}`, classes])}
+        className={classNames([`${styles[`heading-${priority}`]}`, className])}
         dangerouslySetInnerHTML={{ __html: children }}
       />
     );
@@ -19,7 +19,7 @@ const Heading = ({ priority, children, classes, innerHTML }) => {
   return (
     <Tag
       data-test="component-heading"
-      className={classNames([`${styles[`heading-${priority}`]}`, classes])}
+      className={classNames([`${styles[`heading-${priority}`]}`, className])}
     >
       {children}
     </Tag>
@@ -28,7 +28,7 @@ const Heading = ({ priority, children, classes, innerHTML }) => {
 
 Heading.defaultProps = {
   children: undefined,
-  classes: undefined,
+  className: undefined,
   innerHTML: true,
 };
 
@@ -36,7 +36,7 @@ Heading.propTypes = {
   priority: PropTypes.oneOf(['1', 1, '2', 2, '3', 3, '4', 4, '5', 5, '6', 6])
     .isRequired,
   innerHTML: PropTypes.bool,
-  classes: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

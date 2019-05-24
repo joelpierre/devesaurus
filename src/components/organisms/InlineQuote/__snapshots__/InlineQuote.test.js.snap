@@ -2,25 +2,25 @@
 
 exports[`<InlineQuote/> should match snapshot 1`] = `
 <Section
-  classes="theme--alpha inline-quote"
+  className="theme--alpha inline-quote"
   contrast={false}
   data-test="component-inline-quote"
   theme={null}
   type="section"
 >
   <Container
-    classes={null}
+    className={null}
     fluid={false}
   >
     <Row
-      classes={null}
+      className={null}
       column={false}
       reverse={false}
       row={true}
     >
       <Flex
         auto={false}
-        classes="flex"
+        className="flex"
         lg={false}
         md={false}
         sm={false}
@@ -39,25 +39,25 @@ exports[`<InlineQuote/> should match snapshot 1`] = `
 
 exports[`<InlineQuote/> should render with pageTheme instead of module theme 1`] = `
 <Section
-  classes="theme--brand inline-quote"
+  className="theme--brand inline-quote"
   contrast={false}
   data-test="component-inline-quote"
   theme={null}
   type="section"
 >
   <Container
-    classes={null}
+    className={null}
     fluid={false}
   >
     <Row
-      classes={null}
+      className={null}
       column={false}
       reverse={false}
       row={true}
     >
       <Flex
         auto={false}
-        classes="flex"
+        className="flex"
         lg={false}
         md={false}
         sm={false}

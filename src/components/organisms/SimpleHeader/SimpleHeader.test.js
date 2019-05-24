@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 
-import SimpleHeader from './SimpleHeader';
+import ConnectedSimpleHeader, { SimpleHeader } from './SimpleHeader';
 
 const defaultProps = {};
 

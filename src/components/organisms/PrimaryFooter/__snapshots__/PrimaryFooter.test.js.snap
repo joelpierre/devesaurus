@@ -9,11 +9,11 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
     className="primary-footer--top"
   >
     <Container
-      classes={null}
+      className={null}
       fluid={false}
     >
       <Row
-        classes={null}
+        className={null}
         column={false}
         reverse={false}
         row={true}
@@ -30,14 +30,14 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
           xs={false}
         >
           <Heading
-            classes="primary-footer__heading"
+            className="primary-footer__heading"
             innerHTML={true}
             priority={5}
           >
             About
           </Heading>
           <Heading
-            classes="primary-footer__legal-copy"
+            className="primary-footer__legal-copy"
             innerHTML={false}
             priority={6}
           >
@@ -55,12 +55,12 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
             Devesaurus 2019 | Developed by: Joel Pierre-Powell
           </Heading>
           <SocialMenu
-            classes="mt-3 primary-footer__social"
+            className="mt-3 primary-footer__social"
           />
         </Flex>
         <Flex
           auto={false}
-          classes="ml-auto"
+          className="ml-auto"
           colLg={3}
           colMd={6}
           lg={false}
@@ -71,19 +71,19 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
           xs={false}
         >
           <Heading
-            classes="primary-footer__heading"
+            className="primary-footer__heading"
             innerHTML={true}
             priority={5}
           >
             Featured Words
           </Heading>
           <FeaturedWordsList
-            classes="primary-footer__featured-words"
+            className="primary-footer__featured-words"
           />
         </Flex>
         <Flex
           auto={false}
-          classes="ml-lg-auto order-lg-1"
+          className="ml-lg-auto order-lg-1"
           colLg={4}
           colMd={12}
           lg={false}
@@ -94,7 +94,7 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
           xs={false}
         >
           <Heading
-            classes="primary-footer__heading"
+            className="primary-footer__heading"
             innerHTML={true}
             priority={5}
           >
@@ -104,7 +104,7 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
             className="primary-footer__tag-cloud-wrapper"
           >
             <LabelCloud
-              classes="primary-footer__tag-cloud"
+              className="primary-footer__tag-cloud"
               taxonomy="word_tag"
             />
           </div>
@@ -116,18 +116,18 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
     className="primary-footer--bottom"
   >
     <Container
-      classes={null}
+      className={null}
       fluid={false}
     >
       <Row
-        classes={null}
+        className={null}
         column={false}
         reverse={false}
         row={true}
       >
         <Flex
           auto={false}
-          classes="primary-footer__legal"
+          className="primary-footer__legal"
           colLg={5}
           colMd={12}
           lg={false}
@@ -142,7 +142,7 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
           >
             <Brand
               center={false}
-              classes="primary-footer__brand mb-2"
+              className="primary-footer__brand mb-2"
               left={true}
               right={false}
               type="text"
@@ -151,7 +151,7 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
         </Flex>
         <Flex
           auto={false}
-          classes="display-flex"
+          className="display-flex"
           colLg={7}
           colMd={12}
           lg={false}
@@ -162,7 +162,7 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
           xs={false}
         >
           <TermsMenu
-            classes="primary-footer__terms-menu"
+            className="primary-footer__terms-menu"
           />
         </Flex>
       </Row>

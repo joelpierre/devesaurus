@@ -10,13 +10,13 @@ exports[`<Brand/> should match snapshot 1`] = `
   >
     <SvgIcon
       center={false}
-      classes="brand__logo brand__icon"
+      className="brand__logo brand__icon"
       description="An SVG Icon"
       fill="#000000"
       name="logo"
     />
     <SiteInfo
-      classes={null}
+      className={null}
     />
   </div>
 </div>

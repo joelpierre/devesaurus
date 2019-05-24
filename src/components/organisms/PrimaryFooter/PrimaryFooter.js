@@ -26,13 +26,13 @@ const PrimaryFooter = ({ company }) => {
             <Flex colLg={4} colMd={5}>
               <Heading
                 priority={5}
-                classes={classNames(styles['primary-footer__heading'])}
+                className={classNames(styles['primary-footer__heading'])}
               >
                 About
               </Heading>
               <Heading
                 priority={6}
-                classes={classNames(styles['primary-footer__legal-copy'])}
+                className={classNames(styles['primary-footer__legal-copy'])}
                 innerHTML={false}
               >
                 Get real-world definitions to complex dev terms | Supported by{' '}
@@ -47,32 +47,32 @@ const PrimaryFooter = ({ company }) => {
               </Heading>
 
               <SocialMenu
-                classes={classNames('mt-3', styles['primary-footer__social'])}
+                className={classNames('mt-3', styles['primary-footer__social'])}
               />
             </Flex>
 
-            <Flex colLg={3} colMd={6} classes="ml-auto">
+            <Flex colLg={3} colMd={6} className="ml-auto">
               <Heading
                 priority={5}
-                classes={classNames(styles['primary-footer__heading'])}
+                className={classNames(styles['primary-footer__heading'])}
               >
                 Featured Words
               </Heading>
               <FeaturedWordsList
-                classes={classNames(styles['primary-footer__featured-words'])}
+                className={classNames(styles['primary-footer__featured-words'])}
               />
             </Flex>
 
-            <Flex colLg={4} colMd={12} classes="ml-lg-auto order-lg-1">
+            <Flex colLg={4} colMd={12} className="ml-lg-auto order-lg-1">
               <Heading
                 priority={5}
-                classes={classNames(styles['primary-footer__heading'])}
+                className={classNames(styles['primary-footer__heading'])}
               >
                 Word Tags
               </Heading>
               <div className={styles['primary-footer__tag-cloud-wrapper']}>
                 <LabelCloud
-                  classes={styles['primary-footer__tag-cloud']}
+                  className={styles['primary-footer__tag-cloud']}
                   taxonomy="word_tag"
                 />
               </div>
@@ -87,19 +87,22 @@ const PrimaryFooter = ({ company }) => {
             <Flex
               colLg={5}
               colMd={12}
-              classes={styles['primary-footer__legal']}
+              className={styles['primary-footer__legal']}
             >
               <Link to="/">
                 <Brand
                   left
                   type="text"
-                  classes={classNames(styles['primary-footer__brand'], 'mb-2')}
+                  className={classNames(
+                    styles['primary-footer__brand'],
+                    'mb-2'
+                  )}
                 />
               </Link>
             </Flex>
 
-            <Flex colLg={7} colMd={12} classes="display-flex">
-              <TermsMenu classes={styles['primary-footer__terms-menu']} />
+            <Flex colLg={7} colMd={12} className="display-flex">
+              <TermsMenu className={styles['primary-footer__terms-menu']} />
             </Flex>
           </Row>
         </Container>

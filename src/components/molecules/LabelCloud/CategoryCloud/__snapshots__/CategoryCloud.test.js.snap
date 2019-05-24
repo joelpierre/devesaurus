@@ -21,7 +21,7 @@ exports[`<PureCategoryCloudList/> should match snapshot PureCategoryCloudList 1`
   >
     <Label
       caps={false}
-      classes="label-cloud__label"
+      className="label-cloud__label"
       link="/category/test-slug"
       size="sm"
       theme="brand"

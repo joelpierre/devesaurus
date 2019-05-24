@@ -20,7 +20,7 @@ export class TaxonomyTemplate extends PureComponent {
         title={pageContext.name}
         description=""
         data-test="template-taxonomy"
-        classes={classNames([
+        className={classNames([
           styles.taxonomy,
           styles[`taxonomy__${pageContext.taxonomy.replace('_', '-')}`],
         ])}
@@ -30,7 +30,7 @@ export class TaxonomyTemplate extends PureComponent {
           <Container>
             <Row>
               <Flex>
-                <Heading priority="1" classes="text-center mb-0">
+                <Heading priority="1" className="text-center mb-0">
                   {pageContext.name}
                 </Heading>
               </Flex>

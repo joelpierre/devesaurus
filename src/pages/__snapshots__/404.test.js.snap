@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Error404/> should match snapshot 1`] = `
+exports[`<NotFoundPage/> should match snapshot 1`] = `
 <BasicLayout
-  classes={null}
+  className={null}
   data-test="page-error-404"
   description="Default description"
+  isMenuOpen={false}
   title="Error page not found"
 >
   404 Error

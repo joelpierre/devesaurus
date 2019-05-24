@@ -26,7 +26,7 @@ const defaultPureProps = {
               title: 'title',
               object_slug: 'slug',
               attr: 'attr',
-              classes: 'classes',
+              classes: 'test-class',
               url: 'url',
             },
           ],

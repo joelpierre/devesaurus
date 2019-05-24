@@ -3,14 +3,14 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './Row.module.scss';
 
-const Row = ({ children, row, column, reverse, classes, ...props }) => {
-  // console.log(classes);
+const Row = ({ children, row, column, reverse, className, ...props }) => {
+  // console.log(className);
   return (
     <div
       data-test="component-grid-row"
       {...props}
       className={classNames([
-        classes,
+        className,
         {
           [styles.row]: row,
           'row--reverse': row && reverse && !column,
@@ -28,11 +28,11 @@ Row.defaultProps = {
   row: true,
   column: false,
   reverse: false,
-  classes: null,
+  className: null,
 };
 
 Row.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
   row: PropTypes.bool,
   column: PropTypes.bool,
   reverse: PropTypes.bool,

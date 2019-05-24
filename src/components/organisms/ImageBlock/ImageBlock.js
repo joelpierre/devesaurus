@@ -13,14 +13,14 @@ const ImageBlock = ({ module, pageTheme }) => {
   return (
     <Section
       data-test="component-image-block"
-      classes={classNames([
+      className={classNames([
         `theme--${module.theme ? module.theme : pageTheme}`,
         styles['image-block'],
       ])}
     >
-      <Container classes="container-fluid">
-        <Row classes="row">
-          <Flex classes="flex text-center">
+      <Container className="container-fluid">
+        <Row className="row">
+          <Flex className="flex text-center">
             <Heading priority="2">Image Block</Heading>
           </Flex>
         </Row>

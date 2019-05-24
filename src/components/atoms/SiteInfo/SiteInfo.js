@@ -5,10 +5,10 @@ import { graphql, StaticQuery } from 'gatsby';
 
 import styles from './SiteInfo.module.scss';
 
-export const PureSiteInfo = ({ allWordpressSiteMetadata, classes }) => (
+export const PureSiteInfo = ({ allWordpressSiteMetadata, className }) => (
   <div
     data-test="component-site-info"
-    className={classNames([classes, styles['site-info']])}
+    className={classNames([className, styles['site-info']])}
   >
     <span className={styles['site-info__heading']}>
       {allWordpressSiteMetadata.edges[0].node.name}
@@ -19,7 +19,7 @@ export const PureSiteInfo = ({ allWordpressSiteMetadata, classes }) => (
   </div>
 );
 
-const SiteInfo = ({ classes }) => (
+const SiteInfo = ({ className }) => (
   <StaticQuery
     data-test="component-site-info-query"
     query={graphql`
@@ -34,16 +34,16 @@ const SiteInfo = ({ classes }) => (
         }
       }
     `}
-    render={props => <PureSiteInfo {...props} classes={classes} />}
+    render={props => <PureSiteInfo {...props} className={className} />}
   />
 );
 
 SiteInfo.defaultProps = {
-  classes: null,
+  className: null,
 };
 
 SiteInfo.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default SiteInfo;

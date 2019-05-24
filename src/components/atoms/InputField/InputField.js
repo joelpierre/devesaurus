@@ -5,7 +5,7 @@ import styles from './InputField.module.scss';
 import Label from '../FormLabel/FormLabel';
 
 const InputField = ({
-  classes,
+  className,
   name,
   label,
   type,
@@ -34,7 +34,7 @@ const InputField = ({
               [styles['input-field--md']]: md,
               [styles['input-field--lg']]: lg,
             },
-            classes,
+            className,
           ])}
           type={type}
           name={name}
@@ -50,7 +50,7 @@ const InputField = ({
         <input
           data-test="component-input-field"
           className={classNames([
-            classes,
+            className,
             {
               [styles['input-field']]: true,
               [styles['input-field--sm']]: sm,
@@ -81,7 +81,7 @@ const InputField = ({
 InputField.defaultProps = {
   placeholder: '',
   disabled: false,
-  classes: null,
+  className: null,
   min: null,
   max: null,
   sm: false,
@@ -92,7 +92,7 @@ InputField.defaultProps = {
 
 InputField.propTypes = {
   name: PropTypes.string.isRequired,
-  classes: PropTypes.string,
+  className: PropTypes.string,
   label: PropTypes.string,
   type: PropTypes.oneOf(['text', 'password', 'date', 'email', 'number'])
     .isRequired,

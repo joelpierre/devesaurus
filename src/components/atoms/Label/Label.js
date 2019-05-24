@@ -12,7 +12,7 @@ import {
 } from '../../../utils/propTypes';
 import { mapTaxonomyIcon } from '../../../utils';
 
-const Label = ({ children, link, theme, size, caps, classes }) => {
+const Label = ({ children, link, theme, size, caps, className }) => {
   const label = link ? (
     <Link
       data-test="component-label"
@@ -22,7 +22,7 @@ const Label = ({ children, link, theme, size, caps, classes }) => {
         styles[`label--${theme}`],
         styles[`label--${size}`],
         { [styles[`label--capitalise`]]: caps },
-        classes,
+        className,
       ])}
     >
       <span className={classNames(styles.label__text)}>{children}</span>
@@ -35,7 +35,7 @@ const Label = ({ children, link, theme, size, caps, classes }) => {
         styles[`label--${theme}`],
         styles[`label--${size}`],
         { [styles[`label--capitalise`]]: caps },
-        classes,
+        className,
       ])}
     >
       <span className={classNames(styles.label__text)}>{children}</span>
@@ -48,14 +48,14 @@ const Label = ({ children, link, theme, size, caps, classes }) => {
 Label.defaultProps = {
   link: null,
   caps: false,
-  classes: null,
+  className: null,
   ...defaultSize('sm'),
   ...defaultTheme('alpha'),
 };
 
 Label.propTypes = {
   link: PropTypes.string,
-  classes: PropTypes.string,
+  className: PropTypes.string,
   caps: PropTypes.bool,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),

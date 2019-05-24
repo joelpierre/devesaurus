@@ -49,6 +49,6 @@ describe('<InlineQuote/>', () => {
     });
     const component = findByTestAttr(wrapper, 'component-inline-quote');
     matchSnapshot(wrapper);
-    expect(component.prop('classes')).toContain('theme--brand');
+    expect(component.prop('className')).toContain('theme--brand');
   });
 });

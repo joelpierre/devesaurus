@@ -2,14 +2,14 @@
 
 exports[`<PostTemplate/> should match snapshot 1`] = `
 <CoreLayout
-  classes="post post__test-slug"
+  className="post post__test-slug"
   data-test="template-post"
   description=""
   isMenuOpen={false}
   title="test"
 >
   <Heading
-    classes="text-center"
+    className="text-center"
     innerHTML={true}
     priority="1"
   >

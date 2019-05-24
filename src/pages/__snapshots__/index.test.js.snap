@@ -2,10 +2,11 @@
 
 exports[`<Index/> should match snapshot 1`] = `
 <BasicLayout
-  classes={null}
+  className={null}
   data-test="page-index"
   description="Default description"
-  title="Devesaurus Home"
+  isMenuOpen={false}
+  title="Find a word"
 >
   <HeroSearch
     title="Devesaurus"

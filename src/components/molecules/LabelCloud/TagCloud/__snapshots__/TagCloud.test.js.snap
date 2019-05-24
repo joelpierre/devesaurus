@@ -9,7 +9,7 @@ exports[`<PureTagCloudList/> should match snapshot PureTagCloudList 1`] = `
   >
     <Label
       caps={false}
-      classes="label-cloud__label"
+      className="label-cloud__label"
       link="/tag/test-slug"
       size="sm"
       theme="brand"

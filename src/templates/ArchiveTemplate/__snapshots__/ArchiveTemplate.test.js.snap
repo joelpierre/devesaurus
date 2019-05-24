@@ -2,24 +2,24 @@
 
 exports[`<ArchiveTemplate/> should match snapshot 1`] = `
 <CoreLayout
-  classes="archive archive__test-taxonomy"
+  className="archive archive__test-taxonomy"
   data-test="template-archive"
   description=""
   isMenuOpen={false}
   title="test"
 >
   <Section
-    classes={null}
+    className={null}
     contrast={false}
     theme={null}
     type="section"
   >
     <Container
-      classes={null}
+      className={null}
       fluid={false}
     >
       <Row
-        classes={null}
+        className={null}
         column={false}
         reverse={false}
         row={true}
@@ -34,7 +34,7 @@ exports[`<ArchiveTemplate/> should match snapshot 1`] = `
           xs={false}
         >
           <Heading
-            classes="text-center mb-0"
+            className="text-center mb-0"
             innerHTML={true}
             priority="1"
           >

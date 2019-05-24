@@ -49,6 +49,6 @@ describe('<ImageBlock/>', () => {
     });
     const component = findByTestAttr(wrapper, 'component-image-block');
     matchSnapshot(wrapper);
-    expect(component.prop('classes')).toContain('theme--brand');
+    expect(component.prop('className')).toContain('theme--brand');
   });
 });

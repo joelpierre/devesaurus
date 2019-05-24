@@ -5,24 +5,24 @@ import WordCategoryCloud from './WordCategoryCloud/WordCategoryCloud';
 import TagCloud from './TagCloud/TagCloud';
 import WordTagCloud from './WordTagCloud/WordTagCloud';
 
-const LabelCloud = ({ classes, taxonomy }) => {
+const LabelCloud = ({ className, taxonomy }) => {
   let cloud;
 
   switch (taxonomy) {
     case 'category':
-      cloud = <CategoryCloud classes={classes} />;
+      cloud = <CategoryCloud className={className} />;
       break;
 
     case 'word_category':
-      cloud = <WordCategoryCloud classes={classes} />;
+      cloud = <WordCategoryCloud className={className} />;
       break;
 
     case 'post_tag':
-      cloud = <TagCloud classes={classes} />;
+      cloud = <TagCloud className={className} />;
       break;
 
     case 'word_tag':
-      cloud = <WordTagCloud classes={classes} />;
+      cloud = <WordTagCloud className={className} />;
       break;
 
     default:
@@ -33,11 +33,11 @@ const LabelCloud = ({ classes, taxonomy }) => {
 };
 
 LabelCloud.defaultProps = {
-  classes: undefined,
+  className: undefined,
 };
 
 LabelCloud.propTypes = {
-  classes: PropTypes.string,
+  className: PropTypes.string,
   taxonomy: PropTypes.oneOf([
     'category',
     'word_category',

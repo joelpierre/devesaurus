@@ -8,7 +8,7 @@ import { defaultTheme, themePropType } from '../../../utils/propTypes';
 const Hamburger = ({
   descriptor,
   alt,
-  classes,
+  className,
   theme,
   isMenuOpen,
   onClick,
@@ -23,7 +23,7 @@ const Hamburger = ({
           [styles['hamburger--alt']]: alt,
           [styles['hamburger--active']]: isMenuOpen,
         },
-        classes
+        className
       )}
       onClick={onClick}
     >
@@ -53,7 +53,7 @@ const Hamburger = ({
 Hamburger.defaultProps = {
   isMenuOpen: false,
   alt: false,
-  classes: undefined,
+  className: undefined,
   ...defaultTheme(),
 };
 
@@ -62,7 +62,7 @@ Hamburger.propTypes = {
   onClick: PropTypes.func,
   alt: PropTypes.bool,
   isMenuOpen: PropTypes.bool,
-  classes: PropTypes.string,
+  className: PropTypes.string,
   descriptor: PropTypes.string.isRequired,
 };
 
