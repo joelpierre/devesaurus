@@ -21,10 +21,10 @@ exports[`<PrimaryMenu/> should match snapshot 2`] = `
     className="primary-menu"
     data-test="component-primary-menu"
   >
-    <div
+    <button
       className="primary-menu__overlay"
       onClick={[Function]}
-      role="button"
+      type="button"
     />
     <div
       className="primary-menu__inner"
