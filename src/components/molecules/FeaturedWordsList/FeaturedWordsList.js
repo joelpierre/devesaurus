@@ -15,7 +15,7 @@ export const PureFeaturedWordsList = ({ allWordpressWpWord }) => (
         >
           <Link
             className={classNames(styles['featured-words-list__link'])}
-            to={`/word/${node.slug}`}
+            to={`/definition/${node.slug}`}
           >
             {node.title}
           </Link>

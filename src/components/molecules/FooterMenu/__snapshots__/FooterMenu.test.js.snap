@@ -19,8 +19,12 @@ exports[`<FooterMenu/> should match snapshot 2`] = `
       classes="footer-menu__item"
       item={
         Object {
+          "attr": "attr",
+          "classes": "classes",
           "object_slug": "slug",
+          "order": "1",
           "title": "title",
+          "url": "url",
         }
       }
       key="slug"

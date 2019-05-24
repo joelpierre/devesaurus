@@ -1,7 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { StaticQuery } from 'gatsby';
-import toJson from 'enzyme-to-json';
 
 import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
 
@@ -16,8 +14,12 @@ const defaultPureProps = {
         node: {
           items: [
             {
+              order: '1',
               title: 'title',
               object_slug: 'slug',
+              url: 'url',
+              classes: 'classes',
+              attr: 'attr',
             },
           ],
         },

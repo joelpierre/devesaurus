@@ -21,21 +21,26 @@ exports[`<PrimaryMenu/> should match snapshot 2`] = `
     className="primary-menu"
     data-test="component-primary-menu"
   >
-    <button
+    <div
       className="primary-menu__overlay"
       onClick={[Function]}
-      type="button"
+      role="button"
     />
     <div
       className="primary-menu__inner"
     >
-      <Brand
-        center={true}
-        classes="primary-menu__brand"
-        left={true}
-        right={false}
-        type="character"
-      />
+      <mockConstructor
+        className="primary-menu__brand-link"
+        to="/"
+      >
+        <Brand
+          center={true}
+          classes="primary-menu__brand"
+          left={true}
+          right={false}
+          type="character"
+        />
+      </mockConstructor>
       <ul
         className="primary-menu__list"
       >
@@ -43,11 +48,15 @@ exports[`<PrimaryMenu/> should match snapshot 2`] = `
           classes="primary-menu__item"
           item={
             Object {
+              "attr": "attr",
+              "classes": "classes",
               "object_slug": "slug",
+              "order": "1",
               "title": "title",
+              "url": "url",
             }
           }
-          key="0"
+          key="1"
           onClick={[Function]}
         >
           title
@@ -77,6 +86,9 @@ exports[`<PrimaryMenu/> should match snapshot 2`] = `
           />
         </MenuItem>
       </ul>
+      <SocialMenu
+        classes="primary-menu__social"
+      />
     </div>
   </nav>
 </Fragment>

@@ -53,7 +53,7 @@ exports[`<PrimaryHeader/> should match snapshot 1`] = `
               flip={null}
               icon={
                 Array [
-                  "far",
+                  "fas",
                   "search",
                 ]
               }
@@ -80,7 +80,7 @@ exports[`<PrimaryHeader/> should match snapshot 1`] = `
             flip={null}
             icon={
               Array [
-                "far",
+                "fas",
                 "search",
               ]
             }

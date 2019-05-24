@@ -119,7 +119,7 @@ const searchFormData = {
     type: 'submit',
     text: (
       <FontAwesomeIcon
-        icon={['far', 'search']}
+        icon={['fas', 'search']}
         className={styles['primary-header__search-icon']}
       />
     ),

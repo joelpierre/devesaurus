@@ -10,7 +10,7 @@ exports[`<WordCard/> should match snapShot 1`] = `
     data-test="word-card-category"
   >
     <mockConstructor
-      to="/word-category/undefined"
+      to="/definitions/category/undefined"
     >
       <span />
       <span>
@@ -41,7 +41,7 @@ exports[`<WordCard/> should match snapShot 1`] = `
     </mockConstructor>
   </div>
   <mockConstructor
-    to="/word/slug"
+    to="/definition/slug"
   >
     <span>
       title
@@ -87,7 +87,7 @@ exports[`<WordCard/> should match snapShot 1`] = `
         classes={null}
         data-test="word-card-tag"
         key="css"
-        link="/word-tag/css"
+        link="/definitions/tag/css"
         size="sm"
         theme="gamma"
       >
@@ -121,7 +121,7 @@ exports[`<WordCard/> should match snapShot 1`] = `
         classes={null}
         data-test="word-card-tag"
         key="html5"
-        link="/word-tag/html5"
+        link="/definitions/tag/html5"
         size="sm"
         theme="psi"
       >
@@ -213,10 +213,10 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
       data-test="word-card-category"
     >
       <mockConstructor
-        to="/word-category/undefined"
+        to="/definitions/category/undefined"
       >
         <a
-          href="/word-category/undefined"
+          href="/definitions/category/undefined"
         >
           <span />
           <span>
@@ -266,10 +266,10 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
       </mockConstructor>
     </div>
     <mockConstructor
-      to="/word/slug"
+      to="/definition/slug"
     >
       <a
-        href="/word/slug"
+        href="/definition/slug"
       >
         <span>
           title
@@ -324,19 +324,19 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
           classes={null}
           data-test="word-card-tag"
           key="css"
-          link="/word-tag/css"
+          link="/definitions/tag/css"
           size="sm"
           theme="gamma"
         >
           <mockConstructor
             className="label label--gamma label--sm"
             data-test="component-label"
-            to="/word-tag/css"
+            to="/definitions/tag/css"
           >
             <a
               className="label label--gamma label--sm"
               data-test="component-label"
-              href="/word-tag/css"
+              href="/definitions/tag/css"
             >
               <span
                 className="label__text"
@@ -392,19 +392,19 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
           classes={null}
           data-test="word-card-tag"
           key="html5"
-          link="/word-tag/html5"
+          link="/definitions/tag/html5"
           size="sm"
           theme="psi"
         >
           <mockConstructor
             className="label label--psi label--sm"
             data-test="component-label"
-            to="/word-tag/html5"
+            to="/definitions/tag/html5"
           >
             <a
               className="label label--psi label--sm"
               data-test="component-label"
-              href="/word-tag/html5"
+              href="/definitions/tag/html5"
             >
               <span
                 className="label__text"

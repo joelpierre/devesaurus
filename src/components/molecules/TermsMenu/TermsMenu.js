@@ -54,6 +54,9 @@ const menuQuery = graphql`
             order
             title
             object_slug
+            url
+            classes
+            attr
           }
         }
       }

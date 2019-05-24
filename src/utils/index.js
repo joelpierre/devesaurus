@@ -12,8 +12,8 @@ import {
   faTint,
   faPaintBrush,
   faPalette,
-  faSearch,
 } from '@fortawesome/pro-regular-svg-icons';
+import { faSearch } from '@fortawesome/pro-solid-svg-icons';
 
 /**
  * Add Fontawesome icons to library for app
@@ -236,4 +236,23 @@ export const breakpoint = {
       `The size ${size} is not a valid breakpoint: ${JSON.stringify(sizes)}`
     );
   },
+};
+
+/**
+ * Clean urls that are internal
+ * @param link
+ * @returns {string}
+ */
+export const sanitizeUrl = link => {
+  if (link) {
+    return link
+      .toLowerCase()
+      .replace('http', '')
+      .replace('https', '')
+      .replace(':', '')
+      .replace('//', '')
+      .replace(process.env.GATSBY_API_URL, '');
+  }
+
+  return link;
 };

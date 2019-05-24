@@ -9,6 +9,9 @@ import MenuItem from './MenuItem';
 const defaultProps = {
   item: {
     title: 'Test Title',
+    url: 'test',
+    attr: 'anchor',
+    classes: 'faHeart',
     object_slug: 'test-title',
   },
   classes: 'test-class',

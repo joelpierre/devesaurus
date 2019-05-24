@@ -22,8 +22,12 @@ const defaultPureProps = {
         node: {
           items: [
             {
+              order: '1',
               title: 'title',
               object_slug: 'slug',
+              attr: 'attr',
+              classes: 'classes',
+              url: 'url',
             },
           ],
         },

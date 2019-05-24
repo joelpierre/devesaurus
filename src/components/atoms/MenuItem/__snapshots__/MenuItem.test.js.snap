@@ -5,12 +5,12 @@ exports[`<MenuItem/> should match snapshot 1`] = `
   className="test-class menu-item"
   data-test="component-menu-item"
 >
-  <mockConstructor
+  <a
     className="menu-item__link"
-    key="Test Title"
-    to="/test-title"
+    href="test"
+    rel="noreferrer nofollow"
   >
     Test Title
-  </mockConstructor>
+  </a>
 </li>
 `;

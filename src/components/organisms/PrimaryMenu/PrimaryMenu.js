@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, StaticQuery } from 'gatsby';
+import { graphql, StaticQuery, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,6 +10,7 @@ import styles from './PrimaryMenu.module.scss';
 import * as coreActions from '../../../store/actions/core.actions';
 import MenuItem from '../../atoms/MenuItem/MenuItem';
 import Brand from '../../atoms/Brand/Brand';
+import SocialMenu from '../../molecules/SocialMenu/SocialMenu';
 
 export const PurePrimaryMenu = ({
   classes,
@@ -17,7 +18,11 @@ export const PurePrimaryMenu = ({
   allWordpressWpApiMenusMenusItems,
   setMenuState,
 }) => {
-  const getBodyAttr = () => {
+  /**
+   * Change the body class depending on the isMenuOpen state.
+   * @returns {jsx}
+   */
+  const setBodyClass = () => {
     return (
       <Helmet>
         <body className={isMenuOpen ? 'menu-is-active' : ''} />
@@ -35,7 +40,7 @@ export const PurePrimaryMenu = ({
   return (
     // eslint-disable-next-line react/jsx-no-comment-textnodes
     <>
-      {getBodyAttr()}
+      {setBodyClass()}
       <nav
         data-test="component-primary-menu"
         className={classNames(
@@ -47,42 +52,46 @@ export const PurePrimaryMenu = ({
         {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
         <button
+          type="button"
           className={classNames(styles['primary-menu__overlay'], {
             [styles['primary-menu__overlay--is-active']]: isMenuOpen,
           })}
-          type="button"
           onClick={toggleMenuState}
         />
         <div className={styles['primary-menu__inner']}>
-          <Brand
-            type="character"
-            center
-            classes={styles['primary-menu__brand']}
-          />
+          <Link className={styles['primary-menu__brand-link']} to="/">
+            <Brand
+              type="character"
+              center
+              classes={styles['primary-menu__brand']}
+            />
+          </Link>
 
           <ul className={styles['primary-menu__list']}>
-            {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(
-              (item, index) => {
-                console.log(item);
-                return item.object_slug === 'divider' ? (
-                  <li key={index} className={styles['primary-menu__divider']} />
-                ) : (
-                  <MenuItem
-                    classes={styles['primary-menu__item']}
-                    key={index}
-                    item={item}
-                    onClick={toggleMenuState}
-                  >
-                    {item.title}{' '}
-                    <FontAwesomeIcon
-                      className={classNames(styles['primary-menu__icon'])}
-                      icon={['far', 'chevron-right']}
-                    />
-                  </MenuItem>
-                );
-              }
-            )}
+            {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => {
+              return item.attr === 'divider' ? (
+                <li
+                  key={item.order}
+                  className={styles['primary-menu__divider']}
+                />
+              ) : (
+                <MenuItem
+                  classes={styles['primary-menu__item']}
+                  key={item.order}
+                  item={item}
+                  onClick={toggleMenuState}
+                >
+                  {item.title}{' '}
+                  <FontAwesomeIcon
+                    className={classNames(styles['primary-menu__icon'])}
+                    icon={['far', 'chevron-right']}
+                  />
+                </MenuItem>
+              );
+            })}
           </ul>
+
+          <SocialMenu classes={classNames(styles['primary-menu__social'])} />
         </div>
       </nav>
     </>
@@ -139,6 +148,9 @@ const menuQuery = graphql`
             order
             title
             object_slug
+            url
+            classes
+            attr
           }
         }
       }

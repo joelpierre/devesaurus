@@ -182,7 +182,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           _.each(result.data.allWordpressPost.edges, edge => {
             createPage({
-              path: `/post/${edge.node.slug}/`,
+              path: `/devegram/${edge.node.slug}/`,
               component: slash(postTemplate),
               context: edge.node,
             });
@@ -285,7 +285,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           _.each(result.data.allWordpressWpWord.edges, edge => {
             createPage({
-              path: `/word/${edge.node.slug}/`,
+              path: `/definition/${edge.node.slug}/`,
               component: slash(wordTemplate),
               context: edge.node,
             });
@@ -419,8 +419,8 @@ exports.createPages = ({ graphql, actions }) => {
               component: slash(archiveTemplate),
               path:
                 index === 0
-                  ? '/word-categories'
-                  : `/word-categories/${index + 1}/`,
+                  ? '/definitions/categories'
+                  : `/definitions/categories/${index + 1}/`,
               context: {
                 items: items.slice(
                   index * itemsPerPage,
@@ -436,7 +436,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           _.each(result.data.allWordpressWpWordCategory.edges, edge => {
             createPage({
-              path: `/word-category/${edge.node.slug}/`,
+              path: `/definitions/category/${edge.node.slug}/`,
               component: slash(taxonomyTemplate),
               context: edge.node,
             });
@@ -507,7 +507,10 @@ exports.createPages = ({ graphql, actions }) => {
           Array.from({ length: noOfPages }).forEach((page, index) => {
             createPage({
               component: slash(archiveTemplate),
-              path: index === 0 ? '/word-tags' : `/word-tags/${index + 1}/`,
+              path:
+                index === 0
+                  ? '/definitions/tags'
+                  : `/definitions/tags/${index + 1}/`,
               context: {
                 items: items.slice(
                   index * itemsPerPage,
@@ -523,7 +526,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           _.each(result.data.allWordpressWpWordTag.edges, edge => {
             createPage({
-              path: `/word-tag/${edge.node.slug}/`,
+              path: `/definitions/tag/${edge.node.slug}/`,
               component: slash(taxonomyTemplate),
               context: edge.node,
             });
