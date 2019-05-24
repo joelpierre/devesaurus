@@ -7,6 +7,15 @@
   }
 }
 
+@mixin theme-border {
+  @each $color, $value in $colors {
+    &--#{$color} {
+      border-color: $value;
+      @content;
+    }
+  }
+}
+
 @mixin gradient-theme {
   &--gradient {
     &-brand {

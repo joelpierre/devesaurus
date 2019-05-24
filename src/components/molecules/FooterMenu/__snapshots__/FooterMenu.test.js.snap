@@ -27,7 +27,7 @@ exports[`<FooterMenu/> should match snapshot 2`] = `
           "url": "url",
         }
       }
-      key="slug"
+      key="1"
     />
   </ul>
 </nav>

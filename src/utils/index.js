@@ -247,10 +247,10 @@ export const sanitizeUrl = link => {
   if (link) {
     return link
       .toLowerCase()
+      .replace(/\//g, '')
       .replace('http', '')
       .replace('https', '')
       .replace(':', '')
-      .replace('//', '')
       .replace(process.env.GATSBY_API_URL, '');
   }
 

@@ -39,4 +39,12 @@
       margin-bottom: 15rem !important;
     }
   }
+
+  &__scrolling-mouse {
+    position: absolute;
+    top: auto;
+    bottom: 2rem;
+    left: 50%;
+    transform: $centerX;
+  }
 }

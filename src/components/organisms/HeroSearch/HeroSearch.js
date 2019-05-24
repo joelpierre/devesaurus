@@ -6,6 +6,7 @@ import Row from '../../core/Row/Row';
 import Flex from '../../core/Flex/Flex';
 import InputField from '../../atoms/InputField/InputField';
 import Brand from '../../atoms/Brand/Brand';
+import ScrollingMouse from '../../atoms/ScrollingMouse/ScrollingMouse';
 
 const HeroSearch = () => {
   return (
@@ -25,6 +26,8 @@ const HeroSearch = () => {
           </Flex>
         </Row>
       </Container>
+
+      <ScrollingMouse className={styles['hero-search__scrolling-mouse']} />
     </Section>
   );
 };

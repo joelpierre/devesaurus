@@ -7,17 +7,18 @@ import { sanitizeUrl } from '../../../utils';
 
 function MenuItem({ item, classes, children, ...props }) {
   const { attr } = item;
-  let link;
+  const link = sanitizeUrl(item.url);
+  let el;
 
   /**
    * Based on the item.attr we will decide what menu item to pass
    */
   switch (attr) {
     case 'divider':
-      link = null;
+      el = null;
       break;
     case 'anchor':
-      link = (
+      el = (
         <a
           className={styles['menu-item__link']}
           key={item.order}
@@ -29,10 +30,10 @@ function MenuItem({ item, classes, children, ...props }) {
       );
       break;
     default:
-      link = (
+      el = (
         <Link
           className={styles['menu-item__link']}
-          to={`/${sanitizeUrl(item.url)}`}
+          to={`/${link}`}
           key={item.order}
         >
           {children || item.title || 'No title'}
@@ -47,7 +48,7 @@ function MenuItem({ item, classes, children, ...props }) {
       className={classNames(classes, styles['menu-item'])}
       {...props}
     >
-      {link}
+      {el}
     </li>
   );
 }

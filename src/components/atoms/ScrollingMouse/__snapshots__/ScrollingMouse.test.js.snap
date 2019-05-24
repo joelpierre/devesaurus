@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ScrollingMouse/> should match snapshot 1`] = `
+<div
+  className="mouse-wrapper"
+  data-test="component-scrolling-mouse"
+>
+  <div
+    className="mouse mouse--border--brand"
+  >
+    <div
+      className="mouse__scroll-wheel mouse--theme--brand"
+    />
+  </div>
+</div>
+`;

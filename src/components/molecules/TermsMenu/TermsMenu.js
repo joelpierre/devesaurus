@@ -18,7 +18,7 @@ export const PureTermsMenu = ({
       {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
         <MenuItem
           classes={styles['terms-menu__item']}
-          key={item.object_slug}
+          key={item.order}
           item={item}
         />
       ))}
