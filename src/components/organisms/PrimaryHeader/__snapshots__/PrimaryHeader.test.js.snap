@@ -5,47 +5,78 @@ exports[`<PrimaryHeader/> should match snapshot 1`] = `
   className=""
   data-test="component-primary-header"
 >
-  <div>
-    <Component
-      alt={true}
-      descriptor="Menu"
-      isMenuOpen={false}
-      onClick={[Function]}
-    />
-    <mockConstructor
-      to="/"
-    >
-      <Brand
-        center={false}
-        className={null}
-        left={true}
-        right={false}
-        type="symbol-inv"
-      />
-    </mockConstructor>
+  <Container
+    className={null}
+    fluid={true}
+  >
     <div>
-      <form
-        onSubmit={[Function]}
+      <Component
+        alt={true}
+        descriptor="Menu"
+        isMenuOpen={false}
+        onClick={[Function]}
+      />
+      <mockConstructor
+        to="/"
       >
-        <InputField
+        <Brand
+          center={false}
           className={null}
-          disabled={false}
-          label={null}
-          lg={false}
-          max={null}
-          md={false}
-          min={null}
-          name="hero-search"
-          onChange={[Function]}
-          placeholder="Enter a search term. e.g. HTML"
-          sm={false}
-          type="text"
+          left={true}
+          right={false}
+          type="symbol-inv"
         />
-        <Button
-          behavior="action"
-          caps={true}
-          size="md"
-          text={
+      </mockConstructor>
+      <div>
+        <form
+          onSubmit={[Function]}
+        >
+          <InputField
+            className={null}
+            disabled={false}
+            label={null}
+            lg={false}
+            max={null}
+            md={false}
+            min={null}
+            name="hero-search"
+            onChange={[Function]}
+            placeholder="Enter a search term. e.g. HTML"
+            sm={false}
+            type="text"
+          />
+          <Button
+            behavior="action"
+            caps={true}
+            size="md"
+            text={
+              <FontAwesomeIcon
+                border={false}
+                className=""
+                fixedWidth={false}
+                flip={null}
+                icon={
+                  Array [
+                    "fas",
+                    "search",
+                  ]
+                }
+                inverse={false}
+                listItem={false}
+                mask={null}
+                pull={null}
+                pulse={false}
+                rotation={null}
+                size={null}
+                spin={false}
+                symbol={false}
+                title=""
+                transform={null}
+              />
+            }
+            theme="brand"
+            type="submit"
+          >
             <FontAwesomeIcon
               border={false}
               className=""
@@ -69,36 +100,10 @@ exports[`<PrimaryHeader/> should match snapshot 1`] = `
               title=""
               transform={null}
             />
-          }
-          theme="brand"
-          type="submit"
-        >
-          <FontAwesomeIcon
-            border={false}
-            className=""
-            fixedWidth={false}
-            flip={null}
-            icon={
-              Array [
-                "fas",
-                "search",
-              ]
-            }
-            inverse={false}
-            listItem={false}
-            mask={null}
-            pull={null}
-            pulse={false}
-            rotation={null}
-            size={null}
-            spin={false}
-            symbol={false}
-            title=""
-            transform={null}
-          />
-        </Button>
-      </form>
+          </Button>
+        </form>
+      </div>
     </div>
-  </div>
+  </Container>
 </header>
 `;

@@ -7,7 +7,7 @@ import { sanitizeUrl } from '../../../utils';
 
 function MenuItem({ item, className, children, ...props }) {
   const { attr } = item;
-  const link = sanitizeUrl(item.url);
+  let link = item.url;
   let el;
 
   /**
@@ -30,6 +30,7 @@ function MenuItem({ item, className, children, ...props }) {
       );
       break;
     default:
+      link = sanitizeUrl(link);
       el = (
         <Link
           className={styles['menu-item__link']}

@@ -32,12 +32,24 @@
     }
   }
 
-  &__input {
+  &__subheading {
+    font-weight: bold;
+  }
+
+  &__form {
     margin-bottom: 10rem !important;
 
     @include tablet-landscape {
-      margin-bottom: 15rem !important;
+      margin-bottom: 5rem !important;
     }
+  }
+
+  &__label-cloud {
+    max-width: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__scrolling-mouse {

@@ -42,7 +42,7 @@ class WordCard extends PureComponent {
             )}
           >
             <Link
-              to={`/definitions/category/${category.slug}`}
+              to={`/devinitions/category/${category.slug}`}
               className={styles['word-card__category-link']}
             >
               <span className={styles['word-card__category-text']}>
@@ -56,7 +56,7 @@ class WordCard extends PureComponent {
           </div>
         )}
 
-        <Link to={`/definition/${slug}`} className={styles['word-card__link']}>
+        <Link to={`/devinition/${slug}`} className={styles['word-card__link']}>
           <span className={styles['word-card__link-text']}>{title}</span>
         </Link>
 
@@ -91,7 +91,7 @@ class WordCard extends PureComponent {
                     data-test="word-card-tag"
                     className={styles['word-card__label']}
                     key={tag.slug}
-                    link={`/definitions/tag/${tag.slug}`}
+                    link={`/devinitions/tag/${tag.slug}`}
                     theme={mapTaxonomyTheme(tag.slug)}
                   >
                     <FontAwesomeIcon

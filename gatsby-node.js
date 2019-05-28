@@ -269,7 +269,7 @@ exports.createPages = ({ graphql, actions }) => {
           Array.from({ length: noOfPages }).forEach((page, index) => {
             createPage({
               component: slash(archiveTemplate),
-              path: index === 0 ? '/words' : `/words/${index + 1}/`,
+              path: index === 0 ? '/devinitions' : `/devinitions/${index + 1}/`,
               context: {
                 items: items.slice(
                   index * itemsPerPage,
@@ -285,7 +285,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           _.each(result.data.allWordpressWpWord.edges, edge => {
             createPage({
-              path: `/definition/${edge.node.slug}/`,
+              path: `/devinition/${edge.node.slug}/`,
               component: slash(wordTemplate),
               context: edge.node,
             });
@@ -419,8 +419,8 @@ exports.createPages = ({ graphql, actions }) => {
               component: slash(archiveTemplate),
               path:
                 index === 0
-                  ? '/definitions/categories'
-                  : `/definitions/categories/${index + 1}/`,
+                  ? '/devinitions/categories'
+                  : `/devinitions/categories/${index + 1}/`,
               context: {
                 items: items.slice(
                   index * itemsPerPage,
@@ -436,7 +436,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           _.each(result.data.allWordpressWpWordCategory.edges, edge => {
             createPage({
-              path: `/definitions/category/${edge.node.slug}/`,
+              path: `/devinitions/category/${edge.node.slug}/`,
               component: slash(taxonomyTemplate),
               context: edge.node,
             });
@@ -509,8 +509,8 @@ exports.createPages = ({ graphql, actions }) => {
               component: slash(archiveTemplate),
               path:
                 index === 0
-                  ? '/definitions/tags'
-                  : `/definitions/tags/${index + 1}/`,
+                  ? '/devinitions/tags'
+                  : `/devinitions/tags/${index + 1}/`,
               context: {
                 items: items.slice(
                   index * itemsPerPage,
@@ -526,7 +526,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           _.each(result.data.allWordpressWpWordTag.edges, edge => {
             createPage({
-              path: `/definitions/tag/${edge.node.slug}/`,
+              path: `/devinitions/tag/${edge.node.slug}/`,
               component: slash(taxonomyTemplate),
               context: edge.node,
             });

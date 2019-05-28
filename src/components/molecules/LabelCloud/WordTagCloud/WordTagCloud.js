@@ -18,7 +18,7 @@ export const PureWordTagCloudList = ({ allWordpressWpWordTag }) => (
       >
         <Label
           className={styles['label-cloud__label']}
-          link={'/definitions/tag/' + node.slug}
+          link={'/devinitions/tag/' + node.slug}
           theme={mapTaxonomyTheme(node.slug)}
         >
           <FontAwesomeIcon

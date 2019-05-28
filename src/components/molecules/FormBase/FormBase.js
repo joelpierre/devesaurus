@@ -14,12 +14,19 @@ import Button from '../Buttons/Button';
 import { slugify } from '../../../utils';
 import { themePropType } from '../../../utils/propTypes';
 
-const FormBase = ({ formName, buttons, formGroups, encType, onSubmit }) => {
+const FormBase = ({
+  className,
+  formName,
+  buttons,
+  formGroups,
+  encType,
+  onSubmit,
+}) => {
   return (
     <form
       id={slugify(formName)}
       data-test="component-form-base"
-      className={classNames(styles['form-base'])}
+      className={classNames(styles['form-base'], className)}
       encType={encType}
       onSubmit={onSubmit}
     >
@@ -125,6 +132,7 @@ const FormBase = ({ formName, buttons, formGroups, encType, onSubmit }) => {
 };
 
 FormBase.defaultProps = {
+  className: undefined,
   encType: 'multipart/form-data',
   onSubmit: e => {
     e.preventDefault();
@@ -135,6 +143,7 @@ FormBase.defaultProps = {
 };
 
 FormBase.propTypes = {
+  className: PropTypes.string,
   formName: PropTypes.string.isRequired,
   encType: PropTypes.string,
   buttons: PropTypes.arrayOf(

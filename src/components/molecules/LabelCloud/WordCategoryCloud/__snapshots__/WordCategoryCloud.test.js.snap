@@ -10,7 +10,7 @@ exports[`<PureWordCategoryCloudList/> should match snapshot PureWordCategoryClou
     <Label
       caps={false}
       className="label-cloud__label"
-      link="/definitions/category/test-slug"
+      link="/devinitions/category/test-slug"
       size="sm"
       theme="brand"
     >

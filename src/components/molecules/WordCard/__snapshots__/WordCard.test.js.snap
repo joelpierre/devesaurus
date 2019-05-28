@@ -10,7 +10,7 @@ exports[`<WordCard/> should match snapShot 1`] = `
     data-test="word-card-category"
   >
     <mockConstructor
-      to="/definitions/category/undefined"
+      to="/devinitions/category/undefined"
     >
       <span />
       <span>
@@ -41,7 +41,7 @@ exports[`<WordCard/> should match snapShot 1`] = `
     </mockConstructor>
   </div>
   <mockConstructor
-    to="/definition/slug"
+    to="/devinition/slug"
   >
     <span>
       title
@@ -87,7 +87,7 @@ exports[`<WordCard/> should match snapShot 1`] = `
         className={null}
         data-test="word-card-tag"
         key="css"
-        link="/definitions/tag/css"
+        link="/devinitions/tag/css"
         size="sm"
         theme="gamma"
       >
@@ -121,7 +121,7 @@ exports[`<WordCard/> should match snapShot 1`] = `
         className={null}
         data-test="word-card-tag"
         key="html5"
-        link="/definitions/tag/html5"
+        link="/devinitions/tag/html5"
         size="sm"
         theme="psi"
       >
@@ -213,10 +213,10 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
       data-test="word-card-category"
     >
       <mockConstructor
-        to="/definitions/category/undefined"
+        to="/devinitions/category/undefined"
       >
         <a
-          href="/definitions/category/undefined"
+          href="/devinitions/category/undefined"
         >
           <span />
           <span>
@@ -266,10 +266,10 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
       </mockConstructor>
     </div>
     <mockConstructor
-      to="/definition/slug"
+      to="/devinition/slug"
     >
       <a
-        href="/definition/slug"
+        href="/devinition/slug"
       >
         <span>
           title
@@ -324,19 +324,19 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
           className={null}
           data-test="word-card-tag"
           key="css"
-          link="/definitions/tag/css"
+          link="/devinitions/tag/css"
           size="sm"
           theme="gamma"
         >
           <mockConstructor
             className="label label--gamma label--sm"
             data-test="component-label"
-            to="/definitions/tag/css"
+            to="/devinitions/tag/css"
           >
             <a
               className="label label--gamma label--sm"
               data-test="component-label"
-              href="/definitions/tag/css"
+              href="/devinitions/tag/css"
             >
               <span
                 className="label__text"
@@ -392,19 +392,19 @@ exports[`<WordCard/> should mount component and subsequent components 1`] = `
           className={null}
           data-test="word-card-tag"
           key="html5"
-          link="/definitions/tag/html5"
+          link="/devinitions/tag/html5"
           size="sm"
           theme="psi"
         >
           <mockConstructor
             className="label label--psi label--sm"
             data-test="component-label"
-            to="/definitions/tag/html5"
+            to="/devinitions/tag/html5"
           >
             <a
               className="label label--psi label--sm"
               data-test="component-label"
-              href="/definitions/tag/html5"
+              href="/devinitions/tag/html5"
             >
               <span
                 className="label__text"

@@ -18,7 +18,7 @@ export const PureWordCategoryCloudList = ({ allWordpressWpWordCategory }) => (
       >
         <Label
           className={styles['label-cloud__label']}
-          link={'/definitions/category/' + node.slug}
+          link={'/devinitions/category/' + node.slug}
           theme={mapTaxonomyTheme(node.slug)}
         >
           <FontAwesomeIcon

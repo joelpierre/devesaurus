@@ -245,13 +245,17 @@ export const breakpoint = {
  */
 export const sanitizeUrl = link => {
   if (link) {
-    return link
-      .toLowerCase()
-      .replace(/\//g, '')
-      .replace('http', '')
-      .replace('https', '')
-      .replace(':', '')
-      .replace(process.env.GATSBY_API_URL, '');
+    return (
+      link
+        .toLowerCase()
+        .replace(/(^\w+:|^)\/\//, '')
+        .replace('/', '')
+        // .replace(/\//g, '')
+        // .replace('http', '')
+        // .replace('https', '')
+        // .replace(':', '')
+        .replace(process.env.GATSBY_API_URL, '')
+    );
   }
 
   return link;

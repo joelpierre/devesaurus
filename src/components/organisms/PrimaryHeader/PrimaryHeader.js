@@ -11,6 +11,7 @@ import InputField from '../../atoms/InputField/InputField';
 import Button from '../../molecules/Buttons/Button';
 import Hamburger from '../../atoms/Hamburger/Hamburger';
 import * as coreActions from '../../../store/actions/index';
+import Container from '../../core/Container/Container';
 
 export class PrimaryHeader extends PureComponent {
   constructor() {
@@ -67,50 +68,54 @@ export class PrimaryHeader extends PureComponent {
           [styles['primary-header--alt']]: alt,
         })}
       >
-        <div className={styles['primary-header__wrapper']}>
-          <Hamburger
-            className={styles['primary-header__hamburger']}
-            descriptor="Menu"
-            alt
-            isMenuOpen={isMenuOpen}
-            onClick={this.toggleMenu}
-          />
-
-          <Link to="/">
-            <Brand
-              type="symbol-inv"
-              left
-              className={styles['primary-header__brand']}
+        <Container fluid>
+          <div className={styles['primary-header__wrapper']}>
+            <Hamburger
+              className={styles['primary-header__hamburger']}
+              descriptor="Menu"
+              alt
+              isMenuOpen={isMenuOpen}
+              onClick={this.toggleMenu}
             />
-          </Link>
 
-          {title && (
-            <div className={styles['primary-header__title']}>
-              <Heading
-                priority={1}
-                className={styles['primary-header__title-text']}
+            <Link to="/">
+              <Brand
+                type="symbol-inv"
+                left
+                className={styles['primary-header__brand']}
+              />
+            </Link>
+
+            {title && (
+              <div className={styles['primary-header__title']}>
+                <Heading
+                  priority={1}
+                  className={styles['primary-header__title-text']}
+                >
+                  {title}
+                </Heading>
+              </div>
+            )}
+
+            <div className={styles['primary-header__search']}>
+              <form
+                ref={this.searchForm}
+                className={styles['primary-header__search-form']}
+                onSubmit={this.onSearchFormSubmitHandler}
               >
-                {title}
-              </Heading>
+                {inputData && (
+                  <InputField
+                    {...inputData}
+                    onChange={this.handleSearchInputOnChange}
+                  />
+                )}
+                {buttonData && (
+                  <Button {...buttonData}>{buttonData.text}</Button>
+                )}
+              </form>
             </div>
-          )}
-
-          <div className={styles['primary-header__search']}>
-            <form
-              ref={this.searchForm}
-              className={styles['primary-header__search-form']}
-              onSubmit={this.onSearchFormSubmitHandler}
-            >
-              {inputData && (
-                <InputField
-                  {...inputData}
-                  onChange={this.handleSearchInputOnChange}
-                />
-              )}
-              {buttonData && <Button {...buttonData}>{buttonData.text}</Button>}
-            </form>
           </div>
-        </div>
+        </Container>
       </header>
     );
   }

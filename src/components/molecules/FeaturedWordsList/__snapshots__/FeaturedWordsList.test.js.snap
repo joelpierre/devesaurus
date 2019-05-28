@@ -9,7 +9,7 @@ exports[`<PureFeaturedWordsList/> should match pure snapshot 1`] = `
   >
     <mockConstructor
       className="featured-words-list__link"
-      to="/definition/slug"
+      to="/devinition/slug"
     >
       title
     </mockConstructor>

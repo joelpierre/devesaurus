@@ -23,7 +23,43 @@ const PrimaryFooter = ({ company }) => {
       <div className={classNames([styles['primary-footer--top']])}>
         <Container>
           <Row>
-            <Flex colLg={4} colMd={5}>
+            <Flex colLg={3} colMd={6} className="ml-auto">
+              <Heading
+                priority={5}
+                className={classNames(styles['primary-footer__heading'])}
+              >
+                Featured Words
+              </Heading>
+              <FeaturedWordsList
+                className={classNames(styles['primary-footer__featured-words'])}
+              />
+            </Flex>
+
+            <Flex colLg={3} colMd={6} className="ml-auto">
+              <Heading
+                priority={5}
+                className={classNames(styles['primary-footer__heading'])}
+              >
+                Featured Words
+              </Heading>
+              <FeaturedWordsList
+                className={classNames(styles['primary-footer__featured-words'])}
+              />
+            </Flex>
+
+            <Flex colLg={3} colMd={6} className="ml-auto">
+              <Heading
+                priority={5}
+                className={classNames(styles['primary-footer__heading'])}
+              >
+                Featured Words
+              </Heading>
+              <FeaturedWordsList
+                className={classNames(styles['primary-footer__featured-words'])}
+              />
+            </Flex>
+
+            <Flex colLg={3} colMd={5}>
               <Heading
                 priority={5}
                 className={classNames(styles['primary-footer__heading'])}
@@ -50,39 +86,12 @@ const PrimaryFooter = ({ company }) => {
                 className={classNames('mt-3', styles['primary-footer__social'])}
               />
             </Flex>
-
-            <Flex colLg={3} colMd={6} className="ml-auto">
-              <Heading
-                priority={5}
-                className={classNames(styles['primary-footer__heading'])}
-              >
-                Featured Words
-              </Heading>
-              <FeaturedWordsList
-                className={classNames(styles['primary-footer__featured-words'])}
-              />
-            </Flex>
-
-            <Flex colLg={4} colMd={12} className="ml-lg-auto order-lg-1">
-              <Heading
-                priority={5}
-                className={classNames(styles['primary-footer__heading'])}
-              >
-                Word Tags
-              </Heading>
-              <div className={styles['primary-footer__tag-cloud-wrapper']}>
-                <LabelCloud
-                  className={styles['primary-footer__tag-cloud']}
-                  taxonomy="word_tag"
-                />
-              </div>
-            </Flex>
           </Row>
         </Container>
       </div>
 
       <div className={classNames([styles['primary-footer--bottom']])}>
-        <Container>
+        <Container fluid>
           <Row>
             <Flex
               colLg={5}

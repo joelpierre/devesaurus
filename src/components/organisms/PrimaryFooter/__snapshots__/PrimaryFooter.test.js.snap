@@ -20,7 +20,76 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
       >
         <Flex
           auto={false}
-          colLg={4}
+          className="ml-auto"
+          colLg={3}
+          colMd={6}
+          lg={false}
+          md={false}
+          sm={false}
+          type="div"
+          xl={false}
+          xs={false}
+        >
+          <Heading
+            className="primary-footer__heading"
+            innerHTML={true}
+            priority={5}
+          >
+            Featured Words
+          </Heading>
+          <FeaturedWordsList
+            className="primary-footer__featured-words"
+          />
+        </Flex>
+        <Flex
+          auto={false}
+          className="ml-auto"
+          colLg={3}
+          colMd={6}
+          lg={false}
+          md={false}
+          sm={false}
+          type="div"
+          xl={false}
+          xs={false}
+        >
+          <Heading
+            className="primary-footer__heading"
+            innerHTML={true}
+            priority={5}
+          >
+            Featured Words
+          </Heading>
+          <FeaturedWordsList
+            className="primary-footer__featured-words"
+          />
+        </Flex>
+        <Flex
+          auto={false}
+          className="ml-auto"
+          colLg={3}
+          colMd={6}
+          lg={false}
+          md={false}
+          sm={false}
+          type="div"
+          xl={false}
+          xs={false}
+        >
+          <Heading
+            className="primary-footer__heading"
+            innerHTML={true}
+            priority={5}
+          >
+            Featured Words
+          </Heading>
+          <FeaturedWordsList
+            className="primary-footer__featured-words"
+          />
+        </Flex>
+        <Flex
+          auto={false}
+          colLg={3}
           colMd={5}
           lg={false}
           md={false}
@@ -58,57 +127,6 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
             className="mt-3 primary-footer__social"
           />
         </Flex>
-        <Flex
-          auto={false}
-          className="ml-auto"
-          colLg={3}
-          colMd={6}
-          lg={false}
-          md={false}
-          sm={false}
-          type="div"
-          xl={false}
-          xs={false}
-        >
-          <Heading
-            className="primary-footer__heading"
-            innerHTML={true}
-            priority={5}
-          >
-            Featured Words
-          </Heading>
-          <FeaturedWordsList
-            className="primary-footer__featured-words"
-          />
-        </Flex>
-        <Flex
-          auto={false}
-          className="ml-lg-auto order-lg-1"
-          colLg={4}
-          colMd={12}
-          lg={false}
-          md={false}
-          sm={false}
-          type="div"
-          xl={false}
-          xs={false}
-        >
-          <Heading
-            className="primary-footer__heading"
-            innerHTML={true}
-            priority={5}
-          >
-            Word Tags
-          </Heading>
-          <div
-            className="primary-footer__tag-cloud-wrapper"
-          >
-            <LabelCloud
-              className="primary-footer__tag-cloud"
-              taxonomy="word_tag"
-            />
-          </div>
-        </Flex>
       </Row>
     </Container>
   </div>
@@ -117,7 +135,7 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
   >
     <Container
       className={null}
-      fluid={false}
+      fluid={true}
     >
       <Row
         className={null}

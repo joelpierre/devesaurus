@@ -3,6 +3,7 @@
 .primary-header {
   $root: &;
 
+  position: relative;
   height: auto;
   align-items: center;
   top: 0;
@@ -25,7 +26,7 @@
     min-width: 0;
     align-content: center;
     align-items: normal;
-    padding: 0 1rem;
+    padding: 0;
   }
 
   &__brand {
@@ -116,6 +117,10 @@
   }
 
   &__hamburger {
+    //position: absolute !important;
+    //top: 50%;
+    //left: 0;
+    //transform: $centerY;
     display: flex;
     align-self: center;
     margin-right: 2rem;
