@@ -29,6 +29,9 @@ exports[`<PrimaryMenu/> should match snapshot 2`] = `
     <div
       className="primary-menu__inner"
     >
+      <div
+        className="primary-menu__inner-overlay"
+      />
       <mockConstructor
         className="primary-menu__brand-link"
         to="/"
@@ -59,11 +62,34 @@ exports[`<PrimaryMenu/> should match snapshot 2`] = `
           key="1"
           onClick={[Function]}
         >
+          <FontAwesomeIcon
+            border={false}
+            className="primary-menu__icon icon__test-class"
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Array [
+                "far",
+                "test-class",
+              ]
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
           title
            
           <FontAwesomeIcon
             border={false}
-            className="primary-menu__icon"
+            className="primary-menu__right-icon"
             fixedWidth={false}
             flip={null}
             icon={

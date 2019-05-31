@@ -11,6 +11,7 @@ import * as coreActions from '../../../store/actions/core.actions';
 import MenuItem from '../../atoms/MenuItem/MenuItem';
 import Brand from '../../atoms/Brand/Brand';
 import SocialMenu from '../../molecules/SocialMenu/SocialMenu';
+import { slugify } from '../../../utils';
 
 export const PurePrimaryMenu = ({
   className,
@@ -59,6 +60,8 @@ export const PurePrimaryMenu = ({
           onClick={toggleMenuState}
         />
         <div className={styles['primary-menu__inner']}>
+          <div className={styles['primary-menu__inner-overlay']} />
+
           <Link className={styles['primary-menu__brand-link']} to="/">
             <Brand
               type="character"
@@ -81,9 +84,22 @@ export const PurePrimaryMenu = ({
                   item={item}
                   onClick={toggleMenuState}
                 >
+                  {item.classes !== '' && (
+                    <FontAwesomeIcon
+                      className={classNames(
+                        styles['primary-menu__icon'],
+                        styles[`icon__${slugify(item.classes)}`]
+                      )}
+                      icon={
+                        item.classes !== 'heart'
+                          ? ['far', item.classes]
+                          : ['fas', item.classes]
+                      }
+                    />
+                  )}
                   {item.title}{' '}
                   <FontAwesomeIcon
-                    className={classNames(styles['primary-menu__icon'])}
+                    className={classNames(styles['primary-menu__right-icon'])}
                     icon={['far', 'chevron-right']}
                   />
                 </MenuItem>

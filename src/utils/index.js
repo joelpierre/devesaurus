@@ -12,8 +12,12 @@ import {
   faTint,
   faPaintBrush,
   faPalette,
+  faBooks,
+  faFont,
+  faNewspaper,
+  faBuilding,
 } from '@fortawesome/pro-regular-svg-icons';
-import { faSearch } from '@fortawesome/pro-solid-svg-icons';
+import { faSearch, faHeart } from '@fortawesome/pro-solid-svg-icons';
 
 /**
  * Add Fontawesome icons to library for app
@@ -31,7 +35,12 @@ library.add(
   faTint,
   faPaintBrush,
   faPalette,
-  faSearch
+  faSearch,
+  faHeart,
+  faBooks,
+  faFont,
+  faNewspaper,
+  faBuilding
 );
 
 /**
@@ -249,7 +258,7 @@ export const sanitizeUrl = link => {
       link
         .toLowerCase()
         .replace(/(^\w+:|^)\/\//, '')
-        .replace('/', '')
+        // .replace('/', '')
         // .replace(/\//g, '')
         // .replace('http', '')
         // .replace('https', '')

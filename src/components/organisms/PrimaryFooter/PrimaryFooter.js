@@ -59,7 +59,7 @@ const PrimaryFooter = ({ company }) => {
               />
             </Flex>
 
-            <Flex colLg={3} colMd={5}>
+            <Flex colLg={3} colMd={6}>
               <Heading
                 priority={5}
                 className={classNames(styles['primary-footer__heading'])}
@@ -95,7 +95,7 @@ const PrimaryFooter = ({ company }) => {
           <Row>
             <Flex
               colLg={5}
-              colMd={12}
+              colMd={5}
               className={styles['primary-footer__legal']}
             >
               <Link to="/">
@@ -110,7 +110,7 @@ const PrimaryFooter = ({ company }) => {
               </Link>
             </Flex>
 
-            <Flex colLg={7} colMd={12} className="display-flex">
+            <Flex colLg={7} colMd={7} className="display-flex">
               <TermsMenu className={styles['primary-footer__terms-menu']} />
             </Flex>
           </Row>
