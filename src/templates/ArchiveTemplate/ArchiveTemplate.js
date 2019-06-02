@@ -15,6 +15,8 @@ export class ArchiveTemplate extends PureComponent {
   render() {
     const { pageContext, isMenuOpen } = this.props;
 
+    console.dir(pageContext.items);
+
     return (
       <CoreLayout
         title={pageContext.name}
