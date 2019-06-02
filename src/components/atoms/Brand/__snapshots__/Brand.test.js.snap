@@ -12,7 +12,7 @@ exports[`<Brand/> should match snapshot 1`] = `
       center={false}
       className="brand__logo brand__icon"
       description="An SVG Icon"
-      fill="#000000"
+      fill="currentColor"
       name="logo"
     />
     <SiteInfo

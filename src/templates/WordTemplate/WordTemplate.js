@@ -48,61 +48,69 @@ export class WordTemplate extends PureComponent {
         ])}
         isMenuOpen={isMenuOpen}
       >
-        <Section>
-          <Container>
+        <Section contrast>
+          <Container fluid>
             <Row>
-              <Flex colLg={7}>
-                <Heading
-                  innerHTML={false}
-                  className={styles.word__heading}
-                  priority={1}
-                >
-                  {pageContext.title}
-                </Heading>
+              <Flex colMd={10} colLg={11} className="mx-auto">
+                <Row>
+                  <Flex colLg={7}>
+                    <div className={styles.word__panel}>
+                      <Heading
+                        innerHTML={false}
+                        className={styles.word__heading}
+                        priority={1}
+                      >
+                        {pageContext.title}
+                      </Heading>
 
-                <p
-                  className={classNames(
-                    styles.word__pronunciation,
-                    styles.word__copy
-                  )}
-                >
-                  <strong>Pronunciation:</strong> [
-                  {pageContext.acf.pronunciation}]
-                </p>
+                      <p
+                        className={classNames(
+                          styles.word__pronunciation,
+                          styles.word__copy
+                        )}
+                      >
+                        <strong>Pronunciation:</strong> [
+                        {pageContext.acf.pronunciation}]
+                      </p>
 
-                <p
-                  className={classNames(
-                    styles.word__syllables,
-                    styles.word__copy
-                  )}
-                >
-                  <strong>Syllables:</strong>
-                  {pageContext.acf.syllables.list.map((syllable, index) => (
-                    <span
-                      key={index}
-                      className={classNames(styles.word__syllable)}
-                    >
-                      {syllable.item}
-                    </span>
-                  ))}{' '}
-                  ({pageContext.acf.syllables.count})
-                </p>
+                      <p
+                        className={classNames(
+                          styles.word__syllables,
+                          styles.word__copy
+                        )}
+                      >
+                        <strong>Syllables:</strong>
+                        {pageContext.acf.syllables.list.map(
+                          (syllable, index) => (
+                            <span
+                              key={index}
+                              className={classNames(styles.word__syllable)}
+                            >
+                              {syllable.item}
+                            </span>
+                          )
+                        )}{' '}
+                        ({pageContext.acf.syllables.count})
+                      </p>
 
-                <hr className={styles.word__hr} />
+                      <hr className={styles.word__hr} />
 
-                <Heading priority={3} className={styles.word__subheading}>
-                  Definition
-                </Heading>
-                <p
-                  className={styles.word__copy}
-                  dangerouslySetInnerHTML={{
-                    __html: pageContext.acf.definition,
-                  }}
-                />
-              </Flex>
+                      <Heading priority={3} className={styles.word__subheading}>
+                        Definition
+                      </Heading>
+                      <p
+                        className={styles.word__copy}
+                        dangerouslySetInnerHTML={{
+                          __html: pageContext.acf.definition,
+                        }}
+                      />
+                    </div>
+                  </Flex>
 
-              <Flex colLg={4} className={classNames('ml-auto')}>
-                Ads or something?
+                  <Flex colLg={4} className={classNames('ml-auto')}>
+                    Ads or something?
+                  </Flex>
+                </Row>
               </Flex>
             </Row>
           </Container>

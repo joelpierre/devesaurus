@@ -40,6 +40,7 @@ exports[`<PrimaryMenu/> should match snapshot 2`] = `
           center={true}
           className="primary-menu__brand"
           left={true}
+          onClick={[Function]}
           right={false}
           type="character"
         />
@@ -87,28 +88,12 @@ exports[`<PrimaryMenu/> should match snapshot 2`] = `
           />
           title
            
-          <FontAwesomeIcon
-            border={false}
-            className="primary-menu__right-icon"
-            fixedWidth={false}
-            flip={null}
-            icon={
-              Array [
-                "far",
-                "chevron-right",
-              ]
-            }
-            inverse={false}
-            listItem={false}
-            mask={null}
-            pull={null}
-            pulse={false}
-            rotation={null}
-            size={null}
-            spin={false}
-            symbol={false}
-            title=""
-            transform={null}
+          <SvgIcon
+            center={false}
+            className="primary-menu__chevron"
+            description="An SVG Icon"
+            fill="currentColor"
+            name="dev-chevron-right"
           />
         </MenuItem>
       </ul>

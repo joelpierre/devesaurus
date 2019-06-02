@@ -131,7 +131,7 @@ exports[`<FormBase/> should match snapshot 1`] = `
       >
         <Button
           behavior="action"
-          caps={true}
+          caps={false}
           className="form-base__button"
           size="md"
           theme="brand"
@@ -156,7 +156,7 @@ exports[`<FormBase/> should match snapshot 1`] = `
       >
         <Button
           behavior="action"
-          caps={true}
+          caps={false}
           className="form-base__button"
           size="md"
           theme="beta"

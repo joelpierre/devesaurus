@@ -7,7 +7,9 @@ import { sanitizeUrl } from '../../../utils';
 
 function MenuItem({ item, className, children, ...props }) {
   const { attr } = item;
+  // console.log(item);
   let link = item.url;
+  let firstChar;
   let el;
 
   /**
@@ -20,7 +22,7 @@ function MenuItem({ item, className, children, ...props }) {
     case 'anchor':
       el = (
         <a
-          className={styles['menu-item__link']}
+          className={classNames(styles['menu-item__link'], item.className)}
           key={item.order}
           href={item.url}
           rel="noreferrer nofollow"
@@ -31,10 +33,17 @@ function MenuItem({ item, className, children, ...props }) {
       break;
     default:
       link = sanitizeUrl(link);
+      firstChar = link.charAt(0);
+      // console.log(link);
+
+      if (firstChar !== '/') {
+        link = `/${link}`;
+      }
+
       el = (
         <Link
-          className={styles['menu-item__link']}
-          to={`/${link}`}
+          className={classNames(styles['menu-item__link'], item.className)}
+          to={`${link}`}
           key={item.order}
         >
           {children || item.title || 'No title'}
@@ -65,10 +74,11 @@ MenuItem.propTypes = {
   ]),
   item: PropTypes.shape({
     title: PropTypes.string,
-    object_slug: PropTypes.string.isRequired,
+    object_slug: PropTypes.string,
     url: PropTypes.string.isRequired,
-    classes: PropTypes.string.isRequired,
-    attr: PropTypes.string.isRequired,
+    className: PropTypes.string,
+    classes: PropTypes.string,
+    attr: PropTypes.string,
   }).isRequired,
   className: PropTypes.string.isRequired,
 };

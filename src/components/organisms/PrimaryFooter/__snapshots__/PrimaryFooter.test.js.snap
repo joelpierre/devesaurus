@@ -10,7 +10,7 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
   >
     <Container
       className={null}
-      fluid={false}
+      fluid={true}
     >
       <Row
         className={null}

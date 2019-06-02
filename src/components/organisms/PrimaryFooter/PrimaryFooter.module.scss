@@ -5,6 +5,7 @@
   width: 100%;
   background-color: $color-tint-alpha;
   transition: $transition-all-base;
+  border-top: .2rem solid $color-tint-gamma;
 
   &--top {
     padding: 8rem 0 3rem;
@@ -49,7 +50,8 @@
     padding: 0;
     margin-bottom: 0 !important;
 
-    & > svg {
+    svg {
+      color: $color-tint-omega;
       max-width: 100%;
     }
   }

@@ -37,10 +37,30 @@
   }
 
   &__form {
+    position: relative;
     margin-bottom: 10rem !important;
 
     @include tablet-landscape {
       margin-bottom: 5rem !important;
+    }
+
+    &-input {
+      height: 5rem;
+      padding-right: 10.8rem;
+    }
+
+    &-submit {
+      position: absolute;
+      top: 50%;
+      transform: $centerY;
+      right: .7rem;
+      max-height: 3.8rem;
+      padding: 1rem 1.5rem;
+      background: $color-gradient-alpha;
+    }
+
+    &-icon {
+      margin-left: 0 !important;
     }
   }
 

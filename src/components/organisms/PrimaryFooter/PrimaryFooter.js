@@ -12,7 +12,6 @@ import Brand from '../../atoms/Brand/Brand';
 import SocialMenu from '../../molecules/SocialMenu/SocialMenu';
 import Heading from '../../core/Heading/Heading';
 import FeaturedWordsList from '../../molecules/FeaturedWordsList/FeaturedWordsList';
-import LabelCloud from '../../molecules/LabelCloud/LabelCloud';
 
 const PrimaryFooter = ({ company }) => {
   return (
@@ -21,7 +20,7 @@ const PrimaryFooter = ({ company }) => {
       className={styles['primary-footer']}
     >
       <div className={classNames([styles['primary-footer--top']])}>
-        <Container>
+        <Container fluid>
           <Row>
             <Flex colLg={3} colMd={6} className="ml-auto">
               <Heading

@@ -3,7 +3,7 @@
 exports[`<Button/> should match snapshot 1`] = `
 <Fragment>
   <mockConstructor
-    className="btn btn--md btn--tint-omega btn--capitalise"
+    className="btn btn--md btn--tint-omega"
     data-test="component-button"
     to="#"
   >

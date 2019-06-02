@@ -13,6 +13,59 @@ exports[`<SimpleHeader/> should match snapshot 1`] = `
       descriptor="Menu"
       onClick={[Function]}
     />
+    <nav
+      className="simple-header__menu"
+    >
+      <ul
+        className="simple-header__list"
+      >
+        <MenuItem
+          className="simple-header__item"
+          item={
+            Object {
+              "className": "simple-header__link",
+              "url": "/about",
+            }
+          }
+        >
+          What's Devesaurus?
+        </MenuItem>
+        <MenuItem
+          className="simple-header__item"
+          item={
+            Object {
+              "className": "simple-header__button",
+              "url": "/contact",
+            }
+          }
+        >
+          Help Contribute
+          <FontAwesomeIcon
+            border={false}
+            className="simple-header__icon"
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Array [
+                "fas",
+                "heart",
+              ]
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+        </MenuItem>
+      </ul>
+    </nav>
   </div>
 </header>
 `;

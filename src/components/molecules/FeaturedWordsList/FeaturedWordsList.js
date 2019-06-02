@@ -55,7 +55,7 @@ export default FeaturedWordsList;
 
 const query = graphql`
   {
-    allWordpressWpWord {
+    allWordpressWpWord(limit: 5) {
       edges {
         node {
           id

@@ -72,28 +72,12 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
               >
                 Previous
               </span>
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Array [
-                    "far",
-                    "chevron-left",
-                  ]
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
+              <SvgIcon
+                center={false}
+                className={null}
+                description="An SVG Icon"
+                fill="currentColor"
+                name="dev-chevron-left"
               />
             </span>
           }
@@ -104,28 +88,12 @@ exports[`<FeaturedWords/> should match snapshot 1`] = `
               >
                 Next
               </span>
-              <FontAwesomeIcon
-                border={false}
-                className=""
-                fixedWidth={false}
-                flip={null}
-                icon={
-                  Array [
-                    "far",
-                    "chevron-right",
-                  ]
-                }
-                inverse={false}
-                listItem={false}
-                mask={null}
-                pull={null}
-                pulse={false}
-                rotation={null}
-                size={null}
-                spin={false}
-                symbol={false}
-                title=""
-                transform={null}
+              <SvgIcon
+                center={false}
+                className={null}
+                description="An SVG Icon"
+                fill="currentColor"
+                name="dev-chevron-right"
               />
             </span>
           }
@@ -399,36 +367,19 @@ test<br />
       >
         <Button
           behavior="router"
-          caps={true}
+          caps={false}
           link="/"
           size="lg"
           theme="tint-alpha"
           type="button"
         >
-          View all word categories
-           
-          <FontAwesomeIcon
-            border={false}
-            className=""
-            fixedWidth={false}
-            flip={null}
-            icon={
-              Array [
-                "far",
-                "chevron-right",
-              ]
-            }
-            inverse={false}
-            listItem={false}
-            mask={null}
-            pull={null}
-            pulse={false}
-            rotation={null}
-            size={null}
-            spin={false}
-            symbol={false}
-            title=""
-            transform={null}
+          View all word categories 
+          <SvgIcon
+            center={false}
+            className={null}
+            description="An SVG Icon"
+            fill="currentColor"
+            name="dev-chevron-right"
           />
         </Button>
       </Flex>

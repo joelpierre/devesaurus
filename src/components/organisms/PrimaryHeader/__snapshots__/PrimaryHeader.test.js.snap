@@ -47,7 +47,7 @@ exports[`<PrimaryHeader/> should match snapshot 1`] = `
           />
           <Button
             behavior="action"
-            caps={true}
+            caps={false}
             size="md"
             text={
               <FontAwesomeIcon

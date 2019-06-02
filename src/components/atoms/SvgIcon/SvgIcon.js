@@ -42,7 +42,7 @@ const SvgIcon = ({ name, description, fill, className, center }) => {
 };
 
 SvgIcon.defaultProps = {
-  fill: '#000000',
+  fill: `currentColor`,
   description: 'An SVG Icon',
   className: null,
   center: false,

@@ -48,7 +48,7 @@ $color-omega: #E26B50;
 
 // Gradients
 $color-gradient-brand: linear-gradient(135deg, rgba($color-brand, 1) 30%, rgba(lighten($color-alpha, 20%), 1) 100%);
-$color-gradient-alpha: linear-gradient(135deg, rgba($color-brand, 1) 30%, rgba(lighten($color-alpha, 20%), 1) 100%);
+$color-gradient-alpha: linear-gradient(135deg, rgba($color-alpha, 1) 30%, rgba(lighten($color-brand, 20%), 1) 100%);
 $color-gradient-beta: linear-gradient(135deg, rgba($color-brand, 1) 30%, rgba(lighten($color-alpha, 20%), 1) 100%);
 $color-gradient-gamma: linear-gradient(135deg, rgba($color-brand, 1) 30%, rgba(lighten($color-alpha, 20%), 1) 100%);
 $color-gradient-psi: linear-gradient(135deg, rgba($color-brand, 1) 30%, rgba(lighten($color-alpha, 20%), 1) 100%);

@@ -60,7 +60,7 @@ exports[`<InputGroup/> should match snapshot with append button 1`] = `
     >
       <Button
         behavior="action"
-        caps={true}
+        caps={false}
         link="#"
         size="md"
         theme="tint-omega"
@@ -111,7 +111,7 @@ exports[`<InputGroup/> should match snapshot with append icon 1`] = `
           center={false}
           className={null}
           description="An SVG Icon"
-          fill="#000000"
+          fill="currentColor"
           name="complete"
         />
       </div>
@@ -175,7 +175,7 @@ exports[`<InputGroup/> should match snapshot with prepend button 1`] = `
     >
       <Button
         behavior="action"
-        caps={true}
+        caps={false}
         link="#"
         size="md"
         theme="tint-omega"
@@ -226,7 +226,7 @@ exports[`<InputGroup/> should match snapshot with prepend icon 1`] = `
           center={false}
           className={null}
           description="An SVG Icon"
-          fill="#000000"
+          fill="currentColor"
           name="complete"
         />
       </div>

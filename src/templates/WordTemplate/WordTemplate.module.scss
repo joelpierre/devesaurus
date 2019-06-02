@@ -36,4 +36,9 @@
   &__copy {
     margin-bottom: 1rem;
   }
+
+  &__panel {
+    padding: 2rem 2.5rem;
+    background-color: $color-tint-alpha;
+  }
 }

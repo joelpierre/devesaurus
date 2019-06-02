@@ -5,7 +5,7 @@ import styles from './Brand.module.scss';
 import SvgIcon from '../SvgIcon/SvgIcon';
 import SiteInfo from '../SiteInfo/SiteInfo';
 
-const Brand = ({ className, type, left, right, center }) => {
+const Brand = ({ className, type, left, right, center, ...props }) => {
   let logo;
 
   /**
@@ -41,6 +41,7 @@ const Brand = ({ className, type, left, right, center }) => {
         },
         className,
       ])}
+      {...props}
     >
       <div className={classNames(styles.brand__wrapper)}>
         <SvgIcon

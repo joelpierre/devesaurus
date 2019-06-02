@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './HeroSearch.module.scss';
 import Container from '../../core/Container/Container';
 import Section from '../../core/Section/Section';
@@ -11,6 +12,8 @@ import ScrollingMouse from '../../atoms/ScrollingMouse/ScrollingMouse';
 import LabelCloud from '../../molecules/LabelCloud/LabelCloud';
 import FormBase from '../../molecules/FormBase/FormBase';
 import Heading from '../../core/Heading/Heading';
+import InputField from '../../atoms/InputField/InputField';
+import Button from '../../molecules/Buttons/Button';
 
 const HeroSearchFormData = {
   formName: 'Hero Search Form',
@@ -27,7 +30,7 @@ const HeroSearchFormData = {
             input: {
               name: 'hero-search',
               type: 'text',
-              placeholder: 'Enter a search term. e.g. HTML',
+              placeholder: '',
               styles: styles['hero-search__input'],
             },
           },
@@ -40,7 +43,7 @@ const HeroSearchFormData = {
 const HeroSearch = () => {
   const handleSearchSubmit = e => {
     e.preventDefault();
-    console.log(e);
+    console.log('We will do something here');
   };
 
   return (
@@ -51,13 +54,28 @@ const HeroSearch = () => {
             <div className={styles['hero-search__wrapper']}>
               <Brand center className={styles['hero-search__brand']} />
 
-              <FormBase
+              <form
                 className={styles['hero-search__form']}
-                onSubmit={e => handleSearchSubmit(e)}
-                buttons={HeroSearchFormData.buttons}
-                formGroups={HeroSearchFormData.formGroups}
-                formName={HeroSearchFormData.formName}
-              />
+                onSubmit={handleSearchSubmit}
+              >
+                <InputField
+                  className={styles['hero-search__form-input']}
+                  placeholder="Enter a search term. e.g. HTML"
+                  type="text"
+                  name="hero-search"
+                />
+                <Button
+                  className={styles['hero-search__form-submit']}
+                  theme="brand"
+                  type="submit"
+                  behavior="action"
+                >
+                  <FontAwesomeIcon
+                    icon={['fas', 'search']}
+                    className={styles['hero-search__form-icon']}
+                  />
+                </Button>
+              </form>
 
               <Heading
                 priority={4}
@@ -70,7 +88,10 @@ const HeroSearch = () => {
               </Heading>
               <LabelCloud
                 taxonomy="word_tag"
-                className={styles['hero-search__label-cloud']}
+                className={classNames(
+                  styles['hero-search__label-cloud'],
+                  'mx-auto'
+                )}
               />
             </div>
           </Flex>

@@ -11,13 +11,13 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
 >
   <Section
     className={null}
-    contrast={false}
+    contrast={true}
     theme={null}
     type="section"
   >
     <Container
       className={null}
-      fluid={false}
+      fluid={true}
     >
       <Row
         className={null}
@@ -27,7 +27,9 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
       >
         <Flex
           auto={false}
-          colLg={7}
+          className="mx-auto"
+          colLg={11}
+          colMd={10}
           lg={false}
           md={false}
           sm={false}
@@ -35,71 +37,93 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
           xl={false}
           xs={false}
         >
-          <Heading
-            className="word__heading"
-            innerHTML={false}
-            priority={1}
+          <Row
+            className={null}
+            column={false}
+            reverse={false}
+            row={true}
           >
-            test
-          </Heading>
-          <p
-            className="word__pronunciation word__copy"
-          >
-            <strong>
-              Pronunciation:
-            </strong>
-             [
-            test
-            ]
-          </p>
-          <p
-            className="word__syllables word__copy"
-          >
-            <strong>
-              Syllables:
-            </strong>
-            <span
-              className="word__syllable"
-              key="0"
+            <Flex
+              auto={false}
+              colLg={7}
+              lg={false}
+              md={false}
+              sm={false}
+              type="div"
+              xl={false}
+              xs={false}
             >
-              test-item
-            </span>
-             
-            (
-            1
-            )
-          </p>
-          <hr
-            className="word__hr"
-          />
-          <Heading
-            className="word__subheading"
-            innerHTML={true}
-            priority={3}
-          >
-            Definition
-          </Heading>
-          <p
-            className="word__copy"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": undefined,
-              }
-            }
-          />
-        </Flex>
-        <Flex
-          auto={false}
-          className="ml-auto"
-          colLg={4}
-          lg={false}
-          md={false}
-          sm={false}
-          type="div"
-          xl={false}
-          xs={false}
-        >
-          Ads or something?
+              <div
+                className="word__panel"
+              >
+                <Heading
+                  className="word__heading"
+                  innerHTML={false}
+                  priority={1}
+                >
+                  test
+                </Heading>
+                <p
+                  className="word__pronunciation word__copy"
+                >
+                  <strong>
+                    Pronunciation:
+                  </strong>
+                   [
+                  test
+                  ]
+                </p>
+                <p
+                  className="word__syllables word__copy"
+                >
+                  <strong>
+                    Syllables:
+                  </strong>
+                  <span
+                    className="word__syllable"
+                    key="0"
+                  >
+                    test-item
+                  </span>
+                   
+                  (
+                  1
+                  )
+                </p>
+                <hr
+                  className="word__hr"
+                />
+                <Heading
+                  className="word__subheading"
+                  innerHTML={true}
+                  priority={3}
+                >
+                  Definition
+                </Heading>
+                <p
+                  className="word__copy"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": undefined,
+                    }
+                  }
+                />
+              </div>
+            </Flex>
+            <Flex
+              auto={false}
+              className="ml-auto"
+              colLg={4}
+              lg={false}
+              md={false}
+              sm={false}
+              type="div"
+              xl={false}
+              xs={false}
+            >
+              Ads or something?
+            </Flex>
+          </Row>
         </Flex>
       </Row>
     </Container>

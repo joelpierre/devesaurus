@@ -96,7 +96,7 @@ const Button = ({
 Button.defaultProps = {
   ...defaultTheme('tint-omega'),
   ...defaultSize('md'),
-  caps: true,
+  caps: false,
   behavior: 'router',
   action: undefined,
   className: undefined,

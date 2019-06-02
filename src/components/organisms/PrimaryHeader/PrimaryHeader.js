@@ -109,6 +109,7 @@ export class PrimaryHeader extends PureComponent {
                     onChange={this.handleSearchInputOnChange}
                   />
                 )}
+
                 {buttonData && (
                   <Button {...buttonData}>{buttonData.text}</Button>
                 )}

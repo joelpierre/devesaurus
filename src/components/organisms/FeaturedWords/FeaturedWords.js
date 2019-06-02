@@ -19,6 +19,8 @@ import Flex from '../../core/Flex/Flex';
 import Heading from '../../core/Heading/Heading';
 import { sortWordObj } from '../../../utils';
 import Button from '../../molecules/Buttons/Button';
+// import classNames from 'classnames';
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 class FeaturedWords extends PureComponent {
   constructor(props) {
@@ -34,13 +36,13 @@ class FeaturedWords extends PureComponent {
             <span className={styles['featured-words__arrow-text']}>
               Previous
             </span>
-            <FontAwesomeIcon icon={['far', 'chevron-left']} />
+            <SvgIcon name="dev-chevron-left" />
           </span>
         ),
         arrowRight: (
           <span>
             <span className={styles['featured-words__arrow-text']}>Next</span>
-            <FontAwesomeIcon icon={['far', 'chevron-right']} />
+            <SvgIcon name="dev-chevron-right" />
           </span>
         ),
         draggable: false,
@@ -129,8 +131,7 @@ class FeaturedWords extends PureComponent {
           <Row className="mt-6">
             <Flex colMd="8">
               <Button link="/" size="lg" theme="tint-alpha">
-                View all word categories{' '}
-                <FontAwesomeIcon icon={['far', 'chevron-right']} />
+                View all word categories <SvgIcon name="dev-chevron-right" />
               </Button>
             </Flex>
           </Row>

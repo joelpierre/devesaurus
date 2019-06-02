@@ -1,10 +1,12 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 
 import Hamburger from '../../atoms/Hamburger/Hamburger';
 import styles from './SimpleHeader.module.scss';
 import * as coreActions from '../../../store/actions';
+import MenuItem from '../../atoms/MenuItem/MenuItem';
 
 export class SimpleHeader extends PureComponent {
   constructor() {
@@ -25,10 +27,7 @@ export class SimpleHeader extends PureComponent {
   }
 
   render() {
-    const { isMenuOpen, setMenuState } = this.props;
-
-    // console.log(isMenuOpen);
-    // console.log(setMenuState);
+    const { isMenuOpen } = this.props;
 
     return (
       <header
@@ -42,6 +41,35 @@ export class SimpleHeader extends PureComponent {
             isMenuOpen={isMenuOpen}
             onClick={this.toggleMenu}
           />
+
+          <nav className={styles['simple-header__menu']}>
+            <ul className={classNames(styles['simple-header__list'])}>
+              <MenuItem
+                item={{
+                  url: '/about',
+                  className: styles['simple-header__link'],
+                }}
+                className={classNames(styles['simple-header__item'])}
+              >
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                What's Devesaurus?
+              </MenuItem>
+
+              <MenuItem
+                item={{
+                  url: '/contact',
+                  className: styles['simple-header__button'],
+                }}
+                className={classNames(styles['simple-header__item'])}
+              >
+                Help Contribute
+                <FontAwesomeIcon
+                  className={classNames(styles['simple-header__icon'])}
+                  icon={['fas', 'heart']}
+                />
+              </MenuItem>
+            </ul>
+          </nav>
         </div>
       </header>
     );

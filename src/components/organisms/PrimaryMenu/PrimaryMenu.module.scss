@@ -114,20 +114,22 @@
     margin-bottom: 0;
     font-size: 1.8rem;
     font-weight: bold;
+    border-bottom: 1px solid $color-tint-gamma;
 
     & > a {
       display: flex;
       flex-wrap: nowrap;
       align-items: center;
-      padding: 1rem 0;
+      padding: 1.3rem 0;
       transition: $transition-all-base;
-      margin-right: 2rem;
+      margin-right: 1.5rem;
       text-decoration: none;
     }
 
     @include hover-focus {
       & > a {
-        margin-right: 1rem;
+        padding-left: 1rem;
+        margin-right: .5rem;
       }
     }
   }
@@ -150,8 +152,13 @@
     overflow: hidden;
   }
 
-  &__right-icon {
+  &__chevron {
+    width: .9rem;
     margin-left: auto;
+
+    svg {
+      color: $color-tint-psi;
+    }
   }
 }
 

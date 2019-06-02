@@ -12,6 +12,7 @@ import MenuItem from '../../atoms/MenuItem/MenuItem';
 import Brand from '../../atoms/Brand/Brand';
 import SocialMenu from '../../molecules/SocialMenu/SocialMenu';
 import { slugify } from '../../../utils';
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 export const PurePrimaryMenu = ({
   className,
@@ -67,6 +68,7 @@ export const PurePrimaryMenu = ({
               type="character"
               center
               className={styles['primary-menu__brand']}
+              onClick={toggleMenuState}
             />
           </Link>
 
@@ -98,9 +100,9 @@ export const PurePrimaryMenu = ({
                     />
                   )}
                   {item.title}{' '}
-                  <FontAwesomeIcon
-                    className={classNames(styles['primary-menu__right-icon'])}
-                    icon={['far', 'chevron-right']}
+                  <SvgIcon
+                    className={classNames(styles['primary-menu__chevron'])}
+                    name="dev-chevron-right"
                   />
                 </MenuItem>
               );

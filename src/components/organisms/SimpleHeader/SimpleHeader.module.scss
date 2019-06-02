@@ -11,7 +11,7 @@
   justify-content: flex-end;
   top: 0;
   left: 0;
-  padding: .5rem .6rem;
+  padding: .8rem;
   background-color: $color-tint-alpha;
   transition: $transition-all-base;
 
@@ -27,5 +27,52 @@
   &__menu {
     margin-left: auto;
     display: inline-flex;
+    width: auto;
+  }
+
+  &__list {
+    width: auto;
+    list-style-type: none;
+  }
+
+  &__item {
+    display: inline-block;
+    padding: 0 1rem;
+  }
+
+  &__link {
+    color: $color-tint-omega;
+    text-decoration: none;
+
+    @include hover-focus {
+      color: $color-tint-omega;
+    }
+  }
+
+  &__button {
+    border: .2rem solid $color-alpha;
+    background-color: $color-alpha;
+    border-radius: $radius-rounded;
+    color: $color-tint-alpha;
+    letter-spacing: .05rem;
+    padding: .7rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color $transition-base, border-color $transition-base, background-color $transition-base;
+
+    @include hover-focus {
+      border-color: $color-tint-omega;
+      color: $color-tint-omega;
+      text-decoration: none;
+      background-color: transparent;
+
+      svg {
+        color: red;
+      }
+    }
+  }
+
+  &__icon {
+    margin-left: 1rem;
   }
 }
