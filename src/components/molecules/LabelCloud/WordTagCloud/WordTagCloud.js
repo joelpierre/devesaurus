@@ -57,7 +57,7 @@ export default WordTagCloud;
 
 const query = graphql`
   {
-    allWordpressWpWordTag {
+    allWordpressWpWordTag(limit: 10, sort: { fields: count, order: DESC }) {
       edges {
         node {
           id

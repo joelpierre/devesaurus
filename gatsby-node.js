@@ -208,6 +208,7 @@ exports.createPages = ({ graphql, actions }) => {
                   slug
                   date
                   type
+                  content
                   word_tags {
                     id
                     name
@@ -222,7 +223,6 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   acf {
                     page_theme
-                    definition
                     origin {
                       value
                       label
@@ -372,9 +372,9 @@ exports.createPages = ({ graphql, actions }) => {
                     title
                     slug
                     date
+                    content
                     acf {
                       page_theme
-                      definition
                       origin {
                         value
                         label
@@ -462,9 +462,9 @@ exports.createPages = ({ graphql, actions }) => {
                     title
                     slug
                     date
+                    content
                     acf {
                       page_theme
-                      definition
                       origin {
                         value
                         label

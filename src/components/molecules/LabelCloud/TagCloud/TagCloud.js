@@ -57,7 +57,7 @@ export default TagCloud;
 
 const query = graphql`
   {
-    allWordpressTag {
+    allWordpressTag(limit: 10, sort: { fields: count, order: DESC }) {
       edges {
         node {
           id

@@ -45,7 +45,11 @@ export default connect(mapStateToProps)(Index);
 
 const query = graphql`
   {
-    allWordpressWpWord {
+    allWordpressWpWord(
+      limit: 10
+      filter: { word_tags: { elemMatch: { slug: { eq: "featured" } } } }
+      sort: { fields: [title], order: [ASC] }
+    ) {
       edges {
         node {
           id

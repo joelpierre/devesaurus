@@ -18,14 +18,14 @@ exports[`<BasicLayout/> should match snapshot 1`] = `
     ogType="website"
     title="Default Title"
   />
-  <Component
+  <Connect(PrimaryMenu)
     isMenuOpen={false}
   />
   <div
     className="push-wrapper"
     id="push-wrapper"
   >
-    <Component />
+    <Connect(SimpleHeader) />
     <main
       className="primary-main"
       data-test="basic-layout-main"

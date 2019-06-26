@@ -103,14 +103,24 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
             innerHTML={true}
             priority={5}
           >
-            About
+            Devesaurus
           </Heading>
           <Heading
             className="primary-footer__legal-copy"
             innerHTML={false}
             priority={6}
           >
-            Get real-world definitions to complex dev terms | Supported by
+            Get real-world definitions for complex dev and creative industry terms.
+          </Heading>
+          <Heading
+            className="primary-footer__legal-copy mt-2"
+            innerHTML={false}
+            priority={6}
+          >
+            ©
+             
+            Devesaurus 2019 | Developed by: Joel Pierre-Powell
+             | Supported by
              
             <a
               className="primary-footer__link"
@@ -118,10 +128,6 @@ exports[`<PrimaryFooter/> should match snapshot 1`] = `
             >
               JPPdesigns Web design & Development
             </a>
-             
-            | ©
-             
-            Devesaurus 2019 | Developed by: Joel Pierre-Powell
           </Heading>
           <SocialMenu
             className="mt-3 primary-footer__social"

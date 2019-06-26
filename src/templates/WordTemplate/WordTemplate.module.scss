@@ -5,6 +5,10 @@
   padding: 0;
   margin: 0;
 
+  &__section {
+    padding: 6rem 0 6.5rem;
+  }
+
   &__hr {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -40,5 +44,6 @@
   &__panel {
     padding: 2rem 2.5rem;
     background-color: $color-tint-alpha;
+    box-shadow: 0 5px 20px 0 rgba($color-tint-psi, .1);
   }
 }

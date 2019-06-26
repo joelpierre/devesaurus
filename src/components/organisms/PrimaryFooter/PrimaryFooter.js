@@ -63,22 +63,34 @@ const PrimaryFooter = ({ company }) => {
                 priority={5}
                 className={classNames(styles['primary-footer__heading'])}
               >
-                About
+                Devesaurus
               </Heading>
               <Heading
                 priority={6}
                 className={classNames(styles['primary-footer__legal-copy'])}
                 innerHTML={false}
               >
-                Get real-world definitions to complex dev terms | Supported by{' '}
+                Get real-world definitions for complex dev and creative industry
+                terms.
+              </Heading>
+
+              <Heading
+                priority={6}
+                className={classNames(
+                  styles['primary-footer__legal-copy'],
+                  'mt-2'
+                )}
+                innerHTML={false}
+              >
+                &copy;{' '}
+                {`${company} ${new Date().getFullYear()} | Developed by: Joel Pierre-Powell`}
+                {' | Supported by'}{' '}
                 <a
                   className={styles['primary-footer__link']}
                   href="http://www.jppdesigns.co.uk"
                 >
                   JPPdesigns Web design &amp; Development
-                </a>{' '}
-                | &copy;{' '}
-                {`${company} ${new Date().getFullYear()} | Developed by: Joel Pierre-Powell`}
+                </a>
               </Heading>
 
               <SocialMenu

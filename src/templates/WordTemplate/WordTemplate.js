@@ -48,10 +48,10 @@ export class WordTemplate extends PureComponent {
         ])}
         isMenuOpen={isMenuOpen}
       >
-        <Section contrast>
+        <Section contrast className={styles.word__section}>
           <Container fluid>
             <Row>
-              <Flex colMd={10} colLg={11} className="mx-auto">
+              <Flex colLg={12} className="mx-auto">
                 <Row>
                   <Flex colLg={7}>
                     <div className={styles.word__panel}>
@@ -101,7 +101,7 @@ export class WordTemplate extends PureComponent {
                       <p
                         className={styles.word__copy}
                         dangerouslySetInnerHTML={{
-                          __html: pageContext.acf.definition,
+                          __html: pageContext.content,
                         }}
                       />
                     </div>
@@ -111,6 +111,24 @@ export class WordTemplate extends PureComponent {
                     Ads or something?
                   </Flex>
                 </Row>
+              </Flex>
+            </Row>
+          </Container>
+        </Section>
+
+        <Section theme="gradient-brand" className={styles.word__section}>
+          <Container fluid>
+            <Row>
+              <Flex className="text-center">
+                <h2>Some sort of banner for searching or something</h2>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Error inventore laboriosam omnis qui sed temporibus
+                  voluptates! Ex exercitationem, molestiae numquam quaerat
+                  quisquam voluptatem! Cupiditate ipsam minima nam placeat sunt
+                  suscipit!
+                </p>
               </Flex>
             </Row>
           </Container>

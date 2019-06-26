@@ -86,6 +86,7 @@ const HeroSearch = () => {
               >
                 Top Words
               </Heading>
+
               <LabelCloud
                 taxonomy="word_tag"
                 className={classNames(

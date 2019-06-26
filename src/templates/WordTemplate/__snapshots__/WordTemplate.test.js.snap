@@ -10,7 +10,7 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
   title="test"
 >
   <Section
-    className={null}
+    className="word__section"
     contrast={true}
     theme={null}
     type="section"
@@ -28,8 +28,7 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
         <Flex
           auto={false}
           className="mx-auto"
-          colLg={11}
-          colMd={10}
+          colLg={12}
           lg={false}
           md={false}
           sm={false}
@@ -124,6 +123,42 @@ exports[`<WordTemplate/> should match snapshot 1`] = `
               Ads or something?
             </Flex>
           </Row>
+        </Flex>
+      </Row>
+    </Container>
+  </Section>
+  <Section
+    className="word__section"
+    contrast={false}
+    theme="gradient-brand"
+    type="section"
+  >
+    <Container
+      className={null}
+      fluid={true}
+    >
+      <Row
+        className={null}
+        column={false}
+        reverse={false}
+        row={true}
+      >
+        <Flex
+          auto={false}
+          className="text-center"
+          lg={false}
+          md={false}
+          sm={false}
+          type="div"
+          xl={false}
+          xs={false}
+        >
+          <h2>
+            Some sort of banner for searching or something
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error inventore laboriosam omnis qui sed temporibus voluptates! Ex exercitationem, molestiae numquam quaerat quisquam voluptatem! Cupiditate ipsam minima nam placeat sunt suscipit!
+          </p>
         </Flex>
       </Row>
     </Container>

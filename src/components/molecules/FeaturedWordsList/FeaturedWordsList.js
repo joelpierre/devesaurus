@@ -55,7 +55,11 @@ export default FeaturedWordsList;
 
 const query = graphql`
   {
-    allWordpressWpWord(limit: 5) {
+    allWordpressWpWord(
+      limit: 5
+      filter: { word_tags: { elemMatch: { slug: { eq: "featured" } } } }
+      sort: { fields: [title], order: [ASC] }
+    ) {
       edges {
         node {
           id

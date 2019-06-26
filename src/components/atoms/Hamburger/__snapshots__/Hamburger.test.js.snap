@@ -7,13 +7,13 @@ exports[`<Hamburger/> should match snapshot 1`] = `
   type="button"
 >
   <span
-    className="hamburger__line hamburger__line-theme--undefined"
+    className="hamburger__line hamburger__line-theme--brand"
   />
   <span
-    className="hamburger__line hamburger__line-theme--undefined"
+    className="hamburger__line hamburger__line-theme--brand"
   />
   <span
-    className="hamburger__line hamburger__line-theme--undefined"
+    className="hamburger__line hamburger__line-theme--brand"
   />
   <span
     className="hamburger__descriptor"

@@ -57,7 +57,10 @@ export default WordCategoryCloud;
 
 const query = graphql`
   {
-    allWordpressWpWordCategory {
+    allWordpressWpWordCategory(
+      limit: 10
+      sort: { fields: count, order: DESC }
+    ) {
       edges {
         node {
           id

@@ -8,7 +8,7 @@ exports[`<SimpleHeader/> should match snapshot 1`] = `
   <div
     className="simple-header__wrapper"
   >
-    <Component
+    <Memo(Hamburger)
       className="simple-header__hamburger"
       descriptor="Menu"
       onClick={[Function]}

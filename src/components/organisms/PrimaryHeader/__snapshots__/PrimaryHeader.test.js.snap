@@ -10,7 +10,7 @@ exports[`<PrimaryHeader/> should match snapshot 1`] = `
     fluid={true}
   >
     <div>
-      <Component
+      <Memo(Hamburger)
         alt={true}
         descriptor="Menu"
         isMenuOpen={false}

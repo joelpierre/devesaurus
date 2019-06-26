@@ -57,7 +57,7 @@ export default CategoryCloud;
 
 const query = graphql`
   {
-    allWordpressCategory {
+    allWordpressCategory(limit: 10, sort: { fields: count, order: DESC }) {
       edges {
         node {
           id
