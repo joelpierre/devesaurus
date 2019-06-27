@@ -1,5 +1,4 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
   faChevronRight,
   faChevronLeft,
@@ -14,16 +13,43 @@ import {
   faPalette,
   faBooks,
   faFont,
+  faSitemap,
+  faAnalytics,
+  faServer,
+  faUsers,
+  faIcons,
+  faAd,
+  faObjectGroup,
   faNewspaper,
   faBuilding,
 } from '@fortawesome/pro-regular-svg-icons';
 import { faSearch, faHeart } from '@fortawesome/pro-solid-svg-icons';
+import {
+  faFacebook,
+  faFacebookF,
+  faGit,
+  faAws,
+  faNodeJs,
+  faGoogle,
+  faCss3,
+  faHtml5,
+  faPhp,
+  faPython,
+  faTwitter,
+  faTwitterSquare,
+  faInstagram,
+  faLinkedin,
+  faLinkedinIn,
+  faGithub,
+  faBitbucket,
+} from '@fortawesome/free-brands-svg-icons';
 
 /**
  * Add Fontawesome icons to library for app
  */
 library.add(
-  fab,
+  faHtml5,
+  faCss3,
   faChevronRight,
   faChevronLeft,
   faCode,
@@ -35,12 +61,34 @@ library.add(
   faTint,
   faPaintBrush,
   faPalette,
-  faSearch,
-  faHeart,
   faBooks,
   faFont,
+  faSitemap,
+  faAnalytics,
+  faServer,
+  faUsers,
+  faIcons,
+  faAd,
+  faObjectGroup,
   faNewspaper,
-  faBuilding
+  faBuilding,
+  faSearch,
+  faHeart,
+  faFacebook,
+  faFacebookF,
+  faGit,
+  faAws,
+  faNodeJs,
+  faGoogle,
+  faPhp,
+  faPython,
+  faTwitter,
+  faTwitterSquare,
+  faInstagram,
+  faLinkedin,
+  faLinkedinIn,
+  faGithub,
+  faBitbucket
 );
 
 /**
@@ -111,27 +159,59 @@ export const mapTaxonomyTheme = (slug = 'default') => {
 
   switch (slug) {
     case 'development':
+    case 'backend-development':
+    case 'frontend-development':
+    case 'seo':
+    case 'social':
     case 'web-development':
       theme = 'alpha';
       break;
+
     case 'web':
     case 'graphic-design':
     case 'design':
+    case 'ui-design':
+    case 'ux-design':
+    case 'bash':
+    case 'shell':
+    case 'zsh':
       theme = 'beta';
       break;
+
     case 'css':
     case 'css3':
+    case 'advertisement':
+    case 'analytics':
+    case 'hosting':
+    case 'vps':
+    case 'virtual-private-server':
+    case 'git':
       theme = 'gamma';
       break;
+
     case 'html':
     case 'html5':
+    case 'markup':
+    case 'nodejs':
+    case 'aws':
+    case 'gcp':
+    case 'php':
+    case 'dev-ops':
+    case 'python':
       theme = 'psi';
       break;
+
     case 'news':
     case 'js':
     case 'es6':
+    case 'client-side':
+    case 'server-side':
+    case 'cms':
+    case 'content-management-system':
+    case 'systems-architecture':
       theme = 'omega';
       break;
+
     default:
       theme = 'brand';
   }
@@ -148,16 +228,76 @@ export const mapTaxonomyIcon = (slug = 'default') => {
   let icon;
 
   switch (slug) {
+    case 'news':
+      icon = ['far', 'newspaper'];
+      break;
+    case 'cms':
+    case 'content-management-system':
+    case 'systems-architecture':
+      icon = ['far', 'sitemap'];
+      break;
+    case 'nodejs':
+      icon = ['fab', 'node-js'];
+      break;
+    case 'aws':
+      icon = ['fab', 'aws'];
+      break;
+    case 'client-side':
+    case 'browser':
+      icon = ['far', 'browser'];
+      break;
+    case 'gcp':
+      icon = ['fab', 'google'];
+      break;
+    case 'php':
+      icon = ['far', 'php'];
+      break;
+    case 'server-side':
+    case 'dev-ops':
+    case 'hosting':
+    case 'vps':
+    case 'virtual-private-server':
+      icon = ['far', 'server'];
+      break;
+    case 'python':
+      icon = ['far', 'python'];
+      break;
+    case 'advertisement':
+      icon = ['far', 'ad'];
+      break;
+    case 'analytics':
+      icon = ['far', 'analytics'];
+      break;
+    case 'icons':
+      icon = ['far', 'icons'];
+      break;
+    case 'web':
+      icon = ['far', 'globe'];
+      break;
+    case 'seo':
+    case 'search-engine-optimisation':
+      icon = ['fas', 'search'];
+      break;
+    case 'social':
+      icon = ['far', 'users'];
+      break;
     case 'development':
+    case 'frontend-development':
       icon = ['far', 'brackets-curly'];
       break;
+    case 'backend-development':
     case 'web-development':
+    case 'markup':
       icon = ['far', 'code'];
+      break;
+    case 'ui-design':
+      icon = ['far', 'object-group'];
       break;
     case 'graphic-design':
       icon = ['far', 'palette'];
       break;
     case 'ux':
+    case 'ux-design':
     case 'user-experience':
       icon = ['far', 'tint'];
       break;
@@ -178,17 +318,25 @@ export const mapTaxonomyIcon = (slug = 'default') => {
       icon = ['fab', 'js'];
       break;
     case 'bash':
+    case 'terminal':
     case 'shell':
     case 'zsh':
       icon = ['far', 'terminal'];
+      break;
+    case 'bitbucket':
+      icon = ['fab', 'bitbucket'];
       break;
     case 'gitlab':
       icon = ['fab', 'gitlab'];
       break;
     case 'github':
-      icon = ['far', 'code-commit'];
+      icon = ['fab', 'github'];
+      break;
+    case 'git':
+      icon = ['fab', 'git'];
       break;
     case 'git-commands':
+      icon = ['far', 'code-commit'];
       icon = ['far', 'code-branch'];
       break;
     default:
