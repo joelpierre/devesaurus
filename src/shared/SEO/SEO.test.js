@@ -3,7 +3,7 @@ import { shallow } from 'enzyme/build';
 import toJson from 'enzyme-to-json';
 
 import SEO, { PureSEO } from './SEO';
-import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
+import { checkProps, findByTestAttr, matchSnapshot } from '../../utils/test';
 
 const defaultProps = {
   title: 'test title',

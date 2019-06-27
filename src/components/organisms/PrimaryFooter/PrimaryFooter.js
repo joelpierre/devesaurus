@@ -4,14 +4,14 @@ import classNames from 'classnames';
 import { Link } from 'gatsby';
 
 import styles from './PrimaryFooter.module.scss';
-import Container from '../../core/Container/Container';
-import Row from '../../core/Row/Row';
-import Flex from '../../core/Flex/Flex';
 import TermsMenu from '../../molecules/TermsMenu/TermsMenu';
 import Brand from '../../atoms/Brand/Brand';
 import SocialMenu from '../../molecules/SocialMenu/SocialMenu';
-import Heading from '../../core/Heading/Heading';
+import Heading from '../../../shared/Heading/Heading';
 import FeaturedWordsList from '../../molecules/FeaturedWordsList/FeaturedWordsList';
+import Container from '../../../shared/Container/Container';
+import Row from '../../../shared/Row/Row';
+import Flex from '../../../shared/Flex/Flex';
 
 const PrimaryFooter = ({ company }) => {
   return (

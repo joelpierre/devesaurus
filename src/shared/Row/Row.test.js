@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
+import { checkProps, findByTestAttr, matchSnapshot } from '../../utils/test';
 
 import Row from './Row';
 

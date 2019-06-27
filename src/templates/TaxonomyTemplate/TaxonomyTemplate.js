@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 
-import Heading from '../../components/core/Heading/Heading';
+import Heading from '../../shared/Heading/Heading';
 import { CoreLayout } from '../../layouts/CoreLayout';
-import Section from '../../components/core/Section/Section';
-import Container from '../../components/core/Container/Container';
-import Row from '../../components/core/Row/Row';
-import Flex from '../../components/core/Flex/Flex';
+import Section from '../../shared/Section/Section';
+import Container from '../../shared/Container/Container';
+import Row from '../../shared/Row/Row';
+import Flex from '../../shared/Flex/Flex';
 import styles from './TaxonomyTemplate.module.scss';
 
 export class TaxonomyTemplate extends PureComponent {

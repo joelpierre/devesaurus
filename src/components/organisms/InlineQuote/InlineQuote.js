@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import Section from '../../core/Section/Section';
-import Row from '../../core/Row/Row';
-import Container from '../../core/Container/Container';
-import Flex from '../../core/Flex/Flex';
+import Section from '../../../shared/Section/Section';
+import Row from '../../../shared/Row/Row';
+import Container from '../../../shared/Container/Container';
+import Flex from '../../../shared/Flex/Flex';
 import styles from '../CtaBanner/CtaBanner.module.scss';
 import { defaultPageTheme, pageThemePropType } from '../../../utils/propTypes';
 

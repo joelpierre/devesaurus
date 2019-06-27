@@ -6,12 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { connect } from 'react-redux';
 import * as styles from './PrimaryHeader.module.scss';
 import Brand from '../../atoms/Brand/Brand';
-import Heading from '../../core/Heading/Heading';
+import Heading from '../../../shared/Heading/Heading';
 import InputField from '../../atoms/InputField/InputField';
 import Button from '../../molecules/Buttons/Button';
 import Hamburger from '../../atoms/Hamburger/Hamburger';
 import * as coreActions from '../../../store/actions/index';
-import Container from '../../core/Container/Container';
+import Container from '../../../shared/Container/Container';
 
 export class PrimaryHeader extends PureComponent {
   constructor() {

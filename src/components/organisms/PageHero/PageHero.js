@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import styles from './PageHero.module.scss';
-import Container from '../../core/Container/Container';
-import Flex from '../../core/Flex/Flex';
-import Row from '../../core/Row/Row';
-import Section from '../../core/Section/Section';
+import Container from '../../../shared/Container/Container';
+import Flex from '../../../shared/Flex/Flex';
+import Row from '../../../shared/Row/Row';
+import Section from '../../../shared/Section/Section';
 import { pageThemePropType } from '../../../utils/propTypes';
 
 const PageHero = ({ module, pageTheme, ...props }) => {

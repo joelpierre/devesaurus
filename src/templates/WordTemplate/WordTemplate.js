@@ -6,11 +6,11 @@ import classNames from 'classnames';
 import styles from './WordTemplate.module.scss';
 
 import * as wordActions from '../../store/actions/word.actions';
-import Heading from '../../components/core/Heading/Heading';
-import Section from '../../components/core/Section/Section';
-import Container from '../../components/core/Container/Container';
-import Row from '../../components/core/Row/Row';
-import Flex from '../../components/core/Flex/Flex';
+import Heading from '../../shared/Heading/Heading';
+import Section from '../../shared/Section/Section';
+import Container from '../../shared/Container/Container';
+import Row from '../../shared/Row/Row';
+import Flex from '../../shared/Flex/Flex';
 import { CoreLayout } from '../../layouts/CoreLayout';
 import { sortWordObj } from '../../utils';
 

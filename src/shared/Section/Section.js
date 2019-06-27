@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './Section.module.scss';
-import { defaultTheme, themePropType } from '../../../utils/propTypes';
+import { defaultTheme, themePropType } from '../../utils/propTypes';
 
 const Section = ({ children, className, type, contrast, theme }) => {
   const Tag = `${type}`;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { checkProps, findByTestAttr } from '../../../utils/test';
+import { checkProps, findByTestAttr } from '../../utils/test';
 
 import Flex from './Flex';
 

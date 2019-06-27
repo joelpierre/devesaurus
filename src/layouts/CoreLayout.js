@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import PrimaryHeader from '../components/organisms/PrimaryHeader/PrimaryHeader';
 import PrimaryFooter from '../components/organisms/PrimaryFooter/PrimaryFooter';
-import SEO from '../components/core/SEO/SEO';
+import SEO from '../shared/SEO/SEO';
 import styles from './Layout.module.scss';
 import PrimaryMenu from '../components/organisms/PrimaryMenu/PrimaryMenu';
 

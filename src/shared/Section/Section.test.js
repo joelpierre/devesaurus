@@ -2,39 +2,38 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { checkProps, findByTestAttr, matchSnapshot } from '../../../utils/test';
+import { checkProps, findByTestAttr, matchSnapshot } from '../../utils/test';
 
-import Heading from './Heading';
+import Section from './Section';
 
 const defaultProps = {
-  children: 'heading text',
-  priority: '1',
+  children: `<div></div>`,
 };
 
 /**
- * Factory function to create a ShallowWrapper for the Heading component.
+ * Factory function to create a ShallowWrapper for the Section component.
  * @param {object} props - Component props specific to setup
  * @returns {ShallowWrapper}
  */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return shallow(<Heading {...setupProps} />);
+  return shallow(<Section {...setupProps} />);
 };
 
-describe('<Heading/>', () => {
+describe('<Section/>', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = setup();
   });
 
-  it('renders the Heading Component without errors', () => {
-    const component = findByTestAttr(wrapper, 'component-heading');
+  it('renders the Section Component without errors', () => {
+    const component = findByTestAttr(wrapper, 'component-section');
     expect(component.length).toBe(1);
   });
 
   it('should render with correct props', () => {
-    checkProps(Heading, defaultProps);
+    checkProps(Section, defaultProps);
   });
 
   it('should match snapshot', () => {

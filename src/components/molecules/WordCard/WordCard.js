@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as styles from './WordCard.module.scss';
 import { wordPropTypeShape } from '../../../utils/propTypes';
-import Heading from '../../core/Heading/Heading';
+import Heading from '../../../shared/Heading/Heading';
 import Label from '../../atoms/Label/Label';
 import { mapTaxonomyIcon, mapTaxonomyTheme } from '../../../utils';
 

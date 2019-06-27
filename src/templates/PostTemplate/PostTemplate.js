@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import styles from './PostTemplate.module.scss';
 import * as postActions from '../../store/actions/post.actions';
 import { mapOverACFComponents } from '../../utils';
-import Heading from '../../components/core/Heading/Heading';
+import Heading from '../../shared/Heading/Heading';
 import { CoreLayout } from '../../layouts/CoreLayout';
 import AcfComponents from '../../hoc/AcfComponents';
 

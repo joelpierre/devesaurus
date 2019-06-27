@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './Layout.module.scss';
 
-import SEO from '../components/core/SEO/SEO';
+import SEO from '../shared/SEO/SEO';
 import PrimaryFooter from '../components/organisms/PrimaryFooter/PrimaryFooter';
 import SimpleHeader from '../components/organisms/SimpleHeader/SimpleHeader';
 import PrimaryMenu from '../components/organisms/PrimaryMenu/PrimaryMenu';

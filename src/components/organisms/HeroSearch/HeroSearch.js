@@ -3,15 +3,15 @@ import classNames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './HeroSearch.module.scss';
-import Container from '../../core/Container/Container';
-import Section from '../../core/Section/Section';
-import Row from '../../core/Row/Row';
-import Flex from '../../core/Flex/Flex';
+import Container from '../../../shared/Container/Container';
+import Section from '../../../shared/Section/Section';
+import Row from '../../../shared/Row/Row';
+import Flex from '../../../shared/Flex/Flex';
 import Brand from '../../atoms/Brand/Brand';
 import ScrollingMouse from '../../atoms/ScrollingMouse/ScrollingMouse';
 import LabelCloud from '../../molecules/LabelCloud/LabelCloud';
 import FormBase from '../../molecules/FormBase/FormBase';
-import Heading from '../../core/Heading/Heading';
+import Heading from '../../../shared/Heading/Heading';
 import InputField from '../../atoms/InputField/InputField';
 import Button from '../../molecules/Buttons/Button';
 

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import styles from './CtaBanner.module.scss';
-import Container from '../../core/Container/Container';
-import Row from '../../core/Row/Row';
-import Flex from '../../core/Flex/Flex';
-import Section from '../../core/Section/Section';
-import Heading from '../../core/Heading/Heading';
+import Container from '../../../shared/Container/Container';
+import Row from '../../../shared/Row/Row';
+import Flex from '../../../shared/Flex/Flex';
+import Section from '../../../shared/Section/Section';
+import Heading from '../../../shared/Heading/Heading';
 import { defaultPageTheme, pageThemePropType } from '../../../utils/propTypes';
 
 const CtaBanner = ({ module, pageTheme }) => {

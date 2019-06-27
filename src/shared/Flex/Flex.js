@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './Flex.module.scss';
-import { columnShape } from '../../../utils/propTypes';
+import { columnShape } from '../../utils/propTypes';
 
 const Flex = ({
   children,

@@ -12,11 +12,11 @@ import {
   themePropType,
   wordPropTypeShape,
 } from '../../../utils/propTypes';
-import Section from '../../core/Section/Section';
-import Container from '../../core/Container/Container';
-import Row from '../../core/Row/Row';
-import Flex from '../../core/Flex/Flex';
-import Heading from '../../core/Heading/Heading';
+import Section from '../../../shared/Section/Section';
+import Container from '../../../shared/Container/Container';
+import Row from '../../../shared/Row/Row';
+import Flex from '../../../shared/Flex/Flex';
+import Heading from '../../../shared/Heading/Heading';
 import { sortWordObj } from '../../../utils';
 import Button from '../../molecules/Buttons/Button';
 // import classNames from 'classnames';
