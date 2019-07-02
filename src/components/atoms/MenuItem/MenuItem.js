@@ -7,7 +7,6 @@ import { sanitizeUrl } from '../../../utils';
 
 function MenuItem({ item, className, children, ...props }) {
   const { attr } = item;
-  // console.log(item);
   let link = item.url;
   let firstChar;
   let el;
@@ -22,7 +21,7 @@ function MenuItem({ item, className, children, ...props }) {
     case 'anchor':
       el = (
         <a
-          className={classNames(styles['menu-item__link'], item.className)}
+          className={classNames(styles['menu-item__link'])}
           key={item.order}
           href={item.url}
           rel="noreferrer nofollow"
@@ -42,7 +41,7 @@ function MenuItem({ item, className, children, ...props }) {
 
       el = (
         <Link
-          className={classNames(styles['menu-item__link'], item.className)}
+          className={classNames(styles['menu-item__link'])}
           to={`${link}`}
           key={item.order}
         >

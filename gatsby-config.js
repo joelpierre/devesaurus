@@ -102,7 +102,7 @@ module.exports = {
       resolve: 'gatsby-source-wordpress',
       options: {
         baseUrl: process.env.GATSBY_API_URL || 'api.devesaurus.com',
-        protocol: process.env.GATSBY_PROTOCOL || 'http',
+        protocol: process.env.GATSBY_PROTOCOL || 'https',
         hostingWPCOM: false,
         useACF: true,
         verboseOutput: false,
