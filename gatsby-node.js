@@ -90,7 +90,7 @@ exports.createPages = ({ graphql, actions }) => {
       // START PAGES //
       .then(result => {
         if (result.errors) {
-          console.log(result.errors);
+          // console.log(result.errors);
           reject(result.errors);
         }
 
@@ -148,7 +148,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         `).then(result => {
           if (result.errors) {
-            console.log(result.errors);
+            // console.log(result.errors);
             reject(result.errors);
           }
 
@@ -251,7 +251,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         `).then(result => {
           if (result.errors) {
-            console.log(result.errors);
+            // console.log(result.errors);
             reject(result.errors);
           }
 
@@ -338,7 +338,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         `).then(result => {
           if (result.errors) {
-            console.log(result.errors);
+            // console.log(result.errors);
             reject(result.errors);
           }
 
@@ -399,7 +399,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         `).then(result => {
           if (result.errors) {
-            console.log(result.errors);
+            // console.log(result.errors);
             reject(result.errors);
           }
 
@@ -489,7 +489,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         `).then(result => {
           if (result.errors) {
-            console.log(result.errors);
+            // console.log(result.errors);
             reject(result.errors);
           }
 

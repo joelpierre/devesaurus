@@ -16,7 +16,7 @@ class WordCard extends PureComponent {
       slug,
       className,
       contrast,
-      acf,
+      acf = {},
       tags,
       category,
     } = this.props;

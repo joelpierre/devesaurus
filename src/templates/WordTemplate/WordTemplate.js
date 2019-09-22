@@ -35,8 +35,9 @@ export class WordTemplate extends PureComponent {
 
   render() {
     const { pageContext, isMenuOpen } = this.props;
+    const { acf = {} } = pageContext;
 
-    return (
+    return acf ? (
       <CoreLayout
         title={pageContext.title}
         headerTitle={`${pageContext.title} <span>:: definition</span>`}
@@ -63,15 +64,16 @@ export class WordTemplate extends PureComponent {
                         {pageContext.title}
                       </Heading>
 
-                      <p
-                        className={classNames(
-                          styles.word__pronunciation,
-                          styles.word__copy
-                        )}
-                      >
-                        <strong>Pronunciation:</strong> [
-                        {pageContext.acf.pronunciation}]
-                      </p>
+                      {acf.pronunciation && (
+                        <p
+                          className={classNames(
+                            styles.word__pronunciation,
+                            styles.word__copy
+                          )}
+                        >
+                          <strong>Pronunciation:</strong> [{acf.pronunciation}]
+                        </p>
+                      )}
 
                       <p
                         className={classNames(
@@ -80,17 +82,15 @@ export class WordTemplate extends PureComponent {
                         )}
                       >
                         <strong>Syllables:</strong>
-                        {pageContext.acf.syllables.list.map(
-                          (syllable, index) => (
-                            <span
-                              key={index}
-                              className={classNames(styles.word__syllable)}
-                            >
-                              {syllable.item}
-                            </span>
-                          )
-                        )}{' '}
-                        ({pageContext.acf.syllables.count})
+                        {acf.syllables.list.map((syllable, index) => (
+                          <span
+                            key={index}
+                            className={classNames(styles.word__syllable)}
+                          >
+                            {syllable.item}
+                          </span>
+                        ))}{' '}
+                        ({acf.syllables.count})
                       </p>
 
                       <hr className={styles.word__hr} />
@@ -134,7 +134,7 @@ export class WordTemplate extends PureComponent {
           </Container>
         </Section>
       </CoreLayout>
-    );
+    ) : null;
   }
 }
 
