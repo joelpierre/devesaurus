@@ -43,7 +43,7 @@ const HeroSearchFormData = {
 const HeroSearch = () => {
   const handleSearchSubmit = e => {
     e.preventDefault();
-    console.log('We will do something here');
+    // console.log('We will do something here');
   };
 
   return (

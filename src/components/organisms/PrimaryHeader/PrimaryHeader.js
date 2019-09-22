@@ -31,8 +31,8 @@ export class PrimaryHeader extends PureComponent {
   onSearchFormSubmitHandler(e) {
     e.preventDefault();
     const { searchFormData } = this.state;
-    console.log('Form Data: ', searchFormData);
-    console.log('Do something on submit');
+    // console.log('Form Data: ', searchFormData);
+    // console.log('Do something on submit');
     this.searchForm.current.reset();
   }
 
